@@ -69,14 +69,7 @@ export function HeroSection() {
                 Start Free Trial
               </Button>
 
-              <Button
-                type="button"
-                size="lg"
-                variant="outline"
-                className="border-[#1e3a5f] text-white hover:bg-[#1e3a5f] px-8 py-6 text-lg"
-              >
-                View Demo
-              </Button>
+             
             </motion.div>
 
             <p className="text-sm text-gray-400">

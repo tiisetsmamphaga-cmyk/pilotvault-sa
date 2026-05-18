@@ -7,8 +7,8 @@ import { Check } from "lucide-react"
 const plans = [
   {
     name: "PPL Pack",
-    price: "R249",
-    period: "/month",
+    price: "R699",
+    period: "/3 Months",
     description: "Perfect for Private Pilot License students",
     features: [
       "PPL Subject Questions",

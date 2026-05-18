@@ -147,7 +147,7 @@ export function Navbar() {
 
               <h2 className="mt-3 text-2xl font-bold text-white">
                 {authMode === "login"
-                  ? "Welcome back, pilot."
+                  
                   : "Start your SACAA exam prep journey."}
               </h2>
 

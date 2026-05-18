@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -141,7 +141,9 @@ export function Navbar() {
             </button>
 
             <div className="mb-6">
-              
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f4b400]">
+                PilotVault SA
+              </p>
 
               <h2 className="mt-3 text-2xl font-bold text-white">
                 {authMode === "login"

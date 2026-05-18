@@ -219,9 +219,7 @@ export function Navbar() {
               </Button>
             </form>
 
-            <p className="mt-5 text-center text-xs text-gray-500">
-              Authentication UI only. Supabase connection comes next.
-            </p>
+           
           </motion.div>
         </div>
       )}

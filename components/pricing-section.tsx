@@ -20,8 +20,8 @@ const plans = [
     popular: false,
   },
   {
-    name: "CPL Pack",
-    price: "R449",
+    name: "Per Subject",
+    price: "R89",
     period: "/month",
     description: "Ideal for Commercial Pilot License students",
     features: [
@@ -35,7 +35,7 @@ const plans = [
     popular: true,
   },
   {
-    name: "All Access",
+    name: "CPL Pack",
     price: "R699",
     period: "/month",
     description: "Complete access to everything",

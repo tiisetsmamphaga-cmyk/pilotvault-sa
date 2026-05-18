@@ -25,7 +25,7 @@ export function ExamPreviewSection() {
               </div>
               <div className="flex items-center gap-2 bg-[#1e3a5f] rounded-lg px-3 py-2">
                 <Clock className="w-4 h-4 text-[#f4b400]" />
-                <span className="text-white font-mono text-sm">00:18:32</span>
+                <span className="text-white font-mono text-sm"></span>
               </div>
             </div>
 

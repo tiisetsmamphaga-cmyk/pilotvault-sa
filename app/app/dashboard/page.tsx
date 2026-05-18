@@ -1,3 +1,4 @@
+"use client"
 import { BookOpen, BarChart3, Flame, Target, Clock, Plane } from "lucide-react"
 import { Button } from "@/components/ui/button"
 

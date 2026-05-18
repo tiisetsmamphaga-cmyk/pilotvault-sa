@@ -37,9 +37,9 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="PilotVault SA"
-                width={140}
-                height={36}
-                className="h-7 w-auto"
+                width={180}
+                height={45}
+                className="h-10 w-auto"
               />
             </Link>
             <p className="text-gray-400 text-sm mb-4 max-w-xs">

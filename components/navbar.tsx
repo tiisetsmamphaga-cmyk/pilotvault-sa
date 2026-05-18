@@ -33,9 +33,9 @@ export function Navbar() {
             <Image
               src="/images/logo.png"
               alt="PilotVault SA"
-              width={180}
-              height={48}
-              className="h-10 lg:h-12 w-auto"
+              width={160}
+              height={40}
+              className="h-8 w-auto"
               priority
             />
           </Link>

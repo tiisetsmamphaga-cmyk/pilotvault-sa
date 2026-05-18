@@ -35,7 +35,7 @@ export function Navbar() {
               alt="PilotVault SA"
               width={200}
               height={50}
-              className="h-9 md:h-10 w-auto"
+              className="h-10 md:h-11 w-auto"
               priority
             />
           </Link>

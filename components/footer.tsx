@@ -39,7 +39,7 @@ export function Footer() {
                 alt="PilotVault SA"
                 width={180}
                 height={45}
-                className="h-8 w-auto"
+                className="h-9 w-auto"
               />
             </Link>
             <p className="text-gray-400 text-sm mb-4 max-w-xs">

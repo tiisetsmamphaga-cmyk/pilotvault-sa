@@ -95,22 +95,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#06111f]/30 to-transparent" />
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.8 }}
-              className="absolute -bottom-4 -left-4 bg-[#0b1f35] rounded-xl p-4 shadow-xl border border-[#1e3a5f]"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#f4b400]/20 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-[#f4b400]">98%</span>
-                </div>
-                <div>
-                  <p className="text-white font-semibold">Pass Rate</p>
-                  <p className="text-gray-400 text-sm">First Attempt</p>
-                </div>
-              </div>
-            </motion.div>
+            
           </motion.div>
         </div>
       </div>

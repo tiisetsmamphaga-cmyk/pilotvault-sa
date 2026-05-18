@@ -19,22 +19,24 @@ const navLinks = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
-  const [authMode, setAuthMode] = useState<"login" | "signup">("login")
+  const [authMode, setAuthMode] = useState<"login" | "signup">("signup")
 
   const openAuth = (mode: "login" | "signup") => {
-  setAuthMode(mode)
-  setAuthOpen(true)
-}
-
-useEffect(() => {
-  const handleOpenSignup = () => openAuth("signup")
-
-  window.addEventListener("open-signup-modal", handleOpenSignup)
-
-  return () => {
-    window.removeEventListener("open-signup-modal", handleOpenSignup)
+    setAuthMode(mode)
+    setAuthOpen(true)
+    setIsOpen(false)
   }
-}, [])
+
+  useEffect(() => {
+    const openSignup = () => openAuth("signup")
+
+    window.addEventListener("open-signup-modal", openSignup)
+
+    return () => {
+      window.removeEventListener("open-signup-modal", openSignup)
+    }
+  }, [])
+
   return (
     <>
       <motion.nav
@@ -70,6 +72,7 @@ useEffect(() => {
 
             <div className="hidden lg:flex items-center gap-4">
               <Button
+                type="button"
                 onClick={() => openAuth("login")}
                 variant="outline"
                 className="border-[#1e3a5f] text-white hover:bg-[#1e3a5f] hover:text-white"
@@ -78,14 +81,16 @@ useEffect(() => {
               </Button>
 
               <Button
+                type="button"
                 onClick={() => openAuth("signup")}
                 className="bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] font-semibold"
               >
-                Sign Up
+                Start Free Trial
               </Button>
             </div>
 
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 text-white"
             >
@@ -97,7 +102,6 @@ useEffect(() => {
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
               className="lg:hidden py-4 border-t border-[#1e3a5f]"
             >
               <div className="flex flex-col gap-4">
@@ -114,6 +118,7 @@ useEffect(() => {
 
                 <div className="flex flex-col gap-2 pt-4 border-t border-[#1e3a5f]">
                   <Button
+                    type="button"
                     onClick={() => openAuth("login")}
                     variant="outline"
                     className="border-[#1e3a5f] text-white hover:bg-[#1e3a5f] w-full"
@@ -122,10 +127,11 @@ useEffect(() => {
                   </Button>
 
                   <Button
+                    type="button"
                     onClick={() => openAuth("signup")}
                     className="bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] font-semibold w-full"
                   >
-                    Sign Up
+                    Start Free Trial
                   </Button>
                 </div>
               </div>
@@ -142,32 +148,30 @@ useEffect(() => {
             className="relative w-full max-w-md rounded-2xl border border-[#1e3a5f] bg-[#06111f] p-6 shadow-2xl"
           >
             <button
+              type="button"
               onClick={() => setAuthOpen(false)}
               className="absolute right-4 top-4 text-gray-400 hover:text-white"
             >
               <X className="h-5 w-5" />
             </button>
 
-            <div className="mb-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f4b400]">
-                PilotVault SA
-              </p>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f4b400]">
+              PilotVault SA
+            </p>
 
-              <h2 className="mt-3 text-2xl font-bold text-white">
-                {authMode === "login"
-                  ? "Welcome back, pilot."
-                  : "Start your SACAA exam prep journey."}
-              </h2>
+            <h2 className="mt-3 text-2xl font-bold text-white">
+              {authMode === "login" ? "Welcome back, pilot." : "Start your 7-day free trial."}
+            </h2>
 
-              <p className="mt-2 text-sm text-gray-400">
-                {authMode === "login"
-                  ? "Log in to continue your SACAA exam preparation."
-                  : "Create your account and get access to realistic question banks, mock exams, and progress tracking."}
-              </p>
-            </div>
+            <p className="mt-2 text-sm text-gray-400">
+              {authMode === "login"
+                ? "Log in to continue your SACAA exam preparation."
+                : "Create your account and start preparing with realistic SACAA-style questions, mock exams, and progress tracking."}
+            </p>
 
-            <div className="mb-6 grid grid-cols-2 rounded-xl bg-[#0b1c30] p-1">
+            <div className="my-6 grid grid-cols-2 rounded-xl bg-[#0b1c30] p-1">
               <button
+                type="button"
                 onClick={() => setAuthMode("login")}
                 className={`rounded-lg py-2 text-sm font-semibold transition ${
                   authMode === "login"
@@ -179,6 +183,7 @@ useEffect(() => {
               </button>
 
               <button
+                type="button"
                 onClick={() => setAuthMode("signup")}
                 className={`rounded-lg py-2 text-sm font-semibold transition ${
                   authMode === "signup"
@@ -186,7 +191,7 @@ useEffect(() => {
                     : "text-gray-300 hover:text-white"
                 }`}
               >
-                Sign Up
+                Free Trial
               </button>
             </div>
 
@@ -223,11 +228,9 @@ useEffect(() => {
                 type="button"
                 className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000]"
               >
-                {authMode === "login" ? "Login" : "Create Account"}
+                {authMode === "login" ? "Login" : "Start Free Trial"}
               </Button>
             </form>
-
-           
           </motion.div>
         </div>
       )}

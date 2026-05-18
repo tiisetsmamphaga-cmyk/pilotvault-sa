@@ -85,7 +85,7 @@ export function HeroSection() {
           >
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/hero-aircraft.jpg"
+                src="/images/hero-cockpit.jpg"
                 alt="Cessna aircraft on apron at sunset"
                 fill
                 className="object-cover"

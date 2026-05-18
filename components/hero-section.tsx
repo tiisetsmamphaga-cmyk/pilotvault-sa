@@ -80,7 +80,7 @@ export function HeroSection() {
             </motion.div>
 
             <p className="text-sm text-gray-400">
-              7-day free trial • Cancel anytime
+              3-day free trial • Cancel anytime
             </p>
           </motion.div>
 

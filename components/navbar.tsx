@@ -156,11 +156,11 @@ export function Navbar() {
             </button>
 
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f4b400]">
-              PilotVault SA
+              
             </p>
 
             <h2 className="mt-3 text-2xl font-bold text-white">
-              {authMode === "login" ? "Welcome back, pilot." : "Start your 7-day free trial."}
+              {authMode === "login" ? "Welcome back, pilot." : "Start your 3-day free trial."}
             </h2>
 
             <p className="mt-2 text-sm text-gray-400">

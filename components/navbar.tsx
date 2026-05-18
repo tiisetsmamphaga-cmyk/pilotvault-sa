@@ -3,7 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Menu, X, Shield } from "lucide-react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
@@ -28,18 +29,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-2">
-            <div className="relative">
-              <Shield className="h-8 w-8 text-[#f4b400]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg className="h-4 w-4 text-[#06111f]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L8 6H3v4l-1 2 1 2v4h5l4 4 4-4h5v-4l1-2-1-2V6h-5l-4-4z" />
-                </svg>
-              </div>
-            </div>
-            <span className="text-xl font-bold text-white">
-              Pilot<span className="text-[#f4b400]">Vault</span> SA
-            </span>
+          <Link href="#" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="PilotVault SA"
+              width={180}
+              height={48}
+              className="h-10 lg:h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

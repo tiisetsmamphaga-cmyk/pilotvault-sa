@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Shield, Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const quickLinks = [
@@ -32,13 +33,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="#" className="flex items-center gap-2 mb-4">
-              <div className="relative">
-                <Shield className="h-8 w-8 text-[#f4b400]" />
-              </div>
-              <span className="text-xl font-bold text-white">
-                Pilot<span className="text-[#f4b400]">Vault</span> SA
-              </span>
+            <Link href="#" className="flex items-center mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="PilotVault SA"
+                width={160}
+                height={44}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-gray-400 text-sm mb-4 max-w-xs">
               The most trusted exam preparation platform for student pilots in South Africa.

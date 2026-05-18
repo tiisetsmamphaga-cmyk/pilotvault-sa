@@ -22,11 +22,19 @@ export function Navbar() {
   const [authMode, setAuthMode] = useState<"login" | "signup">("login")
 
   const openAuth = (mode: "login" | "signup") => {
-    setAuthMode(mode)
-    setAuthOpen(true)
-    setIsOpen(false)
-  }
+  setAuthMode(mode)
+  setAuthOpen(true)
+}
 
+useEffect(() => {
+  const handleOpenSignup = () => openAuth("signup")
+
+  window.addEventListener("open-signup-modal", handleOpenSignup)
+
+  return () => {
+    window.removeEventListener("open-signup-modal", handleOpenSignup)
+  }
+}, [])
   return (
     <>
       <motion.nav

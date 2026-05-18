@@ -1,175 +1,153 @@
 "use client"
 
-import {
-  LayoutDashboard,
-  BookOpen,
-  ClipboardCheck,
-  BarChart3,
-  Settings,
-  ChevronRight,
-  Target,
-  Flame,
-} from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 
 const subjects = [
-  "Air Law",
-  "Meteorology",
-  "Navigation",
-  "Human Performance",
-  "Principles of Flight",
-  "Aircraft Technical",
+  { name: "Air Law", progress: 72 },
+  { name: "Meteorology", progress: 76 },
+  { name: "Navigation", progress: 68 },
+  { name: "Human Performance", progress: 70 },
+  { name: "Principles of Flight", progress: 65 },
+  { name: "Aircraft Technical", progress: 74 },
 ]
 
 export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-[#06111f] text-white flex">
-      {/* Sidebar */}
-      <aside className="hidden lg:flex w-72 border-r border-[#1e3a5f] bg-[#081726] p-6 flex-col">
-        <div>
-          <p className="text-[#f4b400] text-sm tracking-[0.3em] font-bold">
-            PILOTVAULT SA
-          </p>
-
-          <div className="mt-10 space-y-2">
-            <SidebarItem icon={<LayoutDashboard size={18} />} label="Dashboard" active />
-            <SidebarItem icon={<BookOpen size={18} />} label="Practice" />
-            <SidebarItem icon={<ClipboardCheck size={18} />} label="Mock Exams" />
-            <SidebarItem icon={<BarChart3 size={18} />} label="Analytics" />
-            <SidebarItem icon={<Settings size={18} />} label="Settings" />
-          </div>
+      <aside className="hidden lg:flex w-56 border-r border-[#1e3a5f] bg-[#081726] p-5 flex-col">
+        <div className="space-y-2 mt-10">
+          <SidebarItem label="Dashboard" active />
+          <SidebarItem label="Practice" />
+          <SidebarItem label="Mock Exams" />
+          <SidebarItem label="Analytics" />
+          <SidebarItem label="Settings" />
         </div>
 
-        <div className="mt-auto rounded-2xl border border-[#1e3a5f] bg-[#0b1f35] p-5">
-          <p className="text-sm text-gray-400">Current Plan</p>
+        <div className="mt-auto rounded-xl border border-[#1e3a5f] bg-[#0b1f35] p-4">
+          <p className="text-xs text-gray-400">Current Plan</p>
+          <h3 className="mt-2 text-xl font-bold text-[#f4b400]">Free Trial</h3>
+          <p className="mt-1 text-xs text-gray-400">3 days remaining</p>
 
-          <h3 className="mt-2 text-xl font-bold text-[#f4b400]">
-            Free Trial
-          </h3>
-
-          <p className="mt-2 text-sm text-gray-400">
-            3 days remaining
-          </p>
-
-          <Button className="mt-4 w-full bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] font-bold">
-            Upgrade Plan
+          <Button className="mt-4 w-full h-9 bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] text-sm font-bold">
+            Upgrade
           </Button>
         </div>
       </aside>
 
-      {/* Main Content */}
-      <section className="flex-1 p-6 lg:p-10">
-        {/* Top */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      <section className="flex-1 p-5 lg:p-8">
+        <div className="grid xl:grid-cols-[1fr_320px] gap-5">
           <div>
-            <p className="text-[#f4b400] text-sm tracking-[0.25em] uppercase font-semibold">
-              Dashboard
-            </p>
-
-            <h1 className="mt-3 text-4xl font-bold">
+            <h1 className="text-3xl lg:text-4xl font-bold">
               Welcome back, pilot.
             </h1>
 
-            <p className="mt-3 text-gray-400 max-w-2xl">
-              Continue preparing for your SACAA exams with focused practice and realistic mock exams.
+            <p className="mt-3 text-sm lg:text-base text-gray-400 max-w-xl">
+              Continue your SACAA exam preparation with focused practice,
+              mock exams, and weak-topic tracking.
             </p>
           </div>
 
-          {/* Score Ring */}
-          <div className="rounded-3xl border border-[#1e3a5f] bg-[#0b1f35] p-6 w-full lg:w-[300px]">
-            <p className="text-sm text-gray-400">
-              Overall Progress
-            </p>
+          <div className="rounded-2xl border border-[#1e3a5f] bg-[#0b1f35] p-5">
+            <p className="text-sm text-gray-400">Overall Progress</p>
 
-            <div className="mt-5 flex items-center gap-5">
-              <div className="relative w-24 h-24 rounded-full border-8 border-[#f4b400] flex items-center justify-center">
-                <span className="text-2xl font-bold">
-                  76%
-                </span>
+            <div className="mt-4 flex items-center gap-4">
+              <div className="h-20 w-20 rounded-full border-[7px] border-[#f4b400] flex items-center justify-center">
+                <span className="text-xl font-bold">76%</span>
               </div>
 
               <div>
-                <p className="text-2xl font-bold">
+                <h3 className="text-lg font-bold text-[#f4b400]">
                   Good Progress
-                </p>
-
+                </h3>
                 <p className="mt-1 text-sm text-gray-400">
-                  Keep pushing toward 85%+
+                  Aim for 85%+
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Continue Studying */}
-        <section className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#0b1f35] p-6 lg:p-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <section className="mt-6 rounded-2xl border border-[#1e3a5f] bg-[#0b1f35] p-5">
+          <div className="grid lg:grid-cols-[1fr_320px_170px] gap-5 items-center">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-[#f4b400]">
+              <p className="text-[#f4b400] text-xs uppercase tracking-[0.18em]">
                 Continue Studying
               </p>
 
-              <h2 className="mt-3 text-3xl font-bold">
-                Meteorology
-              </h2>
+              <h2 className="mt-2 text-2xl font-bold">Meteorology</h2>
 
-              <p className="mt-3 text-gray-400">
-                Focus on pressure systems, fronts, and cloud formation.
+              <p className="mt-2 text-sm text-gray-400">
+                Pressure systems, fronts, and cloud formation.
               </p>
             </div>
 
-            <Button className="bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] font-bold px-8 py-6">
-              Resume Practice
+            <div>
+              <div className="flex items-center justify-between text-xs mb-2">
+                <span className="text-gray-400">Progress</span>
+                <span className="font-semibold">76%</span>
+              </div>
+
+              <div className="h-2 rounded-full bg-[#06111f] overflow-hidden">
+                <div className="h-full w-[76%] bg-[#f4b400]" />
+              </div>
+
+              <p className="mt-2 text-xs text-gray-500">
+                Last studied: 19 May 2026
+              </p>
+            </div>
+
+            <Button className="h-11 bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] text-sm font-bold">
+              Resume
             </Button>
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="mt-8 grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
-          <StatCard title="Questions Practised" value="124" icon={<BookOpen />} />
-          <StatCard title="Average Score" value="76%" icon={<Target />} />
-          <StatCard title="Study Streak" value="3 Days" icon={<Flame />} />
-          <StatCard title="Mock Exams" value="4" icon={<ClipboardCheck />} />
+        <section className="mt-6 grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          <StatCard title="Questions" value="124" subtitle="Attempted" />
+          <StatCard title="Average Score" value="76%" subtitle="All subjects" />
+          <StatCard title="Streak" value="3 Days" subtitle="Keep it going" />
+          <StatCard title="Mock Exams" value="4" subtitle="Completed" />
         </section>
 
-        {/* Subjects */}
-        <section className="mt-10">
+        <section className="mt-8">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold">
-              Subjects
-            </h2>
+            <h2 className="text-2xl font-bold">Your Subjects</h2>
 
-            <button className="text-sm text-[#f4b400] flex items-center gap-1">
-              View All
-              <ChevronRight size={16} />
+            <button className="text-sm text-[#f4b400] hover:text-[#ffd24d] transition">
+              View All →
             </button>
           </div>
 
-          <div className="mt-5 grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="mt-4 grid md:grid-cols-2 xl:grid-cols-3 gap-4">
             {subjects.map((subject) => (
               <div
-                key={subject}
-                className="rounded-2xl border border-[#1e3a5f] bg-[#0b1f35] p-6 hover:border-[#f4b400]/60 transition cursor-pointer"
+                key={subject.name}
+                className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] p-4 hover:border-[#f4b400]/60 transition"
               >
                 <div className="flex items-center justify-between">
-                  <BookOpen className="text-[#f4b400]" />
+                  <h3 className="text-lg font-bold">{subject.name}</h3>
 
-                  <span className="text-sm text-gray-400">
-                    120 Questions
+                  <span className="text-[#f4b400] font-bold">
+                    {subject.progress}%
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-xl font-bold">
-                  {subject}
-                </h3>
+                <div className="mt-4 h-1.5 rounded-full bg-[#06111f] overflow-hidden">
+                  <div
+                    className="h-full bg-[#f4b400]"
+                    style={{ width: `${subject.progress}%` }}
+                  />
+                </div>
 
-                <p className="mt-2 text-sm text-gray-400">
-                  Practice SACAA-style questions with explanations.
-                </p>
+                <div className="mt-4 flex items-center justify-between">
+                  <p className="text-xs text-gray-400">120 Questions</p>
 
-                <div className="mt-5 h-2 rounded-full bg-[#06111f] overflow-hidden">
-                  <div className="h-full w-[76%] bg-[#f4b400]" />
+                  <Button
+                    variant="outline"
+                    className="h-8 px-4 border-[#f4b400]/50 text-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f] text-xs"
+                  >
+                    Practice
+                  </Button>
                 </div>
               </div>
             ))}
@@ -181,23 +159,20 @@ export default function DashboardPage() {
 }
 
 function SidebarItem({
-  icon,
   label,
   active = false,
 }: {
-  icon: React.ReactNode
   label: string
   active?: boolean
 }) {
   return (
     <button
-      className={`w-full flex items-center gap-3 rounded-xl px-4 py-3 transition ${
+      className={`w-full text-left rounded-lg px-4 py-3 text-sm transition ${
         active
-          ? "bg-[#f4b400] text-[#06111f] font-bold"
+          ? "bg-[#0b1f35] text-[#f4b400] border-l-4 border-[#f4b400] font-bold"
           : "text-gray-300 hover:bg-[#0b1f35]"
       }`}
     >
-      {icon}
       {label}
     </button>
   )
@@ -206,27 +181,21 @@ function SidebarItem({
 function StatCard({
   title,
   value,
-  icon,
+  subtitle,
 }: {
   title: string
   value: string
-  icon: React.ReactNode
+  subtitle: string
 }) {
   return (
-    <div className="rounded-2xl border border-[#1e3a5f] bg-[#0b1f35] p-5">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-400">
-          {title}
-        </p>
+    <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] p-4">
+      <p className="text-sm text-gray-400">{title}</p>
+      <h3 className="mt-3 text-3xl font-bold">{value}</h3>
+      <p className="mt-2 text-xs text-gray-500">{subtitle}</p>
 
-        <div className="text-[#f4b400]">
-          {icon}
-        </div>
+      <div className="mt-4 h-1 rounded-full bg-[#06111f] overflow-hidden">
+        <div className="h-full w-[78%] bg-[#f4b400]" />
       </div>
-
-      <h3 className="mt-4 text-3xl font-bold">
-        {value}
-      </h3>
     </div>
   )
 }

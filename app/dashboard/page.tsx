@@ -27,7 +27,9 @@ export default function DashboardPage() {
       <aside className="hidden lg:flex w-56 border-r border-[#1e3a5f] bg-[#081726] p-5 flex-col">
         <div className="space-y-2 mt-10">
           <SidebarItem label="Dashboard" active />
-          <SidebarItem label="Practice" />
+          <Link href="/practice">
+  <SidebarItem label="Practice" />
+</Link>
           <SidebarItem label="Mock Exams" />
           <SidebarItem label="Analytics" />
           <SidebarItem label="Settings" />

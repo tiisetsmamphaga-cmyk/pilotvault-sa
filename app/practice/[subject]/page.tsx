@@ -3,32 +3,7 @@
 import { useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
-
-const questions = [
-  {
-    id: 1,
-    subject: "meteorology",
-    question: "What cloud type is most associated with thunderstorms?",
-    options: ["Stratus", "Cumulonimbus", "Cirrus", "Altostratus"],
-    correctAnswer: "Cumulonimbus",
-    explanation:
-      "Cumulonimbus clouds are associated with thunderstorms, heavy rain, turbulence, lightning, and strong vertical development.",
-  },
-  {
-    id: 2,
-    subject: "meteorology",
-    question: "What does QNH allow the altimeter to read?",
-    options: [
-      "Height above the runway",
-      "Flight level",
-      "Altitude above mean sea level",
-      "Density altitude",
-    ],
-    correctAnswer: "Altitude above mean sea level",
-    explanation:
-      "QNH is set so the altimeter reads altitude above mean sea level.",
-  },
-]
+import { questions } from "@/src/data/questions"
 
 export default function SubjectPracticePage() {
   const params = useParams()
@@ -123,8 +98,8 @@ export default function SubjectPracticePage() {
                     isActive
                       ? "border-[#1f4e79] bg-[#1f4e79] text-white"
                       : isAnswered
-                      ? "border-blue-300 bg-blue-100 text-blue-900"
-                      : "border-slate-300 bg-white text-slate-700"
+                        ? "border-blue-300 bg-blue-100 text-blue-900"
+                        : "border-slate-300 bg-white text-slate-700"
                   }`}
                 >
                   {index + 1}

@@ -329,6 +329,53 @@ export default function SubjectPracticePage() {
         </aside>
 
         <section className="flex-1 p-6 md:p-10">
+          
+          <div className="mb-6 md:hidden">
+  <div className="overflow-x-auto">
+    <div className="flex gap-2 pb-2">
+
+      {filteredQuestions.map((_, index) => {
+        const isActive = index === currentQuestionIndex
+        const isAnswered = Boolean(answers[index])
+        const isPinned = pinnedQuestions.includes(index)
+        const hasShownAnswer = shownAnswers.includes(index)
+
+        return (
+          <button
+            key={index}
+            onClick={() => setCurrentQuestionIndex(index)}
+            className={`relative min-w-[42px] h-[42px] rounded border text-sm font-medium flex items-center justify-center ${
+              isActive
+                ? "border-[#1f4e79] bg-[#1f4e79] text-white"
+                : hasShownAnswer
+                ? "border-yellow-400 bg-yellow-100 text-yellow-900"
+                : isAnswered
+                ? "border-blue-300 bg-blue-100 text-blue-900"
+                : "border-red-300 bg-red-50 text-red-700"
+            }`}
+          >
+            {index + 1}
+
+            {isPinned && (
+              <span className="absolute -right-1 -top-2 text-yellow-600">
+                ⚑
+              </span>
+            )}
+          </button>
+        )
+      })}
+
+    </div>
+  </div>
+
+  <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-500">
+    <span>Blue: Current</span>
+    <span>Red: Unanswered</span>
+    <span>Yellow: Viewed</span>
+    <span>⚑: Pinned</span>
+  </div>
+</div>
+
           <div className="mx-auto max-w-4xl">
             <div className="mb-8 flex items-center justify-between gap-4">
               <div>

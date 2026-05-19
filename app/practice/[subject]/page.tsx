@@ -9,7 +9,9 @@ export default function SubjectPracticePage() {
   const params = useParams()
   const subject = String(params.subject)
 
-  const filteredQuestions = questions.filter((q) => q.subject === subject)
+  const filteredQuestions = questions.filter(
+    (q) => q.subject?.toLowerCase() === subject.toLowerCase()
+  )
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState<Record<number, string>>({})
@@ -23,7 +25,7 @@ export default function SubjectPracticePage() {
   const selectedAnswer = answers[currentQuestionIndex]
 
   useEffect(() => {
-    if (isSubmitted) return
+    if (isSubmitted || filteredQuestions.length === 0) return
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -38,7 +40,7 @@ export default function SubjectPracticePage() {
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [isSubmitted])
+  }, [isSubmitted, filteredQuestions.length])
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
@@ -52,6 +54,10 @@ export default function SubjectPracticePage() {
       <main className="min-h-screen bg-white text-slate-900 flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="text-2xl font-bold">No questions found.</h1>
+
+          <p className="mt-3 text-slate-600">
+            Check that your questions use subject: "{subject}".
+          </p>
 
           <Link
             href="/practice"
@@ -79,8 +85,6 @@ export default function SubjectPracticePage() {
   )
 
   const handleAnswer = (option: string) => {
-    if (isSubmitted) return
-
     setAnswers((prev) => ({
       ...prev,
       [currentQuestionIndex]: option,
@@ -113,15 +117,6 @@ export default function SubjectPracticePage() {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prev) => prev + 1)
     }
-  }
-
-  const finishExam = () => {
-    setShowFinishPrompt(true)
-  }
-
-  const confirmSubmit = () => {
-    setShowFinishPrompt(false)
-    setIsSubmitted(true)
   }
 
   const restartExam = () => {
@@ -318,14 +313,6 @@ export default function SubjectPracticePage() {
               )
             })}
           </div>
-
-          <div className="mt-6 space-y-2 text-xs text-slate-600">
-            <p>Blue: current question</p>
-            <p>Light blue: answered</p>
-            <p>Red: not answered</p>
-            <p>Yellow: answer viewed</p>
-            <p>⚑: pinned</p>
-          </div>
         </aside>
 
         <section className="flex-1 p-6 md:p-10">
@@ -355,11 +342,9 @@ export default function SubjectPracticePage() {
               </button>
             </div>
 
-            <div className="py-2">
-              <p className="text-lg leading-relaxed text-slate-900">
-                {currentQuestion.question}
-              </p>
-            </div>
+            <p className="text-lg leading-relaxed text-slate-900">
+              {currentQuestion.question}
+            </p>
 
             <div className="mt-8 space-y-2">
               {currentQuestion.options.map((option, index) => {
@@ -437,7 +422,7 @@ export default function SubjectPracticePage() {
                 </button>
 
                 <button
-                  onClick={finishExam}
+                  onClick={() => setShowFinishPrompt(true)}
                   className="rounded-md bg-slate-900 px-6 py-2 text-sm font-semibold text-white hover:bg-slate-700"
                 >
                   Finish
@@ -467,10 +452,6 @@ export default function SubjectPracticePage() {
               </p>
             )}
 
-            <p className="mt-4 text-slate-700">
-              Are you sure you want to finish and submit your answers?
-            </p>
-
             <div className="mt-6 flex justify-end gap-3">
               <button
                 onClick={() => setShowFinishPrompt(false)}
@@ -480,7 +461,10 @@ export default function SubjectPracticePage() {
               </button>
 
               <button
-                onClick={confirmSubmit}
+                onClick={() => {
+                  setShowFinishPrompt(false)
+                  setIsSubmitted(true)
+                }}
                 className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
               >
                 Submit Examination

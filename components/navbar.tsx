@@ -224,12 +224,15 @@ export function Navbar() {
                 />
               )}
 
-              <Button
-                type="button"
-                className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000]"
-              >
-                {authMode === "login" ? "Login" : "Start Free Trial"}
-              </Button>
+             <Button
+  type="button"
+  onClick={() => {
+    window.location.href = "/dashboard"
+  }}
+  className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000]"
+>
+  {authMode === "login" ? "Login" : "Start Free Trial"}
+</Button>
             </form>
           </motion.div>
         </div>

@@ -13,7 +13,16 @@ const subjects = [
 
 export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-[#06111f] text-white flex">
+     <main className="min-h-screen bg-[#06111f] text-white flex relative">
+      <button
+        onClick={() => {
+          window.location.href = "/"
+        }}
+        className="absolute top-6 right-6 text-sm text-[#f4b400] hover:text-[#ffd24d] transition"
+      >
+        ← Back to Home
+      </button>
+
       <aside className="hidden lg:flex w-56 border-r border-[#1e3a5f] bg-[#081726] p-5 flex-col">
         <div className="space-y-2 mt-10">
           <SidebarItem label="Dashboard" active />

@@ -252,27 +252,34 @@ export default function SubjectPracticePage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <header className="h-20 border-b border-slate-300 bg-[#1f4e79] px-6 text-white flex items-center justify-between">
-        <div className="flex items-center gap-8">
-          <div>
-            <h1 className="text-base font-bold">PilotVault SA Exam Practice</h1>
+        <div>
+          <h1 className="text-base font-bold">PilotVault SA Exam Practice</h1>
 
-            <p className="text-xs uppercase tracking-wider text-blue-100">
-              {subject.replaceAll("-", " ")}
+          <p className="text-xs uppercase tracking-wider text-blue-100">
+            {subject.replaceAll("-", " ")}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="rounded-md border border-white/20 bg-black/20 px-4 py-2 text-right">
+            <p className="text-xs text-blue-100">Time Remaining</p>
+
+            <p
+              className={`font-bold ${
+                timeLeft < 300 ? "text-red-300" : "text-white"
+              }`}
+            >
+              {formatTime(timeLeft)}
             </p>
           </div>
 
-          <div className="rounded-md bg-white/10 px-4 py-2">
-            <p className="text-xs text-blue-100">Time Remaining</p>
-            <p className="text-lg font-bold">{formatTime(timeLeft)}</p>
-          </div>
+          <Link
+            href="/practice"
+            className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20"
+          >
+            Exit
+          </Link>
         </div>
-
-        <Link
-          href="/practice"
-          className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20"
-        >
-          Exit
-        </Link>
       </header>
 
       <div className="flex min-h-[calc(100vh-80px)]">

@@ -1,62 +1,89 @@
+"use client"
+
 import Link from "next/link"
+import { useParams } from "next/navigation"
+import { questions } from "@/src/data/questions"
 
-const subjects = [
-  "Air Law",
-  "Meteorology",
-  "Navigation",
-  "Human Performance",
-  "Principles of Flight",
-  "Aircraft Technical",
-  "Radio Telephony",
-  "Flight Planning",
-]
+export default function SubjectTopicsPage() {
+  const params = useParams()
+  const subject = String(params.subject)
 
-export default function PracticePage() {
+  const subjectQuestions = questions.filter((q) => q.subject === subject)
+
+  const topics = Array.from(
+    new Set(subjectQuestions.map((q) => q.topic))
+  ).filter(Boolean)
+
   return (
-    <main className="min-h-screen bg-[#06111f] text-white px-6 py-10">
-      <div className="max-w-6xl mx-auto">
+    <main className="min-h-screen bg-[#06111f] px-6 py-10 text-white">
+      <div className="mx-auto max-w-6xl">
         <Link
-          href="/dashboard"
-          className="inline-block mb-8 text-sm text-[#f4b400] hover:text-white transition"
+          href="/practice"
+          className="text-sm font-medium text-[#f4b400] hover:text-white"
         >
-          ← Back to Dashboard
+          ← Back to Practice
         </Link>
 
-        <p className="text-[#f4b400] text-xs uppercase tracking-[0.18em]">
-          Practice Mode
-        </p>
+        <div className="mt-10">
+          <p className="text-xs uppercase tracking-[0.18em] text-[#f4b400]">
+            Practice Mode
+          </p>
 
-        <h1 className="mt-3 text-4xl md:text-5xl font-bold">
-          Choose a Subject
-        </h1>
+          <h1 className="mt-3 text-4xl font-bold capitalize">
+            {subject.replaceAll("-", " ")}
+          </h1>
 
-        <p className="mt-4 text-gray-400 max-w-2xl">
-          Select a SACAA subject and start practicing exam-style questions with
-          explanations.
-        </p>
+          <p className="mt-4 max-w-2xl text-slate-300">
+            Choose a full exam simulation or focus on a specific topic.
+          </p>
+        </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {subjects.map((subject) => {
-            const slug = subject.toLowerCase().replaceAll(" ", "-")
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <Link
+            href={`/practice/${subject}/exam`}
+            className="rounded-2xl border border-[#f4b400]/40 bg-[#081726] p-6 transition hover:-translate-y-1 hover:border-[#f4b400]"
+          >
+            <p className="text-sm uppercase tracking-wider text-[#f4b400]">
+              Full Exam
+            </p>
+
+            <h2 className="mt-3 text-2xl font-bold">All Topics</h2>
+
+            <p className="mt-3 text-sm text-slate-300">
+              Practice all available questions for this subject in one exam
+              session.
+            </p>
+
+            <p className="mt-6 text-sm text-slate-400">
+              {subjectQuestions.length} questions available
+            </p>
+          </Link>
+
+          {topics.map((topic) => {
+            const topicSlug = topic.toLowerCase().replaceAll(" ", "-")
+            const count = subjectQuestions.filter(
+              (q) => q.topic === topic
+            ).length
 
             return (
               <Link
-                key={subject}
-                href={`/practice/${slug}`}
-                className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 hover:border-[#f4b400] hover:bg-[#0b1f35] transition"
+                key={topic}
+                href={`/practice/${subject}/${topicSlug}`}
+                className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition hover:-translate-y-1 hover:border-[#f4b400]"
               >
-                <h2 className="text-xl font-bold">{subject}</h2>
-
-                <p className="mt-3 text-sm text-gray-400">
-                  Practice realistic SACAA-style questions.
+                <p className="text-sm uppercase tracking-wider text-[#f4b400]">
+                  Topic Practice
                 </p>
 
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="text-xs text-gray-500">0 questions</span>
-                  <span className="text-sm font-bold text-[#f4b400]">
-                    Start →
-                  </span>
-                </div>
+                <h2 className="mt-3 text-2xl font-bold">{topic}</h2>
+
+                <p className="mt-3 text-sm text-slate-300">
+                  Focus only on {topic.toLowerCase()} questions.
+                </p>
+
+                <p className="mt-6 text-sm text-slate-400">
+                  {count} questions available
+                </p>
               </Link>
             )
           })}

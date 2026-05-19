@@ -41,6 +41,7 @@ export default function SubjectPracticePage() {
   const [pinnedQuestions, setPinnedQuestions] = useState<number[]>([])
 
   const currentQuestion = filteredQuestions[currentQuestionIndex]
+  const selectedAnswer = answers[currentQuestionIndex]
 
   if (!currentQuestion) {
     return (
@@ -58,8 +59,6 @@ export default function SubjectPracticePage() {
       </main>
     )
   }
-
-  const selectedAnswer = answers[currentQuestionIndex]
 
   const handleAnswer = (option: string) => {
     setAnswers((prev) => ({
@@ -149,7 +148,7 @@ export default function SubjectPracticePage() {
 
         <section className="flex-1 p-6 md:p-10">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-6 flex items-center justify-between gap-4">
+            <div className="mb-8 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm text-slate-500">
                   Question {currentQuestionIndex + 1} of{" "}
@@ -175,13 +174,13 @@ export default function SubjectPracticePage() {
               </button>
             </div>
 
-            <div className="rounded-md border border-slate-300 bg-slate-100 p-6">
-              <p className="text-lg leading-relaxed">
+            <div className="py-2">
+              <p className="text-lg leading-relaxed text-slate-900">
                 {currentQuestion.question}
               </p>
             </div>
 
-            <div className="mt-6 space-y-3">
+            <div className="mt-8 space-y-2">
               {currentQuestion.options.map((option, index) => {
                 const letter = String.fromCharCode(65 + index)
                 const isSelected = selectedAnswer === option
@@ -189,11 +188,7 @@ export default function SubjectPracticePage() {
                 return (
                   <label
                     key={option}
-                    className={`flex cursor-pointer items-center gap-4 rounded-md border p-4 ${
-                      isSelected
-                        ? "border-[#1f4e79] bg-blue-50"
-                        : "border-slate-300 bg-white hover:bg-slate-50"
-                    }`}
+                    className="flex cursor-pointer items-center gap-4 py-3"
                   >
                     <input
                       type="radio"
@@ -207,13 +202,13 @@ export default function SubjectPracticePage() {
                       {letter}.
                     </span>
 
-                    <span>{option}</span>
+                    <span className="text-slate-800">{option}</span>
                   </label>
                 )
               })}
             </div>
 
-            <div className="mt-10 flex items-center justify-end gap-3">
+            <div className="mt-12 flex items-center justify-end gap-3">
               <button
                 onClick={goPrevious}
                 disabled={currentQuestionIndex === 0}

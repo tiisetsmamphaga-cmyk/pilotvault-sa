@@ -2,23 +2,22 @@ export const questions = [
   {
     id: 1,
     subject: "meteorology",
-    topic: "Clouds",
-    difficulty: "easy",
+    topic: "Atmosphere",
 
     question:
-      "What cloud type is most associated with thunderstorms?",
+      "The weather experienced on Earth occurs in the:",
 
     options: [
-      "Stratus",
-      "Cumulonimbus",
-      "Cirrus",
-      "Altostratus",
+      "Stratosphere",
+      "Troposphere",
+      "Mesosphere",
+      "Thermosphere"
     ],
 
-    correctAnswer: "Cumulonimbus",
+    correctAnswer: "Troposphere",
 
     explanation:
-      "Cumulonimbus clouds are associated with thunderstorms and severe weather.",
+      "Most weather occurs within the troposphere."
   },
 
   {
@@ -26,22 +25,42 @@ export const questions = [
     subject: "meteorology",
     topic: "Pressure",
 
-    difficulty: "medium",
-
     question:
-      "What does QNH allow the altimeter to read?",
+      "When QNH is set on an altimeter, the instrument indicates:",
 
     options: [
-      "Height above runway",
+      "Pressure altitude",
       "Flight level",
       "Altitude above mean sea level",
-      "Density altitude",
+      "Height above aerodrome"
     ],
 
     correctAnswer:
       "Altitude above mean sea level",
 
     explanation:
-      "QNH makes the altimeter indicate altitude above MSL.",
+      "QNH makes the altimeter indicate altitude above MSL."
   },
+
+  {
+    id: 3,
+    subject: "meteorology",
+    topic: "Clouds",
+
+    question:
+      "The presence of thunder and severe turbulence may be expected in:",
+
+    options: [
+      "Cirrus",
+      "Altostratus",
+      "Cumulonimbus",
+      "Stratus"
+    ],
+
+    correctAnswer:
+      "Cumulonimbus",
+
+    explanation:
+      "Cumulonimbus clouds are associated with thunderstorms."
+  }
 ]

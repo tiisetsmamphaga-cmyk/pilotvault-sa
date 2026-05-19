@@ -19,7 +19,7 @@ export default function DashboardPage() {
     window.location.href = "/"
   }}
   variant="outline"
-  className="absolute top-8 right-8 border-[#1e3a5f] bg-[#0b1f35] text-white hover:bg-[#1e3a5f] hover:text-white rounded-xl px-5"
+  className="absolute top-12 right-8 border-[#1e3a5f] bg-[#0b1f35] text-white hover:bg-[#1e3a5f] hover:text-white rounded-xl px-5"
 >
   ← Back to Home
 </Button>

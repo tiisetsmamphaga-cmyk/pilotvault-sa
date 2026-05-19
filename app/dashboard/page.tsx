@@ -14,14 +14,15 @@ const subjects = [
 export default function DashboardPage() {
   return (
      <main className="min-h-screen bg-[#06111f] text-white flex relative">
-      <button
-        onClick={() => {
-          window.location.href = "/"
-        }}
-        className="absolute top-6 right-6 text-sm text-[#f4b400] hover:text-[#ffd24d] transition"
-      >
-        ← Back to Home
-      </button>
+      <Button
+  onClick={() => {
+    window.location.href = "/"
+  }}
+  variant="outline"
+  className="absolute top-8 right-8 border-[#1e3a5f] bg-[#0b1f35] text-white hover:bg-[#1e3a5f] hover:text-white rounded-xl px-5"
+>
+  ← Back to Home
+</Button>
 
       <aside className="hidden lg:flex w-56 border-r border-[#1e3a5f] bg-[#081726] p-5 flex-col">
         <div className="space-y-2 mt-10">

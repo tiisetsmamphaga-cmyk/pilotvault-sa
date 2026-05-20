@@ -3449,5 +3449,84 @@ correctAnswer:"3–4 oktas",
 
 explanation:
 "Scattered cloud cover is SCT."
+},
+{
+id:171,
+subject:"meteorology",
+topic:"Winds Aloft",
+
+question:"The wind speed on the South East coast at 3000 ft is:",
+
+options:[
+"10 kts",
+"15 kts",
+"20 kts",
+"25 kts"
+],
+
+correctAnswer:"15 kts",
+
+explanation:
+"According to the Winds and Temperatures chart, the wind speed is 15 kts."
+},
+
+{
+id:172,
+subject:"meteorology",
+topic:"Winds Aloft",
+
+question:"The wind direction on the Natal North Coast at 5000 ft is:",
+
+options:[
+"095°T",
+"105°T",
+"115°T",
+"125°T"
+],
+
+correctAnswer:"115°T",
+
+explanation:
+"The Winds and Temperatures chart shows 115° True."
+},
+
+{
+id:173,
+subject:"meteorology",
+topic:"Winds Aloft",
+
+question:"The temperature at 5000 ft at S30° E015° is:",
+
+options:[
+"ISA+3°C",
+"ISA+5°C",
+"ISA+7°C",
+"ISA+10°C"
+],
+
+correctAnswer:"ISA+7°C",
+
+explanation:
+"The chart indicates ISA +7°C."
+},
+
+{
+id:174,
+subject:"meteorology",
+topic:"Winds Aloft",
+
+question:"The wind direction and velocity at 4000 ft at S25° E015° is:",
+
+options:[
+"201/11",
+"211/11",
+"221/11",
+"231/11"
+],
+
+correctAnswer:"221/11",
+
+explanation:
+"The chart indicates 221° at 11 knots."
 }
 ]

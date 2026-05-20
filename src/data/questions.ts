@@ -1923,5 +1923,619 @@ correctAnswer:
 
 explanation:
 "Coastal lows often bring cloudy wet conditions."
+},
+{
+id:96,
+subject:"meteorology",
+topic:"Wind",
+
+question:"In the Southern Hemisphere, an aircraft subjected to left drift is:",
+
+options:[
+"Flying towards a high pressure area",
+"Flying towards a low pressure area",
+"Flying towards a front",
+"Flying towards a ridge"
+],
+
+correctAnswer:"Flying towards a low pressure area",
+
+explanation:
+"In the Southern Hemisphere, left drift indicates movement toward lower pressure."
+},
+
+{
+id:97,
+subject:"meteorology",
+topic:"Wind",
+
+question:"In the Southern Hemisphere, an aircraft subjected to right drift is:",
+
+options:[
+"Flying towards a high pressure area",
+"Flying towards a low pressure area",
+"Flying into a trough",
+"Flying into unstable air"
+],
+
+correctAnswer:"Flying towards a high pressure area",
+
+explanation:
+"Right drift indicates movement toward higher pressure."
+},
+
+{
+id:98,
+subject:"meteorology",
+topic:"Icing",
+
+question:"Clear ice is caused by:",
+
+options:[
+"Small droplets freezing instantly",
+"Large supercooled droplets freezing slowly",
+"Snow crystals",
+"Dry air"
+],
+
+correctAnswer:
+"Large supercooled droplets freezing slowly",
+
+explanation:
+"Large droplets spread before freezing, creating clear ice."
+},
+
+{
+id:99,
+subject:"meteorology",
+topic:"Icing",
+
+question:"Carburettor icing can occur:",
+
+options:[
+"Only below 0°C",
+"Only above 30°C",
+"At temperatures up to +25°C in humid air",
+"Only in visible moisture"
+],
+
+correctAnswer:
+"At temperatures up to +25°C in humid air",
+
+explanation:
+"Carb icing can occur at surprisingly warm temperatures."
+},
+
+{
+id:100,
+subject:"meteorology",
+topic:"Air Masses",
+
+question:"A polar maritime air mass approaching South Africa is:",
+
+options:[
+"Warm and dry",
+"Cold and moist",
+"Hot and humid",
+"Warm and stable"
+],
+
+correctAnswer:"Cold and moist",
+
+explanation:
+"Polar maritime air originates over cold oceans."
+},
+
+{
+id:101,
+subject:"meteorology",
+topic:"Air Masses",
+
+question:"As polar maritime air passes over South Africa during summer:",
+
+options:[
+"It becomes more stable",
+"It absorbs heat and becomes unstable",
+"It loses moisture",
+"It becomes colder"
+],
+
+correctAnswer:
+"It absorbs heat and becomes unstable",
+
+explanation:
+"The lower layers warm and become unstable."
+},
+
+{
+id:102,
+subject:"meteorology",
+topic:"Air Masses",
+
+question:"A tropical continental air mass moving over a cool surface will:",
+
+options:[
+"Become unstable",
+"Lose heat and become stable",
+"Increase humidity",
+"Produce thunderstorms"
+],
+
+correctAnswer:
+"Lose heat and become stable",
+
+explanation:
+"Cooling in lower layers stabilizes the air."
+},
+
+{
+id:103,
+subject:"meteorology",
+topic:"Charts",
+
+question:"A line joining places of equal pressure is called:",
+
+options:[
+"Isotherm",
+"Isobar",
+"Isohyet",
+"Contour"
+],
+
+correctAnswer:"Isobar",
+
+explanation:
+"Isobars connect locations of equal atmospheric pressure."
+},
+
+{
+id:104,
+subject:"meteorology",
+topic:"Charts",
+
+question:"A geostrophic wind flows:",
+
+options:[
+"Across isobars",
+"Parallel to straight isobars",
+"Directly into low pressure",
+"Toward high pressure"
+],
+
+correctAnswer:
+"Parallel to straight isobars",
+
+explanation:
+"Pressure gradient force and Coriolis force balance."
+},
+
+{
+id:105,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"FEW cloud coverage means:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"1–2 oktas",
+
+explanation:
+"FEW indicates minimal cloud cover."
+},
+
+{
+id:106,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"SCT cloud coverage means:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"3–4 oktas",
+
+explanation:
+"SCT means scattered cloud."
+},
+
+{
+id:107,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"BKN cloud coverage means:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"5–7 oktas",
+
+explanation:
+"BKN means broken cloud."
+},
+
+{
+id:108,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"OVC cloud coverage means:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"8 oktas",
+
+explanation:
+"OVC means overcast."
+},
+
+{
+id:109,
+subject:"meteorology",
+topic:"Visibility",
+
+question:"CAVOK indicates:",
+
+options:[
+"Visibility less than 5 km",
+"Visibility more than 10 km with no significant cloud below 5000ft",
+"Heavy fog",
+"Thunderstorms nearby"
+],
+
+correctAnswer:
+"Visibility more than 10 km with no significant cloud below 5000ft",
+
+explanation:
+"CAVOK indicates good visibility and cloud conditions."
+},
+
+{
+id:110,
+subject:"meteorology",
+topic:"ATIS",
+
+question:"ATIS includes:",
+
+options:[
+"Fuel prices",
+"Passenger information",
+"Wind, QNH, visibility and runway in use",
+"Maintenance details"
+],
+
+correctAnswer:
+"Wind, QNH, visibility and runway in use",
+
+explanation:
+"ATIS provides operational information for pilots."
+},
+{
+id:111,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"A trough is:",
+
+options:[
+"An extension of high pressure",
+"A wedge of low pressure",
+"A mountain wave",
+"A frontal cloud"
+],
+
+correctAnswer:"A wedge of low pressure",
+
+explanation:
+"A trough is an elongated area of relatively low pressure."
+},
+
+{
+id:112,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"A ridge is associated with:",
+
+options:[
+"Low pressure",
+"High pressure",
+"Instability",
+"Thunderstorms"
+],
+
+correctAnswer:"High pressure",
+
+explanation:
+"A ridge is an extension of a high pressure system."
+},
+
+{
+id:113,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"Weather associated with high pressure usually includes:",
+
+options:[
+"Thunderstorms",
+"Heavy rain",
+"Fine weather with light winds",
+"Hail"
+],
+
+correctAnswer:
+"Fine weather with light winds",
+
+explanation:
+"High pressure generally produces stable weather."
+},
+
+{
+id:114,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"Stable air generally produces:",
+
+options:[
+"Cumulonimbus clouds",
+"Poor visibility",
+"Strong convection",
+"Thunderstorms"
+],
+
+correctAnswer:"Poor visibility",
+
+explanation:
+"Stable air tends to trap haze and reduce visibility."
+},
+
+{
+id:115,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Stratus cloud may be formed:",
+
+options:[
+"By convection",
+"Orographically",
+"By thunderstorms",
+"By frontal lifting only"
+],
+
+correctAnswer:"Orographically",
+
+explanation:
+"Stratus can form when stable air is forced upward over terrain."
+},
+
+{
+id:116,
+subject:"meteorology",
+topic:"Mountain Weather",
+
+question:"Static lenticular clouds indicate:",
+
+options:[
+"Smooth conditions",
+"Considerable turbulence",
+"Fog formation",
+"Stable sea breeze"
+],
+
+correctAnswer:"Considerable turbulence",
+
+explanation:
+"Lenticular clouds indicate mountain wave activity."
+},
+
+{
+id:117,
+subject:"meteorology",
+topic:"Mountain Weather",
+
+question:"Strong winds over mountains in stable conditions produce:",
+
+options:[
+"Sea breeze",
+"Mountain wave turbulence",
+"Radiation fog",
+"Frontal fog"
+],
+
+correctAnswer:
+"Mountain wave turbulence",
+
+explanation:
+"Strong stable airflow across mountains creates wave patterns."
+},
+
+{
+id:118,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Precipitation in the form of rain can occur from:",
+
+options:[
+"Altocumulus",
+"Nimbostratus",
+"Cirrus",
+"Stratus only"
+],
+
+correctAnswer:"Nimbostratus",
+
+explanation:
+"Nimbostratus commonly produces continuous rain."
+},
+
+{
+id:119,
+subject:"meteorology",
+topic:"Fronts",
+
+question:"An occluded front forms when:",
+
+options:[
+"A warm front overtakes a cold front",
+"A cold front overtakes a warm front",
+"Two highs meet",
+"Two lows meet"
+],
+
+correctAnswer:
+"A cold front overtakes a warm front",
+
+explanation:
+"An occlusion occurs when the faster cold front catches the warm front."
+},
+
+{
+id:120,
+subject:"meteorology",
+topic:"Southern Hemisphere",
+
+question:"During summer in Southern Africa, the ITCZ is generally located:",
+
+options:[
+"In the Northern Hemisphere",
+"In the Southern Hemisphere",
+"Over Antarctica",
+"Over the Atlantic Ocean"
+],
+
+correctAnswer:
+"In the Southern Hemisphere",
+
+explanation:
+"The ITCZ shifts south during Southern Hemisphere summer."
+},
+
+{
+id:121,
+subject:"meteorology",
+topic:"Wind",
+
+question:"Wind flows from:",
+
+options:[
+"Low pressure to high pressure",
+"High pressure to low pressure",
+"East to west only",
+"North to south only"
+],
+
+correctAnswer:
+"High pressure to low pressure",
+
+explanation:
+"Pressure differences drive airflow."
+},
+
+{
+id:122,
+subject:"meteorology",
+topic:"Wind",
+
+question:"In the Southern Hemisphere, wind around a high pressure system rotates:",
+
+options:[
+"Clockwise inward",
+"Anticlockwise outward",
+"Clockwise outward",
+"Anticlockwise inward"
+],
+
+correctAnswer:
+"Anticlockwise outward",
+
+explanation:
+"Southern Hemisphere highs rotate anticlockwise."
+},
+
+{
+id:123,
+subject:"meteorology",
+topic:"Icing",
+
+question:"Hoar frost may be expected:",
+
+options:[
+"After heavy rainfall",
+"On clear cold nights",
+"During thunderstorms",
+"Only in clouds"
+],
+
+correctAnswer:
+"On clear cold nights",
+
+explanation:
+"Hoar frost forms when surfaces cool below freezing."
+},
+
+{
+id:124,
+subject:"meteorology",
+topic:"Humidity",
+
+question:"Relative humidity generally:",
+
+options:[
+"Increases with increasing temperature",
+"Decreases with increasing temperature",
+"Never changes",
+"Equals dew point"
+],
+
+correctAnswer:
+"Decreases with increasing temperature",
+
+explanation:
+"As temperature rises, air can hold more moisture."
+},
+
+{
+id:125,
+subject:"meteorology",
+topic:"Humidity",
+
+question:"Dew point is the temperature at which:",
+
+options:[
+"Air becomes unstable",
+"Air becomes saturated",
+"Pressure increases",
+"Wind speed decreases"
+],
+
+correctAnswer:
+"Air becomes saturated",
+
+explanation:
+"Dew point is the temperature at which saturation occurs."
 }
 ]

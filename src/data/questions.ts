@@ -1311,5 +1311,617 @@ correctAnswer:"A ridging high pressure system",
 
 explanation:
 "The South-Westerly Buster is associated with ridging highs behind coastal lows."
+},
+{
+id:66,
+subject:"meteorology",
+topic:"METAR",
+
+question:"A METAR is:",
+
+options:[
+"A weather forecast",
+"A report of actual weather at an aerodrome",
+"A winds aloft chart",
+"A synoptic forecast"
+],
+
+correctAnswer:
+"A report of actual weather at an aerodrome",
+
+explanation:
+"A METAR reports actual observed weather conditions."
+},
+
+{
+id:67,
+subject:"meteorology",
+topic:"TAF",
+
+question:"A TAF is:",
+
+options:[
+"An actual weather report",
+"A weather forecast for an aerodrome",
+"A cloud chart",
+"A pressure report"
+],
+
+correctAnswer:
+"A weather forecast for an aerodrome",
+
+explanation:
+"A TAF provides forecast weather conditions."
+},
+
+{
+id:68,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"The symbol FEW indicates:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"1–2 oktas",
+
+explanation:
+"FEW means only a small amount of cloud cover."
+},
+
+{
+id:69,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"The symbol SCT indicates:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"3–4 oktas",
+
+explanation:
+"SCT means scattered cloud."
+},
+
+{
+id:70,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"The symbol BKN indicates:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"5–7 oktas",
+
+explanation:
+"BKN means broken cloud."
+},
+
+{
+id:71,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"The symbol OVC indicates:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"8 oktas",
+
+explanation:
+"OVC means overcast cloud."
+},
+
+{
+id:72,
+subject:"meteorology",
+topic:"Visibility",
+
+question:"CAVOK means:",
+
+options:[
+"Visibility less than 5 km",
+"Visibility 10 km or more with no significant cloud below 5000ft",
+"Fog conditions",
+"Heavy rain"
+],
+
+correctAnswer:
+"Visibility 10 km or more with no significant cloud below 5000ft",
+
+explanation:
+"CAVOK indicates good visibility and cloud conditions."
+},
+
+{
+id:73,
+subject:"meteorology",
+topic:"ATIS",
+
+question:"ATIS information includes:",
+
+options:[
+"Fuel availability",
+"Surface wind, QNH, visibility and runway in use",
+"Aircraft maintenance",
+"Passenger information"
+],
+
+correctAnswer:
+"Surface wind, QNH, visibility and runway in use",
+
+explanation:
+"ATIS provides important operational information."
+},
+
+{
+id:74,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"A trough is:",
+
+options:[
+"A high pressure area",
+"A wedge of low pressure",
+"A mountain wave",
+"A cloud formation"
+],
+
+correctAnswer:
+"A wedge of low pressure",
+
+explanation:
+"A trough is an elongated area of low pressure."
+},
+
+{
+id:75,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"A col is:",
+
+options:[
+"An area between two highs and two lows",
+"An isolated thunderstorm",
+"A mountain wave",
+"A cold front"
+],
+
+correctAnswer:
+"An area between two highs and two lows",
+
+explanation:
+"A col is a region of weak pressure gradient."
+},
+
+{
+id:76,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"An isobar joins places of:",
+
+options:[
+"Equal temperature",
+"Equal altitude",
+"Equal pressure",
+"Equal humidity"
+],
+
+correctAnswer:"Equal pressure",
+
+explanation:
+"Isobars connect points with equal pressure."
+},
+
+{
+id:77,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"A geostrophic wind:",
+
+options:[
+"Flows across isobars",
+"Flows parallel to straight isobars",
+"Flows directly into low pressure",
+"Stops at mountains"
+],
+
+correctAnswer:
+"Flows parallel to straight isobars",
+
+explanation:
+"Geostrophic wind results from pressure gradient and Coriolis balance."
+},
+
+{
+id:78,
+subject:"meteorology",
+topic:"Fog",
+
+question:"Radiation fog forms mainly:",
+
+options:[
+"During daytime",
+"At night",
+"Only over oceans",
+"During thunderstorms"
+],
+
+correctAnswer:"At night",
+
+explanation:
+"Radiation fog forms from overnight surface cooling."
+},
+
+{
+id:79,
+subject:"meteorology",
+topic:"Fog",
+
+question:"Advection fog is commonly found:",
+
+options:[
+"Over deserts",
+"Over coastal areas",
+"Over mountains",
+"Over forests"
+],
+
+correctAnswer:"Over coastal areas",
+
+explanation:
+"Advection fog often forms near coastlines."
+},
+
+{
+id:80,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Clouds with severe vertical development are usually:",
+
+options:[
+"Cirrus",
+"Stratus",
+"Cumulonimbus",
+"Altostratus"
+],
+
+correctAnswer:"Cumulonimbus",
+
+explanation:
+"Cumulonimbus clouds develop vertically and produce severe weather."
+},
+{
+id:81,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Cirrostratus clouds are:",
+
+options:[
+"Low thick clouds",
+"Middle level rain clouds",
+"Thin high clouds composed of ice crystals",
+"Thunderstorm clouds"
+],
+
+correctAnswer:
+"Thin high clouds composed of ice crystals",
+
+explanation:
+"Cirrostratus are thin high-level clouds made of ice crystals."
+},
+
+{
+id:82,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"The indications of an approaching warm front are:",
+
+options:[
+"Cumulonimbus followed by clear skies",
+"Cirrus followed by Cirrostratus and Altostratus",
+"Stratus followed by fog",
+"No clouds"
+],
+
+correctAnswer:
+"Cirrus followed by Cirrostratus and Altostratus",
+
+explanation:
+"Warm fronts generally show a gradual cloud sequence."
+},
+
+{
+id:83,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Precipitation in the form of light drizzle is expected from:",
+
+options:[
+"Cumulonimbus",
+"Stratus",
+"Cirrus",
+"Altocumulus"
+],
+
+correctAnswer:"Stratus",
+
+explanation:
+"Stratus clouds commonly produce light drizzle."
+},
+
+{
+id:84,
+subject:"meteorology",
+topic:"Thunderstorms",
+
+question:"The most hazardous thunderstorms to aircraft are:",
+
+options:[
+"Isolated thunderstorms",
+"Embedded thunderstorms",
+"Heat thunderstorms",
+"Small thunderstorms"
+],
+
+correctAnswer:"Embedded thunderstorms",
+
+explanation:
+"Embedded thunderstorms can be hidden inside cloud layers."
+},
+
+{
+id:85,
+subject:"meteorology",
+topic:"Thunderstorms",
+
+question:"The cumulus stage of a thunderstorm is characterized by:",
+
+options:[
+"Only downdrafts",
+"Only updrafts",
+"Heavy precipitation",
+"Anvil formation"
+],
+
+correctAnswer:"Only updrafts",
+
+explanation:
+"The cumulus stage consists mainly of strong updrafts."
+},
+
+{
+id:86,
+subject:"meteorology",
+topic:"Fronts",
+
+question:"Following the passage of a cold front:",
+
+options:[
+"Pressure decreases",
+"Pressure rises",
+"Wind stops",
+"Temperature rises"
+],
+
+correctAnswer:"Pressure rises",
+
+explanation:
+"Pressure usually begins increasing after a cold front passes."
+},
+
+{
+id:87,
+subject:"meteorology",
+topic:"Fronts",
+
+question:"Following a warm front in South Africa:",
+
+options:[
+"Pressure begins to rise",
+"Pressure suddenly drops",
+"No pressure change occurs",
+"Visibility becomes zero"
+],
+
+correctAnswer:"Pressure begins to rise",
+
+explanation:
+"Pressure normally starts recovering after warm front passage."
+},
+
+{
+id:88,
+subject:"meteorology",
+topic:"Temperature",
+
+question:"A temperature inversion occurs when:",
+
+options:[
+"Temperature decreases with height",
+"Temperature remains constant",
+"Temperature increases with height",
+"Humidity increases with height"
+],
+
+correctAnswer:
+"Temperature increases with height",
+
+explanation:
+"Inversions occur when temperature rises with altitude."
+},
+
+{
+id:89,
+subject:"meteorology",
+topic:"Temperature",
+
+question:"Surface temperature inversions are normally caused by:",
+
+options:[
+"Heavy rainfall",
+"Clear nights with little wind",
+"Thunderstorms",
+"Strong winds"
+],
+
+correctAnswer:
+"Clear nights with little wind",
+
+explanation:
+"Radiational cooling at night creates inversions."
+},
+
+{
+id:90,
+subject:"meteorology",
+topic:"Wind",
+
+question:"An anabatic wind flows:",
+
+options:[
+"Downhill during daytime",
+"Upslope during daytime",
+"Upslope during night",
+"Across mountains"
+],
+
+correctAnswer:"Upslope during daytime",
+
+explanation:
+"Anabatic winds move upslope because of surface heating."
+},
+
+{
+id:91,
+subject:"meteorology",
+topic:"Wind",
+
+question:"A katabatic wind flows:",
+
+options:[
+"Upslope during daytime",
+"Downslope during nighttime",
+"Across coastlines",
+"Only over oceans"
+],
+
+correctAnswer:"Downslope during nighttime",
+
+explanation:
+"Katabatic winds flow downslope as air cools."
+},
+
+{
+id:92,
+subject:"meteorology",
+topic:"Air Masses",
+
+question:"A tropical continental air mass is generally:",
+
+options:[
+"Cold and wet",
+"Warm and dry",
+"Cold and dry",
+"Warm and unstable"
+],
+
+correctAnswer:"Warm and dry",
+
+explanation:
+"Tropical continental air masses are warm and dry."
+},
+
+{
+id:93,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"The Black South Easter occurs when:",
+
+options:[
+"A low pressure develops inland",
+"A strong high pressure develops west of Cape Town",
+"A mountain wave forms",
+"A warm front passes"
+],
+
+correctAnswer:
+"A strong high pressure develops west of Cape Town",
+
+explanation:
+"The Black South Easter is associated with strong pressure gradients."
+},
+
+{
+id:94,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"South African summer is generally characterized by:",
+
+options:[
+"Cold dry air",
+"Moist south-easterly trade winds",
+"Snowfall",
+"Persistent fog"
+],
+
+correctAnswer:
+"Moist south-easterly trade winds",
+
+explanation:
+"Summer conditions are influenced by moist trade winds."
+},
+
+{
+id:95,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"A coastal low on the east coast of South Africa commonly causes:",
+
+options:[
+"Clear skies",
+"Overcast conditions with drizzle",
+"Mountain waves",
+"Extreme turbulence"
+],
+
+correctAnswer:
+"Overcast conditions with drizzle",
+
+explanation:
+"Coastal lows often bring cloudy wet conditions."
 }
 ]

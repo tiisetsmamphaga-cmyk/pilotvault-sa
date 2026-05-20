@@ -212,148 +212,177 @@ export default function SubjectPracticePage() {
     )
   }
 
-  if (examMode === "menu") {
-    return (
-      <main className="min-h-screen bg-[#06111f] px-6 py-10 text-white">
-        <div className="mx-auto max-w-6xl">
-          <Link
-            href="/practice"
-            className="text-sm font-medium text-[#f4b400] hover:text-white"
-          >
-            ← Back to Practice
-          </Link>
-
-          <div className="mt-10">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#f4b400]">
-              Practice Mode
+if (examMode === "menu") {
+  return (
+    <main className="min-h-screen bg-[#06111f] text-white">
+      <header className="sticky top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
+              PilotVault SA
             </p>
 
-            <h1 className="mt-3 text-4xl font-bold capitalize">
-              {subject.replaceAll("-", " ")}
+            <h1 className="text-lg font-bold capitalize">
+              {subject.replaceAll("-", " ")} Practice
             </h1>
-
-            <p className="mt-4 max-w-2xl text-slate-300">
-              Choose a 25-question randomized mock exam or focus on one topic at
-              a time.
-            </p>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            <button
-              onClick={() => setShowStartMockPrompt(true)}
-              className="rounded-2xl border border-[#f4b400]/50 bg-[#081726] p-6 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
+          <div className="flex items-center gap-3">
+            <Link
+              href="/practice"
+              className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-5 py-2 text-sm hover:bg-[#1e3a5f]"
             >
-              <p className="text-sm uppercase tracking-wider text-[#f4b400]">
-                Mock Exam
+              Subjects
+            </Link>
+
+            <Link
+              href="/dashboard"
+              className="rounded-xl bg-[#f4b400] px-5 py-2 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
+            >
+              Dashboard
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <section className="mx-auto max-w-7xl px-6 py-12">
+        <div className="rounded-3xl border border-[#1e3a5f] bg-gradient-to-r from-[#081726] to-[#0b1f35] p-8">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
+            SACAA Exam Preparation
+          </p>
+
+          <h2 className="mt-4 text-4xl font-bold">
+            Choose Your Practice Mode
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-slate-300">
+            Start a timed 25-question mock exam or focus on one weak topic at a
+            time.
+          </p>
+        </div>
+
+        <button
+          onClick={() => setShowStartMockPrompt(true)}
+          className="mt-8 w-full rounded-3xl border border-[#f4b400]/50 bg-[#081726] p-8 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
+        >
+          <p className="text-sm uppercase tracking-wider text-[#f4b400]">
+            Mock Exam
+          </p>
+
+          <h2 className="mt-3 text-3xl font-bold">
+            25 Random Questions
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-slate-300">
+            Simulate a SACAA-style exam with randomized questions, timing,
+            question navigation, finish confirmation and final score.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
+            <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
+              25 minutes
+            </span>
+
+            <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
+              75% pass mark
+            </span>
+
+            <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
+              {Math.min(MOCK_QUESTION_COUNT, subjectQuestions.length)} questions
+            </span>
+          </div>
+        </button>
+
+        <div className="mt-10">
+          <p className="text-sm uppercase tracking-wider text-[#f4b400]">
+            Practice by Topic
+          </p>
+
+          <h2 className="mt-3 text-2xl font-bold">
+            Choose a Topic
+          </h2>
+
+          <p className="mt-3 text-sm text-slate-300">
+            Focus on weak areas and review explanations while practicing.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {topics.map((topic) => {
+              const count = subjectQuestions.filter(
+                (q) => q.topic === topic
+              ).length
+
+              return (
+                <button
+                  key={topic}
+                  onClick={() => startTopicPractice(topic)}
+                  className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
+                >
+                  <h3 className="text-lg font-bold text-white">
+                    {topic}
+                  </h3>
+
+                  <p className="mt-2 text-sm text-slate-400">
+                    {count} questions available
+                  </p>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {showStartMockPrompt && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
+          <div className="w-full max-w-lg rounded-2xl border border-[#1e3a5f] bg-white p-6 text-slate-900 shadow-2xl">
+            <h2 className="text-2xl font-bold">
+              Start Mock Exam
+            </h2>
+
+            <p className="mt-4 text-slate-700">
+              You are about to start a 25-question mock examination. Please
+              ensure you have everything you require before starting.
+            </p>
+
+            <div className="mt-5 rounded-xl border border-slate-300 bg-slate-50 p-4">
+              <p className="font-semibold text-slate-900">
+                Exam information
               </p>
 
-              <h2 className="mt-3 text-2xl font-bold">
-                25 Random Questions
-              </h2>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Number of questions: 25 randomized questions</li>
+                <li>• Time allowed: 25 minutes</li>
+                <li>• Pass mark: 75%</li>
+                <li>• You may navigate between questions before finishing</li>
+                <li>• Your score will only be shown after finishing</li>
+              </ul>
+            </div>
 
-              <p className="mt-3 text-sm text-slate-300">
-                Simulate a real SACAA-style exam with randomized questions,
-                timing and final score.
-              </p>
+            <p className="mt-4 text-sm text-slate-600">
+              Once you start, the timer will begin immediately.
+            </p>
 
-              <div className="mt-6 grid gap-2 text-sm text-slate-400">
-                <p>Time limit: 25 minutes</p>
-                <p>Pass mark: 75%</p>
-                <p>{Math.min(MOCK_QUESTION_COUNT, subjectQuestions.length)} questions selected</p>
-              </div>
-            </button>
+            <div className="mt-6 flex justify-end gap-3">
+              <button
+                onClick={() => setShowStartMockPrompt(false)}
+                className="rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+              >
+                Cancel
+              </button>
 
-            <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 lg:col-span-2">
-              <p className="text-sm uppercase tracking-wider text-[#f4b400]">
-                Practice by Topic
-              </p>
-
-              <h2 className="mt-3 text-2xl font-bold">
-                Choose a Topic
-              </h2>
-
-              <p className="mt-3 text-sm text-slate-300">
-                Focus on weak areas and review explanations while practicing.
-              </p>
-
-              <div className="mt-6 grid gap-3 md:grid-cols-2">
-                {topics.map((topic) => {
-                  const count = subjectQuestions.filter(
-                    (q) => q.topic === topic
-                  ).length
-
-                  return (
-                    <button
-                      key={topic}
-                      onClick={() => startTopicPractice(topic)}
-                      className="rounded-xl border border-[#1e3a5f] bg-[#06111f] p-4 text-left transition hover:border-[#f4b400]"
-                    >
-                      <h3 className="font-semibold text-white">
-                        {topic}
-                      </h3>
-
-                      <p className="mt-2 text-sm text-slate-400">
-                        {count} questions available
-                      </p>
-                    </button>
-                  )
-                })}
-              </div>
+              <button
+                onClick={startMockExam}
+                className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
+              >
+                Start Exam
+              </button>
             </div>
           </div>
         </div>
-
-        {showStartMockPrompt && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
-            <div className="w-full max-w-lg rounded-2xl border border-[#1e3a5f] bg-white p-6 text-slate-900 shadow-2xl">
-              <h2 className="text-2xl font-bold">
-                Start Mock Exam
-              </h2>
-
-              <p className="mt-4 text-slate-700">
-                You are about to start a 25-question mock examination. Please
-                ensure you have everything you require before starting.
-              </p>
-
-              <div className="mt-5 rounded-xl border border-slate-300 bg-slate-50 p-4">
-                <p className="font-semibold text-slate-900">
-                  Exam information
-                </p>
-
-                <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                  <li>• Number of questions: 25 randomized questions</li>
-                  <li>• Time allowed: 25 minutes</li>
-                  <li>• Pass mark: 75%</li>
-                  <li>• You may navigate between questions before finishing</li>
-                  <li>• Your score will only be shown after finishing</li>
-                </ul>
-              </div>
-
-              <p className="mt-4 text-sm text-slate-600">
-                Once you start, the timer will begin immediately.
-              </p>
-
-              <div className="mt-6 flex justify-end gap-3">
-                <button
-                  onClick={() => setShowStartMockPrompt(false)}
-                  className="rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-                >
-                  Cancel
-                </button>
-
-                <button
-                  onClick={startMockExam}
-                  className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
-                >
-                  Start Exam
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-      </main>
-    )
-  }
+      )}
+    </main>
+  )
+}
 
   if (isSubmitted) {
     return (

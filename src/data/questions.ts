@@ -2843,5 +2843,611 @@ correctAnswer:"10 km or more",
 
 explanation:
 "CAVOK requires visibility of at least 10 km."
+},
+{
+id:141,
+subject:"meteorology",
+topic:"Fronts",
+
+question:"Warm air forced to rise over cold air may result in:",
+
+options:[
+"A cold occlusion",
+"A warm occlusion",
+"A ridge",
+"A trough"
+],
+
+correctAnswer:"A cold occlusion",
+
+explanation:
+"When warm air rises over colder denser air, an occlusion can develop."
+},
+
+{
+id:142,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"The cloud type most commonly associated with convection is:",
+
+options:[
+"Stratus",
+"Cirrus",
+"Cumulus",
+"Nimbostratus"
+],
+
+correctAnswer:"Cumulus",
+
+explanation:
+"Convection causes warm air to rise and form cumulus clouds."
+},
+
+{
+id:143,
+subject:"meteorology",
+topic:"Thunderstorms",
+
+question:"Thunderstorms require:",
+
+options:[
+"Stable air",
+"Moist unstable air and lifting action",
+"High pressure only",
+"Cold dry air"
+],
+
+correctAnswer:
+"Moist unstable air and lifting action",
+
+explanation:
+"Moisture, instability and lifting are the three ingredients."
+},
+
+{
+id:144,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"A high pressure system is associated with:",
+
+options:[
+"Rising unstable air",
+"Subsiding stable air",
+"Thunderstorms",
+"Heavy rain"
+],
+
+correctAnswer:"Subsiding stable air",
+
+explanation:
+"High pressure causes sinking air and stable weather."
+},
+
+{
+id:145,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Cirrus clouds consist mainly of:",
+
+options:[
+"Water droplets",
+"Ice crystals",
+"Dust particles",
+"Rain droplets"
+],
+
+correctAnswer:"Ice crystals",
+
+explanation:
+"Cirrus clouds are high clouds formed mainly of ice crystals."
+},
+
+{
+id:146,
+subject:"meteorology",
+topic:"Icing",
+
+question:"Large cumulonimbus clouds commonly produce:",
+
+options:[
+"Light drizzle",
+"Hail",
+"Fog",
+"Smooth air"
+],
+
+correctAnswer:"Hail",
+
+explanation:
+"Strong updrafts in cumulonimbus clouds create hail."
+},
+
+{
+id:147,
+subject:"meteorology",
+topic:"Temperature",
+
+question:"The ISA sea-level air density is approximately:",
+
+options:[
+"1025 g/m³",
+"1225 g/m³",
+"1500 g/m³",
+"950 g/m³"
+],
+
+correctAnswer:"1225 g/m³",
+
+explanation:
+"ISA sea level density is approximately 1225 g/m³."
+},
+
+{
+id:148,
+subject:"meteorology",
+topic:"Wind",
+
+question:"The Coriolis force in the Southern Hemisphere deflects moving air:",
+
+options:[
+"To the right",
+"To the left",
+"Upward",
+"Downward"
+],
+
+correctAnswer:"To the left",
+
+explanation:
+"Southern Hemisphere airflow is deflected to the left."
+},
+
+{
+id:149,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Cumulonimbus clouds are associated with:",
+
+options:[
+"Smooth air only",
+"Thunderstorms and turbulence",
+"Fog only",
+"Stable conditions"
+],
+
+correctAnswer:
+"Thunderstorms and turbulence",
+
+explanation:
+"Cumulonimbus clouds bring severe weather."
+},
+
+{
+id:150,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"QFE makes an altimeter indicate:",
+
+options:[
+"Altitude above sea level",
+"Height above an aerodrome",
+"Pressure altitude",
+"Flight level"
+],
+
+correctAnswer:"Height above an aerodrome",
+
+explanation:
+"QFE references the local aerodrome elevation."
+},
+
+{
+id:151,
+subject:"meteorology",
+topic:"Humidity",
+
+question:"Warm air can hold:",
+
+options:[
+"Less moisture than cold air",
+"The same amount of moisture",
+"More moisture than cold air",
+"No moisture"
+],
+
+correctAnswer:
+"More moisture than cold air",
+
+explanation:
+"Warm air has greater moisture capacity."
+},
+
+{
+id:152,
+subject:"meteorology",
+topic:"Fog",
+
+question:"Radiation fog forms mainly because of:",
+
+options:[
+"Surface cooling at night",
+"Strong winds",
+"Mountain waves",
+"Heavy rainfall"
+],
+
+correctAnswer:
+"Surface cooling at night",
+
+explanation:
+"Radiation fog forms from overnight heat loss."
+},
+
+{
+id:153,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"The Cape Doctor occurs mainly during:",
+
+options:[
+"Winter",
+"Summer",
+"Spring only",
+"Autumn only"
+],
+
+correctAnswer:"Summer",
+
+explanation:
+"The Cape Doctor is mainly a summer wind."
+},
+
+{
+id:154,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"Flying from high pressure to low pressure means:",
+
+options:[
+"Look out below",
+"Look out above",
+"No altitude error",
+"QNH increases"
+],
+
+correctAnswer:"Look out below",
+
+explanation:
+"Your true altitude becomes lower than indicated."
+},
+
+{
+id:155,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"Flying from low pressure to high pressure means:",
+
+options:[
+"Look out below",
+"Look out above",
+"No change",
+"Pressure altitude decreases"
+],
+
+correctAnswer:"Look out above",
+
+explanation:
+"Your true altitude becomes higher than indicated."
+},
+{
+id:156,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"Anti-cyclones are characterized by:",
+
+options:[
+"Low pressure",
+"High pressure",
+"Strong convection",
+"Heavy precipitation"
+],
+
+correctAnswer:"High pressure",
+
+explanation:
+"Anti-cyclones are areas of high pressure with generally stable conditions."
+},
+
+{
+id:157,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"A common weather characteristic of stable air is:",
+
+options:[
+"Cumulonimbus clouds",
+"Stratiform clouds",
+"Thunderstorms",
+"Strong turbulence"
+],
+
+correctAnswer:"Stratiform clouds",
+
+explanation:
+"Stable air usually forms layered clouds."
+},
+
+{
+id:158,
+subject:"meteorology",
+topic:"Visibility",
+
+question:"Ground fog may appear during approach to:",
+
+options:[
+"Increase visibility",
+"Reduce visibility",
+"Improve cloud base",
+"Increase temperature"
+],
+
+correctAnswer:"Reduce visibility",
+
+explanation:
+"Visibility often reduces significantly on final approach through fog."
+},
+
+{
+id:159,
+subject:"meteorology",
+topic:"Temperature",
+
+question:"Adiabatic cooling occurs when:",
+
+options:[
+"Air rises and expands",
+"Air descends and compresses",
+"Air remains stationary",
+"Air becomes saturated"
+],
+
+correctAnswer:"Air rises and expands",
+
+explanation:
+"Rising air expands and cools without heat transfer."
+},
+
+{
+id:160,
+subject:"meteorology",
+topic:"Temperature",
+
+question:"A surface temperature inversion forms due to:",
+
+options:[
+"Strong thunderstorms",
+"Clear nights and little wind",
+"Mountain waves",
+"Warm fronts"
+],
+
+correctAnswer:
+"Clear nights and little wind",
+
+explanation:
+"Radiation cooling at night commonly forms inversions."
+},
+
+{
+id:161,
+subject:"meteorology",
+topic:"Wind",
+
+question:"A sea breeze occurs because:",
+
+options:[
+"The sea heats faster than land",
+"The land heats faster than the sea",
+"Pressure remains constant",
+"Mountains force air upward"
+],
+
+correctAnswer:
+"The land heats faster than the sea",
+
+explanation:
+"Warm air rises over land drawing cooler air inland."
+},
+
+{
+id:162,
+subject:"meteorology",
+topic:"Wind",
+
+question:"A land breeze occurs because:",
+
+options:[
+"The sea cools faster than land",
+"The land cools faster than the sea",
+"The Coriolis force increases",
+"Clouds form"
+],
+
+correctAnswer:
+"The land cools faster than the sea",
+
+explanation:
+"Cool air moves from land toward the sea at night."
+},
+
+{
+id:163,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"Pressure generally:",
+
+options:[
+"Increases with altitude",
+"Remains constant",
+"Decreases with altitude",
+"Doubles with altitude"
+],
+
+correctAnswer:"Decreases with altitude",
+
+explanation:
+"Atmospheric pressure decreases as altitude increases."
+},
+
+{
+id:164,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"The cloud type most associated with severe icing is:",
+
+options:[
+"Cirrus",
+"Cumulonimbus",
+"Stratus",
+"Altocumulus"
+],
+
+correctAnswer:"Cumulonimbus",
+
+explanation:
+"Cumulonimbus contains strong vertical motion and supercooled droplets."
+},
+
+{
+id:165,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"The anvil shape is associated with:",
+
+options:[
+"Cirrus",
+"Cumulonimbus",
+"Stratus",
+"Nimbostratus"
+],
+
+correctAnswer:"Cumulonimbus",
+
+explanation:
+"The dissipating stage of thunderstorms forms an anvil top."
+},
+
+{
+id:166,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"A Berg Wind is generally:",
+
+options:[
+"Cold and moist",
+"Hot and dry",
+"Cool and unstable",
+"Warm and humid"
+],
+
+correctAnswer:"Hot and dry",
+
+explanation:
+"Berg winds blow from the interior and are hot and dry."
+},
+
+{
+id:167,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"The Cape Doctor is a:",
+
+options:[
+"North-westerly wind",
+"South-easterly wind",
+"Mountain wind",
+"Coastal low"
+],
+
+correctAnswer:"South-easterly wind",
+
+explanation:
+"The Cape Doctor is a strong south-easterly wind."
+},
+
+{
+id:168,
+subject:"meteorology",
+topic:"METAR",
+
+question:"METAR reports are:",
+
+options:[
+"Forecast weather",
+"Actual weather observations",
+"Upper wind forecasts",
+"Synoptic charts"
+],
+
+correctAnswer:
+"Actual weather observations",
+
+explanation:
+"METAR reports actual conditions at an aerodrome."
+},
+
+{
+id:169,
+subject:"meteorology",
+topic:"TAF",
+
+question:"TAF reports are:",
+
+options:[
+"Actual weather observations",
+"Weather forecasts",
+"Pressure reports",
+"Upper wind reports"
+],
+
+correctAnswer:"Weather forecasts",
+
+explanation:
+"TAFs forecast weather conditions."
+},
+
+{
+id:170,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"Scattered cloud means:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"3–4 oktas",
+
+explanation:
+"Scattered cloud cover is SCT."
 }
 ]

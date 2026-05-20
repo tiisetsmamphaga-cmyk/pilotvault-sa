@@ -18,58 +18,61 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen pt-20 lg:pt-24 overflow-hidden bg-[#06111f]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="relative overflow-hidden bg-[#06111f] pt-24 sm:pt-28 lg:min-h-screen lg:pt-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -35 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-7 text-center lg:text-left"
           >
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white text-balance">
+              <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:mx-0 lg:text-6xl">
                 PASS YOUR SACAA EXAMS WITH{" "}
                 <span className="text-[#f4b400]">CONFIDENCE.</span>
               </h1>
-              <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
-                PilotVault SA is the most trusted exam preparation platform for student pilots in South Africa.
+
+              <p className="mx-auto max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg lg:mx-0">
+                PilotVault SA is the most trusted exam preparation platform for
+                student pilots in South Africa.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="mx-auto grid max-w-md grid-cols-1 gap-3 sm:grid-cols-2 lg:mx-0">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                  className="flex items-center gap-2"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[#1e3a5f]/70 bg-white/[0.03] px-3 py-3 sm:justify-start"
                 >
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#f4b400] flex items-center justify-center">
-                    <Check className="w-3 h-3 text-[#06111f]" />
+                  <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f4b400]">
+                    <Check className="h-3 w-3 text-[#06111f]" />
                   </div>
-                  <span className="text-gray-200 text-sm font-medium">{feature}</span>
+
+                  <span className="text-sm font-medium text-gray-200">
+                    {feature}
+                  </span>
                 </motion.div>
               ))}
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
             >
               <Button
                 type="button"
                 size="lg"
                 onClick={openSignupModal}
-                className="bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] font-semibold px-8 py-6 text-lg"
+                className="w-full bg-[#f4b400] px-8 py-6 text-base font-semibold text-[#06111f] hover:bg-[#d9a000] sm:w-auto sm:text-lg"
               >
                 Start Free Trial
               </Button>
-
-             
             </motion.div>
 
             <p className="text-sm text-gray-400">
@@ -78,12 +81,12 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 35 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative"
+            className="relative mx-auto w-full max-w-xl lg:max-w-none"
           >
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#1e3a5f]/70 shadow-2xl">
               <Image
                 src="/images/hero-cockpit.jpg"
                 alt="Cessna aircraft on apron at sunset"
@@ -91,17 +94,16 @@ export function HeroSection() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#06111f]/60 via-transparent to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#06111f]/30 to-transparent" />
-            </div>
 
-            
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06111f]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#06111f]/35 to-transparent" />
+            </div>
           </motion.div>
         </div>
       </div>
 
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#f4b400]/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1e3a5f]/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="pointer-events-none absolute left-[-120px] top-1/3 h-72 w-72 rounded-full bg-[#f4b400]/5 blur-3xl sm:h-96 sm:w-96" />
+      <div className="pointer-events-none absolute bottom-[-120px] right-[-120px] h-72 w-72 rounded-full bg-[#1e3a5f]/30 blur-3xl sm:h-96 sm:w-96" />
     </section>
   )
 }

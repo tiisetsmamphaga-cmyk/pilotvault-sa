@@ -299,5 +299,409 @@ correctAnswer:"Temperature",
 
 explanation:
 "Warm air can hold more water vapour."
+},
+{
+id:16,
+subject:"meteorology",
+topic:"Humidity",
+
+question:"Dew point temperature is the temperature at which:",
+
+options:[
+"Air becomes unstable",
+"Air becomes saturated at constant pressure",
+"Pressure increases",
+"Wind speed decreases"
+],
+
+correctAnswer:
+"Air becomes saturated at constant pressure",
+
+explanation:
+"Dew point is the temperature at which saturation occurs."
+},
+
+{
+id:17,
+subject:"meteorology",
+topic:"Humidity",
+
+question:"When the difference between temperature and dew point is small and reducing:",
+
+options:[
+"Visibility improves",
+"Low cloud or fog may be expected",
+"Pressure increases",
+"Wind decreases"
+],
+
+correctAnswer:
+"Low cloud or fog may be expected",
+
+explanation:
+"When temperature approaches dew point, saturation and fog formation become likely."
+},
+
+{
+id:18,
+subject:"meteorology",
+topic:"Fog",
+
+question:"Fog differs from mist because:",
+
+options:[
+"Fog visibility is less than 1000m",
+"Fog visibility is greater than 1000m",
+"Fog only forms at night",
+"Fog only forms near mountains"
+],
+
+correctAnswer:
+"Fog visibility is less than 1000m",
+
+explanation:
+"Fog exists when visibility drops below 1000m."
+},
+
+{
+id:19,
+subject:"meteorology",
+topic:"Fog",
+
+question:"The ideal conditions for radiation fog are:",
+
+options:[
+"Strong winds and clear skies",
+"Clear skies, light winds and high humidity",
+"Rain and thunderstorms",
+"Hot dry air"
+],
+
+correctAnswer:
+"Clear skies, light winds and high humidity",
+
+explanation:
+"Radiation fog forms from overnight cooling."
+},
+
+{
+id:20,
+subject:"meteorology",
+topic:"Fog",
+
+question:"Advection fog forms when:",
+
+options:[
+"Cold air moves over warm water",
+"Warm moist air moves over a cold surface",
+"Rain evaporates",
+"Clouds descend"
+],
+
+correctAnswer:
+"Warm moist air moves over a cold surface",
+
+explanation:
+"Advection fog forms from cooling moist air."
+},
+
+{
+id:21,
+subject:"meteorology",
+topic:"Wind",
+
+question:"A sea breeze occurs:",
+
+options:[
+"During the night",
+"During the day",
+"Only in winter",
+"Only over mountains"
+],
+
+correctAnswer:"During the day",
+
+explanation:
+"Land heats faster than water causing airflow from sea to land."
+},
+
+{
+id:22,
+subject:"meteorology",
+topic:"Wind",
+
+question:"A land breeze occurs:",
+
+options:[
+"During the day",
+"During the night",
+"Only in summer",
+"Only inland"
+],
+
+correctAnswer:"During the night",
+
+explanation:
+"Land cools faster than the sea at night."
+},
+
+{
+id:23,
+subject:"meteorology",
+topic:"Wind",
+
+question:"A wind flowing upslope during the day is called:",
+
+options:[
+"Katabatic",
+"Anabatic",
+"Sea breeze",
+"Berg wind"
+],
+
+correctAnswer:"Anabatic",
+
+explanation:
+"Anabatic winds move upslope during daytime heating."
+},
+
+{
+id:24,
+subject:"meteorology",
+topic:"Wind",
+
+question:"A wind flowing downslope during the night is called:",
+
+options:[
+"Anabatic",
+"Katabatic",
+"Sea breeze",
+"Trade wind"
+],
+
+correctAnswer:"Katabatic",
+
+explanation:
+"Katabatic winds flow downslope at night."
+},
+
+{
+id:25,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"Air naturally flows:",
+
+options:[
+"From low pressure to high pressure",
+"From high pressure to low pressure",
+"Only north to south",
+"Only east to west"
+],
+
+correctAnswer:
+"From high pressure to low pressure",
+
+explanation:
+"Air flows from areas of higher pressure toward lower pressure."
+},
+{
+id:26,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"When flying from an area of high pressure to an area of low pressure:",
+
+options:[
+"The altimeter under-reads",
+"The altimeter over-reads",
+"The altimeter remains correct",
+"The altimeter stops working"
+],
+
+correctAnswer:"The altimeter over-reads",
+
+explanation:
+"From high to low pressure: look out below. Your true altitude is lower than indicated."
+},
+
+{
+id:27,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"When flying from an area of low pressure to an area of high pressure:",
+
+options:[
+"The altimeter over-reads",
+"The altimeter under-reads",
+"The altimeter doubles",
+"The altimeter remains unchanged"
+],
+
+correctAnswer:"The altimeter under-reads",
+
+explanation:
+"From low to high pressure: look out above. True altitude is higher than indicated."
+},
+
+{
+id:28,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Clouds formed by convection are generally:",
+
+options:[
+"Cirrus",
+"Cumulus",
+"Stratus",
+"Nimbostratus"
+],
+
+correctAnswer:"Cumulus",
+
+explanation:
+"Cumulus clouds form due to rising warm air."
+},
+
+{
+id:29,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Cumulonimbus clouds are characterized by:",
+
+options:[
+"Smooth air",
+"Severe turbulence",
+"Clear skies",
+"Light drizzle"
+],
+
+correctAnswer:"Severe turbulence",
+
+explanation:
+"Cumulonimbus clouds are associated with thunderstorms and turbulence."
+},
+
+{
+id:30,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"The mature stage of a thunderstorm is characterized by:",
+
+options:[
+"Only updrafts",
+"The start of precipitation",
+"Clear weather",
+"Cloud dissipation"
+],
+
+correctAnswer:"The start of precipitation",
+
+explanation:
+"The mature stage contains both updrafts and downdrafts with precipitation."
+},
+
+{
+id:31,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"The dissipating stage of a thunderstorm is characterized by:",
+
+options:[
+"Continuous updrafts",
+"Formation of an anvil shape",
+"No cloud",
+"Strong heating"
+],
+
+correctAnswer:"Formation of an anvil shape",
+
+explanation:
+"The thunderstorm begins weakening and develops an anvil top."
+},
+
+{
+id:32,
+subject:"meteorology",
+topic:"Fronts",
+
+question:"A front caused by cold air moving underneath warm air is:",
+
+options:[
+"A warm front",
+"An occluded front",
+"A cold front",
+"A stationary front"
+],
+
+correctAnswer:"A cold front",
+
+explanation:
+"Cold dense air undercuts warm air."
+},
+
+{
+id:33,
+subject:"meteorology",
+topic:"Fronts",
+
+question:"Clouds commonly associated with a cold front are:",
+
+options:[
+"Cirrus and Cirrostratus",
+"Cumulus and Cumulonimbus",
+"Stratus and Nimbostratus",
+"Altocumulus and Cirrus"
+],
+
+correctAnswer:"Cumulus and Cumulonimbus",
+
+explanation:
+"Cold fronts often produce cumuliform clouds."
+},
+
+{
+id:34,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"Anti-cyclones are characterized by:",
+
+options:[
+"Low pressure",
+"High pressure",
+"Thunderstorms",
+"Strong updrafts"
+],
+
+correctAnswer:"High pressure",
+
+explanation:
+"Anti-cyclones are areas of high pressure."
+},
+
+{
+id:35,
+subject:"meteorology",
+topic:"Pressure Systems",
+
+question:"Weather associated with high pressure systems normally includes:",
+
+options:[
+"Thunderstorms and heavy rain",
+"Fine weather with light winds",
+"Hail and turbulence",
+"Strong convection"
+],
+
+correctAnswer:"Fine weather with light winds",
+
+explanation:
+"High pressure generally produces stable conditions."
 }
 ]

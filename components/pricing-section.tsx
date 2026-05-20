@@ -6,21 +6,6 @@ import { Check } from "lucide-react"
 
 const plans = [
   {
-    name: "PPL Pack",
-    price: "R699",
-    period: "/3 Months",
-    description: "Perfect for Private Pilot License students",
-    features: [
-      "PPL Subject Questions",
-      "Mock Exams",
-      "Performance Tracking",
-      "Mobile Access",
-      "Email Support",
-    ],
-    popular: false,
-    comingSoon: false,
-  },
-  {
     name: "Per Subject",
     price: "R89",
     period: "/month",
@@ -32,6 +17,21 @@ const plans = [
       "Mobile Access",
       "Question Explanations",
       "Priority Support",
+    ],
+    popular: false,
+    comingSoon: false,
+  },
+  {
+    name: "PPL Pack",
+    price: "R699",
+    period: "/3 Months",
+    description: "Perfect for Private Pilot License students",
+    features: [
+      "PPL Subject Questions",
+      "Mock Exams",
+      "Performance Tracking",
+      "Mobile Access",
+      "Email Support",
     ],
     popular: true,
     comingSoon: false,
@@ -61,6 +61,7 @@ export function PricingSection() {
       className="bg-[#06111f] py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,6 +81,7 @@ export function PricingSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -92,7 +94,7 @@ export function PricingSection() {
               }}
               className={`relative rounded-2xl border p-6 lg:p-8 ${
                 plan.popular
-                  ? "border-[#f4b400] bg-[#0b1f35] shadow-lg shadow-[#f4b400]/10"
+                  ? "border-[#f4b400] bg-[#0b1f35] shadow-lg shadow-[#f4b400]/10 lg:-mt-4"
                   : plan.comingSoon
                     ? "border-[#1e3a5f]/70 bg-[#0b1f35]/70 opacity-90"
                     : "border-[#1e3a5f] bg-[#0b1f35]"
@@ -166,6 +168,7 @@ export function PricingSection() {
               </Button>
             </motion.div>
           ))}
+
         </div>
       </div>
     </section>

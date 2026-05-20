@@ -1,15 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { 
-  Scale, 
-  Cloud, 
-  Compass, 
-  Brain, 
-  Plane, 
-  Wrench, 
-  Radio, 
-  Map 
+import {
+  Scale,
+  Cloud,
+  Compass,
+  Brain,
+  Plane,
+  Wrench,
+  Radio,
+  Map,
 } from "lucide-react"
 
 const subjects = [
@@ -25,40 +25,57 @@ const subjects = [
 
 export function SubjectsSection() {
   return (
-    <section id="subjects" className="py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="subjects"
+      className="bg-white py-16 sm:py-20 lg:py-24"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="mx-auto mb-10 max-w-3xl text-center sm:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#06111f] mb-4 text-balance">
+          <h2 className="mb-4 text-3xl font-bold text-[#06111f] sm:text-4xl">
             Everything You Need to Pass
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Comprehensive coverage of all 8 SACAA subjects with thousands of practice questions.
+
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg">
+            Comprehensive coverage of all 8 SACAA subjects with
+            thousands of practice questions.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+
           {subjects.map((subject, index) => (
             <motion.div
               key={subject.name}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-[#f4b400] hover:shadow-lg transition-all cursor-pointer group"
+              transition={{
+                duration: 0.35,
+                delay: index * 0.05,
+              }}
+              className="group cursor-pointer rounded-2xl border border-gray-100 bg-gray-50 p-5 transition-all hover:border-[#f4b400] hover:shadow-xl sm:p-6"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#06111f] flex items-center justify-center mb-4 group-hover:bg-[#f4b400] transition-colors">
-                <subject.icon className="w-6 h-6 text-white group-hover:text-[#06111f] transition-colors" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#06111f] transition-colors group-hover:bg-[#f4b400]">
+                <subject.icon className="h-6 w-6 text-white transition-colors group-hover:text-[#06111f]" />
               </div>
-              <h3 className="text-[#06111f] font-semibold mb-1">{subject.name}</h3>
-              <p className="text-gray-500 text-sm">{subject.questions} questions</p>
+
+              <h3 className="mb-2 text-base font-semibold text-[#06111f]">
+                {subject.name}
+              </h3>
+
+              <p className="text-sm text-gray-500">
+                {subject.questions} questions
+              </p>
             </motion.div>
           ))}
+
         </div>
       </div>
     </section>

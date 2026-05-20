@@ -43,34 +43,34 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-[#06111f]/95 backdrop-blur-md border-b border-[#1e3a5f]"
+        className="fixed top-0 left-0 right-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur-md"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between lg:h-20">
             <Link href="#" className="flex items-center">
               <Image
                 src="/images/logo.png"
                 alt="PilotVault SA"
                 width={200}
                 height={50}
-                className="h-[110px] w-auto"
+                className="h-12 w-auto sm:h-14 lg:h-20"
                 priority
               />
             </Link>
 
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden items-center gap-8 lg:flex">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-gray-300 hover:text-[#f4b400] transition-colors"
+                  className="text-sm font-medium text-gray-300 transition-colors hover:text-[#f4b400]"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
 
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden items-center gap-4 lg:flex">
               <Button
                 type="button"
                 onClick={() => openAuth("login")}
@@ -83,7 +83,7 @@ export function Navbar() {
               <Button
                 type="button"
                 onClick={() => openAuth("signup")}
-                className="bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] font-semibold"
+                className="bg-[#f4b400] font-semibold text-[#06111f] hover:bg-[#d9a000]"
               >
                 Start Free Trial
               </Button>
@@ -92,7 +92,8 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-white"
+              className="rounded-lg p-2 text-white transition hover:bg-[#0b1c30] lg:hidden"
+              aria-label="Toggle navigation menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -102,26 +103,27 @@ export function Navbar() {
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
-              className="lg:hidden py-4 border-t border-[#1e3a5f]"
+              transition={{ duration: 0.25 }}
+              className="border-t border-[#1e3a5f] px-2 py-5 lg:hidden"
             >
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-300 hover:text-[#f4b400] transition-colors"
+                    className="rounded-lg px-2 py-2 text-base text-gray-300 transition-colors hover:bg-[#0b1c30] hover:text-[#f4b400]"
                   >
                     {link.name}
                   </Link>
                 ))}
 
-                <div className="flex flex-col gap-2 pt-4 border-t border-[#1e3a5f]">
+                <div className="mt-3 flex flex-col gap-3 border-t border-[#1e3a5f] pt-5">
                   <Button
                     type="button"
                     onClick={() => openAuth("login")}
                     variant="outline"
-                    className="border-[#1e3a5f] text-white hover:bg-[#1e3a5f] w-full"
+                    className="w-full border-[#1e3a5f] text-white hover:bg-[#1e3a5f] hover:text-white"
                   >
                     Login
                   </Button>
@@ -129,7 +131,7 @@ export function Navbar() {
                   <Button
                     type="button"
                     onClick={() => openAuth("signup")}
-                    className="bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000] font-semibold w-full"
+                    className="w-full bg-[#f4b400] font-semibold text-[#06111f] hover:bg-[#d9a000]"
                   >
                     Start Free Trial
                   </Button>
@@ -141,29 +143,32 @@ export function Navbar() {
       </motion.nav>
 
       {authOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="relative w-full max-w-md rounded-2xl border border-[#1e3a5f] bg-[#06111f] p-6 shadow-2xl"
+            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl border border-[#1e3a5f] bg-[#06111f] p-5 shadow-2xl sm:p-6"
           >
             <button
               type="button"
               onClick={() => setAuthOpen(false)}
               className="absolute right-4 top-4 text-gray-400 hover:text-white"
+              aria-label="Close auth modal"
             >
               <X className="h-5 w-5" />
             </button>
 
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f4b400]">
-              
+              PilotVault SA
             </p>
 
-            <h2 className="mt-3 text-2xl font-bold text-white">
-              {authMode === "login" ? "Welcome back, pilot." : "Start your 3-day free trial."}
+            <h2 className="mt-3 pr-8 text-2xl font-bold text-white">
+              {authMode === "login"
+                ? "Welcome back, pilot."
+                : "Start your 3-day free trial."}
             </h2>
 
-            <p className="mt-2 text-sm text-gray-400">
+            <p className="mt-2 text-sm leading-6 text-gray-400">
               {authMode === "login"
                 ? "Log in to continue your SACAA exam preparation."
                 : "Create your account and start preparing with realistic SACAA-style questions, mock exams, and progress tracking."}
@@ -224,15 +229,15 @@ export function Navbar() {
                 />
               )}
 
-             <Button
-  type="button"
-  onClick={() => {
-    window.location.href = "/dashboard"
-  }}
-  className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000]"
->
-  {authMode === "login" ? "Login" : "Start Free Trial"}
-</Button>
+              <Button
+                type="button"
+                onClick={() => {
+                  window.location.href = "/dashboard"
+                }}
+                className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000]"
+              >
+                {authMode === "login" ? "Login" : "Start Free Trial"}
+              </Button>
             </form>
           </motion.div>
         </div>

@@ -4,6 +4,15 @@ import { useEffect, useMemo, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { questions } from "@/src/data/questions"
+import {
+  ArrowLeft,
+  Clock,
+  Flag,
+  Home,
+  Pin,
+  RotateCcw,
+  Trophy,
+} from "lucide-react"
 
 type Question = {
   id: number
@@ -47,11 +56,26 @@ export default function SubjectPracticePage() {
   const [shownAnswers, setShownAnswers] = useState<number[]>([])
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [showFinishPrompt, setShowFinishPrompt] = useState(false)
-  const [showStartMockPrompt, setShowStartMockPrompt] = useState(false)
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
 
   const currentQuestion = examQuestions[currentQuestionIndex]
   const selectedAnswer = answers[currentQuestionIndex]
+  const totalQuestions = examQuestions.length
+  const answeredCount = Object.keys(answers).length
+  const unansweredCount = totalQuestions - answeredCount
+
+  const correctAnswers = examQuestions.filter(
+    (question, index) => answers[index] === question.correctAnswer
+  ).length
+
+  const scorePercentage =
+    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
+
+  const passed = scorePercentage >= PASS_MARK
+
+  const wrongQuestions = examQuestions.filter(
+    (question, index) => answers[index] !== question.correctAnswer
+  )
 
   useEffect(() => {
     if (examMode === "menu" || isSubmitted || examQuestions.length === 0) return
@@ -103,7 +127,6 @@ export default function SubjectPracticePage() {
     setActiveTopic("")
     setExamMode("mock")
     setTimeLeft(MOCK_TIME_SECONDS)
-    setShowStartMockPrompt(false)
   }
 
   const startTopicPractice = (topic: string) => {
@@ -123,24 +146,7 @@ export default function SubjectPracticePage() {
     setActiveTopic("")
     setExamQuestions([])
     setTimeLeft(MOCK_TIME_SECONDS)
-    setShowStartMockPrompt(false)
   }
-
-  const totalQuestions = examQuestions.length
-  const unansweredCount = totalQuestions - Object.keys(answers).length
-
-  const correctAnswers = examQuestions.filter(
-    (question, index) => answers[index] === question.correctAnswer
-  ).length
-
-  const scorePercentage =
-    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
-
-  const passed = scorePercentage >= PASS_MARK
-
-  const wrongQuestions = examQuestions.filter(
-    (question, index) => answers[index] !== question.correctAnswer
-  )
 
   const handleAnswer = (option: string) => {
     if (isSubmitted) return
@@ -188,7 +194,7 @@ export default function SubjectPracticePage() {
 
   if (subjectQuestions.length === 0) {
     return (
-      <main className="min-h-screen bg-[#06111f] px-6 py-10 text-white">
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white">
         <div className="mx-auto max-w-4xl">
           <Link
             href="/practice"
@@ -212,577 +218,432 @@ export default function SubjectPracticePage() {
     )
   }
 
-if (examMode === "menu") {
-  return (
-    <main className="min-h-screen bg-[#06111f] text-white">
-      <header className="sticky top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
-              PilotVault SA
-            </p>
-
-            <h1 className="text-lg font-bold capitalize">
-              {subject.replaceAll("-", " ")} Practice
-            </h1>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="/practice"
-              className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-5 py-2 text-sm hover:bg-[#1e3a5f]"
-            >
-              Subjects
-            </Link>
-
-            <Link
-              href="/dashboard"
-              className="rounded-xl bg-[#f4b400] px-5 py-2 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
-            >
-              Dashboard
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <div className="rounded-3xl border border-[#1e3a5f] bg-gradient-to-r from-[#081726] to-[#0b1f35] p-8">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
-            SACAA Exam Preparation
-          </p>
-
-          <h2 className="mt-4 text-4xl font-bold">
-            Choose Your Practice Mode
-          </h2>
-
-          <p className="mt-4 max-w-2xl text-slate-300">
-            Start a timed 25-question mock exam or focus on one weak topic at a
-            time.
-          </p>
-        </div>
-
-        <button
-          onClick={() => setShowStartMockPrompt(true)}
-          className="mt-8 w-full rounded-3xl border border-[#f4b400]/50 bg-[#081726] p-8 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
-        >
-          <p className="text-sm uppercase tracking-wider text-[#f4b400]">
-            Mock Exam
-          </p>
-
-          <h2 className="mt-3 text-3xl font-bold">
-            25 Random Questions
-          </h2>
-
-          <p className="mt-4 max-w-2xl text-slate-300">
-            Simulate a SACAA-style exam with randomized questions, timing,
-            question navigation, finish confirmation and final score.
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
-            <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
-              25 minutes
-            </span>
-
-            <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
-              75% pass mark
-            </span>
-
-            <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
-              {Math.min(MOCK_QUESTION_COUNT, subjectQuestions.length)} questions
-            </span>
-          </div>
-        </button>
-
-        <div className="mt-10">
-          <p className="text-sm uppercase tracking-wider text-[#f4b400]">
-            Practice by Topic
-          </p>
-
-          <h2 className="mt-3 text-2xl font-bold">
-            Choose a Topic
-          </h2>
-
-          <p className="mt-3 text-sm text-slate-300">
-            Focus on weak areas and review explanations while practicing.
-          </p>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {topics.map((topic) => {
-              const count = subjectQuestions.filter(
-                (q) => q.topic === topic
-              ).length
-
-              return (
-                <button
-                  key={topic}
-                  onClick={() => startTopicPractice(topic)}
-                  className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
-                >
-                  <h3 className="text-lg font-bold text-white">
-                    {topic}
-                  </h3>
-
-                  <p className="mt-2 text-sm text-slate-400">
-                    {count} questions available
-                  </p>
-                </button>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {showStartMockPrompt && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
-          <div className="w-full max-w-lg rounded-2xl border border-[#1e3a5f] bg-white p-6 text-slate-900 shadow-2xl">
-            <h2 className="text-2xl font-bold">
-              Start Mock Exam
-            </h2>
-
-            <p className="mt-4 text-slate-700">
-              You are about to start a 25-question mock examination. Please
-              ensure you have everything you require before starting.
-            </p>
-
-            <div className="mt-5 rounded-xl border border-slate-300 bg-slate-50 p-4">
-              <p className="font-semibold text-slate-900">
-                Exam information
+  if (examMode === "menu") {
+    return (
+      <main className="min-h-screen bg-[#06111f] text-white">
+        <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
+          <div className="mx-auto flex min-h-20 max-w-7xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                PilotVault SA
               </p>
 
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>• Number of questions: 25 randomized questions</li>
-                <li>• Time allowed: 25 minutes</li>
-                <li>• Pass mark: 75%</li>
-                <li>• You may navigate between questions before finishing</li>
-                <li>• Your score will only be shown after finishing</li>
-              </ul>
+              <h1 className="mt-1 text-xl font-bold capitalize">
+                {subject.replaceAll("-", " ")} Practice
+              </h1>
             </div>
 
-            <p className="mt-4 text-sm text-slate-600">
-              Once you start, the timer will begin immediately.
-            </p>
-
-            <div className="mt-6 flex justify-end gap-3">
-              <button
-                onClick={() => setShowStartMockPrompt(false)}
-                className="rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+            <div className="flex gap-3">
+              <Link
+                href="/practice"
+                className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-4 py-2 text-sm hover:bg-[#1e3a5f]"
               >
-                Cancel
-              </button>
+                Subjects
+              </Link>
 
-              <button
-                onClick={startMockExam}
-                className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
+              <Link
+                href="/dashboard"
+                className="rounded-xl bg-[#f4b400] px-4 py-2 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
               >
-                Start Exam
-              </button>
+                Dashboard
+              </Link>
             </div>
           </div>
-        </div>
-      )}
-    </main>
-  )
-}
+        </header>
+
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#0b1f35] p-6 sm:p-8">
+            <h2 className="text-3xl font-bold">
+              Choose your exam mode
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-gray-400">
+              Practice by topic or start a timed mock exam with 25 randomized
+              questions.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <button
+              onClick={startMockExam}
+              className="rounded-3xl border border-[#f4b400] bg-[#0b1f35] p-6 text-left shadow-lg shadow-[#f4b400]/10 transition hover:-translate-y-1 hover:bg-[#102942]"
+            >
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400] text-[#06111f]">
+                <Clock className="h-6 w-6" />
+              </div>
+
+              <h3 className="text-2xl font-bold">
+                Start Mock Exam
+              </h3>
+
+              <p className="mt-3 text-gray-400">
+                25 questions • 25 minutes • randomized each attempt
+              </p>
+            </button>
+
+            <div className="rounded-3xl border border-[#1e3a5f] bg-[#0b1f35] p-6">
+              <h3 className="text-2xl font-bold">
+                Topic Practice
+              </h3>
+
+              <p className="mt-3 text-gray-400">
+                Select a topic and focus on weak areas.
+              </p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {topics.length > 0 ? (
+                  topics.map((topic) => (
+                    <button
+                      key={topic}
+                      onClick={() => startTopicPractice(topic)}
+                      className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-left text-sm font-semibold hover:border-[#f4b400] hover:text-[#f4b400]"
+                    >
+                      {topic}
+                    </button>
+                  ))
+                ) : (
+                  <button
+                    onClick={() => startTopicPractice("")}
+                    className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-left text-sm font-semibold hover:border-[#f4b400] hover:text-[#f4b400]"
+                  >
+                    All Questions
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    )
+  }
 
   if (isSubmitted) {
     return (
-      <main className="min-h-screen bg-white text-slate-900">
-        <header className="h-16 border-b border-slate-300 bg-[#1f4e79] px-6 text-white flex items-center justify-between">
-          <div>
-            <h1 className="text-base font-bold">PilotVault SA Exam Results</h1>
-            <p className="text-xs uppercase tracking-wider text-blue-100">
-              {subject.replaceAll("-", " ")} · {examLabel}
-            </p>
-          </div>
+      <main className="min-h-screen bg-[#f3f4f6] text-[#111827]">
+        <header className="border-b bg-white">
+          <div className="mx-auto flex min-h-16 max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#06111f]">
+                PilotVault SA
+              </p>
 
-          <button
-            onClick={returnToMenu}
-            className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20"
-          >
-            Exit
-          </button>
+              <h1 className="text-lg font-bold">
+                Exam Results
+              </h1>
+            </div>
+
+            <button
+              onClick={returnToMenu}
+              className="rounded-lg bg-[#06111f] px-4 py-2 text-sm font-bold text-white"
+            >
+              Back to Practice
+            </button>
+          </div>
         </header>
 
-        <section className="mx-auto max-w-5xl px-6 py-10">
-          <div className="rounded-md border border-slate-300 bg-slate-50 p-6">
-            <p className="text-sm uppercase tracking-wider text-slate-500">
-              Final Score
-            </p>
+        <section className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#f4b400]/20 text-[#06111f]">
+                  <Trophy className="h-7 w-7" />
+                </div>
 
-            <h2 className="mt-2 text-5xl font-bold text-slate-900">
-              {scorePercentage}%
-            </h2>
+                <h2 className="text-3xl font-bold">
+                  {passed ? "Passed" : "Not Yet Passed"}
+                </h2>
 
-            <p
-              className={`mt-3 text-lg font-semibold ${
-                passed ? "text-green-700" : "text-red-700"
-              }`}
-            >
-              {passed ? "Passed" : "Failed"}
-            </p>
+                <p className="mt-2 text-gray-600">
+                  Pass mark: {PASS_MARK}%
+                </p>
+              </div>
 
-            <p className="mt-2 text-slate-600">
-              You got {correctAnswers} out of {totalQuestions} questions correct.
-            </p>
+              <div className="text-left sm:text-right">
+                <p className="text-5xl font-bold text-[#06111f]">
+                  {scorePercentage}%
+                </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button
-                onClick={() =>
-                  examMode === "mock"
-                    ? startMockExam()
-                    : startTopicPractice(activeTopic)
-                }
-                className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
-              >
-                Restart
-              </button>
-
-              <button
-                onClick={returnToMenu}
-                className="rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
-              >
-                Back to Practice Modes
-              </button>
+                <p className="mt-2 text-gray-600">
+                  {correctAnswers} / {totalQuestions} correct
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="mt-10">
-            <h3 className="text-2xl font-bold text-slate-900">
-              Review Incorrect Answers
+          <div className="mt-6 rounded-2xl bg-white p-6 shadow-sm">
+            <h3 className="text-xl font-bold">
+              Questions to Review
             </h3>
 
-            {wrongQuestions.length === 0 ? (
-              <p className="mt-4 text-green-700">
-                Excellent. You got every question correct.
-              </p>
-            ) : (
-              <div className="mt-6 space-y-6">
-                {wrongQuestions.map((question) => {
-                  const originalIndex = examQuestions.findIndex(
-                    (item) => item.id === question.id
-                  )
+            <div className="mt-5 space-y-5">
+              {wrongQuestions.length === 0 ? (
+                <p className="text-green-700">
+                  Perfect attempt. No incorrect questions.
+                </p>
+              ) : (
+                wrongQuestions.map((question) => {
+                  const originalIndex = examQuestions.indexOf(question)
 
                   return (
                     <div
                       key={question.id}
-                      className="border-b border-slate-300 pb-6"
+                      className="rounded-xl border border-red-200 bg-red-50 p-4"
                     >
-                      <p className="text-sm font-semibold text-slate-500">
+                      <p className="text-sm font-bold text-red-700">
                         Question {originalIndex + 1}
                       </p>
 
-                      <h4 className="mt-2 text-lg font-semibold text-slate-900">
+                      <p className="mt-2 font-semibold">
                         {question.question}
-                      </h4>
+                      </p>
 
-                      <p className="mt-4 text-red-700">
+                      <p className="mt-3 text-sm text-gray-700">
                         Your answer:{" "}
                         <span className="font-semibold">
-                          {answers[originalIndex] || "Not answered"}
+                          {answers[originalIndex] || "Unanswered"}
                         </span>
                       </p>
 
-                      <p className="mt-2 text-green-700">
+                      <p className="mt-1 text-sm text-green-700">
                         Correct answer:{" "}
                         <span className="font-semibold">
                           {question.correctAnswer}
                         </span>
                       </p>
 
-                      <p className="mt-3 text-slate-700 leading-relaxed">
+                      <p className="mt-3 text-sm text-gray-700">
                         {question.explanation}
                       </p>
                     </div>
                   )
-                })}
-              </div>
-            )}
+                })
+              )}
+            </div>
           </div>
         </section>
       </main>
     )
   }
 
-  if (!currentQuestion) {
-    return (
-      <main className="min-h-screen bg-white text-slate-900 flex items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold">No questions found.</h1>
-
-          <button
-            onClick={returnToMenu}
-            className="mt-6 inline-block rounded-md bg-[#1f4e79] px-5 py-2 text-white hover:bg-[#183d60]"
-          >
-            Back to Practice Modes
-          </button>
-        </div>
-      </main>
-    )
-  }
-
   return (
-    <main className="min-h-screen bg-white text-slate-900">
-      <header className="h-20 border-b border-slate-300 bg-[#1f4e79] px-6 text-white flex items-center justify-between">
-        <div>
-          <h1 className="text-base font-bold">PilotVault SA Exam Practice</h1>
-
-          <p className="text-xs uppercase tracking-wider text-blue-100">
-            {subject.replaceAll("-", " ")} · {examLabel}
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-md border border-white/20 bg-black/20 px-4 py-2 text-right">
-            <p className="text-xs text-blue-100">Time Remaining</p>
-
-            <p
-              className={`font-bold ${
-                timeLeft < 300 ? "text-red-300" : "text-white"
-              }`}
-            >
-              {formatTime(timeLeft)}
+    <main className="min-h-screen bg-[#e5e7eb] text-[#111827]">
+      <header className="sticky top-0 z-40 border-b bg-white shadow-sm">
+        <div className="mx-auto flex min-h-16 max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#06111f]">
+              PilotVault SA
             </p>
+
+            <h1 className="text-sm font-semibold sm:text-base">
+              {examLabel} • {subject.replaceAll("-", " ")}
+            </h1>
           </div>
 
-          <button
-            onClick={returnToMenu}
-            className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20"
-          >
-            Exit
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-2 rounded-lg border bg-gray-50 px-3 py-2 text-sm font-bold">
+              <Clock className="h-4 w-4" />
+              {formatTime(timeLeft)}
+            </div>
+
+            <button
+              onClick={returnToMenu}
+              className="rounded-lg border px-3 py-2 text-sm font-semibold hover:bg-gray-100"
+            >
+              Exit
+            </button>
+
+            <button
+              onClick={() => setShowFinishPrompt(true)}
+              className="rounded-lg bg-[#06111f] px-4 py-2 text-sm font-bold text-white hover:bg-[#0b1f35]"
+            >
+              Finish
+            </button>
+          </div>
         </div>
       </header>
 
-      <div className="flex min-h-[calc(100vh-80px)]">
-        <aside className="hidden w-64 border-r border-slate-300 bg-slate-100 p-4 md:block">
-          <h2 className="mb-4 font-semibold text-slate-700">Questions</h2>
+      <section className="mx-auto grid max-w-7xl gap-4 px-4 py-4 sm:px-6 lg:grid-cols-[220px_1fr] lg:px-8">
+        <aside className="rounded-xl bg-white p-4 shadow-sm lg:sticky lg:top-24 lg:h-fit">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="font-bold">
+              Questions
+            </h2>
 
-          <div className="grid grid-cols-5 gap-2">
+            <span className="text-xs text-gray-500">
+              {answeredCount}/{totalQuestions}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-5 gap-2 lg:grid-cols-4">
             {examQuestions.map((_, index) => {
               const isActive = index === currentQuestionIndex
-              const isAnswered = Boolean(answers[index])
+              const isAnswered = answers[index]
               const isPinned = pinnedQuestions.includes(index)
-              const hasShownAnswer = shownAnswers.includes(index)
 
               return (
                 <button
                   key={index}
                   onClick={() => setCurrentQuestionIndex(index)}
-                  className={`relative h-10 rounded border text-sm font-medium ${
+                  className={`relative flex h-10 items-center justify-center rounded-lg border text-sm font-bold ${
                     isActive
-                      ? "border-[#1f4e79] bg-[#1f4e79] text-white"
-                      : hasShownAnswer
-                        ? "border-yellow-400 bg-yellow-100 text-yellow-900"
-                        : isAnswered
-                          ? "border-blue-300 bg-blue-100 text-blue-900"
-                          : "border-red-300 bg-red-50 text-red-700"
+                      ? "border-[#06111f] bg-[#06111f] text-white"
+                      : isAnswered
+                        ? "border-green-600 bg-green-50 text-green-700"
+                        : "border-gray-300 bg-white text-gray-700"
                   }`}
                 >
                   {index + 1}
 
                   {isPinned && (
-                    <span className="absolute -right-1 -top-2 text-yellow-600">
-                      ⚑
-                    </span>
+                    <span className="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-[#f4b400]" />
                   )}
                 </button>
               )
             })}
           </div>
 
-          <div className="mt-6 space-y-2 text-xs text-slate-600">
-            <p>Blue: current question</p>
-            <p>Light blue: answered</p>
-            <p>Red: not answered</p>
-            <p>Yellow: answer viewed</p>
-            <p>⚑: pinned</p>
+          <div className="mt-4 text-xs text-gray-500">
+            Unanswered: {unansweredCount}
           </div>
         </aside>
 
-        <section className="flex-1 p-6 md:p-10">
-          <div className="mb-6 md:hidden">
-            <div className="overflow-x-auto">
-              <div className="flex gap-2 pb-2">
-                {examQuestions.map((_, index) => {
-                  const isActive = index === currentQuestionIndex
-                  const isAnswered = Boolean(answers[index])
-                  const isPinned = pinnedQuestions.includes(index)
-                  const hasShownAnswer = shownAnswers.includes(index)
-
-                  return (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentQuestionIndex(index)}
-                      className={`relative flex h-[42px] min-w-[42px] items-center justify-center rounded border text-sm font-medium ${
-                        isActive
-                          ? "border-[#1f4e79] bg-[#1f4e79] text-white"
-                          : hasShownAnswer
-                            ? "border-yellow-400 bg-yellow-100 text-yellow-900"
-                            : isAnswered
-                              ? "border-blue-300 bg-blue-100 text-blue-900"
-                              : "border-red-300 bg-red-50 text-red-700"
-                      }`}
-                    >
-                      {index + 1}
-
-                      {isPinned && (
-                        <span className="absolute -right-1 -top-2 text-yellow-600">
-                          ⚑
-                        </span>
-                      )}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-8 flex items-center justify-between gap-4">
+        <div className="rounded-xl bg-white shadow-sm">
+          <div className="border-b p-4 sm:p-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm font-semibold text-gray-500">
                   Question {currentQuestionIndex + 1} of {totalQuestions}
                 </p>
 
-                <h2 className="mt-1 text-xl font-semibold text-slate-800">
-                  Exam Question
-                </h2>
+                {currentQuestion?.topic && (
+                  <p className="mt-1 text-xs text-gray-500">
+                    Topic: {currentQuestion.topic}
+                  </p>
+                )}
               </div>
 
               <button
                 onClick={() => togglePin(currentQuestionIndex)}
-                className={`rounded-md border px-4 py-2 text-sm font-medium ${
+                className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-semibold ${
                   pinnedQuestions.includes(currentQuestionIndex)
-                    ? "border-yellow-500 bg-yellow-100 text-yellow-800"
-                    : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
+                    ? "border-[#f4b400] bg-[#f4b400]/20 text-[#06111f]"
+                    : "hover:bg-gray-50"
                 }`}
               >
-                {pinnedQuestions.includes(currentQuestionIndex)
-                  ? "Pinned"
-                  : "Pin"}
+                <Pin className="h-4 w-4" />
+                Pin
               </button>
             </div>
+          </div>
 
-            <p className="text-lg leading-relaxed text-slate-900">
-              {currentQuestion.question}
-            </p>
+          <div className="p-4 sm:p-6">
+            <h2 className="text-lg font-semibold leading-relaxed sm:text-xl">
+              {currentQuestion?.question}
+            </h2>
 
-            <div className="mt-8 space-y-2">
-              {currentQuestion.options.map((option, index) => {
+            <div className="mt-6 space-y-3">
+              {currentQuestion?.options.map((option, index) => {
                 const letter = String.fromCharCode(65 + index)
                 const isSelected = selectedAnswer === option
+                const showAnswer = shownAnswers.includes(currentQuestionIndex)
+                const isCorrect = option === currentQuestion.correctAnswer
 
                 return (
-                  <label
+                  <button
                     key={option}
-                    className="flex cursor-pointer items-center gap-4 py-3"
+                    onClick={() => handleAnswer(option)}
+                    className={`flex w-full items-start gap-3 rounded-xl border p-4 text-left transition ${
+                      showAnswer && isCorrect
+                        ? "border-green-600 bg-green-50"
+                        : isSelected
+                          ? "border-[#06111f] bg-[#06111f]/5"
+                          : "border-gray-300 hover:border-[#06111f]"
+                    }`}
                   >
-                    <input
-                      type="radio"
-                      name={`question-${currentQuestion.id}`}
-                      checked={isSelected}
-                      onChange={() => handleAnswer(option)}
-                      className="h-5 w-5 accent-[#1f4e79]"
-                    />
-
-                    <span className="font-semibold text-slate-700">
-                      {letter}.
+                    <span
+                      className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border text-sm font-bold ${
+                        isSelected
+                          ? "border-[#06111f] bg-[#06111f] text-white"
+                          : "border-gray-400"
+                      }`}
+                    >
+                      {letter}
                     </span>
 
-                    <span className="text-slate-800">{option}</span>
-                  </label>
+                    <span className="text-sm leading-relaxed sm:text-base">
+                      {option}
+                    </span>
+                  </button>
                 )
               })}
             </div>
 
             {shownAnswers.includes(currentQuestionIndex) && (
-              <div className="mt-8 border-l-4 border-[#1f4e79] bg-slate-50 p-5">
-                <p className="text-sm font-semibold text-[#1f4e79]">
-                  Correct Answer
+              <div className="mt-6 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 p-4">
+                <p className="font-bold text-[#06111f]">
+                  Correct Answer: {currentQuestion.correctAnswer}
                 </p>
 
-                <p className="mt-2 font-semibold text-slate-900">
-                  {currentQuestion.correctAnswer}
-                </p>
-
-                <p className="mt-4 text-sm font-semibold text-[#1f4e79]">
-                  Explanation
-                </p>
-
-                <p className="mt-2 leading-relaxed text-slate-700">
+                <p className="mt-2 text-sm text-gray-700">
                   {currentQuestion.explanation}
                 </p>
               </div>
             )}
+          </div>
 
-            <div className="mt-12 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-col gap-3 border-t p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <button
+              onClick={toggleAnswer}
+              className="rounded-lg border px-4 py-2 text-sm font-semibold hover:bg-gray-50"
+            >
+              {shownAnswers.includes(currentQuestionIndex)
+                ? "Hide Answer"
+                : "Show Answer"}
+            </button>
+
+            <div className="flex gap-3">
               <button
-                onClick={toggleAnswer}
-                className="rounded-md border border-[#1f4e79] bg-white px-5 py-2 text-sm font-semibold text-[#1f4e79] hover:bg-blue-50"
+                onClick={goPrevious}
+                disabled={currentQuestionIndex === 0}
+                className="flex-1 rounded-lg border px-4 py-2 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
               >
-                {shownAnswers.includes(currentQuestionIndex)
-                  ? "Hide Answer"
-                  : "Show Answer"}
+                Previous
               </button>
 
-              <div className="flex flex-wrap items-center gap-3">
-                <button
-                  onClick={goPrevious}
-                  disabled={currentQuestionIndex === 0}
-                  className="rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-slate-700 disabled:opacity-40"
-                >
-                  Previous
-                </button>
-
-                <button
-                  onClick={goNext}
-                  disabled={currentQuestionIndex === totalQuestions - 1}
-                  className="rounded-md bg-[#1f4e79] px-6 py-2 text-sm font-semibold text-white hover:bg-[#183d60] disabled:opacity-40"
-                >
-                  Next
-                </button>
-
-                <button
-                  onClick={() => setShowFinishPrompt(true)}
-                  className="rounded-md bg-slate-900 px-6 py-2 text-sm font-semibold text-white hover:bg-slate-700"
-                >
-                  Finish
-                </button>
-              </div>
+              <button
+                onClick={goNext}
+                disabled={currentQuestionIndex === totalQuestions - 1}
+                className="flex-1 rounded-lg bg-[#06111f] px-4 py-2 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
+              >
+                Next
+              </button>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {showFinishPrompt && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-6">
-          <div className="w-full max-w-md rounded-md bg-white p-6 shadow-xl">
-            <h2 className="text-xl font-bold text-slate-900">
-              Finish Examination
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+          <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#f4b400]/20">
+              <Flag className="h-6 w-6 text-[#06111f]" />
+            </div>
+
+            <h2 className="text-2xl font-bold">
+              Finish exam?
             </h2>
 
-            <p className="mt-4 text-slate-700">
-              You are about to submit your examination. Once submitted, your
-              answers cannot be changed.
+            <p className="mt-3 text-gray-600">
+              You still have {unansweredCount} unanswered question
+              {unansweredCount === 1 ? "" : "s"}.
             </p>
 
-            {unansweredCount > 0 && (
-              <p className="mt-4 font-semibold text-red-700">
-                You have {unansweredCount} unanswered question
-                {unansweredCount === 1 ? "" : "s"}.
-              </p>
-            )}
-
-            <p className="mt-4 text-slate-700">
-              Are you sure you want to finish and submit your answers?
-            </p>
-
-            <div className="mt-6 flex justify-end gap-3">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <button
                 onClick={() => setShowFinishPrompt(false)}
-                className="rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+                className="flex-1 rounded-lg border px-4 py-3 font-semibold"
               >
-                Return to Exam
+                Continue Exam
               </button>
 
               <button
@@ -790,9 +651,9 @@ if (examMode === "menu") {
                   setShowFinishPrompt(false)
                   setIsSubmitted(true)
                 }}
-                className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
+                className="flex-1 rounded-lg bg-[#06111f] px-4 py-3 font-bold text-white"
               >
-                Submit Examination
+                Submit
               </button>
             </div>
           </div>

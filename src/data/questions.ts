@@ -2537,5 +2537,311 @@ correctAnswer:
 
 explanation:
 "Dew point is the temperature at which saturation occurs."
+},
+{
+id:126,
+subject:"meteorology",
+topic:"Visibility",
+
+question:"Mist differs from fog because:",
+
+options:[
+"Visibility is less than 1000m",
+"Visibility is greater than 1000m",
+"It forms only at night",
+"It only forms near mountains"
+],
+
+correctAnswer:
+"Visibility is greater than 1000m",
+
+explanation:
+"Mist exists when visibility is above 1000m."
+},
+
+{
+id:127,
+subject:"meteorology",
+topic:"Temperature",
+
+question:"The dry adiabatic lapse rate is:",
+
+options:[
+"1°C/1000ft",
+"2°C/1000ft",
+"3°C/1000ft",
+"5°C/1000ft"
+],
+
+correctAnswer:"3°C/1000ft",
+
+explanation:
+"The dry adiabatic lapse rate is approximately 3°C/1000ft."
+},
+
+{
+id:128,
+subject:"meteorology",
+topic:"Temperature",
+
+question:"Insolation refers to:",
+
+options:[
+"Cooling of air",
+"Heating of the Earth's surface by the sun",
+"Formation of clouds",
+"Wind circulation"
+],
+
+correctAnswer:
+"Heating of the Earth's surface by the sun",
+
+explanation:
+"Insolation is incoming solar radiation."
+},
+
+{
+id:129,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"Density altitude is:",
+
+options:[
+"Pressure altitude corrected for temperature",
+"Sea level pressure",
+"True altitude",
+"QNH altitude"
+],
+
+correctAnswer:
+"Pressure altitude corrected for temperature",
+
+explanation:
+"Density altitude accounts for temperature effects."
+},
+
+{
+id:130,
+subject:"meteorology",
+topic:"Pressure",
+
+question:"Pressure altitude is indicated when:",
+
+options:[
+"QFE is set",
+"QNH is set",
+"1013 hPa is set",
+"Sea level pressure is set"
+],
+
+correctAnswer:
+"1013 hPa is set",
+
+explanation:
+"Pressure altitude uses standard pressure setting."
+},
+
+{
+id:131,
+subject:"meteorology",
+topic:"Clouds",
+
+question:"Clouds with significant vertical development indicate:",
+
+options:[
+"Stable conditions",
+"Strong instability",
+"High pressure",
+"Subsiding air"
+],
+
+correctAnswer:"Strong instability",
+
+explanation:
+"Vertical cloud growth indicates unstable air."
+},
+
+{
+id:132,
+subject:"meteorology",
+topic:"Fronts",
+
+question:"Weather before a warm front usually includes:",
+
+options:[
+"Clear skies",
+"Lowering cloud base with precipitation",
+"Mountain waves",
+"Thunderstorms only"
+],
+
+correctAnswer:
+"Lowering cloud base with precipitation",
+
+explanation:
+"Warm fronts usually bring gradually lowering clouds."
+},
+
+{
+id:133,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"The movement of coastal lows on the east coast of South Africa is generally:",
+
+options:[
+"South-westerly",
+"North-easterly",
+"North-westerly",
+"South-easterly"
+],
+
+correctAnswer:"North-easterly",
+
+explanation:
+"East coast coastal lows generally move northeast."
+},
+
+{
+id:134,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"Coastal lows in South Africa are usually created by:",
+
+options:[
+"Strong flow from the interior",
+"Mountain waves",
+"Warm fronts",
+"Cold air over oceans"
+],
+
+correctAnswer:
+"Strong flow from the interior",
+
+explanation:
+"Interior airflow contributes to coastal low formation."
+},
+
+{
+id:135,
+subject:"meteorology",
+topic:"South African Weather",
+
+question:"During South African winter:",
+
+options:[
+"Moist trade winds dominate",
+"High pressure forms over the interior",
+"Thunderstorms increase",
+"Tropical cyclones are common"
+],
+
+correctAnswer:
+"High pressure forms over the interior",
+
+explanation:
+"Winter often brings stable high pressure systems."
+},
+
+{
+id:136,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"Broken cloud coverage means:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"5–7 oktas",
+
+explanation:
+"Broken cloud is BKN."
+},
+
+{
+id:137,
+subject:"meteorology",
+topic:"Cloud Symbols",
+
+question:"Overcast cloud coverage means:",
+
+options:[
+"1–2 oktas",
+"3–4 oktas",
+"5–7 oktas",
+"8 oktas"
+],
+
+correctAnswer:"8 oktas",
+
+explanation:
+"OVC means overcast sky."
+},
+
+{
+id:138,
+subject:"meteorology",
+topic:"METAR",
+
+question:"Surface wind directions in METAR and ATIS are generally given in:",
+
+options:[
+"True degrees",
+"Magnetic degrees",
+"Grid degrees",
+"Relative degrees"
+],
+
+correctAnswer:"Magnetic degrees",
+
+explanation:
+"Surface wind direction at airfields is commonly given in magnetic degrees."
+},
+
+{
+id:139,
+subject:"meteorology",
+topic:"TAF",
+
+question:"TAF provides:",
+
+options:[
+"Current weather observations",
+"Forecast weather conditions",
+"Pressure tendencies",
+"Radar imagery"
+],
+
+correctAnswer:"Forecast weather conditions",
+
+explanation:
+"TAF gives forecast conditions at aerodromes."
+},
+
+{
+id:140,
+subject:"meteorology",
+topic:"Visibility",
+
+question:"CAVOK requires visibility of:",
+
+options:[
+"5 km or more",
+"8 km or more",
+"10 km or more",
+"15 km or more"
+],
+
+correctAnswer:"10 km or more",
+
+explanation:
+"CAVOK requires visibility of at least 10 km."
 }
 ]

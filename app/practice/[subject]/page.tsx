@@ -707,31 +707,32 @@ export default function SubjectPracticePage() {
             </p>
 
             <div className="mt-8 space-y-2">
-              {currentQuestion.options.map((option, index) => {
-                const letter = String.fromCharCode(65 + index)
-                const isSelected = selectedAnswer === option
+              {currentQuestion.options
+  .filter((option) => option && option.trim() !== "")
+  .map((option, index) => {
+    const letter = String.fromCharCode(65 + index)
 
-                return (
-                  <label
-                    key={option}
-                    className="flex cursor-pointer items-center gap-4 py-3"
-                  >
-                    <input
-                      type="radio"
-                      name={`question-${currentQuestion.id}`}
-                      checked={isSelected}
-                      onChange={() => handleAnswer(option)}
-                      className="h-5 w-5 accent-[#1f4e79]"
-                    />
+    return (
+      <label
+        key={option}
+        className="flex cursor-pointer items-center gap-4 py-3"
+      >
+        <input
+          type="radio"
+          name={`question-${currentQuestion.id}`}
+          checked={selectedAnswer === option}
+          onChange={() => handleAnswer(option)}
+          className="h-5 w-5 accent-[#1f4e79]"
+        />
 
-                    <span className="font-semibold text-slate-700">
-                      {letter}.
-                    </span>
+        <span className="font-semibold">
+          {letter}.
+        </span>
 
-                    <span className="text-slate-800">{option}</span>
-                  </label>
-                )
-              })}
+        <span>{option}</span>
+      </label>
+    )
+  })}
             </div>
 
             {shownAnswers.includes(currentQuestionIndex) && (

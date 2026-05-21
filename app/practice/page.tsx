@@ -119,15 +119,13 @@ export default function PracticePage() {
               href={`/practice/${subject.slug}`}
               className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#f4b400] sm:p-6"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/10 transition group-hover:bg-[#f4b400]/20">
-                  <subject.icon className="h-5 w-5 text-[#f4b400]" />
-                </div>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/10">
+  <subject.icon className="h-5 w-5 text-[#f4b400]" />
+</div>
 
-                <span className="text-xl text-gray-500 transition group-hover:text-[#f4b400]">
-                  →
-                </span>
-              </div>
+<h3 className="mt-5 text-lg font-bold text-white">
+  {subject.name}
+</h3>
 
               <p className="mt-5 text-xs uppercase tracking-wider text-[#f4b400]">
                 Subject

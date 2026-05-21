@@ -298,9 +298,7 @@ if (examMode === "menu") {
                   {topic}
                 </h3>
 
-                <p className="mt-2 text-sm text-slate-400">
-                  Start practice
-                </p>
+                
               </button>
             ))}
           </div>

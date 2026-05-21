@@ -27,53 +27,7 @@ export default function SubjectPracticePage() {
   const subject = String(params.subject)
 
   const [subjectQuestions, setSubjectQuestions] = useState<Question[]>([])
-
-useEffect(() => {
-  const fetchQuestions = async () => {
-    const { data, error } = await supabase
-      .from("questions")
-      .select("*")
-
-    if (error) {
-      console.log(error)
-      return
-    }
-
-    const formattedQuestions =
-      data
-        ?.filter(
-          (q) =>
-            q.subject?.toLowerCase().trim() ===
-            subject.toLowerCase().trim()
-        )
-        .map((q) => ({
-          id: q.id,
-          subject: q.subject,
-          topic: q.topic,
-          question: q.question,
-          options: [
-            q.option_a,
-            q.option_b,
-            q.option_c,
-            q.option_d,
-          ],
-          correctAnswer: q.correct_answer,
-          explanation: q.explanation,
-        })) || []
-
-    setSubjectQuestions(formattedQuestions)
-  }
-
-  fetchQuestions()
-}, [subject])
-
- const topics = Array.from(
-  new Set(
-    subjectQuestions
-      .map((q) => q.topic)
-      .filter(Boolean)
-  )
-) as string[]
+  const [isLoadingQuestions, setIsLoadingQuestions] = useState(true)
 
   const [examMode, setExamMode] = useState<ExamMode>("menu")
   const [activeTopic, setActiveTopic] = useState("")
@@ -87,6 +41,59 @@ useEffect(() => {
   const [showStartMockPrompt, setShowStartMockPrompt] = useState(false)
   const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      setIsLoadingQuestions(true)
+
+      const { data, error } = await supabase
+        .from("questions")
+        .select("*")
+
+      if (error) {
+        console.log("Supabase error:", error)
+        setSubjectQuestions([])
+        setIsLoadingQuestions(false)
+        return
+      }
+
+      const formattedQuestions =
+        data
+          ?.filter((q) => {
+            const dbSubject = String(q.subject || "").toLowerCase().trim()
+            const routeSubject = subject.toLowerCase().trim()
+
+            return dbSubject === routeSubject
+          })
+          .map((q) => ({
+            id: q.id,
+            subject: q.subject,
+            topic: q.topic,
+            question: q.question,
+            options: [
+              q.option_a,
+              q.option_b,
+              q.option_c,
+              q.option_d,
+            ],
+            correctAnswer: q.correct_answer,
+            explanation: q.explanation,
+          })) || []
+
+      setSubjectQuestions(formattedQuestions)
+      setIsLoadingQuestions(false)
+    }
+
+    fetchQuestions()
+  }, [subject])
+
+  const topics = Array.from(
+    new Set(
+      subjectQuestions
+        .map((q) => q.topic)
+        .filter(Boolean)
+    )
+  ) as string[]
 
   const currentQuestion = examQuestions[currentQuestionIndex]
   const selectedAnswer = answers[currentQuestionIndex]
@@ -223,6 +230,18 @@ useEffect(() => {
       : activeTopic
         ? `${activeTopic} Practice`
         : "Practice"
+
+  if (isLoadingQuestions) {
+    return (
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-sm font-medium text-[#f4b400]">
+            Loading questions...
+          </p>
+        </div>
+      </main>
+    )
+  }
 
   if (subjectQuestions.length === 0) {
     return (

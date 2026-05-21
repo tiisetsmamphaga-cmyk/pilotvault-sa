@@ -48,6 +48,7 @@ export default function SubjectPracticePage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [showFinishPrompt, setShowFinishPrompt] = useState(false)
   const [showStartMockPrompt, setShowStartMockPrompt] = useState(false)
+  const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
 
   const currentQuestion = examQuestions[currentQuestionIndex]
@@ -100,6 +101,7 @@ export default function SubjectPracticePage() {
     setShownAnswers([])
     setIsSubmitted(false)
     setShowFinishPrompt(false)
+    setShowMobileQuestionNav(false)
   }
 
   const shuffleQuestions = (items: Question[]) => {
@@ -226,21 +228,12 @@ export default function SubjectPracticePage() {
               </h1>
             </div>
 
-            <div className="flex w-full gap-3 sm:w-auto">
-              <Link
-                href="/practice"
-                className="flex-1 rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-4 py-2 text-center text-sm hover:bg-[#1e3a5f] sm:flex-none sm:px-5"
-              >
-                Subjects
-              </Link>
-
-              <Link
-                href="/practice"
-                className="flex-1 rounded-xl bg-[#f4b400] px-4 py-2 text-center text-sm font-bold text-[#06111f] hover:bg-[#d9a000] sm:flex-none sm:px-5"
-              >
-                Practice
-              </Link>
-            </div>
+            <Link
+              href="/practice"
+              className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-5 py-2 text-center text-sm hover:bg-[#1e3a5f]"
+            >
+              Subjects
+            </Link>
           </div>
         </header>
 
@@ -287,17 +280,28 @@ export default function SubjectPracticePage() {
             </p>
 
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {topics.map((topic) => (
+              {topics.length > 0 ? (
+                topics.map((topic) => (
+                  <button
+                    key={topic}
+                    onClick={() => startTopicPractice(topic)}
+                    className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
+                  >
+                    <h3 className="text-lg font-bold text-white">
+                      {topic}
+                    </h3>
+                  </button>
+                ))
+              ) : (
                 <button
-                  key={topic}
-                  onClick={() => startTopicPractice(topic)}
+                  onClick={() => startTopicPractice("")}
                   className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
                 >
                   <h3 className="text-lg font-bold text-white">
-                    {topic}
+                    All Questions
                   </h3>
                 </button>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -604,55 +608,6 @@ export default function SubjectPracticePage() {
         </aside>
 
         <section className="flex-1 p-4 sm:p-6 md:p-10">
-          <div className="mb-6 md:hidden">
-            <div className="rounded-md border border-slate-300 bg-slate-100 p-3">
-              <div className="mb-3 flex items-center justify-between">
-                <p className="text-sm font-semibold text-slate-700">
-                  Questions
-                </p>
-
-                <p className="text-xs text-slate-500">
-                  {currentQuestionIndex + 1} / {totalQuestions}
-                </p>
-              </div>
-
-              <div className="overflow-x-auto">
-                <div className="flex gap-2 pb-1">
-                  {examQuestions.map((_, index) => {
-                    const isActive = index === currentQuestionIndex
-                    const isAnswered = Boolean(answers[index])
-                    const isPinned = pinnedQuestions.includes(index)
-                    const hasShownAnswer = shownAnswers.includes(index)
-
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentQuestionIndex(index)}
-                        className={`relative flex h-[42px] min-w-[42px] items-center justify-center rounded border text-sm font-medium ${
-                          isActive
-                            ? "border-[#1f4e79] bg-[#1f4e79] text-white"
-                            : hasShownAnswer
-                              ? "border-yellow-400 bg-yellow-100 text-yellow-900"
-                              : isAnswered
-                                ? "border-blue-300 bg-blue-100 text-blue-900"
-                                : "border-red-300 bg-red-50 text-red-700"
-                        }`}
-                      >
-                        {index + 1}
-
-                        {isPinned && (
-                          <span className="absolute -right-1 -top-2 text-yellow-600">
-                            ⚑
-                          </span>
-                        )}
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="mx-auto max-w-4xl">
             <div className="mb-8 flex items-center justify-between gap-4">
               <div>
@@ -665,18 +620,27 @@ export default function SubjectPracticePage() {
                 </h2>
               </div>
 
-              <button
-                onClick={() => togglePin(currentQuestionIndex)}
-                className={`rounded-md border px-4 py-2 text-sm font-medium ${
-                  pinnedQuestions.includes(currentQuestionIndex)
-                    ? "border-yellow-500 bg-yellow-100 text-yellow-800"
-                    : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
-                }`}
-              >
-                {pinnedQuestions.includes(currentQuestionIndex)
-                  ? "Pinned"
-                  : "Pin"}
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setShowMobileQuestionNav(true)}
+                  className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 md:hidden"
+                >
+                  Questions
+                </button>
+
+                <button
+                  onClick={() => togglePin(currentQuestionIndex)}
+                  className={`rounded-md border px-4 py-2 text-sm font-medium ${
+                    pinnedQuestions.includes(currentQuestionIndex)
+                      ? "border-yellow-500 bg-yellow-100 text-yellow-800"
+                      : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
+                  }`}
+                >
+                  {pinnedQuestions.includes(currentQuestionIndex)
+                    ? "Pinned"
+                    : "Pin"}
+                </button>
+              </div>
             </div>
 
             <p className="text-lg leading-relaxed text-slate-900">
@@ -769,6 +733,74 @@ export default function SubjectPracticePage() {
           </div>
         </section>
       </div>
+
+      {showMobileQuestionNav && (
+        <div className="fixed inset-0 z-50 bg-black/50 md:hidden">
+          <div className="absolute bottom-0 left-0 right-0 max-h-[75vh] overflow-y-auto rounded-t-2xl bg-white p-5 text-slate-900 shadow-2xl">
+            <div className="mx-auto mb-5 h-1.5 w-16 rounded-full bg-slate-300" />
+
+            <div className="mb-4 flex items-center justify-between">
+              <div>
+                <h2 className="text-xl font-bold">Questions</h2>
+
+                <p className="mt-1 text-sm text-slate-500">
+                  {totalQuestions - unansweredCount} answered / {totalQuestions}
+                </p>
+              </div>
+
+              <button
+                onClick={() => setShowMobileQuestionNav(false)}
+                className="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700"
+              >
+                Close
+              </button>
+            </div>
+
+            <div className="grid grid-cols-5 gap-2">
+              {examQuestions.map((_, index) => {
+                const isActive = index === currentQuestionIndex
+                const isAnswered = Boolean(answers[index])
+                const isPinned = pinnedQuestions.includes(index)
+                const hasShownAnswer = shownAnswers.includes(index)
+
+                return (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setCurrentQuestionIndex(index)
+                      setShowMobileQuestionNav(false)
+                    }}
+                    className={`relative h-11 rounded border text-sm font-medium ${
+                      isActive
+                        ? "border-[#1f4e79] bg-[#1f4e79] text-white"
+                        : hasShownAnswer
+                          ? "border-yellow-400 bg-yellow-100 text-yellow-900"
+                          : isAnswered
+                            ? "border-blue-300 bg-blue-100 text-blue-900"
+                            : "border-red-300 bg-red-50 text-red-700"
+                    }`}
+                  >
+                    {index + 1}
+
+                    {isPinned && (
+                      <span className="absolute -right-1 -top-2 text-yellow-600">
+                        ⚑
+                      </span>
+                    )}
+                  </button>
+                )
+              })}
+            </div>
+
+            <div className="mt-5 grid grid-cols-2 gap-2 text-xs text-slate-600">
+              <p>Blue: current</p>
+              <p>Light blue: answered</p>
+              <p>Red: unanswered</p>
+              <p>Yellow: answer viewed</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showFinishPrompt && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 sm:px-6">

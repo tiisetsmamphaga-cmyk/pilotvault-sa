@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import { questions } from "@/src/data/questions"
+import { supabase } from "@/src/lib/supabase"
 
 type Question = {
   id: number

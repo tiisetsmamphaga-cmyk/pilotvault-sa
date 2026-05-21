@@ -27,8 +27,16 @@ const subjects = [
     slug: "aircraft-technical-and-general",
     icon: Wrench,
   },
-  { name: "Radio Telephony", slug: "radio-telephony", icon: Radio },
-  { name: "Flight Planning", slug: "flight-planning", icon: Map },
+  {
+    name: "Radio Telephony",
+    slug: "radio-telephony",
+    icon: Radio,
+  },
+  {
+    name: "Flight Planning",
+    slug: "flight-planning",
+    icon: Map,
+  },
 ]
 
 export default function DashboardPage() {
@@ -66,23 +74,22 @@ export default function DashboardPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-gray-400">
-            Select the subject you want to study and start practicing with
-            SACAA-style questions.
+            Select a subject and begin practicing SACAA exam questions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
           {subjects.map((subject) => (
             <Link
               key={subject.slug}
               href={`/practice/${subject.slug}`}
-              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition hover:-translate-y-1 hover:border-[#f4b400]"
+              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
                 <subject.icon className="h-6 w-6 text-[#f4b400]" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold">
+              <h3 className="mt-5 text-sm font-bold sm:text-lg">
                 {subject.name}
               </h3>
             </Link>

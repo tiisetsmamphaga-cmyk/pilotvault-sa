@@ -216,7 +216,7 @@ if (examMode === "menu") {
   return (
     <main className="min-h-screen bg-[#06111f] text-white">
       <header className="sticky top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        <div className="mx-auto flex min-h-20 max-w-7xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
               PilotVault SA
@@ -227,17 +227,17 @@ if (examMode === "menu") {
             </h1>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex w-full gap-3 sm:w-auto">
             <Link
               href="/practice"
-              className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-5 py-2 text-sm hover:bg-[#1e3a5f]"
+              className="flex-1 rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-4 py-2 text-center text-sm hover:bg-[#1e3a5f] sm:flex-none sm:px-5"
             >
               Subjects
             </Link>
 
             <Link
               href="/dashboard"
-              className="rounded-xl bg-[#f4b400] px-5 py-2 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
+              className="flex-1 rounded-xl bg-[#f4b400] px-4 py-2 text-center text-sm font-bold text-[#06111f] hover:bg-[#d9a000] sm:flex-none sm:px-5"
             >
               Dashboard
             </Link>
@@ -245,37 +245,22 @@ if (examMode === "menu") {
         </div>
       </header>
 
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <div className="rounded-3xl border border-[#1e3a5f] bg-gradient-to-r from-[#081726] to-[#0b1f35] p-8">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
-            SACAA Exam Preparation
-          </p>
-
-          <h2 className="mt-4 text-4xl font-bold">
-            Choose Your Practice Mode
-          </h2>
-
-          <p className="mt-4 max-w-2xl text-slate-300">
-            Start a timed 25-question mock exam or focus on one weak topic at a
-            time.
-          </p>
-        </div>
-
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
         <button
           onClick={() => setShowStartMockPrompt(true)}
-          className="mt-8 w-full rounded-3xl border border-[#f4b400]/50 bg-[#081726] p-8 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
+          className="w-full rounded-3xl border border-[#f4b400]/50 bg-[#081726] p-6 text-left transition hover:-translate-y-1 hover:border-[#f4b400] sm:p-8"
         >
           <p className="text-sm uppercase tracking-wider text-[#f4b400]">
             Mock Exam
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold">
-            25 Random Questions
+          <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
+            Start Mock Exam
           </h2>
 
-          <p className="mt-4 max-w-2xl text-slate-300">
-            Simulate a SACAA-style exam with randomized questions, timing,
-            question navigation, finish confirmation and final score.
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+            Simulate a SACAA-style exam with timing, question navigation, finish
+            confirmation and final score.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
@@ -285,10 +270,6 @@ if (examMode === "menu") {
 
             <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
               75% pass mark
-            </span>
-
-            <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
-              {Math.min(MOCK_QUESTION_COUNT, subjectQuestions.length)} questions
             </span>
           </div>
         </button>
@@ -302,46 +283,40 @@ if (examMode === "menu") {
             Choose a Topic
           </h2>
 
-          <p className="mt-3 text-sm text-slate-300">
+          <p className="mt-3 text-sm leading-6 text-slate-300">
             Focus on weak areas and review explanations while practicing.
           </p>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {topics.map((topic) => {
-              const count = subjectQuestions.filter(
-                (q) => q.topic === topic
-              ).length
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {topics.map((topic) => (
+              <button
+                key={topic}
+                onClick={() => startTopicPractice(topic)}
+                className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
+              >
+                <h3 className="text-lg font-bold text-white">
+                  {topic}
+                </h3>
 
-              return (
-                <button
-                  key={topic}
-                  onClick={() => startTopicPractice(topic)}
-                  className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
-                >
-                  <h3 className="text-lg font-bold text-white">
-                    {topic}
-                  </h3>
-
-                  <p className="mt-2 text-sm text-slate-400">
-                    {count} questions available
-                  </p>
-                </button>
-              )
-            })}
+                <p className="mt-2 text-sm text-slate-400">
+                  Start practice
+                </p>
+              </button>
+            ))}
           </div>
         </div>
       </section>
 
       {showStartMockPrompt && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
-          <div className="w-full max-w-lg rounded-2xl border border-[#1e3a5f] bg-white p-6 text-slate-900 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+          <div className="w-full max-w-lg rounded-2xl border border-[#1e3a5f] bg-white p-5 text-slate-900 shadow-2xl sm:p-6">
             <h2 className="text-2xl font-bold">
               Start Mock Exam
             </h2>
 
             <p className="mt-4 text-slate-700">
-              You are about to start a 25-question mock examination. Please
-              ensure you have everything you require before starting.
+              You are about to start a timed mock examination. Please ensure you
+              have everything you require before starting.
             </p>
 
             <div className="mt-5 rounded-xl border border-slate-300 bg-slate-50 p-4">
@@ -350,7 +325,6 @@ if (examMode === "menu") {
               </p>
 
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>• Number of questions: 25 randomized questions</li>
                 <li>• Time allowed: 25 minutes</li>
                 <li>• Pass mark: 75%</li>
                 <li>• You may navigate between questions before finishing</li>
@@ -362,17 +336,17 @@ if (examMode === "menu") {
               Once you start, the timer will begin immediately.
             </p>
 
-            <div className="mt-6 flex justify-end gap-3">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
               <button
                 onClick={() => setShowStartMockPrompt(false)}
-                className="rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+                className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 sm:py-2"
               >
                 Cancel
               </button>
 
               <button
                 onClick={startMockExam}
-                className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
+                className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
               >
                 Start Exam
               </button>

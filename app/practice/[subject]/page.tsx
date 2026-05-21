@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { supabase } from "@/src/lib/supabase"
@@ -62,11 +62,13 @@ useEffect(() => {
   fetchQuestions()
 }, [subject])
 
-  const topics = useMemo(() => {
-    return Array.from(
-      new Set(subjectQuestions.map((q) => q.topic).filter(Boolean))
-    ) as string[]
-  }, [subjectQuestions])
+ const topics = Array.from(
+  new Set(
+    subjectQuestions
+      .map((q) => q.topic)
+      .filter(Boolean)
+  )
+) as string[]
 
   const [examMode, setExamMode] = useState<ExamMode>("menu")
   const [activeTopic, setActiveTopic] = useState("")

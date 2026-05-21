@@ -31,8 +31,8 @@ export default function SubjectPracticePage() {
 useEffect(() => {
   const fetchQuestions = async () => {
     const { data, error } = await supabase
-  .from("questions")
-  .select("*")
+      .from("questions")
+      .select("*")
 
     if (error) {
       console.log(error)
@@ -40,20 +40,26 @@ useEffect(() => {
     }
 
     const formattedQuestions =
-      data?.map((q) => ({
-        id: q.id,
-        subject: q.subject,
-        topic: q.topic,
-        question: q.question,
-        options: [
-          q.option_a,
-          q.option_b,
-          q.option_c,
-          q.option_d,
-        ],
-        correctAnswer: q.correct_answer,
-        explanation: q.explanation,
-      })) || []
+      data
+        ?.filter(
+          (q) =>
+            q.subject?.toLowerCase().trim() ===
+            subject.toLowerCase().trim()
+        )
+        .map((q) => ({
+          id: q.id,
+          subject: q.subject,
+          topic: q.topic,
+          question: q.question,
+          options: [
+            q.option_a,
+            q.option_b,
+            q.option_c,
+            q.option_d,
+          ],
+          correctAnswer: q.correct_answer,
+          explanation: q.explanation,
+        })) || []
 
     setSubjectQuestions(formattedQuestions)
   }

@@ -31,9 +31,8 @@ export default function SubjectPracticePage() {
 useEffect(() => {
   const fetchQuestions = async () => {
     const { data, error } = await supabase
-      .from("questions")
-      .select("*")
-      .eq("subject", subject)
+  .from("questions")
+  .select("*")
 
     if (error) {
       console.log(error)

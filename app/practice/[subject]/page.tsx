@@ -1,9 +1,9 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import { questions } from "@/src/data/questions"
+import { supabase } from "@/src/lib/supabase"
 
 type Question = {
   id: number
@@ -26,17 +26,8 @@ export default function SubjectPracticePage() {
   const params = useParams()
   const subject = String(params.subject)
 
-  const subjectQuestions = useMemo(() => {
-    return (questions as Question[]).filter(
-      (q) => q.subject?.toLowerCase() === subject.toLowerCase()
-    )
-  }, [subject])
-
-  const topics = useMemo(() => {
-    return Array.from(
-      new Set(subjectQuestions.map((q) => q.topic).filter(Boolean))
-    ) as string[]
-  }, [subjectQuestions])
+  const [subjectQuestions, setSubjectQuestions] = useState<Question[]>([])
+  const [isLoadingQuestions, setIsLoadingQuestions] = useState(true)
 
   const [examMode, setExamMode] = useState<ExamMode>("menu")
   const [activeTopic, setActiveTopic] = useState("")
@@ -50,6 +41,59 @@ export default function SubjectPracticePage() {
   const [showStartMockPrompt, setShowStartMockPrompt] = useState(false)
   const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      setIsLoadingQuestions(true)
+
+      const { data, error } = await supabase
+        .from("questions")
+        .select("*")
+
+      if (error) {
+        console.log("Supabase error:", error)
+        setSubjectQuestions([])
+        setIsLoadingQuestions(false)
+        return
+      }
+
+      const formattedQuestions =
+        data
+          ?.filter((q) => {
+            const dbSubject = String(q.subject || "").toLowerCase().trim()
+            const routeSubject = subject.toLowerCase().trim()
+
+            return dbSubject === routeSubject
+          })
+          .map((q) => ({
+            id: q.id,
+            subject: q.subject,
+            topic: q.topic,
+            question: q.question,
+            options: [
+              q.option_a,
+              q.option_b,
+              q.option_c,
+              q.option_d,
+            ],
+            correctAnswer: q.correct_answer,
+            explanation: q.explanation,
+          })) || []
+
+      setSubjectQuestions(formattedQuestions)
+      setIsLoadingQuestions(false)
+    }
+
+    fetchQuestions()
+  }, [subject])
+
+  const topics = Array.from(
+    new Set(
+      subjectQuestions
+        .map((q) => q.topic)
+        .filter(Boolean)
+    )
+  ) as string[]
 
   const currentQuestion = examQuestions[currentQuestionIndex]
   const selectedAnswer = answers[currentQuestionIndex]
@@ -126,7 +170,11 @@ export default function SubjectPracticePage() {
   const startTopicPractice = (topic: string) => {
     resetExamState()
 
-    const topicQuestions = subjectQuestions.filter((q) => q.topic === topic)
+    const topicQuestions = shuffleQuestions(
+  subjectQuestions.filter(
+    (q) => q.topic === topic
+  )
+)
 
     setExamQuestions(topicQuestions)
     setActiveTopic(topic)
@@ -187,6 +235,18 @@ export default function SubjectPracticePage() {
         ? `${activeTopic} Practice`
         : "Practice"
 
+  if (isLoadingQuestions) {
+    return (
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-sm font-medium text-[#f4b400]">
+            Loading questions...
+          </p>
+        </div>
+      </main>
+    )
+  }
+
   if (subjectQuestions.length === 0) {
     return (
       <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
@@ -204,8 +264,7 @@ export default function SubjectPracticePage() {
             </h1>
 
             <p className="mt-3 text-slate-300">
-              Check that your questions use subject: "{subject}" inside
-              src/data/questions.ts.
+              No questions currently exist for this subject in Supabase.
             </p>
           </div>
         </div>
@@ -648,31 +707,32 @@ export default function SubjectPracticePage() {
             </p>
 
             <div className="mt-8 space-y-2">
-              {currentQuestion.options.map((option, index) => {
-                const letter = String.fromCharCode(65 + index)
-                const isSelected = selectedAnswer === option
+              {currentQuestion.options
+  .filter((option) => option && option.trim() !== "")
+  .map((option, index) => {
+    const letter = String.fromCharCode(65 + index)
 
-                return (
-                  <label
-                    key={option}
-                    className="flex cursor-pointer items-center gap-4 py-3"
-                  >
-                    <input
-                      type="radio"
-                      name={`question-${currentQuestion.id}`}
-                      checked={isSelected}
-                      onChange={() => handleAnswer(option)}
-                      className="h-5 w-5 accent-[#1f4e79]"
-                    />
+    return (
+      <label
+        key={option}
+        className="flex cursor-pointer items-center gap-4 py-3"
+      >
+        <input
+          type="radio"
+          name={`question-${currentQuestion.id}`}
+          checked={selectedAnswer === option}
+          onChange={() => handleAnswer(option)}
+          className="h-5 w-5 accent-[#1f4e79]"
+        />
 
-                    <span className="font-semibold text-slate-700">
-                      {letter}.
-                    </span>
+        <span className="font-semibold">
+          {letter}.
+        </span>
 
-                    <span className="text-slate-800">{option}</span>
-                  </label>
-                )
-              })}
+        <span>{option}</span>
+      </label>
+    )
+  })}
             </div>
 
             {shownAnswers.includes(currentQuestionIndex) && (

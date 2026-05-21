@@ -13,26 +13,10 @@ import {
 } from "lucide-react"
 
 const subjects = [
-  {
-    name: "Meteorology",
-    slug: "meteorology",
-    icon: Cloud,
-  },
-  {
-    name: "Air Law",
-    slug: "air-law",
-    icon: Scale,
-  },
-  {
-    name: "Navigation",
-    slug: "navigation",
-    icon: Compass,
-  },
-  {
-    name: "Human Performance",
-    slug: "human-performance",
-    icon: Brain,
-  },
+  { name: "Meteorology", slug: "meteorology", icon: Cloud },
+  { name: "Air Law", slug: "air-law", icon: Scale },
+  { name: "Navigation", slug: "navigation", icon: Compass },
+  { name: "Human Performance", slug: "human-performance", icon: Brain },
   {
     name: "Principles of Flight",
     slug: "principles-of-flight",
@@ -43,16 +27,8 @@ const subjects = [
     slug: "aircraft-technical-and-general",
     icon: Wrench,
   },
-  {
-    name: "Radio Telephony",
-    slug: "radio-telephony",
-    icon: Radio,
-  },
-  {
-    name: "Flight Planning",
-    slug: "flight-planning",
-    icon: Map,
-  },
+  { name: "Radio Telephony", slug: "radio-telephony", icon: Radio },
+  { name: "Flight Planning", slug: "flight-planning", icon: Map },
 ]
 
 export default function DashboardPage() {
@@ -64,7 +40,10 @@ export default function DashboardPage() {
             <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
               PilotVault SA
             </p>
-            <h1 className="mt-1 text-lg font-bold">Dashboard</h1>
+
+            <h1 className="mt-1 text-lg font-bold">
+              Dashboard
+            </h1>
           </div>
 
           <Link
@@ -99,23 +78,13 @@ export default function DashboardPage() {
               href={`/practice/${subject.slug}`}
               className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition hover:-translate-y-1 hover:border-[#f4b400]"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
-                  <subject.icon className="h-6 w-6 text-[#f4b400]" />
-                </div>
-
-                <span className="text-2xl text-gray-500 group-hover:text-[#f4b400]">
-                  →
-                </span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
+                <subject.icon className="h-6 w-6 text-[#f4b400]" />
               </div>
 
               <h3 className="mt-5 text-lg font-bold">
                 {subject.name}
               </h3>
-
-              <p className="mt-2 text-sm text-gray-400">
-                Start practice
-              </p>
             </Link>
           ))}
         </div>

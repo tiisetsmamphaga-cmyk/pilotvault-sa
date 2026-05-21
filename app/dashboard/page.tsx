@@ -13,26 +13,10 @@ import {
 } from "lucide-react"
 
 const subjects = [
-  {
-    name: "Meteorology",
-    slug: "meteorology",
-    icon: Cloud,
-  },
-  {
-    name: "Air Law",
-    slug: "air-law",
-    icon: Scale,
-  },
-  {
-    name: "Navigation",
-    slug: "navigation",
-    icon: Compass,
-  },
-  {
-    name: "Human Performance",
-    slug: "human-performance",
-    icon: Brain,
-  },
+  { name: "Meteorology", slug: "meteorology", icon: Cloud },
+  { name: "Air Law", slug: "air-law", icon: Scale },
+  { name: "Navigation", slug: "navigation", icon: Compass },
+  { name: "Human Performance", slug: "human-performance", icon: Brain },
   {
     name: "Principles of Flight",
     slug: "principles-of-flight",
@@ -58,26 +42,41 @@ const subjects = [
 export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-[#06111f] text-white">
+
       <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
+
         <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
               PilotVault SA
             </p>
-            <h1 className="mt-1 text-lg font-bold">Dashboard</h1>
+
+            <h1 className="mt-1 text-lg font-bold">
+              Dashboard
+            </h1>
           </div>
 
-          <Link
-            href="/"
-            className="rounded-xl bg-[#f4b400] px-4 py-2 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
-          >
-            Home
-          </Link>
+          <div className="rounded-xl border border-[#f4b400]/30 bg-[#f4b400]/10 px-4 py-3">
+
+            <p className="text-[10px] uppercase tracking-wider text-[#f4b400]">
+              Free Trial
+            </p>
+
+            <p className="mt-1 text-sm font-bold text-white">
+              3 days remaining
+            </p>
+
+          </div>
+
         </div>
+
       </header>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+
         <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+
           <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
             Practice Center
           </p>
@@ -87,39 +86,35 @@ export default function DashboardPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-gray-400">
-            Select the subject you want to study and start practicing with
-            SACAA-style questions.
+            Select a subject and begin practicing SACAA exam questions.
           </p>
+
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+
           {subjects.map((subject) => (
             <Link
               key={subject.slug}
               href={`/practice/${subject.slug}`}
-              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition hover:-translate-y-1 hover:border-[#f4b400]"
+              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
-                  <subject.icon className="h-6 w-6 text-[#f4b400]" />
-                </div>
 
-                <span className="text-2xl text-gray-500 group-hover:text-[#f4b400]">
-                  →
-                </span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
+                <subject.icon className="h-6 w-6 text-[#f4b400]" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold">
+              <h3 className="mt-5 text-sm font-bold sm:text-lg">
                 {subject.name}
               </h3>
 
-              <p className="mt-2 text-sm text-gray-400">
-                Start practice
-              </p>
             </Link>
           ))}
+
         </div>
+
       </section>
+
     </main>
   )
 }

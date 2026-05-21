@@ -241,8 +241,7 @@ useEffect(() => {
             </h1>
 
             <p className="mt-3 text-slate-300">
-              Check that your questions use subject: "{subject}" inside
-              src/data/questions.ts.
+              No questions currently exist for this subject in Supabase.
             </p>
           </div>
         </div>

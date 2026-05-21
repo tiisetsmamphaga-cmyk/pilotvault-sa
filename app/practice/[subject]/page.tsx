@@ -4,15 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { questions } from "@/src/data/questions"
-import {
-  ArrowLeft,
-  Clock,
-  Flag,
-  Home,
-  Pin,
-  RotateCcw,
-  Trophy,
-} from "lucide-react"
+import { Clock, Flag, Pin, Trophy } from "lucide-react"
 
 type Question = {
   id: number
@@ -132,7 +124,9 @@ export default function SubjectPracticePage() {
   const startTopicPractice = (topic: string) => {
     resetExamState()
 
-    const topicQuestions = subjectQuestions.filter((q) => q.topic === topic)
+    const topicQuestions = topic
+      ? subjectQuestions.filter((q) => q.topic === topic)
+      : subjectQuestions
 
     setExamQuestions(topicQuestions)
     setActiveTopic(topic)
@@ -197,10 +191,10 @@ export default function SubjectPracticePage() {
       <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white">
         <div className="mx-auto max-w-4xl">
           <Link
-            href="/practice"
+            href="/dashboard"
             className="text-sm font-medium text-[#f4b400] hover:text-white"
           >
-            ← Back to Practice
+            ← Back to Dashboard
           </Link>
 
           <div className="mt-10 rounded-2xl border border-red-500/40 bg-red-500/10 p-6">
@@ -229,65 +223,74 @@ export default function SubjectPracticePage() {
               </p>
 
               <h1 className="mt-1 text-xl font-bold capitalize">
-                {subject.replaceAll("-", " ")} Practice
+                {subject.replaceAll("-", " ")}
               </h1>
             </div>
 
             <div className="flex gap-3">
               <Link
-                href="/practice"
+                href="/dashboard"
                 className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-4 py-2 text-sm hover:bg-[#1e3a5f]"
               >
-                Subjects
+                Dashboard
               </Link>
 
               <Link
-                href="/dashboard"
+                href="/"
                 className="rounded-xl bg-[#f4b400] px-4 py-2 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
               >
-                Dashboard
+                Home
               </Link>
             </div>
           </div>
         </header>
 
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#0b1f35] p-6 sm:p-8">
-            <h2 className="text-3xl font-bold">
-              Choose your exam mode
+          <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+              Choose Mode
+            </p>
+
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              How do you want to practice?
             </h2>
 
             <p className="mt-3 max-w-2xl text-gray-400">
-              Practice by topic or start a timed mock exam with 25 randomized
-              questions.
+              Choose a realistic mock exam or focus on one topic at a time.
             </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
             <button
               onClick={startMockExam}
-              className="rounded-3xl border border-[#f4b400] bg-[#0b1f35] p-6 text-left shadow-lg shadow-[#f4b400]/10 transition hover:-translate-y-1 hover:bg-[#102942]"
+              className="group rounded-3xl border border-[#f4b400] bg-[#0b1f35] p-8 text-left shadow-lg shadow-[#f4b400]/10 transition-all hover:-translate-y-1 hover:bg-[#102942]"
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400] text-[#06111f]">
-                <Clock className="h-6 w-6" />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4b400] text-[#06111f]">
+                <Clock className="h-7 w-7" />
               </div>
 
-              <h3 className="text-2xl font-bold">
-                Start Mock Exam
-              </h3>
+              <h3 className="text-2xl font-bold">Mock Exam</h3>
 
               <p className="mt-3 text-gray-400">
-                25 questions • 25 minutes • randomized each attempt
+                Simulate the real SACAA exam experience.
               </p>
+
+              <div className="mt-6 space-y-2 text-sm text-gray-300">
+                <p>✓ 25 random questions</p>
+                <p>✓ 25 minute timer</p>
+                <p>✓ Review answers afterwards</p>
+              </div>
+
+              <div className="mt-8 inline-flex rounded-xl bg-[#f4b400] px-5 py-3 font-bold text-[#06111f]">
+                Start Exam
+              </div>
             </button>
 
-            <div className="rounded-3xl border border-[#1e3a5f] bg-[#0b1f35] p-6">
-              <h3 className="text-2xl font-bold">
-                Topic Practice
-              </h3>
+            <div className="rounded-3xl border border-[#1e3a5f] bg-[#0b1f35] p-8">
+              <h3 className="text-2xl font-bold">Topic Practice</h3>
 
               <p className="mt-3 text-gray-400">
-                Select a topic and focus on weak areas.
+                Focus on individual topics and weak areas.
               </p>
 
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -296,7 +299,7 @@ export default function SubjectPracticePage() {
                     <button
                       key={topic}
                       onClick={() => startTopicPractice(topic)}
-                      className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-left text-sm font-semibold hover:border-[#f4b400] hover:text-[#f4b400]"
+                      className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-4 text-left text-sm font-semibold transition hover:border-[#f4b400] hover:text-[#f4b400]"
                     >
                       {topic}
                     </button>
@@ -304,7 +307,7 @@ export default function SubjectPracticePage() {
                 ) : (
                   <button
                     onClick={() => startTopicPractice("")}
-                    className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-left text-sm font-semibold hover:border-[#f4b400] hover:text-[#f4b400]"
+                    className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-4 text-left text-sm font-semibold transition hover:border-[#f4b400] hover:text-[#f4b400]"
                   >
                     All Questions
                   </button>
@@ -327,9 +330,7 @@ export default function SubjectPracticePage() {
                 PilotVault SA
               </p>
 
-              <h1 className="text-lg font-bold">
-                Exam Results
-              </h1>
+              <h1 className="text-lg font-bold">Exam Results</h1>
             </div>
 
             <button
@@ -353,9 +354,7 @@ export default function SubjectPracticePage() {
                   {passed ? "Passed" : "Not Yet Passed"}
                 </h2>
 
-                <p className="mt-2 text-gray-600">
-                  Pass mark: {PASS_MARK}%
-                </p>
+                <p className="mt-2 text-gray-600">Pass mark: {PASS_MARK}%</p>
               </div>
 
               <div className="text-left sm:text-right">
@@ -371,9 +370,7 @@ export default function SubjectPracticePage() {
           </div>
 
           <div className="mt-6 rounded-2xl bg-white p-6 shadow-sm">
-            <h3 className="text-xl font-bold">
-              Questions to Review
-            </h3>
+            <h3 className="text-xl font-bold">Questions to Review</h3>
 
             <div className="mt-5 space-y-5">
               {wrongQuestions.length === 0 ? (
@@ -465,9 +462,7 @@ export default function SubjectPracticePage() {
       <section className="mx-auto grid max-w-7xl gap-4 px-4 py-4 sm:px-6 lg:grid-cols-[220px_1fr] lg:px-8">
         <aside className="rounded-xl bg-white p-4 shadow-sm lg:sticky lg:top-24 lg:h-fit">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-bold">
-              Questions
-            </h2>
+            <h2 className="font-bold">Questions</h2>
 
             <span className="text-xs text-gray-500">
               {answeredCount}/{totalQuestions}
@@ -629,9 +624,7 @@ export default function SubjectPracticePage() {
               <Flag className="h-6 w-6 text-[#06111f]" />
             </div>
 
-            <h2 className="text-2xl font-bold">
-              Finish exam?
-            </h2>
+            <h2 className="text-2xl font-bold">Finish exam?</h2>
 
             <p className="mt-3 text-gray-600">
               You still have {unansweredCount} unanswered question

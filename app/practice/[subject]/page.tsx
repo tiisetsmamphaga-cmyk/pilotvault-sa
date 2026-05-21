@@ -170,7 +170,11 @@ export default function SubjectPracticePage() {
   const startTopicPractice = (topic: string) => {
     resetExamState()
 
-    const topicQuestions = subjectQuestions.filter((q) => q.topic === topic)
+    const topicQuestions = shuffleQuestions(
+  subjectQuestions.filter(
+    (q) => q.topic === topic
+  )
+)
 
     setExamQuestions(topicQuestions)
     setActiveTopic(topic)

@@ -26,11 +26,41 @@ export default function SubjectPracticePage() {
   const params = useParams()
   const subject = String(params.subject)
 
-  const subjectQuestions = useMemo(() => {
-    return (questions as Question[]).filter(
-      (q) => q.subject?.toLowerCase() === subject.toLowerCase()
-    )
-  }, [subject])
+  const [subjectQuestions, setSubjectQuestions] = useState<Question[]>([])
+
+useEffect(() => {
+  const fetchQuestions = async () => {
+    const { data, error } = await supabase
+      .from("questions")
+      .select("*")
+      .eq("subject", subject)
+
+    if (error) {
+      console.log(error)
+      return
+    }
+
+    const formattedQuestions =
+      data?.map((q) => ({
+        id: q.id,
+        subject: q.subject,
+        topic: q.topic,
+        question: q.question,
+        options: [
+          q.option_a,
+          q.option_b,
+          q.option_c,
+          q.option_d,
+        ],
+        correctAnswer: q.correct_answer,
+        explanation: q.explanation,
+      })) || []
+
+    setSubjectQuestions(formattedQuestions)
+  }
+
+  fetchQuestions()
+}, [subject])
 
   const topics = useMemo(() => {
     return Array.from(

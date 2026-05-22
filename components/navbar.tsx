@@ -147,7 +147,7 @@ export function Navbar() {
           <motion.div
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl border border-[#1e3a5f] bg-[#06111f] p-5 shadow-2xl sm:p-6"
+           className="relative w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
           >
             <button
               type="button"

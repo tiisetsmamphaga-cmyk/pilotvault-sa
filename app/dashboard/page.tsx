@@ -79,7 +79,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-3">
             <div className="rounded-xl border border-[#f4b400]/30 bg-[#f4b400]/10 px-4 py-3">
               <p className="text-[10px] uppercase tracking-wider text-[#f4b400]">
-                Free Trial
+                Trial Account
               </p>
               <p className="mt-1 text-sm font-bold text-white">
                 3 days remaining
@@ -88,7 +88,7 @@ export default function DashboardPage() {
 
             <button
               onClick={handleLogout}
-              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 hover:border-[#f4b400] hover:text-[#f4b400]"
+              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
             >
               <LogOut className="h-4 w-4" />
               Logout
@@ -98,6 +98,61 @@ export default function DashboardPage() {
       </header>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mb-8 rounded-3xl border border-[#f4b400]/30 bg-[#081726] p-6 sm:p-8">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                3-Day Free Trial
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+                Explore PilotVault with limited trial access
+              </h2>
+
+              <p className="mt-3 max-w-2xl text-gray-400">
+                Your trial gives you access to all SACAA subjects using a fixed
+                set of 25 curated mock-exam questions. Topic practice and the
+                full question banks unlock with an active subscription.
+              </p>
+            </div>
+
+            <Link
+              href="/upgrade"
+              className="rounded-xl bg-[#f4b400] px-6 py-3 text-center text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000]"
+            >
+              Upgrade to Full Access
+            </Link>
+          </div>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-[#1e3a5f] bg-[#06111f] p-5">
+              <p className="text-sm font-semibold text-[#f4b400]">
+                Included in Trial
+              </p>
+
+              <div className="mt-4 space-y-2 text-sm text-gray-300">
+                <p>✓ Access to all SACAA subjects</p>
+                <p>✓ One fixed 25-question mock exam set</p>
+                <p>✓ Detailed answer explanations</p>
+                <p>✓ 3 days to test the platform</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#1e3a5f] bg-[#06111f] p-5">
+              <p className="text-sm font-semibold text-[#f4b400]">
+                Unlock After Upgrade
+              </p>
+
+              <div className="mt-4 space-y-2 text-sm text-gray-300">
+                <p>Full question banks</p>
+                <p>Unlimited mock exams</p>
+                <p>Topic-based practice</p>
+                <p>Progress tracking and analytics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
           <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
             Practice Center
@@ -108,7 +163,8 @@ export default function DashboardPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-gray-400">
-            Select a subject and begin practicing SACAA exam questions.
+            Trial accounts can attempt the sample mock exam for each subject.
+            Upgrade to unlock topic-based practice and the full question bank.
           </p>
         </div>
 
@@ -126,6 +182,10 @@ export default function DashboardPage() {
               <h3 className="mt-5 text-sm font-bold sm:text-lg">
                 {subject.name}
               </h3>
+
+              <p className="mt-2 text-xs text-gray-500">
+                Sample mock exam
+              </p>
             </Link>
           ))}
         </div>

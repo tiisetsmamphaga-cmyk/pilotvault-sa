@@ -21,7 +21,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
   const [authMode, setAuthMode] = useState<"login" | "signup">("signup")
-
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -60,10 +59,7 @@ export function Navbar() {
 
     const { data, error } =
       authMode === "login"
-        ? await supabase.auth.signInWithPassword({
-            email,
-            password,
-          })
+        ? await supabase.auth.signInWithPassword({ email, password })
         : await supabase.auth.signUp({
             email,
             password,
@@ -74,18 +70,34 @@ export function Navbar() {
             },
           })
 
-    console.log("AUTH MODE:", authMode)
-    console.log("AUTH DATA:", data)
-    console.log("AUTH ERROR:", error)
-
-    setLoading(false)
-
     if (error) {
+      setLoading(false)
       setAuthMessage(error.message)
       return
     }
 
     if (authMode === "signup") {
+      if (data.user) {
+        const trialEndsAt = new Date(
+          Date.now() + 3 * 24 * 60 * 60 * 1000
+        ).toISOString()
+
+        const { error: profileError } = await supabase.from("Profiles").insert({
+          id: data.user.id,
+          full_name: fullName,
+          email,
+          subscription_status: "trial",
+          trial_ends_at: trialEndsAt,
+        })
+
+        if (profileError) {
+          setLoading(false)
+          setAuthMessage(profileError.message)
+          return
+        }
+      }
+
+      setLoading(false)
       setAuthMessage("Account created. You can now log in.")
       setAuthMode("login")
       setPassword("")
@@ -93,12 +105,12 @@ export function Navbar() {
       return
     }
 
+    setLoading(false)
     window.location.href = "/dashboard"
   }
 
   useEffect(() => {
     const openSignup = () => openAuth("signup")
-
     window.addEventListener("open-signup-modal", openSignup)
 
     return () => {

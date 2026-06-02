@@ -86,15 +86,24 @@ export function Navbar() {
     }
 
     if (authMode === "signup") {
-      setAuthMessage("Account created. You can now log in.")
-      setAuthMode("login")
-      setPassword("")
-      setConfirmPassword("")
-      return
-    }
-
-    window.location.href = "/dashboard"
+  if (data.user) {
+    await supabase.from("profiles").insert({
+      id: data.user.id,
+      full_name: fullName,
+      email: email,
+      subscription_status: "trial",
+      trial_ends_at: new Date(
+        Date.now() + 3 * 24 * 60 * 60 * 1000
+      ).toISOString(),
+    })
   }
+
+  setAuthMessage("Account created. You can now log in.")
+  setAuthMode("login")
+  setPassword("")
+  setConfirmPassword("")
+  return
+}
 
   useEffect(() => {
     const openSignup = () => openAuth("signup")

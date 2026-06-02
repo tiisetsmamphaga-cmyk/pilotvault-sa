@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { supabase } from "@/src/lib/supabase"
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -21,10 +22,74 @@ export function Navbar() {
   const [authOpen, setAuthOpen] = useState(false)
   const [authMode, setAuthMode] = useState<"login" | "signup">("signup")
 
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [authMessage, setAuthMessage] = useState("")
+
   const openAuth = (mode: "login" | "signup") => {
     setAuthMode(mode)
     setAuthOpen(true)
     setIsOpen(false)
+    setAuthMessage("")
+  }
+
+  const handleAuth = async () => {
+    setAuthMessage("")
+
+    if (!email || !password) {
+      setAuthMessage("Please enter your email and password.")
+      return
+    }
+
+    if (authMode === "signup") {
+      if (!fullName) {
+        setAuthMessage("Please enter your full name.")
+        return
+      }
+
+      if (password !== confirmPassword) {
+        setAuthMessage("Passwords do not match.")
+        return
+      }
+    }
+
+    setLoading(true)
+
+    const { error } =
+      authMode === "login"
+        ? await supabase.auth.signInWithPassword({
+            email,
+            password,
+          })
+        : await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              data: {
+                full_name: fullName,
+              },
+            },
+          })
+
+    setLoading(false)
+
+    if (error) {
+      setAuthMessage(error.message)
+      return
+    }
+
+    if (authMode === "signup") {
+      setAuthMessage("Account created. You can now log in.")
+      setAuthMode("login")
+      setPassword("")
+      setConfirmPassword("")
+      return
+    }
+
+    window.location.href = "/dashboard"
   }
 
   useEffect(() => {
@@ -147,7 +212,7 @@ export function Navbar() {
           <motion.div
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-           className="relative w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
+            className="relative w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
           >
             <button
               type="button"
@@ -177,7 +242,10 @@ export function Navbar() {
             <div className="my-6 grid grid-cols-2 rounded-xl bg-[#0b1c30] p-1">
               <button
                 type="button"
-                onClick={() => setAuthMode("login")}
+                onClick={() => {
+                  setAuthMode("login")
+                  setAuthMessage("")
+                }}
                 className={`rounded-lg py-2 text-sm font-semibold transition ${
                   authMode === "login"
                     ? "bg-[#f4b400] text-[#06111f]"
@@ -189,7 +257,10 @@ export function Navbar() {
 
               <button
                 type="button"
-                onClick={() => setAuthMode("signup")}
+                onClick={() => {
+                  setAuthMode("signup")
+                  setAuthMessage("")
+                }}
                 className={`rounded-lg py-2 text-sm font-semibold transition ${
                   authMode === "signup"
                     ? "bg-[#f4b400] text-[#06111f]"
@@ -200,11 +271,19 @@ export function Navbar() {
               </button>
             </div>
 
-            <form className="space-y-4">
+            <form
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault()
+                handleAuth()
+              }}
+            >
               {authMode === "signup" && (
                 <input
                   type="text"
                   placeholder="Full name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
                 />
               )}
@@ -212,12 +291,16 @@ export function Navbar() {
               <input
                 type="email"
                 placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
               />
 
               <input
                 type="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
               />
 
@@ -225,18 +308,28 @@ export function Navbar() {
                 <input
                   type="password"
                   placeholder="Confirm password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
                 />
               )}
 
+              {authMessage && (
+                <p className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-sm text-gray-300">
+                  {authMessage}
+                </p>
+              )}
+
               <Button
-                type="button"
-                onClick={() => {
-                  window.location.href = "/dashboard"
-                }}
-                className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000]"
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000] disabled:opacity-60"
               >
-                {authMode === "login" ? "Login" : "Start Free Trial"}
+                {loading
+                  ? "Please wait..."
+                  : authMode === "login"
+                    ? "Login"
+                    : "Start Free Trial"}
               </Button>
             </form>
           </motion.div>

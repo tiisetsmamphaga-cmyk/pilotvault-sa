@@ -58,7 +58,7 @@ export function Navbar() {
 
     setLoading(true)
 
-    const { error } =
+    const { data, error } =
       authMode === "login"
         ? await supabase.auth.signInWithPassword({
             email,
@@ -73,6 +73,10 @@ export function Navbar() {
               },
             },
           })
+
+    console.log("AUTH MODE:", authMode)
+    console.log("AUTH DATA:", data)
+    console.log("AUTH ERROR:", error)
 
     setLoading(false)
 
@@ -108,7 +112,7 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur-md"
+        className="fixed left-0 right-0 top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur-md"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between lg:h-20">
@@ -212,7 +216,7 @@ export function Navbar() {
           <motion.div
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="relative w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
+            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
           >
             <button
               type="button"

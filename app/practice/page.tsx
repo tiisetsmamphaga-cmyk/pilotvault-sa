@@ -49,7 +49,7 @@ export default function PracticePage() {
               href="/dashboard"
               className="flex-1 rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-4 py-2 text-center text-sm font-semibold hover:bg-[#1e3a5f] sm:flex-none sm:px-5"
             >
-              Dashboard
+            Logout 
             </Link>
 
             <Link

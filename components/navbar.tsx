@@ -83,12 +83,14 @@ export function Navbar() {
         ).toISOString()
 
         const { error: profileError } = await supabase.from("Profiles").insert({
-          id: data.user.id,
-          full_name: fullName,
-          email,
-          subscription_status: "trial",
-          trial_ends_at: trialEndsAt,
-        })
+  id: data.user.id,
+  full_name: fullName,
+  email,
+  subscription_status: "trial",
+  subscription_plan: "trial",
+  payment_status: "unpaid",
+  trial_ends_at: trialEndsAt,
+})
 
         if (profileError) {
           setLoading(false)

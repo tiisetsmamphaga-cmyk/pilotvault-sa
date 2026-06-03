@@ -44,7 +44,7 @@ export function Footer() {
           <div>
             <Link href="#" className="mb-4 flex">
               <Image
-                src="/images/logo.png"
+                src="/images/headerlogo.png"
                 alt="PilotVault SA"
                 width={180}
                 height={45}

@@ -82,15 +82,17 @@ export function Navbar() {
           Date.now() + 3 * 24 * 60 * 60 * 1000
         ).toISOString()
 
-        const { error: profileError } = await supabase.from("Profiles").insert({
-  id: data.user.id,
-  full_name: fullName,
-  email,
-  subscription_status: "trial",
-  subscription_plan: "trial",
-  payment_status: "unpaid",
-  trial_ends_at: trialEndsAt,
-})
+        const { error: profileError } = await supabase
+          .from("Profiles")
+          .insert({
+            id: data.user.id,
+            full_name: fullName,
+            email,
+            subscription_status: "trial",
+            subscription_plan: "trial",
+            payment_status: "unpaid",
+            trial_ends_at: trialEndsAt,
+          })
 
         if (profileError) {
           setLoading(false)
@@ -129,14 +131,14 @@ export function Navbar() {
         className="fixed left-0 right-0 top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur-md"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between lg:h-20">
+          <div className="flex h-20 items-center justify-between lg:h-24">
             <Link href="#" className="flex items-center">
               <Image
                 src="/images/logo.png"
                 alt="PilotVault SA"
-                width={200}
-                height={50}
-                className="h-12 w-auto sm:h-14 lg:h-20"
+                width={420}
+                height={120}
+                className="h-16 w-auto sm:h-20 lg:h-24"
                 priority
               />
             </Link>

@@ -38,33 +38,13 @@ export default function DashboardPage() {
   useEffect(() => {
     const checkUser = async () => {
       const {
-  data: { user },
-} = await supabase.auth.getUser()
+        data: { user },
+      } = await supabase.auth.getUser()
 
-if (!user) {
-  router.push("/")
-  return
-}
-
-const { data: profile } = await supabase
-  .from("Profiles")
-  .select("*")
-  .eq("id", user.id)
-  .single()
-
-if (!profile) {
-  router.push("/upgrade")
-  return
-}
-
-const isTrialExpired =
-  profile.subscription_status === "trial" &&
-  new Date(profile.trial_ends_at) < new Date()
-
-if (isTrialExpired) {
-  router.push("/upgrade")
-  return
-}
+      if (!user) {
+        router.push("/")
+        return
+      }
 
       setLoading(false)
     }
@@ -144,25 +124,27 @@ if (isTrialExpired) {
           </p>
         </div>
 
-       <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
-  {subjects.map((subject) => (
-    <Link
-      key={subject.slug}
-      href={`/practice/${subject.slug}`}
-      className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
-    >
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
-        <subject.icon className="h-6 w-6 text-[#f4b400]" />
-      </div>
+        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+          {subjects.map((subject) => (
+            <Link
+              key={subject.slug}
+              href={`/practice/${subject.slug}`}
+              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
+                <subject.icon className="h-6 w-6 text-[#f4b400]" />
+              </div>
 
-      <h3 className="mt-5 text-sm font-bold sm:text-lg">
-        {subject.name}
-      </h3>
+              <h3 className="mt-5 text-sm font-bold sm:text-lg">
+                {subject.name}
+              </h3>
 
-      
-    </Link>
-  ))}
-</div>
+              <p className="mt-3 text-sm text-gray-400 transition group-hover:text-[#f4b400]">
+                Start Mock Exam →
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   )

@@ -139,9 +139,7 @@ export default function DashboardPage() {
         {subject.name}
       </h3>
 
-      <p className="mt-3 text-sm text-gray-400 transition group-hover:text-[#f4b400]">
-        Start Mock Exam →
-      </p>
+      
     </Link>
   ))}
 </div>

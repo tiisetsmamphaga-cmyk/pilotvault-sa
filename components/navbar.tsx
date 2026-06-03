@@ -82,17 +82,15 @@ export function Navbar() {
           Date.now() + 3 * 24 * 60 * 60 * 1000
         ).toISOString()
 
-        const { error: profileError } = await supabase
-          .from("Profiles")
-          .insert({
-            id: data.user.id,
-            full_name: fullName,
-            email,
-            subscription_status: "trial",
-            subscription_plan: "trial",
-            payment_status: "unpaid",
-            trial_ends_at: trialEndsAt,
-          })
+        const { error: profileError } = await supabase.from("Profiles").insert({
+          id: data.user.id,
+          full_name: fullName,
+          email,
+          subscription_status: "trial",
+          subscription_plan: "trial",
+          payment_status: "unpaid",
+          trial_ends_at: trialEndsAt,
+        })
 
         if (profileError) {
           setLoading(false)
@@ -102,7 +100,7 @@ export function Navbar() {
       }
 
       setLoading(false)
-      setAuthMessage("Account created. You can now log in.")
+      setAuthMessage("Account created. Please verify your email, then log in.")
       setAuthMode("login")
       setPassword("")
       setConfirmPassword("")
@@ -132,15 +130,17 @@ export function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between lg:h-24">
-            <Link href="#" className="flex items-center">
-              <Image
-                src="/images/headerlogo.png"
-                alt="PilotVault SA"
-                width={420}
-                height={120}
-                className="h-16 w-auto sm:h-20 lg:h-24"
-                priority
-              />
+            <Link href="#" className="flex shrink-0 items-center">
+              <div className="relative h-16 w-[230px] sm:h-20 sm:w-[300px] lg:h-24 lg:w-[380px]">
+                <Image
+                  src="/images/headerlogo.png"
+                  alt="PilotVault SA"
+                  fill
+                  sizes="(max-width: 640px) 230px, (max-width: 1024px) 300px, 380px"
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
             </Link>
 
             <div className="hidden items-center gap-8 lg:flex">

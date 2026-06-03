@@ -83,14 +83,14 @@ export function Navbar() {
         ).toISOString()
 
         const { error: profileError } = await supabase.from("Profiles").insert({
-  id: data.user.id,
-  full_name: fullName,
-  email,
-  subscription_status: "trial",
-  subscription_plan: "trial",
-  payment_status: "unpaid",
-  trial_ends_at: trialEndsAt,
-})
+          id: data.user.id,
+          full_name: fullName,
+          email,
+          subscription_status: "trial",
+          subscription_plan: "trial",
+          payment_status: "unpaid",
+          trial_ends_at: trialEndsAt,
+        })
 
         if (profileError) {
           setLoading(false)
@@ -100,7 +100,7 @@ export function Navbar() {
       }
 
       setLoading(false)
-      setAuthMessage("Account created. You can now log in.")
+      setAuthMessage("Account created. Please verify your email, then log in.")
       setAuthMode("login")
       setPassword("")
       setConfirmPassword("")
@@ -129,19 +129,19 @@ export function Navbar() {
         className="fixed left-0 right-0 top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur-md"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between lg:h-20">
-            <Link href="#" className="flex items-center">
+          <div className="grid h-20 grid-cols-[180px_1fr_auto] items-center gap-4 lg:grid-cols-[220px_1fr_220px]">
+            <Link href="#" className="flex items-center justify-start">
               <Image
-                src="/images/logo.png"
+                src="/images/Header logo.png"
                 alt="PilotVault SA"
-                width={200}
-                height={50}
-                className="h-12 w-auto sm:h-14 lg:h-20"
+                width={300}
+                height={90}
+                className="h-16 w-auto object-contain"
                 priority
               />
             </Link>
 
-            <div className="hidden items-center gap-8 lg:flex">
+            <div className="hidden items-center justify-center gap-8 lg:flex">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -153,7 +153,7 @@ export function Navbar() {
               ))}
             </div>
 
-            <div className="hidden items-center gap-4 lg:flex">
+            <div className="hidden items-center justify-end gap-4 lg:flex">
               <Button
                 type="button"
                 onClick={() => openAuth("login")}
@@ -175,10 +175,14 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-lg p-2 text-white transition hover:bg-[#0b1c30] lg:hidden"
+              className="justify-self-end rounded-lg p-2 text-white transition hover:bg-[#0b1c30] lg:hidden"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
 

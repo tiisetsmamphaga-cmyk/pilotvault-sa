@@ -132,7 +132,7 @@ export function Navbar() {
           <div className="grid h-20 grid-cols-[180px_1fr_auto] items-center gap-4 lg:grid-cols-[220px_1fr_220px]">
             <Link href="#" className="flex items-center justify-start">
               <Image
-                src="/images/headerlogo.png"
+                src="/images/Header logo.png"
                 alt="PilotVault SA"
                 width={300}
                 height={90}

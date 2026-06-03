@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useParams } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import Link from "next/link"
 import { supabase } from "@/src/lib/supabase"
 
@@ -15,22 +15,21 @@ type Question = {
   explanation: string
 }
 
-type ExamMode = "menu" | "mock" | "topic"
+type ExamMode = "menu" | "mock"
 
 const MOCK_QUESTION_COUNT = 25
 const MOCK_TIME_SECONDS = 25 * 60
-const TOPIC_TIME_SECONDS = 25 * 60
 const PASS_MARK = 75
 
 export default function SubjectPracticePage() {
   const params = useParams()
+  const router = useRouter()
   const subject = String(params.subject)
 
   const [subjectQuestions, setSubjectQuestions] = useState<Question[]>([])
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(true)
 
   const [examMode, setExamMode] = useState<ExamMode>("menu")
-  const [activeTopic, setActiveTopic] = useState("")
   const [examQuestions, setExamQuestions] = useState<Question[]>([])
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState<Record<number, string>>({})
@@ -38,17 +37,26 @@ export default function SubjectPracticePage() {
   const [shownAnswers, setShownAnswers] = useState<number[]>([])
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [showFinishPrompt, setShowFinishPrompt] = useState(false)
-  const [showStartMockPrompt, setShowStartMockPrompt] = useState(false)
   const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
 
   useEffect(() => {
-    const fetchQuestions = async () => {
+    const checkUserAndFetchQuestions = async () => {
       setIsLoadingQuestions(true)
+
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+
+      if (!user) {
+        router.push("/")
+        return
+      }
 
       const { data, error } = await supabase
         .from("questions")
         .select("*")
+        .eq("is_trial_question", true)
 
       if (error) {
         console.log("Supabase error:", error)
@@ -60,22 +68,17 @@ export default function SubjectPracticePage() {
       const formattedQuestions =
         data
           ?.filter((q) => {
-            const dbSubject = String(q.subject || "").toLowerCase().trim()
-            const routeSubject = subject.toLowerCase().trim()
-
+            const dbSubject = normalizeText(String(q.subject || ""))
+            const routeSubject = normalizeText(subject)
             return dbSubject === routeSubject
           })
+          .slice(0, MOCK_QUESTION_COUNT)
           .map((q) => ({
             id: q.id,
             subject: q.subject,
             topic: q.topic,
             question: q.question,
-            options: [
-              q.option_a,
-              q.option_b,
-              q.option_c,
-              q.option_d,
-            ],
+            options: [q.option_a, q.option_b, q.option_c, q.option_d],
             correctAnswer: q.correct_answer,
             explanation: q.explanation,
           })) || []
@@ -84,34 +87,8 @@ export default function SubjectPracticePage() {
       setIsLoadingQuestions(false)
     }
 
-    fetchQuestions()
-  }, [subject])
-
-  const topics = Array.from(
-    new Set(
-      subjectQuestions
-        .map((q) => q.topic)
-        .filter(Boolean)
-    )
-  ) as string[]
-
-  const currentQuestion = examQuestions[currentQuestionIndex]
-  const selectedAnswer = answers[currentQuestionIndex]
-  const totalQuestions = examQuestions.length
-  const unansweredCount = totalQuestions - Object.keys(answers).length
-
-  const correctAnswers = examQuestions.filter(
-    (question, index) => answers[index] === question.correctAnswer
-  ).length
-
-  const scorePercentage =
-    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
-
-  const passed = scorePercentage >= PASS_MARK
-
-  const wrongQuestions = examQuestions.filter(
-    (question, index) => answers[index] !== question.correctAnswer
-  )
+    checkUserAndFetchQuestions()
+  }, [subject, router])
 
   useEffect(() => {
     if (examMode === "menu" || isSubmitted || examQuestions.length === 0) return
@@ -131,6 +108,17 @@ export default function SubjectPracticePage() {
     return () => clearInterval(timer)
   }, [examMode, isSubmitted, examQuestions.length])
 
+  const normalizeText = (value: string) => {
+    return value.toLowerCase().trim().replace(/-/g, " ")
+  }
+
+  const formatSubjectName = (value: string) => {
+    return value
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+  }
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
     const secs = seconds % 60
@@ -148,47 +136,18 @@ export default function SubjectPracticePage() {
     setShowMobileQuestionNav(false)
   }
 
-  const shuffleQuestions = (items: Question[]) => {
-    return [...items].sort(() => Math.random() - 0.5)
-  }
-
   const startMockExam = () => {
     resetExamState()
-
-    const randomizedQuestions = shuffleQuestions(subjectQuestions).slice(
-      0,
-      MOCK_QUESTION_COUNT
-    )
-
-    setExamQuestions(randomizedQuestions)
-    setActiveTopic("")
+    setExamQuestions(subjectQuestions.slice(0, MOCK_QUESTION_COUNT))
     setExamMode("mock")
     setTimeLeft(MOCK_TIME_SECONDS)
-    setShowStartMockPrompt(false)
-  }
-
-  const startTopicPractice = (topic: string) => {
-    resetExamState()
-
-    const topicQuestions = shuffleQuestions(
-  subjectQuestions.filter(
-    (q) => q.topic === topic
-  )
-)
-
-    setExamQuestions(topicQuestions)
-    setActiveTopic(topic)
-    setExamMode("topic")
-    setTimeLeft(TOPIC_TIME_SECONDS)
   }
 
   const returnToMenu = () => {
     resetExamState()
     setExamMode("menu")
-    setActiveTopic("")
     setExamQuestions([])
     setTimeLeft(MOCK_TIME_SECONDS)
-    setShowStartMockPrompt(false)
   }
 
   const handleAnswer = (option: string) => {
@@ -223,17 +182,28 @@ export default function SubjectPracticePage() {
   }
 
   const goNext = () => {
-    if (currentQuestionIndex < totalQuestions - 1) {
+    if (currentQuestionIndex < examQuestions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1)
     }
   }
 
-  const examLabel =
-    examMode === "mock"
-      ? "Mock Exam"
-      : activeTopic
-        ? `${activeTopic} Practice`
-        : "Practice"
+  const currentQuestion = examQuestions[currentQuestionIndex]
+  const selectedAnswer = answers[currentQuestionIndex]
+  const totalQuestions = examQuestions.length
+  const unansweredCount = totalQuestions - Object.keys(answers).length
+
+  const correctAnswers = examQuestions.filter(
+    (question, index) => answers[index] === question.correctAnswer
+  ).length
+
+  const scorePercentage =
+    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
+
+  const passed = scorePercentage >= PASS_MARK
+
+  const wrongQuestions = examQuestions.filter(
+    (question, index) => answers[index] !== question.correctAnswer
+  )
 
   if (isLoadingQuestions) {
     return (
@@ -252,19 +222,24 @@ export default function SubjectPracticePage() {
       <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
         <div className="mx-auto max-w-4xl">
           <Link
-            href="/practice"
+            href="/dashboard"
             className="text-sm font-medium text-[#f4b400] hover:text-white"
           >
-            ← Back to Practice
+            ← Back to Dashboard
           </Link>
 
-          <div className="mt-10 rounded-2xl border border-red-500/40 bg-red-500/10 p-6">
-            <h1 className="text-2xl font-bold text-red-300">
-              No questions found for this subject.
+          <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+              No Trial Questions
+            </p>
+
+            <h1 className="mt-3 text-3xl font-bold">
+              No trial questions found for {formatSubjectName(subject)}.
             </h1>
 
-            <p className="mt-3 text-slate-300">
-              No questions currently exist for this subject in Supabase.
+            <p className="mt-3 text-gray-400">
+              Make sure this subject has 25 questions marked as trial questions
+              in Supabase.
             </p>
           </div>
         </div>
@@ -274,177 +249,73 @@ export default function SubjectPracticePage() {
 
   if (examMode === "menu") {
     return (
-      <main className="min-h-screen bg-[#06111f] text-white">
-        <header className="sticky top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur">
-          <div className="mx-auto flex min-h-20 max-w-7xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
-                PilotVault SA
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-5xl">
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium text-[#f4b400] hover:text-white"
+          >
+            ← Back to Dashboard
+          </Link>
+
+          <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+              {formatSubjectName(subject)}
+            </p>
+
+            <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
+              Choose your training mode
+            </h1>
+
+            <p className="mt-3 max-w-2xl text-gray-400">
+              Trial users can start the fixed 25-question mock exam. Practice by
+              topic is available with an active subscription.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            <button
+              onClick={startMockExam}
+              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+            >
+              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                Trial Access
               </p>
 
-              <h1 className="text-lg font-bold capitalize">
-                {subject.replaceAll("-", " ")} Practice
-              </h1>
-            </div>
+              <h2 className="mt-3 text-2xl font-bold text-white">Mock Exam</h2>
 
-            <Link
-              href="/practice"
-              className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-5 py-2 text-center text-sm hover:bg-[#1e3a5f]"
-            >
-              Subjects
-            </Link>
-          </div>
-        </header>
+              <p className="mt-3 text-sm leading-6 text-gray-400">
+                Start the fixed 25-question trial mock exam for this subject.
+              </p>
 
-        <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
-          <button
-            onClick={() => setShowStartMockPrompt(true)}
-            className="w-full rounded-3xl border border-[#f4b400]/50 bg-[#081726] p-6 text-left transition hover:-translate-y-1 hover:border-[#f4b400] sm:p-8"
-          >
-            <p className="text-sm uppercase tracking-wider text-[#f4b400]">
-              Mock Exam
-            </p>
+              <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
+                Start Mock Exam →
+              </p>
+            </button>
 
-            <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
-              Start Mock Exam
-            </h2>
+            <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                Subscription Feature
+              </p>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
-              Simulate a SACAA-style exam with timing, question navigation,
-              finish confirmation and final score.
-            </p>
+              <h2 className="mt-3 text-2xl font-bold text-white">
+                Practice by Topic
+              </h2>
 
-            <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
-              <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
-                25 minutes
-              </span>
+              <p className="mt-3 text-sm leading-6 text-gray-400">
+                Target weak areas by topic and build confidence faster with the
+                full PilotVault question bank.
+              </p>
 
-              <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
-                75% pass mark
-              </span>
-            </div>
-          </button>
-
-          <div className="mt-10">
-            <p className="text-sm uppercase tracking-wider text-[#f4b400]">
-              Practice by Topic
-            </p>
-
-            <h2 className="mt-3 text-2xl font-bold">
-              Choose a Topic
-            </h2>
-
-            <p className="mt-3 text-sm leading-6 text-slate-300">
-              Focus on weak areas and review explanations while practicing.
-            </p>
-
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {topics.length > 0 ? (
-                topics.map((topic) => (
-                  <button
-                    key={topic}
-                    onClick={() => startTopicPractice(topic)}
-                    className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
-                  >
-                    <h3 className="text-lg font-bold text-white">
-                      {topic}
-                    </h3>
-                  </button>
-                ))
-              ) : (
-                <button
-                  onClick={() => startTopicPractice("")}
-                  className="rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left transition hover:-translate-y-1 hover:border-[#f4b400]"
-                >
-                  <h3 className="text-lg font-bold text-white">
-                    All Questions
-                  </h3>
-                </button>
-              )}
+              <Link
+                href="/upgrade"
+                className="mt-5 inline-flex text-sm font-medium text-[#f4b400] hover:text-[#ffd24d]"
+              >
+                Upgrade to Unlock →
+              </Link>
             </div>
           </div>
-        </section>
-
-        {showStartMockPrompt && (
-          <>
-            <div className="fixed inset-0 z-50 bg-black/60 sm:hidden">
-              <div className="absolute bottom-0 left-0 right-0 rounded-t-3xl bg-white p-6 text-slate-900 shadow-2xl">
-                <div className="mx-auto mb-5 h-1.5 w-16 rounded-full bg-slate-300" />
-
-                <h2 className="text-xl font-bold">Start Mock Exam</h2>
-
-                <p className="mt-3 text-sm text-slate-600">
-                  Ready to begin your SACAA mock exam?
-                </p>
-
-                <div className="mt-5 space-y-3">
-                  <div className="rounded-xl bg-slate-100 p-3">
-                    25 Minutes
-                  </div>
-
-                  <div className="rounded-xl bg-slate-100 p-3">
-                    75% Pass Mark
-                  </div>
-                </div>
-
-                <div className="mt-6 flex flex-col gap-3">
-                  <button
-                    onClick={startMockExam}
-                    className="rounded-xl bg-[#1f4e79] py-4 font-semibold text-white hover:bg-[#183d60]"
-                  >
-                    Start Exam
-                  </button>
-
-                  <button
-                    onClick={() => setShowStartMockPrompt(false)}
-                    className="rounded-xl border border-slate-300 py-4 font-semibold text-slate-700"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 px-4 sm:flex">
-              <div className="w-full max-w-lg rounded-2xl border border-[#1e3a5f] bg-white p-6 text-slate-900 shadow-2xl">
-                <h2 className="text-2xl font-bold">Start Mock Exam</h2>
-
-                <p className="mt-4 text-slate-700">
-                  You are about to start a timed mock examination.
-                </p>
-
-                <div className="mt-5 rounded-xl border border-slate-300 bg-slate-50 p-4">
-                  <p className="font-semibold text-slate-900">
-                    Exam Information
-                  </p>
-
-                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                    <li>Time allowed: 25 minutes</li>
-                    <li>Pass mark: 75%</li>
-                    <li>Navigate between questions</li>
-                    <li>Score shown after finishing</li>
-                  </ul>
-                </div>
-
-                <div className="mt-6 flex justify-end gap-3">
-                  <button
-                    onClick={() => setShowStartMockPrompt(false)}
-                    className="rounded-md border border-slate-300 px-5 py-2 text-sm font-semibold hover:bg-slate-100"
-                  >
-                    Cancel
-                  </button>
-
-                  <button
-                    onClick={startMockExam}
-                    className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
-                  >
-                    Start Exam
-                  </button>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
+        </div>
       </main>
     )
   }
@@ -452,12 +323,11 @@ export default function SubjectPracticePage() {
   if (isSubmitted) {
     return (
       <main className="min-h-screen bg-white text-slate-900">
-        <header className="flex h-auto min-h-16 items-center justify-between gap-4 border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:px-6">
+        <header className="flex min-h-16 items-center justify-between border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:px-6">
           <div>
             <h1 className="text-base font-bold">PilotVault SA Exam Results</h1>
-
             <p className="text-xs uppercase tracking-wider text-blue-100">
-              {subject.replaceAll("-", " ")} · {examLabel}
+              {formatSubjectName(subject)} · Mock Exam
             </p>
           </div>
 
@@ -494,11 +364,7 @@ export default function SubjectPracticePage() {
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <button
-                onClick={() =>
-                  examMode === "mock"
-                    ? startMockExam()
-                    : startTopicPractice(activeTopic)
-                }
+                onClick={startMockExam}
                 className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
               >
                 Restart
@@ -589,12 +455,12 @@ export default function SubjectPracticePage() {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <header className="flex h-auto min-h-20 flex-col gap-4 border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <header className="flex min-h-20 flex-col gap-4 border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <h1 className="text-base font-bold">PilotVault SA Exam Practice</h1>
 
           <p className="text-xs uppercase tracking-wider text-blue-100">
-            {subject.replaceAll("-", " ")} · {examLabel}
+            {formatSubjectName(subject)} · Mock Exam
           </p>
         </div>
 
@@ -708,31 +574,29 @@ export default function SubjectPracticePage() {
 
             <div className="mt-8 space-y-2">
               {currentQuestion.options
-  .filter((option) => option && option.trim() !== "")
-  .map((option, index) => {
-    const letter = String.fromCharCode(65 + index)
+                .filter((option) => option && option.trim() !== "")
+                .map((option, index) => {
+                  const letter = String.fromCharCode(65 + index)
 
-    return (
-      <label
-        key={option}
-        className="flex cursor-pointer items-center gap-4 py-3"
-      >
-        <input
-          type="radio"
-          name={`question-${currentQuestion.id}`}
-          checked={selectedAnswer === option}
-          onChange={() => handleAnswer(option)}
-          className="h-5 w-5 accent-[#1f4e79]"
-        />
+                  return (
+                    <label
+                      key={option}
+                      className="flex cursor-pointer items-center gap-4 py-3"
+                    >
+                      <input
+                        type="radio"
+                        name={`question-${currentQuestion.id}`}
+                        checked={selectedAnswer === option}
+                        onChange={() => handleAnswer(option)}
+                        className="h-5 w-5 accent-[#1f4e79]"
+                      />
 
-        <span className="font-semibold">
-          {letter}.
-        </span>
+                      <span className="font-semibold">{letter}.</span>
 
-        <span>{option}</span>
-      </label>
-    )
-  })}
+                      <span>{option}</span>
+                    </label>
+                  )
+                })}
             </div>
 
             {shownAnswers.includes(currentQuestionIndex) && (
@@ -851,13 +715,6 @@ export default function SubjectPracticePage() {
                 )
               })}
             </div>
-
-            <div className="mt-5 grid grid-cols-2 gap-2 text-xs text-slate-600">
-              <p>Blue: current</p>
-              <p>Light blue: answered</p>
-              <p>Red: unanswered</p>
-              <p>Yellow: answer viewed</p>
-            </div>
           </div>
         </div>
       )}
@@ -880,10 +737,6 @@ export default function SubjectPracticePage() {
                 {unansweredCount === 1 ? "" : "s"}.
               </p>
             )}
-
-            <p className="mt-4 text-slate-700">
-              Are you sure you want to finish and submit your answers?
-            </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
               <button

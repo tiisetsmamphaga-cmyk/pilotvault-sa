@@ -129,21 +129,19 @@ export function Navbar() {
         className="fixed left-0 right-0 top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur-md"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between lg:h-24">
-            <Link href="#" className="flex shrink-0 items-center">
-              <div className="relative h-16 w-[230px] sm:h-20 sm:w-[300px] lg:h-24 lg:w-[380px]">
-                <Image
-                  src="/images/headerlogo.png"
-                  alt="PilotVault SA"
-                  fill
-                  sizes="(max-width: 640px) 230px, (max-width: 1024px) 300px, 380px"
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
+          <div className="grid h-20 grid-cols-[180px_1fr_auto] items-center gap-4 lg:grid-cols-[220px_1fr_220px]">
+            <Link href="#" className="flex items-center justify-start">
+              <Image
+                src="/images/headerlogo.png"
+                alt="PilotVault SA"
+                width={300}
+                height={90}
+                className="h-16 w-auto object-contain"
+                priority
+              />
             </Link>
 
-            <div className="hidden items-center gap-8 lg:flex">
+            <div className="hidden items-center justify-center gap-8 lg:flex">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -155,7 +153,7 @@ export function Navbar() {
               ))}
             </div>
 
-            <div className="hidden items-center gap-4 lg:flex">
+            <div className="hidden items-center justify-end gap-4 lg:flex">
               <Button
                 type="button"
                 onClick={() => openAuth("login")}
@@ -177,10 +175,14 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-lg p-2 text-white transition hover:bg-[#0b1c30] lg:hidden"
+              className="justify-self-end rounded-lg p-2 text-white transition hover:bg-[#0b1c30] lg:hidden"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
 

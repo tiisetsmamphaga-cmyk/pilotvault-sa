@@ -45,13 +45,33 @@ export default function SubjectPracticePage() {
       setIsLoadingQuestions(true)
 
       const {
-        data: { user },
-      } = await supabase.auth.getUser()
+  data: { user },
+} = await supabase.auth.getUser()
 
-      if (!user) {
-        router.push("/")
-        return
-      }
+if (!user) {
+  router.push("/")
+  return
+}
+
+const { data: profile } = await supabase
+  .from("Profiles")
+  .select("*")
+  .eq("id", user.id)
+  .single()
+
+if (!profile) {
+  router.push("/upgrade")
+  return
+}
+
+const isTrialExpired =
+  profile.subscription_status === "trial" &&
+  new Date(profile.trial_ends_at) < new Date()
+
+if (isTrialExpired) {
+  router.push("/upgrade")
+  return
+}
 
       const { data, error } = await supabase
         .from("questions")

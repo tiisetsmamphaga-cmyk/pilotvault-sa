@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import Link from "next/link"
 import { supabase } from "@/src/lib/supabase"
 
@@ -15,21 +15,22 @@ type Question = {
   explanation: string
 }
 
-type ExamMode = "menu" | "mock"
+type ExamMode = "menu" | "mock" | "topic"
 
 const MOCK_QUESTION_COUNT = 25
 const MOCK_TIME_SECONDS = 25 * 60
+const TOPIC_TIME_SECONDS = 25 * 60
 const PASS_MARK = 75
 
 export default function SubjectPracticePage() {
   const params = useParams()
-  const router = useRouter()
   const subject = String(params.subject)
 
   const [subjectQuestions, setSubjectQuestions] = useState<Question[]>([])
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(true)
 
   const [examMode, setExamMode] = useState<ExamMode>("menu")
+  const [activeTopic, setActiveTopic] = useState("")
   const [examQuestions, setExamQuestions] = useState<Question[]>([])
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState<Record<number, string>>({})
@@ -37,21 +38,13 @@ export default function SubjectPracticePage() {
   const [shownAnswers, setShownAnswers] = useState<number[]>([])
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [showFinishPrompt, setShowFinishPrompt] = useState(false)
+  const [showStartMockPrompt, setShowStartMockPrompt] = useState(false)
   const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
 
   useEffect(() => {
-    const checkUserAndFetchQuestions = async () => {
+    const fetchQuestions = async () => {
       setIsLoadingQuestions(true)
-
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
-
-      if (!user) {
-        router.push("/")
-        return
-      }
 
       const { data, error } = await supabase
         .from("questions")
@@ -68,8 +61,15 @@ export default function SubjectPracticePage() {
       const formattedQuestions =
         data
           ?.filter((q) => {
-            const dbSubject = normalizeText(String(q.subject || ""))
-            const routeSubject = normalizeText(subject)
+            const dbSubject = String(q.subject || "")
+              .toLowerCase()
+              .trim()
+              .replace(/-/g, " ")
+
+            const routeSubject = subject
+              .toLowerCase()
+              .trim()
+              .replace(/-/g, " ")
 
             return dbSubject === routeSubject
           })
@@ -88,8 +88,30 @@ export default function SubjectPracticePage() {
       setIsLoadingQuestions(false)
     }
 
-    checkUserAndFetchQuestions()
-  }, [subject, router])
+    fetchQuestions()
+  }, [subject])
+
+  const topics = Array.from(
+    new Set(subjectQuestions.map((q) => q.topic).filter(Boolean))
+  ) as string[]
+
+  const currentQuestion = examQuestions[currentQuestionIndex]
+  const selectedAnswer = answers[currentQuestionIndex]
+  const totalQuestions = examQuestions.length
+  const unansweredCount = totalQuestions - Object.keys(answers).length
+
+  const correctAnswers = examQuestions.filter(
+    (question, index) => answers[index] === question.correctAnswer
+  ).length
+
+  const scorePercentage =
+    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
+
+  const passed = scorePercentage >= PASS_MARK
+
+  const wrongQuestions = examQuestions.filter(
+    (question, index) => answers[index] !== question.correctAnswer
+  )
 
   useEffect(() => {
     if (examMode === "menu" || isSubmitted || examQuestions.length === 0) return
@@ -108,17 +130,6 @@ export default function SubjectPracticePage() {
 
     return () => clearInterval(timer)
   }, [examMode, isSubmitted, examQuestions.length])
-
-  const normalizeText = (value: string) => {
-    return value.toLowerCase().trim().replace(/-/g, " ")
-  }
-
-  const formatSubjectName = (value: string) => {
-    return value
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-  }
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
@@ -139,16 +150,34 @@ export default function SubjectPracticePage() {
 
   const startMockExam = () => {
     resetExamState()
-    setExamQuestions(subjectQuestions.slice(0, MOCK_QUESTION_COUNT))
+
+    const fixedTrialQuestions = subjectQuestions.slice(0, MOCK_QUESTION_COUNT)
+
+    setExamQuestions(fixedTrialQuestions)
+    setActiveTopic("")
     setExamMode("mock")
     setTimeLeft(MOCK_TIME_SECONDS)
+    setShowStartMockPrompt(false)
+  }
+
+  const startTopicPractice = (topic: string) => {
+    resetExamState()
+
+    const topicQuestions = subjectQuestions.filter((q) => q.topic === topic)
+
+    setExamQuestions(topicQuestions)
+    setActiveTopic(topic)
+    setExamMode("topic")
+    setTimeLeft(TOPIC_TIME_SECONDS)
   }
 
   const returnToMenu = () => {
     resetExamState()
     setExamMode("menu")
+    setActiveTopic("")
     setExamQuestions([])
     setTimeLeft(MOCK_TIME_SECONDS)
+    setShowStartMockPrompt(false)
   }
 
   const handleAnswer = (option: string) => {
@@ -183,28 +212,17 @@ export default function SubjectPracticePage() {
   }
 
   const goNext = () => {
-    if (currentQuestionIndex < examQuestions.length - 1) {
+    if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prev) => prev + 1)
     }
   }
 
-  const currentQuestion = examQuestions[currentQuestionIndex]
-  const selectedAnswer = answers[currentQuestionIndex]
-  const totalQuestions = examQuestions.length
-  const unansweredCount = totalQuestions - Object.keys(answers).length
-
-  const correctAnswers = examQuestions.filter(
-    (question, index) => answers[index] === question.correctAnswer
-  ).length
-
-  const scorePercentage =
-    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
-
-  const passed = scorePercentage >= PASS_MARK
-
-  const wrongQuestions = examQuestions.filter(
-    (question, index) => answers[index] !== question.correctAnswer
-  )
+  const examLabel =
+    examMode === "mock"
+      ? "Mock Exam"
+      : activeTopic
+        ? `${activeTopic} Practice`
+        : "Practice"
 
   if (isLoadingQuestions) {
     return (
@@ -223,22 +241,18 @@ export default function SubjectPracticePage() {
       <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
         <div className="mx-auto max-w-4xl">
           <Link
-            href="/dashboard"
+            href="/practice"
             className="text-sm font-medium text-[#f4b400] hover:text-white"
           >
-            ← Back to Dashboard
+            ← Back to Practice
           </Link>
 
-          <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-              No Trial Questions
-            </p>
-
-            <h1 className="mt-3 text-3xl font-bold">
-              No trial questions found for {formatSubjectName(subject)}.
+          <div className="mt-10 rounded-2xl border border-red-500/40 bg-red-500/10 p-6">
+            <h1 className="text-2xl font-bold text-red-300">
+              No trial questions found for this subject.
             </h1>
 
-            <p className="mt-3 text-gray-400">
+            <p className="mt-3 text-slate-300">
               Make sure this subject has 25 questions marked as trial questions
               in Supabase.
             </p>
@@ -250,130 +264,274 @@ export default function SubjectPracticePage() {
 
   if (examMode === "menu") {
     return (
-      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
-        <div className="mx-auto max-w-5xl">
-          <Link
-            href="/dashboard"
-            className="text-sm font-medium text-[#f4b400] hover:text-white"
-          >
-            ← Back to Dashboard
-          </Link>
+      <main className="min-h-screen bg-[#06111f] text-white">
+        <header className="sticky top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur">
+          <div className="mx-auto flex min-h-20 max-w-7xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
+                PilotVault SA
+              </p>
 
-          <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-              {formatSubjectName(subject)}
-            </p>
+              <h1 className="text-lg font-bold capitalize">
+                {subject.replaceAll("-", " ")} Practice
+              </h1>
+            </div>
 
-            <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
-              Choose your training mode
-            </h1>
-
-            <p className="mt-3 max-w-2xl text-gray-400">
-              Trial users can start the fixed 25-question mock exam. Practice by
-              topic is available with an active subscription.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <button
-              onClick={startMockExam}
-              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+            <Link
+              href="/practice"
+              className="rounded-xl border border-[#1e3a5f] bg-[#0b1f35] px-5 py-2 text-center text-sm hover:bg-[#1e3a5f]"
             >
-              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                Trial Access
-              </p>
+              Subjects
+            </Link>
+          </div>
+        </header>
 
-              <h2 className="mt-3 text-2xl font-bold text-white">
-                Mock Exam
-              </h2>
+        <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+          <button
+            onClick={() => setShowStartMockPrompt(true)}
+            className="w-full rounded-3xl border border-[#f4b400]/50 bg-[#081726] p-6 text-left transition hover:-translate-y-1 hover:border-[#f4b400] sm:p-8"
+          >
+            <p className="text-sm uppercase tracking-wider text-[#f4b400]">
+              Trial Mock Exam
+            </p>
 
-              <p className="mt-3 text-sm leading-6 text-gray-400">
-                Start the fixed 25-question trial mock exam for this subject.
-              </p>
+            <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
+              Start Mock Exam
+            </h2>
 
-              <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
-                Start Mock Exam →
-              </p>
-            </button>
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+              Simulate a SACAA-style exam with a fixed 25-question trial set,
+              timing, question navigation, finish confirmation and final score.
+            </p>
 
-            <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">
-              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                Subscription Feature
-              </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
+              <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
+                25 questions
+              </span>
 
-              <h2 className="mt-3 text-2xl font-bold text-white">
-                Practice by Topic
-              </h2>
+              <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
+                25 minutes
+              </span>
 
-              <p className="mt-3 text-sm leading-6 text-gray-400">
-                Target weak areas by topic and build confidence faster with the
-                full PilotVault question bank.
-              </p>
+              <span className="rounded-full border border-[#1e3a5f] px-4 py-2">
+                75% pass mark
+              </span>
+            </div>
+          </button>
 
-              <Link
-                href="/upgrade"
-                className="mt-5 inline-flex text-sm font-medium text-[#f4b400] hover:text-[#ffd24d]"
-              >
-                Upgrade to Unlock →
-              </Link>
+          <div className="mt-10">
+            <p className="text-sm uppercase tracking-wider text-[#f4b400]">
+              Practice by Topic
+            </p>
+
+            <h2 className="mt-3 text-2xl font-bold">Choose a Topic</h2>
+
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              Topic-based practice is available with an active subscription.
+            </p>
+
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              {topics.length > 0 ? (
+                topics.map((topic) => (
+                  <Link
+                    key={topic}
+                    href="/upgrade"
+                    className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-5 text-left opacity-75 transition hover:border-[#f4b400]"
+                  >
+                    <h3 className="text-lg font-bold text-white">{topic}</h3>
+
+                    <p className="mt-3 text-sm text-slate-400">
+                      Subscription required
+                    </p>
+
+                    <p className="mt-4 text-sm font-medium text-[#f4b400]">
+                      Upgrade to Unlock →
+                    </p>
+                  </Link>
+                ))
+              ) : (
+                <Link
+                  href="/upgrade"
+                  className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-5 text-left opacity-75 transition hover:border-[#f4b400]"
+                >
+                  <h3 className="text-lg font-bold text-white">
+                    All Questions
+                  </h3>
+
+                  <p className="mt-3 text-sm text-slate-400">
+                    Subscription required
+                  </p>
+
+                  <p className="mt-4 text-sm font-medium text-[#f4b400]">
+                    Upgrade to Unlock →
+                  </p>
+                </Link>
+              )}
             </div>
           </div>
-        </div>
+        </section>
+
+        {showStartMockPrompt && (
+          <>
+            <div className="fixed inset-0 z-50 bg-black/60 sm:hidden">
+              <div className="absolute bottom-0 left-0 right-0 rounded-t-3xl bg-white p-6 text-slate-900 shadow-2xl">
+                <div className="mx-auto mb-5 h-1.5 w-16 rounded-full bg-slate-300" />
+
+                <h2 className="text-xl font-bold">Start Mock Exam</h2>
+
+                <p className="mt-3 text-sm text-slate-600">
+                  Ready to begin your fixed 25-question trial mock exam?
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  <div className="rounded-xl bg-slate-100 p-3">
+                    25 Questions
+                  </div>
+
+                  <div className="rounded-xl bg-slate-100 p-3">
+                    25 Minutes
+                  </div>
+
+                  <div className="rounded-xl bg-slate-100 p-3">
+                    75% Pass Mark
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-col gap-3">
+                  <button
+                    onClick={startMockExam}
+                    className="rounded-xl bg-[#1f4e79] py-4 font-semibold text-white hover:bg-[#183d60]"
+                  >
+                    Start Exam
+                  </button>
+
+                  <button
+                    onClick={() => setShowStartMockPrompt(false)}
+                    className="rounded-xl border border-slate-300 py-4 font-semibold text-slate-700"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 px-4 sm:flex">
+              <div className="w-full max-w-lg rounded-2xl border border-[#1e3a5f] bg-white p-6 text-slate-900 shadow-2xl">
+                <h2 className="text-2xl font-bold">Start Mock Exam</h2>
+
+                <p className="mt-4 text-slate-700">
+                  You are about to start a timed trial mock examination.
+                </p>
+
+                <div className="mt-5 rounded-xl border border-slate-300 bg-slate-50 p-4">
+                  <p className="font-semibold text-slate-900">
+                    Exam Information
+                  </p>
+
+                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                    <li>Questions: 25 fixed trial questions</li>
+                    <li>Time allowed: 25 minutes</li>
+                    <li>Pass mark: 75%</li>
+                    <li>Navigate between questions</li>
+                    <li>Score shown after finishing</li>
+                  </ul>
+                </div>
+
+                <div className="mt-6 flex justify-end gap-3">
+                  <button
+                    onClick={() => setShowStartMockPrompt(false)}
+                    className="rounded-md border border-slate-300 px-5 py-2 text-sm font-semibold hover:bg-slate-100"
+                  >
+                    Cancel
+                  </button>
+
+                  <button
+                    onClick={startMockExam}
+                    className="rounded-md bg-[#1f4e79] px-5 py-2 text-sm font-semibold text-white hover:bg-[#183d60]"
+                  >
+                    Start Exam
+                  </button>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </main>
     )
   }
 
   if (isSubmitted) {
     return (
-      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
-        <div className="mx-auto max-w-5xl">
-          <div className="rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-              Mock Exam Complete
+      <main className="min-h-screen bg-white text-slate-900">
+        <header className="flex h-auto min-h-16 items-center justify-between gap-4 border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:px-6">
+          <div>
+            <h1 className="text-base font-bold">PilotVault SA Exam Results</h1>
+
+            <p className="text-xs uppercase tracking-wider text-blue-100">
+              {subject.replaceAll("-", " ")} · {examLabel}
+            </p>
+          </div>
+
+          <button
+            onClick={returnToMenu}
+            className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20"
+          >
+            Exit
+          </button>
+        </header>
+
+        <section className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
+          <div className="rounded-md border border-slate-300 bg-slate-50 p-5 sm:p-6">
+            <p className="text-sm uppercase tracking-wider text-slate-500">
+              Final Score
             </p>
 
-            <h1 className="mt-3 text-4xl font-bold">
+            <h2 className="mt-2 text-5xl font-bold text-slate-900">
               {scorePercentage}%
-            </h1>
-
-            <p className="mt-3 text-gray-400">
-              You answered {correctAnswers} out of {totalQuestions} questions
-              correctly.
-            </p>
+            </h2>
 
             <p
-              className={`mt-4 text-lg font-bold ${
-                passed ? "text-[#f4b400]" : "text-red-400"
+              className={`mt-3 text-lg font-semibold ${
+                passed ? "text-green-700" : "text-red-700"
               }`}
             >
-              {passed ? "Passed" : "Not yet passed"}
+              {passed ? "Passed" : "Failed"}
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <p className="mt-2 text-slate-600">
+              You got {correctAnswers} out of {totalQuestions} questions
+              correct.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <button
-                onClick={returnToMenu}
-                className="rounded-xl border border-[#1e3a5f] px-5 py-3 text-sm font-semibold text-gray-300 hover:border-[#f4b400] hover:text-[#f4b400]"
+                onClick={startMockExam}
+                className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
               >
-                Back to Subject
+                Restart
               </button>
 
               <button
-                onClick={startMockExam}
-                className="rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
+                onClick={returnToMenu}
+                className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 sm:py-2"
               >
-                Restart Mock Exam
+                Back to Practice Modes
               </button>
             </div>
           </div>
 
-          {wrongQuestions.length > 0 && (
-            <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-              <h2 className="text-2xl font-bold">
-                Review incorrect questions
-              </h2>
+          <div className="mt-10">
+            <h3 className="text-2xl font-bold text-slate-900">
+              Review Incorrect Answers
+            </h3>
 
-              <div className="mt-6 space-y-5">
-                {wrongQuestions.map((question, index) => {
+            {wrongQuestions.length === 0 ? (
+              <p className="mt-4 text-green-700">
+                Excellent. You got every question correct.
+              </p>
+            ) : (
+              <div className="mt-6 space-y-6">
+                {wrongQuestions.map((question) => {
                   const originalIndex = examQuestions.findIndex(
                     (item) => item.id === question.id
                   )
@@ -381,194 +539,242 @@ export default function SubjectPracticePage() {
                   return (
                     <div
                       key={question.id}
-                      className="rounded-2xl border border-[#1e3a5f] bg-[#06111f] p-5"
+                      className="border-b border-slate-300 pb-6"
                     >
-                      <p className="text-sm text-[#f4b400]">
+                      <p className="text-sm font-semibold text-slate-500">
                         Question {originalIndex + 1}
                       </p>
 
-                      <p className="mt-2 font-semibold text-white">
+                      <h4 className="mt-2 text-lg font-semibold text-slate-900">
                         {question.question}
+                      </h4>
+
+                      <p className="mt-4 text-red-700">
+                        Your answer:{" "}
+                        <span className="font-semibold">
+                          {answers[originalIndex] || "Not answered"}
+                        </span>
                       </p>
 
-                      <p className="mt-3 text-sm text-gray-400">
-                        Your answer: {answers[originalIndex] || "Not answered"}
+                      <p className="mt-2 text-green-700">
+                        Correct answer:{" "}
+                        <span className="font-semibold">
+                          {question.correctAnswer}
+                        </span>
                       </p>
 
-                      <p className="mt-1 text-sm text-[#f4b400]">
-                        Correct answer: {question.correctAnswer}
-                      </p>
-
-                      <p className="mt-3 text-sm leading-6 text-gray-400">
+                      <p className="mt-3 leading-relaxed text-slate-700">
                         {question.explanation}
                       </p>
                     </div>
                   )
                 })}
               </div>
-            </div>
-          )}
+            )}
+          </div>
+        </section>
+      </main>
+    )
+  }
+
+  if (!currentQuestion) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-white px-4 text-slate-900">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold">No questions found.</h1>
+
+          <button
+            onClick={returnToMenu}
+            className="mt-6 inline-block rounded-md bg-[#1f4e79] px-5 py-2 text-white hover:bg-[#183d60]"
+          >
+            Back to Practice Modes
+          </button>
         </div>
       </main>
     )
   }
 
   return (
-    <main className="min-h-screen bg-[#06111f] text-white">
-      <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
-        <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-              {formatSubjectName(subject)}
-            </p>
+    <main className="min-h-screen bg-white text-slate-900">
+      <header className="flex h-auto min-h-20 flex-col gap-4 border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div>
+          <h1 className="text-base font-bold">PilotVault SA Exam Practice</h1>
 
-            <h1 className="mt-1 text-lg font-bold">Mock Exam</h1>
-          </div>
+          <p className="text-xs uppercase tracking-wider text-blue-100">
+            {subject.replaceAll("-", " ")} · {examLabel}
+          </p>
+        </div>
 
-          <div className="flex items-center gap-3">
-            <p className="rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm font-bold text-[#f4b400]">
+        <div className="flex items-center gap-3">
+          <div className="rounded-md border border-white/20 bg-black/20 px-4 py-2 text-right">
+            <p className="text-xs text-blue-100">Time Remaining</p>
+
+            <p
+              className={`font-bold ${
+                timeLeft < 300 ? "text-red-300" : "text-white"
+              }`}
+            >
               {formatTime(timeLeft)}
             </p>
-
-            <button
-              onClick={() => setShowFinishPrompt(true)}
-              className="rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
-            >
-              Finish
-            </button>
           </div>
+
+          <button
+            onClick={returnToMenu}
+            className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20"
+          >
+            Exit
+          </button>
         </div>
       </header>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-[260px_1fr] lg:px-8">
-        <aside className="hidden rounded-3xl border border-[#1e3a5f] bg-[#081726] p-5 lg:block">
-          <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-            Questions
-          </p>
+      <div className="flex min-h-[calc(100vh-80px)]">
+        <aside className="hidden w-64 border-r border-slate-300 bg-slate-100 p-4 md:block">
+          <h2 className="mb-4 font-semibold text-slate-700">Questions</h2>
 
-          <div className="mt-5 grid grid-cols-5 gap-2">
-            {examQuestions.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentQuestionIndex(index)}
-                className={`h-10 rounded-lg border text-sm font-semibold transition ${
-                  currentQuestionIndex === index
-                    ? "border-[#f4b400] bg-[#f4b400] text-[#06111f]"
-                    : answers[index]
-                      ? "border-[#f4b400]/40 bg-[#f4b400]/10 text-[#f4b400]"
-                      : "border-[#1e3a5f] text-gray-300 hover:border-[#f4b400]"
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
-        </aside>
+          <div className="grid grid-cols-5 gap-2">
+            {examQuestions.map((_, index) => {
+              const isActive = index === currentQuestionIndex
+              const isAnswered = Boolean(answers[index])
+              const isPinned = pinnedQuestions.includes(index)
+              const hasShownAnswer = shownAnswers.includes(index)
 
-        <div>
-          <div className="mb-4 flex items-center justify-between lg:hidden">
-            <button
-              onClick={() => setShowMobileQuestionNav(!showMobileQuestionNav)}
-              className="rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300"
-            >
-              Questions
-            </button>
-
-            <p className="text-sm text-gray-400">
-              {currentQuestionIndex + 1} / {totalQuestions}
-            </p>
-          </div>
-
-          {showMobileQuestionNav && (
-            <div className="mb-5 grid grid-cols-5 gap-2 rounded-2xl border border-[#1e3a5f] bg-[#081726] p-4 lg:hidden">
-              {examQuestions.map((_, index) => (
+              return (
                 <button
                   key={index}
-                  onClick={() => {
-                    setCurrentQuestionIndex(index)
-                    setShowMobileQuestionNav(false)
-                  }}
-                  className={`h-10 rounded-lg border text-sm font-semibold ${
-                    currentQuestionIndex === index
-                      ? "border-[#f4b400] bg-[#f4b400] text-[#06111f]"
-                      : answers[index]
-                        ? "border-[#f4b400]/40 bg-[#f4b400]/10 text-[#f4b400]"
-                        : "border-[#1e3a5f] text-gray-300"
+                  onClick={() => setCurrentQuestionIndex(index)}
+                  className={`relative h-10 rounded border text-sm font-medium ${
+                    isActive
+                      ? "border-[#1f4e79] bg-[#1f4e79] text-white"
+                      : hasShownAnswer
+                        ? "border-yellow-400 bg-yellow-100 text-yellow-900"
+                        : isAnswered
+                          ? "border-blue-300 bg-blue-100 text-blue-900"
+                          : "border-red-300 bg-red-50 text-red-700"
                   }`}
                 >
                   {index + 1}
-                </button>
-              ))}
-            </div>
-          )}
 
-          <div className="rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-            <div className="flex items-start justify-between gap-4">
+                  {isPinned && (
+                    <span className="absolute -right-1 -top-2 text-yellow-600">
+                      ⚑
+                    </span>
+                  )}
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="mt-6 space-y-2 text-xs text-slate-600">
+            <p>Blue: current question</p>
+            <p>Light blue: answered</p>
+            <p>Red: not answered</p>
+            <p>Yellow: answer viewed</p>
+            <p>⚑: pinned</p>
+          </div>
+        </aside>
+
+        <section className="flex-1 p-4 sm:p-6 md:p-10">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-8 flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                <p className="text-sm text-slate-500">
                   Question {currentQuestionIndex + 1} of {totalQuestions}
                 </p>
 
-                <h2 className="mt-4 text-xl font-bold leading-8 text-white">
-                  {currentQuestion.question}
+                <h2 className="mt-1 text-xl font-semibold text-slate-800">
+                  Exam Question
                 </h2>
               </div>
 
-              <button
-                onClick={() => togglePin(currentQuestionIndex)}
-                className={`rounded-xl border px-3 py-2 text-xs font-semibold ${
-                  pinnedQuestions.includes(currentQuestionIndex)
-                    ? "border-[#f4b400] text-[#f4b400]"
-                    : "border-[#1e3a5f] text-gray-400"
-                }`}
-              >
-                Pin
-              </button>
-            </div>
-
-            <div className="mt-6 space-y-3">
-              {currentQuestion.options.map((option, index) => (
+              <div className="flex items-center gap-2">
                 <button
-                  key={index}
-                  onClick={() => handleAnswer(option)}
-                  className={`w-full rounded-2xl border p-4 text-left text-sm transition ${
-                    selectedAnswer === option
-                      ? "border-[#f4b400] bg-[#f4b400]/10 text-white"
-                      : "border-[#1e3a5f] bg-[#06111f] text-gray-300 hover:border-[#f4b400]"
+                  onClick={() => setShowMobileQuestionNav(true)}
+                  className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 md:hidden"
+                >
+                  Questions
+                </button>
+
+                <button
+                  onClick={() => togglePin(currentQuestionIndex)}
+                  className={`rounded-md border px-4 py-2 text-sm font-medium ${
+                    pinnedQuestions.includes(currentQuestionIndex)
+                      ? "border-yellow-500 bg-yellow-100 text-yellow-800"
+                      : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
                   }`}
                 >
-                  {option}
+                  {pinnedQuestions.includes(currentQuestionIndex)
+                    ? "Pinned"
+                    : "Pin"}
                 </button>
-              ))}
+              </div>
+            </div>
+
+            <p className="text-lg leading-relaxed text-slate-900">
+              {currentQuestion.question}
+            </p>
+
+            <div className="mt-8 space-y-2">
+              {currentQuestion.options
+                .filter((option) => option && option.trim() !== "")
+                .map((option, index) => {
+                  const letter = String.fromCharCode(65 + index)
+
+                  return (
+                    <label
+                      key={option}
+                      className="flex cursor-pointer items-center gap-4 py-3"
+                    >
+                      <input
+                        type="radio"
+                        name={`question-${currentQuestion.id}`}
+                        checked={selectedAnswer === option}
+                        onChange={() => handleAnswer(option)}
+                        className="h-5 w-5 accent-[#1f4e79]"
+                      />
+
+                      <span className="font-semibold">{letter}.</span>
+
+                      <span>{option}</span>
+                    </label>
+                  )
+                })}
             </div>
 
             {shownAnswers.includes(currentQuestionIndex) && (
-              <div className="mt-6 rounded-2xl border border-[#f4b400]/30 bg-[#f4b400]/10 p-5">
-                <p className="text-sm font-bold text-[#f4b400]">
-                  Correct Answer: {currentQuestion.correctAnswer}
+              <div className="mt-8 border-l-4 border-[#1f4e79] bg-slate-50 p-5">
+                <p className="text-sm font-semibold text-[#1f4e79]">
+                  Correct Answer
                 </p>
 
-                <p className="mt-3 text-sm leading-6 text-gray-300">
+                <p className="mt-2 font-semibold text-slate-900">
+                  {currentQuestion.correctAnswer}
+                </p>
+
+                <p className="mt-4 text-sm font-semibold text-[#1f4e79]">
+                  Explanation
+                </p>
+
+                <p className="mt-2 leading-relaxed text-slate-700">
                   {currentQuestion.explanation}
                 </p>
               </div>
             )}
 
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
+            <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <button
                 onClick={toggleAnswer}
-                className="rounded-xl border border-[#1e3a5f] px-5 py-3 text-sm font-semibold text-gray-300 hover:border-[#f4b400] hover:text-[#f4b400]"
+                className="rounded-md border border-[#1f4e79] bg-white px-5 py-3 text-sm font-semibold text-[#1f4e79] hover:bg-blue-50 sm:py-2"
               >
                 {shownAnswers.includes(currentQuestionIndex)
                   ? "Hide Answer"
                   : "Show Answer"}
               </button>
 
-              <div className="flex gap-3">
+              <div className="grid grid-cols-3 gap-3 sm:flex">
                 <button
                   onClick={goPrevious}
                   disabled={currentQuestionIndex === 0}
-                  className="rounded-xl border border-[#1e3a5f] px-5 py-3 text-sm font-semibold text-gray-300 disabled:opacity-40"
+                  className="rounded-md border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 disabled:opacity-40 sm:px-5 sm:py-2"
                 >
                   Previous
                 </button>
@@ -576,41 +782,120 @@ export default function SubjectPracticePage() {
                 <button
                   onClick={goNext}
                   disabled={currentQuestionIndex === totalQuestions - 1}
-                  className="rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] disabled:opacity-40"
+                  className="rounded-md bg-[#1f4e79] px-4 py-3 text-sm font-semibold text-white hover:bg-[#183d60] disabled:opacity-40 sm:px-6 sm:py-2"
                 >
                   Next
+                </button>
+
+                <button
+                  onClick={() => setShowFinishPrompt(true)}
+                  className="rounded-md bg-slate-900 px-4 py-3 text-sm font-semibold text-white hover:bg-slate-700 sm:px-6 sm:py-2"
+                >
+                  Finish
                 </button>
               </div>
             </div>
           </div>
+        </section>
+      </div>
 
-          <p className="mt-4 text-sm text-gray-500">
-            {unansweredCount} unanswered questions remaining.
-          </p>
+      {showMobileQuestionNav && (
+        <div className="fixed inset-0 z-50 bg-black/50 md:hidden">
+          <div className="absolute bottom-0 left-0 right-0 max-h-[75vh] overflow-y-auto rounded-t-2xl bg-white p-5 text-slate-900 shadow-2xl">
+            <div className="mx-auto mb-5 h-1.5 w-16 rounded-full bg-slate-300" />
+
+            <div className="mb-4 flex items-center justify-between">
+              <div>
+                <h2 className="text-xl font-bold">Questions</h2>
+
+                <p className="mt-1 text-sm text-slate-500">
+                  {totalQuestions - unansweredCount} answered / {totalQuestions}
+                </p>
+              </div>
+
+              <button
+                onClick={() => setShowMobileQuestionNav(false)}
+                className="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700"
+              >
+                Close
+              </button>
+            </div>
+
+            <div className="grid grid-cols-5 gap-2">
+              {examQuestions.map((_, index) => {
+                const isActive = index === currentQuestionIndex
+                const isAnswered = Boolean(answers[index])
+                const isPinned = pinnedQuestions.includes(index)
+                const hasShownAnswer = shownAnswers.includes(index)
+
+                return (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setCurrentQuestionIndex(index)
+                      setShowMobileQuestionNav(false)
+                    }}
+                    className={`relative h-11 rounded border text-sm font-medium ${
+                      isActive
+                        ? "border-[#1f4e79] bg-[#1f4e79] text-white"
+                        : hasShownAnswer
+                          ? "border-yellow-400 bg-yellow-100 text-yellow-900"
+                          : isAnswered
+                            ? "border-blue-300 bg-blue-100 text-blue-900"
+                            : "border-red-300 bg-red-50 text-red-700"
+                    }`}
+                  >
+                    {index + 1}
+
+                    {isPinned && (
+                      <span className="absolute -right-1 -top-2 text-yellow-600">
+                        ⚑
+                      </span>
+                    )}
+                  </button>
+                )
+              })}
+            </div>
+
+            <div className="mt-5 grid grid-cols-2 gap-2 text-xs text-slate-600">
+              <p>Blue: current</p>
+              <p>Light blue: answered</p>
+              <p>Red: unanswered</p>
+              <p>Yellow: answer viewed</p>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
       {showFinishPrompt && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4">
-          <div className="w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6">
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-              Finish Exam
-            </p>
-
-            <h2 className="mt-3 text-2xl font-bold">
-              Submit your mock exam?
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 sm:px-6">
+          <div className="w-full max-w-md rounded-md bg-white p-6 shadow-xl">
+            <h2 className="text-xl font-bold text-slate-900">
+              Finish Examination
             </h2>
 
-            <p className="mt-3 text-sm text-gray-400">
-              You still have {unansweredCount} unanswered questions.
+            <p className="mt-4 text-slate-700">
+              You are about to submit your examination. Once submitted, your
+              answers cannot be changed.
             </p>
 
-            <div className="mt-6 flex gap-3">
+            {unansweredCount > 0 && (
+              <p className="mt-4 font-semibold text-red-700">
+                You have {unansweredCount} unanswered question
+                {unansweredCount === 1 ? "" : "s"}.
+              </p>
+            )}
+
+            <p className="mt-4 text-slate-700">
+              Are you sure you want to finish and submit your answers?
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
               <button
                 onClick={() => setShowFinishPrompt(false)}
-                className="flex-1 rounded-xl border border-[#1e3a5f] px-5 py-3 text-sm font-semibold text-gray-300"
+                className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 sm:py-2"
               >
-                Continue
+                Return to Exam
               </button>
 
               <button
@@ -618,9 +903,9 @@ export default function SubjectPracticePage() {
                   setShowFinishPrompt(false)
                   setIsSubmitted(true)
                 }}
-                className="flex-1 rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f]"
+                className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
               >
-                Submit
+                Submit Examination
               </button>
             </div>
           </div>
@@ -628,4 +913,5 @@ export default function SubjectPracticePage() {
       )}
     </main>
   )
+}
 }

@@ -139,7 +139,7 @@ export default function DashboardPage() {
                 {subject.name}
               </h3>
         
-            </Link>
+            </LDink>
           ))}
         </div>
       </section>

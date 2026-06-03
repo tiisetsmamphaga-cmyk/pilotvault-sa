@@ -76,24 +76,13 @@ export default function DashboardPage() {
             <h1 className="mt-1 text-lg font-bold">Dashboard</h1>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="rounded-xl border border-[#f4b400]/30 bg-[#f4b400]/10 px-4 py-3">
-              <p className="text-[10px] uppercase tracking-wider text-[#f4b400]">
-                Trial Account
-              </p>
-              <p className="mt-1 text-sm font-bold text-white">
-                3 days remaining
-              </p>
-            </div>
-
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
-            >
-              <LogOut className="h-4 w-4" />
-              Logout
-            </button>
-          </div>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
+          >
+            <LogOut className="h-4 w-4" />
+            Logout
+          </button>
         </div>
       </header>
 
@@ -104,13 +93,13 @@ export default function DashboardPage() {
           </p>
 
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            All subjects unlocked. Limited trial questions.
+            Explore every subject with limited trial access.
           </h2>
 
           <p className="mt-3 max-w-2xl text-gray-400">
-            Your 3-day trial includes access to all SACAA subjects with a fixed
-            25-question mock exam set. Topic-based practice and the full
-            question bank unlock after upgrading.
+            Your 3-day trial gives you access to all SACAA subjects through a
+            fixed 25-question mock exam set. Topic-based practice, unlimited
+            mocks, and the full question bank require an active subscription.
           </p>
 
           <Link
@@ -131,27 +120,31 @@ export default function DashboardPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-gray-400">
-            Select a subject and begin practicing SACAA exam questions.
+            Select a subject to begin a 25-question trial mock exam.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
-          {subjects.map((subject) => (
-            <Link
-              key={subject.slug}
-              href={`/practice/${subject.slug}`}
-              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
-                <subject.icon className="h-6 w-6 text-[#f4b400]" />
-              </div>
+       <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+  {subjects.map((subject) => (
+    <Link
+      key={subject.slug}
+      href={`/practice/${subject.slug}`}
+      className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+    >
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
+        <subject.icon className="h-6 w-6 text-[#f4b400]" />
+      </div>
 
-              <h3 className="mt-5 text-sm font-bold sm:text-lg">
-                {subject.name}
-              </h3>
-            </Link>
-          ))}
-        </div>
+      <h3 className="mt-5 text-sm font-bold sm:text-lg">
+        {subject.name}
+      </h3>
+
+      <p className="mt-3 text-sm text-gray-400 transition group-hover:text-[#f4b400]">
+        Start Mock Exam →
+      </p>
+    </Link>
+  ))}
+</div>
       </section>
     </main>
   )

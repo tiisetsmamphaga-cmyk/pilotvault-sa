@@ -229,18 +229,14 @@ export default function DashboardPage() {
                       Start Mock Exam →
                     </Link>
 
-                    {topicUnlocked ? (
-                      <Link
-                        href={`/practice/${subject.slug}/topics`}
-                        className="block text-sm text-gray-400 transition hover:text-[#f4b400]"
-                      >
-                        Practice by Topic →
-                      </Link>
-                    ) : (
-                      <p className="text-sm text-gray-600">
-                        Topic Practice locked
-                      </p>
-                    )}
+                    {topicUnlocked && (
+  <Link
+    href={`/practice/${subject.slug}/topics`}
+    className="block text-sm text-gray-400 transition hover:text-[#f4b400]"
+  >
+    Practice by Topic →
+  </Link>
+)}
                   </div>
                 ) : (
                   <Link

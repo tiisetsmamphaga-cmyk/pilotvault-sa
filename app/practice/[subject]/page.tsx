@@ -64,13 +64,38 @@ if (!profile) {
   return
 }
 
-const isTrialExpired =
-  profile.subscription_status === "trial" &&
-  new Date(profile.trial_ends_at) < new Date()
+const isPplUser =
+  profile.subscription_status === "active" &&
+  profile.subscription_plan === "ppl"
 
-if (isTrialExpired) {
-  router.push("/upgrade")
+const isTrialUser =
+  profile.subscription_plan === "trial"
+
+if (
+  isTrialUser &&
+  new Date(profile.trial_ends_at) < new Date()
+) {
+  router.push(`/upgrade?subject=${subject}`)
   return
+}
+
+if (!isTrialUser && !isPplUser) {
+  const { data: subjectAccess } = await supabase
+    .from("SubjectAccess")
+    .select("*")
+    .eq("user_id", user.id)
+    .eq("subject", subject)
+    .eq("access_status", "active")
+    .single()
+
+  const hasValidAccess =
+    subjectAccess &&
+    new Date(subjectAccess.expires_at) > new Date()
+
+  if (!hasValidAccess) {
+    router.push(`/upgrade?subject=${subject}`)
+    return
+  }
 }
 
       const { data, error } = await supabase

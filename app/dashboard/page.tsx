@@ -88,7 +88,11 @@ export default function DashboardPage() {
     router.push("/")
   }
 
-  const isTrialUser = profile?.subscription_plan === "trial"
+  const isTrialUser =
+    profile?.subscription_plan === "trial" &&
+    profile?.trial_ends_at !== null &&
+    new Date(profile.trial_ends_at) > new Date()
+
   const isPplUser =
     profile?.subscription_status === "active" &&
     profile?.subscription_plan === "ppl"
@@ -230,13 +234,13 @@ export default function DashboardPage() {
                     </Link>
 
                     {topicUnlocked && (
-  <Link
-    href={`/practice/${subject.slug}/topics`}
-    className="block text-sm text-gray-400 transition hover:text-[#f4b400]"
-  >
-    Practice by Topic →
-  </Link>
-)}
+                      <Link
+                        href={`/practice/${subject.slug}`}
+                        className="block text-sm text-gray-400 transition hover:text-[#f4b400]"
+                      >
+                        Practice by Topic →
+                      </Link>
+                    )}
                   </div>
                 ) : (
                   <Link

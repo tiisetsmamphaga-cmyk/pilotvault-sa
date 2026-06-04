@@ -98,10 +98,13 @@ if (!isTrialUser && !isPplUser) {
   }
 }
 
-      const { data, error } = await supabase
-        .from("questions")
-        .select("*")
-        .eq("is_trial_question", true)
+      let query = supabase.from("questions").select("*")
+
+if (isTrialUser) {
+  query = query.eq("is_trial_question", true)
+}
+
+const { data, error } = await query
 
       if (error) {
         console.log("Supabase error:", error)

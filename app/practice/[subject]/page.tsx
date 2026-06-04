@@ -15,6 +15,10 @@ type Question = {
   explanation: string
 }
 
+function shuffleArray<T>(array: T[]) {
+  return [...array].sort(() => Math.random() - 0.5)
+}
+
 type ExamMode = "menu" | "mock"
 
 const MOCK_QUESTION_COUNT = 25

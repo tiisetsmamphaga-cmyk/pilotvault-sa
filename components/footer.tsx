@@ -18,7 +18,7 @@ const quickLinks = [
 ]
 
 const resources = [
-  { name: "FAQ", href: "#" },
+  { name: "FAQ", href: "faq" },
   { name: "Support", href: "#" },
   { name: "Contact", href: "#contact" },
 ]

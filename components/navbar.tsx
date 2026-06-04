@@ -230,12 +230,12 @@ export function Navbar() {
       </motion.nav>
 
       {authOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
-          >
+  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.92, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      className="relative w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
+    >
             <button
               type="button"
               onClick={() => setAuthOpen(false)}

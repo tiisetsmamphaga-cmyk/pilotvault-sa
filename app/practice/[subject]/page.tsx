@@ -15,6 +15,10 @@ type Question = {
   explanation: string
 }
 
+function shuffleArray<T>(array: T[]) {
+  return [...array].sort(() => Math.random() - 0.5)
+}
+
 type ExamMode = "menu" | "mock"
 
 const MOCK_QUESTION_COUNT = 25
@@ -64,19 +68,47 @@ if (!profile) {
   return
 }
 
-const isTrialExpired =
-  profile.subscription_status === "trial" &&
-  new Date(profile.trial_ends_at) < new Date()
+const isPplUser =
+  profile.subscription_status === "active" &&
+  profile.subscription_plan === "ppl"
 
-if (isTrialExpired) {
-  router.push("/upgrade")
+const isTrialUser =
+  profile.subscription_plan === "trial"
+
+if (
+  isTrialUser &&
+  new Date(profile.trial_ends_at) < new Date()
+) {
+  router.push(`/upgrade?subject=${subject}`)
   return
 }
 
-      const { data, error } = await supabase
-        .from("questions")
-        .select("*")
-        .eq("is_trial_question", true)
+if (!isTrialUser && !isPplUser) {
+  const { data: subjectAccess } = await supabase
+    .from("SubjectAccess")
+    .select("*")
+    .eq("user_id", user.id)
+    .eq("subject", subject)
+    .eq("access_status", "active")
+    .single()
+
+  const hasValidAccess =
+    subjectAccess &&
+    new Date(subjectAccess.expires_at) > new Date()
+
+  if (!hasValidAccess) {
+    router.push(`/upgrade?subject=${subject}`)
+    return
+  }
+}
+
+      let query = supabase.from("questions").select("*")
+
+if (isTrialUser) {
+  query = query.eq("is_trial_question", true)
+}
+
+const { data, error } = await query
 
       if (error) {
         console.log("Supabase error:", error)
@@ -85,23 +117,27 @@ if (isTrialExpired) {
         return
       }
 
-      const formattedQuestions =
-        data
-          ?.filter((q) => {
-            const dbSubject = normalizeText(String(q.subject || ""))
-            const routeSubject = normalizeText(subject)
-            return dbSubject === routeSubject
-          })
-          .slice(0, MOCK_QUESTION_COUNT)
-          .map((q) => ({
-            id: q.id,
-            subject: q.subject,
-            topic: q.topic,
-            question: q.question,
-            options: [q.option_a, q.option_b, q.option_c, q.option_d],
-            correctAnswer: q.correct_answer,
-            explanation: q.explanation,
-          })) || []
+      const filteredQuestions =
+  data?.filter((q) => {
+    const dbSubject = normalizeText(String(q.subject || ""))
+    const routeSubject = normalizeText(subject)
+
+    return dbSubject === routeSubject
+  }) || []
+
+const selectedQuestions = isTrialUser
+  ? filteredQuestions.slice(0, MOCK_QUESTION_COUNT)
+  : shuffleArray(filteredQuestions).slice(0, MOCK_QUESTION_COUNT)
+
+const formattedQuestions = selectedQuestions.map((q) => ({
+  id: q.id,
+  subject: q.subject,
+  topic: q.topic,
+  question: q.question,
+  options: [q.option_a, q.option_b, q.option_c, q.option_d],
+  correctAnswer: q.correct_answer,
+  explanation: q.explanation,
+}))
 
       setSubjectQuestions(formattedQuestions)
       setIsLoadingQuestions(false)

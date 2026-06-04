@@ -11,7 +11,7 @@ import { supabase } from "@/src/lib/supabase"
 const navLinks = [
   { name: "Home", href: "#" },
   { name: "Features", href: "features" },
-  { name: "Subjects", href: "#subjects" },
+  { name: "Subjects", href: "subjects" },
   { name: "Pricing", href: "#pricing" },
   { name: "About", href: "about" },
   { name: "Contact", href: "#contact" },

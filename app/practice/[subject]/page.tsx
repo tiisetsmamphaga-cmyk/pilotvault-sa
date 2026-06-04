@@ -19,7 +19,7 @@ function shuffleArray<T>(array: T[]) {
   return [...array].sort(() => Math.random() - 0.5)
 }
 
-type ExamMode = "menu" | "mock"
+type ExamMode = "menu" | "mock" | "topics" | "topic"
 
 const MOCK_QUESTION_COUNT = 25
 const MOCK_TIME_SECONDS = 25 * 60
@@ -44,71 +44,79 @@ export default function SubjectPracticePage() {
   const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
 
+  const [canAccessTopics, setCanAccessTopics] = useState(false)
+  const [isTrialAccount, setIsTrialAccount] = useState(false)
+  const [activeTopic, setActiveTopic] = useState("")
+
   useEffect(() => {
     const checkUserAndFetchQuestions = async () => {
       setIsLoadingQuestions(true)
 
       const {
-  data: { user },
-} = await supabase.auth.getUser()
+        data: { user },
+      } = await supabase.auth.getUser()
 
-if (!user) {
-  router.push("/")
-  return
-}
+      if (!user) {
+        router.push("/")
+        return
+      }
 
-const { data: profile } = await supabase
-  .from("Profiles")
-  .select("*")
-  .eq("id", user.id)
-  .single()
+      const { data: profile } = await supabase
+        .from("Profiles")
+        .select("*")
+        .eq("id", user.id)
+        .single()
 
-if (!profile) {
-  router.push("/upgrade")
-  return
-}
+      if (!profile) {
+        router.push("/upgrade")
+        return
+      }
 
-const isPplUser =
-  profile.subscription_status === "active" &&
-  profile.subscription_plan === "ppl"
+      const isPplUser =
+        profile.subscription_status === "active" &&
+        profile.subscription_plan === "ppl"
 
-const isTrialUser =
-  profile.subscription_plan === "trial"
+      const isTrialUser = profile.subscription_plan === "trial"
 
-if (
-  isTrialUser &&
-  new Date(profile.trial_ends_at) < new Date()
-) {
-  router.push(`/upgrade?subject=${subject}`)
-  return
-}
+      setIsTrialAccount(isTrialUser)
+      setCanAccessTopics(isPplUser)
 
-if (!isTrialUser && !isPplUser) {
-  const { data: subjectAccess } = await supabase
-    .from("SubjectAccess")
-    .select("*")
-    .eq("user_id", user.id)
-    .eq("subject", subject)
-    .eq("access_status", "active")
-    .single()
+      if (
+        isTrialUser &&
+        new Date(profile.trial_ends_at) < new Date()
+      ) {
+        router.push(`/upgrade?subject=${subject}`)
+        return
+      }
 
-  const hasValidAccess =
-    subjectAccess &&
-    new Date(subjectAccess.expires_at) > new Date()
+      if (!isTrialUser && !isPplUser) {
+        const { data: subjectAccess } = await supabase
+          .from("SubjectAccess")
+          .select("*")
+          .eq("user_id", user.id)
+          .eq("subject", subject)
+          .eq("access_status", "active")
+          .single()
 
-  if (!hasValidAccess) {
-    router.push(`/upgrade?subject=${subject}`)
-    return
-  }
-}
+        const hasValidAccess =
+          subjectAccess &&
+          new Date(subjectAccess.expires_at) > new Date()
+
+        if (!hasValidAccess) {
+          router.push(`/upgrade?subject=${subject}`)
+          return
+        }
+
+        setCanAccessTopics(true)
+      }
 
       let query = supabase.from("questions").select("*")
 
-if (isTrialUser) {
-  query = query.eq("is_trial_question", true)
-}
+      if (isTrialUser) {
+        query = query.eq("is_trial_question", true)
+      }
 
-const { data, error } = await query
+      const { data, error } = await query
 
       if (error) {
         console.log("Supabase error:", error)
@@ -118,26 +126,22 @@ const { data, error } = await query
       }
 
       const filteredQuestions =
-  data?.filter((q) => {
-    const dbSubject = normalizeText(String(q.subject || ""))
-    const routeSubject = normalizeText(subject)
+        data?.filter((q) => {
+          const dbSubject = normalizeText(String(q.subject || ""))
+          const routeSubject = normalizeText(subject)
 
-    return dbSubject === routeSubject
-  }) || []
+          return dbSubject === routeSubject
+        }) || []
 
-const selectedQuestions = isTrialUser
-  ? filteredQuestions.slice(0, MOCK_QUESTION_COUNT)
-  : shuffleArray(filteredQuestions).slice(0, MOCK_QUESTION_COUNT)
-
-const formattedQuestions = selectedQuestions.map((q) => ({
-  id: q.id,
-  subject: q.subject,
-  topic: q.topic,
-  question: q.question,
-  options: [q.option_a, q.option_b, q.option_c, q.option_d],
-  correctAnswer: q.correct_answer,
-  explanation: q.explanation,
-}))
+      const formattedQuestions = filteredQuestions.map((q) => ({
+        id: q.id,
+        subject: q.subject,
+        topic: q.topic,
+        question: q.question,
+        options: [q.option_a, q.option_b, q.option_c, q.option_d],
+        correctAnswer: q.correct_answer,
+        explanation: q.explanation,
+      }))
 
       setSubjectQuestions(formattedQuestions)
       setIsLoadingQuestions(false)
@@ -147,7 +151,9 @@ const formattedQuestions = selectedQuestions.map((q) => ({
   }, [subject, router])
 
   useEffect(() => {
-    if (examMode === "menu" || isSubmitted || examQuestions.length === 0) return
+    if (examMode === "menu" || examMode === "topics" || isSubmitted || examQuestions.length === 0) {
+      return
+    }
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -194,14 +200,34 @@ const formattedQuestions = selectedQuestions.map((q) => ({
 
   const startMockExam = () => {
     resetExamState()
-    setExamQuestions(subjectQuestions.slice(0, MOCK_QUESTION_COUNT))
+
+    const selectedQuestions = isTrialAccount
+      ? subjectQuestions.slice(0, MOCK_QUESTION_COUNT)
+      : shuffleArray(subjectQuestions).slice(0, MOCK_QUESTION_COUNT)
+
+    setExamQuestions(selectedQuestions)
     setExamMode("mock")
+    setActiveTopic("")
+    setTimeLeft(MOCK_TIME_SECONDS)
+  }
+
+  const startTopicPractice = (topic: string) => {
+    resetExamState()
+
+    const topicQuestions = subjectQuestions.filter(
+      (question) => question.topic === topic
+    )
+
+    setExamQuestions(shuffleArray(topicQuestions))
+    setActiveTopic(topic)
+    setExamMode("topic")
     setTimeLeft(MOCK_TIME_SECONDS)
   }
 
   const returnToMenu = () => {
     resetExamState()
     setExamMode("menu")
+    setActiveTopic("")
     setExamQuestions([])
     setTimeLeft(MOCK_TIME_SECONDS)
   }
@@ -243,6 +269,10 @@ const formattedQuestions = selectedQuestions.map((q) => ({
     }
   }
 
+  const topics = Array.from(
+    new Set(subjectQuestions.map((q) => q.topic).filter(Boolean))
+  ) as string[]
+
   const currentQuestion = examQuestions[currentQuestionIndex]
   const selectedAnswer = answers[currentQuestionIndex]
   const totalQuestions = examQuestions.length
@@ -260,6 +290,11 @@ const formattedQuestions = selectedQuestions.map((q) => ({
   const wrongQuestions = examQuestions.filter(
     (question, index) => answers[index] !== question.correctAnswer
   )
+
+  const examLabel =
+    examMode === "topic" && activeTopic
+      ? `${activeTopic} Practice`
+      : "Mock Exam"
 
   if (isLoadingQuestions) {
     return (
@@ -286,16 +321,15 @@ const formattedQuestions = selectedQuestions.map((q) => ({
 
           <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-8">
             <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-              No Trial Questions
+              No Questions
             </p>
 
             <h1 className="mt-3 text-3xl font-bold">
-              No trial questions found for {formatSubjectName(subject)}.
+              No questions found for {formatSubjectName(subject)}.
             </h1>
 
             <p className="mt-3 text-gray-400">
-              Make sure this subject has 25 questions marked as trial questions
-              in Supabase.
+              Make sure this subject has questions loaded in Supabase.
             </p>
           </div>
         </div>
@@ -324,8 +358,8 @@ const formattedQuestions = selectedQuestions.map((q) => ({
             </h1>
 
             <p className="mt-3 max-w-2xl text-gray-400">
-              Trial users can start the fixed 25-question mock exam. Practice by
-              topic is available with an active subscription.
+              Start a SACAA-style mock exam or focus on weak areas with
+              topic-based practice.
             </p>
           </div>
 
@@ -335,13 +369,17 @@ const formattedQuestions = selectedQuestions.map((q) => ({
               className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400]"
             >
               <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                Trial Access
+                {isTrialAccount ? "Trial Access" : "Full Access"}
               </p>
 
-              <h2 className="mt-3 text-2xl font-bold text-white">Mock Exam</h2>
+              <h2 className="mt-3 text-2xl font-bold text-white">
+                Mock Exam
+              </h2>
 
               <p className="mt-3 text-sm leading-6 text-gray-400">
-                Start the fixed 25-question trial mock exam for this subject.
+                {isTrialAccount
+                  ? "Start the fixed 25-question trial mock exam for this subject."
+                  : "Start a randomized 25-question mock exam from the full subject bank."}
               </p>
 
               <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
@@ -349,27 +387,105 @@ const formattedQuestions = selectedQuestions.map((q) => ({
               </p>
             </button>
 
-            <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">
-              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                Subscription Feature
-              </p>
-
-              <h2 className="mt-3 text-2xl font-bold text-white">
-                Practice by Topic
-              </h2>
-
-              <p className="mt-3 text-sm leading-6 text-gray-400">
-                Target weak areas by topic and build confidence faster with the
-                full PilotVault question bank.
-              </p>
-
-              <Link
-                href="/upgrade"
-                className="mt-5 inline-flex text-sm font-medium text-[#f4b400] hover:text-[#ffd24d]"
+            {canAccessTopics ? (
+              <button
+                onClick={() => setExamMode("topics")}
+                className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400]"
               >
-                Upgrade to Unlock →
-              </Link>
-            </div>
+                <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                  Full Access
+                </p>
+
+                <h2 className="mt-3 text-2xl font-bold text-white">
+                  Practice by Topic
+                </h2>
+
+                <p className="mt-3 text-sm leading-6 text-gray-400">
+                  Target weak areas by topic and build confidence faster with
+                  the full PilotVault question bank.
+                </p>
+
+                <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
+                  Choose Topic →
+                </p>
+              </button>
+            ) : (
+              <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">
+                <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                  Subscription Feature
+                </p>
+
+                <h2 className="mt-3 text-2xl font-bold text-white">
+                  Practice by Topic
+                </h2>
+
+                <p className="mt-3 text-sm leading-6 text-gray-400">
+                  Target weak areas by topic and build confidence faster with
+                  the full PilotVault question bank.
+                </p>
+
+                <Link
+                  href={`/upgrade?subject=${subject}`}
+                  className="mt-5 inline-flex text-sm font-medium text-[#f4b400] hover:text-[#ffd24d]"
+                >
+                  Upgrade to Unlock →
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      </main>
+    )
+  }
+
+  if (examMode === "topics") {
+    return (
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-5xl">
+          <button
+            onClick={returnToMenu}
+            className="text-sm font-medium text-[#f4b400] hover:text-white"
+          >
+            ← Back to Training Modes
+          </button>
+
+          <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+              {formatSubjectName(subject)}
+            </p>
+
+            <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
+              Choose a topic
+            </h1>
+
+            <p className="mt-3 max-w-2xl text-gray-400">
+              Focus on a specific topic and strengthen weak areas.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {topics.map((topic) => (
+              <button
+                key={topic}
+                onClick={() => startTopicPractice(topic)}
+                className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+              >
+                <h2 className="text-xl font-bold text-white">{topic}</h2>
+
+                <p className="mt-3 text-sm text-gray-400">
+                  {
+                    subjectQuestions.filter(
+                      (question) => question.topic === topic
+                    ).length
+                  }{" "}
+                  questions available
+                </p>
+
+                <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
+                  Practice Topic →
+                </p>
+              </button>
+            ))}
           </div>
         </div>
       </main>
@@ -383,7 +499,7 @@ const formattedQuestions = selectedQuestions.map((q) => ({
           <div>
             <h1 className="text-base font-bold">PilotVault SA Exam Results</h1>
             <p className="text-xs uppercase tracking-wider text-blue-100">
-              {formatSubjectName(subject)} · Mock Exam
+              {formatSubjectName(subject)} · {examLabel}
             </p>
           </div>
 
@@ -420,10 +536,18 @@ const formattedQuestions = selectedQuestions.map((q) => ({
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <button
-                onClick={startMockExam}
+                onClick={
+  examMode === "topic"
+    ? () => {
+        resetExamState()
+        setExamMode("topics")
+        setExamQuestions([])
+      }
+    : startMockExam
+}
                 className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
               >
-                Restart
+                {examMode === "topic" ? "Back to Topics" : "Restart"}
               </button>
 
               <button
@@ -516,7 +640,7 @@ const formattedQuestions = selectedQuestions.map((q) => ({
           <h1 className="text-base font-bold">PilotVault SA Exam Practice</h1>
 
           <p className="text-xs uppercase tracking-wider text-blue-100">
-            {formatSubjectName(subject)} · Mock Exam
+            {formatSubjectName(subject)} · {examLabel}
           </p>
         </div>
 

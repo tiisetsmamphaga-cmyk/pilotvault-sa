@@ -36,6 +36,7 @@ type Profile = {
   subscription_plan: string | null
   payment_status: string | null
   trial_ends_at: string | null
+  subscription_expires_at: string | null
 }
 
 type SubjectAccess = {

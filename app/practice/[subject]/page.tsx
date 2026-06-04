@@ -117,23 +117,27 @@ const { data, error } = await query
         return
       }
 
-      const formattedQuestions =
-        data
-          ?.filter((q) => {
-            const dbSubject = normalizeText(String(q.subject || ""))
-            const routeSubject = normalizeText(subject)
-            return dbSubject === routeSubject
-          })
-          .slice(0, MOCK_QUESTION_COUNT)
-          .map((q) => ({
-            id: q.id,
-            subject: q.subject,
-            topic: q.topic,
-            question: q.question,
-            options: [q.option_a, q.option_b, q.option_c, q.option_d],
-            correctAnswer: q.correct_answer,
-            explanation: q.explanation,
-          })) || []
+      const filteredQuestions =
+  data?.filter((q) => {
+    const dbSubject = normalizeText(String(q.subject || ""))
+    const routeSubject = normalizeText(subject)
+
+    return dbSubject === routeSubject
+  }) || []
+
+const selectedQuestions = isTrialUser
+  ? filteredQuestions.slice(0, MOCK_QUESTION_COUNT)
+  : shuffleArray(filteredQuestions).slice(0, MOCK_QUESTION_COUNT)
+
+const formattedQuestions = selectedQuestions.map((q) => ({
+  id: q.id,
+  subject: q.subject,
+  topic: q.topic,
+  question: q.question,
+  options: [q.option_a, q.option_b, q.option_c, q.option_d],
+  correctAnswer: q.correct_answer,
+  explanation: q.explanation,
+}))
 
       setSubjectQuestions(formattedQuestions)
       setIsLoadingQuestions(false)

@@ -149,7 +149,11 @@ export default function DashboardPage() {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
           <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-            {isPplUser ? "Full Access" : isTrialUser ? "Trial Access" : "Subject Access"}
+            {isPplUser
+              ? "Full Access"
+              : isTrialUser
+                ? "Trial Access"
+                : "Subject Access"}
           </p>
 
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
@@ -227,7 +231,7 @@ export default function DashboardPage() {
 
                     {topicUnlocked ? (
                       <Link
-                        href={`/practice/${subject.slug}?mode=topic`}
+                        href={`/practice/${subject.slug}/topics`}
                         className="block text-sm text-gray-400 transition hover:text-[#f4b400]"
                       >
                         Practice by Topic →

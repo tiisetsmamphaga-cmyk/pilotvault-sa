@@ -36,6 +36,7 @@ type Profile = {
   subscription_plan: string | null
   payment_status: string | null
   trial_ends_at: string | null
+  subscription_expires_at: string | null
 }
 
 type SubjectAccess = {
@@ -46,7 +47,6 @@ type SubjectAccess = {
 
 export default function DashboardPage() {
   const router = useRouter()
-
   const [loading, setLoading] = useState(true)
   const [profile, setProfile] = useState<Profile | null>(null)
   const [subjectAccess, setSubjectAccess] = useState<SubjectAccess[]>([])
@@ -65,7 +65,7 @@ export default function DashboardPage() {
       const { data: profileData } = await supabase
         .from("Profiles")
         .select(
-          "subscription_status, subscription_plan, payment_status, trial_ends_at"
+          "subscription_status, subscription_plan, payment_status, trial_ends_at, subscription_expires_at"
         )
         .eq("id", user.id)
         .single()
@@ -95,7 +95,9 @@ export default function DashboardPage() {
 
   const isPplUser =
     profile?.subscription_status === "active" &&
-    profile?.subscription_plan === "ppl"
+    profile?.subscription_plan === "ppl" &&
+    profile?.subscription_expires_at !== null &&
+    new Date(profile.subscription_expires_at) > new Date()
 
   const hasSubjectAccess = (slug: string) => {
     if (isTrialUser || isPplUser) return true
@@ -202,14 +204,28 @@ export default function DashboardPage() {
                     : `/upgrade?subject=${subject.slug}`
                 }
                 className={`group rounded-2xl border bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400] ${
-                  unlocked ? "border-[#1e3a5f]" : "border-[#1e3a5f] opacity-80"
+                  unlocked
+                    ? "border-[#f4b400]/40"
+                    : "border-[#1e3a5f] opacity-50"
                 }`}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
-                  <Icon className="h-6 w-6 text-[#f4b400]" />
+                <div
+                  className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+                    unlocked ? "bg-[#f4b400]/20" : "bg-[#f4b400]/10"
+                  }`}
+                >
+                  <Icon
+                    className={`h-6 w-6 ${
+                      unlocked ? "text-[#f4b400]" : "text-[#f4b400]/50"
+                    }`}
+                  />
                 </div>
 
-                <h3 className="mt-5 text-sm font-bold sm:text-lg">
+                <h3
+                  className={`mt-5 text-sm font-bold sm:text-lg ${
+                    unlocked ? "text-white" : "text-gray-500"
+                  }`}
+                >
                   {subject.name}
                 </h3>
               </Link>

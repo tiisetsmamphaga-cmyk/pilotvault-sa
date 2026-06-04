@@ -109,18 +109,6 @@ export default function DashboardPage() {
     })
   }
 
-  const canUseTopicPractice = (slug: string) => {
-    if (isPplUser) return true
-
-    return subjectAccess.some((access) => {
-      const isSameSubject = access.subject === slug
-      const isActive = access.access_status === "active"
-      const isNotExpired = new Date(access.expires_at) > new Date()
-
-      return isSameSubject && isActive && isNotExpired
-    })
-  }
-
   if (loading) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-[#06111f] text-white">
@@ -173,7 +161,7 @@ export default function DashboardPage() {
               ? "Your PPL Pack gives you access to all subjects, mock exams, topic practice, and the full question bank."
               : isTrialUser
                 ? "Your 3-day trial gives you access to all SACAA subjects through a fixed 25-question mock exam set. Topic-based practice and the full question bank require an active subscription."
-                : "You can access mock exams and topic practice for the subjects you have purchased. Purchase additional subjects whenever you're ready."}
+                : "You can access the subjects you have purchased. Purchase additional subjects whenever you're ready."}
           </p>
 
           {!isPplUser && (
@@ -196,8 +184,7 @@ export default function DashboardPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-gray-400">
-            Start a mock exam, continue with topic practice, or purchase access
-            to additional subjects.
+            Select a subject to begin your SACAA exam preparation.
           </p>
         </div>
 
@@ -205,15 +192,17 @@ export default function DashboardPage() {
           {subjects.map((subject) => {
             const Icon = subject.icon
             const unlocked = hasSubjectAccess(subject.slug)
-            const topicUnlocked = canUseTopicPractice(subject.slug)
 
             return (
-              <div
+              <Link
                 key={subject.slug}
-                className={`group rounded-2xl border bg-[#081726] p-6 transition-all ${
+                href={
                   unlocked
-                    ? "border-[#1e3a5f] hover:-translate-y-1 hover:border-[#f4b400]"
-                    : "border-[#1e3a5f] opacity-80 hover:border-[#f4b400]"
+                    ? `/practice/${subject.slug}`
+                    : `/upgrade?subject=${subject.slug}`
+                }
+                className={`group rounded-2xl border bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400] ${
+                  unlocked ? "border-[#1e3a5f]" : "border-[#1e3a5f] opacity-80"
                 }`}
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
@@ -223,34 +212,7 @@ export default function DashboardPage() {
                 <h3 className="mt-5 text-sm font-bold sm:text-lg">
                   {subject.name}
                 </h3>
-
-                {unlocked ? (
-                  <div className="mt-4 space-y-2">
-                    <Link
-                      href={`/practice/${subject.slug}`}
-                      className="block text-sm text-gray-400 transition hover:text-[#f4b400]"
-                    >
-                      Start Mock Exam →
-                    </Link>
-
-                    {topicUnlocked && (
-                      <Link
-                        href={`/practice/${subject.slug}`}
-                        className="block text-sm text-gray-400 transition hover:text-[#f4b400]"
-                      >
-                        Practice by Topic →
-                      </Link>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    href={`/upgrade?subject=${subject.slug}`}
-                    className="mt-4 block text-sm font-medium text-[#f4b400] transition hover:text-[#ffd24d]"
-                  >
-                    Purchase Subject →
-                  </Link>
-                )}
-              </div>
+              </Link>
             )
           })}
         </div>

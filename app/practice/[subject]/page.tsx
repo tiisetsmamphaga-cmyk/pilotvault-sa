@@ -473,13 +473,8 @@ export default function SubjectPracticePage() {
                 <h2 className="text-xl font-bold text-white">{topic}</h2>
 
                 <p className="mt-3 text-sm text-gray-400">
-                  {
-                    subjectQuestions.filter(
-                      (question) => question.topic === topic
-                    ).length
-                  }{" "}
-                  questions available
-                </p>
+  Practice focused questions from this topic.
+</p>
 
                 <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
                   Practice Topic →

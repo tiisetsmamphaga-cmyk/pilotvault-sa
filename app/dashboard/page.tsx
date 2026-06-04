@@ -195,26 +195,46 @@ export default function DashboardPage() {
             const unlocked = hasSubjectAccess(subject.slug)
 
             return (
-              <Link
-                key={subject.slug}
-                href={
-                  unlocked
-                    ? `/practice/${subject.slug}`
-                    : `/upgrade?subject=${subject.slug}`
-                }
-                className={`group rounded-2xl border bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400] ${
-                  unlocked ? "border-[#1e3a5f]" : "border-[#1e3a5f] opacity-80"
-                }`}
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f4b400]/10 group-hover:bg-[#f4b400]/20">
-                  <Icon className="h-6 w-6 text-[#f4b400]" />
-                </div>
+  <Link
+    key={subject.slug}
+    href={
+      unlocked
+        ? `/practice/${subject.slug}`
+        : `/upgrade?subject=${subject.slug}`
+    }
+    className={`group rounded-2xl border bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400] ${
+      unlocked
+        ? "border-[#f4b400]/40"
+        : "border-[#1e3a5f] opacity-50"
+    }`}
+  >
+    <div
+      className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+        unlocked
+          ? "bg-[#f4b400]/20"
+          : "bg-[#f4b400]/10"
+      }`}
+    >
+      <Icon
+        className={`h-6 w-6 ${
+          unlocked
+            ? "text-[#f4b400]"
+            : "text-[#f4b400]/50"
+        }`}
+      />
+    </div>
 
-                <h3 className="mt-5 text-sm font-bold sm:text-lg">
-                  {subject.name}
-                </h3>
-              </Link>
-            )
+    <h3
+      className={`mt-5 text-sm font-bold sm:text-lg ${
+        unlocked
+          ? "text-white"
+          : "text-gray-500"
+      }`}
+    >
+      {subject.name}
+    </h3>
+  </Link>
+)
           })}
         </div>
       </section>

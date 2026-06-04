@@ -536,7 +536,15 @@ export default function SubjectPracticePage() {
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <button
-                onClick={examMode === "topic" ? () => setExamMode("topics") : startMockExam}
+                onClick={
+  examMode === "topic"
+    ? () => {
+        resetExamState()
+        setExamMode("topics")
+        setExamQuestions([])
+      }
+    : startMockExam
+}
                 className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
               >
                 {examMode === "topic" ? "Back to Topics" : "Restart"}

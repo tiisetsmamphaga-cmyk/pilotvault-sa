@@ -10,6 +10,7 @@ type Question = {
   subject: string
   topic?: string
   question: string
+  image_url?: string
   options: string[]
   correctAnswer: string
   explanation: string

@@ -135,14 +135,15 @@ export default function SubjectPracticePage() {
         }) || []
 
       const formattedQuestions = filteredQuestions.map((q) => ({
-        id: q.id,
-        subject: q.subject,
-        topic: q.topic,
-        question: q.question,
-        options: [q.option_a, q.option_b, q.option_c, q.option_d],
-        correctAnswer: q.correct_answer,
-        explanation: q.explanation,
-      }))
+  id: q.id,
+  subject: q.subject,
+  topic: q.topic,
+  question: q.question,
+  image_url: q.image_url,
+  options: [q.option_a, q.option_b, q.option_c, q.option_d],
+  correctAnswer: q.correct_answer,
+  explanation: q.explanation,
+}))
 
       setSubjectQuestions(formattedQuestions)
       setIsLoadingQuestions(false)

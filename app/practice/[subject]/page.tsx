@@ -745,9 +745,19 @@ export default function SubjectPracticePage() {
               </div>
             </div>
 
-            <p className="text-lg leading-relaxed text-slate-900">
-              {currentQuestion.question}
-            </p>
+           <div>
+  <p className="text-lg leading-relaxed text-slate-900">
+    {currentQuestion.question}
+  </p>
+
+  {currentQuestion.image_url && (
+    <img
+      src={currentQuestion.image_url}
+      alt="Question"
+      className="mt-6 w-full max-w-2xl rounded-lg border border-slate-300"
+    />
+  )}
+</div>
 
             <div className="mt-8 space-y-2">
               {currentQuestion.options

@@ -10,6 +10,7 @@ type Question = {
   subject: string
   topic?: string
   question: string
+  image_url?: string
   options: string[]
   correctAnswer: string
   explanation: string
@@ -134,14 +135,15 @@ export default function SubjectPracticePage() {
         }) || []
 
       const formattedQuestions = filteredQuestions.map((q) => ({
-        id: q.id,
-        subject: q.subject,
-        topic: q.topic,
-        question: q.question,
-        options: [q.option_a, q.option_b, q.option_c, q.option_d],
-        correctAnswer: q.correct_answer,
-        explanation: q.explanation,
-      }))
+  id: q.id,
+  subject: q.subject,
+  topic: q.topic,
+  question: q.question,
+  image_url: q.image_url,
+  options: [q.option_a, q.option_b, q.option_c, q.option_d],
+  correctAnswer: q.correct_answer,
+  explanation: q.explanation,
+}))
 
       setSubjectQuestions(formattedQuestions)
       setIsLoadingQuestions(false)
@@ -743,9 +745,19 @@ export default function SubjectPracticePage() {
               </div>
             </div>
 
-            <p className="text-lg leading-relaxed text-slate-900">
-              {currentQuestion.question}
-            </p>
+           <div>
+  <p className="text-lg leading-relaxed text-slate-900">
+    {currentQuestion.question}
+  </p>
+
+  {currentQuestion.image_url && (
+    <img
+      src={currentQuestion.image_url}
+      alt="Question"
+      className="mt-6 w-full max-w-2xl rounded-lg border border-slate-300"
+    />
+  )}
+</div>
 
             <div className="mt-8 space-y-2">
               {currentQuestion.options

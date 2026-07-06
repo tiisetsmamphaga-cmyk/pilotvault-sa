@@ -384,9 +384,7 @@ export default function SubjectPracticePage() {
                   : "Start a randomized 25-question mock exam from the full subject bank."}
               </p>
 
-              <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
-                Start Mock Exam →
-              </p>
+              
             </button>
 
             {canAccessTopics ? (

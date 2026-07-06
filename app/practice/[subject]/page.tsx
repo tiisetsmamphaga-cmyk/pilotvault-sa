@@ -384,9 +384,7 @@ export default function SubjectPracticePage() {
                   : "Start a randomized 25-question mock exam from the full subject bank."}
               </p>
 
-              <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
-                Start Mock Exam →
-              </p>
+              
             </button>
 
             {canAccessTopics ? (
@@ -407,9 +405,7 @@ export default function SubjectPracticePage() {
                   the full PilotVault question bank.
                 </p>
 
-                <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
-                  Choose Topic →
-                </p>
+                
               </button>
             ) : (
               <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">

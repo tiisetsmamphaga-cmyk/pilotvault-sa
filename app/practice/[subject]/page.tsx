@@ -1,4 +1,5 @@
 "use client"
+import { BookOpen, ClipboardList, Crosshair, GraduationCap } from "lucide-react"
 
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
@@ -338,8 +339,8 @@ export default function SubjectPracticePage() {
       </main>
     )
   }
-import { BookOpen, ClipboardList, Crosshair, GraduationCap } from "lucide-react"
-  if (examMode === "menu") {
+  
+if (examMode === "menu") {
   return (
     <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
       <div className="mx-auto max-w-5xl">

@@ -369,31 +369,31 @@ if (examMode === "menu") {
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           <button
             onClick={startMockExam}
-            className="group rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-5 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+            className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-4 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:shadow-[0_0_30px_rgba(244,180,0,0.12)]"
           >
             <div className="inline-flex items-center gap-2 rounded-md border border-[#1e3a5f] bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f4b400]">
               <GraduationCap size={14} />
               {isTrialAccount ? "Trial Access" : "Full Access"}
             </div>
 
-            <div className="mt-6 flex items-center justify-between gap-6">
-              <div className="flex items-start gap-5">
-                <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-4 text-[#9bb7ff]">
-                  <ClipboardList size={34} />
+            <div className="mt-4 flex items-center justify-between gap-5">
+              <div className="flex items-start gap-4">
+                <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#9bb7ff]">
+                  <ClipboardList size={28} />
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-white">Mock Exam</h2>
+                  <h2 className="text-xl font-bold text-white">Mock Exam</h2>
 
-                  <p className="mt-3 max-w-sm text-sm leading-6 text-gray-400">
+                  <p className="mt-2 max-w-sm text-sm leading-6 text-gray-400">
                     {isTrialAccount
-                      ? "Experience a real SACAA-style exam with 25 fixed trial questions."
-                      : "Experience a real SACAA-style exam. 25 randomized questions from the full question bank."}
+                      ? "25 fixed SACAA-style trial questions for exam practice."
+                      : "25 randomized SACAA-style questions from the full question bank."}
                   </p>
                 </div>
               </div>
 
-              <div className="hidden h-28 w-28 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] md:flex">
+              <div className="hidden h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] md:flex">
                 <div className="text-center">
                   <p className="text-3xl font-bold text-white">25</p>
                   <p className="text-[10px] uppercase tracking-widest text-gray-400">
@@ -402,71 +402,58 @@ if (examMode === "menu") {
                 </div>
               </div>
             </div>
-
-            <div className="mt-7 flex w-full items-center justify-center rounded-lg bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition group-hover:bg-[#ffd24d]">
-              Start Mock Exam →
-            </div>
           </button>
 
           {canAccessTopics ? (
             <button
               onClick={() => setExamMode("topics")}
-              className="group rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-5 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+              className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-4 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:shadow-[0_0_30px_rgba(244,180,0,0.12)]"
             >
               <div className="inline-flex items-center gap-2 rounded-md border border-[#1e3a5f] bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f4b400]">
                 <Crosshair size={14} />
                 Full Access
               </div>
 
-              <div className="mt-6 flex items-center justify-between gap-6">
-                <div className="flex items-start gap-5">
-                  <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-4 text-[#9bb7ff]">
-                    <BookOpen size={34} />
+              <div className="mt-4 flex items-center justify-between gap-5">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#9bb7ff]">
+                    <BookOpen size={28} />
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-bold text-white">
+                    <h2 className="text-xl font-bold text-white">
                       Practice by Topic
                     </h2>
 
-                    <p className="mt-3 max-w-sm text-sm leading-6 text-gray-400">
-                      Focus on specific topics and master weak areas with
-                      targeted practice questions.
+                    <p className="mt-2 max-w-sm text-sm leading-6 text-gray-400">
+                      Master weak areas with targeted practice from every topic.
                     </p>
                   </div>
                 </div>
 
-                <div className="hidden h-28 w-28 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] text-[#f4b400] md:flex">
-                  <Crosshair size={46} />
+                <div className="hidden h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] text-[#f4b400] md:flex">
+                  <Crosshair size={38} />
                 </div>
-              </div>
-
-              <div className="mt-7 flex w-full items-center justify-center rounded-lg border border-[#f4b400] px-5 py-3 text-sm font-bold text-[#f4b400] transition group-hover:bg-[#f4b400] group-hover:text-[#06111f]">
-                Choose Topic →
               </div>
             </button>
           ) : (
-            <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">
+            <Link
+              href={`/upgrade?subject=${subject}`}
+              className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-4 text-left opacity-75 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+            >
               <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
                 Subscription Feature
               </p>
 
-              <h2 className="mt-3 text-2xl font-bold text-white">
+              <h2 className="mt-3 text-xl font-bold text-white">
                 Practice by Topic
               </h2>
 
-              <p className="mt-3 text-sm leading-6 text-gray-400">
+              <p className="mt-2 text-sm leading-6 text-gray-400">
                 Target weak areas by topic and build confidence faster with the
                 full PilotVault question bank.
               </p>
-
-              <Link
-                href={`/upgrade?subject=${subject}`}
-                className="mt-5 inline-flex text-sm font-medium text-[#f4b400] hover:text-[#ffd24d]"
-              >
-                Upgrade to Unlock →
-              </Link>
-            </div>
+            </Link>
           )}
         </div>
       </div>

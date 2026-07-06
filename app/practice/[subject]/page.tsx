@@ -338,104 +338,140 @@ export default function SubjectPracticePage() {
       </main>
     )
   }
-
+import { BookOpen, ClipboardList, Crosshair, GraduationCap } from "lucide-react"
   if (examMode === "menu") {
-    return (
-      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
-        <div className="mx-auto max-w-5xl">
-          <Link
-            href="/dashboard"
-            className="text-sm font-medium text-[#f4b400] hover:text-white"
+  return (
+    <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+      <div className="mx-auto max-w-5xl">
+        <Link
+          href="/dashboard"
+          className="text-sm font-medium text-[#f4b400] hover:text-white"
+        >
+          ← Back to Dashboard
+        </Link>
+
+        <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+            {formatSubjectName(subject)}
+          </p>
+
+          <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
+            Choose your training mode
+          </h1>
+
+          <p className="mt-3 max-w-2xl text-gray-400">
+            Start a SACAA-style mock exam or focus on weak areas with
+            topic-based practice.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <button
+            onClick={startMockExam}
+            className="group rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-5 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400]"
           >
-            ← Back to Dashboard
-          </Link>
+            <div className="inline-flex items-center gap-2 rounded-md border border-[#1e3a5f] bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f4b400]">
+              <GraduationCap size={14} />
+              {isTrialAccount ? "Trial Access" : "Full Access"}
+            </div>
 
-          <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-              {formatSubjectName(subject)}
-            </p>
+            <div className="mt-6 flex items-center justify-between gap-6">
+              <div className="flex items-start gap-5">
+                <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-4 text-[#9bb7ff]">
+                  <ClipboardList size={34} />
+                </div>
 
-            <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
-              Choose your training mode
-            </h1>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">Mock Exam</h2>
 
-            <p className="mt-3 max-w-2xl text-gray-400">
-              Start a SACAA-style mock exam or focus on weak areas with
-              topic-based practice.
-            </p>
-          </div>
+                  <p className="mt-3 max-w-sm text-sm leading-6 text-gray-400">
+                    {isTrialAccount
+                      ? "Experience a real SACAA-style exam with 25 fixed trial questions."
+                      : "Experience a real SACAA-style exam. 25 randomized questions from the full question bank."}
+                  </p>
+                </div>
+              </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
+              <div className="hidden h-28 w-28 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] md:flex">
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-white">25</p>
+                  <p className="text-[10px] uppercase tracking-widest text-gray-400">
+                    Questions
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-7 flex w-full items-center justify-center rounded-lg bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition group-hover:bg-[#ffd24d]">
+              Start Mock Exam →
+            </div>
+          </button>
+
+          {canAccessTopics ? (
             <button
-              onClick={startMockExam}
-              className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+              onClick={() => setExamMode("topics")}
+              className="group rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-5 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400]"
             >
+              <div className="inline-flex items-center gap-2 rounded-md border border-[#1e3a5f] bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f4b400]">
+                <Crosshair size={14} />
+                Full Access
+              </div>
+
+              <div className="mt-6 flex items-center justify-between gap-6">
+                <div className="flex items-start gap-5">
+                  <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-4 text-[#9bb7ff]">
+                    <BookOpen size={34} />
+                  </div>
+
+                  <div>
+                    <h2 className="text-2xl font-bold text-white">
+                      Practice by Topic
+                    </h2>
+
+                    <p className="mt-3 max-w-sm text-sm leading-6 text-gray-400">
+                      Focus on specific topics and master weak areas with
+                      targeted practice questions.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="hidden h-28 w-28 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] text-[#f4b400] md:flex">
+                  <Crosshair size={46} />
+                </div>
+              </div>
+
+              <div className="mt-7 flex w-full items-center justify-center rounded-lg border border-[#f4b400] px-5 py-3 text-sm font-bold text-[#f4b400] transition group-hover:bg-[#f4b400] group-hover:text-[#06111f]">
+                Choose Topic →
+              </div>
+            </button>
+          ) : (
+            <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">
               <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                {isTrialAccount ? "Trial Access" : "Full Access"}
+                Subscription Feature
               </p>
 
               <h2 className="mt-3 text-2xl font-bold text-white">
-                Mock Exam
+                Practice by Topic
               </h2>
 
               <p className="mt-3 text-sm leading-6 text-gray-400">
-                {isTrialAccount
-                  ? "Start the fixed 25-question trial mock exam for this subject."
-                  : "Start a randomized 25-question mock exam from the full subject bank."}
+                Target weak areas by topic and build confidence faster with the
+                full PilotVault question bank.
               </p>
 
-              
-            </button>
-
-            {canAccessTopics ? (
-              <button
-                onClick={() => setExamMode("topics")}
-                className="group rounded-2xl border border-[#1e3a5f] bg-[#081726] p-6 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+              <Link
+                href={`/upgrade?subject=${subject}`}
+                className="mt-5 inline-flex text-sm font-medium text-[#f4b400] hover:text-[#ffd24d]"
               >
-                <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                  Full Access
-                </p>
-
-                <h2 className="mt-3 text-2xl font-bold text-white">
-                  Practice by Topic
-                </h2>
-
-                <p className="mt-3 text-sm leading-6 text-gray-400">
-                  Target weak areas by topic and build confidence faster with
-                  the full PilotVault question bank.
-                </p>
-
-                
-              </button>
-            ) : (
-              <div className="rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-6 opacity-75">
-                <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                  Subscription Feature
-                </p>
-
-                <h2 className="mt-3 text-2xl font-bold text-white">
-                  Practice by Topic
-                </h2>
-
-                <p className="mt-3 text-sm leading-6 text-gray-400">
-                  Target weak areas by topic and build confidence faster with
-                  the full PilotVault question bank.
-                </p>
-
-                <Link
-                  href={`/upgrade?subject=${subject}`}
-                  className="mt-5 inline-flex text-sm font-medium text-[#f4b400] hover:text-[#ffd24d]"
-                >
-                  Upgrade to Unlock →
-                </Link>
-              </div>
-            )}
-          </div>
+                Upgrade to Unlock →
+              </Link>
+            </div>
+          )}
         </div>
-      </main>
-    )
-  }
-
+      </div>
+    </main>
+  )
+}
   if (examMode === "topics") {
     return (
       <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">

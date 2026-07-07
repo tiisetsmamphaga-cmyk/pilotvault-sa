@@ -14,6 +14,7 @@ import {
   Map,
   LogOut,
 } from "lucide-react"
+import { LoadingScreen } from "@/components/loading-screen"
 import { supabase } from "@/src/lib/supabase"
 
 const subjects = [
@@ -112,11 +113,7 @@ export default function DashboardPage() {
   }
 
   if (loading) {
-    return (
-      <main className="flex min-h-screen items-center justify-center bg-[#06111f] text-white">
-        <p className="text-sm text-gray-400">Loading dashboard...</p>
-      </main>
-    )
+    return <LoadingScreen />
   }
 
   return (

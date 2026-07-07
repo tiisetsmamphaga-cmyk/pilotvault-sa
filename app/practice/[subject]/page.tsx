@@ -4,6 +4,7 @@ import { BookOpen, ClipboardList, Crosshair, GraduationCap } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import Link from "next/link"
+import { LoadingScreen } from "@/components/loading-screen"
 import { supabase } from "@/src/lib/supabase"
 
 type Question = {
@@ -300,15 +301,7 @@ export default function SubjectPracticePage() {
       : "Mock Exam"
 
   if (isLoadingQuestions) {
-    return (
-      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-sm font-medium text-[#f4b400]">
-            Loading questions...
-          </p>
-        </div>
-      </main>
-    )
+    return <LoadingScreen />
   }
 
   if (subjectQuestions.length === 0) {

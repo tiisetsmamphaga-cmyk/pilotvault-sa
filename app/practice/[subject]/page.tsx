@@ -1,10 +1,15 @@
 "use client"
-import { BookOpen, ClipboardList, Crosshair, GraduationCap } from "lucide-react"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import Link from "next/link"
-import { LoadingScreen } from "@/components/loading-screen"
+import {
+  BookOpen,
+  ClipboardList,
+  Crosshair,
+  GraduationCap,
+} from "lucide-react"
+
 import { supabase } from "@/src/lib/supabase"
 
 type Question = {
@@ -18,8 +23,19 @@ type Question = {
   explanation: string
 }
 
-function shuffleArray<T>(array: T[]) {
-  return [...array].sort(() => Math.random() - 0.5)
+type DatabaseQuestion = {
+  id: number
+  subject: string
+  topic: string | null
+  question: string
+  image_url: string | null
+  option_a: string | null
+  option_b: string | null
+  option_c: string | null
+  option_d: string | null
+  correct_answer: string
+  explanation: string | null
+  is_trial_question: boolean | null
 }
 
 type ExamMode = "menu" | "mock" | "topics" | "topic"
@@ -27,6 +43,92 @@ type ExamMode = "menu" | "mock" | "topics" | "topic"
 const MOCK_QUESTION_COUNT = 25
 const MOCK_TIME_SECONDS = 25 * 60
 const PASS_MARK = 75
+const SUPABASE_PAGE_SIZE = 1000
+
+function shuffleArray<T>(array: T[]) {
+  const shuffled = [...array]
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1))
+
+    ;[shuffled[index], shuffled[randomIndex]] = [
+      shuffled[randomIndex],
+      shuffled[index],
+    ]
+  }
+
+  return shuffled
+}
+
+function formatSubjectName(value: string) {
+  return value
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ")
+}
+
+function formatTime(seconds: number) {
+  const minutes = Math.floor(seconds / 60)
+  const remainingSeconds = seconds % 60
+
+  return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
+}
+
+async function fetchAllSubjectQuestions(
+  subject: string,
+  trialOnly: boolean
+): Promise<DatabaseQuestion[]> {
+  const allQuestions: DatabaseQuestion[] = []
+  let from = 0
+
+  while (true) {
+    const to = from + SUPABASE_PAGE_SIZE - 1
+
+    let query = supabase
+      .from("questions")
+      .select(
+        `
+          id,
+          subject,
+          topic,
+          question,
+          image_url,
+          option_a,
+          option_b,
+          option_c,
+          option_d,
+          correct_answer,
+          explanation,
+          is_trial_question
+        `
+      )
+      .eq("subject", subject)
+      .order("id", { ascending: true })
+      .range(from, to)
+
+    if (trialOnly) {
+      query = query.eq("is_trial_question", true)
+    }
+
+    const { data, error } = await query
+
+    if (error) {
+      throw new Error(error.message)
+    }
+
+    const currentPage = (data ?? []) as DatabaseQuestion[]
+
+    allQuestions.push(...currentPage)
+
+    if (currentPage.length < SUPABASE_PAGE_SIZE) {
+      break
+    }
+
+    from += SUPABASE_PAGE_SIZE
+  }
+
+  return allQuestions
+}
 
 export default function SubjectPracticePage() {
   const params = useParams()
@@ -35,16 +137,20 @@ export default function SubjectPracticePage() {
 
   const [subjectQuestions, setSubjectQuestions] = useState<Question[]>([])
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(true)
+  const [loadingError, setLoadingError] = useState("")
 
   const [examMode, setExamMode] = useState<ExamMode>("menu")
   const [examQuestions, setExamQuestions] = useState<Question[]>([])
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+
   const [answers, setAnswers] = useState<Record<number, string>>({})
   const [pinnedQuestions, setPinnedQuestions] = useState<number[]>([])
   const [shownAnswers, setShownAnswers] = useState<number[]>([])
+
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [showFinishPrompt, setShowFinishPrompt] = useState(false)
   const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
+
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
 
   const [canAccessTopics, setCanAccessTopics] = useState(false)
@@ -52,145 +158,200 @@ export default function SubjectPracticePage() {
   const [activeTopic, setActiveTopic] = useState("")
 
   useEffect(() => {
+    let cancelled = false
+
     const checkUserAndFetchQuestions = async () => {
-      setIsLoadingQuestions(true)
+      try {
+        setIsLoadingQuestions(true)
+        setLoadingError("")
 
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
+        const {
+          data: { user },
+          error: userError,
+        } = await supabase.auth.getUser()
 
-      if (!user) {
-        router.push("/")
-        return
-      }
+        if (userError) {
+          throw new Error(userError.message)
+        }
 
-      const { data: profile } = await supabase
-        .from("Profiles")
-        .select("*")
-        .eq("id", user.id)
-        .single()
-
-      if (!profile) {
-        router.push("/upgrade")
-        return
-      }
-
-      const isPplUser =
-        profile.subscription_status === "active" &&
-        profile.subscription_plan === "ppl"
-
-      const isTrialUser = profile.subscription_plan === "trial"
-
-      setIsTrialAccount(isTrialUser)
-      setCanAccessTopics(isPplUser)
-
-      if (
-        isTrialUser &&
-        new Date(profile.trial_ends_at) < new Date()
-      ) {
-        router.push(`/upgrade?subject=${subject}`)
-        return
-      }
-
-      if (!isTrialUser && !isPplUser) {
-        const { data: subjectAccess } = await supabase
-          .from("SubjectAccess")
-          .select("*")
-          .eq("user_id", user.id)
-          .eq("subject", subject)
-          .eq("access_status", "active")
-          .single()
-
-        const hasValidAccess =
-          subjectAccess &&
-          new Date(subjectAccess.expires_at) > new Date()
-
-        if (!hasValidAccess) {
-          router.push(`/upgrade?subject=${subject}`)
+        if (!user) {
+          router.push("/")
           return
         }
 
-        setCanAccessTopics(true)
+        const { data: profile, error: profileError } = await supabase
+          .from("Profiles")
+          .select(
+            `
+              subscription_status,
+              subscription_plan,
+              trial_ends_at
+            `
+          )
+          .eq("id", user.id)
+          .maybeSingle()
+
+        if (profileError) {
+          throw new Error(profileError.message)
+        }
+
+        if (!profile) {
+          router.push("/upgrade")
+          return
+        }
+
+        const isPplUser =
+          profile.subscription_status === "active" &&
+          profile.subscription_plan === "ppl"
+
+        const isTrialUser = profile.subscription_plan === "trial"
+
+        if (!cancelled) {
+          setIsTrialAccount(isTrialUser)
+          setCanAccessTopics(isPplUser)
+        }
+
+        if (isTrialUser) {
+          const trialExpired =
+            !profile.trial_ends_at ||
+            new Date(profile.trial_ends_at) < new Date()
+
+          if (trialExpired) {
+            router.push(`/upgrade?subject=${subject}`)
+            return
+          }
+        }
+
+        if (!isTrialUser && !isPplUser) {
+          const { data: subjectAccess, error: subjectAccessError } =
+            await supabase
+              .from("SubjectAccess")
+              .select("access_status, expires_at")
+              .eq("user_id", user.id)
+              .eq("subject", subject)
+              .eq("access_status", "active")
+              .maybeSingle()
+
+          if (subjectAccessError) {
+            throw new Error(subjectAccessError.message)
+          }
+
+          const hasValidAccess =
+            Boolean(subjectAccess) &&
+            Boolean(subjectAccess?.expires_at) &&
+            new Date(subjectAccess!.expires_at) > new Date()
+
+          if (!hasValidAccess) {
+            router.push(`/upgrade?subject=${subject}`)
+            return
+          }
+
+          if (!cancelled) {
+            setCanAccessTopics(true)
+          }
+        }
+
+        const databaseQuestions = await fetchAllSubjectQuestions(
+          subject,
+          isTrialUser
+        )
+
+        const formattedQuestions: Question[] = databaseQuestions.map(
+          (question) => ({
+            id: question.id,
+            subject: question.subject,
+            topic: question.topic ?? undefined,
+            question: question.question,
+            image_url: question.image_url ?? undefined,
+            options: [
+              question.option_a,
+              question.option_b,
+              question.option_c,
+              question.option_d,
+            ].filter(
+              (option): option is string =>
+                typeof option === "string" && option.trim() !== ""
+            ),
+            correctAnswer: question.correct_answer,
+            explanation: question.explanation ?? "",
+          })
+        )
+
+        if (!cancelled) {
+          setSubjectQuestions(formattedQuestions)
+        }
+      } catch (error) {
+        console.error("Question loading error:", error)
+
+        if (!cancelled) {
+          setSubjectQuestions([])
+          setLoadingError(
+            error instanceof Error
+              ? error.message
+              : "The questions could not be loaded."
+          )
+        }
+      } finally {
+        if (!cancelled) {
+          setIsLoadingQuestions(false)
+        }
       }
-
-      let query = supabase.from("questions").select("*")
-
-      if (isTrialUser) {
-        query = query.eq("is_trial_question", true)
-      }
-
-      const { data, error } = await query
-
-      if (error) {
-        console.log("Supabase error:", error)
-        setSubjectQuestions([])
-        setIsLoadingQuestions(false)
-        return
-      }
-
-      const filteredQuestions =
-        data?.filter((q) => {
-          const dbSubject = normalizeText(String(q.subject || ""))
-          const routeSubject = normalizeText(subject)
-
-          return dbSubject === routeSubject
-        }) || []
-
-      const formattedQuestions = filteredQuestions.map((q) => ({
-  id: q.id,
-  subject: q.subject,
-  topic: q.topic,
-  question: q.question,
-  image_url: q.image_url,
-  options: [q.option_a, q.option_b, q.option_c, q.option_d],
-  correctAnswer: q.correct_answer,
-  explanation: q.explanation,
-}))
-
-      setSubjectQuestions(formattedQuestions)
-      setIsLoadingQuestions(false)
     }
 
     checkUserAndFetchQuestions()
+
+    return () => {
+      cancelled = true
+    }
   }, [subject, router])
 
   useEffect(() => {
-    if (examMode === "menu" || examMode === "topics" || isSubmitted || examQuestions.length === 0) {
+    if (
+      examMode !== "mock" ||
+      isSubmitted ||
+      examQuestions.length === 0
+    ) {
       return
     }
 
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer)
+    const timer = window.setInterval(() => {
+      setTimeLeft((previousTime) => {
+        if (previousTime <= 1) {
+          window.clearInterval(timer)
           setIsSubmitted(true)
+
           return 0
         }
 
-        return prev - 1
+        return previousTime - 1
       })
     }, 1000)
 
-    return () => clearInterval(timer)
+    return () => {
+      window.clearInterval(timer)
+    }
   }, [examMode, isSubmitted, examQuestions.length])
 
-  const normalizeText = (value: string) => {
-    return value.toLowerCase().trim().replace(/-/g, " ")
-  }
+  const topicQuestionCounts = useMemo(() => {
+    return subjectQuestions.reduce<Record<string, number>>(
+      (counts, question) => {
+        if (!question.topic) {
+          return counts
+        }
 
-  const formatSubjectName = (value: string) => {
-    return value
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-  }
+        counts[question.topic] = (counts[question.topic] ?? 0) + 1
 
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60)
-    const secs = seconds % 60
+        return counts
+      },
+      {}
+    )
+  }, [subjectQuestions])
 
-    return `${mins}:${secs.toString().padStart(2, "0")}`
-  }
+  const topics = useMemo(() => {
+    return Object.keys(topicQuestionCounts).sort((first, second) =>
+      first.localeCompare(second)
+    )
+  }, [topicQuestionCounts])
 
   const resetExamState = () => {
     setCurrentQuestionIndex(0)
@@ -236,58 +397,70 @@ export default function SubjectPracticePage() {
     setTimeLeft(MOCK_TIME_SECONDS)
   }
 
-  const handleAnswer = (option: string) => {
-    if (isSubmitted) return
+  const returnToTopics = () => {
+    resetExamState()
+    setExamMode("topics")
+    setActiveTopic("")
+    setExamQuestions([])
+    setTimeLeft(MOCK_TIME_SECONDS)
+  }
 
-    setAnswers((prev) => ({
-      ...prev,
+  const handleAnswer = (option: string) => {
+    if (isSubmitted) {
+      return
+    }
+
+    setAnswers((previousAnswers) => ({
+      ...previousAnswers,
       [currentQuestionIndex]: option,
     }))
   }
 
   const togglePin = (index: number) => {
-    setPinnedQuestions((prev) =>
-      prev.includes(index)
-        ? prev.filter((item) => item !== index)
-        : [...prev, index]
+    setPinnedQuestions((previousPinnedQuestions) =>
+      previousPinnedQuestions.includes(index)
+        ? previousPinnedQuestions.filter((item) => item !== index)
+        : [...previousPinnedQuestions, index]
     )
   }
 
   const toggleAnswer = () => {
-    setShownAnswers((prev) =>
-      prev.includes(currentQuestionIndex)
-        ? prev.filter((item) => item !== currentQuestionIndex)
-        : [...prev, currentQuestionIndex]
+    setShownAnswers((previousShownAnswers) =>
+      previousShownAnswers.includes(currentQuestionIndex)
+        ? previousShownAnswers.filter(
+            (item) => item !== currentQuestionIndex
+          )
+        : [...previousShownAnswers, currentQuestionIndex]
     )
   }
 
   const goPrevious = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex((prev) => prev - 1)
+      setCurrentQuestionIndex((previousIndex) => previousIndex - 1)
     }
   }
 
   const goNext = () => {
     if (currentQuestionIndex < examQuestions.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1)
+      setCurrentQuestionIndex((previousIndex) => previousIndex + 1)
     }
   }
-
-  const topics = Array.from(
-    new Set(subjectQuestions.map((q) => q.topic).filter(Boolean))
-  ) as string[]
 
   const currentQuestion = examQuestions[currentQuestionIndex]
   const selectedAnswer = answers[currentQuestionIndex]
   const totalQuestions = examQuestions.length
-  const unansweredCount = totalQuestions - Object.keys(answers).length
+
+  const answeredCount = Object.keys(answers).length
+  const unansweredCount = totalQuestions - answeredCount
 
   const correctAnswers = examQuestions.filter(
     (question, index) => answers[index] === question.correctAnswer
   ).length
 
   const scorePercentage =
-    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
+    totalQuestions > 0
+      ? Math.round((correctAnswers / totalQuestions) * 100)
+      : 0
 
   const passed = scorePercentage >= PASS_MARK
 
@@ -301,7 +474,42 @@ export default function SubjectPracticePage() {
       : "Mock Exam"
 
   if (isLoadingQuestions) {
-    return <LoadingScreen />
+    return (
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-sm font-medium text-[#f4b400]">
+            Loading questions...
+          </p>
+        </div>
+      </main>
+    )
+  }
+
+  if (loadingError) {
+    return (
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-4xl">
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium text-[#f4b400] hover:text-white"
+          >
+            ← Back to Dashboard
+          </Link>
+
+          <div className="mt-8 rounded-3xl border border-red-500/30 bg-[#081726] p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-red-400">
+              Loading Error
+            </p>
+
+            <h1 className="mt-3 text-3xl font-bold">
+              Questions could not be loaded.
+            </h1>
+
+            <p className="mt-3 text-gray-400">{loadingError}</p>
+          </div>
+        </div>
+      </main>
+    )
   }
 
   if (subjectQuestions.length === 0) {
@@ -325,134 +533,151 @@ export default function SubjectPracticePage() {
             </h1>
 
             <p className="mt-3 text-gray-400">
-              Make sure this subject has questions loaded in Supabase.
+              Make sure the subject slug matches the subject value stored
+              in Supabase.
             </p>
           </div>
         </div>
       </main>
     )
   }
-  
-if (examMode === "menu") {
-  return (
-    <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
-      <div className="mx-auto max-w-5xl">
-        <Link
-          href="/dashboard"
-          className="text-sm font-medium text-[#f4b400] hover:text-white"
-        >
-          ← Back to Dashboard
-        </Link>
 
-        <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-            {formatSubjectName(subject)}
-          </p>
-
-          <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
-            Choose your training mode
-          </h1>
-
-          <p className="mt-3 max-w-2xl text-gray-400">
-            Start a SACAA-style mock exam or focus on weak areas with
-            topic-based practice.
-          </p>
-        </div>
-
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          <button
-            onClick={startMockExam}
-            className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-4 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:shadow-[0_0_30px_rgba(244,180,0,0.12)]"
+  if (examMode === "menu") {
+    return (
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-5xl">
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium text-[#f4b400] hover:text-white"
           >
-            <div className="inline-flex items-center gap-2 rounded-md border border-[#1e3a5f] bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f4b400]">
-              <GraduationCap size={14} />
-              {isTrialAccount ? "Trial Access" : "Full Access"}
-            </div>
+            ← Back to Dashboard
+          </Link>
 
-            <div className="mt-4 flex items-center justify-between gap-5">
-              <div className="flex items-start gap-4">
-                <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#9bb7ff]">
-                  <ClipboardList size={28} />
-                </div>
+          <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+              {formatSubjectName(subject)}
+            </p>
 
-                <div>
-                  <h2 className="text-xl font-bold text-white">Mock Exam</h2>
+            <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
+              Choose your training mode
+            </h1>
 
-                  <p className="mt-2 max-w-sm text-sm leading-6 text-gray-400">
-                    {isTrialAccount
-                      ? "25 fixed SACAA-style trial questions for exam practice."
-                      : "25 randomized SACAA-style questions from the full question bank."}
-                  </p>
-                </div>
-              </div>
+            <p className="mt-3 max-w-2xl text-gray-400">
+              Start a SACAA-style mock exam or focus on weak areas with
+              topic-based practice.
+            </p>
 
-              <div className="hidden h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] md:flex">
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-white">25</p>
-                  <p className="text-[10px] uppercase tracking-widest text-gray-400">
-                    Questions
-                  </p>
-                </div>
-              </div>
-            </div>
-          </button>
+            {!isTrialAccount && (
+              <p className="mt-4 text-sm font-semibold text-[#f4b400]">
+                {subjectQuestions.length} questions available
+              </p>
+            )}
+          </div>
 
-          {canAccessTopics ? (
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
             <button
-              onClick={() => setExamMode("topics")}
+              onClick={startMockExam}
               className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-4 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:shadow-[0_0_30px_rgba(244,180,0,0.12)]"
             >
               <div className="inline-flex items-center gap-2 rounded-md border border-[#1e3a5f] bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f4b400]">
-                <Crosshair size={14} />
-                Full Access
+                <GraduationCap size={14} />
+                {isTrialAccount ? "Trial Access" : "Full Access"}
               </div>
 
               <div className="mt-4 flex items-center justify-between gap-5">
                 <div className="flex items-start gap-4">
                   <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#9bb7ff]">
-                    <BookOpen size={28} />
+                    <ClipboardList size={28} />
                   </div>
 
                   <div>
                     <h2 className="text-xl font-bold text-white">
-                      Practice by Topic
+                      Mock Exam
                     </h2>
 
                     <p className="mt-2 max-w-sm text-sm leading-6 text-gray-400">
-                      Master weak areas with targeted practice from every topic.
+                      {isTrialAccount
+                        ? "25 fixed SACAA-style trial questions for exam practice."
+                        : "25 randomized SACAA-style questions from the full question bank."}
                     </p>
                   </div>
                 </div>
 
-                <div className="hidden h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] text-[#f4b400] md:flex">
-                  <Crosshair size={38} />
+                <div className="hidden h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] md:flex">
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-white">
+                      {Math.min(
+                        MOCK_QUESTION_COUNT,
+                        subjectQuestions.length
+                      )}
+                    </p>
+
+                    <p className="text-[10px] uppercase tracking-widest text-gray-400">
+                      Questions
+                    </p>
+                  </div>
                 </div>
               </div>
             </button>
-          ) : (
-            <Link
-              href={`/upgrade?subject=${subject}`}
-              className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-4 text-left opacity-75 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
-            >
-              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                Subscription Feature
-              </p>
 
-              <h2 className="mt-3 text-xl font-bold text-white">
-                Practice by Topic
-              </h2>
+            {canAccessTopics ? (
+              <button
+                onClick={() => setExamMode("topics")}
+                className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-gradient-to-br from-[#081726] to-[#06111f] p-4 text-left shadow-2xl transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:shadow-[0_0_30px_rgba(244,180,0,0.12)]"
+              >
+                <div className="inline-flex items-center gap-2 rounded-md border border-[#1e3a5f] bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f4b400]">
+                  <Crosshair size={14} />
+                  Full Access
+                </div>
 
-              <p className="mt-2 text-sm leading-6 text-gray-400">
-                Target weak areas by topic and build confidence faster with the
-                full PilotVault question bank.
-              </p>
-            </Link>
-          )}
+                <div className="mt-4 flex items-center justify-between gap-5">
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#9bb7ff]">
+                      <BookOpen size={28} />
+                    </div>
+
+                    <div>
+                      <h2 className="text-xl font-bold text-white">
+                        Practice by Topic
+                      </h2>
+
+                      <p className="mt-2 max-w-sm text-sm leading-6 text-gray-400">
+                        Practice every available question from a selected
+                        topic with no question cap.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="hidden h-24 w-24 shrink-0 items-center justify-center rounded-full border border-[#1e3a5f] bg-[#06111f] text-[#f4b400] md:flex">
+                    <Crosshair size={38} />
+                  </div>
+                </div>
+              </button>
+            ) : (
+              <Link
+                href={`/upgrade?subject=${subject}`}
+                className="group cursor-pointer rounded-2xl border border-[#1e3a5f] bg-[#081726]/60 p-4 text-left opacity-75 transition-all hover:-translate-y-1 hover:border-[#f4b400]"
+              >
+                <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+                  Subscription Feature
+                </p>
+
+                <h2 className="mt-3 text-xl font-bold text-white">
+                  Practice by Topic
+                </h2>
+
+                <p className="mt-2 text-sm leading-6 text-gray-400">
+                  Target weak areas by topic using the full PilotVault
+                  question bank.
+                </p>
+              </Link>
+            )}
+          </div>
         </div>
-      </div>
-    </main>
-  )
-}
+      </main>
+    )
+  }
+
   if (examMode === "topics") {
     return (
       <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
@@ -474,7 +699,8 @@ if (examMode === "menu") {
             </h1>
 
             <p className="mt-3 max-w-2xl text-gray-400">
-              Focus on a specific topic and strengthen weak areas.
+              Every available question from the selected topic will be
+              loaded.
             </p>
           </div>
 
@@ -488,11 +714,12 @@ if (examMode === "menu") {
                 <h2 className="text-xl font-bold text-white">{topic}</h2>
 
                 <p className="mt-3 text-sm text-gray-400">
-  Practice focused questions from this topic.
-</p>
+                  {topicQuestionCounts[topic]} question
+                  {topicQuestionCounts[topic] === 1 ? "" : "s"} available
+                </p>
 
                 <p className="mt-5 text-sm font-medium text-[#f4b400] transition group-hover:text-[#ffd24d]">
-                  Practice Topic →
+                  Practice All Questions →
                 </p>
               </button>
             ))}
@@ -507,7 +734,10 @@ if (examMode === "menu") {
       <main className="min-h-screen bg-white text-slate-900">
         <header className="flex min-h-16 items-center justify-between border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:px-6">
           <div>
-            <h1 className="text-base font-bold">PilotVault SA Exam Results</h1>
+            <h1 className="text-base font-bold">
+              PilotVault SA Exam Results
+            </h1>
+
             <p className="text-xs uppercase tracking-wider text-blue-100">
               {formatSubjectName(subject)} · {examLabel}
             </p>
@@ -547,17 +777,15 @@ if (examMode === "menu") {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <button
                 onClick={
-  examMode === "topic"
-    ? () => {
-        resetExamState()
-        setExamMode("topics")
-        setExamQuestions([])
-      }
-    : startMockExam
-}
+                  examMode === "topic"
+                    ? returnToTopics
+                    : startMockExam
+                }
                 className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
               >
-                {examMode === "topic" ? "Back to Topics" : "Restart"}
+                {examMode === "topic"
+                  ? "Back to Topics"
+                  : "Restart"}
               </button>
 
               <button
@@ -647,7 +875,9 @@ if (examMode === "menu") {
     <main className="min-h-screen bg-white text-slate-900">
       <header className="flex min-h-20 flex-col gap-4 border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
-          <h1 className="text-base font-bold">PilotVault SA Exam Practice</h1>
+          <h1 className="text-base font-bold">
+            PilotVault SA Exam Practice
+          </h1>
 
           <p className="text-xs uppercase tracking-wider text-blue-100">
             {formatSubjectName(subject)} · {examLabel}
@@ -656,15 +886,24 @@ if (examMode === "menu") {
 
         <div className="flex items-center gap-3">
           <div className="rounded-md border border-white/20 bg-black/20 px-4 py-2 text-right">
-            <p className="text-xs text-blue-100">Time Remaining</p>
+            {examMode === "mock" ? (
+              <>
+                <p className="text-xs text-blue-100">Time Remaining</p>
 
-            <p
-              className={`font-bold ${
-                timeLeft < 300 ? "text-red-300" : "text-white"
-              }`}
-            >
-              {formatTime(timeLeft)}
-            </p>
+                <p
+                  className={`font-bold ${
+                    timeLeft < 300 ? "text-red-300" : "text-white"
+                  }`}
+                >
+                  {formatTime(timeLeft)}
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-xs text-blue-100">Practice Mode</p>
+                <p className="font-bold text-white">Untimed</p>
+              </>
+            )}
           </div>
 
           <button
@@ -678,7 +917,9 @@ if (examMode === "menu") {
 
       <div className="flex min-h-[calc(100vh-80px)]">
         <aside className="hidden w-64 border-r border-slate-300 bg-slate-100 p-4 md:block">
-          <h2 className="mb-4 font-semibold text-slate-700">Questions</h2>
+          <h2 className="mb-4 font-semibold text-slate-700">
+            Questions
+          </h2>
 
           <div className="grid grid-cols-5 gap-2">
             {examQuestions.map((_, index) => {
@@ -727,7 +968,8 @@ if (examMode === "menu") {
             <div className="mb-8 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm text-slate-500">
-                  Question {currentQuestionIndex + 1} of {totalQuestions}
+                  Question {currentQuestionIndex + 1} of{" "}
+                  {totalQuestions}
                 </p>
 
                 <h2 className="mt-1 text-xl font-semibold text-slate-800">
@@ -758,45 +1000,43 @@ if (examMode === "menu") {
               </div>
             </div>
 
-           <div>
-  <p className="text-lg leading-relaxed text-slate-900">
-    {currentQuestion.question}
-  </p>
+            <div>
+              <p className="text-lg leading-relaxed text-slate-900">
+                {currentQuestion.question}
+              </p>
 
-  {currentQuestion.image_url && (
-    <img
-      src={currentQuestion.image_url}
-      alt="Question"
-      className="mt-6 w-full max-w-2xl rounded-lg border border-slate-300"
-    />
-  )}
-</div>
+              {currentQuestion.image_url && (
+                <img
+                  src={currentQuestion.image_url}
+                  alt="Question reference"
+                  className="mt-6 w-full max-w-2xl rounded-lg border border-slate-300"
+                />
+              )}
+            </div>
 
             <div className="mt-8 space-y-2">
-              {currentQuestion.options
-                .filter((option) => option && option.trim() !== "")
-                .map((option, index) => {
-                  const letter = String.fromCharCode(65 + index)
+              {currentQuestion.options.map((option, index) => {
+                const letter = String.fromCharCode(65 + index)
 
-                  return (
-                    <label
-                      key={option}
-                      className="flex cursor-pointer items-center gap-4 py-3"
-                    >
-                      <input
-                        type="radio"
-                        name={`question-${currentQuestion.id}`}
-                        checked={selectedAnswer === option}
-                        onChange={() => handleAnswer(option)}
-                        className="h-5 w-5 accent-[#1f4e79]"
-                      />
+                return (
+                  <label
+                    key={`${currentQuestion.id}-${index}`}
+                    className="flex cursor-pointer items-center gap-4 py-3"
+                  >
+                    <input
+                      type="radio"
+                      name={`question-${currentQuestion.id}`}
+                      checked={selectedAnswer === option}
+                      onChange={() => handleAnswer(option)}
+                      className="h-5 w-5 accent-[#1f4e79]"
+                    />
 
-                      <span className="font-semibold">{letter}.</span>
+                    <span className="font-semibold">{letter}.</span>
 
-                      <span>{option}</span>
-                    </label>
-                  )
-                })}
+                    <span>{option}</span>
+                  </label>
+                )
+              })}
             </div>
 
             {shownAnswers.includes(currentQuestionIndex) && (
@@ -840,7 +1080,9 @@ if (examMode === "menu") {
 
                 <button
                   onClick={goNext}
-                  disabled={currentQuestionIndex === totalQuestions - 1}
+                  disabled={
+                    currentQuestionIndex === totalQuestions - 1
+                  }
                   className="rounded-md bg-[#1f4e79] px-4 py-3 text-sm font-semibold text-white hover:bg-[#183d60] disabled:opacity-40 sm:px-6 sm:py-2"
                 >
                   Next
@@ -868,7 +1110,7 @@ if (examMode === "menu") {
                 <h2 className="text-xl font-bold">Questions</h2>
 
                 <p className="mt-1 text-sm text-slate-500">
-                  {totalQuestions - unansweredCount} answered / {totalQuestions}
+                  {answeredCount} answered / {totalQuestions}
                 </p>
               </div>
 
@@ -885,7 +1127,8 @@ if (examMode === "menu") {
                 const isActive = index === currentQuestionIndex
                 const isAnswered = Boolean(answers[index])
                 const isPinned = pinnedQuestions.includes(index)
-                const hasShownAnswer = shownAnswers.includes(index)
+                const hasShownAnswer =
+                  shownAnswers.includes(index)
 
                 return (
                   <button
@@ -927,8 +1170,8 @@ if (examMode === "menu") {
             </h2>
 
             <p className="mt-4 text-slate-700">
-              You are about to submit your examination. Once submitted, your
-              answers cannot be changed.
+              You are about to submit your examination. Once submitted,
+              your answers cannot be changed.
             </p>
 
             {unansweredCount > 0 && (

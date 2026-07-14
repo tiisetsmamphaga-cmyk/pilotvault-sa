@@ -5,7 +5,6 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
   ArrowLeft,
-  BarChart3,
   CheckCircle2,
   ChevronRight,
   CreditCard,
@@ -29,10 +28,6 @@ type ProfileRecord = {
   subscription_plan: string | null
   trial_ends_at: string | null
   subscription_expires_at: string | null
-}
-
-type ExamAttemptRecord = {
-  score_percentage: number
 }
 
 function formatDate(value: string | null) {
@@ -75,7 +70,6 @@ export default function ProfilePage() {
   const [loadError, setLoadError] = useState("")
   const [authEmail, setAuthEmail] = useState("")
   const [profile, setProfile] = useState<ProfileRecord | null>(null)
-  const [examAttempts, setExamAttempts] = useState<ExamAttemptRecord[]>([])
 
   const [editProfileOpen, setEditProfileOpen] = useState(false)
   const [passwordOpen, setPasswordOpen] = useState(false)
@@ -108,37 +102,21 @@ export default function ProfilePage() {
           return
         }
 
-        const [profileResponse, attemptsResponse] = await Promise.all([
-          supabase
-            .from("Profiles")
-            .select(
-              "full_name, email, licence_level, subscription_status, subscription_plan, trial_ends_at, subscription_expires_at"
-            )
-            .eq("id", user.id)
-            .single(),
-          supabase
-            .from("ExamAttempts")
-            .select("score_percentage")
-            .eq("user_id", user.id)
-            .eq("exam_mode", "mock"),
-        ])
+        const { data, error } = await supabase
+          .from("Profiles")
+          .select(
+            "full_name, email, licence_level, subscription_status, subscription_plan, trial_ends_at, subscription_expires_at"
+          )
+          .eq("id", user.id)
+          .single()
 
-        if (profileResponse.error) {
-          throw new Error(profileResponse.error.message)
-        }
-
-        if (attemptsResponse.error) {
-          throw new Error(attemptsResponse.error.message)
-        }
+        if (error) throw new Error(error.message)
 
         if (!cancelled) {
-          const loadedProfile = profileResponse.data as ProfileRecord
+          const loadedProfile = data as ProfileRecord
 
           setAuthEmail(user.email ?? loadedProfile.email ?? "")
           setProfile(loadedProfile)
-          setExamAttempts(
-            (attemptsResponse.data ?? []) as ExamAttemptRecord[]
-          )
           setFullNameDraft(loadedProfile.full_name)
           setLicenceDraft(loadedProfile.licence_level ?? "ppl")
         }
@@ -166,17 +144,6 @@ export default function ProfilePage() {
     profile?.subscription_plan === "trial" &&
     Boolean(profile.trial_ends_at) &&
     new Date(profile.trial_ends_at as string) > new Date()
-
-  const averageScore = useMemo(() => {
-    if (examAttempts.length === 0) return 0
-
-    const total = examAttempts.reduce(
-      (sum, attempt) => sum + attempt.score_percentage,
-      0
-    )
-
-    return Math.round(total / examAttempts.length)
-  }, [examAttempts])
 
   const initials = useMemo(() => {
     const name = profile?.full_name?.trim()
@@ -432,39 +399,6 @@ export default function ProfilePage() {
                   </div>
                 </dl>
               </section>
-
-              <section className="border-t border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8">
-                <div className="flex items-center gap-3">
-                  <BarChart3 size={21} className="text-[#f4b400]" />
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
-                      Performance
-                    </p>
-                    <h3 className="mt-1 text-xl font-bold">
-                      Mock exam progress
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid grid-cols-2 divide-x divide-[#1e3a5f] border-y border-[#1e3a5f] py-5">
-                  <div className="pr-4 sm:pr-8">
-                    <p className="text-xs text-gray-500 sm:text-sm">
-                      Exams completed
-                    </p>
-                    <p className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                      {examAttempts.length}
-                    </p>
-                  </div>
-                  <div className="pl-4 sm:pl-8">
-                    <p className="text-xs text-gray-500 sm:text-sm">
-                      Average score
-                    </p>
-                    <p className="mt-2 text-3xl font-bold text-[#f4b400] sm:text-4xl">
-                      {averageScore}%
-                    </p>
-                  </div>
-                </div>
-              </section>
             </div>
 
             <aside className="border-t border-[#1e3a5f] lg:border-l lg:border-t-0">
@@ -563,9 +497,7 @@ export default function ProfilePage() {
                     className="group flex min-h-14 w-full items-center gap-3 py-3.5 text-left text-gray-300 transition hover:text-red-300"
                   >
                     <LogOut size={19} />
-                    <span className="flex-1 text-sm font-semibold">
-                      Sign Out
-                    </span>
+                    <span className="flex-1 text-sm font-semibold">Sign Out</span>
                     <ChevronRight
                       size={18}
                       className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-red-300"

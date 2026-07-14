@@ -89,13 +89,14 @@ export function TrainingModeMenu({
                   </div>
                 </div>
 
-                <Link
-                  href="/manuals/meteorology"
+                <a
+                  href="/PPL-MET.pdf"
+                  download="PilotVault-PPL-Meteorology-Manual.pdf"
                   className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 px-4 py-3 text-sm font-semibold text-[#f4b400] transition hover:border-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f]"
                 >
                   <Download size={17} />
-                  Open Manual
-                </Link>
+                  Download Manual
+                </a>
               </div>
             )}
           </div>

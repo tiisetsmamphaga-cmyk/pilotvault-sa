@@ -4,7 +4,8 @@ import type { ReactNode } from "react"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
-import { Download, FileText } from "lucide-react"
+import { createPortal } from "react-dom"
+import { BookOpen, Download } from "lucide-react"
 
 export default function SubjectPracticeLayout({
   children,
@@ -13,31 +14,31 @@ export default function SubjectPracticeLayout({
 }>) {
   const params = useParams<{ subject: string }>()
   const isMeteorology = params.subject === "meteorology"
-  const [showManualBanner, setShowManualBanner] = useState(false)
+  const [manualTarget, setManualTarget] = useState<HTMLElement | null>(null)
 
   useEffect(() => {
     if (!isMeteorology) {
-      setShowManualBanner(false)
+      setManualTarget(null)
       return
     }
 
-    const updateManualVisibility = () => {
-      const simulatorIsOpen = Array.from(
-        document.querySelectorAll("main")
-      ).some((mainElement) => mainElement.classList.contains("bg-white"))
+    const findTrainingModeCard = () => {
+      const trainingModeHeading = Array.from(
+        document.querySelectorAll<HTMLHeadingElement>("h1")
+      ).find(
+        (heading) => heading.textContent?.trim() === "Choose your training mode"
+      )
 
-      setShowManualBanner(!simulatorIsOpen)
+      setManualTarget(trainingModeHeading?.parentElement ?? null)
     }
 
-    updateManualVisibility()
+    findTrainingModeCard()
 
-    const observer = new MutationObserver(updateManualVisibility)
+    const observer = new MutationObserver(findTrainingModeCard)
 
     observer.observe(document.body, {
       childList: true,
       subtree: true,
-      attributes: true,
-      attributeFilter: ["class"],
     })
 
     return () => {
@@ -47,34 +48,40 @@ export default function SubjectPracticeLayout({
 
   return (
     <>
-      {isMeteorology && showManualBanner && (
-        <div className="bg-[#06111f] px-4 pt-5 text-white sm:px-6">
-          <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-xl border border-[#1e3a5f] bg-[#081726]/70 px-4 py-3">
-            <div className="flex min-w-0 items-center gap-3">
-              <FileText size={18} className="shrink-0 text-[#f4b400]" />
+      {children}
+
+      {isMeteorology &&
+        manualTarget &&
+        createPortal(
+          <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/70 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex min-w-0 items-start gap-3">
+              <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#f4b400]">
+                <BookOpen size={21} />
+              </div>
 
               <div className="min-w-0">
-                <p className="text-sm font-semibold text-white">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f4b400]">
+                  Study Resource
+                </p>
+                <p className="mt-1 font-semibold text-white">
                   PPL Meteorology Manual
                 </p>
-                <p className="truncate text-xs text-gray-500">
-                  Reference for symbols, METARs, TAFs and weather charts.
+                <p className="mt-1 text-sm leading-6 text-gray-400">
+                  Review weather symbols, METARs, TAFs and aviation charts.
                 </p>
               </div>
             </div>
 
             <Link
               href="/manuals/meteorology"
-              className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#1e3a5f] px-3 py-2 text-xs font-semibold text-[#f4b400] transition hover:border-[#f4b400]/60 hover:bg-[#f4b400]/5"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 px-4 py-3 text-sm font-semibold text-[#f4b400] transition hover:border-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f]"
             >
-              <Download size={15} />
-              Download
+              <Download size={17} />
+              Open Manual
             </Link>
-          </div>
-        </div>
-      )}
-
-      {children}
+          </div>,
+          manualTarget
+        )}
     </>
   )
 }

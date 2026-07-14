@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import Link from "next/link"
 import { Download, FileText } from "lucide-react"
 
@@ -5,7 +6,7 @@ export default async function SubjectPracticeLayout({
   children,
   params,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
   params: Promise<{ subject: string }>
 }>) {
   const { subject } = await params

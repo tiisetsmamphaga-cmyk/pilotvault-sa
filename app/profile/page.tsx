@@ -8,6 +8,7 @@ import {
   BarChart3,
   Brain,
   CheckCircle2,
+  ChevronRight,
   Cloud,
   Compass,
   CreditCard,
@@ -19,7 +20,6 @@ import {
   Radio,
   Scale,
   ShieldCheck,
-  UserRound,
   Wrench,
   X,
 } from "lucide-react"
@@ -364,49 +364,48 @@ export default function ProfilePage() {
     ? profile.trial_ends_at
     : profile.subscription_expires_at
 
+  const openProfileEditor = () => {
+    setActionMessage("")
+    setActionError("")
+    setFullNameDraft(profile.full_name)
+    setLicenceDraft(profile.licence_level ?? "ppl")
+    setEditProfileOpen(true)
+  }
+
+  const openPasswordEditor = () => {
+    setActionMessage("")
+    setActionError("")
+    setPasswordOpen(true)
+  }
+
   return (
     <main className="min-h-screen bg-[#06111f] text-white">
       <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
-        <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+        <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:min-h-20 sm:px-6 lg:px-8">
+          <div className="min-w-0">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-[#f4b400] sm:text-xs sm:tracking-[0.25em]">
               PilotVault SA
             </p>
-            <h1 className="mt-1 text-lg font-bold">Student Profile</h1>
+            <h1 className="mt-1 truncate text-base font-bold sm:text-lg">
+              Student Profile
+            </h1>
           </div>
 
           <Link
             href="/dashboard"
-            className="inline-flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-[#1e3a5f] px-3 py-2.5 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400] sm:px-4 sm:py-3"
           >
             <ArrowLeft size={16} />
-            Dashboard
+            <span className="hidden sm:inline">Dashboard</span>
+            <span className="sm:hidden">Back</span>
           </Link>
         </div>
       </header>
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[#f4b400]/30 bg-[#f4b400]/10 text-2xl font-bold text-[#f4b400]">
-              {initials}
-            </div>
-
-            <div className="min-w-0">
-              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                Student Account
-              </p>
-              <h2 className="mt-2 truncate text-3xl font-bold">
-                {profile.full_name}
-              </h2>
-              <p className="mt-2 truncate text-gray-400">{authEmail}</p>
-            </div>
-          </div>
-        </div>
-
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
         {(actionMessage || actionError) && (
           <div
-            className={`mt-6 rounded-2xl border px-5 py-4 text-sm ${
+            className={`mb-5 rounded-2xl border px-4 py-3 text-sm sm:mb-6 sm:px-5 sm:py-4 ${
               actionError
                 ? "border-red-500/30 bg-red-500/10 text-red-200"
                 : "border-green-500/30 bg-green-500/10 text-green-200"
@@ -416,202 +415,282 @@ export default function ProfilePage() {
           </div>
         )}
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <section className="rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-[#f4b400]/10 p-3 text-[#f4b400]">
-                <UserRound size={22} />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
-                  Profile Information
-                </p>
-                <h2 className="mt-1 text-xl font-bold">Personal details</h2>
-              </div>
-            </div>
+        <div className="overflow-hidden rounded-3xl border border-[#1e3a5f] bg-[#081726] shadow-2xl shadow-black/10">
+          <div className="relative overflow-hidden border-b border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8">
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(circle_at_top_right,rgba(244,180,0,0.12),transparent_55%)]" />
 
-            <dl className="mt-6 space-y-5">
-              <div className="border-b border-[#1e3a5f] pb-4">
-                <dt className="text-sm text-gray-500">Full name</dt>
-                <dd className="mt-1 font-semibold">{profile.full_name}</dd>
-              </div>
-              <div className="border-b border-[#1e3a5f] pb-4">
-                <dt className="text-sm text-gray-500">Email address</dt>
-                <dd className="mt-1 break-all font-semibold">{authEmail}</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-gray-500">Current licence level</dt>
-                <dd className="mt-1 font-semibold uppercase">
-                  {profile.licence_level ?? "ppl"}
-                </dd>
-              </div>
-            </dl>
-          </section>
+            <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex min-w-0 items-center gap-4 sm:gap-5">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#f4b400]/30 bg-[#f4b400]/10 text-xl font-bold text-[#f4b400] sm:h-20 sm:w-20 sm:text-2xl">
+                  {initials}
+                </div>
 
-          <section className="rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-[#f4b400]/10 p-3 text-[#f4b400]">
-                <ShieldCheck size={22} />
+                <div className="min-w-0">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#f4b400] sm:text-xs">
+                    Student Account
+                  </p>
+                  <h2 className="mt-1 truncate text-2xl font-bold sm:mt-2 sm:text-3xl">
+                    {profile.full_name}
+                  </h2>
+                  <p className="mt-1 truncate text-sm text-gray-400 sm:mt-2 sm:text-base">
+                    {authEmail}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
-                  Account Information
-                </p>
-                <h2 className="mt-1 text-xl font-bold">Access and billing</h2>
-              </div>
-            </div>
 
-            <dl className="mt-6 space-y-5">
-              <div className="border-b border-[#1e3a5f] pb-4">
-                <dt className="text-sm text-gray-500">Current plan</dt>
-                <dd className="mt-1 font-semibold">
-                  {formatPlan(profile.subscription_plan)}
-                </dd>
-              </div>
-              <div className="border-b border-[#1e3a5f] pb-4">
-                <dt className="text-sm text-gray-500">Subscription status</dt>
-                <dd className="mt-1 inline-flex items-center gap-2 font-semibold">
-                  <CheckCircle2 size={16} className="text-[#f4b400]" />
+              <div className="flex flex-wrap gap-2 sm:justify-end">
+                <span className="inline-flex items-center rounded-full border border-[#f4b400]/30 bg-[#f4b400]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#f4b400]">
+                  {(profile.licence_level ?? "ppl").toUpperCase()} Student
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1e3a5f] bg-[#06111f]/60 px-3 py-1.5 text-xs font-semibold text-gray-200">
+                  <CheckCircle2 size={14} className="text-[#f4b400]" />
                   {formatStatus(profile.subscription_status, isTrialUser)}
-                </dd>
+                </span>
               </div>
-              <div>
-                <dt className="text-sm text-gray-500">{expiryLabel}</dt>
-                <dd className="mt-1 font-semibold">{formatDate(expiryValue)}</dd>
-              </div>
-            </dl>
-          </section>
-        </div>
+            </div>
+          </div>
 
-        <section className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-            My Subjects
-          </p>
-          <h2 className="mt-3 text-2xl font-bold">Subjects you can access</h2>
+          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px]">
+            <div className="min-w-0">
+              <section className="px-5 py-6 sm:px-8 sm:py-8">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
+                      Profile Information
+                    </p>
+                    <h3 className="mt-2 text-xl font-bold">Personal details</h3>
+                  </div>
 
-          {activeSubjects.length > 0 ? (
-            <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-              {activeSubjects.map((subject) => {
-                const Icon = subject.icon
-
-                return (
-                  <Link
-                    key={subject.slug}
-                    href={`/practice/${subject.slug}`}
-                    className="rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-5 transition hover:-translate-y-1 hover:border-[#f4b400]"
+                  <button
+                    type="button"
+                    onClick={openProfileEditor}
+                    className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-[#1e3a5f] px-3 py-2 text-sm font-semibold text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400] sm:px-4"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/10 text-[#f4b400]">
-                      <Icon size={21} />
-                    </div>
-                    <h3 className="mt-4 text-sm font-bold sm:text-base">
-                      {subject.name}
+                    <Edit3 size={16} />
+                    <span className="hidden sm:inline">Edit</span>
+                  </button>
+                </div>
+
+                <dl className="mt-6 divide-y divide-[#1e3a5f] border-y border-[#1e3a5f]">
+                  <div className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-6">
+                    <dt className="text-sm text-gray-500">Full name</dt>
+                    <dd className="break-words font-semibold text-white sm:text-right">
+                      {profile.full_name}
+                    </dd>
+                  </div>
+                  <div className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-6">
+                    <dt className="text-sm text-gray-500">Email address</dt>
+                    <dd className="break-all font-semibold text-white sm:text-right">
+                      {authEmail}
+                    </dd>
+                  </div>
+                  <div className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-6">
+                    <dt className="text-sm text-gray-500">Current licence level</dt>
+                    <dd className="font-semibold uppercase text-white sm:text-right">
+                      {profile.licence_level ?? "ppl"}
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section className="border-t border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
+                    My Subjects
+                  </p>
+                  <h3 className="mt-2 text-xl font-bold">
+                    Subjects you can access
+                  </h3>
+                </div>
+
+                {activeSubjects.length > 0 ? (
+                  <div className="mt-5 grid grid-cols-1 gap-x-5 sm:grid-cols-2">
+                    {activeSubjects.map((subject) => {
+                      const Icon = subject.icon
+
+                      return (
+                        <Link
+                          key={subject.slug}
+                          href={`/practice/${subject.slug}`}
+                          className="group flex min-h-16 items-center gap-3 border-b border-[#1e3a5f] py-3.5 transition hover:text-[#f4b400]"
+                        >
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f4b400]/10 text-[#f4b400]">
+                            <Icon size={19} />
+                          </span>
+                          <span className="min-w-0 flex-1 text-sm font-semibold sm:text-base">
+                            {subject.name}
+                          </span>
+                          <ChevronRight
+                            size={18}
+                            className="shrink-0 text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
+                          />
+                        </Link>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  <div className="mt-5 border-y border-[#1e3a5f] py-5">
+                    <p className="text-sm leading-6 text-gray-400">
+                      You do not currently have an active subject.
+                    </p>
+                    <Link
+                      href="/upgrade"
+                      className="mt-4 inline-flex rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000]"
+                    >
+                      View Subscription Options
+                    </Link>
+                  </div>
+                )}
+              </section>
+
+              <section className="border-t border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8">
+                <div className="flex items-center gap-3">
+                  <BarChart3 size={21} className="text-[#f4b400]" />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
+                      Performance
+                    </p>
+                    <h3 className="mt-1 text-xl font-bold">
+                      Mock exam progress
                     </h3>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid grid-cols-2 divide-x divide-[#1e3a5f] border-y border-[#1e3a5f] py-5">
+                  <div className="pr-4 sm:pr-8">
+                    <p className="text-xs text-gray-500 sm:text-sm">
+                      Exams completed
+                    </p>
+                    <p className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                      {examAttempts.length}
+                    </p>
+                  </div>
+                  <div className="pl-4 sm:pl-8">
+                    <p className="text-xs text-gray-500 sm:text-sm">
+                      Average score
+                    </p>
+                    <p className="mt-2 text-3xl font-bold text-[#f4b400] sm:text-4xl">
+                      {averageScore}%
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <aside className="border-t border-[#1e3a5f] lg:border-l lg:border-t-0">
+              <section className="px-5 py-6 sm:px-8 sm:py-8 lg:px-6">
+                <div className="flex items-center gap-3">
+                  <ShieldCheck size={21} className="text-[#f4b400]" />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
+                      Account
+                    </p>
+                    <h3 className="mt-1 text-xl font-bold">
+                      Access and billing
+                    </h3>
+                  </div>
+                </div>
+
+                <dl className="mt-6 divide-y divide-[#1e3a5f] border-y border-[#1e3a5f]">
+                  <div className="py-4">
+                    <dt className="text-sm text-gray-500">Current plan</dt>
+                    <dd className="mt-1 font-semibold">
+                      {formatPlan(profile.subscription_plan)}
+                    </dd>
+                  </div>
+                  <div className="py-4">
+                    <dt className="text-sm text-gray-500">
+                      Subscription status
+                    </dt>
+                    <dd className="mt-1 inline-flex items-center gap-2 font-semibold">
+                      <CheckCircle2 size={16} className="text-[#f4b400]" />
+                      {formatStatus(profile.subscription_status, isTrialUser)}
+                    </dd>
+                  </div>
+                  <div className="py-4">
+                    <dt className="text-sm text-gray-500">{expiryLabel}</dt>
+                    <dd className="mt-1 font-semibold">
+                      {formatDate(expiryValue)}
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section className="border-t border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8 lg:px-6">
+                <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
+                  Account Actions
+                </p>
+                <h3 className="mt-2 text-xl font-bold">Manage your account</h3>
+
+                <div className="mt-5 divide-y divide-[#1e3a5f] border-y border-[#1e3a5f]">
+                  <button
+                    type="button"
+                    onClick={openProfileEditor}
+                    className="group flex min-h-14 w-full items-center gap-3 py-3.5 text-left transition hover:text-[#f4b400]"
+                  >
+                    <Edit3 size={19} className="text-[#f4b400]" />
+                    <span className="flex-1 text-sm font-semibold">
+                      Edit Profile
+                    </span>
+                    <ChevronRight
+                      size={18}
+                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
+                    />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={openPasswordEditor}
+                    className="group flex min-h-14 w-full items-center gap-3 py-3.5 text-left transition hover:text-[#f4b400]"
+                  >
+                    <KeyRound size={19} className="text-[#f4b400]" />
+                    <span className="flex-1 text-sm font-semibold">
+                      Change Password
+                    </span>
+                    <ChevronRight
+                      size={18}
+                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
+                    />
+                  </button>
+
+                  <Link
+                    href="/upgrade"
+                    className="group flex min-h-14 items-center gap-3 py-3.5 transition hover:text-[#f4b400]"
+                  >
+                    <CreditCard size={19} className="text-[#f4b400]" />
+                    <span className="flex-1 text-sm font-semibold">
+                      Manage Subscription
+                    </span>
+                    <ChevronRight
+                      size={18}
+                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
+                    />
                   </Link>
-                )
-              })}
-            </div>
-          ) : (
-            <div className="mt-6 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-6">
-              <p className="text-gray-400">
-                You do not currently have an active subject.
-              </p>
-              <Link
-                href="/upgrade"
-                className="mt-4 inline-flex rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000]"
-              >
-                View Subscription Options
-              </Link>
-            </div>
-          )}
-        </section>
 
-        <section className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-          <div className="flex items-center gap-3">
-            <div className="rounded-xl bg-[#f4b400]/10 p-3 text-[#f4b400]">
-              <BarChart3 size={22} />
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
-                Performance
-              </p>
-              <h2 className="mt-1 text-xl font-bold">Mock exam progress</h2>
-            </div>
+                  <button
+                    type="button"
+                    onClick={handleSignOut}
+                    className="group flex min-h-14 w-full items-center gap-3 py-3.5 text-left text-gray-300 transition hover:text-red-300"
+                  >
+                    <LogOut size={19} />
+                    <span className="flex-1 text-sm font-semibold">
+                      Sign Out
+                    </span>
+                    <ChevronRight
+                      size={18}
+                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-red-300"
+                    />
+                  </button>
+                </div>
+              </section>
+            </aside>
           </div>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-6">
-              <p className="text-sm text-gray-500">Exams completed</p>
-              <p className="mt-2 text-4xl font-bold text-white">
-                {examAttempts.length}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-6">
-              <p className="text-sm text-gray-500">Average score</p>
-              <p className="mt-2 text-4xl font-bold text-[#f4b400]">
-                {averageScore}%
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-            Account Actions
-          </p>
-          <h2 className="mt-3 text-2xl font-bold">Manage your account</h2>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <button
-              type="button"
-              onClick={() => {
-                setActionMessage("")
-                setActionError("")
-                setFullNameDraft(profile.full_name)
-                setLicenceDraft(profile.licence_level ?? "ppl")
-                setEditProfileOpen(true)
-              }}
-              className="flex items-center gap-3 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-5 text-left transition hover:border-[#f4b400]"
-            >
-              <Edit3 size={20} className="text-[#f4b400]" />
-              <span className="font-semibold">Edit Profile</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setActionMessage("")
-                setActionError("")
-                setPasswordOpen(true)
-              }}
-              className="flex items-center gap-3 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-5 text-left transition hover:border-[#f4b400]"
-            >
-              <KeyRound size={20} className="text-[#f4b400]" />
-              <span className="font-semibold">Change Password</span>
-            </button>
-
-            <Link
-              href="/upgrade"
-              className="flex items-center gap-3 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-5 transition hover:border-[#f4b400]"
-            >
-              <CreditCard size={20} className="text-[#f4b400]" />
-              <span className="font-semibold">Manage Subscription</span>
-            </Link>
-
-            <button
-              type="button"
-              onClick={handleSignOut}
-              className="flex items-center gap-3 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/60 p-5 text-left transition hover:border-red-400 hover:text-red-300"
-            >
-              <LogOut size={20} />
-              <span className="font-semibold">Sign Out</span>
-            </button>
-          </div>
-        </section>
+        </div>
       </section>
 
       {editProfileOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6">
-          <div className="w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 px-0 pt-10 sm:items-center sm:px-4 sm:py-6">
+          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl border border-[#1e3a5f] bg-[#081726] p-5 shadow-2xl sm:rounded-3xl sm:p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
@@ -621,6 +700,7 @@ export default function ProfilePage() {
               </div>
               <button
                 type="button"
+                aria-label="Close edit profile"
                 onClick={() => setEditProfileOpen(false)}
                 className="rounded-xl border border-[#1e3a5f] p-2 text-gray-400 hover:text-white"
               >
@@ -636,7 +716,7 @@ export default function ProfilePage() {
                 <input
                   value={fullNameDraft}
                   onChange={(event) => setFullNameDraft(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
                 />
               </label>
 
@@ -649,7 +729,7 @@ export default function ProfilePage() {
                   onChange={(event) =>
                     setLicenceDraft(event.target.value as LicenceLevel)
                   }
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
                 >
                   <option value="ppl">PPL</option>
                   <option value="cpl">CPL</option>
@@ -658,11 +738,11 @@ export default function ProfilePage() {
               </label>
             </div>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-end">
+            <div className="mt-7 grid grid-cols-2 gap-3">
               <button
                 type="button"
                 onClick={() => setEditProfileOpen(false)}
-                className="rounded-xl border border-[#1e3a5f] px-5 py-3 text-sm font-semibold text-gray-300"
+                className="rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm font-semibold text-gray-300"
               >
                 Cancel
               </button>
@@ -670,7 +750,7 @@ export default function ProfilePage() {
                 type="button"
                 onClick={handleProfileSave}
                 disabled={savingProfile}
-                className="rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] disabled:opacity-60"
+                className="rounded-xl bg-[#f4b400] px-4 py-3 text-sm font-bold text-[#06111f] disabled:opacity-60"
               >
                 {savingProfile ? "Saving..." : "Save Changes"}
               </button>
@@ -680,8 +760,8 @@ export default function ProfilePage() {
       )}
 
       {passwordOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6">
-          <div className="w-full max-w-md rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 px-0 pt-10 sm:items-center sm:px-4 sm:py-6">
+          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl border border-[#1e3a5f] bg-[#081726] p-5 shadow-2xl sm:rounded-3xl sm:p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
@@ -691,6 +771,7 @@ export default function ProfilePage() {
               </div>
               <button
                 type="button"
+                aria-label="Close password form"
                 onClick={() => setPasswordOpen(false)}
                 className="rounded-xl border border-[#1e3a5f] p-2 text-gray-400 hover:text-white"
               >
@@ -707,7 +788,7 @@ export default function ProfilePage() {
                   type="password"
                   value={newPassword}
                   onChange={(event) => setNewPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
                 />
               </label>
 
@@ -719,16 +800,16 @@ export default function ProfilePage() {
                   type="password"
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
                 />
               </label>
             </div>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-end">
+            <div className="mt-7 grid grid-cols-2 gap-3">
               <button
                 type="button"
                 onClick={() => setPasswordOpen(false)}
-                className="rounded-xl border border-[#1e3a5f] px-5 py-3 text-sm font-semibold text-gray-300"
+                className="rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm font-semibold text-gray-300"
               >
                 Cancel
               </button>
@@ -736,7 +817,7 @@ export default function ProfilePage() {
                 type="button"
                 onClick={handlePasswordChange}
                 disabled={savingPassword}
-                className="rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] disabled:opacity-60"
+                className="rounded-xl bg-[#f4b400] px-4 py-3 text-sm font-bold text-[#06111f] disabled:opacity-60"
               >
                 {savingPassword ? "Updating..." : "Update Password"}
               </button>

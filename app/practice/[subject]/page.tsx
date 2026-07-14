@@ -840,7 +840,7 @@ export default function SubjectPracticePage() {
                         </span>
                       </p>
 
-                      <p className="mt-3 leading-relaxed text-slate-700">
+                      <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-700">
                         {question.explanation}
                       </p>
                     </div>
@@ -1053,7 +1053,7 @@ export default function SubjectPracticePage() {
                   Explanation
                 </p>
 
-                <p className="mt-2 leading-relaxed text-slate-700">
+                <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">
                   {currentQuestion.explanation}
                 </p>
               </div>

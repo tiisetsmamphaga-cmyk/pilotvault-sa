@@ -1,20 +1,53 @@
+"use client"
+
 import type { ReactNode } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
+import { useParams } from "next/navigation"
 import { Download, FileText } from "lucide-react"
 
-export default async function SubjectPracticeLayout({
+export default function SubjectPracticeLayout({
   children,
-  params,
 }: Readonly<{
   children: ReactNode
-  params: Promise<{ subject: string }>
 }>) {
-  const { subject } = await params
-  const isMeteorology = subject === "meteorology"
+  const params = useParams<{ subject: string }>()
+  const isMeteorology = params.subject === "meteorology"
+  const [showManualBanner, setShowManualBanner] = useState(false)
+
+  useEffect(() => {
+    if (!isMeteorology) {
+      setShowManualBanner(false)
+      return
+    }
+
+    const updateManualVisibility = () => {
+      const simulatorIsOpen = Array.from(
+        document.querySelectorAll("main")
+      ).some((mainElement) => mainElement.classList.contains("bg-white"))
+
+      setShowManualBanner(!simulatorIsOpen)
+    }
+
+    updateManualVisibility()
+
+    const observer = new MutationObserver(updateManualVisibility)
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class"],
+    })
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [isMeteorology])
 
   return (
     <>
-      {isMeteorology && (
+      {isMeteorology && showManualBanner && (
         <div className="bg-[#06111f] px-4 pt-5 text-white sm:px-6">
           <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-xl border border-[#1e3a5f] bg-[#081726]/70 px-4 py-3">
             <div className="flex min-w-0 items-center gap-3">

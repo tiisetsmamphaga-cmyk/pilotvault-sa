@@ -6,41 +6,18 @@ import { useRouter } from "next/navigation"
 import {
   ArrowLeft,
   BarChart3,
-  Brain,
   CheckCircle2,
   ChevronRight,
-  Cloud,
-  Compass,
   CreditCard,
   Edit3,
   KeyRound,
   LogOut,
-  Map,
-  Plane,
-  Radio,
-  Scale,
   ShieldCheck,
-  Wrench,
   X,
 } from "lucide-react"
 
 import { LoadingScreen } from "@/components/loading-screen"
 import { supabase } from "@/src/lib/supabase"
-
-const subjects = [
-  { name: "Meteorology", slug: "meteorology", icon: Cloud },
-  { name: "Air Law", slug: "air-law", icon: Scale },
-  { name: "Navigation", slug: "navigation", icon: Compass },
-  { name: "Human Performance", slug: "human-performance", icon: Brain },
-  { name: "Principles of Flight", slug: "principles-of-flight", icon: Plane },
-  {
-    name: "Aircraft Technical and General",
-    slug: "aircraft-technical-and-general",
-    icon: Wrench,
-  },
-  { name: "Radio Telephony", slug: "radio-telephony", icon: Radio },
-  { name: "Flight Planning", slug: "flight-planning", icon: Map },
-]
 
 type LicenceLevel = "ppl" | "cpl" | "atpl"
 
@@ -52,12 +29,6 @@ type ProfileRecord = {
   subscription_plan: string | null
   trial_ends_at: string | null
   subscription_expires_at: string | null
-}
-
-type SubjectAccessRecord = {
-  subject: string
-  access_status: string | null
-  expires_at: string
 }
 
 type ExamAttemptRecord = {
@@ -102,10 +73,8 @@ export default function ProfilePage() {
 
   const [loading, setLoading] = useState(true)
   const [loadError, setLoadError] = useState("")
-  const [userId, setUserId] = useState("")
   const [authEmail, setAuthEmail] = useState("")
   const [profile, setProfile] = useState<ProfileRecord | null>(null)
-  const [subjectAccess, setSubjectAccess] = useState<SubjectAccessRecord[]>([])
   const [examAttempts, setExamAttempts] = useState<ExamAttemptRecord[]>([])
 
   const [editProfileOpen, setEditProfileOpen] = useState(false)
@@ -139,32 +108,23 @@ export default function ProfilePage() {
           return
         }
 
-        const [profileResponse, accessResponse, attemptsResponse] =
-          await Promise.all([
-            supabase
-              .from("Profiles")
-              .select(
-                "full_name, email, licence_level, subscription_status, subscription_plan, trial_ends_at, subscription_expires_at"
-              )
-              .eq("id", user.id)
-              .single(),
-            supabase
-              .from("SubjectAccess")
-              .select("subject, access_status, expires_at")
-              .eq("user_id", user.id),
-            supabase
-              .from("ExamAttempts")
-              .select("score_percentage")
-              .eq("user_id", user.id)
-              .eq("exam_mode", "mock"),
-          ])
+        const [profileResponse, attemptsResponse] = await Promise.all([
+          supabase
+            .from("Profiles")
+            .select(
+              "full_name, email, licence_level, subscription_status, subscription_plan, trial_ends_at, subscription_expires_at"
+            )
+            .eq("id", user.id)
+            .single(),
+          supabase
+            .from("ExamAttempts")
+            .select("score_percentage")
+            .eq("user_id", user.id)
+            .eq("exam_mode", "mock"),
+        ])
 
         if (profileResponse.error) {
           throw new Error(profileResponse.error.message)
-        }
-
-        if (accessResponse.error) {
-          throw new Error(accessResponse.error.message)
         }
 
         if (attemptsResponse.error) {
@@ -173,12 +133,9 @@ export default function ProfilePage() {
 
         if (!cancelled) {
           const loadedProfile = profileResponse.data as ProfileRecord
-          setUserId(user.id)
+
           setAuthEmail(user.email ?? loadedProfile.email ?? "")
           setProfile(loadedProfile)
-          setSubjectAccess(
-            (accessResponse.data ?? []) as SubjectAccessRecord[]
-          )
           setExamAttempts(
             (attemptsResponse.data ?? []) as ExamAttemptRecord[]
           )
@@ -208,26 +165,7 @@ export default function ProfilePage() {
   const isTrialUser =
     profile?.subscription_plan === "trial" &&
     Boolean(profile.trial_ends_at) &&
-    new Date(profile!.trial_ends_at!) > new Date()
-
-  const isPplUser =
-    profile?.subscription_status === "active" &&
-    profile?.subscription_plan === "ppl" &&
-    Boolean(profile.subscription_expires_at) &&
-    new Date(profile!.subscription_expires_at!) > new Date()
-
-  const activeSubjects = useMemo(() => {
-    if (isTrialUser || isPplUser) return subjects
-
-    return subjects.filter((subject) =>
-      subjectAccess.some(
-        (access) =>
-          access.subject === subject.slug &&
-          access.access_status === "active" &&
-          new Date(access.expires_at) > new Date()
-      )
-    )
-  }, [isPplUser, isTrialUser, subjectAccess])
+    new Date(profile.trial_ends_at as string) > new Date()
 
   const averageScore = useMemo(() => {
     if (examAttempts.length === 0) return 0
@@ -333,7 +271,7 @@ export default function ProfilePage() {
 
   if (loading) return <LoadingScreen />
 
-  if (loadError || !profile || !userId) {
+  if (loadError || !profile) {
     return (
       <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
         <div className="mx-auto max-w-4xl">
@@ -485,62 +423,14 @@ export default function ProfilePage() {
                     </dd>
                   </div>
                   <div className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-6">
-                    <dt className="text-sm text-gray-500">Current licence level</dt>
+                    <dt className="text-sm text-gray-500">
+                      Current licence level
+                    </dt>
                     <dd className="font-semibold uppercase text-white sm:text-right">
                       {profile.licence_level ?? "ppl"}
                     </dd>
                   </div>
                 </dl>
-              </section>
-
-              <section className="border-t border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
-                    My Subjects
-                  </p>
-                  <h3 className="mt-2 text-xl font-bold">
-                    Subjects you can access
-                  </h3>
-                </div>
-
-                {activeSubjects.length > 0 ? (
-                  <div className="mt-5 grid grid-cols-1 gap-x-5 sm:grid-cols-2">
-                    {activeSubjects.map((subject) => {
-                      const Icon = subject.icon
-
-                      return (
-                        <Link
-                          key={subject.slug}
-                          href={`/practice/${subject.slug}`}
-                          className="group flex min-h-16 items-center gap-3 border-b border-[#1e3a5f] py-3.5 transition hover:text-[#f4b400]"
-                        >
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f4b400]/10 text-[#f4b400]">
-                            <Icon size={19} />
-                          </span>
-                          <span className="min-w-0 flex-1 text-sm font-semibold sm:text-base">
-                            {subject.name}
-                          </span>
-                          <ChevronRight
-                            size={18}
-                            className="shrink-0 text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
-                          />
-                        </Link>
-                      )
-                    })}
-                  </div>
-                ) : (
-                  <div className="mt-5 border-y border-[#1e3a5f] py-5">
-                    <p className="text-sm leading-6 text-gray-400">
-                      You do not currently have an active subject.
-                    </p>
-                    <Link
-                      href="/upgrade"
-                      className="mt-4 inline-flex rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000]"
-                    >
-                      View Subscription Options
-                    </Link>
-                  </div>
-                )}
               </section>
 
               <section className="border-t border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8">

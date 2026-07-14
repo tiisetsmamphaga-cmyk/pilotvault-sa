@@ -13,6 +13,7 @@ import {
   Radio,
   Map,
   LogOut,
+  UserRound,
 } from "lucide-react"
 import { LoadingScreen } from "@/components/loading-screen"
 import { supabase } from "@/src/lib/supabase"
@@ -127,13 +128,23 @@ export default function DashboardPage() {
             <h1 className="mt-1 text-lg font-bold">Dashboard</h1>
           </div>
 
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
-          >
-            <LogOut className="h-4 w-4" />
-            Logout
-          </button>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/profile"
+              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
+            >
+              <UserRound className="h-4 w-4" />
+              Profile
+            </Link>
+
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
+            >
+              <LogOut className="h-4 w-4" />
+              Logout
+            </button>
+          </div>
         </div>
       </header>
 

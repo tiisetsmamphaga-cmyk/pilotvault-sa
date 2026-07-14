@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { useParams, useRouter } from "next/navigation"
 
@@ -10,6 +10,7 @@ import { ExamResults } from "./components/exam-results"
 import { ExamSimulator } from "./components/exam-simulator"
 import { TopicSelection } from "./components/topic-selection"
 import { TrainingModeMenu } from "./components/training-mode-menu"
+import { saveMockExamAttempt } from "./exam-attempt-service"
 import {
   MOCK_QUESTION_COUNT,
   MOCK_TIME_SECONDS,
@@ -46,6 +47,7 @@ export default function SubjectPracticePage() {
   const [canAccessTopics, setCanAccessTopics] = useState(false)
   const [isTrialAccount, setIsTrialAccount] = useState(false)
   const [activeTopic, setActiveTopic] = useState("")
+  const attemptSavedRef = useRef(false)
 
   useEffect(() => {
     let cancelled = false
@@ -204,6 +206,7 @@ export default function SubjectPracticePage() {
         }
 
         counts[question.topic] = (counts[question.topic] ?? 0) + 1
+
         return counts
       },
       {}
@@ -217,6 +220,7 @@ export default function SubjectPracticePage() {
   }, [topicQuestionCounts])
 
   const resetExamState = () => {
+    attemptSavedRef.current = false
     setCurrentQuestionIndex(0)
     setAnswers({})
     setPinnedQuestions([])
@@ -331,6 +335,35 @@ export default function SubjectPracticePage() {
     examMode === "topic" && activeTopic
       ? `${activeTopic} Practice`
       : "Mock Exam"
+
+  useEffect(() => {
+    if (
+      !isSubmitted ||
+      examMode !== "mock" ||
+      totalQuestions === 0 ||
+      attemptSavedRef.current
+    ) {
+      return
+    }
+
+    attemptSavedRef.current = true
+
+    void saveMockExamAttempt({
+      subject,
+      totalQuestions,
+      correctAnswers,
+      scorePercentage,
+    }).catch((error) => {
+      console.error("Exam attempt save error:", error)
+    })
+  }, [
+    correctAnswers,
+    examMode,
+    isSubmitted,
+    scorePercentage,
+    subject,
+    totalQuestions,
+  ])
 
   if (isLoadingQuestions) {
     return (

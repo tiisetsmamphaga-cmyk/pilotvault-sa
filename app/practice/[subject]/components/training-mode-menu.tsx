@@ -41,65 +41,55 @@ export function TrainingModeMenu({
         </Link>
 
         <div className="mt-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
-          <div
-            className={
-              hasManual
-                ? "grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center"
-                : ""
-            }
-          >
-            <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                {formatSubjectName(subject)}
-              </p>
+          <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+            {formatSubjectName(subject)}
+          </p>
 
-              <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
-                Choose your training mode
-              </h1>
+          <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
+            Choose your training mode
+          </h1>
 
-              <p className="mt-3 max-w-2xl text-gray-400">
-                Start a SACAA-style mock exam or focus on weak areas with
-                topic-based practice.
-              </p>
+          <p className="mt-3 max-w-2xl text-gray-400">
+            Start a SACAA-style mock exam or focus on weak areas with
+            topic-based practice.
+          </p>
 
-              {!isTrialAccount && (
-                <p className="mt-4 text-sm font-semibold text-[#f4b400]">
-                  {questionCount} questions available
-                </p>
-              )}
-            </div>
+          {!isTrialAccount && (
+            <p className="mt-4 text-sm font-semibold text-[#f4b400]">
+              {questionCount} questions available
+            </p>
+          )}
 
-            {hasManual && (
-              <div className="rounded-2xl border border-[#1e3a5f] bg-[#06111f]/70 p-4">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#f4b400]">
-                    <BookOpen size={21} />
-                  </div>
-
-                  <div className="min-w-0">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f4b400]">
-                      Study Resource
-                    </p>
-                    <p className="mt-1 font-semibold text-white">
-                      PPL Meteorology Manual
-                    </p>
-                    <p className="mt-1 text-sm leading-6 text-gray-400">
-                      Review weather symbols, METARs, TAFs and aviation charts.
-                    </p>
-                  </div>
+          {hasManual && (
+            <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/70 p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex min-w-0 items-start gap-3">
+                <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#f4b400]">
+                  <BookOpen size={21} />
                 </div>
 
-                <a
-                  href="/PPL-MET.pdf"
-                  download="PilotVault-PPL-Meteorology-Manual.pdf"
-                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 px-4 py-3 text-sm font-semibold text-[#f4b400] transition hover:border-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f]"
-                >
-                  <Download size={17} />
-                  Download Manual
-                </a>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f4b400]">
+                    Study Resource
+                  </p>
+                  <p className="mt-1 font-semibold text-white">
+                    PPL Meteorology Manual
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-gray-400">
+                    Review weather symbols, METARs, TAFs and aviation charts.
+                  </p>
+                </div>
               </div>
-            )}
-          </div>
+
+              <a
+                href="/PPL-MET.pdf"
+                download="PilotVault-PPL-Meteorology-Manual.pdf"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 px-4 py-3 text-sm font-semibold text-[#f4b400] transition hover:border-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f]"
+              >
+                <Download size={17} />
+                Download Manual
+              </a>
+            </div>
+          )}
         </div>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2">

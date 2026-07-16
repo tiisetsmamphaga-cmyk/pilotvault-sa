@@ -216,3 +216,5 @@ Always implement with future scalability in mind.
 PilotVault should become the leading SACAA exam preparation platform in South Africa.
 
 Every design and engineering decision should support this goal.
+
+<!-- Deployment trigger: 2026-07-17 -->

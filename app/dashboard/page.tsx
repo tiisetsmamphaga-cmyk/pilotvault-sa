@@ -18,6 +18,7 @@ import {
 import { LoadingScreen } from "@/components/loading-screen"
 import { supabase } from "@/src/lib/supabase"
 
+// Production deployment trigger. No visual or functional changes.
 const subjects = [
   { name: "Meteorology", slug: "meteorology", icon: Cloud },
   { name: "Air Law", slug: "air-law", icon: Scale },

@@ -120,36 +120,43 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-[#06111f] text-white">
       <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
-        <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
+        <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:min-h-20 sm:px-6 lg:px-8">
+          <div className="min-w-0">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-[#f4b400] sm:text-xs sm:tracking-[0.25em]">
               PilotVault SA
             </p>
-            <h1 className="mt-1 text-lg font-bold">Dashboard</h1>
+            <h1 className="mt-1 truncate text-base font-bold sm:text-lg">
+              Dashboard
+            </h1>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <Link
               href="/profile"
-              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
+              aria-label="Open profile"
+              title="Profile"
+              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-3 py-2.5 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400] sm:px-4 sm:py-3"
             >
               <UserRound className="h-4 w-4" />
-              Profile
+              <span className="hidden sm:inline">Profile</span>
             </Link>
 
             <button
+              type="button"
               onClick={handleLogout}
-              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400]"
+              aria-label="Log out"
+              title="Logout"
+              className="flex items-center gap-2 rounded-xl border border-[#1e3a5f] px-3 py-2.5 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400] sm:px-4 sm:py-3"
             >
               <LogOut className="h-4 w-4" />
-              Logout
+              <span className="hidden sm:inline">Logout</span>
             </button>
           </div>
         </div>
       </header>
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+        <div className="mb-6 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-5 sm:mb-8 sm:p-8">
           <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
             {isPplUser
               ? "Full Access"
@@ -158,7 +165,7 @@ export default function DashboardPage() {
                 : "Subject Access"}
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-4xl">
             {isPplUser
               ? "All PPL subjects unlocked."
               : isTrialUser
@@ -166,7 +173,7 @@ export default function DashboardPage() {
                 : "Access your purchased subjects."}
           </h2>
 
-          <p className="mt-3 max-w-2xl text-gray-400">
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-400 sm:text-base">
             {isPplUser
               ? "Your PPL Pack gives you access to all subjects, mock exams, topic practice, and the full question bank."
               : isTrialUser
@@ -184,21 +191,21 @@ export default function DashboardPage() {
           )}
         </div>
 
-        <div className="mb-8 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 sm:p-8">
+        <div className="mb-6 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-5 sm:mb-8 sm:p-8">
           <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
             Practice Center
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-4xl">
             Choose a subject
           </h2>
 
-          <p className="mt-3 max-w-2xl text-gray-400">
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-400 sm:text-base">
             Select a subject to begin your SACAA exam preparation.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
           {subjects.map((subject) => {
             const Icon = subject.icon
             const unlocked = hasSubjectAccess(subject.slug)
@@ -211,26 +218,26 @@ export default function DashboardPage() {
                     ? `/practice/${subject.slug}`
                     : `/upgrade?subject=${subject.slug}`
                 }
-                className={`group rounded-2xl border bg-[#081726] p-6 transition-all hover:-translate-y-1 hover:border-[#f4b400] ${
+                className={`group min-h-[142px] rounded-2xl border bg-[#081726] p-4 transition-all hover:-translate-y-1 hover:border-[#f4b400] sm:min-h-[178px] sm:p-6 ${
                   unlocked
                     ? "border-[#f4b400]/40"
                     : "border-[#1e3a5f] opacity-50"
                 }`}
               >
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl sm:h-12 sm:w-12 ${
                     unlocked ? "bg-[#f4b400]/20" : "bg-[#f4b400]/10"
                   }`}
                 >
                   <Icon
-                    className={`h-6 w-6 ${
+                    className={`h-5 w-5 sm:h-6 sm:w-6 ${
                       unlocked ? "text-[#f4b400]" : "text-[#f4b400]/50"
                     }`}
                   />
                 </div>
 
                 <h3
-                  className={`mt-5 text-sm font-bold sm:text-lg ${
+                  className={`mt-4 text-sm font-bold leading-snug sm:mt-5 sm:text-lg ${
                     unlocked ? "text-white" : "text-gray-500"
                   }`}
                 >

@@ -11,6 +11,29 @@ import {
 
 import { MOCK_QUESTION_COUNT, formatSubjectName } from "../practice-utils"
 
+type SubjectManual = {
+  title: string
+  description: string
+  href: string
+  downloadName: string
+}
+
+const SUBJECT_MANUALS: Record<string, SubjectManual> = {
+  meteorology: {
+    title: "PPL Meteorology Manual",
+    description: "Review weather symbols, METARs, TAFs and aviation charts.",
+    href: "/PPL-MET.pdf",
+    downloadName: "PilotVault-PPL-Meteorology-Manual.pdf",
+  },
+  "flight-planning": {
+    title: "PPL Flight Planning Manual",
+    description:
+      "Review mass and balance, performance, fuel and runway planning charts.",
+    href: "/FPLAN(A).pdf",
+    downloadName: "PilotVault-PPL-Flight-Planning-Manual.pdf",
+  },
+}
+
 type TrainingModeMenuProps = {
   subject: string
   questionCount: number
@@ -28,7 +51,7 @@ export function TrainingModeMenu({
   onStartMock,
   onOpenTopics,
 }: TrainingModeMenuProps) {
-  const hasManual = subject === "meteorology"
+  const manual = SUBJECT_MANUALS[subject]
 
   return (
     <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
@@ -60,7 +83,7 @@ export function TrainingModeMenu({
             </p>
           )}
 
-          {hasManual && (
+          {manual && (
             <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-[#1e3a5f] bg-[#06111f]/70 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex min-w-0 items-start gap-3">
                 <div className="rounded-xl border border-[#1e3a5f] bg-[#0b1d31] p-3 text-[#f4b400]">
@@ -72,17 +95,17 @@ export function TrainingModeMenu({
                     Study Resource
                   </p>
                   <p className="mt-1 font-semibold text-white">
-                    PPL Meteorology Manual
+                    {manual.title}
                   </p>
                   <p className="mt-1 text-sm leading-6 text-gray-400">
-                    Review weather symbols, METARs, TAFs and aviation charts.
+                    {manual.description}
                   </p>
                 </div>
               </div>
 
               <a
-                href="/PPL-MET.pdf"
-                download="PilotVault-PPL-Meteorology-Manual.pdf"
+                href={manual.href}
+                download={manual.downloadName}
                 className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 px-4 py-3 text-sm font-semibold text-[#f4b400] transition hover:border-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f]"
               >
                 <Download size={17} />

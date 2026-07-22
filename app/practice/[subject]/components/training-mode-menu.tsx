@@ -226,7 +226,7 @@ export function TrainingModeMenu({
           onClick={() => setShowMockInstructions(false)}
         >
           <div
-            className="w-full max-w-lg overflow-hidden rounded-lg bg-white text-slate-900 shadow-2xl"
+            className="w-full max-w-lg overflow-hidden bg-white text-slate-900 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="bg-[#1f4e79] px-6 py-5 text-white">

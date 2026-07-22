@@ -349,18 +349,18 @@ export default function ProfilePage() {
         <div className="mt-8 space-y-4 sm:mt-10">
           <section
             aria-labelledby="access-heading"
-            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+            className="overflow-hidden rounded-[24px] border border-[#1e3a5f] bg-[#081726] px-5 text-white shadow-[0_14px_40px_rgba(0,0,0,0.18)] sm:px-6"
           >
             <h3 id="access-heading" className="sr-only">
               Access and billing
             </h3>
 
-            <div className="divide-y divide-[#e6e9ed]">
+            <div className="divide-y divide-[#1e3a5f]">
               <div className="flex min-h-[70px] items-center gap-4 py-4">
                 <CreditCard size={20} className="shrink-0 text-[#f4b400]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Current plan</p>
-                  <p className="mt-0.5 text-xs text-[#7b828c]">
+                  <p className="mt-0.5 text-xs text-[#9ca9b9]">
                     {formatPlan(profile.subscription_plan)}
                   </p>
                 </div>
@@ -370,7 +370,7 @@ export default function ProfilePage() {
                 <ShieldCheck size={20} className="shrink-0 text-[#f4b400]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Subscription status</p>
-                  <p className="mt-0.5 text-xs text-[#7b828c]">
+                  <p className="mt-0.5 text-xs text-[#9ca9b9]">
                     {formatStatus(profile.subscription_status, isTrialUser)}
                   </p>
                 </div>
@@ -380,7 +380,7 @@ export default function ProfilePage() {
                 <CalendarDays size={20} className="shrink-0 text-[#f4b400]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">{expiryLabel}</p>
-                  <p className="mt-0.5 text-xs text-[#7b828c]">
+                  <p className="mt-0.5 text-xs text-[#9ca9b9]">
                     {formatDate(expiryValue)}
                   </p>
                 </div>
@@ -388,7 +388,7 @@ export default function ProfilePage() {
 
               <Link
                 href="/upgrade"
-                className="group flex min-h-[70px] items-center gap-4 py-4 transition hover:text-[#b47f00]"
+                className="group flex min-h-[70px] items-center gap-4 py-4 transition hover:text-[#f4b400]"
               >
                 <CreditCard size={20} className="shrink-0 text-[#f4b400]" />
                 <span className="flex-1 text-sm font-medium">
@@ -396,7 +396,7 @@ export default function ProfilePage() {
                 </span>
                 <ChevronRight
                   size={18}
-                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
+                  className="shrink-0 text-[#718096] transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
                 />
               </Link>
             </div>
@@ -404,18 +404,18 @@ export default function ProfilePage() {
 
           <section
             aria-labelledby="details-heading"
-            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+            className="overflow-hidden rounded-[24px] border border-[#1e3a5f] bg-[#081726] px-5 text-white shadow-[0_14px_40px_rgba(0,0,0,0.18)] sm:px-6"
           >
             <h3 id="details-heading" className="sr-only">
               Profile information
             </h3>
 
-            <div className="divide-y divide-[#e6e9ed]">
+            <div className="divide-y divide-[#1e3a5f]">
               <div className="flex min-h-[70px] items-center gap-4 py-4">
                 <UserRound size={20} className="shrink-0 text-[#f4b400]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Full name</p>
-                  <p className="mt-0.5 break-words text-xs text-[#7b828c]">
+                  <p className="mt-0.5 break-words text-xs text-[#9ca9b9]">
                     {profile.full_name}
                   </p>
                 </div>
@@ -425,7 +425,7 @@ export default function ProfilePage() {
                 <Mail size={20} className="shrink-0 text-[#f4b400]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Email address</p>
-                  <p className="mt-0.5 break-all text-xs text-[#7b828c]">
+                  <p className="mt-0.5 break-all text-xs text-[#9ca9b9]">
                     {authEmail}
                   </p>
                 </div>
@@ -435,7 +435,7 @@ export default function ProfilePage() {
                 <GraduationCap size={20} className="shrink-0 text-[#f4b400]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Current licence level</p>
-                  <p className="mt-0.5 text-xs uppercase text-[#7b828c]">
+                  <p className="mt-0.5 text-xs uppercase text-[#9ca9b9]">
                     {profile.licence_level ?? "ppl"}
                   </p>
                 </div>
@@ -444,13 +444,13 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={openProfileEditor}
-                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#b47f00]"
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#f4b400]"
               >
                 <Edit3 size={20} className="shrink-0 text-[#f4b400]" />
                 <span className="flex-1 text-sm font-medium">Edit profile</span>
                 <ChevronRight
                   size={18}
-                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
+                  className="shrink-0 text-[#718096] transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
                 />
               </button>
             </div>
@@ -458,17 +458,17 @@ export default function ProfilePage() {
 
           <section
             aria-labelledby="security-heading"
-            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+            className="overflow-hidden rounded-[24px] border border-[#1e3a5f] bg-[#081726] px-5 text-white shadow-[0_14px_40px_rgba(0,0,0,0.18)] sm:px-6"
           >
             <h3 id="security-heading" className="sr-only">
               Account actions
             </h3>
 
-            <div className="divide-y divide-[#e6e9ed]">
+            <div className="divide-y divide-[#1e3a5f]">
               <button
                 type="button"
                 onClick={openPasswordEditor}
-                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#b47f00]"
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#f4b400]"
               >
                 <KeyRound size={20} className="shrink-0 text-[#f4b400]" />
                 <span className="flex-1 text-sm font-medium">
@@ -476,20 +476,20 @@ export default function ProfilePage() {
                 </span>
                 <ChevronRight
                   size={18}
-                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
+                  className="shrink-0 text-[#718096] transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
                 />
               </button>
 
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left text-[#071426] transition hover:text-red-600"
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left text-white transition hover:text-red-400"
               >
                 <LogOut size={20} className="shrink-0" />
                 <span className="flex-1 text-sm font-medium">Sign out</span>
                 <ChevronRight
                   size={18}
-                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-red-500"
+                  className="shrink-0 text-[#718096] transition group-hover:translate-x-0.5 group-hover:text-red-400"
                 />
               </button>
             </div>

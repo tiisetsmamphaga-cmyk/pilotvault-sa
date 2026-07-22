@@ -51,6 +51,7 @@ export function TopicSelection({
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
             Choose a topic
           </h2>
+          <div className="mt-3 h-1 w-12 rounded-full bg-[#f4b400]" />
         </div>
 
         <div className="mt-4 grid gap-3 md:grid-cols-2">

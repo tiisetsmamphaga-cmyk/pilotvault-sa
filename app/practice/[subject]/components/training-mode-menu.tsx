@@ -71,10 +71,11 @@ export function TrainingModeMenu({
 
           <Link
             href="/dashboard"
-            className="group flex h-11 items-center gap-2 rounded-2xl border border-[#29476d] bg-[#0b1d31] px-3 text-sm font-semibold text-[#b8c7d9] transition hover:border-[#f4b400]/60 hover:text-[#f4b400] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:px-4"
+            aria-label="Back to dashboard"
+            title="Back to dashboard"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#071426] shadow-[0_6px_18px_rgba(15,23,42,0.12)] transition hover:-translate-x-0.5 hover:bg-[#f4b400] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70"
           >
-            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
-            <span className="hidden sm:inline">Dashboard</span>
+            <ArrowLeft className="h-[19px] w-[19px]" />
           </Link>
         </div>
       </header>

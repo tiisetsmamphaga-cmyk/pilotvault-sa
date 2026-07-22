@@ -142,3 +142,88 @@
     scroll-behavior: smooth;
   }
 }
+
+
+@keyframes pv-radar-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pv-beacon-pulse {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(0.78);
+    box-shadow: 0 0 0 0 rgba(244, 180, 0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 7px rgba(244, 180, 0, 0.08);
+  }
+}
+
+@keyframes pv-status-travel {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scaleX(0.65);
+  }
+  45% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pv-skeleton-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.pv-radar-sweep {
+  background: conic-gradient(
+    from 0deg,
+    rgba(244, 180, 0, 0.22) 0deg,
+    rgba(244, 180, 0, 0.05) 48deg,
+    transparent 82deg
+  );
+  animation: pv-radar-rotate 3.6s linear infinite;
+}
+
+.pv-plane-orbit {
+  animation: pv-radar-rotate 2.8s linear infinite;
+}
+
+.pv-loader-beacon {
+  animation: pv-beacon-pulse 1.6s ease-in-out infinite;
+}
+
+.pv-status-dot {
+  transform-origin: center;
+  animation: pv-status-travel 1.35s ease-in-out infinite;
+}
+
+.pv-skeleton {
+  background-color: #15304b;
+  background-image: linear-gradient(
+    100deg,
+    #15304b 8%,
+    #1b3b5d 36%,
+    rgba(244, 180, 0, 0.13) 48%,
+    #1b3b5d 60%,
+    #15304b 88%
+  );
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  animation: pv-skeleton-shimmer 2.1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pv-radar-sweep,
+  .pv-plane-orbit,
+  .pv-loader-beacon,
+  .pv-status-dot,
+  .pv-skeleton {
+    animation: none;
+  }
+}

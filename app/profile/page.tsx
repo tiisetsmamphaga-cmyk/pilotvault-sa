@@ -244,11 +244,11 @@ export default function ProfilePage() {
 
   if (loadError || !profile) {
     return (
-      <main className="min-h-screen bg-[#eef1f4] px-4 py-10 text-[#071426] sm:px-6">
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-[#071426] sm:px-6">
         <div className="mx-auto max-w-xl">
           <Link
             href="/dashboard"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#071426] transition hover:opacity-60"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:opacity-60"
           >
             <ArrowLeft size={16} />
             Back to Dashboard
@@ -288,44 +288,44 @@ export default function ProfilePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#eef1f4] text-[#071426]">
+    <main className="min-h-screen bg-[#06111f] text-[#071426]">
       <section className="mx-auto max-w-xl px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-10">
         <div className="flex items-center justify-between gap-4">
           <Link
             href="/dashboard"
             aria-label="Back to dashboard"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#f4b400]/30 bg-white text-[#071426] shadow-[0_6px_18px_rgba(15,23,42,0.08)] transition hover:-translate-x-0.5 hover:border-[#f4b400] hover:bg-[#fff8df]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#071426] shadow-[0_6px_18px_rgba(15,23,42,0.08)] transition hover:-translate-x-0.5 hover:bg-[#f8f9fa]"
           >
             <ArrowLeft size={19} />
           </Link>
 
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c58d00]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7b828c]">
             PilotVault SA
           </p>
         </div>
 
-        <h1 className="mt-8 text-[34px] font-bold tracking-[-0.035em] sm:text-[40px]">
+        <h1 className="mt-8 text-[34px] font-bold tracking-[-0.035em] text-white sm:text-[40px]">
           Profile
         </h1>
 
         <div className="mt-5 flex min-w-0 items-center gap-4 px-1">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#071426] text-xl font-bold text-white shadow-[0_8px_22px_rgba(7,20,38,0.2)] ring-2 ring-[#f4b400] ring-offset-2 ring-offset-[#eef1f4]">
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#071426] text-xl font-bold text-white shadow-[0_8px_22px_rgba(7,20,38,0.2)]">
             {initials}
           </div>
 
           <div className="min-w-0 flex-1">
-            <h2 className="truncate text-xl font-bold tracking-[-0.02em]">
+            <h2 className="truncate text-xl font-bold tracking-[-0.02em] text-white">
               {profile.full_name}
             </h2>
             <p className="mt-1 truncate text-sm text-[#7b828c]">
               {formatPlan(profile.subscription_plan)}
             </p>
             <div className="mt-2 flex flex-wrap gap-2">
-              <span className="rounded-full border border-[#f4b400]/35 bg-[#fff8df] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-[#8a6500]">
+              <span className="rounded-full bg-[#dfe4e9] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#071426]">
                 {(profile.licence_level ?? "ppl").toUpperCase()} Student
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#071426] px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm">
-                <CheckCircle2 size={12} className="text-[#f4b400]" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-[#071426]">
+                <CheckCircle2 size={12} />
                 {formatStatus(profile.subscription_status, isTrialUser)}
               </span>
             </div>
@@ -349,7 +349,7 @@ export default function ProfilePage() {
         <div className="mt-8 space-y-4 sm:mt-10">
           <section
             aria-labelledby="access-heading"
-            className="overflow-hidden rounded-[24px] border border-[#f4b400]/15 bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
           >
             <h3 id="access-heading" className="sr-only">
               Access and billing
@@ -357,7 +357,7 @@ export default function ProfilePage() {
 
             <div className="divide-y divide-[#e6e9ed]">
               <div className="flex min-h-[70px] items-center gap-4 py-4">
-                <CreditCard size={20} className="shrink-0 text-[#d29a00]" />
+                <CreditCard size={20} className="shrink-0 text-[#071426]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Current plan</p>
                   <p className="mt-0.5 text-xs text-[#7b828c]">
@@ -367,7 +367,7 @@ export default function ProfilePage() {
               </div>
 
               <div className="flex min-h-[70px] items-center gap-4 py-4">
-                <ShieldCheck size={20} className="shrink-0 text-[#d29a00]" />
+                <ShieldCheck size={20} className="shrink-0 text-[#071426]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Subscription status</p>
                   <p className="mt-0.5 text-xs text-[#7b828c]">
@@ -377,7 +377,7 @@ export default function ProfilePage() {
               </div>
 
               <div className="flex min-h-[70px] items-center gap-4 py-4">
-                <CalendarDays size={20} className="shrink-0 text-[#d29a00]" />
+                <CalendarDays size={20} className="shrink-0 text-[#071426]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">{expiryLabel}</p>
                   <p className="mt-0.5 text-xs text-[#7b828c]">
@@ -388,15 +388,15 @@ export default function ProfilePage() {
 
               <Link
                 href="/upgrade"
-                className="group flex min-h-[70px] items-center gap-4 py-4 transition hover:text-[#a87500]"
+                className="group flex min-h-[70px] items-center gap-4 py-4 transition hover:text-[#24364e]"
               >
-                <CreditCard size={20} className="shrink-0 text-[#d29a00]" />
+                <CreditCard size={20} className="shrink-0 text-[#071426]" />
                 <span className="flex-1 text-sm font-medium">
                   Manage subscription
                 </span>
                 <ChevronRight
                   size={18}
-                  className="shrink-0 text-[#d29a00] transition group-hover:translate-x-0.5 group-hover:text-[#a87500]"
+                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#071426]"
                 />
               </Link>
             </div>
@@ -404,7 +404,7 @@ export default function ProfilePage() {
 
           <section
             aria-labelledby="details-heading"
-            className="overflow-hidden rounded-[24px] border border-[#f4b400]/15 bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
           >
             <h3 id="details-heading" className="sr-only">
               Profile information
@@ -412,7 +412,7 @@ export default function ProfilePage() {
 
             <div className="divide-y divide-[#e6e9ed]">
               <div className="flex min-h-[70px] items-center gap-4 py-4">
-                <UserRound size={20} className="shrink-0 text-[#d29a00]" />
+                <UserRound size={20} className="shrink-0 text-[#071426]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Full name</p>
                   <p className="mt-0.5 break-words text-xs text-[#7b828c]">
@@ -422,7 +422,7 @@ export default function ProfilePage() {
               </div>
 
               <div className="flex min-h-[70px] items-center gap-4 py-4">
-                <Mail size={20} className="shrink-0 text-[#d29a00]" />
+                <Mail size={20} className="shrink-0 text-[#071426]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Email address</p>
                   <p className="mt-0.5 break-all text-xs text-[#7b828c]">
@@ -432,7 +432,7 @@ export default function ProfilePage() {
               </div>
 
               <div className="flex min-h-[70px] items-center gap-4 py-4">
-                <GraduationCap size={20} className="shrink-0 text-[#d29a00]" />
+                <GraduationCap size={20} className="shrink-0 text-[#071426]" />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Current licence level</p>
                   <p className="mt-0.5 text-xs uppercase text-[#7b828c]">
@@ -444,13 +444,13 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={openProfileEditor}
-                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#a87500]"
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#24364e]"
               >
-                <Edit3 size={20} className="shrink-0 text-[#d29a00]" />
+                <Edit3 size={20} className="shrink-0 text-[#071426]" />
                 <span className="flex-1 text-sm font-medium">Edit profile</span>
                 <ChevronRight
                   size={18}
-                  className="shrink-0 text-[#d29a00] transition group-hover:translate-x-0.5 group-hover:text-[#a87500]"
+                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#071426]"
                 />
               </button>
             </div>
@@ -458,7 +458,7 @@ export default function ProfilePage() {
 
           <section
             aria-labelledby="security-heading"
-            className="overflow-hidden rounded-[24px] border border-[#f4b400]/15 bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
           >
             <h3 id="security-heading" className="sr-only">
               Account actions
@@ -468,15 +468,15 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={openPasswordEditor}
-                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#a87500]"
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#24364e]"
               >
-                <KeyRound size={20} className="shrink-0 text-[#d29a00]" />
+                <KeyRound size={20} className="shrink-0 text-[#071426]" />
                 <span className="flex-1 text-sm font-medium">
                   Change password
                 </span>
                 <ChevronRight
                   size={18}
-                  className="shrink-0 text-[#d29a00] transition group-hover:translate-x-0.5 group-hover:text-[#a87500]"
+                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#071426]"
                 />
               </button>
 
@@ -502,7 +502,7 @@ export default function ProfilePage() {
           <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-[28px] border border-[#e2e6eb] bg-white p-5 text-[#071426] shadow-2xl sm:rounded-[28px] sm:p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c58d00]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7b828c]">
                   Edit Profile
                 </p>
                 <h2 className="mt-2 text-2xl font-bold">Personal details</h2>
@@ -525,7 +525,7 @@ export default function ProfilePage() {
                 <input
                   value={fullNameDraft}
                   onChange={(event) => setFullNameDraft(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:ring-4 focus:ring-[#f4b400]/15"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 />
               </label>
 
@@ -538,7 +538,7 @@ export default function ProfilePage() {
                   onChange={(event) =>
                     setLicenceDraft(event.target.value as LicenceLevel)
                   }
-                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:ring-4 focus:ring-[#f4b400]/15"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 >
                   <option value="ppl">PPL</option>
                   <option value="cpl">CPL</option>
@@ -559,7 +559,7 @@ export default function ProfilePage() {
                 type="button"
                 onClick={handleProfileSave}
                 disabled={savingProfile}
-                className="rounded-xl bg-[#f4b400] px-4 py-3 text-sm font-bold text-[#071426] transition hover:bg-[#dca200] disabled:opacity-60"
+                className="rounded-xl bg-[#071426] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#12243c] disabled:opacity-60"
               >
                 {savingProfile ? "Saving..." : "Save Changes"}
               </button>
@@ -573,7 +573,7 @@ export default function ProfilePage() {
           <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-[28px] border border-[#e2e6eb] bg-white p-5 text-[#071426] shadow-2xl sm:rounded-[28px] sm:p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c58d00]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7b828c]">
                   Account Security
                 </p>
                 <h2 className="mt-2 text-2xl font-bold">Change password</h2>
@@ -597,7 +597,7 @@ export default function ProfilePage() {
                   type="password"
                   value={newPassword}
                   onChange={(event) => setNewPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:ring-4 focus:ring-[#f4b400]/15"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 />
               </label>
 
@@ -609,7 +609,7 @@ export default function ProfilePage() {
                   type="password"
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:ring-4 focus:ring-[#f4b400]/15"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 />
               </label>
             </div>
@@ -626,7 +626,7 @@ export default function ProfilePage() {
                 type="button"
                 onClick={handlePasswordChange}
                 disabled={savingPassword}
-                className="rounded-xl bg-[#f4b400] px-4 py-3 text-sm font-bold text-[#071426] transition hover:bg-[#dca200] disabled:opacity-60"
+                className="rounded-xl bg-[#071426] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#12243c] disabled:opacity-60"
               >
                 {savingPassword ? "Updating..." : "Update Password"}
               </button>

@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import {
   ArrowLeft,
@@ -10,7 +11,12 @@ import {
   LockKeyhole,
 } from "lucide-react"
 
-import { MOCK_QUESTION_COUNT, formatSubjectName } from "../practice-utils"
+import {
+  MOCK_QUESTION_COUNT,
+  MOCK_TIME_SECONDS,
+  PASS_MARK,
+  formatSubjectName,
+} from "../practice-utils"
 
 type SubjectManual = {
   title: string
@@ -55,6 +61,13 @@ export function TrainingModeMenu({
   const manual = SUBJECT_MANUALS[subject]
   const mockQuestionCount = Math.min(MOCK_QUESTION_COUNT, questionCount)
   const subjectName = formatSubjectName(subject)
+  const mockDurationMinutes = Math.ceil(MOCK_TIME_SECONDS / 60)
+  const [showMockInstructions, setShowMockInstructions] = useState(false)
+
+  const beginMockExam = () => {
+    setShowMockInstructions(false)
+    onStartMock()
+  }
 
   return (
     <main className="min-h-screen bg-[#071522] text-white">
@@ -121,7 +134,7 @@ export function TrainingModeMenu({
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <button
             type="button"
-            onClick={onStartMock}
+            onClick={() => setShowMockInstructions(true)}
             className="group flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
           >
             <div className="flex items-start justify-between gap-4">
@@ -145,10 +158,7 @@ export function TrainingModeMenu({
                 : "Randomized SACAA-style exam questions."}
             </p>
 
-            <div className="mt-auto flex items-center justify-between gap-4 pt-5">
-              <span className="text-sm font-semibold text-[#b8c7d9]">
-                {mockQuestionCount} questions
-              </span>
+            <div className="mt-auto flex justify-end pt-5">
               <span className="inline-flex items-center gap-2 rounded-xl bg-[#f4b400] px-3 py-2 text-xs font-bold text-[#06111f] transition group-hover:bg-[#ffc62a]">
                 Start exam
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -173,10 +183,7 @@ export function TrainingModeMenu({
                 Focus on one subject area at a time.
               </p>
 
-              <div className="mt-auto flex items-center justify-between gap-4 pt-5">
-                <span className="text-sm font-semibold text-[#b8c7d9]">
-                  No question limit
-                </span>
+              <div className="mt-auto flex justify-end pt-5">
                 <span className="inline-flex items-center gap-2 rounded-xl bg-[#f4b400] px-3 py-2 text-xs font-bold text-[#06111f] transition group-hover:bg-[#ffc62a]">
                   Choose topic
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -209,6 +216,96 @@ export function TrainingModeMenu({
           )}
         </div>
       </section>
+
+      {showMockInstructions && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6 sm:px-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mock-exam-title"
+          onClick={() => setShowMockInstructions(false)}
+        >
+          <div
+            className="w-full max-w-lg overflow-hidden rounded-lg bg-white text-slate-900 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="bg-[#1f4e79] px-6 py-5 text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-100">
+                PilotVault SA Exam Practice
+              </p>
+              <h2 id="mock-exam-title" className="mt-1 text-2xl font-bold">
+                Ready to start?
+              </h2>
+            </div>
+
+            <div className="p-6">
+              <div className="grid grid-cols-3 gap-2">
+                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xl font-bold text-[#1f4e79]">
+                    {mockQuestionCount}
+                  </p>
+                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
+                    Questions
+                  </p>
+                </div>
+                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xl font-bold text-[#1f4e79]">
+                    {mockDurationMinutes}
+                  </p>
+                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
+                    Minutes
+                  </p>
+                </div>
+                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xl font-bold text-[#1f4e79]">
+                    {PASS_MARK}%
+                  </p>
+                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
+                    Pass mark
+                  </p>
+                </div>
+              </div>
+
+              <h3 className="mt-6 font-bold text-slate-900">
+                Before you begin
+              </h3>
+              <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
+                  The timer starts as soon as you enter the simulator.
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
+                  You can move between questions and pin any question for
+                  review.
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
+                  Unanswered questions count as incorrect, and the exam submits
+                  automatically when time expires.
+                </li>
+              </ul>
+
+              <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+                <button
+                  type="button"
+                  onClick={() => setShowMockInstructions(false)}
+                  className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 sm:py-2.5"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={beginMockExam}
+                  className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#183d60] sm:py-2.5"
+                >
+                  Start mock exam
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }

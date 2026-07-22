@@ -3,8 +3,9 @@ import { supabase } from "@/src/lib/supabase"
 import type { DatabaseQuestion, Question } from "./types"
 
 const SUPABASE_PAGE_SIZE = 1000
+const questionRequests = new Map<string, Promise<Question[]>>()
 
-export async function fetchSubjectQuestions(
+async function loadSubjectQuestions(
   subject: string,
   trialOnly: boolean
 ): Promise<Question[]> {
@@ -74,4 +75,24 @@ export async function fetchSubjectQuestions(
     correctAnswer: question.correct_answer,
     explanation: question.explanation ?? "",
   }))
+}
+
+export async function fetchSubjectQuestions(
+  subject: string,
+  trialOnly: boolean
+): Promise<Question[]> {
+  const cacheKey = `${subject}:${trialOnly ? "trial" : "full"}`
+  const cachedRequest = questionRequests.get(cacheKey)
+
+  if (cachedRequest) {
+    return cachedRequest
+  }
+
+  const request = loadSubjectQuestions(subject, trialOnly).catch((error) => {
+    questionRequests.delete(cacheKey)
+    throw error
+  })
+
+  questionRequests.set(cacheKey, request)
+  return request
 }

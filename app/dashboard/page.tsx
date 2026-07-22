@@ -15,7 +15,15 @@ import {
   LogOut,
   UserRound,
 } from "lucide-react"
-import { LoadingScreen } from "@/components/loading-screen"
+import { PageSkeleton } from "@/components/page-skeleton"
+import {
+  clearClientDataCache,
+  getCachedCurrentUser,
+  getCachedProfile,
+  getCachedSubjectAccess,
+  type CachedProfile,
+  type CachedSubjectAccess,
+} from "@/src/lib/client-data-cache"
 import { supabase } from "@/src/lib/supabase"
 
 // Production deployment trigger. No visual or functional changes.
@@ -34,61 +42,63 @@ const subjects = [
   { name: "Flight Planning", slug: "flight-planning", icon: Map },
 ]
 
-type Profile = {
-  subscription_status: string | null
-  subscription_plan: string | null
-  payment_status: string | null
-  trial_ends_at: string | null
-  subscription_expires_at: string | null
-}
-
-type SubjectAccess = {
-  subject: string
-  access_status: string | null
-  expires_at: string
-}
-
 export default function DashboardPage() {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
-  const [profile, setProfile] = useState<Profile | null>(null)
-  const [subjectAccess, setSubjectAccess] = useState<SubjectAccess[]>([])
+  const [loadError, setLoadError] = useState("")
+  const [profile, setProfile] = useState<CachedProfile | null>(null)
+  const [subjectAccess, setSubjectAccess] = useState<CachedSubjectAccess[]>([])
 
   useEffect(() => {
-    const checkUser = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
+    let cancelled = false
 
-      if (!user) {
-        router.push("/")
-        return
+    const loadDashboard = async () => {
+      try {
+        setLoading(true)
+        setLoadError("")
+
+        const user = await getCachedCurrentUser()
+
+        if (!user) {
+          router.replace("/")
+          return
+        }
+
+        const [profileData, accessData] = await Promise.all([
+          getCachedProfile(user.id),
+          getCachedSubjectAccess(user.id),
+        ])
+
+        if (!cancelled) {
+          setProfile(profileData)
+          setSubjectAccess(accessData)
+        }
+      } catch (error) {
+        if (!cancelled) {
+          setLoadError(
+            error instanceof Error
+              ? error.message
+              : "Your dashboard could not be loaded."
+          )
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false)
+        }
       }
-
-      const { data: profileData } = await supabase
-        .from("Profiles")
-        .select(
-          "subscription_status, subscription_plan, payment_status, trial_ends_at, subscription_expires_at"
-        )
-        .eq("id", user.id)
-        .single()
-
-      const { data: accessData } = await supabase
-        .from("SubjectAccess")
-        .select("subject, access_status, expires_at")
-        .eq("user_id", user.id)
-
-      setProfile(profileData)
-      setSubjectAccess(accessData || [])
-      setLoading(false)
     }
 
-    checkUser()
+    loadDashboard()
+
+    return () => {
+      cancelled = true
+    }
   }, [router])
 
   const handleLogout = async () => {
+    clearClientDataCache()
     await supabase.auth.signOut()
-    router.push("/")
+    router.replace("/")
   }
 
   const isTrialUser =
@@ -114,8 +124,31 @@ export default function DashboardPage() {
     })
   }
 
-  if (loading) {
-    return <LoadingScreen />
+  if (loading || (!profile && !loadError)) {
+    return <PageSkeleton variant="dashboard" />
+  }
+
+  if (loadError) {
+    return (
+      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
+        <div className="mx-auto max-w-xl rounded-3xl border border-red-500/30 bg-[#081726] p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-[0.25em] text-red-400">
+            Dashboard Error
+          </p>
+          <h1 className="mt-3 text-2xl font-bold">
+            Your dashboard could not be loaded.
+          </h1>
+          <p className="mt-3 text-sm leading-6 text-gray-400">{loadError}</p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="mt-6 rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] hover:bg-[#d9a000]"
+          >
+            Try again
+          </button>
+        </div>
+      </main>
+    )
   }
 
   return (

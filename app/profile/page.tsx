@@ -19,7 +19,13 @@ import {
   X,
 } from "lucide-react"
 
-import { LoadingScreen } from "@/components/loading-screen"
+import { PageSkeleton } from "@/components/page-skeleton"
+import {
+  clearClientDataCache,
+  getCachedCurrentUser,
+  getCachedProfile,
+  updateCachedProfile,
+} from "@/src/lib/client-data-cache"
 import { supabase } from "@/src/lib/supabase"
 
 type LicenceLevel = "ppl" | "cpl" | "atpl"
@@ -94,31 +100,16 @@ export default function ProfilePage() {
         setLoading(true)
         setLoadError("")
 
-        const {
-          data: { user },
-          error: userError,
-        } = await supabase.auth.getUser()
-
-        if (userError) throw new Error(userError.message)
+        const user = await getCachedCurrentUser()
 
         if (!user) {
-          router.push("/")
+          router.replace("/")
           return
         }
 
-        const { data, error } = await supabase
-          .from("Profiles")
-          .select(
-            "full_name, email, licence_level, subscription_status, subscription_plan, trial_ends_at, subscription_expires_at"
-          )
-          .eq("id", user.id)
-          .single()
-
-        if (error) throw new Error(error.message)
+        const loadedProfile = await getCachedProfile(user.id)
 
         if (!cancelled) {
-          const loadedProfile = data as ProfileRecord
-
           setAuthEmail(user.email ?? loadedProfile.email ?? "")
           setProfile(loadedProfile)
           setFullNameDraft(loadedProfile.full_name)
@@ -179,15 +170,20 @@ export default function ProfilePage() {
 
       if (error) throw new Error(error.message)
 
+      const profilePatch = {
+        full_name: fullNameDraft.trim(),
+        licence_level: licenceDraft,
+      }
+
       setProfile((currentProfile) =>
         currentProfile
           ? {
               ...currentProfile,
-              full_name: fullNameDraft.trim(),
-              licence_level: licenceDraft,
+              ...profilePatch,
             }
           : currentProfile
       )
+      updateCachedProfile(profilePatch)
       setEditProfileOpen(false)
       setActionMessage("Profile updated successfully.")
     } catch (error) {
@@ -236,11 +232,14 @@ export default function ProfilePage() {
   }
 
   const handleSignOut = async () => {
+    clearClientDataCache()
     await supabase.auth.signOut()
-    router.push("/")
+    router.replace("/")
   }
 
-  if (loading) return <LoadingScreen />
+  if (loading || (!profile && !loadError)) {
+    return <PageSkeleton variant="profile" />
+  }
 
   if (loadError || !profile) {
     return (

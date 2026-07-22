@@ -4,7 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { useParams, useRouter } from "next/navigation"
 
-import { supabase } from "@/src/lib/supabase"
+import { PageSkeleton } from "@/components/page-skeleton"
+import {
+  getCachedCurrentUser,
+  getCachedProfile,
+  getCachedSubjectAccess,
+} from "@/src/lib/client-data-cache"
 
 import { ExamResults } from "./components/exam-results"
 import { ExamSimulator } from "./components/exam-simulator"
@@ -28,6 +33,7 @@ export default function SubjectPracticePage() {
 
   const [subjectQuestions, setSubjectQuestions] = useState<Question[]>([])
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(true)
+  const [isRedirecting, setIsRedirecting] = useState(false)
   const [loadingError, setLoadingError] = useState("")
 
   const [examMode, setExamMode] = useState<ExamMode>("menu")
@@ -52,45 +58,27 @@ export default function SubjectPracticePage() {
   useEffect(() => {
     let cancelled = false
 
+    const redirectTo = (href: string) => {
+      if (!cancelled) {
+        setIsRedirecting(true)
+      }
+      router.replace(href)
+    }
+
     const checkUserAndFetchQuestions = async () => {
       try {
         setIsLoadingQuestions(true)
+        setIsRedirecting(false)
         setLoadingError("")
 
-        const {
-          data: { user },
-          error: userError,
-        } = await supabase.auth.getUser()
-
-        if (userError) {
-          throw new Error(userError.message)
-        }
+        const user = await getCachedCurrentUser()
 
         if (!user) {
-          router.push("/")
+          redirectTo("/")
           return
         }
 
-        const { data: profile, error: profileError } = await supabase
-          .from("Profiles")
-          .select(
-            `
-              subscription_status,
-              subscription_plan,
-              trial_ends_at
-            `
-          )
-          .eq("id", user.id)
-          .maybeSingle()
-
-        if (profileError) {
-          throw new Error(profileError.message)
-        }
-
-        if (!profile) {
-          router.push("/upgrade")
-          return
-        }
+        const profile = await getCachedProfile(user.id)
 
         const isPplUser =
           profile.subscription_status === "active" &&
@@ -108,32 +96,25 @@ export default function SubjectPracticePage() {
             new Date(profile.trial_ends_at) < new Date()
 
           if (trialExpired) {
-            router.push(`/upgrade?subject=${subject}`)
+            redirectTo(`/upgrade?subject=${subject}`)
             return
           }
         }
 
         if (!isTrialUser && !isPplUser) {
-          const { data: subjectAccess, error: subjectAccessError } =
-            await supabase
-              .from("SubjectAccess")
-              .select("access_status, expires_at")
-              .eq("user_id", user.id)
-              .eq("subject", subject)
-              .eq("access_status", "active")
-              .maybeSingle()
-
-          if (subjectAccessError) {
-            throw new Error(subjectAccessError.message)
-          }
+          const accessData = await getCachedSubjectAccess(user.id)
+          const subjectAccess = accessData.find(
+            (access) =>
+              access.subject === subject &&
+              access.access_status === "active"
+          )
 
           const hasValidAccess =
-            Boolean(subjectAccess) &&
             Boolean(subjectAccess?.expires_at) &&
             new Date(subjectAccess!.expires_at) > new Date()
 
           if (!hasValidAccess) {
-            router.push(`/upgrade?subject=${subject}`)
+            redirectTo(`/upgrade?subject=${subject}`)
             return
           }
 
@@ -365,16 +346,8 @@ export default function SubjectPracticePage() {
     totalQuestions,
   ])
 
-  if (isLoadingQuestions) {
-    return (
-      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-sm font-medium text-[#f4b400]">
-            Loading questions...
-          </p>
-        </div>
-      </main>
-    )
+  if (isLoadingQuestions || isRedirecting) {
+    return <PageSkeleton variant="practice" />
   }
 
   if (loadingError) {

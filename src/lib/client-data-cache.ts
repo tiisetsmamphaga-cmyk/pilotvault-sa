@@ -130,7 +130,7 @@ export async function getCachedProfile(
       })
   }
 
-  return profileRequest
+  return profileRequest!
 }
 
 export async function getCachedSubjectAccess(
@@ -161,7 +161,7 @@ export async function getCachedSubjectAccess(
       })
   }
 
-  return accessRequest
+  return accessRequest!
 }
 
 export function updateCachedProfile(patch: Partial<CachedProfile>) {

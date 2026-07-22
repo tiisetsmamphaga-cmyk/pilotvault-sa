@@ -5,7 +5,7 @@ type PageSkeletonProps = {
 function SkeletonBlock({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`animate-pulse rounded-xl bg-[#15304b] motion-reduce:animate-none ${className}`}
+      className={`pv-skeleton rounded-xl ${className}`}
     />
   )
 }

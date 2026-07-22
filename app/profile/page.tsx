@@ -5,13 +5,17 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
   ArrowLeft,
+  CalendarDays,
   CheckCircle2,
   ChevronRight,
   CreditCard,
   Edit3,
+  GraduationCap,
   KeyRound,
   LogOut,
+  Mail,
   ShieldCheck,
+  UserRound,
   X,
 } from "lucide-react"
 
@@ -240,24 +244,24 @@ export default function ProfilePage() {
 
   if (loadError || !profile) {
     return (
-      <main className="min-h-screen bg-[#06111f] px-4 py-10 text-white sm:px-6">
-        <div className="mx-auto max-w-4xl">
+      <main className="min-h-screen bg-[#eef1f4] px-4 py-10 text-[#071426] sm:px-6">
+        <div className="mx-auto max-w-xl">
           <Link
             href="/dashboard"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#f4b400] hover:text-white"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#071426] transition hover:opacity-60"
           >
             <ArrowLeft size={16} />
             Back to Dashboard
           </Link>
 
-          <div className="mt-8 rounded-3xl border border-red-500/30 bg-[#081726] p-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-red-400">
+          <div className="mt-8 rounded-[24px] border border-red-200 bg-white p-7 shadow-[0_12px_36px_rgba(15,23,42,0.08)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-600">
               Profile Error
             </p>
             <h1 className="mt-3 text-3xl font-bold">
               Your profile could not be loaded.
             </h1>
-            <p className="mt-3 text-gray-400">{loadError}</p>
+            <p className="mt-3 text-[#707782]">{loadError}</p>
           </div>
         </div>
       </main>
@@ -284,238 +288,221 @@ export default function ProfilePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#06111f] text-white">
-      <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
-        <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:min-h-20 sm:px-6 lg:px-8">
-          <div className="min-w-0">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-[#f4b400] sm:text-xs sm:tracking-[0.25em]">
-              PilotVault SA
-            </p>
-            <h1 className="mt-1 truncate text-base font-bold sm:text-lg">
-              Student Profile
-            </h1>
-          </div>
-
+    <main className="min-h-screen bg-[#eef1f4] text-[#071426]">
+      <section className="mx-auto max-w-xl px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-10">
+        <div className="flex items-center justify-between gap-4">
           <Link
             href="/dashboard"
-            className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-[#1e3a5f] px-3 py-2.5 text-sm text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400] sm:px-4 sm:py-3"
+            aria-label="Back to dashboard"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#071426] shadow-[0_6px_18px_rgba(15,23,42,0.08)] transition hover:-translate-x-0.5 hover:bg-[#f8f9fa]"
           >
-            <ArrowLeft size={16} />
-            <span className="hidden sm:inline">Dashboard</span>
-            <span className="sm:hidden">Back</span>
+            <ArrowLeft size={19} />
           </Link>
-        </div>
-      </header>
 
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7b828c]">
+            PilotVault SA
+          </p>
+        </div>
+
+        <h1 className="mt-8 text-[34px] font-bold tracking-[-0.035em] sm:text-[40px]">
+          Profile
+        </h1>
+
+        <div className="mt-5 flex min-w-0 items-center gap-4 px-1">
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#071426] text-xl font-bold text-white shadow-[0_8px_22px_rgba(7,20,38,0.2)]">
+            {initials}
+          </div>
+
+          <div className="min-w-0 flex-1">
+            <h2 className="truncate text-xl font-bold tracking-[-0.02em]">
+              {profile.full_name}
+            </h2>
+            <p className="mt-1 truncate text-sm text-[#7b828c]">
+              {formatPlan(profile.subscription_plan)}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <span className="rounded-full bg-[#dfe4e9] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#071426]">
+                {(profile.licence_level ?? "ppl").toUpperCase()} Student
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-[#071426]">
+                <CheckCircle2 size={12} />
+                {formatStatus(profile.subscription_status, isTrialUser)}
+              </span>
+            </div>
+          </div>
+        </div>
+
         {(actionMessage || actionError) && (
           <div
-            className={`mb-5 rounded-2xl border px-4 py-3 text-sm sm:mb-6 sm:px-5 sm:py-4 ${
+            role="status"
+            aria-live="polite"
+            className={`mt-6 rounded-2xl border px-4 py-3 text-sm ${
               actionError
-                ? "border-red-500/30 bg-red-500/10 text-red-200"
-                : "border-green-500/30 bg-green-500/10 text-green-200"
+                ? "border-red-200 bg-red-50 text-red-700"
+                : "border-emerald-200 bg-emerald-50 text-emerald-700"
             }`}
           >
             {actionError || actionMessage}
           </div>
         )}
 
-        <div className="overflow-hidden rounded-3xl border border-[#1e3a5f] bg-[#081726] shadow-2xl shadow-black/10">
-          <div className="relative overflow-hidden border-b border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8">
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-2/3 bg-[radial-gradient(circle_at_top_right,rgba(244,180,0,0.12),transparent_55%)]" />
+        <div className="mt-8 space-y-4 sm:mt-10">
+          <section
+            aria-labelledby="access-heading"
+            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+          >
+            <h3 id="access-heading" className="sr-only">
+              Access and billing
+            </h3>
 
-            <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex min-w-0 items-center gap-4 sm:gap-5">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#f4b400]/30 bg-[#f4b400]/10 text-xl font-bold text-[#f4b400] sm:h-20 sm:w-20 sm:text-2xl">
-                  {initials}
-                </div>
-
-                <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#f4b400] sm:text-xs">
-                    Student Account
+            <div className="divide-y divide-[#e6e9ed]">
+              <div className="flex min-h-[70px] items-center gap-4 py-4">
+                <CreditCard size={20} className="shrink-0 text-[#071426]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium">Current plan</p>
+                  <p className="mt-0.5 text-xs text-[#7b828c]">
+                    {formatPlan(profile.subscription_plan)}
                   </p>
-                  <h2 className="mt-1 truncate text-2xl font-bold sm:mt-2 sm:text-3xl">
+                </div>
+              </div>
+
+              <div className="flex min-h-[70px] items-center gap-4 py-4">
+                <ShieldCheck size={20} className="shrink-0 text-[#071426]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium">Subscription status</p>
+                  <p className="mt-0.5 text-xs text-[#7b828c]">
+                    {formatStatus(profile.subscription_status, isTrialUser)}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex min-h-[70px] items-center gap-4 py-4">
+                <CalendarDays size={20} className="shrink-0 text-[#071426]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium">{expiryLabel}</p>
+                  <p className="mt-0.5 text-xs text-[#7b828c]">
+                    {formatDate(expiryValue)}
+                  </p>
+                </div>
+              </div>
+
+              <Link
+                href="/upgrade"
+                className="group flex min-h-[70px] items-center gap-4 py-4 transition hover:text-[#24364e]"
+              >
+                <CreditCard size={20} className="shrink-0 text-[#071426]" />
+                <span className="flex-1 text-sm font-medium">
+                  Manage subscription
+                </span>
+                <ChevronRight
+                  size={18}
+                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#071426]"
+                />
+              </Link>
+            </div>
+          </section>
+
+          <section
+            aria-labelledby="details-heading"
+            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+          >
+            <h3 id="details-heading" className="sr-only">
+              Profile information
+            </h3>
+
+            <div className="divide-y divide-[#e6e9ed]">
+              <div className="flex min-h-[70px] items-center gap-4 py-4">
+                <UserRound size={20} className="shrink-0 text-[#071426]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium">Full name</p>
+                  <p className="mt-0.5 break-words text-xs text-[#7b828c]">
                     {profile.full_name}
-                  </h2>
-                  <p className="mt-1 truncate text-sm text-gray-400 sm:mt-2 sm:text-base">
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex min-h-[70px] items-center gap-4 py-4">
+                <Mail size={20} className="shrink-0 text-[#071426]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium">Email address</p>
+                  <p className="mt-0.5 break-all text-xs text-[#7b828c]">
                     {authEmail}
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 sm:justify-end">
-                <span className="inline-flex items-center rounded-full border border-[#f4b400]/30 bg-[#f4b400]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#f4b400]">
-                  {(profile.licence_level ?? "ppl").toUpperCase()} Student
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1e3a5f] bg-[#06111f]/60 px-3 py-1.5 text-xs font-semibold text-gray-200">
-                  <CheckCircle2 size={14} className="text-[#f4b400]" />
-                  {formatStatus(profile.subscription_status, isTrialUser)}
-                </span>
+              <div className="flex min-h-[70px] items-center gap-4 py-4">
+                <GraduationCap size={20} className="shrink-0 text-[#071426]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium">Current licence level</p>
+                  <p className="mt-0.5 text-xs uppercase text-[#7b828c]">
+                    {profile.licence_level ?? "ppl"}
+                  </p>
+                </div>
               </div>
+
+              <button
+                type="button"
+                onClick={openProfileEditor}
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#24364e]"
+              >
+                <Edit3 size={20} className="shrink-0 text-[#071426]" />
+                <span className="flex-1 text-sm font-medium">Edit profile</span>
+                <ChevronRight
+                  size={18}
+                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#071426]"
+                />
+              </button>
             </div>
-          </div>
+          </section>
 
-          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px]">
-            <div className="min-w-0">
-              <section className="px-5 py-6 sm:px-8 sm:py-8">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
-                      Profile Information
-                    </p>
-                    <h3 className="mt-2 text-xl font-bold">Personal details</h3>
-                  </div>
+          <section
+            aria-labelledby="security-heading"
+            className="overflow-hidden rounded-[24px] bg-white px-5 shadow-[0_12px_36px_rgba(15,23,42,0.07)] sm:px-6"
+          >
+            <h3 id="security-heading" className="sr-only">
+              Account actions
+            </h3>
 
-                  <button
-                    type="button"
-                    onClick={openProfileEditor}
-                    className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-[#1e3a5f] px-3 py-2 text-sm font-semibold text-gray-300 transition hover:border-[#f4b400] hover:text-[#f4b400] sm:px-4"
-                  >
-                    <Edit3 size={16} />
-                    <span className="hidden sm:inline">Edit</span>
-                  </button>
-                </div>
+            <div className="divide-y divide-[#e6e9ed]">
+              <button
+                type="button"
+                onClick={openPasswordEditor}
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left transition hover:text-[#24364e]"
+              >
+                <KeyRound size={20} className="shrink-0 text-[#071426]" />
+                <span className="flex-1 text-sm font-medium">
+                  Change password
+                </span>
+                <ChevronRight
+                  size={18}
+                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-[#071426]"
+                />
+              </button>
 
-                <dl className="mt-6 divide-y divide-[#1e3a5f] border-y border-[#1e3a5f]">
-                  <div className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-6">
-                    <dt className="text-sm text-gray-500">Full name</dt>
-                    <dd className="break-words font-semibold text-white sm:text-right">
-                      {profile.full_name}
-                    </dd>
-                  </div>
-                  <div className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-6">
-                    <dt className="text-sm text-gray-500">Email address</dt>
-                    <dd className="break-all font-semibold text-white sm:text-right">
-                      {authEmail}
-                    </dd>
-                  </div>
-                  <div className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-6">
-                    <dt className="text-sm text-gray-500">
-                      Current licence level
-                    </dt>
-                    <dd className="font-semibold uppercase text-white sm:text-right">
-                      {profile.licence_level ?? "ppl"}
-                    </dd>
-                  </div>
-                </dl>
-              </section>
+              <button
+                type="button"
+                onClick={handleSignOut}
+                className="group flex min-h-[70px] w-full items-center gap-4 py-4 text-left text-[#071426] transition hover:text-red-600"
+              >
+                <LogOut size={20} className="shrink-0" />
+                <span className="flex-1 text-sm font-medium">Sign out</span>
+                <ChevronRight
+                  size={18}
+                  className="shrink-0 text-[#8b929c] transition group-hover:translate-x-0.5 group-hover:text-red-500"
+                />
+              </button>
             </div>
-
-            <aside className="border-t border-[#1e3a5f] lg:border-l lg:border-t-0">
-              <section className="px-5 py-6 sm:px-8 sm:py-8 lg:px-6">
-                <div className="flex items-center gap-3">
-                  <ShieldCheck size={21} className="text-[#f4b400]" />
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
-                      Account
-                    </p>
-                    <h3 className="mt-1 text-xl font-bold">
-                      Access and billing
-                    </h3>
-                  </div>
-                </div>
-
-                <dl className="mt-6 divide-y divide-[#1e3a5f] border-y border-[#1e3a5f]">
-                  <div className="py-4">
-                    <dt className="text-sm text-gray-500">Current plan</dt>
-                    <dd className="mt-1 font-semibold">
-                      {formatPlan(profile.subscription_plan)}
-                    </dd>
-                  </div>
-                  <div className="py-4">
-                    <dt className="text-sm text-gray-500">
-                      Subscription status
-                    </dt>
-                    <dd className="mt-1 inline-flex items-center gap-2 font-semibold">
-                      <CheckCircle2 size={16} className="text-[#f4b400]" />
-                      {formatStatus(profile.subscription_status, isTrialUser)}
-                    </dd>
-                  </div>
-                  <div className="py-4">
-                    <dt className="text-sm text-gray-500">{expiryLabel}</dt>
-                    <dd className="mt-1 font-semibold">
-                      {formatDate(expiryValue)}
-                    </dd>
-                  </div>
-                </dl>
-              </section>
-
-              <section className="border-t border-[#1e3a5f] px-5 py-6 sm:px-8 sm:py-8 lg:px-6">
-                <p className="text-xs uppercase tracking-[0.22em] text-[#f4b400]">
-                  Account Actions
-                </p>
-                <h3 className="mt-2 text-xl font-bold">Manage your account</h3>
-
-                <div className="mt-5 divide-y divide-[#1e3a5f] border-y border-[#1e3a5f]">
-                  <button
-                    type="button"
-                    onClick={openProfileEditor}
-                    className="group flex min-h-14 w-full items-center gap-3 py-3.5 text-left transition hover:text-[#f4b400]"
-                  >
-                    <Edit3 size={19} className="text-[#f4b400]" />
-                    <span className="flex-1 text-sm font-semibold">
-                      Edit Profile
-                    </span>
-                    <ChevronRight
-                      size={18}
-                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={openPasswordEditor}
-                    className="group flex min-h-14 w-full items-center gap-3 py-3.5 text-left transition hover:text-[#f4b400]"
-                  >
-                    <KeyRound size={19} className="text-[#f4b400]" />
-                    <span className="flex-1 text-sm font-semibold">
-                      Change Password
-                    </span>
-                    <ChevronRight
-                      size={18}
-                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
-                    />
-                  </button>
-
-                  <Link
-                    href="/upgrade"
-                    className="group flex min-h-14 items-center gap-3 py-3.5 transition hover:text-[#f4b400]"
-                  >
-                    <CreditCard size={19} className="text-[#f4b400]" />
-                    <span className="flex-1 text-sm font-semibold">
-                      Manage Subscription
-                    </span>
-                    <ChevronRight
-                      size={18}
-                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-[#f4b400]"
-                    />
-                  </Link>
-
-                  <button
-                    type="button"
-                    onClick={handleSignOut}
-                    className="group flex min-h-14 w-full items-center gap-3 py-3.5 text-left text-gray-300 transition hover:text-red-300"
-                  >
-                    <LogOut size={19} />
-                    <span className="flex-1 text-sm font-semibold">Sign Out</span>
-                    <ChevronRight
-                      size={18}
-                      className="text-gray-600 transition group-hover:translate-x-0.5 group-hover:text-red-300"
-                    />
-                  </button>
-                </div>
-              </section>
-            </aside>
-          </div>
+          </section>
         </div>
       </section>
 
       {editProfileOpen && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 px-0 pt-10 sm:items-center sm:px-4 sm:py-6">
-          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl border border-[#1e3a5f] bg-[#081726] p-5 shadow-2xl sm:rounded-3xl sm:p-6">
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-[#071426]/45 px-0 pt-10 backdrop-blur-[2px] sm:items-center sm:px-4 sm:py-6">
+          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-[28px] border border-[#e2e6eb] bg-white p-5 text-[#071426] shadow-2xl sm:rounded-[28px] sm:p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7b828c]">
                   Edit Profile
                 </p>
                 <h2 className="mt-2 text-2xl font-bold">Personal details</h2>
@@ -524,7 +511,7 @@ export default function ProfilePage() {
                 type="button"
                 aria-label="Close edit profile"
                 onClick={() => setEditProfileOpen(false)}
-                className="rounded-xl border border-[#1e3a5f] p-2 text-gray-400 hover:text-white"
+                className="rounded-full border border-[#e2e6eb] p-2 text-[#7b828c] transition hover:bg-[#f2f4f6] hover:text-[#071426]"
               >
                 <X size={18} />
               </button>
@@ -532,18 +519,18 @@ export default function ProfilePage() {
 
             <div className="mt-6 space-y-5">
               <label className="block">
-                <span className="text-sm font-medium text-gray-300">
+                <span className="text-sm font-medium text-[#4f5660]">
                   Full name
                 </span>
                 <input
                   value={fullNameDraft}
                   onChange={(event) => setFullNameDraft(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 />
               </label>
 
               <label className="block">
-                <span className="text-sm font-medium text-gray-300">
+                <span className="text-sm font-medium text-[#4f5660]">
                   Current licence level
                 </span>
                 <select
@@ -551,7 +538,7 @@ export default function ProfilePage() {
                   onChange={(event) =>
                     setLicenceDraft(event.target.value as LicenceLevel)
                   }
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 >
                   <option value="ppl">PPL</option>
                   <option value="cpl">CPL</option>
@@ -564,7 +551,7 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={() => setEditProfileOpen(false)}
-                className="rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm font-semibold text-gray-300"
+                className="rounded-xl border border-[#d9dee5] bg-white px-4 py-3 text-sm font-semibold text-[#4f5660] transition hover:bg-[#f5f6f8]"
               >
                 Cancel
               </button>
@@ -572,7 +559,7 @@ export default function ProfilePage() {
                 type="button"
                 onClick={handleProfileSave}
                 disabled={savingProfile}
-                className="rounded-xl bg-[#f4b400] px-4 py-3 text-sm font-bold text-[#06111f] disabled:opacity-60"
+                className="rounded-xl bg-[#071426] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#12243c] disabled:opacity-60"
               >
                 {savingProfile ? "Saving..." : "Save Changes"}
               </button>
@@ -582,11 +569,11 @@ export default function ProfilePage() {
       )}
 
       {passwordOpen && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 px-0 pt-10 sm:items-center sm:px-4 sm:py-6">
-          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl border border-[#1e3a5f] bg-[#081726] p-5 shadow-2xl sm:rounded-3xl sm:p-6">
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-[#071426]/45 px-0 pt-10 backdrop-blur-[2px] sm:items-center sm:px-4 sm:py-6">
+          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-[28px] border border-[#e2e6eb] bg-white p-5 text-[#071426] shadow-2xl sm:rounded-[28px] sm:p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#f4b400]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#7b828c]">
                   Account Security
                 </p>
                 <h2 className="mt-2 text-2xl font-bold">Change password</h2>
@@ -595,7 +582,7 @@ export default function ProfilePage() {
                 type="button"
                 aria-label="Close password form"
                 onClick={() => setPasswordOpen(false)}
-                className="rounded-xl border border-[#1e3a5f] p-2 text-gray-400 hover:text-white"
+                className="rounded-full border border-[#e2e6eb] p-2 text-[#7b828c] transition hover:bg-[#f2f4f6] hover:text-[#071426]"
               >
                 <X size={18} />
               </button>
@@ -603,26 +590,26 @@ export default function ProfilePage() {
 
             <div className="mt-6 space-y-5">
               <label className="block">
-                <span className="text-sm font-medium text-gray-300">
+                <span className="text-sm font-medium text-[#4f5660]">
                   New password
                 </span>
                 <input
                   type="password"
                   value={newPassword}
                   onChange={(event) => setNewPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 />
               </label>
 
               <label className="block">
-                <span className="text-sm font-medium text-gray-300">
+                <span className="text-sm font-medium text-[#4f5660]">
                   Confirm new password
                 </span>
                 <input
                   type="password"
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-base text-white outline-none focus:border-[#f4b400]"
+                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#071426] focus:bg-white"
                 />
               </label>
             </div>
@@ -631,7 +618,7 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={() => setPasswordOpen(false)}
-                className="rounded-xl border border-[#1e3a5f] px-4 py-3 text-sm font-semibold text-gray-300"
+                className="rounded-xl border border-[#d9dee5] bg-white px-4 py-3 text-sm font-semibold text-[#4f5660] transition hover:bg-[#f5f6f8]"
               >
                 Cancel
               </button>
@@ -639,7 +626,7 @@ export default function ProfilePage() {
                 type="button"
                 onClick={handlePasswordChange}
                 disabled={savingPassword}
-                className="rounded-xl bg-[#f4b400] px-4 py-3 text-sm font-bold text-[#06111f] disabled:opacity-60"
+                className="rounded-xl bg-[#071426] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#12243c] disabled:opacity-60"
               >
                 {savingPassword ? "Updating..." : "Update Password"}
               </button>

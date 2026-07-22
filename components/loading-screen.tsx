@@ -57,10 +57,13 @@ export function LoadingScreen({
             <span className="absolute -top-px left-12 h-px w-3 bg-[#f4b400]/35" />
           </div>
 
-          <div className="pv-plane-takeoff absolute bottom-2 left-4">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f4b400]/35 bg-[#102740] text-[#f4b400] shadow-[0_0_24px_rgba(244,180,0,0.28)]">
-              <Plane className="h-6 w-6" strokeWidth={1.8} />
-            </div>
+          <div className="pv-plane-takeoff absolute bottom-2 left-4 text-[#f4b400]">
+            <span className="absolute left-0 top-1/2 h-2 w-9 -translate-x-5 -translate-y-1/2 rounded-full bg-[#f4b400]/20 blur-md" />
+            <Plane
+              className="relative h-11 w-11 drop-shadow-[0_0_10px_rgba(244,180,0,0.5)]"
+              fill="currentColor"
+              strokeWidth={1.15}
+            />
           </div>
         </div>
 

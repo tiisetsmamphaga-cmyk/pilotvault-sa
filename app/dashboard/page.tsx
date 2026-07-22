@@ -159,41 +159,6 @@ export default function DashboardPage() {
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <div className="mb-6 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-5 sm:mb-8 sm:p-8">
           <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-            {isPplUser
-              ? "Full Access"
-              : isTrialUser
-                ? "Trial Access"
-                : "Subject Access"}
-          </p>
-
-          <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-4xl">
-            {isPplUser
-              ? "All PPL subjects unlocked."
-              : isTrialUser
-                ? "Explore every subject with limited trial access."
-                : "Access your purchased subjects."}
-          </h2>
-
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-400 sm:text-base">
-            {isPplUser
-              ? "Your PPL Pack gives you access to all subjects, mock exams, topic practice, and the full question bank."
-              : isTrialUser
-                ? "Your 3-day trial gives you access to all SACAA subjects through a fixed 25-question mock exam set. Topic-based practice and the full question bank require an active subscription."
-                : "You can access the subjects you have purchased. Purchase additional subjects whenever you're ready."}
-          </p>
-
-          {!isPplUser && (
-            <Link
-              href="/upgrade"
-              className="mt-5 inline-flex rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000]"
-            >
-              Upgrade to Full Access
-            </Link>
-          )}
-        </div>
-
-        <div className="mb-6 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-5 sm:mb-8 sm:p-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
             Practice Center
           </p>
 

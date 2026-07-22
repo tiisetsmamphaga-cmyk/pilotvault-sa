@@ -57,8 +57,8 @@ export function TrainingModeMenu({
   const subjectName = formatSubjectName(subject)
 
   return (
-    <main className="min-h-screen bg-[#06111f] text-white">
-      <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
+    <main className="min-h-screen bg-[#071522] text-white">
+      <header className="border-b border-[#29476d] bg-[#081726]/95">
         <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:min-h-20 sm:px-6 lg:px-8">
           <div className="min-w-0">
             <p className="text-[10px] uppercase tracking-[0.22em] text-[#f4b400] sm:text-xs sm:tracking-[0.25em]">
@@ -71,7 +71,7 @@ export function TrainingModeMenu({
 
           <Link
             href="/dashboard"
-            className="group flex h-11 items-center gap-2 rounded-2xl border border-[#1e3a5f] bg-[#081726] px-3 text-sm font-semibold text-gray-300 transition hover:border-[#f4b400]/60 hover:text-[#f4b400] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:px-4"
+            className="group flex h-11 items-center gap-2 rounded-2xl border border-[#29476d] bg-[#0b1d31] px-3 text-sm font-semibold text-[#b8c7d9] transition hover:border-[#f4b400]/60 hover:text-[#f4b400] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:px-4"
           >
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
             <span className="hidden sm:inline">Dashboard</span>
@@ -80,45 +80,27 @@ export function TrainingModeMenu({
       </header>
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-        <div className="rounded-3xl border border-[#1e3a5f] bg-[#081726] p-5 sm:p-8">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-[#f4b400]">
-                Training Center
-              </p>
-
-              <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-4xl">
-                Choose your training mode
-              </h2>
-
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-400 sm:text-base">
-                Simulate the SACAA exam or work through a specific topic at your
-                own pace.
-              </p>
-            </div>
-
-            <span className="inline-flex items-center gap-2 rounded-xl border border-[#1e3a5f] bg-[#06111f]/60 px-3 py-2 text-xs font-semibold text-gray-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#f4b400]" />
-              {isTrialAccount
-                ? `${mockQuestionCount} trial questions`
-                : `${questionCount} questions available`}
-            </span>
-          </div>
+        <div className="rounded-3xl border border-[#29476d] bg-[#0b1d31] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.14)] sm:p-8">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Choose a training mode
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-[#b8c7d9] sm:text-base">
+            Pick an option and start practising.
+          </p>
 
           {manual && (
-            <div className="mt-6 flex flex-col gap-4 border-t border-[#1e3a5f] pt-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex min-w-0 items-center gap-4">
+            <div className="mt-6 flex flex-col gap-4 border-t border-[#29476d] pt-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex min-w-0 items-center gap-3">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
                   <BookOpen className="h-5 w-5" />
                 </span>
 
                 <div className="min-w-0">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#f4b400]">
-                    Study resource
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f4b400]">
+                    Study manual
                   </p>
-                  <p className="mt-1 font-semibold text-white">{manual.title}</p>
-                  <p className="mt-1 text-sm leading-5 text-gray-400">
-                    {manual.description}
+                  <p className="mt-1 truncate font-semibold text-white">
+                    {manual.title}
                   </p>
                 </div>
               </div>
@@ -126,47 +108,49 @@ export function TrainingModeMenu({
               <a
                 href={manual.href}
                 download={manual.downloadName}
-                className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#f4b400] px-4 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70"
+                className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-[#f4b400]/35 bg-[#f4b400]/10 px-4 text-sm font-bold text-[#f4b400] transition hover:border-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70"
               >
                 <Download className="h-4 w-4" />
-                Download manual
+                Download
               </a>
             </div>
           )}
         </div>
 
-        <div className="mt-6 grid gap-3 sm:gap-5 md:grid-cols-2">
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
           <button
             type="button"
             onClick={onStartMock}
-            className="group flex min-h-[230px] cursor-pointer flex-col rounded-2xl border border-[#f4b400]/40 bg-[#081726] p-5 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
+            className="group flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
           >
             <div className="flex items-start justify-between gap-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400] sm:h-12 sm:w-12">
-                <ClipboardList className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
+                <ClipboardList className="h-5 w-5" />
               </span>
 
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4b400]">
-                {isTrialAccount ? "Trial access" : "Full access"}
-              </span>
+              {isTrialAccount && (
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4b400]">
+                  Trial
+                </span>
+              )}
             </div>
 
             <h3 className="mt-5 text-xl font-bold text-white sm:text-2xl">
               Mock exam
             </h3>
-            <p className="mt-2 max-w-md text-sm leading-6 text-gray-400">
+            <p className="mt-2 text-sm leading-6 text-[#b8c7d9]">
               {isTrialAccount
-                ? "Complete a fixed set of SACAA-style questions in an exam-focused session."
-                : "Complete a randomized set of SACAA-style questions from the full question bank."}
+                ? "A fixed SACAA-style question set."
+                : "Randomized SACAA-style exam questions."}
             </p>
 
-            <div className="mt-auto flex items-center justify-between gap-4 pt-6">
-              <span className="text-sm font-semibold text-gray-400">
+            <div className="mt-auto flex items-center justify-between gap-4 pt-5">
+              <span className="text-sm font-semibold text-[#b8c7d9]">
                 {mockQuestionCount} questions
               </span>
-              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#f4b400]">
+              <span className="inline-flex items-center gap-2 rounded-xl bg-[#f4b400] px-3 py-2 text-xs font-bold text-[#06111f] transition group-hover:bg-[#ffc62a]">
                 Start exam
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </span>
             </div>
           </button>
@@ -175,63 +159,49 @@ export function TrainingModeMenu({
             <button
               type="button"
               onClick={onOpenTopics}
-              className="group flex min-h-[230px] cursor-pointer flex-col rounded-2xl border border-[#f4b400]/40 bg-[#081726] p-5 text-left transition-all hover:-translate-y-1 hover:border-[#f4b400] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
+              className="group flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
             >
-              <div className="flex items-start justify-between gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400] sm:h-12 sm:w-12">
-                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6" />
-                </span>
-
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4b400]">
-                  Full access
-                </span>
-              </div>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
+                <BookOpen className="h-5 w-5" />
+              </span>
 
               <h3 className="mt-5 text-xl font-bold text-white sm:text-2xl">
                 Practice by topic
               </h3>
-              <p className="mt-2 max-w-md text-sm leading-6 text-gray-400">
-                Target a weak area and work through every available question
-                from that topic with no question cap.
+              <p className="mt-2 text-sm leading-6 text-[#b8c7d9]">
+                Focus on one subject area at a time.
               </p>
 
-              <div className="mt-auto flex items-center justify-between gap-4 pt-6">
-                <span className="text-sm font-semibold text-gray-400">
+              <div className="mt-auto flex items-center justify-between gap-4 pt-5">
+                <span className="text-sm font-semibold text-[#b8c7d9]">
                   No question limit
                 </span>
-                <span className="inline-flex items-center gap-2 text-sm font-bold text-[#f4b400]">
+                <span className="inline-flex items-center gap-2 rounded-xl bg-[#f4b400] px-3 py-2 text-xs font-bold text-[#06111f] transition group-hover:bg-[#ffc62a]">
                   Choose topic
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </div>
             </button>
           ) : (
             <Link
               href={`/upgrade?subject=${subject}`}
-              className="group flex min-h-[230px] flex-col rounded-2xl border border-[#1e3a5f] bg-[#081726] p-5 text-left opacity-60 transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
+              className="group flex min-h-[210px] flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
             >
-              <div className="flex items-start justify-between gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f4b400]/10 text-[#f4b400]/60 sm:h-12 sm:w-12">
-                  <LockKeyhole className="h-5 w-5" />
-                </span>
-
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4b400]">
-                  Upgrade required
-                </span>
-              </div>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/10 text-[#f4b400]">
+                <LockKeyhole className="h-5 w-5" />
+              </span>
 
               <h3 className="mt-5 text-xl font-bold text-white sm:text-2xl">
                 Practice by topic
               </h3>
-              <p className="mt-2 max-w-md text-sm leading-6 text-gray-400">
-                Target weak areas by topic using the full PilotVault question
-                bank.
+              <p className="mt-2 text-sm leading-6 text-[#b8c7d9]">
+                Unlock focused topic practice.
               </p>
 
-              <div className="mt-auto flex justify-end pt-6">
-                <span className="inline-flex items-center gap-2 text-sm font-bold text-[#f4b400]">
-                  View access options
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <div className="mt-auto flex justify-end pt-5">
+                <span className="inline-flex items-center gap-2 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 px-3 py-2 text-xs font-bold text-[#f4b400] transition group-hover:bg-[#f4b400] group-hover:text-[#06111f]">
+                  View access
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </div>
             </Link>

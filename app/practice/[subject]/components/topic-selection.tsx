@@ -47,14 +47,14 @@ export function TopicSelection({
       </header>
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-        <div className="rounded-3xl border border-[#29476d] bg-[#0b1d31] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.14)] sm:p-6">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+        <div className="rounded-2xl border border-[#29476d] bg-[#0b1d31] p-4 sm:p-5">
+          <h2 className="text-2xl font-bold tracking-tight">
             Choose a topic
           </h2>
-          <div className="mt-3 h-1 w-12 rounded-full bg-[#f4b400]" />
+          <div className="mt-2.5 h-0.5 w-10 rounded-full bg-[#f4b400]" />
         </div>
 
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <div className="mt-3 grid gap-3 md:grid-cols-2">
           {topics.map((topic) => {
             const questionCount = topicQuestionCounts[topic]
 
@@ -63,13 +63,13 @@ export function TopicSelection({
                 type="button"
                 key={topic}
                 onClick={() => onStartTopic(topic)}
-                className="group flex min-h-[92px] items-center justify-between gap-5 rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left transition-all hover:-translate-y-0.5 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70"
+                className="group flex min-h-[70px] items-center justify-between gap-4 rounded-xl border border-[#29476d] bg-[#0b1d31] px-4 py-3.5 text-left transition-all hover:-translate-y-px hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70"
               >
-                <h3 className="text-lg font-bold leading-snug text-white transition group-hover:text-[#f4b400] sm:text-xl">
+                <h3 className="text-base font-semibold leading-snug text-white transition group-hover:text-[#f4b400] sm:text-lg">
                   {topic}
                 </h3>
 
-                <span className="shrink-0 text-sm font-medium text-[#b8c7d9]">
+                <span className="shrink-0 text-xs font-medium text-[#b8c7d9]">
                   {questionCount} question{questionCount === 1 ? "" : "s"}
                 </span>
               </button>

@@ -68,7 +68,7 @@ export function TopicSelection({
                   {topic}
                 </h3>
 
-                <span className="shrink-0 text-sm font-medium text-[#b8c7d9]">
+                <span className="shrink-0 text-sm font-semibold text-[#f4b400]">
                   {questionCount} question{questionCount === 1 ? "" : "s"}
                 </span>
               </button>

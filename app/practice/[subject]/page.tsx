@@ -517,7 +517,7 @@ export default function SubjectPracticePage() {
       shownAnswers={shownAnswers}
       showMobileQuestionNav={showMobileQuestionNav}
       showFinishPrompt={showFinishPrompt}
-      onExit={returnToMenu}
+      onExit={examMode === "topic" ? returnToTopics : returnToMenu}
       onSelectQuestion={setCurrentQuestionIndex}
       onOpenMobileQuestionNav={() => setShowMobileQuestionNav(true)}
       onCloseMobileQuestionNav={() => setShowMobileQuestionNav(false)}

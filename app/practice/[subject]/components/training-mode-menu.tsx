@@ -46,8 +46,45 @@ type TrainingModeMenuProps = {
   questionCount: number
   isTrialAccount: boolean
   canAccessTopics: boolean
+  mockAverageScore: number | null
+  mockAttemptCount: number
   onStartMock: () => void
   onOpenTopics: () => void
+}
+
+function getReadinessStatus(averageScore: number | null) {
+  if (averageScore === null) {
+    return {
+      label: "No attempts yet",
+      className: "text-[#8fa7c2]",
+    }
+  }
+
+  if (averageScore >= 85) {
+    return {
+      label: "Highly ready",
+      className: "text-emerald-400",
+    }
+  }
+
+  if (averageScore >= PASS_MARK) {
+    return {
+      label: "Exam ready",
+      className: "text-emerald-400",
+    }
+  }
+
+  if (averageScore >= 60) {
+    return {
+      label: "Almost ready",
+      className: "text-[#f4b400]",
+    }
+  }
+
+  return {
+    label: "Keep practising",
+    className: "text-orange-400",
+  }
 }
 
 export function TrainingModeMenu({
@@ -55,6 +92,8 @@ export function TrainingModeMenu({
   questionCount,
   isTrialAccount,
   canAccessTopics,
+  mockAverageScore,
+  mockAttemptCount,
   onStartMock,
   onOpenTopics,
 }: TrainingModeMenuProps) {
@@ -62,6 +101,11 @@ export function TrainingModeMenu({
   const mockQuestionCount = Math.min(MOCK_QUESTION_COUNT, questionCount)
   const subjectName = formatSubjectName(subject)
   const mockDurationMinutes = Math.ceil(MOCK_TIME_SECONDS / 60)
+  const readinessStatus = getReadinessStatus(mockAverageScore)
+  const averageProgress = mockAverageScore ?? 0
+  const progressCircumference = 239
+  const progressOffset =
+    progressCircumference * (1 - averageProgress / 100)
   const [showMockInstructions, setShowMockInstructions] = useState(false)
 
   const beginMockExam = () => {
@@ -135,9 +179,9 @@ export function TrainingModeMenu({
           <button
             type="button"
             onClick={() => setShowMockInstructions(true)}
-            className="group flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
+            className="group relative flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
           >
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
                 <ClipboardList className="h-5 w-5" />
               </span>
@@ -149,10 +193,67 @@ export function TrainingModeMenu({
               )}
             </div>
 
-            <h3 className="mt-5 text-xl font-bold text-white sm:text-2xl">
+            <div
+              role="img"
+              className="absolute right-5 top-5 flex flex-col items-center sm:right-6 sm:top-6"
+              aria-label={
+                mockAverageScore === null
+                  ? "No completed mock exams yet"
+                  : `${mockAverageScore}% average from ${mockAttemptCount} completed mock ${
+                      mockAttemptCount === 1 ? "exam" : "exams"
+                    }. ${readinessStatus.label}.`
+              }
+            >
+              <div className="relative h-[88px] w-[88px]">
+                <svg
+                  aria-hidden="true"
+                  className="h-full w-full -rotate-90"
+                  viewBox="0 0 88 88"
+                >
+                  <circle
+                    cx="44"
+                    cy="44"
+                    r="38"
+                    fill="#071522"
+                    stroke="#244667"
+                    strokeWidth="6"
+                  />
+                  <circle
+                    cx="44"
+                    cy="44"
+                    r="38"
+                    fill="none"
+                    stroke="#3b82f6"
+                    strokeDasharray={progressCircumference}
+                    strokeDashoffset={progressOffset}
+                    strokeLinecap="round"
+                    strokeWidth="6"
+                  />
+                </svg>
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span className="text-xl font-extrabold leading-none text-white">
+                    {mockAverageScore === null
+                      ? "—"
+                      : `${mockAverageScore}%`}
+                  </span>
+                  <span className="mt-1 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8fa7c2]">
+                    Average
+                  </span>
+                </div>
+              </div>
+
+              <span
+                className={`mt-2 text-[10px] font-bold uppercase tracking-[0.13em] ${readinessStatus.className}`}
+              >
+                {readinessStatus.label}
+              </span>
+            </div>
+
+            <h3 className="mt-5 pr-28 text-xl font-bold text-white sm:text-2xl">
               Mock exam
             </h3>
-            <p className="mt-2 text-sm leading-6 text-[#b8c7d9]">
+            <p className="mt-2 pr-28 text-sm leading-6 text-[#b8c7d9]">
               {isTrialAccount
                 ? "A fixed SACAA-style question set."
                 : "Randomized SACAA-style exam questions."}

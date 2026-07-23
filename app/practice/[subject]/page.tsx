@@ -15,7 +15,11 @@ import { ExamResults } from "./components/exam-results"
 import { ExamSimulator } from "./components/exam-simulator"
 import { TopicSelection } from "./components/topic-selection"
 import { TrainingModeMenu } from "./components/training-mode-menu"
-import { saveMockExamAttempt } from "./exam-attempt-service"
+import {
+  fetchMockExamStats,
+  saveMockExamAttempt,
+} from "./exam-attempt-service"
+import type { MockExamStats } from "./exam-attempt-service"
 import {
   MOCK_QUESTION_COUNT,
   MOCK_TIME_SECONDS,
@@ -25,6 +29,11 @@ import {
 } from "./practice-utils"
 import { fetchSubjectQuestions } from "./question-service"
 import type { ExamAnswers, ExamMode, Question } from "./types"
+
+const EMPTY_MOCK_EXAM_STATS: MockExamStats = {
+  averageScore: null,
+  attemptCount: 0,
+}
 
 export default function SubjectPracticePage() {
   const params = useParams<{ subject: string }>()
@@ -52,6 +61,9 @@ export default function SubjectPracticePage() {
 
   const [canAccessTopics, setCanAccessTopics] = useState(false)
   const [isTrialAccount, setIsTrialAccount] = useState(false)
+  const [mockExamStats, setMockExamStats] = useState<MockExamStats>(
+    EMPTY_MOCK_EXAM_STATS
+  )
   const [activeTopic, setActiveTopic] = useState("")
   const attemptSavedRef = useRef(false)
 
@@ -70,6 +82,7 @@ export default function SubjectPracticePage() {
         setIsLoadingQuestions(true)
         setIsRedirecting(false)
         setLoadingError("")
+        setMockExamStats(EMPTY_MOCK_EXAM_STATS)
 
         const user = await getCachedCurrentUser()
 
@@ -123,10 +136,17 @@ export default function SubjectPracticePage() {
           }
         }
 
-        const questions = await fetchSubjectQuestions(subject, isTrialUser)
+        const [questions, examStats] = await Promise.all([
+          fetchSubjectQuestions(subject, isTrialUser),
+          fetchMockExamStats(subject).catch((error) => {
+            console.error("Mock exam stats loading error:", error)
+            return EMPTY_MOCK_EXAM_STATS
+          }),
+        ])
 
         if (!cancelled) {
           setSubjectQuestions(questions)
+          setMockExamStats(examStats)
         }
       } catch (error) {
         console.error("Question loading error:", error)
@@ -334,9 +354,12 @@ export default function SubjectPracticePage() {
       totalQuestions,
       correctAnswers,
       scorePercentage,
-    }).catch((error) => {
-      console.error("Exam attempt save error:", error)
     })
+      .then(() => fetchMockExamStats(subject))
+      .then(setMockExamStats)
+      .catch((error) => {
+        console.error("Exam attempt save error:", error)
+      })
   }, [
     correctAnswers,
     examMode,
@@ -410,6 +433,8 @@ export default function SubjectPracticePage() {
         questionCount={subjectQuestions.length}
         isTrialAccount={isTrialAccount}
         canAccessTopics={canAccessTopics}
+        mockAverageScore={mockExamStats.averageScore}
+        mockAttemptCount={mockExamStats.attemptCount}
         onStartMock={startMockExam}
         onOpenTopics={() => setExamMode("topics")}
       />

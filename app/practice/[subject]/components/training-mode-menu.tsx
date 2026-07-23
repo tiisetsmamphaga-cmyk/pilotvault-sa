@@ -16,6 +16,7 @@ import {
   MOCK_TIME_SECONDS,
   PASS_MARK,
   formatSubjectName,
+  formatTime,
 } from "../practice-utils"
 
 type SubjectManual = {
@@ -48,7 +49,13 @@ type TrainingModeMenuProps = {
   canAccessTopics: boolean
   mockAverageScore: number | null
   mockAttemptCount: number
+  savedMockAttempt?: {
+    answeredCount: number
+    totalQuestions: number
+    timeLeft: number
+  } | null
   onStartMock: () => void
+  onContinueMock?: () => void
   onOpenTopics: () => void
 }
 
@@ -94,7 +101,9 @@ export function TrainingModeMenu({
   canAccessTopics,
   mockAverageScore,
   mockAttemptCount,
+  savedMockAttempt = null,
   onStartMock,
+  onContinueMock,
   onOpenTopics,
 }: TrainingModeMenuProps) {
   const manual = SUBJECT_MANUALS[subject]
@@ -111,6 +120,15 @@ export function TrainingModeMenu({
   const beginMockExam = () => {
     setShowMockInstructions(false)
     onStartMock()
+  }
+
+  const continueMockExam = () => {
+    if (!onContinueMock) {
+      return
+    }
+
+    setShowMockInstructions(false)
+    onContinueMock()
   }
 
   return (
@@ -387,7 +405,20 @@ export function TrainingModeMenu({
                 </li>
               </ul>
 
-              <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              {savedMockAttempt && onContinueMock && (
+                <div className="mt-6 border border-[#1f4e79]/25 bg-blue-50 px-4 py-3">
+                  <p className="text-sm font-bold text-[#1f4e79]">
+                    Unfinished attempt available
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600">
+                    {savedMockAttempt.answeredCount} of{" "}
+                    {savedMockAttempt.totalQuestions} answered ·{" "}
+                    {formatTime(savedMockAttempt.timeLeft)} remaining
+                  </p>
+                </div>
+              )}
+
+              <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap sm:justify-end">
                 <button
                   type="button"
                   onClick={() => setShowMockInstructions(false)}
@@ -395,12 +426,23 @@ export function TrainingModeMenu({
                 >
                   Cancel
                 </button>
+
+                {savedMockAttempt && onContinueMock && (
+                  <button
+                    type="button"
+                    onClick={continueMockExam}
+                    className="rounded-md border border-[#1f4e79] bg-white px-5 py-3 text-sm font-semibold text-[#1f4e79] transition hover:bg-blue-50 sm:py-2.5"
+                  >
+                    Continue last attempt
+                  </button>
+                )}
+
                 <button
                   type="button"
                   onClick={beginMockExam}
                   className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#183d60] sm:py-2.5"
                 >
-                  Start mock exam
+                  {savedMockAttempt ? "Start new exam" : "Start mock exam"}
                 </button>
               </div>
             </div>

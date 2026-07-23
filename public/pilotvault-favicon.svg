@@ -1,0 +1,56 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">PilotVault SA</title>
+  <desc id="description">A gold aviation shield with white wings and an aircraft silhouette.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="88" y1="44" x2="424" y2="468" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1C30" />
+      <stop offset="1" stop-color="#030A13" />
+    </linearGradient>
+    <linearGradient id="gold" x1="190" y1="108" x2="326" y2="407" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD76A" />
+      <stop offset="0.48" stop-color="#F4B400" />
+      <stop offset="1" stop-color="#D99600" />
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="496" height="496" rx="108" fill="url(#background)" />
+  <rect
+    x="8.75"
+    y="8.75"
+    width="494.5"
+    height="494.5"
+    rx="107.25"
+    fill="none"
+    stroke="#1E3A5F"
+    stroke-width="1.5"
+  />
+
+  <g fill="#F8FAFC">
+    <path d="M151 174 55 151c-9-2-13 2-10 11l7 20 99 25v-33Z" />
+    <path d="M151 221 68 202c-9-2-13 3-9 12l9 21 83 19v-33Z" />
+    <path d="M151 269 92 258c-9-2-13 4-8 12l12 21 62 13-7-35Z" />
+
+    <path d="m361 174 96-23c9-2 13 2 10 11l-7 20-99 25v-33Z" />
+    <path d="m361 221 83-19c9-2 13 3 9 12l-9 21-83 19v-33Z" />
+    <path d="m361 269 59-11c9-2 13 4 8 12l-12 21-62 13 7-35Z" />
+  </g>
+
+  <path
+    d="M256 94c34 25 72 45 110 53v97c0 77-43 130-110 172-67-42-110-95-110-172v-97c38-8 76-28 110-53Z"
+    fill="#071423"
+    stroke="url(#gold)"
+    stroke-width="23"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M256 147c-8 0-13 10-13 23v61l-47 31v25l47-18v59l-22 18v21l35-11 35 11v-21l-22-18v-59l47 18v-25l-47-31v-61c0-13-5-23-13-23Z"
+    fill="url(#gold)"
+  />
+</svg>

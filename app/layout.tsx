@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: '/pilotvault-favicon.svg',
+        type: 'image/svg+xml',
+      },
+      {
         url: '/favicon.ico',
         type: 'image/x-icon',
         sizes: '16x16 32x32 48x48 64x64',

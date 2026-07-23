@@ -137,6 +137,18 @@ export function ExamResults({
                     <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-700">
                       {question.explanation}
                     </p>
+
+                    {question.explanation_image_url && (
+                      <figure className="mt-5 border border-slate-200 bg-white p-2">
+                        <img
+                          src={question.explanation_image_url}
+                          alt={`Explanation diagram for ${question.topic ?? formatSubjectName(subject)}`}
+                          loading="lazy"
+                          decoding="async"
+                          className="max-h-[32rem] w-full object-contain"
+                        />
+                      </figure>
+                    )}
                   </div>
                 )
               })}

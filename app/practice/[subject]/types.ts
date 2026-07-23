@@ -4,6 +4,7 @@ export type Question = {
   topic?: string
   question: string
   image_url?: string
+  explanation_image_url?: string
   options: string[]
   correctAnswer: string
   explanation: string
@@ -15,6 +16,7 @@ export type DatabaseQuestion = {
   topic: string | null
   question: string
   image_url: string | null
+  explanation_image_url: string | null
   option_a: string | null
   option_b: string | null
   option_c: string | null

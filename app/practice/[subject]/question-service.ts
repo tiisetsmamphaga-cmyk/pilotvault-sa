@@ -24,6 +24,7 @@ async function loadSubjectQuestions(
           topic,
           question,
           image_url,
+          explanation_image_url,
           option_a,
           option_b,
           option_c,
@@ -63,6 +64,7 @@ async function loadSubjectQuestions(
     topic: question.topic ?? undefined,
     question: question.question,
     image_url: question.image_url ?? undefined,
+    explanation_image_url: question.explanation_image_url ?? undefined,
     options: [
       question.option_a,
       question.option_b,

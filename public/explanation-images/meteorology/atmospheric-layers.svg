@@ -1,91 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">Atmospheric layers and the location of weather</title>
-  <desc id="desc">A vertical cross-section showing the troposphere, tropopause, stratosphere, ozone layer and mesosphere.</desc>
-  <defs>
-    <linearGradient id="sky" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0" stop-color="#bde7ff"/>
-      <stop offset=".42" stop-color="#65a9d7"/>
-      <stop offset=".72" stop-color="#355b8d"/>
-      <stop offset="1" stop-color="#182942"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity=".14"/>
-    </filter>
-  </defs>
-  <rect width="1200" height="720" fill="#f8fafc"/>
-  <text x="60" y="60" fill="#0f172a" font-family="Arial, sans-serif" font-size="32" font-weight="700">Where weather occurs in the atmosphere</text>
-  <text x="60" y="94" fill="#475569" font-family="Arial, sans-serif" font-size="18">The troposphere contains most water vapour, cloud and vertical mixing.</text>
-
-  <g filter="url(#shadow)">
-    <rect x="60" y="125" width="1080" height="525" rx="18" fill="white"/>
-    <rect x="170" y="155" width="650" height="450" rx="12" fill="url(#sky)"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">Weather occurs in the troposphere</title>
+  <desc id="desc">The troposphere extends from the surface to an average height of 11 kilometres and contains most weather.</desc>
+  <rect width="1100" height="620" fill="#ffffff"/>
 
   <g font-family="Arial, sans-serif">
-    <line x1="145" y1="605" x2="145" y2="155" stroke="#334155" stroke-width="3"/>
-    <path d="M137 168 L145 155 L153 168" fill="none" stroke="#334155" stroke-width="3"/>
-    <text x="82" y="164" fill="#334155" font-size="16" font-weight="700">Altitude</text>
-    <g fill="#475569" font-size="15" text-anchor="end">
-      <text x="130" y="610">0 km</text>
-      <text x="130" y="538">11 km</text>
-      <text x="130" y="330">50 km</text>
-      <text x="130" y="166">85 km</text>
+    <line x1="120" y1="540" x2="120" y2="70" stroke="#334155" stroke-width="3"/>
+    <path d="M112 84 L120 70 L128 84" fill="none" stroke="#334155" stroke-width="3"/>
+    <text x="45" y="310" text-anchor="middle" transform="rotate(-90 45 310)" fill="#475569" font-size="18" font-weight="700">ALTITUDE</text>
+
+    <rect x="165" y="70" width="670" height="250" fill="#dbeafe"/>
+    <rect x="165" y="320" width="670" height="220" fill="#bae6fd"/>
+    <line x1="165" y1="320" x2="835" y2="320" stroke="#f59e0b" stroke-width="8"/>
+
+    <text x="200" y="142" fill="#1e3a8a" font-size="36" font-weight="700">STRATOSPHERE</text>
+    <text x="200" y="382" fill="#075985" font-size="36" font-weight="700">TROPOSPHERE</text>
+    <text x="200" y="424" fill="#0c4a6e" font-size="22">Most water vapour</text>
+    <text x="200" y="458" fill="#0c4a6e" font-size="22">Cloud and precipitation</text>
+    <text x="200" y="492" fill="#0c4a6e" font-size="22">Most weather systems</text>
+
+    <g fill="#ffffff" stroke="#7dd3fc" stroke-width="2">
+      <ellipse cx="650" cy="438" rx="88" ry="30"/>
+      <circle cx="610" cy="421" r="35"/>
+      <circle cx="662" cy="408" r="47"/>
+      <circle cx="706" cy="427" r="32"/>
     </g>
-    <g stroke="#64748b" stroke-width="2">
-      <line x1="137" y1="605" x2="153" y2="605"/>
-      <line x1="137" y1="533" x2="153" y2="533"/>
-      <line x1="137" y1="325" x2="153" y2="325"/>
-      <line x1="137" y1="161" x2="153" y2="161"/>
+    <g stroke="#2563eb" stroke-width="6" stroke-linecap="round">
+      <line x1="620" y1="468" x2="608" y2="494"/>
+      <line x1="658" y1="468" x2="646" y2="494"/>
+      <line x1="696" y1="468" x2="684" y2="494"/>
     </g>
 
-    <line x1="170" y1="533" x2="820" y2="533" stroke="#f59e0b" stroke-width="5"/>
-    <rect x="170" y="405" width="650" height="58" fill="#34d399" opacity=".25"/>
-
-    <g fill="white">
-      <ellipse cx="305" cy="566" rx="64" ry="22"/>
-      <circle cx="274" cy="555" r="25"/>
-      <circle cx="320" cy="548" r="34"/>
-      <circle cx="350" cy="561" r="22"/>
-      <ellipse cx="585" cy="581" rx="74" ry="20"/>
-      <circle cx="548" cy="566" r="28"/>
-      <circle cx="594" cy="558" r="36"/>
-      <circle cx="630" cy="570" r="25"/>
+    <g fill="#475569" font-size="18" text-anchor="end">
+      <text x="102" y="546">0 km</text>
+      <text x="102" y="326">11 km</text>
+      <text x="102" y="78">50 km</text>
     </g>
-    <g stroke="#2563eb" stroke-width="5" stroke-linecap="round">
-      <line x1="280" y1="594" x2="270" y2="614"/>
-      <line x1="310" y1="594" x2="300" y2="614"/>
-      <line x1="340" y1="594" x2="330" y2="614"/>
-      <line x1="565" y1="604" x2="555" y2="622"/>
-      <line x1="600" y1="604" x2="590" y2="622"/>
-      <line x1="635" y1="604" x2="625" y2="622"/>
+    <g stroke="#64748b" stroke-width="3">
+      <line x1="110" y1="540" x2="130" y2="540"/>
+      <line x1="110" y1="320" x2="130" y2="320"/>
+      <line x1="110" y1="70" x2="130" y2="70"/>
     </g>
 
-    <g fill="white" font-weight="700">
-      <text x="205" y="500" font-size="29">TROPOSPHERE</text>
-      <text x="205" y="284" font-size="29">STRATOSPHERE</text>
-      <text x="205" y="205" font-size="29">MESOSPHERE</text>
-    </g>
-    <text x="205" y="526" fill="#fff7ed" font-size="17" font-weight="700">Most weather + water vapour</text>
-    <text x="205" y="445" fill="#ecfdf5" font-size="18" font-weight="700">Ozone-rich region</text>
-
-    <g>
-      <rect x="855" y="175" width="245" height="116" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
-      <text x="880" y="210" fill="#1e3a8a" font-size="18" font-weight="700">Troposphere</text>
-      <text x="880" y="238" fill="#334155" font-size="16">Average depth:</text>
-      <text x="880" y="266" fill="#0f172a" font-size="23" font-weight="700">11 km / 36 090 ft</text>
-    </g>
-    <g>
-      <rect x="855" y="315" width="245" height="116" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
-      <text x="880" y="350" fill="#9a3412" font-size="18" font-weight="700">Tropopause</text>
-      <text x="880" y="380" fill="#334155" font-size="16">Boundary between the</text>
-      <text x="880" y="404" fill="#334155" font-size="16">troposphere and stratosphere</text>
-    </g>
-    <g>
-      <rect x="855" y="455" width="245" height="116" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
-      <text x="880" y="490" fill="#065f46" font-size="18" font-weight="700">Key aviation idea</text>
-      <text x="880" y="520" fill="#334155" font-size="16">Cloud and precipitation</text>
-      <text x="880" y="544" fill="#334155" font-size="16">develop mainly below the</text>
-      <text x="880" y="568" fill="#334155" font-size="16">tropopause.</text>
-    </g>
+    <line x1="835" y1="320" x2="900" y2="320" stroke="#f59e0b" stroke-width="4"/>
+    <text x="925" y="304" fill="#92400e" font-size="23" font-weight="700">TROPOPAUSE</text>
+    <text x="925" y="340" fill="#334155" font-size="21">11 km</text>
+    <text x="925" y="370" fill="#334155" font-size="21">36 090 ft</text>
   </g>
 </svg>

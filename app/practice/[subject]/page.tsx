@@ -59,7 +59,11 @@ function getSavedMockAttemptKey(subject: string) {
 }
 
 function removeSavedMockAttempt(subject: string) {
-  window.localStorage.removeItem(getSavedMockAttemptKey(subject))
+  try {
+    window.localStorage.removeItem(getSavedMockAttemptKey(subject))
+  } catch (error) {
+    console.error("Saved mock attempt removal error:", error)
+  }
 }
 
 function readSavedMockAttempt(subject: string): SavedMockAttempt | null {
@@ -81,8 +85,9 @@ function readSavedMockAttempt(subject: string): SavedMockAttempt | null {
       Array.isArray(parsedAttempt.questionIds) &&
       parsedAttempt.questionIds.length > 0 &&
       parsedAttempt.questionIds.every((id) => Number.isInteger(id)) &&
+      typeof parsedAttempt.currentQuestionIndex === "number" &&
       Number.isInteger(parsedAttempt.currentQuestionIndex) &&
-      Number(parsedAttempt.currentQuestionIndex) >= 0 &&
+      parsedAttempt.currentQuestionIndex >= 0 &&
       answers !== null &&
       typeof answers === "object" &&
       !Array.isArray(answers) &&

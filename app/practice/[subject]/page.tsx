@@ -66,6 +66,7 @@ export default function SubjectPracticePage() {
   )
   const [activeTopic, setActiveTopic] = useState("")
   const attemptSavedRef = useRef(false)
+  const mockStartedAtRef = useRef<number | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -222,6 +223,7 @@ export default function SubjectPracticePage() {
 
   const resetExamState = () => {
     attemptSavedRef.current = false
+    mockStartedAtRef.current = null
     setCurrentQuestionIndex(0)
     setAnswers({})
     setPinnedQuestions([])
@@ -242,6 +244,7 @@ export default function SubjectPracticePage() {
     setExamMode("mock")
     setActiveTopic("")
     setTimeLeft(MOCK_TIME_SECONDS)
+    mockStartedAtRef.current = Date.now()
   }
 
   const startTopicPractice = (topic: string) => {
@@ -348,12 +351,23 @@ export default function SubjectPracticePage() {
     }
 
     attemptSavedRef.current = true
+    const durationSeconds =
+      mockStartedAtRef.current === null
+        ? Math.max(0, MOCK_TIME_SECONDS - timeLeft)
+        : Math.min(
+            MOCK_TIME_SECONDS,
+            Math.max(
+              0,
+              Math.round((Date.now() - mockStartedAtRef.current) / 1000)
+            )
+          )
 
     void saveMockExamAttempt({
       subject,
       totalQuestions,
       correctAnswers,
       scorePercentage,
+      durationSeconds,
     })
       .then(() => fetchMockExamStats(subject))
       .then(setMockExamStats)

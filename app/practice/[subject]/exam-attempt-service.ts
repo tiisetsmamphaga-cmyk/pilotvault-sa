@@ -10,6 +10,7 @@ type SaveMockExamAttemptInput = {
   totalQuestions: number
   correctAnswers: number
   scorePercentage: number
+  durationSeconds: number
 }
 
 async function getCurrentUserId() {
@@ -67,6 +68,7 @@ export async function saveMockExamAttempt({
   totalQuestions,
   correctAnswers,
   scorePercentage,
+  durationSeconds,
 }: SaveMockExamAttemptInput) {
   const userId = await getCurrentUserId()
 
@@ -77,6 +79,7 @@ export async function saveMockExamAttempt({
     total_questions: totalQuestions,
     correct_answers: correctAnswers,
     score_percentage: scorePercentage,
+    duration_seconds: durationSeconds,
   })
 
   if (error) {

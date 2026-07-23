@@ -8,9 +8,11 @@ import {
   CalendarDays,
   CheckCircle2,
   ChevronRight,
+  Clock3,
   CreditCard,
   Edit3,
   GraduationCap,
+  History,
   KeyRound,
   LogOut,
   Mail,
@@ -27,6 +29,11 @@ import {
   updateCachedProfile,
 } from "@/src/lib/client-data-cache"
 import { supabase } from "@/src/lib/supabase"
+
+import {
+  fetchMockExamAttempts,
+  type MockExamAttempt,
+} from "./exam-attempt-service"
 
 type LicenceLevel = "ppl" | "cpl" | "atpl"
 
@@ -48,6 +55,32 @@ function formatDate(value: string | null) {
     month: "long",
     year: "numeric",
   }).format(new Date(value))
+}
+
+function formatAttemptDate(value: string) {
+  return new Intl.DateTimeFormat("en-ZA", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(value))
+}
+
+function formatAttemptTime(value: string) {
+  return new Intl.DateTimeFormat("en-ZA", {
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(value))
+}
+
+function formatDuration(value: number | null) {
+  if (value === null) return "Not recorded"
+
+  const minutes = Math.floor(value / 60)
+  const seconds = value % 60
+
+  if (minutes === 0) return `${seconds}s`
+
+  return `${minutes}m ${String(seconds).padStart(2, "0")}s`
 }
 
 function formatPlan(plan: string | null) {
@@ -80,6 +113,8 @@ export default function ProfilePage() {
   const [loadError, setLoadError] = useState("")
   const [authEmail, setAuthEmail] = useState("")
   const [profile, setProfile] = useState<ProfileRecord | null>(null)
+  const [examAttempts, setExamAttempts] = useState<MockExamAttempt[]>([])
+  const [attemptsLoadError, setAttemptsLoadError] = useState("")
 
   const [editProfileOpen, setEditProfileOpen] = useState(false)
   const [passwordOpen, setPasswordOpen] = useState(false)
@@ -107,11 +142,24 @@ export default function ProfilePage() {
           return
         }
 
-        const loadedProfile = await getCachedProfile(user.id)
+        const [loadedProfile, attemptsResult] = await Promise.all([
+          getCachedProfile(user.id),
+          fetchMockExamAttempts(user.id)
+            .then((attempts) => ({ attempts, error: "" }))
+            .catch((error) => ({
+              attempts: [] as MockExamAttempt[],
+              error:
+                error instanceof Error
+                  ? error.message
+                  : "Exam attempts could not be loaded.",
+            })),
+        ])
 
         if (!cancelled) {
           setAuthEmail(user.email ?? loadedProfile.email ?? "")
           setProfile(loadedProfile)
+          setExamAttempts(attemptsResult.attempts)
+          setAttemptsLoadError(attemptsResult.error)
           setFullNameDraft(loadedProfile.full_name)
           setLicenceDraft(loadedProfile.licence_level ?? "ppl")
         }
@@ -288,7 +336,7 @@ export default function ProfilePage() {
 
   return (
     <main className="min-h-screen bg-[#06111f] text-[#071426]">
-      <section className="mx-auto max-w-xl px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-10">
+      <section className="mx-auto max-w-5xl px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-10">
         <div className="flex items-center justify-between gap-4">
           <Link
             href="/dashboard"
@@ -492,6 +540,141 @@ export default function ProfilePage() {
                 />
               </button>
             </div>
+          </section>
+
+          <section
+            aria-labelledby="attempts-heading"
+            className="overflow-hidden rounded-[24px] border border-[#1e3a5f] bg-[#081726] text-white shadow-[0_14px_40px_rgba(0,0,0,0.18)]"
+          >
+            <div className="flex items-start gap-4 border-b border-[#1e3a5f] px-5 py-5 sm:items-center sm:px-6">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f4b400]/15 text-[#f4b400]">
+                <History size={20} />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3
+                  id="attempts-heading"
+                  className="text-base font-semibold sm:text-lg"
+                >
+                  Mock exam attempts
+                </h3>
+                <p className="mt-1 text-xs text-[#9ca9b9]">
+                  Your latest 100 completed mock exams, newest first.
+                </p>
+              </div>
+              <span className="rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-[#d6dee8]">
+                {examAttempts.length}
+              </span>
+            </div>
+
+            {attemptsLoadError ? (
+              <div className="px-5 py-8 text-center sm:px-6">
+                <p className="text-sm font-medium text-red-300">
+                  Your exam attempts could not be loaded.
+                </p>
+                <p className="mt-1 text-xs text-[#9ca9b9]">
+                  {attemptsLoadError}
+                </p>
+              </div>
+            ) : examAttempts.length === 0 ? (
+              <div className="px-5 py-10 text-center sm:px-6">
+                <Clock3
+                  size={24}
+                  className="mx-auto text-[#f4b400]"
+                  aria-hidden="true"
+                />
+                <p className="mt-3 text-sm font-semibold">
+                  No mock exam attempts yet
+                </p>
+                <p className="mt-1 text-xs text-[#9ca9b9]">
+                  Complete a mock exam and it will appear here.
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="hidden grid-cols-[minmax(0,1.5fr)_0.7fr_0.8fr_0.9fr_0.8fr_0.9fr] gap-4 border-b border-[#1e3a5f] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#718096] md:grid">
+                  <span>Subject</span>
+                  <span>Score</span>
+                  <span>Correct</span>
+                  <span>Date</span>
+                  <span>Completed at</span>
+                  <span>Duration</span>
+                </div>
+
+                <div className="divide-y divide-[#1e3a5f]">
+                  {examAttempts.map((attempt) => (
+                    <article
+                      key={attempt.id}
+                      className="px-5 py-5 sm:px-6 md:grid md:grid-cols-[minmax(0,1.5fr)_0.7fr_0.8fr_0.9fr_0.8fr_0.9fr] md:items-center md:gap-4 md:py-4"
+                    >
+                      <div className="flex items-start justify-between gap-4 md:block">
+                        <div className="min-w-0">
+                          <p className="truncate text-sm font-semibold text-white">
+                            {attempt.subject}
+                          </p>
+                          <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-[#718096] md:hidden">
+                            Mock exam
+                          </p>
+                        </div>
+                        <span
+                          className={`shrink-0 rounded-full px-2.5 py-1 text-sm font-bold md:hidden ${
+                            attempt.scorePercentage >= 75
+                              ? "bg-emerald-400/15 text-emerald-300"
+                              : "bg-[#f4b400]/15 text-[#f4b400]"
+                          }`}
+                        >
+                          {attempt.scorePercentage}%
+                        </span>
+                      </div>
+
+                      <span
+                        className={`hidden text-sm font-bold md:block ${
+                          attempt.scorePercentage >= 75
+                            ? "text-emerald-300"
+                            : "text-[#f4b400]"
+                        }`}
+                      >
+                        {attempt.scorePercentage}%
+                      </span>
+
+                      <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 md:contents">
+                        <div>
+                          <dt className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#718096] md:hidden">
+                            Correct
+                          </dt>
+                          <dd className="mt-1 text-xs text-[#d6dee8] md:mt-0 md:text-sm">
+                            {attempt.correctAnswers}/{attempt.totalQuestions}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#718096] md:hidden">
+                            Date
+                          </dt>
+                          <dd className="mt-1 text-xs text-[#d6dee8] md:mt-0 md:text-sm">
+                            {formatAttemptDate(attempt.completedAt)}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#718096] md:hidden">
+                            Completed at
+                          </dt>
+                          <dd className="mt-1 text-xs text-[#d6dee8] md:mt-0 md:text-sm">
+                            {formatAttemptTime(attempt.completedAt)}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#718096] md:hidden">
+                            Duration
+                          </dt>
+                          <dd className="mt-1 text-xs text-[#d6dee8] md:mt-0 md:text-sm">
+                            {formatDuration(attempt.durationSeconds)}
+                          </dd>
+                        </div>
+                      </dl>
+                    </article>
+                  ))}
+                </div>
+              </>
+            )}
           </section>
         </div>
       </section>

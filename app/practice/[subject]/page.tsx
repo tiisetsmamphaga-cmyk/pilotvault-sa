@@ -35,6 +35,89 @@ const EMPTY_MOCK_EXAM_STATS: MockExamStats = {
   attemptCount: 0,
 }
 
+const SAVED_MOCK_ATTEMPT_VERSION = 1
+
+type SavedMockAttempt = {
+  version: number
+  subject: string
+  questionIds: number[]
+  currentQuestionIndex: number
+  answers: ExamAnswers
+  pinnedQuestions: number[]
+  shownAnswers: number[]
+  timeLeft: number
+}
+
+type SavedMockAttemptSummary = {
+  answeredCount: number
+  totalQuestions: number
+  timeLeft: number
+}
+
+function getSavedMockAttemptKey(subject: string) {
+  return `pilotvault:mock-attempt:${subject}`
+}
+
+function removeSavedMockAttempt(subject: string) {
+  window.localStorage.removeItem(getSavedMockAttemptKey(subject))
+}
+
+function readSavedMockAttempt(subject: string): SavedMockAttempt | null {
+  try {
+    const rawAttempt = window.localStorage.getItem(
+      getSavedMockAttemptKey(subject)
+    )
+
+    if (!rawAttempt) {
+      return null
+    }
+
+    const parsedAttempt = JSON.parse(rawAttempt) as Partial<SavedMockAttempt>
+    const answers = parsedAttempt.answers
+
+    const isValid =
+      parsedAttempt.version === SAVED_MOCK_ATTEMPT_VERSION &&
+      parsedAttempt.subject === subject &&
+      Array.isArray(parsedAttempt.questionIds) &&
+      parsedAttempt.questionIds.length > 0 &&
+      parsedAttempt.questionIds.every((id) => Number.isInteger(id)) &&
+      Number.isInteger(parsedAttempt.currentQuestionIndex) &&
+      Number(parsedAttempt.currentQuestionIndex) >= 0 &&
+      answers !== null &&
+      typeof answers === "object" &&
+      !Array.isArray(answers) &&
+      Object.values(answers).every((answer) => typeof answer === "string") &&
+      Array.isArray(parsedAttempt.pinnedQuestions) &&
+      parsedAttempt.pinnedQuestions.every((index) => Number.isInteger(index)) &&
+      Array.isArray(parsedAttempt.shownAnswers) &&
+      parsedAttempt.shownAnswers.every((index) => Number.isInteger(index)) &&
+      typeof parsedAttempt.timeLeft === "number" &&
+      parsedAttempt.timeLeft > 0 &&
+      parsedAttempt.timeLeft <= MOCK_TIME_SECONDS
+
+    if (!isValid) {
+      removeSavedMockAttempt(subject)
+      return null
+    }
+
+    return parsedAttempt as SavedMockAttempt
+  } catch (error) {
+    console.error("Saved mock attempt loading error:", error)
+    removeSavedMockAttempt(subject)
+    return null
+  }
+}
+
+function getSavedMockAttemptSummary(
+  attempt: SavedMockAttempt
+): SavedMockAttemptSummary {
+  return {
+    answeredCount: Object.keys(attempt.answers).length,
+    totalQuestions: attempt.questionIds.length,
+    timeLeft: attempt.timeLeft,
+  }
+}
+
 export default function SubjectPracticePage() {
   const params = useParams<{ subject: string }>()
   const router = useRouter()
@@ -65,6 +148,10 @@ export default function SubjectPracticePage() {
     EMPTY_MOCK_EXAM_STATS
   )
   const [activeTopic, setActiveTopic] = useState("")
+  const [savedMockAttemptSummary, setSavedMockAttemptSummary] =
+    useState<SavedMockAttemptSummary | null>(null)
+  const [isMockAttemptStorageReady, setIsMockAttemptStorageReady] =
+    useState(false)
   const attemptSavedRef = useRef(false)
   const mockStartedAtRef = useRef<number | null>(null)
 
@@ -175,6 +262,65 @@ export default function SubjectPracticePage() {
   }, [subject, router])
 
   useEffect(() => {
+    setIsMockAttemptStorageReady(false)
+
+    const savedAttempt = readSavedMockAttempt(subject)
+
+    setSavedMockAttemptSummary(
+      savedAttempt ? getSavedMockAttemptSummary(savedAttempt) : null
+    )
+    setIsMockAttemptStorageReady(true)
+  }, [subject])
+
+  useEffect(() => {
+    if (!isMockAttemptStorageReady || examMode !== "mock") {
+      return
+    }
+
+    if (isSubmitted) {
+      removeSavedMockAttempt(subject)
+      setSavedMockAttemptSummary(null)
+      return
+    }
+
+    if (examQuestions.length === 0) {
+      return
+    }
+
+    const savedAttempt: SavedMockAttempt = {
+      version: SAVED_MOCK_ATTEMPT_VERSION,
+      subject,
+      questionIds: examQuestions.map((question) => question.id),
+      currentQuestionIndex,
+      answers,
+      pinnedQuestions,
+      shownAnswers,
+      timeLeft,
+    }
+
+    try {
+      window.localStorage.setItem(
+        getSavedMockAttemptKey(subject),
+        JSON.stringify(savedAttempt)
+      )
+      setSavedMockAttemptSummary(getSavedMockAttemptSummary(savedAttempt))
+    } catch (error) {
+      console.error("Mock attempt save error:", error)
+    }
+  }, [
+    answers,
+    currentQuestionIndex,
+    examMode,
+    examQuestions,
+    isMockAttemptStorageReady,
+    isSubmitted,
+    pinnedQuestions,
+    shownAnswers,
+    subject,
+    timeLeft,
+  ])
+
+  useEffect(() => {
     if (
       examMode !== "mock" ||
       isSubmitted ||
@@ -234,6 +380,8 @@ export default function SubjectPracticePage() {
   }
 
   const startMockExam = () => {
+    removeSavedMockAttempt(subject)
+    setSavedMockAttemptSummary(null)
     resetExamState()
 
     const selectedQuestions = isTrialAccount
@@ -245,6 +393,51 @@ export default function SubjectPracticePage() {
     setActiveTopic("")
     setTimeLeft(MOCK_TIME_SECONDS)
     mockStartedAtRef.current = Date.now()
+  }
+
+  const resumeMockExam = () => {
+    const savedAttempt = readSavedMockAttempt(subject)
+
+    if (!savedAttempt) {
+      setSavedMockAttemptSummary(null)
+      startMockExam()
+      return
+    }
+
+    const questionsById = new Map(
+      subjectQuestions.map((question) => [question.id, question])
+    )
+    const restoredQuestions = savedAttempt.questionIds
+      .map((id) => questionsById.get(id))
+      .filter((question): question is Question => Boolean(question))
+
+    if (restoredQuestions.length !== savedAttempt.questionIds.length) {
+      removeSavedMockAttempt(subject)
+      setSavedMockAttemptSummary(null)
+      startMockExam()
+      return
+    }
+
+    const restoredTime = Math.max(
+      1,
+      Math.min(MOCK_TIME_SECONDS, savedAttempt.timeLeft)
+    )
+    const restoredIndex = Math.min(
+      savedAttempt.currentQuestionIndex,
+      restoredQuestions.length - 1
+    )
+
+    resetExamState()
+    setExamQuestions(restoredQuestions)
+    setCurrentQuestionIndex(restoredIndex)
+    setAnswers(savedAttempt.answers)
+    setPinnedQuestions(savedAttempt.pinnedQuestions)
+    setShownAnswers(savedAttempt.shownAnswers)
+    setExamMode("mock")
+    setActiveTopic("")
+    setTimeLeft(restoredTime)
+    mockStartedAtRef.current =
+      Date.now() - (MOCK_TIME_SECONDS - restoredTime) * 1000
   }
 
   const startTopicPractice = (topic: string) => {
@@ -449,7 +642,9 @@ export default function SubjectPracticePage() {
         canAccessTopics={canAccessTopics}
         mockAverageScore={mockExamStats.averageScore}
         mockAttemptCount={mockExamStats.attemptCount}
+        savedMockAttempt={savedMockAttemptSummary}
         onStartMock={startMockExam}
+        onContinueMock={resumeMockExam}
         onOpenTopics={() => setExamMode("topics")}
       />
     )

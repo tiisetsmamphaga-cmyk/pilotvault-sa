@@ -1,6 +1,22 @@
 import Link from "next/link"
 import { Check } from "lucide-react"
 
+import { PaystackPurchaseButton } from "@/components/paystack-purchase-button"
+
+const subjectLabels = {
+  meteorology: "Meteorology",
+  "air-law": "Air Law",
+  navigation: "Navigation",
+  "human-performance": "Human Performance",
+  "principles-of-flight": "Principles of Flight",
+  "aircraft-technical-and-general":
+    "Aircraft Technical and General",
+  "radio-telephony": "Radio Telephony",
+  "flight-planning": "Flight Planning",
+} as const
+
+type SubjectSlug = keyof typeof subjectLabels
+
 const plans = [
   {
     name: "Per Subject",
@@ -9,6 +25,7 @@ const plans = [
     period: "/month",
     badge: "",
     disabled: false,
+    productCode: "subject" as const,
     features: [
       "Single Subject Access",
       "Mock Exams",
@@ -20,14 +37,16 @@ const plans = [
   },
   {
     name: "PPL Pack",
-    description: "Perfect for Private Pilot License students",
+    description: "Perfect for Private Pilot Licence students",
     price: "R699",
     period: "/3 Months",
     badge: "MOST POPULAR",
     disabled: false,
+    productCode: "ppl_pack" as const,
     features: [
-      "PPL Subject Questions",
+      "All 8 PPL Subjects",
       "Mock Exams",
+      "Topic-Based Practice",
       "Performance Tracking",
       "Mobile Access",
       "Email Support",
@@ -40,6 +59,7 @@ const plans = [
     period: "",
     badge: "COMING SOON",
     disabled: true,
+    productCode: null,
     features: [
       "CPL Question Bank",
       "Mock Exams",
@@ -51,7 +71,31 @@ const plans = [
   },
 ]
 
-export default function UpgradePage() {
+type UpgradePageProps = {
+  searchParams: Promise<{
+    subject?: string | string[]
+  }>
+}
+
+function isSubjectSlug(value: string): value is SubjectSlug {
+  return value in subjectLabels
+}
+
+export default async function UpgradePage({
+  searchParams,
+}: UpgradePageProps) {
+  const params = await searchParams
+  const requestedSubject = Array.isArray(params.subject)
+    ? params.subject[0]
+    : params.subject
+  const selectedSubject =
+    requestedSubject && isSubjectSlug(requestedSubject)
+      ? requestedSubject
+      : null
+  const selectedSubjectLabel = selectedSubject
+    ? subjectLabels[selectedSubject]
+    : null
+
   return (
     <main className="min-h-screen bg-[#06111f] text-white">
       <header className="border-b border-[#1e3a5f] bg-[#06111f]/95">
@@ -89,6 +133,12 @@ export default function UpgradePage() {
             unlock the full SACAA question bank, topic-based practice, mock
             exams, explanations, and progress tracking.
           </p>
+
+          {selectedSubjectLabel && (
+            <p className="mx-auto mt-5 w-fit rounded-full border border-[#f4b400]/30 bg-[#f4b400]/10 px-4 py-2 text-sm font-semibold text-[#f4b400]">
+              Selected subject: {selectedSubjectLabel}
+            </p>
+          )}
         </div>
 
         <div className="mt-10 grid gap-6 sm:mt-14 lg:grid-cols-3">
@@ -108,10 +158,16 @@ export default function UpgradePage() {
               )}
 
               <div className="text-center">
-                <h3 className="text-xl font-bold sm:text-2xl">{plan.name}</h3>
+                <h3 className="text-xl font-bold sm:text-2xl">
+                  {plan.productCode === "subject" && selectedSubjectLabel
+                    ? selectedSubjectLabel
+                    : plan.name}
+                </h3>
 
                 <p className="mt-3 min-h-0 text-sm leading-6 text-gray-400 sm:min-h-12">
-                  {plan.description}
+                  {plan.productCode === "subject" && selectedSubjectLabel
+                    ? `One month of full ${selectedSubjectLabel} access`
+                    : plan.description}
                 </p>
 
                 <div className="mt-5 sm:mt-6">
@@ -151,10 +207,26 @@ export default function UpgradePage() {
                 >
                   Coming Soon
                 </button>
+              ) : plan.productCode === "subject" && !selectedSubject ? (
+                <Link
+                  href="/dashboard"
+                  className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000] sm:mt-8"
+                >
+                  Choose a Subject
+                </Link>
               ) : (
-                <button className="mt-7 w-full rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000] sm:mt-8">
-                  Upgrade Now
-                </button>
+                <PaystackPurchaseButton
+                  productCode={plan.productCode}
+                  subject={
+                    plan.productCode === "subject"
+                      ? selectedSubject ?? undefined
+                      : undefined
+                  }
+                >
+                  {plan.productCode === "subject"
+                    ? `Purchase ${selectedSubjectLabel}`
+                    : "Purchase PPL Pack"}
+                </PaystackPurchaseButton>
               )}
             </div>
           ))}
@@ -162,9 +234,8 @@ export default function UpgradePage() {
 
         <div className="mt-10 rounded-3xl border border-[#1e3a5f] bg-[#081726] p-5 text-center sm:mt-12 sm:p-8">
           <p className="text-sm leading-6 text-gray-400">
-            After upgrading, your account will unlock topic-based practice,
-            expanded mock exams, and full access to the PilotVault question
-            bank.
+            Payments are processed securely by Paystack. Access is activated
+            only after PilotVault verifies the completed transaction.
           </p>
         </div>
       </section>

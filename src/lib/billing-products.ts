@@ -58,7 +58,7 @@ export function isPilotVaultSubject(
 }
 
 export function getBillingProduct(
-  productCode: ProductCode,
+  productCode: string,
   subject?: string
 ): BillingProduct {
   if (productCode === "ppl_pack") {
@@ -70,6 +70,10 @@ export function getBillingProduct(
       accessMonths: 3,
       label: "PilotVault PPL Pack",
     }
+  }
+
+  if (productCode !== "subject") {
+    throw new Error("Select a valid PilotVault product.")
   }
 
   if (!subject || !isPilotVaultSubject(subject)) {

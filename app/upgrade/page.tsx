@@ -69,7 +69,7 @@ const plans = [
       "New Content Updates",
     ],
   },
-]
+] as const
 
 type UpgradePageProps = {
   searchParams: Promise<{

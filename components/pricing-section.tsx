@@ -55,6 +55,10 @@ const plans = [
 ]
 
 export function PricingSection() {
+  const openSignupModal = () => {
+    window.dispatchEvent(new Event("open-signup-modal"))
+  }
+
   return (
     <section
       id="pricing"
@@ -156,6 +160,8 @@ export function PricingSection() {
 
               <Button
                 disabled={plan.comingSoon}
+                type="button"
+                onClick={plan.comingSoon ? undefined : openSignupModal}
                 className={`w-full font-semibold ${
                   plan.comingSoon
                     ? "cursor-not-allowed bg-gray-700 text-gray-400 hover:bg-gray-700"

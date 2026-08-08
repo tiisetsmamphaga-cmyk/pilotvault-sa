@@ -19,8 +19,8 @@ const quickLinks = [
 
 const resources = [
   { name: "FAQ", href: "/faq" },
-  { name: "Support", href: "/#contact" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Support", href: "mailto:support@pilotvault.co.za" },
+  { name: "Contact", href: "mailto:support@pilotvault.co.za" },
 ]
 
 const socialLinks = [
@@ -136,6 +136,14 @@ export function Footer() {
             <Button className="w-full bg-[#f4b400] font-semibold text-[#06111f] hover:bg-[#d9a000]">
               Subscribe
             </Button>
+
+            <a
+              href="mailto:support@pilotvault.co.za"
+              className="mt-5 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-[#f4b400]"
+            >
+              <Mail className="h-4 w-4 text-[#f4b400]" aria-hidden="true" />
+              support@pilotvault.co.za
+            </a>
           </div>
 
         </div>

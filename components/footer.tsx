@@ -11,16 +11,16 @@ import {
 import { Button } from "@/components/ui/button"
 
 const quickLinks = [
-  { name: "Home", href: "#" },
-  { name: "Features", href: "#features" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Subjects", href: "#subjects" },
+  { name: "Home", href: "/" },
+  { name: "Features", href: "/#features" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "Subjects", href: "/#subjects" },
 ]
 
 const resources = [
-  { name: "FAQ", href: "faq" },
-  { name: "Support", href: "#" },
-  { name: "Contact", href: "#contact" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Support", href: "/#contact" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 const socialLinks = [
@@ -42,7 +42,7 @@ export function Footer() {
           {/* Brand */}
 
           <div>
-            <Link href="#" className="mb-4 flex">
+            <Link href="/" className="mb-4 flex">
               <Image
                 src="/images/headerlogo.png"
                 alt="PilotVault SA"
@@ -152,14 +152,14 @@ export function Footer() {
 
             <div className="flex gap-6">
               <Link
-                href="privacy"
+                href="/privacy"
                 className="text-sm text-gray-500 transition-colors hover:text-gray-300"
               >
                 Privacy Policy
               </Link>
 
               <Link
-                href="terms"
+                href="/terms"
                 className="text-sm text-gray-500 transition-colors hover:text-gray-300"
               >
                 Terms of Service

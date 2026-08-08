@@ -9,12 +9,12 @@ import { Button } from "@/components/ui/button"
 import { supabase } from "@/src/lib/supabase"
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Features", href: "features" },
-  { name: "Subjects", href: "subjects" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "About", href: "about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Features", href: "/features" },
+  { name: "Subjects", href: "/subjects" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 export function Navbar() {
@@ -130,7 +130,7 @@ export function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid h-20 grid-cols-[180px_1fr_auto] items-center gap-4 lg:grid-cols-[220px_1fr_220px]">
-            <Link href="#" className="flex items-center justify-start">
+            <Link href="/" className="flex items-center justify-start">
               <Image
                 src="/images/Header logo.png"
                 alt="PilotVault SA"

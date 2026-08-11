@@ -86,7 +86,7 @@ const faqGroups = [
       {
         question: "How do I contact support?",
         answer:
-          "Email our support team at support@pilotvault.co.za. We aim to respond to all enquiries as quickly as possible.",
+          "Email our support team at contact@pilotvault.co.za. We aim to respond to all enquiries as quickly as possible.",
         email: true,
       },
     ],
@@ -159,10 +159,10 @@ export default function FAQPage() {
                 </div>
 
                 <a
-                  href="mailto:support@pilotvault.co.za"
+                  href="mailto:contact@pilotvault.co.za"
                   className="flex min-h-16 items-center justify-between gap-5 bg-[#f4b400] px-6 text-sm font-bold text-[#06111f] transition hover:bg-[#ffd054] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset sm:px-8"
                 >
-                  Email support@pilotvault.co.za
+                  Email contact@pilotvault.co.za
                   <Mail className="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
@@ -229,10 +229,10 @@ export default function FAQPage() {
                           <p>
                             Email our support team at{" "}
                             <a
-                              href="mailto:support@pilotvault.co.za"
+                              href="mailto:contact@pilotvault.co.za"
                               className="font-semibold text-[#f4b400] underline decoration-[#f4b400]/35 underline-offset-4 transition hover:text-[#ffd054]"
                             >
-                              support@pilotvault.co.za
+                              contact@pilotvault.co.za
                             </a>
                             . We aim to respond to all enquiries as quickly as
                             possible.
@@ -271,7 +271,7 @@ export default function FAQPage() {
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="mailto:support@pilotvault.co.za"
+                href="mailto:contact@pilotvault.co.za"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#f4b400] px-7 text-sm font-bold text-[#06111f] transition hover:-translate-y-0.5 hover:bg-[#ffd054] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#081726]"
               >
                 Email Support

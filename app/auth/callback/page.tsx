@@ -113,7 +113,7 @@ export default function AuthCallbackPage() {
               Return and try again
             </Link>
             <a
-              href="mailto:support@pilotvault.co.za?subject=PilotVault%20sign-in%20help"
+              href="mailto:contact@pilotvault.co.za?subject=PilotVault%20sign-in%20help"
               className="block text-sm font-semibold text-gray-300 transition hover:text-[#f4b400]"
             >
               Contact support

@@ -2,13 +2,21 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-} from "lucide-react"
+import { Instagram, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M16.6 5.82a4.45 4.45 0 0 1-1.09-2.92h-3.38v13.56a2.83 2.83 0 1 1-2.83-2.83c.29 0 .57.04.84.12v-3.45a6.2 6.2 0 1 0 5.37 6.16V9.58a7.8 7.8 0 0 0 4.56 1.46V7.66a4.48 4.48 0 0 1-3.47-1.84Z" />
+    </svg>
+  )
+}
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -19,14 +27,23 @@ const quickLinks = [
 
 const resources = [
   { name: "FAQ", href: "/faq" },
-  { name: "Support", href: "mailto:support@pilotvault.co.za" },
-  { name: "Contact", href: "mailto:support@pilotvault.co.za" },
+  { name: "Support", href: "mailto:contact@pilotvault.co.za" },
+  {
+    name: "Contact",
+    href: "mailto:contact@pilotvault.co.za",
+    detail: "contact@pilotvault.co.za",
+  },
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  {
+    icon: Instagram,
+    label: "Instagram",
+  },
+  {
+    icon: TikTokIcon,
+    label: "TikTok",
+  },
 ]
 
 export function Footer() {
@@ -58,14 +75,16 @@ export function Footer() {
 
             <div className="flex gap-3">
               {socialLinks.map((social) => (
-                <a
+                <button
                   key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1e3a5f] text-gray-400 transition-all hover:bg-[#f4b400] hover:text-[#06111f]"
+                  type="button"
+                  disabled
+                  aria-label={`${social.label} profile link coming soon`}
+                  title={`${social.label} link coming soon`}
+                  className="flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-[#1e3a5f] text-gray-400"
                 >
                   <social.icon className="h-4 w-4" />
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -103,9 +122,14 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 transition-colors hover:text-[#f4b400]"
+                    className="inline-flex flex-wrap items-baseline gap-x-2 text-sm text-gray-400 transition-colors hover:text-[#f4b400]"
                   >
-                    {link.name}
+                    <span>{link.name}</span>
+                    {"detail" in link && link.detail && (
+                      <span className="text-xs text-gray-500">
+                        {link.detail}
+                      </span>
+                    )}
                   </Link>
                 </li>
               ))}
@@ -138,11 +162,11 @@ export function Footer() {
             </Button>
 
             <a
-              href="mailto:support@pilotvault.co.za"
+              href="mailto:contact@pilotvault.co.za"
               className="mt-5 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-[#f4b400]"
             >
               <Mail className="h-4 w-4 text-[#f4b400]" aria-hidden="true" />
-              support@pilotvault.co.za
+              contact@pilotvault.co.za
             </a>
           </div>
 

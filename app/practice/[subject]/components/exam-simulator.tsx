@@ -3,6 +3,8 @@
 import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
+import { QuestionReferenceImage } from "./question-reference-image"
+
 type ExamSimulatorProps = {
   subject: string
   examLabel: string
@@ -205,10 +207,9 @@ export function ExamSimulator({
               </p>
 
               {currentQuestion.image_url && (
-                <img
+                <QuestionReferenceImage
+                  key={currentQuestion.id}
                   src={currentQuestion.image_url}
-                  alt="Question reference"
-                  className="mt-6 w-full max-w-2xl rounded-lg border border-slate-300"
                 />
               )}
             </div>

@@ -278,6 +278,30 @@ export default function SubjectPracticePage() {
   }, [subject])
 
   useEffect(() => {
+    const referenceImageUrls = Array.from(
+      new Set(
+        subjectQuestions
+          .map((question) => question.image_url)
+          .filter((imageUrl): imageUrl is string => Boolean(imageUrl))
+      )
+    ).slice(0, 24)
+
+    const preloadedImages = referenceImageUrls.map((imageUrl) => {
+      const image = new window.Image()
+      image.decoding = "async"
+      image.src = imageUrl
+      return image
+    })
+
+    return () => {
+      preloadedImages.forEach((image) => {
+        image.onload = null
+        image.onerror = null
+      })
+    }
+  }, [subjectQuestions])
+
+  useEffect(() => {
     if (!isMockAttemptStorageReady || examMode !== "mock") {
       return
     }

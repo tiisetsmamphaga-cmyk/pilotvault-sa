@@ -5,6 +5,55 @@ import type { DatabaseQuestion, Question } from "./types"
 const SUPABASE_PAGE_SIZE = 1000
 const questionRequests = new Map<string, Promise<Question[]>>()
 
+const LOCAL_METEOROLOGY_REFERENCE_IMAGE_DIRECTORY =
+  "/question-images/meteorology/v1"
+// These small, versioned chart crops are mirrored in /public so an exam does
+// not depend on a slow cross-origin Storage request while the user is answering.
+const METEOROLOGY_REFERENCE_IMAGE_NAMES = new Set([
+  "metar-fagg.png",
+  "metar-fagm.png",
+  "metar-fajs.png",
+  "metar-faup.png",
+  "sigwx-pe-ct.png",
+  "station-14.png",
+  "station-2.png",
+  "station-4.png",
+  "station-5.png",
+  "station-6.png",
+  "taf-fadn.png",
+  "taf-fagg.png",
+  "taf-fape.png",
+  "upper-winds-25s-15e.png",
+  "upper-winds-30s-15e.png",
+  "upper-winds-natal-north-coast-final.png",
+])
+
+function resolveQuestionImageUrl(
+  subject: string,
+  imageUrl: string | null
+): string | undefined {
+  if (!imageUrl) {
+    return undefined
+  }
+
+  if (
+    subject !== "meteorology" ||
+    !imageUrl.includes(
+      "/storage/v1/object/public/question-images/meteorology/"
+    )
+  ) {
+    return imageUrl
+  }
+
+  const imageName = imageUrl.split("?")[0].split("/").pop()
+
+  if (!imageName || !METEOROLOGY_REFERENCE_IMAGE_NAMES.has(imageName)) {
+    return imageUrl
+  }
+
+  return `${LOCAL_METEOROLOGY_REFERENCE_IMAGE_DIRECTORY}/${imageName}`
+}
+
 async function loadSubjectQuestions(
   subject: string,
   trialOnly: boolean
@@ -63,7 +112,7 @@ async function loadSubjectQuestions(
     subject: question.subject,
     topic: question.topic ?? undefined,
     question: question.question,
-    image_url: question.image_url ?? undefined,
+    image_url: resolveQuestionImageUrl(question.subject, question.image_url),
     explanation_image_url: question.explanation_image_url ?? undefined,
     options: [
       question.option_a,

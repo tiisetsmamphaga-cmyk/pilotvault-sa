@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Bank angle and load factor</title>
+  <desc id="desc">PilotVault Human Performance diagram showing a clean front-view high-wing training aircraft banked sixty degrees, producing approximately two G in a balanced level turn.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#06111f" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.72" stop-color="#eef2f7"/>
+      <stop offset="1" stop-color="#cfd8e3"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dfe7ef"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <rect width="1200" height="132" fill="#06111f"/>
+
+  <g font-family="Arial, sans-serif">
+    <text x="600" y="42" text-anchor="middle" fill="#f4b400" font-size="19" font-weight="700" letter-spacing="4">PILOTVAULT HUMAN PERFORMANCE</text>
+    <text x="600" y="92" text-anchor="middle" fill="#ffffff" font-size="31" font-weight="800">BANK ANGLE AND LOAD FACTOR</text>
+
+    <rect x="70" y="165" width="1060" height="465" rx="26" fill="#f8fafc" stroke="#d7e0ea" stroke-width="3"/>
+
+    <path d="M150 505 A450 300 0 0 1 1050 505" fill="none" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="150" y1="505" x2="1050" y2="505" stroke="#06111f" stroke-width="4"/>
+
+    <g stroke="#b6c1ce" stroke-width="2" stroke-dasharray="9 9">
+      <line x1="600" y1="505" x2="600" y2="210"/>
+      <line x1="600" y1="505" x2="375" y2="250"/>
+      <line x1="600" y1="505" x2="825" y2="250"/>
+      <line x1="600" y1="505" x2="990" y2="330"/>
+    </g>
+
+    <g fill="#06111f">
+      <circle cx="150" cy="505" r="7"/>
+      <circle cx="375" cy="505" r="7"/>
+      <circle cx="600" cy="505" r="7"/>
+      <circle cx="900" cy="505" r="8" fill="#f4b400"/>
+    </g>
+
+    <g text-anchor="middle" font-size="19" font-weight="700" fill="#06111f">
+      <text x="150" y="545">0°</text>
+      <text x="375" y="545">30°</text>
+      <text x="600" y="545">45°</text>
+      <text x="900" y="545" fill="#b77900">60°</text>
+    </g>
+
+    <text x="905" y="230" text-anchor="middle" fill="#06111f" font-size="26" font-weight="800">60° BANK ≈ <tspan fill="#f4b400">2 G</tspan></text>
+
+    <!-- Clean front-view high-wing trainer. Rotating this view makes the bank angle visually unambiguous. -->
+    <g transform="translate(885 350) rotate(-60) scale(0.88)" filter="url(#shadow)">
+      <!-- high wing -->
+      <path d="M-205 -52 Q-125 -68 -55 -65 L55 -65 Q125 -68 205 -52 L190 -27 Q108 -39 52 -36 L-52 -36 Q-108 -39 -190 -27 Z" fill="url(#wing)" stroke="#697788" stroke-width="3"/>
+      <path d="M-190 -31 Q-95 -44 0 -41 Q95 -44 190 -31" fill="none" stroke="#06111f" stroke-width="6" stroke-linecap="round"/>
+      <path d="M-178 -39 L-115 -49" stroke="#f4b400" stroke-width="5" stroke-linecap="round"/>
+      <path d="M115 -49 L178 -39" stroke="#f4b400" stroke-width="5" stroke-linecap="round"/>
+
+      <!-- cabin / fuselage -->
+      <path d="M-44 -37 Q-53 -11 -50 26 Q-46 74 -28 116 Q-17 141 0 146 Q17 141 28 116 Q46 74 50 26 Q53 -11 44 -37 Q27 -57 0 -58 Q-27 -57 -44 -37 Z" fill="url(#body)" stroke="#657384" stroke-width="4"/>
+
+      <!-- windshield -->
+      <path d="M-31 -29 Q-20 -45 0 -46 Q20 -45 31 -29 L26 -4 Q12 -13 0 -13 Q-12 -13 -26 -4 Z" fill="#163a5f" stroke="#06111f" stroke-width="2"/>
+      <path d="M0 -45 L0 -14" stroke="#9fb5c9" stroke-width="2"/>
+
+      <!-- gold fuselage stripe -->
+      <path d="M-37 26 Q0 39 37 26" fill="none" stroke="#f4b400" stroke-width="7" stroke-linecap="round"/>
+
+      <!-- wing struts -->
+      <path d="M-112 -34 L-36 54" fill="none" stroke="#7c8998" stroke-width="5" stroke-linecap="round"/>
+      <path d="M112 -34 L36 54" fill="none" stroke="#7c8998" stroke-width="5" stroke-linecap="round"/>
+
+      <!-- nose / spinner -->
+      <ellipse cx="0" cy="118" rx="31" ry="24" fill="#06111f"/>
+      <circle cx="0" cy="121" r="10" fill="#f4b400"/>
+
+      <!-- propeller -->
+      <line x1="-60" y1="121" x2="60" y2="121" stroke="#2f3c4a" stroke-width="7" stroke-linecap="round"/>
+      <line x1="-41" y1="84" x2="41" y2="158" stroke="#2f3c4a" stroke-width="5" stroke-linecap="round" opacity="0.58"/>
+
+      <!-- landing gear -->
+      <path d="M-27 77 L-74 126" fill="none" stroke="#566574" stroke-width="5" stroke-linecap="round"/>
+      <path d="M27 77 L74 126" fill="none" stroke="#566574" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="-82" cy="134" rx="16" ry="22" fill="#06111f"/>
+      <ellipse cx="82" cy="134" rx="16" ry="22" fill="#06111f"/>
+      <circle cx="-82" cy="134" r="6" fill="#8190a0"/>
+      <circle cx="82" cy="134" r="6" fill="#8190a0"/>
+    </g>
+
+    <!-- load factor arrow kept separate from aircraft so nothing overlaps -->
+    <line x1="900" y1="388" x2="900" y2="486" stroke="#f4b400" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="900,512 884,484 916,484" fill="#f4b400"/>
+    <text x="926" y="446" fill="#b77900" font-size="17" font-weight="700">LOAD</text>
+
+    <rect x="250" y="575" width="700" height="95" rx="20" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+    <circle cx="315" cy="622" r="28" fill="#06111f"/>
+    <path d="M299 634 l11 -13 10 7 15 -20" fill="none" stroke="#f4b400" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="336,608 327,608 336,599" fill="#f4b400"/>
+    <text x="365" y="612" fill="#06111f" font-size="21" font-weight="700">In a balanced level turn,</text>
+    <text x="365" y="643" fill="#475569" font-size="20"><tspan fill="#b77900" font-weight="700">load factor rises rapidly</tspan> as bank angle increases.</text>
+  </g>
+</svg>

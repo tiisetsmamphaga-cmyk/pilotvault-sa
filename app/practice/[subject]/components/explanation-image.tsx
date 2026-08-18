@@ -8,6 +8,24 @@ type ExplanationImageProps = {
   priority?: boolean
 }
 
+function formatDiagramTitle(src: string, alt: string) {
+  const fileName = src
+    .split("?")[0]
+    .split("/")
+    .pop()
+    ?.replace(/\.(svg|png|jpe?g|webp)$/i, "")
+    .replace(/-v\d+$/i, "")
+    .replace(/[-_]+/g, " ")
+    .trim()
+
+  const fallback = alt
+    .replace(/^Explanation diagram for\s+/i, "")
+    .replace(/[-_]+/g, " ")
+    .trim()
+
+  return (fileName || fallback || "NAVIGATION").toUpperCase()
+}
+
 export function ExplanationImage({
   src,
   alt,
@@ -21,6 +39,7 @@ export function ExplanationImage({
   const usesNavigationTemplate = src.includes(
     "/explanation-images/navigation/"
   )
+  const diagramTitle = useMemo(() => formatDiagramTitle(src, alt), [src, alt])
 
   useEffect(() => {
     setStatus("loading")
@@ -60,13 +79,13 @@ export function ExplanationImage({
       )}
 
       {status === "loaded" && usesNavigationTemplate && (
-        <div className="flex min-h-[50px] items-center justify-between border-b-[3px] border-[#f4b400] bg-[#06111f] px-4 sm:px-6">
-          <span className="text-sm font-bold tracking-wide text-white sm:text-base">
-            PILOTVAULT SA
-          </span>
-          <span className="text-xs font-bold tracking-[0.12em] text-[#f4b400] sm:text-sm">
-            NAVIGATION
-          </span>
+        <div className="bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
+          <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">
+            PILOTVAULT NAVIGATION
+          </div>
+          <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">
+            {diagramTitle}
+          </div>
         </div>
       )}
 

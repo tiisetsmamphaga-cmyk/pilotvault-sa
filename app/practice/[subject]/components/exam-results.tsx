@@ -3,6 +3,8 @@
 import { formatSubjectName } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
+import { ExplanationImage } from "./explanation-image"
+
 type ExamResultsProps = {
   subject: string
   examLabel: string
@@ -139,15 +141,10 @@ export function ExamResults({
                     </p>
 
                     {question.explanation_image_url && (
-                      <figure className="mt-5 border border-slate-200 bg-white p-2">
-                        <img
-                          src={question.explanation_image_url}
-                          alt={`Explanation diagram for ${question.topic ?? formatSubjectName(subject)}`}
-                          loading="lazy"
-                          decoding="async"
-                          className="max-h-[32rem] w-full object-contain"
-                        />
-                      </figure>
+                      <ExplanationImage
+                        src={question.explanation_image_url}
+                        alt={`Explanation diagram for ${question.topic ?? formatSubjectName(subject)}`}
+                      />
                     )}
                   </div>
                 )

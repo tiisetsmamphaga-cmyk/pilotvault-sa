@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Bank angle and load factor</title>
+  <desc id="desc">PilotVault Human Performance infographic showing a high-wing training aircraft banked to sixty degrees in a balanced level turn, producing approximately two G.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#06111f" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="fuselage" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="0.7" stop-color="#eef2f7"/><stop offset="1" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <rect width="1200" height="132" fill="#06111f"/>
+  <g font-family="Arial, sans-serif">
+    <text x="600" y="42" text-anchor="middle" fill="#f4b400" font-size="19" font-weight="700" letter-spacing="4">PILOTVAULT HUMAN PERFORMANCE</text>
+    <text x="600" y="92" text-anchor="middle" fill="#ffffff" font-size="31" font-weight="800">BANK ANGLE AND LOAD FACTOR</text>
+
+    <rect x="70" y="165" width="1060" height="465" rx="26" fill="#f8fafc" stroke="#d7e0ea" stroke-width="3"/>
+
+    <path d="M150 505 A450 300 0 0 1 1050 505" fill="none" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="150" y1="505" x2="1050" y2="505" stroke="#06111f" stroke-width="4"/>
+    <g stroke="#b6c1ce" stroke-width="2" stroke-dasharray="9 9">
+      <line x1="600" y1="505" x2="600" y2="210"/>
+      <line x1="600" y1="505" x2="375" y2="250"/>
+      <line x1="600" y1="505" x2="825" y2="250"/>
+      <line x1="600" y1="505" x2="990" y2="330"/>
+    </g>
+
+    <g fill="#06111f">
+      <circle cx="150" cy="505" r="7"/><circle cx="375" cy="505" r="7"/><circle cx="600" cy="505" r="7"/><circle cx="900" cy="505" r="8" fill="#f4b400"/>
+    </g>
+    <g text-anchor="middle" font-size="19" font-weight="700" fill="#06111f">
+      <text x="150" y="545">0°</text><text x="375" y="545">30°</text><text x="600" y="545">45°</text><text x="900" y="545" fill="#b77900">60°</text>
+    </g>
+
+    <text x="905" y="230" text-anchor="middle" fill="#06111f" font-size="26" font-weight="800">60° BANK ≈ <tspan fill="#f4b400">2 G</tspan></text>
+
+    <g transform="translate(895 360) rotate(-28) scale(0.95)" filter="url(#shadow)">
+      <path d="M-188 -24 L-12 -54 L115 -34 L178 -7 L105 4 L-15 -15 L-180 -2 Z" fill="#dfe6ee" stroke="#8290a0" stroke-width="2"/>
+      <path d="M-178 -18 L-22 -45 L97 -28" fill="none" stroke="#06111f" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-8 -17 L116 -6 L211 36 L183 54 L87 24 L-28 7 Z" fill="#ffffff" stroke="#8290a0" stroke-width="2"/>
+      <path d="M86 20 L184 49" fill="none" stroke="#06111f" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-62 -8 C-34 -38 22 -46 68 -22 C97 -7 111 14 99 36 C83 65 22 74 -33 54 C-71 40 -84 15 -62 -8 Z" fill="url(#fuselage)" stroke="#657384" stroke-width="3"/>
+      <ellipse cx="95" cy="19" rx="22" ry="18" fill="#06111f"/>
+      <circle cx="112" cy="19" r="8" fill="#f4b400"/>
+      <line x1="112" y1="-24" x2="112" y2="62" stroke="#2f3c4a" stroke-width="6" stroke-linecap="round"/>
+      <line x1="79" y1="52" x2="145" y2="-14" stroke="#2f3c4a" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+      <path d="M5 -29 C28 -31 52 -25 68 -13 L51 1 L10 -3 Z" fill="#163a5f"/>
+      <path d="M-25 -25 L4 -28 L7 -3 L-28 1 Z" fill="#244f78"/>
+      <path d="M-46 19 C-5 29 45 31 88 18" fill="none" stroke="#f4b400" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-57 20 L-150 54 L-164 41 L-63 1 Z" fill="#edf2f7" stroke="#8290a0" stroke-width="2"/>
+      <path d="M-144 38 L-193 31 L-175 20 L-131 25 Z" fill="#ffffff" stroke="#8290a0" stroke-width="2"/>
+      <path d="M-154 38 L-165 -10 L-146 -4 L-126 30 Z" fill="#06111f"/>
+      <line x1="0" y1="0" x2="-88" y2="-28" stroke="#6f7e8d" stroke-width="4"/>
+      <line x1="55" y1="5" x2="130" y2="25" stroke="#6f7e8d" stroke-width="4"/>
+      <line x1="8" y1="48" x2="-12" y2="82" stroke="#566574" stroke-width="4"/>
+      <line x1="61" y1="47" x2="78" y2="80" stroke="#566574" stroke-width="4"/>
+      <circle cx="-15" cy="86" r="11" fill="#06111f"/><circle cx="81" cy="84" r="11" fill="#06111f"/>
+      <line x1="91" y1="36" x2="107" y2="64" stroke="#566574" stroke-width="4"/><circle cx="110" cy="69" r="8" fill="#06111f"/>
+    </g>
+
+    <line x1="900" y1="382" x2="900" y2="493" stroke="#f4b400" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="900,512 884,484 916,484" fill="#f4b400"/>
+    <text x="930" y="450" fill="#b77900" font-size="17" font-weight="700">LOAD</text>
+
+    <rect x="250" y="575" width="700" height="95" rx="20" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+    <circle cx="315" cy="622" r="28" fill="#06111f"/>
+    <path d="M299 634 l11 -13 10 7 15 -20" fill="none" stroke="#f4b400" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="336,608 327,608 336,599" fill="#f4b400"/>
+    <text x="365" y="612" fill="#06111f" font-size="21" font-weight="700">In a balanced level turn,</text>
+    <text x="365" y="643" fill="#475569" font-size="20"><tspan fill="#b77900" font-weight="700">load factor rises rapidly</tspan> as bank angle increases.</text>
+  </g>
+</svg>

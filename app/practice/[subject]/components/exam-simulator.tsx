@@ -4,6 +4,7 @@ import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
 import { ExplanationImage } from "./explanation-image"
+import { HumanPerformanceVisual } from "./human-performance-visual"
 import { QuestionReferenceImage } from "./question-reference-image"
 
 type ExamSimulatorProps = {
@@ -42,18 +43,9 @@ function getQuestionButtonClass({
   hasShownAnswer: boolean
   isAnswered: boolean
 }) {
-  if (isActive) {
-    return "border-[#1f4e79] bg-[#1f4e79] text-white"
-  }
-
-  if (hasShownAnswer) {
-    return "border-yellow-400 bg-yellow-100 text-yellow-900"
-  }
-
-  if (isAnswered) {
-    return "border-blue-300 bg-blue-100 text-blue-900"
-  }
-
+  if (isActive) return "border-[#1f4e79] bg-[#1f4e79] text-white"
+  if (hasShownAnswer) return "border-yellow-400 bg-yellow-100 text-yellow-900"
+  if (isAnswered) return "border-blue-300 bg-blue-100 text-blue-900"
   return "border-red-300 bg-red-50 text-red-700"
 }
 
@@ -89,6 +81,8 @@ export function ExamSimulator({
   const unansweredCount = totalQuestions - answeredCount
   const answerIsShown = shownAnswers.includes(currentQuestionIndex)
   const questionIsPinned = pinnedQuestions.includes(currentQuestionIndex)
+  const isHumanPerformance = subject === "human-performance"
+  const usesApprovedBankVisual = isHumanPerformance && currentQuestion.id === 2207
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -105,11 +99,7 @@ export function ExamSimulator({
             {examMode === "mock" ? (
               <>
                 <p className="text-xs text-blue-100">Time Remaining</p>
-                <p
-                  className={`font-bold ${
-                    timeLeft < 300 ? "text-red-300" : "text-white"
-                  }`}
-                >
+                <p className={`font-bold ${timeLeft < 300 ? "text-red-300" : "text-white"}`}>
                   {formatTime(timeLeft)}
                 </p>
               </>
@@ -121,10 +111,7 @@ export function ExamSimulator({
             )}
           </div>
 
-          <button
-            onClick={onExit}
-            className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20"
-          >
+          <button onClick={onExit} className="rounded-md bg-white/10 px-4 py-2 text-sm hover:bg-white/20">
             Exit
           </button>
         </div>
@@ -145,16 +132,10 @@ export function ExamSimulator({
                 <button
                   key={index}
                   onClick={() => onSelectQuestion(index)}
-                  className={`relative h-10 rounded border text-sm font-medium ${getQuestionButtonClass(
-                    { isActive, hasShownAnswer, isAnswered }
-                  )}`}
+                  className={`relative h-10 rounded border text-sm font-medium ${getQuestionButtonClass({ isActive, hasShownAnswer, isAnswered })}`}
                 >
                   {index + 1}
-                  {isPinned && (
-                    <span className="absolute -right-1 -top-2 text-yellow-600">
-                      ⚑
-                    </span>
-                  )}
+                  {isPinned && <span className="absolute -right-1 -top-2 text-yellow-600">⚑</span>}
                 </button>
               )
             })}
@@ -173,12 +154,8 @@ export function ExamSimulator({
           <div className="mx-auto max-w-4xl">
             <div className="mb-8 flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm text-slate-500">
-                  Question {currentQuestionIndex + 1} of {totalQuestions}
-                </p>
-                <h2 className="mt-1 text-xl font-semibold text-slate-800">
-                  Exam Question
-                </h2>
+                <p className="text-sm text-slate-500">Question {currentQuestionIndex + 1} of {totalQuestions}</p>
+                <h2 className="mt-1 text-xl font-semibold text-slate-800">Exam Question</h2>
               </div>
 
               <div className="flex items-center gap-2">
@@ -191,11 +168,7 @@ export function ExamSimulator({
 
                 <button
                   onClick={() => onTogglePin(currentQuestionIndex)}
-                  className={`rounded-md border px-4 py-2 text-sm font-medium ${
-                    questionIsPinned
-                      ? "border-yellow-500 bg-yellow-100 text-yellow-800"
-                      : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
-                  }`}
+                  className={`rounded-md border px-4 py-2 text-sm font-medium ${questionIsPinned ? "border-yellow-500 bg-yellow-100 text-yellow-800" : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"}`}
                 >
                   {questionIsPinned ? "Pinned" : "Pin"}
                 </button>
@@ -203,27 +176,15 @@ export function ExamSimulator({
             </div>
 
             <div>
-              <p className="text-lg leading-relaxed text-slate-900">
-                {currentQuestion.question}
-              </p>
-
-              {currentQuestion.image_url && (
-                <QuestionReferenceImage
-                  key={currentQuestion.id}
-                  src={currentQuestion.image_url}
-                />
-              )}
+              <p className="text-lg leading-relaxed text-slate-900">{currentQuestion.question}</p>
+              {currentQuestion.image_url && <QuestionReferenceImage key={currentQuestion.id} src={currentQuestion.image_url} />}
             </div>
 
             <div className="mt-8 space-y-2">
               {currentQuestion.options.map((option, index) => {
                 const letter = String.fromCharCode(65 + index)
-
                 return (
-                  <label
-                    key={`${currentQuestion.id}-${index}`}
-                    className="flex cursor-pointer items-center gap-4 py-3"
-                  >
+                  <label key={`${currentQuestion.id}-${index}`} className="flex cursor-pointer items-center gap-4 py-3">
                     <input
                       type="radio"
                       name={`question-${currentQuestion.id}`}
@@ -240,26 +201,21 @@ export function ExamSimulator({
 
             {answerIsShown && (
               <div className="mt-8 border-l-4 border-[#1f4e79] bg-slate-50 p-5">
-                <p className="text-sm font-semibold text-[#1f4e79]">
-                  Correct Answer
-                </p>
-                <p className="mt-2 font-semibold text-slate-900">
-                  {currentQuestion.correctAnswer}
-                </p>
-                <p className="mt-4 text-sm font-semibold text-[#1f4e79]">
-                  Explanation
-                </p>
-                <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">
-                  {currentQuestion.explanation}
-                </p>
-                {currentQuestion.explanation_image_url && (
+                <p className="text-sm font-semibold text-[#1f4e79]">Correct Answer</p>
+                <p className="mt-2 font-semibold text-slate-900">{currentQuestion.correctAnswer}</p>
+                <p className="mt-4 text-sm font-semibold text-[#1f4e79]">Explanation</p>
+                <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">{currentQuestion.explanation}</p>
+
+                {isHumanPerformance && !usesApprovedBankVisual ? (
+                  <HumanPerformanceVisual key={`hp-${currentQuestion.id}`} question={currentQuestion} />
+                ) : currentQuestion.explanation_image_url ? (
                   <ExplanationImage
                     key={`${currentQuestion.id}-${currentQuestion.explanation_image_url}`}
                     src={currentQuestion.explanation_image_url}
                     alt={`Explanation diagram for ${currentQuestion.topic ?? formatSubjectName(subject)}`}
                     priority
                   />
-                )}
+                ) : null}
               </div>
             )}
 
@@ -279,7 +235,6 @@ export function ExamSimulator({
                 >
                   Previous
                 </button>
-
                 <button
                   onClick={onNext}
                   disabled={currentQuestionIndex === totalQuestions - 1}
@@ -287,7 +242,6 @@ export function ExamSimulator({
                 >
                   Next
                 </button>
-
                 <button
                   onClick={onOpenFinishPrompt}
                   className="rounded-md bg-slate-900 px-4 py-3 text-sm font-semibold text-white hover:bg-slate-700 sm:px-6 sm:py-2"
@@ -304,19 +258,12 @@ export function ExamSimulator({
         <div className="fixed inset-0 z-50 bg-black/50 md:hidden">
           <div className="absolute bottom-0 left-0 right-0 max-h-[75vh] overflow-y-auto rounded-t-2xl bg-white p-5 text-slate-900 shadow-2xl">
             <div className="mx-auto mb-5 h-1.5 w-16 rounded-full bg-slate-300" />
-
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold">Questions</h2>
-                <p className="mt-1 text-sm text-slate-500">
-                  {answeredCount} answered / {totalQuestions}
-                </p>
+                <p className="mt-1 text-sm text-slate-500">{answeredCount} answered / {totalQuestions}</p>
               </div>
-
-              <button
-                onClick={onCloseMobileQuestionNav}
-                className="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700"
-              >
+              <button onClick={onCloseMobileQuestionNav} className="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700">
                 Close
               </button>
             </div>
@@ -327,24 +274,14 @@ export function ExamSimulator({
                 const isAnswered = Boolean(answers[index])
                 const isPinned = pinnedQuestions.includes(index)
                 const hasShownAnswer = shownAnswers.includes(index)
-
                 return (
                   <button
                     key={index}
-                    onClick={() => {
-                      onSelectQuestion(index)
-                      onCloseMobileQuestionNav()
-                    }}
-                    className={`relative h-11 rounded border text-sm font-medium ${getQuestionButtonClass(
-                      { isActive, hasShownAnswer, isAnswered }
-                    )}`}
+                    onClick={() => { onSelectQuestion(index); onCloseMobileQuestionNav() }}
+                    className={`relative h-11 rounded border text-sm font-medium ${getQuestionButtonClass({ isActive, hasShownAnswer, isAnswered })}`}
                   >
                     {index + 1}
-                    {isPinned && (
-                      <span className="absolute -right-1 -top-2 text-yellow-600">
-                        ⚑
-                      </span>
-                    )}
+                    {isPinned && <span className="absolute -right-1 -top-2 text-yellow-600">⚑</span>}
                   </button>
                 )
               })}
@@ -356,34 +293,16 @@ export function ExamSimulator({
       {showFinishPrompt && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 sm:px-6">
           <div className="w-full max-w-md rounded-md bg-white p-6 shadow-xl">
-            <h2 className="text-xl font-bold text-slate-900">
-              Finish Examination
-            </h2>
-
-            <p className="mt-4 text-slate-700">
-              You are about to submit your examination. Once submitted, your
-              answers cannot be changed.
-            </p>
-
+            <h2 className="text-xl font-bold text-slate-900">Finish Examination</h2>
+            <p className="mt-4 text-slate-700">You are about to submit your examination. Once submitted, your answers cannot be changed.</p>
             {unansweredCount > 0 && (
-              <p className="mt-4 font-semibold text-red-700">
-                You have {unansweredCount} unanswered question
-                {unansweredCount === 1 ? "" : "s"}.
-              </p>
+              <p className="mt-4 font-semibold text-red-700">You have {unansweredCount} unanswered question{unansweredCount === 1 ? "" : "s"}.</p>
             )}
-
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
-              <button
-                onClick={onCloseFinishPrompt}
-                className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 sm:py-2"
-              >
+              <button onClick={onCloseFinishPrompt} className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 sm:py-2">
                 Return to Exam
               </button>
-
-              <button
-                onClick={onSubmit}
-                className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2"
-              >
+              <button onClick={onSubmit} className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2">
                 Submit Examination
               </button>
             </div>

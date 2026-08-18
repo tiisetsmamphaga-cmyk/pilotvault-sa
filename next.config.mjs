@@ -18,6 +18,16 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Explanation diagrams are static app assets and should load instantly on review.
+        source: "/explanation-images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ]
   },
 }

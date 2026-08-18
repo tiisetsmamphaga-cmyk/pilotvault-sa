@@ -3,6 +3,7 @@
 import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
+import { ExplanationImage } from "./explanation-image"
 import { QuestionReferenceImage } from "./question-reference-image"
 
 type ExamSimulatorProps = {
@@ -252,15 +253,12 @@ export function ExamSimulator({
                   {currentQuestion.explanation}
                 </p>
                 {currentQuestion.explanation_image_url && (
-                  <figure className="mt-5 border border-slate-200 bg-white p-2">
-                    <img
-                      src={currentQuestion.explanation_image_url}
-                      alt={`Explanation diagram for ${currentQuestion.topic ?? formatSubjectName(subject)}`}
-                      loading="lazy"
-                      decoding="async"
-                      className="max-h-[32rem] w-full object-contain"
-                    />
-                  </figure>
+                  <ExplanationImage
+                    key={`${currentQuestion.id}-${currentQuestion.explanation_image_url}`}
+                    src={currentQuestion.explanation_image_url}
+                    alt={`Explanation diagram for ${currentQuestion.topic ?? formatSubjectName(subject)}`}
+                    priority
+                  />
                 )}
               </div>
             )}

@@ -18,6 +18,10 @@ export function ExplanationImage({
   )
   const [attempt, setAttempt] = useState(0)
 
+  const usesNavigationTemplate = src.includes(
+    "/explanation-images/navigation/"
+  )
+
   useEffect(() => {
     setStatus("loading")
     setAttempt(0)
@@ -55,21 +59,39 @@ export function ExplanationImage({
         </div>
       )}
 
-      <img
-        key={`${src}-${attempt}`}
-        src={resolvedSrc}
-        alt={alt}
-        loading={priority ? "eager" : "lazy"}
-        decoding="async"
-        fetchPriority={priority ? "high" : "auto"}
-        onLoad={() => setStatus("loaded")}
-        onError={() => setStatus("error")}
-        className={
-          status === "loaded"
-            ? "block max-h-[32rem] w-full object-contain"
-            : "hidden"
-        }
-      />
+      {status === "loaded" && usesNavigationTemplate && (
+        <div className="flex min-h-[50px] items-center justify-between border-b-[3px] border-[#f4b400] bg-[#06111f] px-4 sm:px-6">
+          <span className="text-sm font-bold tracking-wide text-white sm:text-base">
+            PILOTVAULT SA
+          </span>
+          <span className="text-xs font-bold tracking-[0.12em] text-[#f4b400] sm:text-sm">
+            NAVIGATION
+          </span>
+        </div>
+      )}
+
+      <div className={usesNavigationTemplate ? "overflow-hidden" : undefined}>
+        <img
+          key={`${src}-${attempt}`}
+          src={resolvedSrc}
+          alt={alt}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          fetchPriority={priority ? "high" : "auto"}
+          onLoad={() => setStatus("loaded")}
+          onError={() => setStatus("error")}
+          style={
+            status === "loaded" && usesNavigationTemplate
+              ? { marginTop: "-6%" }
+              : undefined
+          }
+          className={
+            status === "loaded"
+              ? "block max-h-[32rem] w-full object-contain"
+              : "hidden"
+          }
+        />
+      </div>
 
       {status === "error" && (
         <div

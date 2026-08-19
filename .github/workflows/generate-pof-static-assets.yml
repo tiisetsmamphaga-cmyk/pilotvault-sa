@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/generate_pof_static_assets.py'
       - 'scripts/generate_pof_static_assets_corrections.py'
+      - 'scripts/apply_pof_asset_versions.py'
       - '.github/workflows/generate-pof-static-assets.yml'
   workflow_dispatch:
 
@@ -30,19 +31,21 @@ jobs:
       - name: Install Pillow
         run: python -m pip install --disable-pip-version-check pillow
 
-      - name: Generate static POF graphics
+      - name: Generate and map static POF graphics
         run: |
           python scripts/generate_pof_static_assets.py
           python scripts/generate_pof_static_assets_corrections.py
+          python scripts/apply_pof_asset_versions.py
 
-      - name: Commit generated assets
+      - name: Commit generated assets and mapping
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/explanation-images/principles-of-flight/static-v4
+          git add 'app/practice/[subject]/components/principles-of-flight-visual.tsx'
           if git diff --cached --quiet; then
-            echo "No asset changes"
+            echo "No asset or mapping changes"
             exit 0
           fi
-          git commit -m "Generate visually QA'd static POF explanation assets"
+          git commit -m "Generate QA-approved POF explanation assets"
           git push

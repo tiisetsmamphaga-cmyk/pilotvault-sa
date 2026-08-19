@@ -5,6 +5,7 @@ import type { ExamAnswers, ExamMode, Question } from "../types"
 
 import { ExplanationImage } from "./explanation-image"
 import { HumanPerformanceVisual } from "./human-performance-visual"
+import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
 
 type ExamResultsProps = {
   subject: string
@@ -38,6 +39,7 @@ export function ExamResults({
   onRestartMock,
 }: ExamResultsProps) {
   const isHumanPerformance = subject === "human-performance"
+  const isPrinciplesOfFlight = subject === "principles-of-flight"
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -104,6 +106,8 @@ export function ExamResults({
 
                     {isHumanPerformance && !usesApprovedBankVisual ? (
                       <HumanPerformanceVisual question={question} />
+                    ) : isPrinciplesOfFlight && !question.explanation_image_url ? (
+                      <PrinciplesOfFlightVisual question={question} />
                     ) : question.explanation_image_url ? (
                       <ExplanationImage
                         src={question.explanation_image_url}

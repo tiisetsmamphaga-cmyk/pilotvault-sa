@@ -21,7 +21,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
     if (has(q, "boundary layer", "transition point", "laminar-flow", "laminar flow")) return visual("boundary-layer-transition-ref-v1.svg", "PilotVault boundary layer and transition diagram")
     if (has(q, "centre of pressure", "center of pressure")) {
       if (has(q, "move forward", "moves forward", "increased", "increased in normal", "increased, the centre")) return visual("centre-pressure-shift-ref-v1.svg", "PilotVault centre of pressure shift diagram")
-      return visual("centre-of-pressure-v4.png", "PilotVault centre of pressure diagram")
+      return visual("centre-of-pressure-ref-v2.svg", "PilotVault centre of pressure diagram")
     }
     if (has(q, "pressure along the upper", "pressure distribution", "high pressure below", "higher air pressure below", "lower air pressure above")) return visual("lift-pressure-distribution-ref-v1.svg", "PilotVault pressure distribution and lift diagram")
     if (has(q, "perpendicular to the relative airflow", "definition of lift", "lift force produced", "lift acts perpendicular", "drag acts parallel")) return visual("lift-drag-directions-ref-v2.svg", "PilotVault lift and drag direction diagram")
@@ -33,15 +33,15 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
 
   if (topic === "Aileron Drag") {
     if (has(q, "differential aileron")) return visual("differential-ailerons-ref-v1.svg", "PilotVault differential ailerons diagram")
-    if (has(q, "frise")) return visual("frise-aileron-v4.png", "PilotVault Frise aileron diagram")
+    if (has(q, "frise")) return visual("frise-aileron-ref-v1.svg", "PilotVault Frise aileron diagram")
     return visual("adverse-yaw-ref-v1.svg", "PilotVault adverse aileron yaw diagram")
   }
 
   if (topic === "Airspeed") return visual("airspeed-chain-v4.png", "PilotVault IAS CAS RAS TAS relationship diagram")
   if (topic === "Airspeed Limitations") {
-    if (has(q, "va ", " va", "manoeuvring", "maneuvering")) return visual("va-envelope-v4.png", "PilotVault design manoeuvring speed VA diagram")
-    if (has(q, "vx", "vy", "best angle", "best rate")) return visual("vx-vy-v7.png", "PilotVault Vx and Vy climb diagram")
-    return visual("v-speeds-v5.png", "PilotVault common V-speeds diagram")
+    if (has(q, "va ", " va", "manoeuvring", "maneuvering")) return visual("va-manoeuvring-speed-ref-v1.svg", "PilotVault design manoeuvring speed VA diagram")
+    if (has(q, "vx", "vy", "best angle", "best rate")) return visual("vx-vy-ref-v2.svg", "PilotVault Vx and Vy climb diagram")
+    return visual("airspeed-limitations-ref-v1.svg", "PilotVault common V-speeds diagram")
   }
 
   if (topic === "Basic Aerodynamics") {
@@ -57,7 +57,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
   }
 
   if (topic === "Climb Performance") {
-    if (has(q, "vx", "vy", "best angle", "best rate", "shortest distance", "shortest time", "clear obstacles", "obstacle")) return visual("vx-vy-v7.png", "PilotVault Vx and Vy climb diagram")
+    if (has(q, "vx", "vy", "best angle", "best rate", "shortest distance", "shortest time", "clear obstacles", "obstacle")) return visual("vx-vy-ref-v2.svg", "PilotVault Vx and Vy climb diagram")
     if (has(q, "lift is less than weight", "thrust is greater than drag", "forces acting", "arrangement of the four forces", "steady climb")) return visual("steady-climb-forces-ref-v1.svg", "PilotVault steady climb force diagram")
     return null
   }
@@ -67,7 +67,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
   if (topic === "Drag") {
     if (has(q, "figure below", "curve a", "curve b", "curve c", "position d", "position b", "minimum drag speed", "vmd", "total drag", "induced drag decreases", "parasite drag increases")) return visual("drag-curves-ref-v1.svg", "PilotVault induced parasite and total drag curves")
     if (has(q, "skin friction", "dust", "viscosity", "immediate contact with the surface")) return visual("skin-friction-ref-v1.svg", "PilotVault form drag and skin friction diagram")
-    if (has(q, "pressure difference", "wingtip", "vortices", "produced as a result of", "lift produced by the wings")) return visual("wingtip-vortices-induced-drag-v6.png", "PilotVault wingtip vortices and induced drag diagram")
+    if (has(q, "pressure difference", "wingtip", "vortices", "produced as a result of", "lift produced by the wings")) return visual("wingtip-vortices-ref-v1.svg", "PilotVault wingtip vortices and induced drag diagram")
     if (has(q, "aspect ratio", "rectangular")) return visual("aspect-ratio-v4.png", "PilotVault aspect ratio and induced drag diagram")
     if (has(q, "washout")) return visual("washout-root-stall-ref-v1.svg", "PilotVault wing washout and root-first stall diagram")
     if (has(q, "doubled", "50 kt to 100 kt", "four times", "fourfold")) return visual("lift-speed-squared-v4.png", "PilotVault speed squared relationship diagram")
@@ -110,14 +110,14 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
   }
 
   if (topic === "Spins") {
-    if (has(q, "recovery", "rudder is applied before elevator", "rudder before elevator")) return visual("spin-recovery-v4.png", "PilotVault spin recovery aerodynamic principle diagram")
+    if (has(q, "recovery", "rudder is applied before elevator", "rudder before elevator")) return visual("spin-recovery-sequence-ref-v1.svg", "PilotVault spin recovery aerodynamic principle diagram")
     if (has(q, "autorotation", "inner wing", "outer wing", "left wing", "ailerons to the right", "delay spin")) return visual("spin-autorotation-ref-v1.svg", "PilotVault spin autorotation diagram")
     return null
   }
 
   if (topic === "Stability") {
     if (has(q, "dutch-roll", "dutch roll")) return visual("dutch-roll-v4.png", "PilotVault Dutch roll diagram")
-    if (has(q, "longitudinal dihedral", "tailplane at a lower angle", "mainplane")) return visual("longitudinal-dihedral-v4.png", "PilotVault longitudinal dihedral diagram")
+    if (has(q, "longitudinal dihedral", "tailplane at a lower angle", "mainplane")) return visual("longitudinal-dihedral-ref-v1.svg", "PilotVault longitudinal dihedral diagram")
     if (has(q, "vertical fin", "directional stability", "keel surface", "normal axis")) return visual("directional-stability-ref-v1.svg", "PilotVault vertical fin directional stability diagram")
     if (has(q, "dihedral", "sideslip", "rolling plane", "lateral stability", "lower wing")) return visual("dihedral-lateral-stability-ref-v1.svg", "PilotVault dihedral and lateral stability diagram")
     if (has(q, "centre of gravity", "center of gravity", "cg too far", "cg is moved", "c of g") && !has(q, "landing must be checked")) return visual("cg-longitudinal-stability-ref-v1.svg", "PilotVault centre of gravity and longitudinal stability diagram")
@@ -136,10 +136,10 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
   }
 
   if (topic === "Trim & Balance Tabs") {
-    if (has(q, "anti-balance", "anti-servo")) return visual("anti-servo-tab-v4.png", "PilotVault anti-servo tab diagram")
-    if (has(q, "mass balance", "flutter")) return visual("mass-balance-flutter-v4.png", "PilotVault mass balance and flutter diagram")
-    if (has(q, "horn balance", "hinge set back", "hinge set", "aerodynamically balanced")) return visual("horn-balance-v4.png", "PilotVault aerodynamic horn balance diagram")
-    if (has(q, "balance tab")) return visual("balance-tab-v4.png", "PilotVault balance tab movement diagram")
+    if (has(q, "anti-balance", "anti-servo")) return visual("anti-balance-tab-ref-v1.svg", "PilotVault anti-servo tab diagram")
+    if (has(q, "mass balance", "flutter")) return visual("mass-balance-flutter-ref-v1.svg", "PilotVault mass balance and flutter diagram")
+    if (has(q, "horn balance", "hinge set back", "hinge set", "aerodynamically balanced")) return visual("horn-balance-ref-v1.svg", "PilotVault aerodynamic horn balance diagram")
+    if (has(q, "balance tab")) return visual("balance-tab-ref-v1.svg", "PilotVault balance tab movement diagram")
     if (has(q, "trim tab", "adjustable trim", "selected angle relative")) return visual("trim-tab-ref-v1.svg", "PilotVault trim tab principle diagram")
     return null
   }

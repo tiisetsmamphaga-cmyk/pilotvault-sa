@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#fff"/>
+  <rect width="1200" height="120" fill="#06111f"/>
+  <text x="600" y="38" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+  <text x="600" y="82" text-anchor="middle" font-family="Arial" font-size="34" font-weight="800" fill="#fff">HORN BALANCE</text>
+  <rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+  <text x="600" y="210" text-anchor="middle" font-family="Arial" font-size="21" font-weight="700" fill="#06111f">A PORTION OF THE CONTROL SURFACE PROJECTS AHEAD OF THE HINGE</text>
+  <path d="M230 420 L625 420 L945 335 L990 365 L680 475 L230 475Z" fill="#f8fafc" stroke="#06111f" stroke-width="6"/>
+  <line x1="625" y1="295" x2="625" y2="520" stroke="#64748b" stroke-width="5" stroke-dasharray="10 8"/>
+  <text x="625" y="550" text-anchor="middle" font-family="Arial" font-size="19" font-weight="700" fill="#64748b">HINGE LINE</text>
+  <path d="M625 420 L565 330 L625 320Z" fill="#f4b400" stroke="#06111f" stroke-width="5"/>
+  <text x="490" y="310" text-anchor="middle" font-family="Arial" font-size="22" font-weight="800" fill="#06111f">HORN AREA</text>
+  <line x1="535" y1="318" x2="577" y2="348" stroke="#64748b" stroke-width="3"/>
+  <text x="820" y="530" text-anchor="middle" font-family="Arial" font-size="20" fill="#64748b">Main control surface lies aft of the hinge.</text>
+  <text x="600" y="595" text-anchor="middle" font-family="Arial" font-size="24" font-weight="800" fill="#06111f">PURPOSE: IMPROVE AERODYNAMIC BALANCE OF THE CONTROLS</text>
+  <text x="600" y="690" text-anchor="middle" font-family="Arial" font-size="18" fill="#64748b">The diagram shows only the geometry and purpose supported by the supplied POF question sources.</text>
+</svg>

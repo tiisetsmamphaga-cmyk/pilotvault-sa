@@ -1,0 +1,55 @@
+name: Apply POF reference visuals batch 6
+
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-pof-reference-visuals-batch6.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wire source-grounded POF visuals
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('app/practice/[subject]/components/principles-of-flight-visual.tsx')
+          s = p.read_text()
+
+          replacements = {
+              'centre-of-pressure-v4.png': 'centre-of-pressure-ref-v2.svg',
+              'frise-aileron-v4.png': 'frise-aileron-ref-v1.svg',
+              'va-envelope-v4.png': 'va-manoeuvring-speed-ref-v1.svg',
+              'vx-vy-v7.png': 'vx-vy-ref-v2.svg',
+              'v-speeds-v5.png': 'airspeed-limitations-ref-v1.svg',
+              'wingtip-vortices-induced-drag-v6.png': 'wingtip-vortices-ref-v1.svg',
+              'spin-recovery-v4.png': 'spin-recovery-sequence-ref-v1.svg',
+              'longitudinal-dihedral-v4.png': 'longitudinal-dihedral-ref-v1.svg',
+              'anti-servo-tab-v4.png': 'anti-balance-tab-ref-v1.svg',
+              'mass-balance-flutter-v4.png': 'mass-balance-flutter-ref-v1.svg',
+              'horn-balance-v4.png': 'horn-balance-ref-v1.svg',
+              'balance-tab-v4.png': 'balance-tab-ref-v1.svg',
+          }
+
+          missing = [old for old in replacements if old not in s]
+          if missing:
+              raise SystemExit(f'Missing expected mappings: {missing}')
+
+          for old, new in replacements.items():
+              s = s.replace(old, new)
+
+          p.write_text(s)
+          PY
+      - name: Commit mapping update
+        run: |
+          git config user.name 'PilotVault Automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add 'app/practice/[subject]/components/principles-of-flight-visual.tsx'
+          git diff --cached --quiet && exit 0
+          git commit -m 'Wire sixth source-grounded POF visual batch'
+          git push

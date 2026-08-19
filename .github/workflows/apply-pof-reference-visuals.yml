@@ -1,0 +1,46 @@
+name: Apply POF reference visuals
+
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-pof-reference-visuals.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update POF visual mappings
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('app/practice/[subject]/components/principles-of-flight-visual.tsx')
+          s = p.read_text()
+          replacements = {
+              'angle-of-attack-v8.png': 'angle-of-attack-ref-v4.svg',
+              'aerofoil-geometry-v4.png': 'aerofoil-geometry-ref-v2.svg',
+              'relative-airflow-v4.png': 'relative-airflow-ref-v3.svg',
+              'lift-drag-directions-v5.png': 'lift-drag-directions-ref-v2.svg',
+              'four-forces-level-flight-v4.png': 'four-forces-ref-v1.svg',
+              'critical-angle-stall-v4.png': 'critical-angle-stall-ref-v4.svg',
+              'drag-curves-v6.png': 'drag-curves-ref-v1.svg',
+              'turn-lift-components-v4.png': 'turn-lift-components-ref-v2.svg',
+          }
+          missing = [old for old in replacements if old not in s]
+          if missing:
+              raise SystemExit(f'Missing expected mappings: {missing}')
+          for old, new in replacements.items():
+              s = s.replace(old, new)
+          p.write_text(s)
+          PY
+      - name: Commit mapping update
+        run: |
+          git config user.name 'PilotVault Automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add 'app/practice/[subject]/components/principles-of-flight-visual.tsx'
+          git diff --cached --quiet && exit 0
+          git commit -m 'Use PDF-reference POF explanation visuals'
+          git push

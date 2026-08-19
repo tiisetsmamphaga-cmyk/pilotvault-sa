@@ -32,15 +32,13 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
   const q = wording(question)
   const topic = question.topic ?? ""
 
-  // Questions that explicitly reference supplied exam figures keep their original
-  // question image, while the explanation may use the matching teaching graphic.
   if (has(q, "wing polar", "polar diagram")) {
     return visual("wing-polar-v4.png", "PilotVault wing polar training diagram")
   }
 
   if (topic === "Aerofoils & Lift") {
     if (
-      has(q, "angle between") && has(q, "chord line") && has(q, "relative airflow") ||
+      (has(q, "angle between") && has(q, "chord line") && has(q, "relative airflow")) ||
       has(q, "angle of attack of an aeroplane is the angle") ||
       has(q, "angle of attack is defined as")
     ) {
@@ -63,7 +61,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
     }
 
     if (has(q, "pressure along the upper", "pressure distribution", "high pressure below", "higher air pressure below", "lower air pressure above")) {
-      return visual("lift-pressure-distribution-v5.png", "PilotVault pressure distribution and lift diagram")
+      return visual("lift-pressure-distribution-ref-v1.svg", "PilotVault pressure distribution and lift diagram")
     }
 
     if (has(q, "perpendicular to the relative airflow", "definition of lift", "lift force produced", "lift acts perpendicular", "drag acts parallel")) {
@@ -82,8 +80,6 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("angle-of-attack-ref-v4.svg", "PilotVault angle of attack training diagram")
     }
 
-    // Questions such as density effects at a fixed IAS or a broad change in AoA
-    // are intentionally left without a visual rather than using a generic filler.
     return null
   }
 
@@ -158,7 +154,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("drag-curves-ref-v1.svg", "PilotVault induced parasite and total drag curves")
     }
     if (has(q, "skin friction", "dust", "viscosity", "immediate contact with the surface")) {
-      return visual("skin-friction-v4.png", "PilotVault skin friction and boundary layer diagram")
+      return visual("skin-friction-ref-v1.svg", "PilotVault form drag and skin friction diagram")
     }
     if (has(q, "pressure difference", "wingtip", "vortices", "produced as a result of", "lift produced by the wings")) {
       return visual("wingtip-vortices-induced-drag-v6.png", "PilotVault wingtip vortices and induced drag diagram")
@@ -180,7 +176,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
 
   if (topic === "Flaps & Glide") {
     if (has(q, "fowler")) {
-      return visual("fowler-flap-v4.png", "PilotVault Fowler flap diagram")
+      return visual("fowler-flap-ref-v1.svg", "PilotVault Fowler flap diagram")
     }
     if (has(q, "slot", "leading-edge")) {
       return visual("leading-edge-slot-v4.png", "PilotVault leading-edge slot airflow diagram")
@@ -195,7 +191,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("flap-vs-no-flap-approach-v4.png", "PilotVault flap versus no-flap approach diagram")
     }
     if (has(q, "glide", "lift-to-drag", "lift/drag", "l/d", "gliding distance", "gliding angle", "rate of descent")) {
-      return visual("glide-forces-ref-v1.svg", "PilotVault flaps and glide performance diagram")
+      return visual("glide-forces-ref-v1.svg", "PilotVault power-off glide force diagram")
     }
     if (has(q, "flap", "wing surface area", "camber", "clmax", "critical angle")) {
       return visual("trailing-edge-flaps-ref-v1.svg", "PilotVault trailing-edge flap effects diagram")
@@ -204,10 +200,13 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
   }
 
   if (topic === "Flight Controls & Axes") {
-    if (has(q, "primary and further", "primary and secondary", "spiral dive", "followed by")) {
-      return visual("control-effects-v4.png", "PilotVault primary and further control effects diagram")
+    if (has(q, "rudder") && !has(q, "primary and further", "spiral dive", "followed by")) {
+      return visual("rudder-effect-ref-v1.svg", "PilotVault rudder and yaw control diagram")
     }
-    if (has(q, "axis", "axes", "aileron", "elevator", "rudder") && !has(q, "control column is moved forward and left")) {
+    if (has(q, "aileron") && !has(q, "primary and further", "spiral dive", "followed by", "control column is moved forward and left")) {
+      return visual("aileron-effect-ref-v1.svg", "PilotVault aileron and roll control diagram")
+    }
+    if (has(q, "axis", "axes", "pitch", "roll", "yaw") && !has(q, "control column is moved forward and left")) {
       return visual("aircraft-axes-controls-ref-v2.svg", "PilotVault aircraft axes and primary controls diagram")
     }
     return null
@@ -215,7 +214,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
 
   if (topic === "Four Forces") {
     if (has(q, "centre of gravity", "center of gravity", "centre of pressure", "center of pressure", "nose to drop", "nose pitches", "pitch effect")) {
-      return visual("cg-centre-pressure-pitch-v4.png", "PilotVault CG centre of pressure and pitch diagram")
+      return visual("cg-longitudinal-stability-ref-v1.svg", "PilotVault CG centre of pressure and pitch diagram")
     }
     if (has(q, "lift equals weight", "thrust equals drag", "four forces", "equilibrium", "straight and level")) {
       return visual("four-forces-ref-v1.svg", "PilotVault four forces in level flight diagram")
@@ -252,7 +251,6 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
     if (has(q, "autorotation", "inner wing", "outer wing", "left wing", "ailerons to the right", "delay spin")) {
       return visual("spin-autorotation-v5.png", "PilotVault spin autorotation diagram")
     }
-    // The turn-needle question needs an instrument-specific figure; do not use a generic spin image.
     return null
   }
 
@@ -264,19 +262,22 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("longitudinal-dihedral-v4.png", "PilotVault longitudinal dihedral diagram")
     }
     if (has(q, "vertical fin", "directional stability", "keel surface", "normal axis")) {
-      return visual("vertical-fin-directional-stability-v4.png", "PilotVault vertical fin directional stability diagram")
+      return visual("directional-stability-ref-v1.svg", "PilotVault vertical fin directional stability diagram")
     }
     if (has(q, "dihedral", "sideslip", "rolling plane", "lateral stability", "lower wing")) {
       return visual("dihedral-lateral-stability-v4.png", "PilotVault dihedral and lateral stability diagram")
     }
     if (has(q, "centre of gravity", "center of gravity", "cg too far", "cg is moved", "c of g") && !has(q, "landing must be checked")) {
-      return visual("cg-longitudinal-stability-v4.png", "PilotVault centre of gravity and longitudinal stability diagram")
+      return visual("cg-longitudinal-stability-ref-v1.svg", "PilotVault centre of gravity and longitudinal stability diagram")
     }
-    if (has(q, "dynamically stable", "dynamic stability", "statically", "static stability", "neutral static", "oscillat")) {
+    if (has(q, "positive stability", "negative stability", "neutral stability", "neutral static")) {
+      return visual("static-stability-types-ref-v1.svg", "PilotVault positive neutral and negative static stability diagram")
+    }
+    if (has(q, "dynamically stable", "dynamic stability", "statically", "static stability", "oscillat")) {
       return visual("static-dynamic-stability-ref-v1.svg", "PilotVault static and dynamic stability diagram")
     }
     if (has(q, "centre of pressure", "center of pressure", "aerodynamic centre")) {
-      return visual("cg-centre-pressure-pitch-v4.png", "PilotVault CG and centre of pressure pitch relationship diagram")
+      return visual("cg-longitudinal-stability-ref-v1.svg", "PilotVault CG and centre of pressure pitch relationship diagram")
     }
     return null
   }
@@ -333,7 +334,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
   }
 
   if (topic === "Weight & Balance") {
-    return visual("centre-of-gravity-v4.png", "PilotVault centre of gravity diagram")
+    return visual("centre-of-gravity-ref-v1.svg", "PilotVault centre of gravity diagram")
   }
 
   if (topic === "Wing Design") {

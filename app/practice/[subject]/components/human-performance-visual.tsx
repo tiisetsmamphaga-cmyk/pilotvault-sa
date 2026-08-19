@@ -1,57 +1,44 @@
 "use client"
 
-import {
-  Activity,
-  AlertTriangle,
-  Brain,
-  CircleGauge,
-  Clock3,
-  Ear,
-  Eye,
-  Gauge,
-  HeartPulse,
-  ListChecks,
-  Moon,
-  Plane,
-  ShieldCheck,
-  Sparkles,
-  Sun,
-  Target,
-  Waves,
-  Wind,
-} from "lucide-react"
-
 import type { Question } from "../types"
 
-type VisualFamily =
-  | "air"
-  | "blood"
-  | "vision"
-  | "hearing"
-  | "stress"
-  | "pressure"
+type DiagramKind =
+  | "flow"
+  | "compare"
+  | "atmosphere"
+  | "altitude"
+  | "gas-exchange"
+  | "blood-pressure"
+  | "circulation"
+  | "eye"
+  | "refraction"
+  | "runway"
+  | "night-vision"
+  | "autokinesis"
+  | "ear"
+  | "vestibular"
+  | "boyle"
   | "gforce"
-  | "motion"
-  | "cockpit"
-  | "fitness"
-  | "co"
   | "circadian"
   | "information"
-  | "airmanship"
+  | "checklist"
+  | "cockpit-eye"
+  | "motion-conflict"
+  | "fatigue"
 
 type VisualSpec = {
   title: string
-  family: VisualFamily
-  left: string
-  center: string
-  right: string
-  footer: string
+  kind: DiagramKind
+  left?: string
+  center?: string
+  right?: string
+  note: string
 }
 
-const q = (question: Question) => question.question.toLowerCase()
+const questionText = (question: Question) => question.question.toLowerCase()
 
 function has(question: Question, ...terms: string[]) {
-  const text = q(question)
+  const text = questionText(question)
   return terms.some((term) => text.includes(term.toLowerCase()))
 }
 
@@ -61,690 +48,715 @@ function getVisualSpec(question: Question): VisualSpec {
   if (has(question, "alveoli")) {
     return {
       title: "ALVEOLI GAS EXCHANGE",
-      family: "air",
-      left: "Alveoli\nHigh O₂ partial pressure",
-      center: "DIFFUSION",
-      right: "Blood\nO₂ binds to haemoglobin",
-      footer: "Oxygen moves down its partial-pressure gradient from the alveoli into the blood.",
-    }
-  }
-
-  if (has(question, "dalton")) {
-    return {
-      title: "DALTON’S LAW OF PARTIAL PRESSURES",
-      family: "air",
-      left: "Nitrogen\npartial pressure",
-      center: "TOTAL PRESSURE",
-      right: "Oxygen + other gases\npartial pressures",
-      footer: "Total pressure equals the sum of the partial pressures of all gases present.",
+      kind: "gas-exchange",
+      note: "O₂ diffuses from alveolar air into the blood while CO₂ diffuses in the opposite direction.",
     }
   }
 
   if (has(question, "largest proportion", "percentage of the atmosphere", "composition of dry atmospheric", "percentage composition")) {
     return {
-      title: "ATMOSPHERIC COMPOSITION",
-      family: "air",
-      left: "N₂ ≈ 78%",
-      center: "O₂ ≈ 21%",
-      right: "Other gases ≈ 1%",
-      footer: "The percentage composition stays nearly constant with altitude; total pressure falls.",
+      title: "COMPOSITION OF DRY AIR",
+      kind: "atmosphere",
+      note: "Dry air is approximately 78% nitrogen, 21% oxygen and 1% other gases.",
     }
   }
 
   if (has(question, "time of useful consciousness", "tuc")) {
     return {
       title: "TIME OF USEFUL CONSCIOUSNESS",
-      family: "air",
-      left: "Higher altitude",
-      center: "LESS USABLE TIME",
-      right: "Physical effort\nshortens TUC",
-      footer: `Key exam answer: ${answer}`,
+      kind: "altitude",
+      left: "Altitude increases",
+      center: "TUC decreases",
+      right: "Act early",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "hypoxia", "cyanosis", "oxygen partial pressure", "oxygen available in each breath", "atmospheric pressure half", "36,000 ft")) {
     return {
-      title: "HYPOXIA AND ALTITUDE",
-      family: "air",
-      left: "Altitude ↑",
-      center: "O₂ PARTIAL PRESSURE ↓",
-      right: "Brain performance ↓",
-      footer: `Key exam answer: ${answer}`,
+      title: "HYPOXIA WITH ALTITUDE",
+      kind: "altitude",
+      left: "Altitude increases",
+      center: "O₂ partial pressure falls",
+      right: "Performance deteriorates",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "hyperventilation", "carbon dioxide level", "normal breathing rate", "gas can the body store")) {
     return {
-      title: "HYPERVENTILATION AND CO₂",
-      family: "air",
-      left: "Breathing too fast / deep",
-      center: "CO₂ FALLS",
-      right: "Tingling · dizziness\nlight-headedness",
-      footer: "Slow and control the breathing pattern; avoid unnecessary over-breathing.",
+      title: "HYPERVENTILATION",
+      kind: "flow",
+      left: "Over-breathing",
+      center: "CO₂ falls",
+      right: "Dizziness / tingling",
+      note: "Reduce unnecessary over-breathing and regain a controlled breathing pattern.",
     }
   }
 
   if (has(question, "carbon monoxide", "exhaust", "heater system", "dangerous gas")) {
     return {
       title: "CARBON MONOXIDE HAZARD",
-      family: "co",
-      left: "Engine / exhaust leak",
-      center: "CO ENTERS CABIN",
-      right: "CO binds strongly\nto haemoglobin",
-      footer: `Key exam answer: ${answer}`,
+      kind: "flow",
+      left: "Exhaust leak",
+      center: "CO enters cabin",
+      right: "O₂ carriage impaired",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "white blood cells")) {
+  if (has(question, "dalton")) {
     return {
-      title: "WHITE BLOOD CELLS",
-      family: "blood",
-      left: "Pathogens",
-      center: "IMMUNE DEFENCE",
-      right: "White blood cells",
-      footer: "White blood cells protect the body by identifying and fighting infection.",
-    }
-  }
-
-  if (has(question, "clot", "platelet")) {
-    return {
-      title: "PLATELETS AND CLOTTING",
-      family: "blood",
-      left: "Damaged vessel",
-      center: "PLATELETS",
-      right: "Clot forms",
-      footer: "Platelets help stop bleeding by forming the initial plug in a damaged blood vessel.",
-    }
-  }
-
-  if (has(question, "haemoglobin", "iron", "anaemic", "anemia")) {
-    return {
-      title: "HAEMOGLOBIN AND OXYGEN TRANSPORT",
-      family: "blood",
-      left: "Iron-containing\nhaemoglobin",
-      center: "CARRIES O₂",
-      right: "Body tissues",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "red blood cells", "arterial blood", "poorly oxygenated blood")) {
-    return {
-      title: "RED BLOOD CELLS AND OXYGEN",
-      family: "blood",
-      left: "Lungs",
-      center: "RED BLOOD CELLS",
-      right: "Body tissues",
-      footer: `Key exam answer: ${answer}`,
+      title: "DALTON’S LAW",
+      kind: "atmosphere",
+      note: "Total pressure is the sum of the partial pressures of the gases in the mixture.",
     }
   }
 
   if (has(question, "blood pressure", "higher reading", "lower reading", "hypertension", "low blood pressure")) {
     return {
       title: "BLOOD PRESSURE",
-      family: "blood",
-      left: "Systolic\nheart contracts",
-      center: "mmHg",
-      right: "Diastolic\nheart relaxes",
-      footer: `Key exam answer: ${answer}`,
+      kind: "blood-pressure",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "heart", "pulse rate", "circulation", "fainting")) {
+  if (has(question, "heart", "pulse rate", "circulation", "fainting", "ventricles", "atria")) {
     return {
       title: "HEART AND CIRCULATION",
-      family: "blood",
-      left: "Right heart → lungs",
-      center: "HEART",
-      right: "Left heart → body",
-      footer: `Key exam answer: ${answer}`,
+      kind: "circulation",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "angina", "severe chest pain", "mild chest pain")) {
+  if (has(question, "white blood cells")) {
     return {
-      title: "CHEST PAIN: ANGINA VS HEART ATTACK",
-      family: "blood",
-      left: "Angina\ntemporary reduced flow",
-      center: "CHEST PAIN",
-      right: "Heart attack\nprolonged blockage",
-      footer: `Key exam answer: ${answer}`,
+      title: "WHITE BLOOD CELLS",
+      kind: "flow",
+      left: "Pathogen",
+      center: "Immune response",
+      right: "Defence",
+      note: "White blood cells identify and fight infection.",
+    }
+  }
+
+  if (has(question, "platelet", "clot")) {
+    return {
+      title: "PLATELETS AND CLOTTING",
+      kind: "flow",
+      left: "Vessel damaged",
+      center: "Platelets gather",
+      right: "Clot forms",
+      note: "Platelets help form the initial plug that limits blood loss.",
+    }
+  }
+
+  if (has(question, "haemoglobin", "iron", "anaemic", "anemia", "red blood cells", "arterial blood", "poorly oxygenated blood")) {
+    return {
+      title: "OXYGEN TRANSPORT IN BLOOD",
+      kind: "flow",
+      left: "Lungs",
+      center: "Haemoglobin + O₂",
+      right: "Body tissues",
+      note: `Key exam point: ${answer}`,
+    }
+  }
+
+  if (has(question, "angina", "severe chest pain", "mild chest pain", "heart attack")) {
+    return {
+      title: "ANGINA AND HEART ATTACK",
+      kind: "compare",
+      left: "ANGINA\nTemporary reduced coronary flow",
+      right: "HEART ATTACK\nProlonged blocked coronary flow",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "hypoglycaemia", "low blood glucose")) {
     return {
       title: "LOW BLOOD GLUCOSE",
-      family: "fitness",
-      left: "Shaking · sweating",
-      center: "GLUCOSE LOW",
-      right: "Give fast-acting sugar\nif conscious",
-      footer: `Key exam answer: ${answer}`,
+      kind: "flow",
+      left: "Glucose falls",
+      center: "Sweating / shaking",
+      right: "Treat if conscious",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "iris", "light enters")) {
     return {
       title: "IRIS AND PUPIL CONTROL",
-      family: "vision",
+      kind: "eye",
       left: "Bright light",
-      center: "PUPIL SIZE",
       right: "Dim light",
-      footer: "The iris changes pupil diameter to regulate the amount of light entering the eye.",
+      note: "The iris changes pupil diameter to control how much light enters the eye.",
     }
   }
 
-  if (has(question, "visual acuity", "fovea")) {
+  if (has(question, "visual acuity", "fovea", "retina", "rods and cones")) {
     return {
-      title: "FOVEA AND VISUAL ACUITY",
-      family: "vision",
-      left: "Peripheral retina",
-      center: "FOVEA\nsharpest vision",
-      right: "Fine detail",
-      footer: `Key exam answer: ${answer}`,
+      title: "RETINA, FOVEA, RODS AND CONES",
+      kind: "eye",
+      left: "Rods: dim / peripheral",
+      right: "Cones: colour / detail",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "accommodation")) {
     return {
       title: "ACCOMMODATION",
-      family: "vision",
+      kind: "refraction",
       left: "Near object",
-      center: "LENS CHANGES SHAPE",
-      right: "Image focused\non retina",
-      footer: "Accommodation is the eye changing lens shape to focus at different distances.",
-    }
-  }
-
-  if (has(question, "retina", "rods and cones")) {
-    return {
-      title: "RETINA: RODS AND CONES",
-      family: "vision",
-      left: "Rods\ndim light / peripheral",
-      center: "RETINA",
-      right: "Cones\ncolour / fine detail",
-      footer: `Key exam answer: ${answer}`,
+      right: "Lens changes shape",
+      note: "Accommodation is the change in lens shape used to focus objects at different distances.",
     }
   }
 
   if (has(question, "myopia", "hypermetropia", "astigmatism", "long-sightedness", "short-sightedness")) {
     return {
       title: "REFRACTIVE ERRORS",
-      family: "vision",
-      left: "Myopia\nfocus before retina",
-      center: "CORRECTIVE LENS",
-      right: "Hypermetropia\nfocus behind retina",
-      footer: `Key exam answer: ${answer}`,
+      kind: "refraction",
+      left: "Myopia: focus before retina",
+      right: "Hypermetropia: focus behind retina",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "dark adaptation", "faint object", "night", "rods")) {
+  if (has(question, "dark adaptation", "faint object", "off-centre", "off center", "night vision", "rods")) {
     return {
-      title: "NIGHT VISION AND DARK ADAPTATION",
-      family: "vision",
-      left: "Avoid bright light",
-      center: "RODS ADAPT",
-      right: "Use off-centre viewing",
-      footer: `Key exam answer: ${answer}`,
+      title: "NIGHT VISION",
+      kind: "night-vision",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "autokinesis")) {
     return {
       title: "AUTOKINESIS",
-      family: "vision",
-      left: "Single fixed light",
-      center: "DARK FEATURELESS VIEW",
-      right: "Light appears to move",
-      footer: "Use reliable external references and instruments rather than trusting the illusion.",
+      kind: "autokinesis",
+      note: "A stationary point of light can appear to move when viewed against a dark, featureless background.",
     }
   }
 
   if (has(question, "empty-field myopia")) {
     return {
       title: "EMPTY-FIELD MYOPIA",
-      family: "vision",
-      left: "No visual texture",
-      center: "EYES FOCUS NEAR",
-      right: "Distant traffic\nmay be missed",
-      footer: "Actively scan and refocus on distant references.",
+      kind: "refraction",
+      left: "No distant visual detail",
+      right: "Eyes focus too near",
+      note: "Actively scan and refocus on distant objects to avoid missing distant traffic.",
     }
   }
 
-  if (has(question, "runway", "sloping cloud", "hazy", "dark, featureless terrain", "illusion")) {
+  if (has(question, "runway", "sloping cloud", "hazy", "dark, featureless terrain", "black hole", "illusion")) {
     return {
       title: "VISUAL APPROACH ILLUSIONS",
-      family: "vision",
-      left: "Runway / terrain cue",
-      center: "FALSE PERCEPTION",
-      right: "Incorrect approach path",
-      footer: `Key exam answer: ${answer}`,
+      kind: "runway",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "bright light", "uv")) {
+  if (has(question, "bright light", "uv", "ultraviolet")) {
     return {
-      title: "BRIGHT LIGHT AND UV EXPOSURE",
-      family: "vision",
-      left: "Altitude ↑",
-      center: "UV EXPOSURE ↑",
-      right: "Eye tissue risk ↑",
-      footer: "Quality sunglasses reduce glare and ultraviolet exposure.",
+      title: "BRIGHT LIGHT AND UV",
+      kind: "flow",
+      left: "Altitude / sunlight",
+      center: "UV exposure",
+      right: "Eye protection",
+      note: "Use good-quality sunglasses that reduce glare and ultraviolet exposure.",
     }
   }
 
   if (has(question, "eustachian", "cochlea", "ossicles", "auditory nerve", "sections of the ear", "conductive hearing")) {
     return {
       title: "EAR ANATOMY AND HEARING",
-      family: "hearing",
-      left: "Outer / middle ear",
-      center: "COCHLEA",
-      right: "Auditory nerve\n→ brain",
-      footer: `Key exam answer: ${answer}`,
+      kind: "ear",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "semicircular", "otolith", "vestibular", "vertigo", "spatial orientation")) {
     return {
       title: "VESTIBULAR SYSTEM",
-      family: "hearing",
-      left: "Semicircular canals\nangular acceleration",
-      center: "INNER EAR",
-      right: "Otolith organs\nlinear acceleration",
-      footer: `Key exam answer: ${answer}`,
+      kind: "vestibular",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "leans", "forward acceleration", "upward vertical acceleration", "spatial disorientation")) {
+  if (has(question, "leans", "forward acceleration", "upward vertical acceleration", "spatial disorientation", "somatogravic")) {
     return {
       title: "SPATIAL DISORIENTATION",
-      family: "motion",
+      kind: "motion-conflict",
       left: "Body sensation",
-      center: "CAN BE MISLEADING",
+      center: "May be false",
       right: "Trust instruments",
-      footer: `Key exam answer: ${answer}`,
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "tinnitus", "presbycusis", "noise-induced", "audible frequency", "noise above")) {
+  if (has(question, "tinnitus", "presbycusis", "noise-induced", "audible frequency", "noise above", "hearing loss")) {
     return {
-      title: "HEARING AND NOISE EXPOSURE",
-      family: "hearing",
+      title: "NOISE AND HEARING",
+      kind: "flow",
       left: "Noise exposure",
-      center: "INNER-EAR DAMAGE",
+      center: "Inner-ear damage",
       right: "Hearing loss / tinnitus",
-      footer: `Key exam answer: ${answer}`,
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "blocked sinuses", "valsalva")) {
+  if (has(question, "blocked sinuses", "valsalva", "eustachian tube")) {
     return {
       title: "PRESSURE EQUALISATION",
-      family: "pressure",
-      left: "Cabin pressure changes",
-      center: "EQUALISE PRESSURE",
-      right: "Ear / sinus discomfort ↓",
-      footer: `Key exam answer: ${answer}`,
+      kind: "ear",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "boyle")) {
     return {
       title: "BOYLE’S LAW",
-      family: "pressure",
-      left: "Pressure ↓",
-      center: "GAS VOLUME ↑",
-      right: "Temperature constant",
-      footer: "For a fixed mass of gas at constant temperature, pressure and volume vary inversely.",
+      kind: "boyle",
+      note: "At constant temperature, a decrease in pressure causes a trapped gas volume to increase.",
     }
   }
 
   if (has(question, "decompression sickness", "nitrogen bubbles", "bends", "chokes", "creeps")) {
     return {
       title: "DECOMPRESSION SICKNESS",
-      family: "pressure",
+      kind: "flow",
       left: "Pressure falls",
-      center: "N₂ BUBBLES FORM",
-      right: "Skin · joints · lungs",
-      footer: `Key exam answer: ${answer}`,
+      center: "N₂ bubbles form",
+      right: "Symptoms appear",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "negative g", "positive g", "grey-out", "black-out", "red-out", "tunnel vision")) {
     return {
       title: "G-FORCES AND BLOOD FLOW",
-      family: "gforce",
-      left: "+G\nblood away from head",
-      center: "BLOOD FLOW SHIFTS",
-      right: "−G\nblood toward head",
-      footer: `Key exam answer: ${answer}`,
+      kind: "gforce",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   if (has(question, "motion sickness")) {
     return {
       title: "MOTION SICKNESS",
-      family: "motion",
-      left: "Eyes",
-      center: "SENSORY CONFLICT",
-      right: "Inner ear",
-      footer: `Key exam answer: ${answer}`,
+      kind: "motion-conflict",
+      left: "Visual input",
+      center: "Conflict",
+      right: "Vestibular input",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "circadian", "jet lag", "body clock", "time zones", "24")) {
+  if (has(question, "circadian", "jet lag", "body clock", "time zones", "free-running")) {
     return {
-      title: "CIRCADIAN RHYTHM AND JET LAG",
-      family: "circadian",
-      left: "Light / darkness",
-      center: "BODY CLOCK",
-      right: "Sleep / alertness",
-      footer: `Key exam answer: ${answer}`,
+      title: "CIRCADIAN RHYTHM",
+      kind: "circadian",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "sleep", "insomnia", "fatigue", "acute stress", "chronic stress", "stressors", "arousal")) {
+  if (has(question, "sleep", "insomnia", "fatigue", "acute stress", "chronic stress", "stressors", "arousal", "rem", "slow-wave")) {
     return {
-      title: "STRESS, FATIGUE AND SLEEP",
-      family: "stress",
-      left: "Too little arousal",
-      center: "OPTIMUM PERFORMANCE",
-      right: "Too much arousal",
-      footer: `Key exam answer: ${answer}`,
+      title: "FATIGUE, STRESS AND SLEEP",
+      kind: "fatigue",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "selective attention", "chunking", "working memory", "perception", "mental overload", "memory", "judgement", "semantic", "episodic", "skill-based", "rule-based", "knowledge-based", "motor programme", "reflex")) {
+  if (has(question, "motor programme", "selective attention", "knowledge-based", "skill-based", "rule-based", "short-term memory", "long-term memory", "decision", "perception", "error", "judgement", "attention", "information processing")) {
     return {
-      title: "HUMAN INFORMATION PROCESSING",
-      family: "information",
-      left: "Sense / perceive",
-      center: "THINK + REMEMBER",
-      right: "Decide / act",
-      footer: `Key exam answer: ${answer}`,
+      title: "INFORMATION PROCESSING",
+      kind: "information",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "confirmation bias", "hazardous attitude", "wrong physical action", "omits the final check", "pilot error")) {
-    return {
-      title: "ERROR TRAPS AND BIAS",
-      family: "information",
-      left: "Expectation",
-      center: "CHECK THE EVIDENCE",
-      right: "Correct action",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "checklist")) {
+  if (has(question, "checklist", "interrupted")) {
     return {
       title: "CHECKLIST DISCIPLINE",
-      family: "cockpit",
-      left: "Stop / identify point",
-      center: "RESTART SAFELY",
-      right: "Complete before next phase",
-      footer: `Key exam answer: ${answer}`,
+      kind: "checklist",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "instrument", "standard flight-instrument")) {
-    return {
-      title: "STANDARD FLIGHT-INSTRUMENT T",
-      family: "cockpit",
-      left: "Airspeed · attitude",
-      center: "PRIMARY T",
-      right: "Altimeter · heading",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "eye-reference", "sits below", "sitting too high")) {
+  if (has(question, "eye-reference", "eye reference", "sits below", "seating height")) {
     return {
       title: "COCKPIT EYE-REFERENCE POSITION",
-      family: "cockpit",
-      left: "Too low",
-      center: "CORRECT EYE LINE",
-      right: "Too high",
-      footer: `Key exam answer: ${answer}`,
+      kind: "cockpit-eye",
+      note: `Key exam point: ${answer}`,
     }
   }
 
-  if (has(question, "aircraft controls", "analogue display", "design and arrangement")) {
+  if (has(question, "pilot in command", "responsible for the safety", "airmanship", "discipline", "competent pilot", "pre-take-off", "take-off clearance")) {
     return {
-      title: "COCKPIT DISPLAY AND CONTROL DESIGN",
-      family: "cockpit",
-      left: "Clear layout",
-      center: "STANDARD + INTUITIVE",
-      right: "Lower workload",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "bmi", "body mass index", "obesity")) {
-    return {
-      title: "BODY MASS INDEX",
-      family: "fitness",
-      left: "Mass (kg)",
-      center: "BMI = kg ÷ m²",
-      right: "Height² (m²)",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "donating blood", "scuba", "alcohol")) {
-    return {
-      title: "FITNESS-TO-FLY WAITING TIMES",
-      family: "fitness",
-      left: "Medical / dive / alcohol event",
-      center: "WAIT THE REQUIRED TIME",
-      right: "Return to flying safely",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "gastroenteritis", "cold", "influenza", "fit or seizure", "nervous passenger")) {
-    return {
-      title: "FIT TO FLY",
-      family: "fitness",
-      left: "Assess condition",
-      center: "SAFE TO OPERATE?",
-      right: "Delay if impaired",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "closed-loop", "feedback", "safest decision", "marginal", "crosswind")) {
-    return {
-      title: "AERONAUTICAL DECISION MAKING",
-      family: "airmanship",
-      left: "Plan",
-      center: "ASSESS → ACT → REVIEW",
-      right: "Feedback",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "responsible for the safety", "competent pilot", "leadership quality", "dangerous")) {
-    return {
-      title: "AIRMANSHIP AND COMMAND RESPONSIBILITY",
-      family: "airmanship",
-      left: "Situational awareness",
-      center: "PIC RESPONSIBILITY",
-      right: "Assertive safe action",
-      footer: `Key exam answer: ${answer}`,
-    }
-  }
-
-  if (has(question, "head-on", "closing head-on", "time is available")) {
-    return {
-      title: "CLOSING TRAFFIC",
-      family: "airmanship",
-      left: "Aircraft A →",
-      center: "CLOSURE RATE",
-      right: "← Aircraft B",
-      footer: `Key exam answer: ${answer}`,
+      title: "AIRMANSHIP AND COCKPIT DISCIPLINE",
+      kind: "checklist",
+      note: `Key exam point: ${answer}`,
     }
   }
 
   return {
-    title: (question.topic || "HUMAN PERFORMANCE").toUpperCase(),
-    family: "airmanship",
-    left: "Recognise",
-    center: answer.toUpperCase(),
-    right: "Apply safely",
-    footer: question.explanation.split("\n")[0] || `Key exam answer: ${answer}`,
+    title: "HUMAN PERFORMANCE KEY CONCEPT",
+    kind: "flow",
+    left: "Recognise the condition",
+    center: "Apply the principle",
+    right: "Choose the safest action",
+    note: `Key exam point: ${answer}`,
   }
 }
 
-function FamilyIcon({ family }: { family: VisualFamily }) {
-  const cls = "h-8 w-8"
-  switch (family) {
-    case "air": return <Wind className={cls} />
-    case "blood": return <HeartPulse className={cls} />
-    case "vision": return <Eye className={cls} />
-    case "hearing": return <Ear className={cls} />
-    case "stress": return <Brain className={cls} />
-    case "pressure": return <Gauge className={cls} />
-    case "gforce": return <Activity className={cls} />
-    case "motion": return <Waves className={cls} />
-    case "cockpit": return <ListChecks className={cls} />
-    case "fitness": return <ShieldCheck className={cls} />
-    case "co": return <AlertTriangle className={cls} />
-    case "circadian": return <Clock3 className={cls} />
-    case "information": return <Brain className={cls} />
-    default: return <Plane className={cls} />
-  }
-}
-
-function Diagram({ family }: { family: VisualFamily }) {
-  if (family === "vision") {
-    return (
-      <svg viewBox="0 0 360 150" className="h-36 w-full" aria-hidden="true">
-        <path d="M24 75 C86 12 274 12 336 75 C274 138 86 138 24 75Z" fill="#fff" stroke="#06111f" strokeWidth="5" />
-        <circle cx="180" cy="75" r="43" fill="#dce7f2" stroke="#06111f" strokeWidth="4" />
-        <circle cx="180" cy="75" r="20" fill="#06111f" />
-        <circle cx="173" cy="68" r="6" fill="#fff" opacity=".9" />
-        <path d="M275 75 H337" stroke="#f4b400" strokeWidth="7" strokeLinecap="round" />
-      </svg>
-    )
-  }
-
-  if (family === "blood") {
-    return (
-      <svg viewBox="0 0 360 150" className="h-36 w-full" aria-hidden="true">
-        <path d="M180 126 C148 99 90 66 102 33 C113 3 151 13 180 42 C209 13 247 3 258 33 C270 66 212 99 180 126Z" fill="#06111f" />
-        <path d="M24 75 H105 M255 75 H336" stroke="#f4b400" strokeWidth="8" strokeLinecap="round" />
-        <path d="M91 62 L108 75 L91 88 M269 62 L252 75 L269 88" fill="none" stroke="#f4b400" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
-  }
-
-  if (family === "hearing") {
-    return (
-      <svg viewBox="0 0 360 150" className="h-36 w-full" aria-hidden="true">
-        <path d="M140 30 C90 25 70 62 83 95 C94 122 122 112 124 91 C126 74 112 66 102 73" fill="none" stroke="#06111f" strokeWidth="7" strokeLinecap="round" />
-        <circle cx="230" cy="72" r="34" fill="none" stroke="#f4b400" strokeWidth="7" />
-        <circle cx="250" cy="52" r="27" fill="none" stroke="#f4b400" strokeWidth="7" />
-        <circle cx="250" cy="92" r="27" fill="none" stroke="#f4b400" strokeWidth="7" />
-        <path d="M124 80 H194" stroke="#06111f" strokeWidth="6" strokeLinecap="round" />
-      </svg>
-    )
-  }
-
-  if (family === "circadian") {
-    return (
-      <div className="relative mx-auto flex h-36 w-36 items-center justify-center rounded-full border-[6px] border-[#06111f] bg-white">
-        <Sun className="absolute -right-5 top-3 h-8 w-8 text-[#f4b400]" />
-        <Moon className="absolute -left-5 bottom-3 h-8 w-8 text-[#06111f]" />
-        <div className="absolute h-12 w-1 origin-bottom -translate-y-6 rotate-[35deg] rounded bg-[#06111f]" />
-        <div className="absolute h-9 w-1 origin-bottom -translate-y-4 -rotate-[55deg] rounded bg-[#f4b400]" />
-        <div className="h-3 w-3 rounded-full bg-[#06111f]" />
-      </div>
-    )
-  }
-
-  if (family === "gforce") {
-    return (
-      <svg viewBox="0 0 360 150" className="h-36 w-full" aria-hidden="true">
-        <circle cx="180" cy="34" r="19" fill="#06111f" />
-        <rect x="161" y="57" width="38" height="62" rx="16" fill="#06111f" />
-        <path d="M145 28 V116 M145 116 L134 98 M145 116 L156 98" stroke="#f4b400" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M215 116 V28 M215 28 L204 46 M215 28 L226 46" stroke="#f4b400" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
-  }
-
-  if (family === "pressure") {
-    return (
-      <svg viewBox="0 0 360 150" className="h-36 w-full" aria-hidden="true">
-        <circle cx="105" cy="76" r="34" fill="#dce7f2" stroke="#06111f" strokeWidth="4" />
-        <circle cx="255" cy="76" r="55" fill="#fff" stroke="#06111f" strokeWidth="4" />
-        <path d="M145 75 H210" stroke="#f4b400" strokeWidth="7" strokeLinecap="round" />
-        <path d="M196 62 L212 75 L196 88" fill="none" stroke="#f4b400" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
-  }
-
-  if (family === "co") {
-    return (
-      <div className="flex h-36 items-center justify-center gap-5">
-        <Plane className="h-14 w-14 text-[#06111f]" />
-        <div className="text-3xl font-black text-[#f4b400]">CO</div>
-        <HeartPulse className="h-14 w-14 text-[#06111f]" />
-      </div>
-    )
-  }
-
-  if (family === "cockpit") {
-    return (
-      <div className="grid h-36 grid-cols-3 gap-3 rounded-2xl bg-[#06111f] p-4">
-        {[CircleGauge, Gauge, Target, CircleGauge, ListChecks, Gauge].map((Icon, index) => (
-          <div key={index} className="flex items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white">
-            <Icon className={index === 4 ? "h-8 w-8 text-[#f4b400]" : "h-8 w-8"} />
-          </div>
-        ))}
-      </div>
-    )
-  }
-
-  if (family === "motion") {
-    return (
-      <div className="grid h-36 grid-cols-[1fr_auto_1fr] items-center gap-4">
-        <div className="flex flex-col items-center gap-2 rounded-2xl border border-slate-200 bg-white p-4"><Eye className="h-9 w-9 text-[#06111f]" /><span className="text-xs font-bold text-slate-600">VISUAL</span></div>
-        <AlertTriangle className="h-9 w-9 text-[#f4b400]" />
-        <div className="flex flex-col items-center gap-2 rounded-2xl border border-slate-200 bg-white p-4"><Ear className="h-9 w-9 text-[#06111f]" /><span className="text-xs font-bold text-slate-600">VESTIBULAR</span></div>
-      </div>
-    )
-  }
-
-  if (family === "information" || family === "stress") {
-    return (
-      <svg viewBox="0 0 360 150" className="h-36 w-full" aria-hidden="true">
-        <path d="M35 118 C90 112 109 45 176 60 C230 71 261 25 326 33" fill="none" stroke="#06111f" strokeWidth="6" strokeLinecap="round" />
-        <circle cx="176" cy="60" r="11" fill="#f4b400" />
-        <path d="M35 125 H326" stroke="#cbd5e1" strokeWidth="3" />
-        <path d="M35 20 V125" stroke="#cbd5e1" strokeWidth="3" />
-      </svg>
-    )
-  }
-
+function TechnicalArrow() {
   return (
-    <div className="flex h-36 items-center justify-center">
-      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[#06111f] text-[#f4b400] shadow-sm">
-        <FamilyIcon family={family} />
-      </div>
+    <div className="hidden items-center sm:flex" aria-hidden="true">
+      <div className="h-px w-8 bg-[#f4b400]" />
+      <div className="h-0 w-0 border-y-[5px] border-l-[8px] border-y-transparent border-l-[#f4b400]" />
     </div>
   )
 }
 
-function LabelCard({ label, dark = false }: { label: string; dark?: boolean }) {
+function FlowDiagram({ left, center, right }: Pick<VisualSpec, "left" | "center" | "right">) {
+  const cells = [left, center, right].filter(Boolean) as string[]
   return (
-    <div className={dark ? "rounded-2xl bg-[#06111f] p-4 text-center text-white" : "rounded-2xl border border-slate-200 bg-white p-4 text-center text-slate-800"}>
-      {label.split("\n").map((line, index) => (
-        <div key={index} className={index === 0 ? "font-extrabold" : "mt-1 text-sm opacity-75"}>{line}</div>
+    <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
+      {cells.map((label, index) => (
+        <div className="contents" key={`${label}-${index}`}>
+          <div className={`border px-4 py-4 text-center text-sm font-semibold leading-relaxed ${index === 1 ? "border-[#06111f] bg-[#06111f] text-white" : "border-slate-300 bg-white text-slate-800"}`}>
+            {label}
+          </div>
+          {index < cells.length - 1 && <TechnicalArrow />}
+        </div>
       ))}
     </div>
   )
+}
+
+function CompareDiagram({ left, right }: Pick<VisualSpec, "left" | "right">) {
+  return (
+    <div className="grid overflow-hidden border border-slate-300 sm:grid-cols-2">
+      <div className="whitespace-pre-line p-5 text-center text-sm font-semibold leading-relaxed text-slate-800">{left}</div>
+      <div className="whitespace-pre-line border-t border-slate-300 bg-slate-50 p-5 text-center text-sm font-semibold leading-relaxed text-slate-800 sm:border-l sm:border-t-0">{right}</div>
+    </div>
+  )
+}
+
+function AtmosphereDiagram() {
+  return (
+    <div>
+      <div className="flex h-16 overflow-hidden border border-[#06111f] text-xs font-bold text-white sm:text-sm">
+        <div className="flex items-center justify-center bg-[#06111f]" style={{ width: "78%" }}>N₂ 78%</div>
+        <div className="flex items-center justify-center bg-[#1f4e79]" style={{ width: "21%" }}>O₂ 21%</div>
+        <div className="min-w-10 flex-1 bg-[#f4b400]" aria-label="Other gases approximately 1 percent" />
+      </div>
+      <div className="mt-2 flex justify-between text-xs text-slate-500"><span>Nitrogen</span><span>Oxygen</span><span>Other ≈ 1%</span></div>
+    </div>
+  )
+}
+
+function AltitudeDiagram({ left, center, right }: Pick<VisualSpec, "left" | "center" | "right">) {
+  return (
+    <div className="grid gap-5 sm:grid-cols-[110px_1fr] sm:items-center">
+      <div className="relative mx-auto h-56 w-20 border-l-2 border-slate-900">
+        {[0, 1, 2, 3, 4].map((tick) => <div key={tick} className="absolute left-0 h-px w-4 bg-slate-900" style={{ bottom: `${tick * 25}%` }} />)}
+        <div className="absolute -left-2 -top-1 text-xs font-bold text-[#f4b400]">HIGH</div>
+        <div className="absolute -bottom-1 left-5 text-xs font-bold text-slate-500">LOW</div>
+        <div className="absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-xs font-semibold text-slate-600">ALTITUDE</div>
+      </div>
+      <FlowDiagram left={left} center={center} right={right} />
+    </div>
+  )
+}
+
+function GasExchangeDiagram() {
+  return (
+    <svg viewBox="0 0 720 250" className="h-auto w-full" role="img" aria-label="Alveolus and capillary gas exchange">
+      <rect x="30" y="30" width="660" height="190" fill="#fff" stroke="#cbd5e1" strokeWidth="2" />
+      <circle cx="220" cy="115" r="65" fill="#f8fafc" stroke="#06111f" strokeWidth="4" />
+      <text x="220" y="108" textAnchor="middle" fontSize="20" fontWeight="700" fill="#06111f">ALVEOLUS</text>
+      <text x="220" y="136" textAnchor="middle" fontSize="15" fill="#475569">higher O₂ partial pressure</text>
+      <path d="M320 92 H480" stroke="#f4b400" strokeWidth="5" />
+      <polygon points="480,92 464,82 464,102" fill="#f4b400" />
+      <text x="400" y="78" textAnchor="middle" fontSize="16" fontWeight="700" fill="#92400e">O₂</text>
+      <path d="M480 150 H320" stroke="#1f4e79" strokeWidth="4" />
+      <polygon points="320,150 336,140 336,160" fill="#1f4e79" />
+      <text x="400" y="176" textAnchor="middle" fontSize="16" fontWeight="700" fill="#1f4e79">CO₂</text>
+      <rect x="500" y="70" width="150" height="95" fill="#f8fafc" stroke="#06111f" strokeWidth="3" />
+      <text x="575" y="110" textAnchor="middle" fontSize="18" fontWeight="700" fill="#06111f">CAPILLARY</text>
+      <text x="575" y="136" textAnchor="middle" fontSize="14" fill="#475569">blood</text>
+    </svg>
+  )
+}
+
+function BloodPressureDiagram() {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      <div className="border border-slate-300 p-5 text-center">
+        <div className="mx-auto mb-3 h-32 w-10 border border-slate-400 p-1"><div className="h-[80%] w-full bg-[#1f4e79]" /></div>
+        <div className="font-bold text-[#06111f]">SYSTOLIC</div><div className="mt-1 text-sm text-slate-600">heart contracts</div>
+      </div>
+      <div className="border border-slate-300 p-5 text-center">
+        <div className="mx-auto mb-3 h-32 w-10 border border-slate-400 p-1"><div className="mt-[45%] h-[55%] w-full bg-[#f4b400]" /></div>
+        <div className="font-bold text-[#06111f]">DIASTOLIC</div><div className="mt-1 text-sm text-slate-600">heart relaxes</div>
+      </div>
+    </div>
+  )
+}
+
+function CirculationDiagram() {
+  return (
+    <svg viewBox="0 0 720 250" className="h-auto w-full" role="img" aria-label="Heart lungs and body circulation loop">
+      <rect x="60" y="85" width="140" height="80" fill="#fff" stroke="#06111f" strokeWidth="3" />
+      <rect x="290" y="75" width="140" height="100" fill="#06111f" />
+      <rect x="520" y="85" width="140" height="80" fill="#fff" stroke="#06111f" strokeWidth="3" />
+      <text x="130" y="132" textAnchor="middle" fontSize="20" fontWeight="700" fill="#06111f">LUNGS</text>
+      <text x="360" y="132" textAnchor="middle" fontSize="20" fontWeight="700" fill="#fff">HEART</text>
+      <text x="590" y="132" textAnchor="middle" fontSize="20" fontWeight="700" fill="#06111f">BODY</text>
+      <path d="M200 105 H290" stroke="#1f4e79" strokeWidth="4" /><polygon points="290,105 275,96 275,114" fill="#1f4e79" />
+      <path d="M430 105 H520" stroke="#f4b400" strokeWidth="4" /><polygon points="520,105 505,96 505,114" fill="#f4b400" />
+      <path d="M520 155 H430" stroke="#1f4e79" strokeWidth="4" /><polygon points="430,155 445,146 445,164" fill="#1f4e79" />
+      <path d="M290 155 H200" stroke="#f4b400" strokeWidth="4" /><polygon points="200,155 215,146 215,164" fill="#f4b400" />
+    </svg>
+  )
+}
+
+function EyeDiagram({ left, right }: Pick<VisualSpec, "left" | "right">) {
+  return (
+    <svg viewBox="0 0 720 260" className="h-auto w-full" role="img" aria-label="Simplified eye anatomy">
+      <path d="M70 130 C180 35 500 35 650 130 C500 225 180 225 70 130Z" fill="#fff" stroke="#06111f" strokeWidth="4" />
+      <circle cx="330" cy="130" r="58" fill="#dce7f2" stroke="#06111f" strokeWidth="3" />
+      <circle cx="330" cy="130" r="22" fill="#06111f" />
+      <path d="M495 72 Q565 130 495 188" fill="none" stroke="#1f4e79" strokeWidth="5" />
+      <circle cx="522" cy="130" r="7" fill="#f4b400" />
+      <text x="330" y="225" textAnchor="middle" fontSize="15" fill="#475569">IRIS / PUPIL</text>
+      <text x="540" y="214" textAnchor="middle" fontSize="15" fill="#475569">RETINA / FOVEA</text>
+      {left && <text x="125" y="35" fontSize="14" fontWeight="700" fill="#06111f">{left}</text>}
+      {right && <text x="480" y="35" fontSize="14" fontWeight="700" fill="#06111f">{right}</text>}
+    </svg>
+  )
+}
+
+function RefractionDiagram({ left, right }: Pick<VisualSpec, "left" | "right">) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {[left || "Near focus", right || "Distant focus"].map((label, index) => (
+        <div key={label} className="border border-slate-300 p-4">
+          <svg viewBox="0 0 320 150" className="h-auto w-full" aria-hidden="true">
+            <ellipse cx="200" cy="75" rx="85" ry="58" fill="#fff" stroke="#06111f" strokeWidth="3" />
+            <ellipse cx="150" cy="75" rx={index === 0 ? 18 : 12} ry={index === 0 ? 38 : 30} fill="#dce7f2" stroke="#1f4e79" strokeWidth="3" />
+            <path d="M20 45 L150 75 L265 75 M20 105 L150 75 L265 75" fill="none" stroke="#f4b400" strokeWidth="3" />
+            <path d="M270 30 V120" stroke="#06111f" strokeWidth="4" />
+          </svg>
+          <div className="mt-2 text-center text-sm font-semibold text-slate-700">{label}</div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function RunwayDiagram() {
+  return (
+    <svg viewBox="0 0 720 280" className="h-auto w-full" role="img" aria-label="Runway perspective and approach path">
+      <rect width="720" height="280" fill="#f8fafc" />
+      <polygon points="250,245 470,245 405,70 315,70" fill="#e2e8f0" stroke="#06111f" strokeWidth="3" />
+      <line x1="360" y1="230" x2="360" y2="90" stroke="#fff" strokeWidth="6" strokeDasharray="24 20" />
+      <path d="M95 210 Q210 140 315 110" fill="none" stroke="#f4b400" strokeWidth="5" />
+      <polygon points="315,110 298,108 307,124" fill="#f4b400" />
+      <text x="95" y="235" fontSize="15" fontWeight="700" fill="#06111f">APPROACH CUE</text>
+      <text x="485" y="90" fontSize="14" fill="#475569">Runway width / slope / darkness</text>
+      <text x="485" y="112" fontSize="14" fill="#475569">can distort perceived glide path</text>
+    </svg>
+  )
+}
+
+function NightVisionDiagram() {
+  return (
+    <svg viewBox="0 0 720 260" className="h-auto w-full" role="img" aria-label="Off-centre viewing at night">
+      <rect width="720" height="260" fill="#06111f" />
+      <circle cx="500" cy="110" r="7" fill="#fff" />
+      <circle cx="430" cy="155" r="7" fill="#f4b400" />
+      <line x1="430" y1="155" x2="500" y2="110" stroke="#f4b400" strokeWidth="2" strokeDasharray="7 7" />
+      <text x="315" y="168" textAnchor="end" fontSize="15" fill="#f4b400">LOOK SLIGHTLY OFF-CENTRE</text>
+      <text x="515" y="115" fontSize="14" fill="#fff">faint target</text>
+      <text x="360" y="225" textAnchor="middle" fontSize="15" fill="#cbd5e1">Rods are more effective away from the central fovea in low light.</text>
+    </svg>
+  )
+}
+
+function AutokinesisDiagram() {
+  return (
+    <svg viewBox="0 0 720 250" className="h-auto w-full" role="img" aria-label="Autokinesis illusion">
+      <rect width="720" height="250" fill="#06111f" />
+      <circle cx="355" cy="120" r="8" fill="#fff" />
+      <path d="M355 120 C410 80 440 150 500 95 C545 55 585 120 620 90" fill="none" stroke="#f4b400" strokeWidth="3" strokeDasharray="7 8" />
+      <text x="355" y="155" textAnchor="middle" fontSize="15" fill="#fff">actual fixed light</text>
+      <text x="520" y="190" textAnchor="middle" fontSize="15" fill="#f4b400">perceived movement</text>
+    </svg>
+  )
+}
+
+function EarDiagram() {
+  return (
+    <svg viewBox="0 0 720 250" className="h-auto w-full" role="img" aria-label="Simplified ear pathway">
+      <path d="M80 115 C80 55 150 45 185 95 C210 130 185 180 145 170" fill="none" stroke="#06111f" strokeWidth="6" />
+      <line x1="190" y1="115" x2="270" y2="115" stroke="#1f4e79" strokeWidth="5" />
+      <circle cx="295" cy="115" r="18" fill="#f4b400" stroke="#06111f" strokeWidth="3" />
+      <path d="M330 115 C365 75 430 80 430 125 C430 175 355 175 355 130 C355 100 405 100 405 128" fill="none" stroke="#06111f" strokeWidth="5" />
+      <line x1="430" y1="125" x2="555" y2="90" stroke="#1f4e79" strokeWidth="4" />
+      <line x1="295" y1="135" x2="265" y2="205" stroke="#06111f" strokeWidth="4" />
+      <text x="125" y="220" textAnchor="middle" fontSize="14" fill="#475569">outer ear</text>
+      <text x="295" y="220" textAnchor="middle" fontSize="14" fill="#475569">middle ear / Eustachian tube</text>
+      <text x="405" y="220" textAnchor="middle" fontSize="14" fill="#475569">cochlea</text>
+      <text x="565" y="82" fontSize="14" fill="#475569">auditory nerve</text>
+    </svg>
+  )
+}
+
+function VestibularDiagram() {
+  return (
+    <svg viewBox="0 0 720 260" className="h-auto w-full" role="img" aria-label="Semicircular canals and otolith organs">
+      <circle cx="250" cy="125" r="70" fill="none" stroke="#06111f" strokeWidth="5" />
+      <ellipse cx="250" cy="125" rx="30" ry="80" fill="none" stroke="#1f4e79" strokeWidth="5" transform="rotate(50 250 125)" />
+      <ellipse cx="250" cy="125" rx="30" ry="80" fill="none" stroke="#f4b400" strokeWidth="5" transform="rotate(-50 250 125)" />
+      <rect x="430" y="85" width="165" height="80" fill="#fff" stroke="#06111f" strokeWidth="3" />
+      <circle cx="470" cy="125" r="13" fill="#f4b400" />
+      <circle cx="510" cy="125" r="13" fill="#f4b400" />
+      <circle cx="550" cy="125" r="13" fill="#f4b400" />
+      <text x="250" y="225" textAnchor="middle" fontSize="15" fontWeight="700" fill="#06111f">SEMICIRCULAR CANALS</text>
+      <text x="512" y="205" textAnchor="middle" fontSize="15" fontWeight="700" fill="#06111f">OTOLITH ORGANS</text>
+      <text x="250" y="246" textAnchor="middle" fontSize="13" fill="#475569">angular acceleration</text>
+      <text x="512" y="226" textAnchor="middle" fontSize="13" fill="#475569">linear acceleration / gravity</text>
+    </svg>
+  )
+}
+
+function BoyleDiagram() {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 sm:items-center">
+      <div className="text-center">
+        <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border-4 border-[#06111f] text-sm font-bold">HIGH P</div>
+        <div className="mt-2 text-sm text-slate-600">smaller gas volume</div>
+      </div>
+      <div className="text-center">
+        <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-4 border-[#f4b400] text-sm font-bold">LOW P</div>
+        <div className="mt-2 text-sm text-slate-600">larger gas volume</div>
+      </div>
+    </div>
+  )
+}
+
+function GForceDiagram() {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {[{ title: "+G", arrow: "↓", text: "blood shifts away from the head" }, { title: "−G", arrow: "↑", text: "blood shifts toward the head" }].map((item, index) => (
+        <div key={item.title} className={`border p-5 text-center ${index === 0 ? "border-slate-300 bg-white" : "border-[#06111f] bg-[#06111f] text-white"}`}>
+          <div className={`text-xl font-black ${index === 1 ? "text-[#f4b400]" : "text-[#06111f]"}`}>{item.title}</div>
+          <div className="relative mx-auto my-4 h-32 w-16">
+            <div className={`absolute left-1/2 top-0 h-10 w-10 -translate-x-1/2 rounded-full ${index === 0 ? "bg-[#06111f]" : "bg-white"}`} />
+            <div className={`absolute left-1/2 top-11 h-20 w-8 -translate-x-1/2 ${index === 0 ? "bg-[#06111f]" : "bg-white"}`} />
+            <div className="absolute left-[70%] top-9 text-5xl font-black text-[#f4b400]">{item.arrow}</div>
+          </div>
+          <div className="text-sm font-semibold">{item.text}</div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function CircadianDiagram() {
+  return (
+    <div className="overflow-hidden border border-slate-300">
+      <div className="grid grid-cols-4 text-center text-xs font-bold text-slate-600"><div className="p-2">00:00</div><div className="p-2">06:00</div><div className="p-2">12:00</div><div className="p-2">18:00</div></div>
+      <div className="grid h-20 grid-cols-4"><div className="bg-[#06111f]" /><div className="bg-amber-100" /><div className="bg-amber-50" /><div className="bg-[#06111f]" /></div>
+      <div className="border-t border-slate-300 p-3 text-center text-sm font-semibold text-slate-700">LIGHT / DARKNESS SYNCHRONISE THE BODY CLOCK</div>
+    </div>
+  )
+}
+
+function InformationDiagram() {
+  return <FlowDiagram left="STIMULUS" center="PERCEPTION → DECISION" right="ACTION" />
+}
+
+function ChecklistDiagram() {
+  return (
+    <div className="border border-slate-300 p-4">
+      {["1  Complete item", "2  Cross-check", "3  Continue sequence", "4  If interrupted: re-establish position"].map((item, index) => (
+        <div key={item} className={`flex items-center gap-3 border-b border-slate-200 py-3 text-sm font-semibold last:border-b-0 ${index === 3 ? "text-[#92400e]" : "text-slate-800"}`}>
+          <div className={`h-4 w-4 border ${index < 3 ? "border-[#1f4e79] bg-[#1f4e79]" : "border-[#f4b400]"}`} />
+          <span>{item}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function CockpitEyeDiagram() {
+  return (
+    <svg viewBox="0 0 720 260" className="h-auto w-full" role="img" aria-label="Cockpit eye reference and sight line">
+      <path d="M80 210 H650" stroke="#06111f" strokeWidth="4" />
+      <rect x="180" y="135" width="95" height="75" fill="#e2e8f0" stroke="#06111f" strokeWidth="3" />
+      <circle cx="235" cy="98" r="18" fill="#06111f" />
+      <line x1="253" y1="98" x2="620" y2="98" stroke="#f4b400" strokeWidth="4" strokeDasharray="10 8" />
+      <line x1="620" y1="60" x2="620" y2="140" stroke="#1f4e79" strokeWidth="5" />
+      <text x="235" y="240" textAnchor="middle" fontSize="14" fill="#475569">seat / eye position</text>
+      <text x="535" y="83" textAnchor="middle" fontSize="14" fontWeight="700" fill="#92400e">correct sight line</text>
+    </svg>
+  )
+}
+
+function MotionConflictDiagram({ left, center, right }: Pick<VisualSpec, "left" | "center" | "right">) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-[1fr_150px_1fr] sm:items-center">
+      <div className="border border-slate-300 p-5 text-center"><div className="text-xs font-bold tracking-widest text-slate-500">INPUT 1</div><div className="mt-2 font-bold">{left}</div></div>
+      <div className="border-2 border-[#f4b400] bg-amber-50 p-5 text-center text-sm font-black text-[#06111f]">{center}</div>
+      <div className="border border-slate-300 p-5 text-center"><div className="text-xs font-bold tracking-widest text-slate-500">INPUT 2 / RESPONSE</div><div className="mt-2 font-bold">{right}</div></div>
+    </div>
+  )
+}
+
+function FatigueDiagram() {
+  return (
+    <div>
+      <div className="relative h-44 border-b-2 border-l-2 border-slate-800">
+        <svg viewBox="0 0 600 160" className="absolute inset-0 h-full w-full" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 40 C90 35 130 55 210 65 C300 75 350 95 430 110 C500 123 555 130 600 145" fill="none" stroke="#1f4e79" strokeWidth="5" />
+        </svg>
+        <div className="absolute left-2 top-2 text-xs font-bold text-slate-500">ALERTNESS</div>
+        <div className="absolute bottom-2 right-3 text-xs font-bold text-slate-500">TIME / FATIGUE LOAD →</div>
+      </div>
+      <div className="mt-3 text-center text-sm font-semibold text-slate-700">Sleep loss, workload and circadian effects reduce sustained alertness.</div>
+    </div>
+  )
+}
+
+function renderDiagram(spec: VisualSpec) {
+  switch (spec.kind) {
+    case "compare": return <CompareDiagram left={spec.left} right={spec.right} />
+    case "atmosphere": return <AtmosphereDiagram />
+    case "altitude": return <AltitudeDiagram left={spec.left} center={spec.center} right={spec.right} />
+    case "gas-exchange": return <GasExchangeDiagram />
+    case "blood-pressure": return <BloodPressureDiagram />
+    case "circulation": return <CirculationDiagram />
+    case "eye": return <EyeDiagram left={spec.left} right={spec.right} />
+    case "refraction": return <RefractionDiagram left={spec.left} right={spec.right} />
+    case "runway": return <RunwayDiagram />
+    case "night-vision": return <NightVisionDiagram />
+    case "autokinesis": return <AutokinesisDiagram />
+    case "ear": return <EarDiagram />
+    case "vestibular": return <VestibularDiagram />
+    case "boyle": return <BoyleDiagram />
+    case "gforce": return <GForceDiagram />
+    case "circadian": return <CircadianDiagram />
+    case "information": return <InformationDiagram />
+    case "checklist": return <ChecklistDiagram />
+    case "cockpit-eye": return <CockpitEyeDiagram />
+    case "motion-conflict": return <MotionConflictDiagram left={spec.left} center={spec.center} right={spec.right} />
+    case "fatigue": return <FatigueDiagram />
+    default: return <FlowDiagram left={spec.left} center={spec.center} right={spec.right} />
+  }
 }
 
 export function HumanPerformanceVisual({ question }: { question: Question }) {
@@ -753,27 +765,16 @@ export function HumanPerformanceVisual({ question }: { question: Question }) {
   return (
     <figure className="mt-5 overflow-hidden border border-slate-200 bg-white">
       <div className="bg-[#06111f] px-4 py-4 text-center sm:px-6 sm:py-5">
-        <div className="text-[11px] font-extrabold tracking-[0.28em] text-[#f4b400] sm:text-xs">
-          PILOTVAULT HUMAN PERFORMANCE
-        </div>
-        <div className="mt-1 text-lg font-black uppercase tracking-[0.03em] text-white sm:text-2xl">
-          {spec.title}
-        </div>
+        <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">PILOTVAULT HUMAN PERFORMANCE</div>
+        <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">{spec.title}</div>
       </div>
 
-      <div className="bg-[#f8fafc] p-4 sm:p-6">
-        <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
-          <Diagram family={spec.family} />
+      <div className="bg-white p-4 sm:p-6">
+        <div className="mx-auto max-w-3xl border border-slate-200 bg-[#f8fafc] p-4 sm:p-6">
+          {renderDiagram(spec)}
 
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            <LabelCard label={spec.left} />
-            <LabelCard label={spec.center} dark />
-            <LabelCard label={spec.right} />
-          </div>
-
-          <div className="mt-5 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-slate-700">
-            <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-[#b77900]" />
-            <span>{spec.footer}</span>
+          <div className="mt-5 border-t-2 border-[#f4b400] bg-white px-4 py-3 text-sm leading-relaxed text-slate-700">
+            <span className="font-bold text-[#06111f]">EXAM NOTE: </span>{spec.note}
           </div>
         </div>
       </div>

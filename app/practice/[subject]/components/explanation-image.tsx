@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react"
 
+import { BankAngleLoadFactorVisual } from "./bank-angle-load-factor-visual"
+
 type ExplanationImageProps = {
   src: string
   alt: string
@@ -27,6 +29,21 @@ function formatDiagramTitle(src: string, alt: string) {
 }
 
 export function ExplanationImage({
+  src,
+  alt,
+  priority = false,
+}: ExplanationImageProps) {
+  const usesBankAngleVisual =
+    src.includes("/explanation-images/human-performance/load-factor-bank-")
+
+  if (usesBankAngleVisual) {
+    return <BankAngleLoadFactorVisual />
+  }
+
+  return <StandardExplanationImage src={src} alt={alt} priority={priority} />
+}
+
+function StandardExplanationImage({
   src,
   alt,
   priority = false,

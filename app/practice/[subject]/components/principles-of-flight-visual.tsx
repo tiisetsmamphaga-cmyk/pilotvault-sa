@@ -116,7 +116,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("newtons-laws-v4.png", "PilotVault Newton laws in flight diagram")
     }
     if (has(q, "venturi", "bernoulli", "continuity", "cross-sectional area")) {
-      return visual("venturi-bernoulli-v4.png", "PilotVault Venturi and Bernoulli diagram")
+      return visual("venturi-bernoulli-ref-v2.svg", "PilotVault Venturi and Bernoulli diagram")
     }
     if (has(q, "torque reaction")) {
       return visual("propeller-torque-reaction-v4.png", "PilotVault propeller torque reaction diagram")
@@ -128,7 +128,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("relative-airflow-ref-v3.svg", "PilotVault relative airflow diagram")
     }
     if (has(q, "pitch, roll and yaw", "pitch roll and yaw", "axes that pass", "centre of gravity") && has(q, "rotat")) {
-      return visual("aircraft-axes-controls-v4.png", "PilotVault aircraft axes diagram")
+      return visual("aircraft-axes-controls-ref-v2.svg", "PilotVault aircraft axes diagram")
     }
     if (has(q, "laminar flow", "boundary layer")) {
       return visual("boundary-layer-transition-v5.png", "PilotVault boundary layer and transition diagram")
@@ -144,7 +144,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("vx-vy-v7.png", "PilotVault Vx and Vy climb diagram")
     }
     if (has(q, "lift is less than weight", "thrust is greater than drag", "forces acting", "arrangement of the four forces", "steady climb")) {
-      return visual("steady-climb-forces-v6.png", "PilotVault steady climb force diagram")
+      return visual("steady-climb-forces-ref-v1.svg", "PilotVault steady climb force diagram")
     }
     return null
   }
@@ -195,10 +195,10 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("flap-vs-no-flap-approach-v4.png", "PilotVault flap versus no-flap approach diagram")
     }
     if (has(q, "glide", "lift-to-drag", "lift/drag", "l/d", "gliding distance", "gliding angle", "rate of descent")) {
-      return visual("flaps-glide-v4.png", "PilotVault flaps and glide performance diagram")
+      return visual("glide-forces-ref-v1.svg", "PilotVault flaps and glide performance diagram")
     }
     if (has(q, "flap", "wing surface area", "camber", "clmax", "critical angle")) {
-      return visual("trailing-edge-flap-effects-v4.png", "PilotVault trailing-edge flap effects diagram")
+      return visual("trailing-edge-flaps-ref-v1.svg", "PilotVault trailing-edge flap effects diagram")
     }
     return null
   }
@@ -208,7 +208,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("control-effects-v4.png", "PilotVault primary and further control effects diagram")
     }
     if (has(q, "axis", "axes", "aileron", "elevator", "rudder") && !has(q, "control column is moved forward and left")) {
-      return visual("aircraft-axes-controls-v4.png", "PilotVault aircraft axes and primary controls diagram")
+      return visual("aircraft-axes-controls-ref-v2.svg", "PilotVault aircraft axes and primary controls diagram")
     }
     return null
   }
@@ -273,7 +273,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("cg-longitudinal-stability-v4.png", "PilotVault centre of gravity and longitudinal stability diagram")
     }
     if (has(q, "dynamically stable", "dynamic stability", "statically", "static stability", "neutral static", "oscillat")) {
-      return visual("static-dynamic-stability-v4.png", "PilotVault static and dynamic stability diagram")
+      return visual("static-dynamic-stability-ref-v1.svg", "PilotVault static and dynamic stability diagram")
     }
     if (has(q, "centre of pressure", "center of pressure", "aerodynamic centre")) {
       return visual("cg-centre-pressure-pitch-v4.png", "PilotVault CG and centre of pressure pitch relationship diagram")
@@ -289,7 +289,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("stall-warning-v4.png", "PilotVault approaching stall and warning diagram")
     }
     if (has(q, "wing loading", "weight is increased", "stall at a higher ias", "turn", "stall speed", "stalling speed")) {
-      return visual("stall-speed-load-factor-v6.png", "PilotVault stall speed and load factor diagram")
+      return visual("bank-load-factor-ref-v2.svg", "PilotVault stall speed and load factor diagram")
     }
     if (has(q, "critical angle", "stalling angle", "will stall as a result", "stalls as a result", "10° to 18°", "centre of pressure tends")) {
       return visual("critical-angle-stall-ref-v4.svg", "PilotVault critical angle of attack and stall diagram")
@@ -311,7 +311,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("balance-tab-v4.png", "PilotVault balance tab movement diagram")
     }
     if (has(q, "trim tab", "adjustable trim", "selected angle relative")) {
-      return visual("trim-tab-v5.png", "PilotVault trim tab principle diagram")
+      return visual("trim-tab-ref-v1.svg", "PilotVault trim tab principle diagram")
     }
     return null
   }
@@ -321,10 +321,10 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("slip-skid-indicator-v4.png", "PilotVault slip skid indicator diagram")
     }
     if (has(q, "stall speed", "stalls at", "square root", "wing loading", "minimum speed")) {
-      return visual("stall-speed-load-factor-v6.png", "PilotVault stall speed and load factor diagram")
+      return visual("bank-load-factor-ref-v2.svg", "PilotVault stall speed and load factor diagram")
     }
     if (has(q, "bank angle", "60°", "60 degrees", "load factor", "gross weight", "structure support", "2.5 g", "3.8 g", "20°", "50°", "66°", "75°")) {
-      return visual("bank-angle-load-factor-v4.png", "PilotVault bank angle and load factor diagram")
+      return visual("bank-load-factor-ref-v2.svg", "PilotVault bank angle and load factor diagram")
     }
     if (has(q, "centripetal", "total lift", "vertical component", "horizontal component", "maintain altitude")) {
       return visual("turn-lift-components-ref-v2.svg", "PilotVault lift components in a level turn diagram")

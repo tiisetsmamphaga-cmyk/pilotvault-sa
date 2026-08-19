@@ -44,11 +44,11 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       has(q, "angle of attack of an aeroplane is the angle") ||
       has(q, "angle of attack is defined as")
     ) {
-      return visual("angle-of-attack-v8.png", "PilotVault angle of attack training diagram")
+      return visual("angle-of-attack-ref-v4.svg", "PilotVault angle of attack training diagram")
     }
 
     if (has(q, "chord line") && !has(q, "angle of attack")) {
-      return visual("aerofoil-geometry-v4.png", "PilotVault aerofoil geometry diagram")
+      return visual("aerofoil-geometry-ref-v2.svg", "PilotVault aerofoil geometry diagram")
     }
 
     if (has(q, "boundary layer", "transition point", "laminar-flow", "laminar flow")) {
@@ -67,7 +67,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
     }
 
     if (has(q, "perpendicular to the relative airflow", "definition of lift", "lift force produced", "lift acts perpendicular", "drag acts parallel")) {
-      return visual("lift-drag-directions-v5.png", "PilotVault lift and drag direction diagram")
+      return visual("lift-drag-directions-ref-v2.svg", "PilotVault lift and drag direction diagram")
     }
 
     if (has(q, "airspeed is doubled", "speed is doubled", "v squared", "v²", "cl and v squared", "constant angle of attack, what happens to lift and drag when airspeed decreases")) {
@@ -75,11 +75,11 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
     }
 
     if (has(q, "clmax", "critical angle", "stalling angle", "16°", "-4°")) {
-      return visual("critical-angle-stall-v4.png", "PilotVault critical angle of attack diagram")
+      return visual("critical-angle-stall-ref-v4.svg", "PilotVault critical angle of attack diagram")
     }
 
     if (has(q, "reducing speed", "indicated airspeed is reduced") && has(q, "angle of attack")) {
-      return visual("angle-of-attack-v8.png", "PilotVault angle of attack training diagram")
+      return visual("angle-of-attack-ref-v4.svg", "PilotVault angle of attack training diagram")
     }
 
     // Questions such as density effects at a fixed IAS or a broad change in AoA
@@ -125,7 +125,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("p-factor-v4.png", "PilotVault asymmetric blade effect P-factor diagram")
     }
     if (has(q, "relative airflow")) {
-      return visual("relative-airflow-v4.png", "PilotVault relative airflow diagram")
+      return visual("relative-airflow-ref-v3.svg", "PilotVault relative airflow diagram")
     }
     if (has(q, "pitch, roll and yaw", "pitch roll and yaw", "axes that pass", "centre of gravity") && has(q, "rotat")) {
       return visual("aircraft-axes-controls-v4.png", "PilotVault aircraft axes diagram")
@@ -155,7 +155,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
 
   if (topic === "Drag") {
     if (has(q, "figure below", "curve a", "curve b", "curve c", "position d", "position b", "minimum drag speed", "vmd", "total drag", "induced drag decreases", "parasite drag increases")) {
-      return visual("drag-curves-v6.png", "PilotVault induced parasite and total drag curves")
+      return visual("drag-curves-ref-v1.svg", "PilotVault induced parasite and total drag curves")
     }
     if (has(q, "skin friction", "dust", "viscosity", "immediate contact with the surface")) {
       return visual("skin-friction-v4.png", "PilotVault skin friction and boundary layer diagram")
@@ -173,7 +173,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("lift-speed-squared-v4.png", "PilotVault speed squared relationship diagram")
     }
     if (has(q, "induced drag", "parasite drag", "profile drag")) {
-      return visual("drag-curves-v6.png", "PilotVault induced parasite and total drag curves")
+      return visual("drag-curves-ref-v1.svg", "PilotVault induced parasite and total drag curves")
     }
     return null
   }
@@ -218,10 +218,10 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("cg-centre-pressure-pitch-v4.png", "PilotVault CG centre of pressure and pitch diagram")
     }
     if (has(q, "lift equals weight", "thrust equals drag", "four forces", "equilibrium", "straight and level")) {
-      return visual("four-forces-level-flight-v4.png", "PilotVault four forces in level flight diagram")
+      return visual("four-forces-ref-v1.svg", "PilotVault four forces in level flight diagram")
     }
     if (has(q, "angle of attack")) {
-      return visual("angle-of-attack-v8.png", "PilotVault angle of attack training diagram")
+      return visual("angle-of-attack-ref-v4.svg", "PilotVault angle of attack training diagram")
     }
     return null
   }
@@ -292,7 +292,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("stall-speed-load-factor-v6.png", "PilotVault stall speed and load factor diagram")
     }
     if (has(q, "critical angle", "stalling angle", "will stall as a result", "stalls as a result", "10° to 18°", "centre of pressure tends")) {
-      return visual("critical-angle-stall-v4.png", "PilotVault critical angle of attack and stall diagram")
+      return visual("critical-angle-stall-ref-v4.svg", "PilotVault critical angle of attack and stall diagram")
     }
     return null
   }
@@ -327,7 +327,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("bank-angle-load-factor-v4.png", "PilotVault bank angle and load factor diagram")
     }
     if (has(q, "centripetal", "total lift", "vertical component", "horizontal component", "maintain altitude")) {
-      return visual("turn-lift-components-v4.png", "PilotVault lift components in a level turn diagram")
+      return visual("turn-lift-components-ref-v2.svg", "PilotVault lift components in a level turn diagram")
     }
     return null
   }

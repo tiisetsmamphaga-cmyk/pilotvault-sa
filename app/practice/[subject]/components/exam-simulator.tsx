@@ -5,6 +5,7 @@ import type { ExamAnswers, ExamMode, Question } from "../types"
 
 import { ExplanationImage } from "./explanation-image"
 import { HumanPerformanceVisual } from "./human-performance-visual"
+import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
 import { QuestionReferenceImage } from "./question-reference-image"
 
 type ExamSimulatorProps = {
@@ -82,6 +83,7 @@ export function ExamSimulator({
   const answerIsShown = shownAnswers.includes(currentQuestionIndex)
   const questionIsPinned = pinnedQuestions.includes(currentQuestionIndex)
   const isHumanPerformance = subject === "human-performance"
+  const isPrinciplesOfFlight = subject === "principles-of-flight"
   const usesApprovedBankVisual = isHumanPerformance && currentQuestion.id === 2207
 
   return (
@@ -208,6 +210,8 @@ export function ExamSimulator({
 
                 {isHumanPerformance && !usesApprovedBankVisual ? (
                   <HumanPerformanceVisual key={`hp-${currentQuestion.id}`} question={currentQuestion} />
+                ) : isPrinciplesOfFlight && !currentQuestion.explanation_image_url ? (
+                  <PrinciplesOfFlightVisual key={`pof-${currentQuestion.id}`} question={currentQuestion} />
                 ) : currentQuestion.explanation_image_url ? (
                   <ExplanationImage
                     key={`${currentQuestion.id}-${currentQuestion.explanation_image_url}`}

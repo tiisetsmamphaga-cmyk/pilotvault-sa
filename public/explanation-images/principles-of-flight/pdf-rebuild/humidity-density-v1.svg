@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Humidity &amp; Air Density">
+<defs>
+ <marker id="arrB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#1f4e79"/></marker>
+ <marker id="arrG" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#f4b400"/></marker>
+ <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#64748b"/></marker>
+ <marker id="arrR" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#b91c1c"/></marker>
+</defs>
+<rect width="1200" height="720" fill="#fff"/>
+<rect width="1200" height="120" fill="#06111f"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+<text x="600" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">HUMIDITY &amp; AIR DENSITY</text>
+<rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+
+<g font-family="Arial">
+<rect x="160" y="280" width="360" height="250" rx="16" fill="#f8fafc" stroke="#d7e0ea"/><text x="340" y="330" text-anchor="middle" font-size="23" font-weight="800" fill="#06111f">DRY AIR</text><circle cx="280" cy="410" r="35" fill="#1f4e79"/><circle cx="400" cy="410" r="35" fill="#1f4e79"/><text x="340" y="490" text-anchor="middle" font-size="18" fill="#64748b">higher density</text>
+<rect x="680" y="280" width="360" height="250" rx="16" fill="#f8fafc" stroke="#d7e0ea"/><text x="860" y="330" text-anchor="middle" font-size="23" font-weight="800" fill="#06111f">HUMID AIR</text><circle cx="800" cy="410" r="35" fill="#f4b400"/><circle cx="920" cy="410" r="35" fill="#f4b400"/><text x="860" y="490" text-anchor="middle" font-size="18" fill="#64748b">lower density</text>
+</g>
+
+<text x="600" y="690" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#64748b">For the same pressure and temperature, humid air is less dense and reduces performance.</text>
+</svg>

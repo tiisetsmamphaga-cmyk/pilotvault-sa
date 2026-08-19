@@ -35,13 +35,13 @@ export function ExplanationImage({
 }: ExplanationImageProps) {
   const usesBankAngleVisual =
     src.includes("/explanation-images/human-performance/load-factor-bank-")
-  const isUnapprovedPofVisual = src.includes(
-    "/explanation-images/principles-of-flight/"
-  )
+  const isUnapprovedPofVisual =
+    src.includes("/explanation-images/principles-of-flight/") &&
+    !src.includes("/explanation-images/principles-of-flight/pdf-rebuild/")
 
-  // POF explanation graphics are intentionally hidden while the PDF-reference
-  // library is being rebuilt and visually QA'd. Question-reference images use
-  // QuestionReferenceImage and are not affected by this guard.
+  // Only the PDF-reference POF library is approved during staged QA. Older
+  // POF explanation assets remain hidden; question-reference images are
+  // rendered separately by QuestionReferenceImage and are unaffected.
   if (isUnapprovedPofVisual) {
     return null
   }

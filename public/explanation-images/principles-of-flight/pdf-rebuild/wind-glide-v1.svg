@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Wind Effect on Glide Over the Ground">
+<defs>
+ <marker id="arrB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#1f4e79"/></marker>
+ <marker id="arrG" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#f4b400"/></marker>
+ <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#64748b"/></marker>
+ <marker id="arrR" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#b91c1c"/></marker>
+</defs>
+<rect width="1200" height="720" fill="#fff"/>
+<rect width="1200" height="120" fill="#06111f"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+<text x="600" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">WIND EFFECT ON GLIDE OVER THE GROUND</text>
+<rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+
+<line x1="170" y1="560" x2="1030" y2="560" stroke="#06111f" stroke-width="4"/>
+<line x1="250" y1="260" x2="620" y2="560" stroke="#1f4e79" stroke-width="7"/>
+<line x1="250" y1="260" x2="900" y2="560" stroke="#f4b400" stroke-width="7"/>
+<text x="430" y="380" font-family="Arial" font-size="20" font-weight="800" fill="#1f4e79">HEADWIND: STEEPER GROUND PATH</text>
+<text x="660" y="435" font-family="Arial" font-size="20" font-weight="800" fill="#f4b400">TAILWIND: SHALLOWER GROUND PATH</text>
+<line x1="370" y1="225" x2="180" y2="225" stroke="#1f4e79" stroke-width="7" marker-end="url(#arrB)"/><text x="460" y="232" font-family="Arial" font-size="18" fill="#1f4e79">HEADWIND</text>
+<line x1="830" y1="225" x2="1020" y2="225" stroke="#f4b400" stroke-width="7" marker-end="url(#arrG)"/><text x="740" y="232" font-family="Arial" font-size="18" fill="#f4b400">TAILWIND</text>
+
+<text x="600" y="690" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#64748b">Wind changes the glide path over the ground, but not the still-air aerodynamic glide relationship.</text>
+</svg>

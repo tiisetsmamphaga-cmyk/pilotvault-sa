@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="CG &amp; Centre of Pressure">
+<defs>
+ <marker id="arrB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#1f4e79"/></marker>
+ <marker id="arrG" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#f4b400"/></marker>
+ <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#64748b"/></marker>
+ <marker id="arrR" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#b91c1c"/></marker>
+</defs>
+<rect width="1200" height="720" fill="#fff"/>
+<rect width="1200" height="120" fill="#06111f"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+<text x="600" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">CG &amp; CENTRE OF PRESSURE</text>
+<rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+
+<path d="M250 420 C330 315 620 300 950 405 C995 418 1030 428 1050 435 C900 447 650 458 420 455 C330 453 275 442 250 420Z" fill="#f8fafc" stroke="#06111f" stroke-width="5"/>
+<line x1="250" y1="420" x2="1050" y2="435" stroke="#64748b" stroke-width="3" stroke-dasharray="8 6"/>
+<circle cx="520" cy="430" r="11" fill="#06111f"/><text x="520" y="485" text-anchor="middle" font-family="Arial" font-size="20" font-weight="800" fill="#06111f">CG</text>
+<circle cx="690" cy="432" r="11" fill="#f4b400"/><text x="690" y="485" text-anchor="middle" font-family="Arial" font-size="20" font-weight="800" fill="#f4b400">CENTRE OF PRESSURE</text>
+<line x1="690" y1="432" x2="690" y2="245" stroke="#f4b400" stroke-width="8" marker-end="url(#arrG)"/><text x="690" y="215" text-anchor="middle" font-family="Arial" font-size="22" font-weight="800" fill="#06111f">RESULTANT LIFT</text>
+<line x1="520" y1="430" x2="520" y2="605" stroke="#64748b" stroke-width="8" marker-end="url(#arrS)"/><text x="520" y="635" text-anchor="middle" font-family="Arial" font-size="22" font-weight="800" fill="#64748b">WEIGHT</text>
+
+<text x="600" y="690" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#64748b">For the question-bank convention in normal level flight, CG is forward of the centre of pressure.</text>
+</svg>

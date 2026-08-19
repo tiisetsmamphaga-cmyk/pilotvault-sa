@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Primary Flight Controls">
+<defs>
+ <marker id="arrB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#1f4e79"/></marker>
+ <marker id="arrG" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#f4b400"/></marker>
+ <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#64748b"/></marker>
+ <marker id="arrR" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#b91c1c"/></marker>
+</defs>
+<rect width="1200" height="720" fill="#fff"/>
+<rect width="1200" height="120" fill="#06111f"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+<text x="600" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">PRIMARY FLIGHT CONTROLS</text>
+<rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+
+<g font-family="Arial">
+<rect x="100" y="250" width="300" height="300" rx="14" fill="#f8fafc" stroke="#d7e0ea"/><text x="250" y="300" text-anchor="middle" font-size="24" font-weight="800" fill="#06111f">ELEVATOR</text><path d="M170 430 L330 430 L360 390 L360 470 L330 430" fill="#f4b400" stroke="#06111f" stroke-width="4"/><text x="250" y="510" text-anchor="middle" font-size="18" fill="#64748b">controls pitch</text>
+<rect x="450" y="250" width="300" height="300" rx="14" fill="#f8fafc" stroke="#d7e0ea"/><text x="600" y="300" text-anchor="middle" font-size="24" font-weight="800" fill="#06111f">AILERONS</text><line x1="510" y1="430" x2="690" y2="430" stroke="#06111f" stroke-width="14"/><line x1="530" y1="430" x2="530" y2="375" stroke="#1f4e79" stroke-width="12"/><line x1="670" y1="430" x2="670" y2="485" stroke="#f4b400" stroke-width="12"/><text x="600" y="510" text-anchor="middle" font-size="18" fill="#64748b">control roll</text>
+<rect x="800" y="250" width="300" height="300" rx="14" fill="#f8fafc" stroke="#d7e0ea"/><text x="950" y="300" text-anchor="middle" font-size="24" font-weight="800" fill="#06111f">RUDDER</text><line x1="950" y1="350" x2="950" y2="485" stroke="#06111f" stroke-width="14"/><line x1="950" y1="410" x2="1015" y2="445" stroke="#f4b400" stroke-width="12"/><text x="950" y="510" text-anchor="middle" font-size="18" fill="#64748b">controls yaw</text></g>
+
+<text x="600" y="690" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#64748b">Elevator controls pitch, ailerons control roll, and rudder controls yaw.</text>
+</svg>

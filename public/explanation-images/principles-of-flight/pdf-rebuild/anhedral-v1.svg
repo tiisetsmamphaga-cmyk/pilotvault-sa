@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Anhedral">
+<defs>
+ <marker id="arrB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#1f4e79"/></marker>
+ <marker id="arrG" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#f4b400"/></marker>
+ <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#64748b"/></marker>
+ <marker id="arrR" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#b91c1c"/></marker>
+</defs>
+<rect width="1200" height="720" fill="#fff"/>
+<rect width="1200" height="120" fill="#06111f"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+<text x="600" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">ANHEDRAL</text>
+<rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+
+<path d="M200 350 L600 430 L1000 350" fill="none" stroke="#06111f" stroke-width="14"/>
+<line x1="600" y1="430" x2="600" y2="550" stroke="#64748b" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="600" y="270" text-anchor="middle" font-family="Arial" font-size="24" font-weight="800" fill="#06111f">ANHEDRAL</text>
+<text x="600" y="590" text-anchor="middle" font-family="Arial" font-size="19" fill="#64748b">Wing tips are lower than the wing roots.</text>
+
+<text x="600" y="690" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#64748b">Anhedral describes wings that slope downward from root to tip.</text>
+</svg>

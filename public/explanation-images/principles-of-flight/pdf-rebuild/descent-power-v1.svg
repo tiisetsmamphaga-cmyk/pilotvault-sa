@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Power &amp; Rate of Descent">
+<defs>
+ <marker id="arrB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#1f4e79"/></marker>
+ <marker id="arrG" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#f4b400"/></marker>
+ <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#64748b"/></marker>
+ <marker id="arrR" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#b91c1c"/></marker>
+</defs>
+<rect width="1200" height="720" fill="#fff"/>
+<rect width="1200" height="120" fill="#06111f"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+<text x="600" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">POWER &amp; RATE OF DESCENT</text>
+<rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+
+<line x1="180" y1="570" x2="1010" y2="570" stroke="#06111f" stroke-width="4"/><line x1="180" y1="570" x2="180" y2="220" stroke="#06111f" stroke-width="4"/>
+<path d="M230 300 C410 355 610 430 950 535" fill="none" stroke="#1f4e79" stroke-width="8"/>
+<text x="600" y="625" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#64748b">POWER →</text>
+<text x="100" y="405" transform="rotate(-90 100 405)" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#64748b">RATE OF DESCENT</text>
+<text x="470" y="350" font-family="Arial" font-size="20" font-weight="800" fill="#1f4e79">MORE POWER → LOWER RATE OF DESCENT</text>
+
+<text x="600" y="690" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#64748b">At constant speed, increasing power reduces rate of descent; reducing power increases it.</text>
+</svg>

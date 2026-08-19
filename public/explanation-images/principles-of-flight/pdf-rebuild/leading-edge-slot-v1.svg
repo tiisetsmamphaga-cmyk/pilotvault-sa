@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Leading-Edge Slot">
+<defs>
+ <marker id="arrB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#1f4e79"/></marker>
+ <marker id="arrG" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#f4b400"/></marker>
+ <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#64748b"/></marker>
+ <marker id="arrR" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#b91c1c"/></marker>
+</defs>
+<rect width="1200" height="720" fill="#fff"/>
+<rect width="1200" height="120" fill="#06111f"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f4b400">PILOTVAULT PRINCIPLES OF FLIGHT</text>
+<text x="600" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">LEADING-EDGE SLOT</text>
+<rect x="45" y="150" width="1110" height="510" rx="14" fill="#fff" stroke="#d7e0ea"/>
+
+<path d="M350 420 C420 335 650 330 900 405 C940 418 970 428 990 435 C840 448 620 458 440 455 C400 452 370 440 350 420Z" fill="#f8fafc" stroke="#06111f" stroke-width="5"/>
+<path d="M250 390 C285 350 320 350 355 390 L340 425 C305 405 280 405 250 430Z" fill="#f4b400" stroke="#06111f" stroke-width="4"/>
+<path d="M270 415 C320 395 355 380 420 350 C500 315 600 300 720 310" fill="none" stroke="#1f4e79" stroke-width="5" marker-end="url(#arrB)"/>
+<text x="300" y="325" text-anchor="middle" font-family="Arial" font-size="20" font-weight="800" fill="#f4b400">LEADING-EDGE SLOT</text>
+<text x="700" y="270" text-anchor="middle" font-family="Arial" font-size="20" font-weight="800" fill="#1f4e79">HIGH-ENERGY AIR RE-ENERGISES UPPER-SURFACE FLOW</text>
+
+<text x="600" y="690" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#64748b">A slot feeds higher-energy air to the upper surface and delays separation at high angle of attack.</text>
+</svg>

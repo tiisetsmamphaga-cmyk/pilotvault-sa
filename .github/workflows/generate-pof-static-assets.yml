@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_pof_static_assets.py'
+      - 'scripts/generate_pof_static_assets_corrections.py'
+      - '.github/workflows/generate-pof-static-assets.yml'
   workflow_dispatch:
 
 permissions:
@@ -29,7 +31,9 @@ jobs:
         run: python -m pip install --disable-pip-version-check pillow
 
       - name: Generate static POF graphics
-        run: python scripts/generate_pof_static_assets.py
+        run: |
+          python scripts/generate_pof_static_assets.py
+          python scripts/generate_pof_static_assets_corrections.py
 
       - name: Commit generated assets
         run: |

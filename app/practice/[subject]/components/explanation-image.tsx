@@ -35,6 +35,16 @@ export function ExplanationImage({
 }: ExplanationImageProps) {
   const usesBankAngleVisual =
     src.includes("/explanation-images/human-performance/load-factor-bank-")
+  const isUnapprovedPofVisual = src.includes(
+    "/explanation-images/principles-of-flight/"
+  )
+
+  // POF explanation graphics are intentionally hidden while the PDF-reference
+  // library is being rebuilt and visually QA'd. Question-reference images use
+  // QuestionReferenceImage and are not affected by this guard.
+  if (isUnapprovedPofVisual) {
+    return null
+  }
 
   if (usesBankAngleVisual) {
     return <BankAngleLoadFactorVisual />

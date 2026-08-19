@@ -50,7 +50,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
     }
 
     if (has(q, "boundary layer", "transition point", "laminar-flow", "laminar flow")) {
-      return visual("boundary-layer-transition-v5.png", "PilotVault boundary layer and transition diagram")
+      return visual("boundary-layer-transition-ref-v1.svg", "PilotVault boundary layer and transition diagram")
     }
 
     if (has(q, "centre of pressure", "center of pressure")) {
@@ -85,12 +85,12 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
 
   if (topic === "Aileron Drag") {
     if (has(q, "differential aileron")) {
-      return visual("differential-ailerons-v4.png", "PilotVault differential ailerons diagram")
+      return visual("differential-ailerons-ref-v1.svg", "PilotVault differential ailerons diagram")
     }
     if (has(q, "frise")) {
       return visual("frise-aileron-v4.png", "PilotVault Frise aileron diagram")
     }
-    return visual("adverse-yaw-v4.png", "PilotVault adverse aileron yaw diagram")
+    return visual("adverse-yaw-ref-v1.svg", "PilotVault adverse aileron yaw diagram")
   }
 
   if (topic === "Airspeed") {
@@ -127,7 +127,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("aircraft-axes-controls-ref-v2.svg", "PilotVault aircraft axes diagram")
     }
     if (has(q, "laminar flow", "boundary layer")) {
-      return visual("boundary-layer-transition-v5.png", "PilotVault boundary layer and transition diagram")
+      return visual("boundary-layer-transition-ref-v1.svg", "PilotVault boundary layer and transition diagram")
     }
     if (has(q, "dynamic pressure", "total pressure", "static pressure", "stagnation point", "symbol is normally used for dynamic pressure")) {
       return visual("dynamic-pressure-v4.png", "PilotVault static dynamic and total pressure diagram")
@@ -163,7 +163,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("aspect-ratio-v4.png", "PilotVault aspect ratio and induced drag diagram")
     }
     if (has(q, "washout")) {
-      return visual("washout-v4.png", "PilotVault wing washout diagram")
+      return visual("washout-root-stall-ref-v1.svg", "PilotVault wing washout and root-first stall diagram")
     }
     if (has(q, "doubled", "50 kt to 100 kt", "four times", "fourfold")) {
       return visual("lift-speed-squared-v4.png", "PilotVault speed squared relationship diagram")
@@ -265,7 +265,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("directional-stability-ref-v1.svg", "PilotVault vertical fin directional stability diagram")
     }
     if (has(q, "dihedral", "sideslip", "rolling plane", "lateral stability", "lower wing")) {
-      return visual("dihedral-lateral-stability-v4.png", "PilotVault dihedral and lateral stability diagram")
+      return visual("dihedral-lateral-stability-ref-v1.svg", "PilotVault dihedral and lateral stability diagram")
     }
     if (has(q, "centre of gravity", "center of gravity", "cg too far", "cg is moved", "c of g") && !has(q, "landing must be checked")) {
       return visual("cg-longitudinal-stability-ref-v1.svg", "PilotVault centre of gravity and longitudinal stability diagram")
@@ -284,7 +284,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
 
   if (topic === "Stalls") {
     if (has(q, "washout", "wingtip", "wing root", "root stall", "angle of incidence toward the wingtip")) {
-      return visual("root-first-stall-washout-v4.png", "PilotVault root-first stall and washout diagram")
+      return visual("washout-root-stall-ref-v1.svg", "PilotVault root-first stall and washout diagram")
     }
     if (has(q, "stall warning", "buffet", "buffeting", "control effectiveness")) {
       return visual("stall-warning-v4.png", "PilotVault approaching stall and warning diagram")
@@ -342,7 +342,7 @@ function getStaticPofVisual(question: Question): StaticVisual | null {
       return visual("aspect-ratio-v4.png", "PilotVault aspect ratio diagram")
     }
     if (has(q, "washout", "angle of incidence")) {
-      return visual("washout-v4.png", "PilotVault washout and incidence diagram")
+      return visual("washout-root-stall-ref-v1.svg", "PilotVault washout and incidence diagram")
     }
     if (has(q, "anhedral", "slopes downward")) {
       return visual("anhedral-v4.png", "PilotVault anhedral diagram")

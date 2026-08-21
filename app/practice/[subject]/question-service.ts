@@ -74,6 +74,8 @@ async function loadSubjectQuestions(
           question,
           image_url,
           explanation_image_url,
+          explanation_image_title,
+          explanation_image_caption,
           option_a,
           option_b,
           option_c,
@@ -114,6 +116,8 @@ async function loadSubjectQuestions(
     question: question.question,
     image_url: resolveQuestionImageUrl(question.subject, question.image_url),
     explanation_image_url: question.explanation_image_url ?? undefined,
+    explanation_image_title: question.explanation_image_title ?? undefined,
+    explanation_image_caption: question.explanation_image_caption ?? undefined,
     options: [
       question.option_a,
       question.option_b,

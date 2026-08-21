@@ -48,9 +48,6 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [attempt, setAttempt] = useState(0)
   const usesNavigationTemplate = src.includes("/explanation-images/navigation/")
-  const preservesFuelSystemRasterSize =
-    src.includes("/explanation-images/aircraft-technical-and-general/fuel-systems-batch-1/") &&
-    !src.split("?")[0].toLowerCase().endsWith(".svg")
   const diagramTitle = useMemo(() => formatDiagramTitle(src, alt), [src, alt])
 
   useEffect(() => {
@@ -71,9 +68,15 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
   }, [attempt, src])
 
   return (
-    <figure className="mt-5 overflow-hidden border border-slate-200 bg-white p-2">
+    <figure
+      className={
+        usesNavigationTemplate
+          ? "mt-5 overflow-hidden border border-slate-200 bg-white"
+          : "mx-auto mt-5 w-fit max-w-full overflow-hidden border border-slate-200 bg-white"
+      }
+    >
       {status === "loading" && (
-        <div className="flex min-h-40 items-center justify-center px-4 text-center text-sm font-medium text-slate-500" aria-live="polite">
+        <div className="flex min-h-40 min-w-64 items-center justify-center px-4 text-center text-sm font-medium text-slate-500" aria-live="polite">
           <span className="animate-pulse">Loading explanation diagram…</span>
         </div>
       )}
@@ -85,7 +88,7 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
         </div>
       )}
 
-      <div className={usesNavigationTemplate ? "overflow-hidden" : undefined}>
+      <div className={usesNavigationTemplate ? "overflow-hidden" : "flex max-w-full items-center justify-center overflow-hidden"}>
         <img
           key={`${src}-${attempt}`}
           src={resolvedSrc}
@@ -98,16 +101,16 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
           style={status === "loaded" && usesNavigationTemplate ? { marginTop: "-6%" } : undefined}
           className={
             status === "loaded"
-              ? preservesFuelSystemRasterSize
-                ? "mx-auto block h-auto max-h-[32rem] max-w-full object-contain"
-                : "block max-h-[32rem] w-full object-contain"
+              ? usesNavigationTemplate
+                ? "block max-h-[32rem] w-full object-contain"
+                : "block h-auto max-h-[32rem] w-auto max-w-full object-contain"
               : "hidden"
           }
         />
       </div>
 
       {status === "error" && (
-        <div className="flex min-h-40 flex-col items-center justify-center gap-3 px-4 text-center" role="alert">
+        <div className="flex min-h-40 min-w-64 flex-col items-center justify-center gap-3 px-4 text-center" role="alert">
           <p className="text-sm font-medium text-slate-700">The explanation diagram could not be loaded.</p>
           <button
             type="button"

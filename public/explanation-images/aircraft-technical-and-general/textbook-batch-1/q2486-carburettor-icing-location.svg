@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-label="CARBURETTOR ICING LOCATION">
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">CARBURETTOR ICING LOCATION</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<g font-family="Arial,Helvetica,sans-serif">
+  <text x="322" y="172" text-anchor="middle" font-size="23" font-weight="800" fill="#101827">NORMAL AIRFLOW</text>
+  <text x="878" y="172" text-anchor="middle" font-size="23" font-weight="800" fill="#101827">ICING CONDITION</text>
+  <g transform="translate(115,195)">
+    <path d="M65 20 L315 20 L280 120 L280 270 L100 270 L100 120 Z" fill="#edf1f5" stroke="#111827" stroke-width="5"/>
+    <path d="M118 40 C155 92 155 186 118 245 L261 245 C225 186 225 92 261 40Z" fill="#ffffff" stroke="#64748b" stroke-width="3"/>
+    <path d="M132 235 C164 185 164 96 132 48" fill="none" stroke="#2f80ed" stroke-width="15" opacity="0.78"/>
+    <path d="M247 235 C215 185 215 96 247 48" fill="none" stroke="#2f80ed" stroke-width="15" opacity="0.78"/>
+    <line x1="167" y1="142" x2="225" y2="112" stroke="#111827" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="196" cy="127" r="8" fill="#111827"/>
+    <path d="M190 255 L190 205" stroke="#d2a400" stroke-width="7"/><path d="M190 205 C180 190 181 178 190 164" fill="none" stroke="#d2a400" stroke-width="6"/>
+    <text x="190" y="310" text-anchor="middle" font-size="17" font-weight="700">OPEN VENTURI / THROTTLE AREA</text>
+    <path d="M22 130 H87" stroke="#d64545" stroke-width="8"/><polygon points="90,130 70,118 70,142" fill="#d64545"/>
+    <text x="18" y="105" font-size="17" font-weight="700" fill="#d64545">WARM AIR</text>
+  </g>
+  <g transform="translate(670,195)">
+    <path d="M65 20 L315 20 L280 120 L280 270 L100 270 L100 120 Z" fill="#edf1f5" stroke="#111827" stroke-width="5"/>
+    <path d="M118 40 C155 92 155 186 118 245 L261 245 C225 186 225 92 261 40Z" fill="#ffffff" stroke="#64748b" stroke-width="3"/>
+    <path d="M134 60 C155 84 162 105 160 127 C153 157 155 185 139 219 L160 231 C178 191 178 164 177 143 C175 108 165 80 150 53Z" fill="#bde7ff" stroke="#6ec5ef" stroke-width="3"/>
+    <path d="M246 58 C226 85 220 105 222 127 C229 156 226 184 241 218 L222 229 C204 191 204 164 205 143 C207 107 216 80 230 52Z" fill="#bde7ff" stroke="#6ec5ef" stroke-width="3"/>
+    <line x1="167" y1="142" x2="225" y2="112" stroke="#111827" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="196" cy="127" r="8" fill="#111827"/>
+    <ellipse cx="196" cy="127" rx="55" ry="28" fill="none" stroke="#bde7ff" stroke-width="13"/>
+    <path d="M190 255 L190 205" stroke="#d2a400" stroke-width="7"/><path d="M190 205 C180 190 181 178 190 164" fill="none" stroke="#d2a400" stroke-width="6"/>
+    <path d="M22 130 H87" stroke="#2f80ed" stroke-width="8"/><polygon points="90,130 70,118 70,142" fill="#2f80ed"/>
+    <text x="18" y="91" font-size="17" font-weight="700" fill="#2f80ed">COOL, MOIST AIR</text>
+    <line x1="250" y1="67" x2="330" y2="42" stroke="#111827" stroke-width="2.5"/>
+    <text x="334" y="39" font-size="18" font-weight="800" fill="#101827">ICE</text>
+    <text x="190" y="310" text-anchor="middle" font-size="17" font-weight="700">RESTRICTION AT VENTURI / BUTTERFLY</text>
+  </g>
+</g>
+<text x="600" y="629" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#64748b">The strongest cooling and ice build-up occur around the venturi and throttle butterfly.</text>
+<text x="600" y="653" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#94a3b8">Source reference: Pilot&#x27;s Handbook, Figure 2-8</text>
+</svg>

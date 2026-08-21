@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#1e88e5"/></marker>
+  <marker id="arrowDark" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#0f172a"/></marker>
+  <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/></marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-opacity="0.08"/></filter>
+</defs>
+<rect width="1200" height="900" fill="white"/>
+<rect x="0" y="0" width="1200" height="145" fill="#071525"/>
+<rect x="0" y="141" width="1200" height="4" fill="#f4b400"/>
+<text x="600" y="48" text-anchor="middle" fill="#f4b400" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="3">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="105" text-anchor="middle" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="800">FUEL TANK BAFFLES</text>
+<rect x="45" y="175" width="1110" height="645" rx="18" fill="white" stroke="#d8e0e8" stroke-width="2" filter="url(#shadow)"/>
+<text x="600" y="215" text-anchor="middle" fill="#475569" font-family="Arial" font-size="22">Baffles restrict rapid fuel movement inside the tank.</text>
+<rect x="150" y="255" width="900" height="300" rx="55" fill="white" stroke="#0f172a" stroke-width="8"/>
+<path d="M154 415 Q230 392 310 415 T470 415 T630 415 T790 415 T946 415 L946 550 H154 Z" fill="#72b7ee"/>
+<g stroke="#0f172a" stroke-width="6" fill="#e8eef5"><path d="M355 275 V535 H395 V275 Z"/><path d="M555 275 V535 H595 V275 Z"/><path d="M755 275 V535 H795 V275 Z"/></g>
+<g fill="white" stroke="#0f172a" stroke-width="3"><circle cx="375" cy="360" r="12"/><circle cx="375" cy="455" r="12"/><circle cx="575" cy="360" r="12"/><circle cx="575" cy="455" r="12"/><circle cx="775" cy="360" r="12"/><circle cx="775" cy="455" r="12"/></g>
+<text x="575" y="245" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="24" font-weight="800">BAFFLES</text>
+<path d="M540 250 L375 280 M575 250 V280 M610 250 L775 280" stroke="#0f172a" stroke-width="3" marker-end="url(#arrowDark)"/>
+<text x="220" y="315" fill="#0f172a" font-family="Arial" font-size="21" font-weight="700">FUEL TANK</text>
+<path d="M300 320 L195 270" stroke="#0f172a" stroke-width="3" marker-end="url(#arrowDark)"/>
+<path d="M215 455 H320" stroke="#1e88e5" stroke-width="6" marker-end="url(#arrow)"/><path d="M510 455 H420" stroke="#1e88e5" stroke-width="6" marker-end="url(#arrow)"/><path d="M715 455 H625" stroke="#1e88e5" stroke-width="6" marker-end="url(#arrow)"/><path d="M925 455 H830" stroke="#1e88e5" stroke-width="6" marker-end="url(#arrow)"/>
+<path d="M210 510 V470 H265" fill="none" stroke="#0f172a" stroke-width="8"/>
+<circle cx="210" cy="510" r="18" fill="#dbeafe" stroke="#0f172a" stroke-width="5"/>
+<text x="90" y="525" fill="#0f172a" font-family="Arial" font-size="20" font-weight="700">FUEL PICKUP</text>
+<path d="M190 520 H130" stroke="#0f172a" stroke-width="3" marker-end="url(#arrowDark)"/>
+<g font-family="Arial" font-size="21" font-weight="800" fill="#0f172a"><text x="255" y="625" text-anchor="middle">PITCH</text><text x="600" y="625" text-anchor="middle">BANK</text><text x="945" y="625" text-anchor="middle">TURBULENCE</text></g>
+<g stroke="#0f172a" stroke-width="5" fill="white"><rect x="120" y="650" width="270" height="85" rx="18"/><rect x="465" y="650" width="270" height="85" rx="18" transform="rotate(8 600 692)"/><rect x="810" y="650" width="270" height="85" rx="18"/></g>
+<path d="M130 695 Q200 675 260 700 T380 690" fill="#72b7ee" opacity="0.8"/><path d="M475 708 Q545 688 605 713 T725 703" fill="#72b7ee" opacity="0.8"/><path d="M820 698 Q855 675 890 698 T960 698 T1070 698" fill="#72b7ee" opacity="0.8"/>
+<text x="600" y="790" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="24" font-weight="700">Result: less surge, pickup stays covered, smaller CG shifts and lower structural loads.</text>
+</svg>

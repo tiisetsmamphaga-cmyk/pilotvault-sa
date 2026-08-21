@@ -48,6 +48,9 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [attempt, setAttempt] = useState(0)
   const usesNavigationTemplate = src.includes("/explanation-images/navigation/")
+  const preservesFuelSystemRasterSize =
+    src.includes("/explanation-images/aircraft-technical-and-general/fuel-systems-batch-1/") &&
+    !src.split("?")[0].toLowerCase().endsWith(".svg")
   const diagramTitle = useMemo(() => formatDiagramTitle(src, alt), [src, alt])
 
   useEffect(() => {
@@ -93,7 +96,13 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
           onLoad={() => setStatus("loaded")}
           onError={() => setStatus("error")}
           style={status === "loaded" && usesNavigationTemplate ? { marginTop: "-6%" } : undefined}
-          className={status === "loaded" ? "block max-h-[32rem] w-full object-contain" : "hidden"}
+          className={
+            status === "loaded"
+              ? preservesFuelSystemRasterSize
+                ? "mx-auto block h-auto max-h-[32rem] max-w-full object-contain"
+                : "block max-h-[32rem] w-full object-contain"
+              : "hidden"
+          }
         />
       </div>
 

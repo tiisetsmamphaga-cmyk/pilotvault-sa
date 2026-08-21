@@ -217,6 +217,8 @@ export function ExamSimulator({
                     key={`${currentQuestion.id}-${currentQuestion.explanation_image_url}`}
                     src={currentQuestion.explanation_image_url}
                     alt={`Explanation diagram for ${currentQuestion.topic ?? formatSubjectName(subject)}`}
+                    title={currentQuestion.explanation_image_title}
+                    caption={currentQuestion.explanation_image_caption}
                     priority
                   />
                 ) : null}

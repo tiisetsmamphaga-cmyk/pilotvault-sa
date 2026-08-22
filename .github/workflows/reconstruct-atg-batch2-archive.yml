@@ -1,0 +1,61 @@
+name: Reconstruct ATG batch 2 archive
+
+on:
+  push:
+    branches:
+      - atg-learning-batch2-safe80
+    paths:
+      - .asset-staging/learning-batch2-archive/READY_ARCHIVE
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: atg-learning-batch2-safe80
+          fetch-depth: 0
+
+      - name: Reconstruct verified assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          STAGE='.asset-staging/learning-batch2-archive'
+          OUT='public/explanation-images/aircraft-technical-and-general/fuel-systems-batch-2'
+          mkdir -p "$OUT"
+          cat "$STAGE"/archive.part* | tr -d '\n\r' | base64 --decode > /tmp/atg-batch2.tar.gz
+          mkdir -p /tmp/atg-batch2
+          tar -xzf /tmp/atg-batch2.tar.gz -C /tmp/atg-batch2
+          cp /tmp/atg-batch2/fuel-systems-batch-2/*.webp "$OUT"/
+          verify() {
+            local file="$1"
+            local expected="$2"
+            actual=$(python - "$OUT/$file" <<'PY'
+import hashlib, pathlib, sys
+b=pathlib.Path(sys.argv[1]).read_bytes()
+print(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest())
+PY
+)
+            echo "$file $actual"
+            test "$actual" = "$expected"
+          }
+          verify 'q2482-manual-fuel-primer.webp' 'dd477057b25e5e406bc6bab9dc9666c3329298fd'
+          verify 'q2485-carburettor-heat.webp' '774fba9512ecbbbf15d90ed91b19d37c75289d12'
+          verify 'q2488-fuel-tank-sump-pickup.webp' 'ac6904051b7a42a2417fc25c717c4657a66384a9'
+          verify 'q2503-fuel-injection-alternate-air.webp' '932e47baf43b212239af0b18cd128b6bd0b8426a'
+          verify 'q2504-avgas-100ll-blue.webp' 'c37b26915215b4ee5501f68ff0488e0527f750c4'
+          rm -rf .asset-staging
+          rm -f .github/workflows/reconstruct-atg-batch2-archive.yml .github/workflows/reconstruct-atg-learning-batch2-safe80.yml
+
+      - name: Commit verified assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'PilotVault Automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add approved ATG learning batch 2 assets [skip ci]'
+          git push origin HEAD:atg-learning-batch2-safe80

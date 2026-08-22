@@ -1,0 +1,62 @@
+name: Reconstruct ATG learning batch 2 safe80
+
+on:
+  push:
+    branches:
+      - atg-learning-batch2-safe80
+    paths:
+      - .asset-staging/learning-batch2-safe80/READY
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: atg-learning-batch2-safe80
+          fetch-depth: 0
+
+      - name: Reconstruct and verify approved WebP assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          STAGE='.asset-staging/learning-batch2-safe80'
+          OUT='public/explanation-images/aircraft-technical-and-general/fuel-systems-batch-2'
+          mkdir -p "$OUT"
+
+          build_asset() {
+            local base="$1"
+            local expected="$2"
+            cat "$STAGE/${base}.part"* | tr -d '\n\r' | base64 --decode > "$OUT/${base}.webp"
+            ACTUAL=$(python - "$OUT/${base}.webp" <<'PY'
+import hashlib, pathlib, sys
+p=pathlib.Path(sys.argv[1])
+b=p.read_bytes()
+print(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest())
+PY
+)
+            echo "$base $ACTUAL"
+            test "$ACTUAL" = "$expected"
+          }
+
+          build_asset 'q2482-manual-fuel-primer' 'dd477057b25e5e406bc6bab9dc9666c3329298fd'
+          build_asset 'q2485-carburettor-heat' '774fba9512ecbbbf15d90ed91b19d37c75289d12'
+          build_asset 'q2488-fuel-tank-sump-pickup' 'ac6904051b7a42a2417fc25c717c4657a66384a9'
+          build_asset 'q2503-fuel-injection-alternate-air' '932e47baf43b212239af0b18cd128b6bd0b8426a'
+          build_asset 'q2504-avgas-100ll-blue' 'c37b26915215b4ee5501f68ff0488e0527f750c4'
+
+          rm -rf "$STAGE"
+          rm -f .github/workflows/reconstruct-atg-learning-batch2-safe80.yml
+
+      - name: Commit verified assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'PilotVault Automation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add approved ATG learning batch 2 assets [skip ci]'
+          git push origin HEAD:atg-learning-batch2-safe80

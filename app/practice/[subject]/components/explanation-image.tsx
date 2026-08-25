@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react"
 
+import { AtgExplanationVisual } from "./atg-explanation-visual"
 import { BankAngleLoadFactorVisual } from "./bank-angle-load-factor-visual"
 
 type ExplanationImageProps = {
@@ -37,6 +38,16 @@ export function ExplanationImage({
   caption,
   priority = false,
 }: ExplanationImageProps) {
+  if (src.startsWith("pv-atg://")) {
+    return (
+      <AtgExplanationVisual
+        visualKey={src.slice("pv-atg://".length)}
+        title={title}
+        caption={caption}
+      />
+    )
+  }
+
   const usesBankAngleVisual =
     src.includes("/explanation-images/human-performance/load-factor-bank-")
   const isUnapprovedPofVisual =

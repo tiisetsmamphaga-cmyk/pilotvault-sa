@@ -19,6 +19,9 @@ const TITLES: Record<string, string> = {
   "piston-primer": "MANUAL PRIMER",
   "piston-flooded-start": "FLOODED ENGINE START",
   "piston-smooth-throttle": "SMOOTH THROTTLE MOVEMENT",
+  "piston-carb-icing": "CARBURETTOR ICING",
+  "piston-alternate-air": "FUEL INJECTION — ALTERNATE AIR",
+  "piston-accelerator-pump": "ACCELERATOR PUMP",
 }
 
 export function PistonExplanationVisual({ visualKey, title, caption }: PistonExplanationVisualProps) {
@@ -174,6 +177,66 @@ function SmoothThrottleVisual() {
   )
 }
 
+function CarbIcingVisual() {
+  return (
+    <Svg>
+      <Text x={245} y={48} size={22} fill={BLUE}>NORMAL</Text>
+      <Text x={655} y={48} size={22} fill={RED}>ICE BUILD-UP</Text>
+      <path d="M120 120 L370 120 L320 380 L170 380 Z" fill="#f8fafc" stroke={LINE} strokeWidth="5" />
+      <path d="M170 255 C220 215 270 215 320 255" fill="none" stroke={BLUE} strokeWidth="8" markerEnd="url(#piston-arrow-blue)" />
+      <ellipse cx="245" cy="300" rx="60" ry="16" fill="#d7a52d" stroke={LINE} strokeWidth="4" />
+      <Text x={245} y={430} size={19}>Clear venturi</Text>
+      <path d="M530 120 L780 120 L730 380 L580 380 Z" fill="#f8fafc" stroke={LINE} strokeWidth="5" />
+      <path d="M565 245 C615 220 665 220 715 245" fill="none" stroke={BLUE} strokeWidth="6" markerEnd="url(#piston-arrow-blue)" />
+      <path d="M585 210 Q655 165 725 210 L710 285 Q655 245 600 285 Z" fill="#dff3ff" stroke="#8ed0f0" strokeWidth="5" />
+      <ellipse cx="655" cy="300" rx="60" ry="16" fill="#d7a52d" stroke={LINE} strokeWidth="4" />
+      <Text x={655} y={430} size={19} fill={RED}>Airflow restricted</Text>
+      <Text x={450} y={490} size={22}>Carburettor ice builds gradually, causing rough running and power loss.</Text>
+    </Svg>
+  )
+}
+
+function AlternateAirVisual() {
+  return (
+    <Svg>
+      <Text x={450} y={48} size={24}>ALTERNATE AIR BYPASSES A BLOCKED NORMAL INTAKE</Text>
+      <rect x="105" y="145" width="180" height="120" rx="18" fill="#f1f5f9" stroke={LINE} strokeWidth="5" />
+      <Text x={195} y={210} size={20}>AIR FILTER</Text>
+      <path d="M285 205 L450 205" stroke={BLUE} strokeWidth="8" markerEnd="url(#piston-arrow-blue)" />
+      <line x1="330" y1="165" x2="370" y2="245" stroke={RED} strokeWidth="8" />
+      <line x1="370" y1="165" x2="330" y2="245" stroke={RED} strokeWidth="8" />
+      <Text x={350} y={145} size={18} fill={RED}>BLOCKED</Text>
+      <rect x="450" y="145" width="185" height="170" rx="22" fill="#f8fafc" stroke={LINE} strokeWidth="5" />
+      <Text x={542} y={225} size={20}>INDUCTION</Text>
+      <Text x={542} y={255} size={20}>SYSTEM</Text>
+      <path d="M775 205 C700 205 685 260 635 260" stroke={BLUE} strokeWidth="8" fill="none" markerEnd="url(#piston-arrow-blue)" />
+      <Text x={775} y={170} size={20} fill={BLUE}>WARMER AIR</Text>
+      <Text x={775} y={198} size={18}>from cowling</Text>
+      <Text x={450} y={410} size={21}>Alternate air restores airflow when the normal intake is blocked or iced.</Text>
+    </Svg>
+  )
+}
+
+function AcceleratorPumpVisual() {
+  return (
+    <Svg>
+      <Text x={450} y={48} size={24}>RAPID THROTTLE OPENING NEEDS EXTRA FUEL</Text>
+      <rect x="110" y="150" width="230" height="220" rx="24" fill="#f8fafc" stroke={LINE} strokeWidth="5" />
+      <ellipse cx="225" cy="260" rx="75" ry="20" fill="#d7a52d" stroke={LINE} strokeWidth="4" />
+      <line x1="225" y1="260" x2="295" y2="195" stroke={BLUE} strokeWidth="10" />
+      <Text x={225} y={405} size={20}>THROTTLE OPENS</Text>
+      <path d="M340 260 L470 260" stroke={BLUE} strokeWidth="8" markerEnd="url(#piston-arrow-blue)" />
+      <rect x="470" y="185" width="160" height="150" rx="22" fill="#fff8e7" stroke={LINE} strokeWidth="5" />
+      <circle cx="550" cy="260" r="42" fill={FUEL} stroke={LINE} strokeWidth="4" />
+      <Text x={550} y={365} size={20}>ACCELERATOR PUMP</Text>
+      <path d="M630 260 C690 260 710 235 775 235" stroke={RED} strokeWidth="9" fill="none" markerEnd="url(#piston-arrow-red)" />
+      <Text x={760} y={205} size={19} fill={RED}>EXTRA FUEL</Text>
+      <Text x={760} y={325} size={19}>to venturi</Text>
+      <Text x={450} y={475} size={21}>The extra fuel prevents a momentary lean hesitation as airflow rises.</Text>
+    </Svg>
+  )
+}
+
 function getVisual(visualKey: string) {
   switch (visualKey) {
     case "piston-mixture-rich-lean": return <MixtureVisual />
@@ -181,6 +244,9 @@ function getVisual(visualKey: string) {
     case "piston-primer": return <PrimerVisual />
     case "piston-flooded-start": return <FloodedStartVisual />
     case "piston-smooth-throttle": return <SmoothThrottleVisual />
+    case "piston-carb-icing": return <CarbIcingVisual />
+    case "piston-alternate-air": return <AlternateAirVisual />
+    case "piston-accelerator-pump": return <AcceleratorPumpVisual />
     default: return null
   }
 }

@@ -7,6 +7,7 @@ export type Question = {
   explanation_image_url?: string
   explanation_image_title?: string
   explanation_image_caption?: string
+  explanation_visual_key?: string
   options: string[]
   correctAnswer: string
   explanation: string
@@ -21,6 +22,7 @@ export type DatabaseQuestion = {
   explanation_image_url: string | null
   explanation_image_title: string | null
   explanation_image_caption: string | null
+  explanation_visual_key: string | null
   option_a: string | null
   option_b: string | null
   option_c: string | null

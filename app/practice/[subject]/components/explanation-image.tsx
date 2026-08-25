@@ -7,6 +7,8 @@ import { BankAngleLoadFactorVisual } from "./bank-angle-load-factor-visual"
 type ExplanationImageProps = {
   src: string
   alt: string
+  title?: string
+  caption?: string
   priority?: boolean
 }
 

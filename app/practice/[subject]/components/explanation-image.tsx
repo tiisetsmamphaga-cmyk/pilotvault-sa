@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 
 import { AtgExplanationVisual } from "./atg-explanation-visual"
 import { BankAngleLoadFactorVisual } from "./bank-angle-load-factor-visual"
+import { PistonExplanationVisual } from "./piston-explanation-visual"
 
 type ExplanationImageProps = {
   src: string
@@ -38,6 +39,16 @@ export function ExplanationImage({
   caption,
   priority = false,
 }: ExplanationImageProps) {
+  if (src.startsWith("pv-atg://piston-")) {
+    return (
+      <PistonExplanationVisual
+        visualKey={src.slice("pv-atg://".length)}
+        title={title}
+        caption={caption}
+      />
+    )
+  }
+
   if (src.startsWith("pv-atg://")) {
     return (
       <AtgExplanationVisual

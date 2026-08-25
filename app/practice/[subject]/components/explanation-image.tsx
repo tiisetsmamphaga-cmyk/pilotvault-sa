@@ -2,17 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react"
 
-import { AtgExplanationVisual } from "./atg-explanation-visual"
 import { BankAngleLoadFactorVisual } from "./bank-angle-load-factor-visual"
-import { PistonCombustionExplanationVisual } from "./piston-combustion-explanation-visual"
-import { PistonExplanationVisual } from "./piston-explanation-visual"
-import { PistonMechanicalExplanationVisual } from "./piston-mechanical-explanation-visual"
 
 type ExplanationImageProps = {
   src: string
   alt: string
-  title?: string
-  caption?: string
   priority?: boolean
 }
 
@@ -37,54 +31,8 @@ function formatDiagramTitle(src: string, alt: string) {
 export function ExplanationImage({
   src,
   alt,
-  title,
-  caption,
   priority = false,
 }: ExplanationImageProps) {
-  if (src.startsWith("pv-atg://piston-mech-")) {
-    return (
-      <PistonMechanicalExplanationVisual
-        visualKey={src.slice("pv-atg://".length)}
-        title={title}
-        caption={caption}
-      />
-    )
-  }
-
-  if (
-    src.startsWith("pv-atg://piston-combustion-") ||
-    src.startsWith("pv-atg://piston-cooling-") ||
-    src.startsWith("pv-atg://piston-blue-")
-  ) {
-    return (
-      <PistonCombustionExplanationVisual
-        visualKey={src.slice("pv-atg://".length)}
-        title={title}
-        caption={caption}
-      />
-    )
-  }
-
-  if (src.startsWith("pv-atg://piston-")) {
-    return (
-      <PistonExplanationVisual
-        visualKey={src.slice("pv-atg://".length)}
-        title={title}
-        caption={caption}
-      />
-    )
-  }
-
-  if (src.startsWith("pv-atg://")) {
-    return (
-      <AtgExplanationVisual
-        visualKey={src.slice("pv-atg://".length)}
-        title={title}
-        caption={caption}
-      />
-    )
-  }
-
   const usesBankAngleVisual =
     src.includes("/explanation-images/human-performance/load-factor-bank-")
   const isUnapprovedPofVisual =
@@ -93,30 +41,13 @@ export function ExplanationImage({
 
   if (isUnapprovedPofVisual) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
-  return (
-    <StandardExplanationImage
-      src={src}
-      alt={alt}
-      title={title}
-      caption={caption}
-      priority={priority}
-    />
-  )
+  return <StandardExplanationImage src={src} alt={alt} priority={priority} />
 }
 
-function StandardExplanationImage({
-  src,
-  alt,
-  title,
-  caption,
-  priority = false,
-}: ExplanationImageProps) {
+function StandardExplanationImage({ src, alt, priority = false }: ExplanationImageProps) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [attempt, setAttempt] = useState(0)
   const usesNavigationTemplate = src.includes("/explanation-images/navigation/")
-  const usesAtgLearningTemplate =
-    Boolean(title) &&
-    src.includes("/explanation-images/aircraft-technical-and-general/")
   const diagramTitle = useMemo(() => formatDiagramTitle(src, alt), [src, alt])
 
   useEffect(() => {
@@ -150,17 +81,6 @@ function StandardExplanationImage({
         </div>
       )}
 
-      {status === "loaded" && usesAtgLearningTemplate && (
-        <div className="border-b-4 border-[#f4b400] bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
-          <div className="text-[10px] font-extrabold tracking-[0.2em] text-[#f4b400] sm:text-xs">
-            PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL
-          </div>
-          <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">
-            {title}
-          </div>
-        </div>
-      )}
-
       {status === "loaded" && usesNavigationTemplate && (
         <div className="bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
           <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">PILOTVAULT NAVIGATION</div>
@@ -183,17 +103,11 @@ function StandardExplanationImage({
             status === "loaded"
               ? usesNavigationTemplate
                 ? "block max-h-[32rem] w-full object-contain"
-                : "block h-auto max-h-[36rem] w-auto max-w-full object-contain"
+                : "block h-auto max-h-[32rem] w-auto max-w-full object-contain"
               : "hidden"
           }
         />
       </div>
-
-      {status === "loaded" && caption && (
-        <figcaption className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-center text-sm leading-relaxed text-slate-600 sm:px-6">
-          {caption}
-        </figcaption>
-      )}
 
       {status === "error" && (
         <div className="flex min-h-40 min-w-64 flex-col items-center justify-center gap-3 px-4 text-center" role="alert">

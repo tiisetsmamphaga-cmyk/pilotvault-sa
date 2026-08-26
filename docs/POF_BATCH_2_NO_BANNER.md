@@ -1,0 +1,1 @@
+Founder rule: from Batch 2 onward, no PilotVault banner is baked into the learning image. Branding remains in the website shell/UI.

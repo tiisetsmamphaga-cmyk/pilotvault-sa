@@ -1,0 +1,1 @@
+Checkpoint before asset generation and integration.

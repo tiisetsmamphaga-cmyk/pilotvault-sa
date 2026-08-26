@@ -1,0 +1,23 @@
+name: Test full POF promotion history
+
+on:
+  push:
+    branches:
+      - pof-visual-batch1-production
+    paths:
+      - '.github/workflows/test-pof-promotion-history.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-promotion-history:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate final manifest
+        run: python scripts/validate_pof_visuals.py
+      - name: Validate complete history from current production
+        run: python scripts/validate_pof_visual_changes.py 1073dc20729df2a9d346e3ad12a5b3628218d1ac

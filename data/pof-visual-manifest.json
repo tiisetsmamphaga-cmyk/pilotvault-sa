@@ -10,10 +10,10 @@
       "question_ids": [-3],
       "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 27, "figure": "1-34", "notes": "Load Factor and Stall Speed chart; handbook states 60 degrees bank produces a load factor of 2.00."},
       "brief": {"student_must_understand": "Read the load-factor curve at 60 degrees bank and see that the load factor is 2.0 G.", "preserve": ["Original handbook graph axes", "Original load-factor curve", "Original stall-speed curve"], "refine": ["Crop to the chart only", "Improve clarity and contrast", "Guide the eye precisely to the 60 degree and 2.0 G intersection"], "add": ["PilotVault POF header", "Accurate gold read-off guides", "Short question-specific takeaway"], "remove": ["Page body text", "Caption if it competes with the teaching point", "Unrelated margins"]},
-      "assets": {"master_asset": null, "web_asset": null},
+      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.webp"},
       "mapping_reason": "The question explicitly asks for the load factor at 60 degrees bank and Figure 1-34 directly provides that read-off.",
-      "status": "REFINING",
-      "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
+      "status": "QA_APPROVED",
+      "qa": {"technical": true, "teaching": true, "visual": true, "preview": false, "live": false},
       "lock": {"approved": false, "replacement_reason": null}
     },
     {
@@ -22,11 +22,11 @@
       "concept": "CG position relative to centre of lift/pressure determines longitudinal stability",
       "question_ids": [1131],
       "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 19, "figure": "1-24", "notes": "Positive stability figure; text states centre of lift behind centre of gravity with a balancing downward tail force."},
-      "brief": {"student_must_understand": "Longitudinal stability depends on the CG position relative to the centre of lift/pressure, with the tail providing a balancing downforce in the stable arrangement.", "preserve": ["Original aircraft figure", "Original lift, weight and tail-force vectors", "Relative fore-aft position shown in the handbook"], "refine": ["Isolate Figure 1-24 only", "Enlarge and sharpen the aircraft and force arrows", "Make the CG/lift relationship easy to scan"], "add": ["PilotVault POF header", "Minimal CG/lift relationship callout", "Short takeaway"], "remove": ["Page paragraphs", "Neutral and negative stability examples", "Unrelated margins"]},
-      "assets": {"master_asset": null, "web_asset": null},
-      "mapping_reason": "Question 1131 asks which factor affects longitudinal stability; the handbook explicitly identifies CG position relative to centre of lift as the determining factor.",
-      "status": "REFINING",
-      "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
+      "brief": {"student_must_understand": "Longitudinal stability depends on the CG position relative to the centre of lift/pressure, with the tail providing a balancing downforce in the stable arrangement.", "preserve": ["Original aircraft figure", "Original lift, weight and tail-force vectors", "Relative fore-aft position shown in the handbook"], "refine": ["Use the handbook's stability figures", "Enlarge and sharpen the aircraft and force arrows", "Make the CG/lift relationship easy to scan"], "add": ["PilotVault POF header", "Clear neutral, unstable/aft-CG and positive-stability comparison", "Short takeaway"], "remove": ["Page paragraphs", "Unrelated margins"]},
+      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v1.webp"},
+      "mapping_reason": "Question 1131 asks which factor affects longitudinal stability; the visual directly compares how CG position relative to lift/pressure changes pitch stability.",
+      "status": "QA_APPROVED",
+      "qa": {"technical": true, "teaching": true, "visual": true, "preview": false, "live": false},
       "lock": {"approved": false, "replacement_reason": null}
     },
     {
@@ -35,11 +35,11 @@
       "concept": "Parasite/profile drag increases with airspeed",
       "question_ids": [1153],
       "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 9, "figure": "1-15", "notes": "Typical airplane drag curves showing induced drag, parasite drag and total drag."},
-      "brief": {"student_must_understand": "The rising parasite/profile-drag curve increases as speed increases.", "preserve": ["Original drag curves", "Speed axis", "Drag axis", "Original labels"], "refine": ["Crop to Figure 1-15 only", "Improve curve and label legibility", "Emphasize the parasite-drag curve without obscuring the source"], "add": ["PilotVault POF header", "Single accurate gold callout", "Short question-specific takeaway"], "remove": ["Surrounding page text", "Unrelated margins"]},
-      "assets": {"master_asset": null, "web_asset": null},
-      "mapping_reason": "Question 1153 tests parasite/profile drag; Figure 1-15 directly shows the parasite drag curve increasing with speed.",
-      "status": "REFINING",
-      "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
+      "brief": {"student_must_understand": "The parasite/profile-drag curve rises with speed while induced drag falls; total drag is the sum and reaches a minimum at Vmd.", "preserve": ["Original drag curves", "Speed axis", "Drag axis", "Original labels"], "refine": ["Crop to Figure 1-15 only", "Improve curve and label legibility", "Emphasize the parasite-drag relationship without obscuring the source"], "add": ["PilotVault POF header", "Low-speed/high-speed drag callouts", "Minimum-total-drag Vmd callout", "Short question-specific takeaway"], "remove": ["Surrounding page text", "Unrelated margins"]},
+      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-drag-curves-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-drag-curves-v1.webp"},
+      "mapping_reason": "Question 1153 tests recognition of the parasite/profile-drag curve; the visual clearly labels parasite drag and shows why it rises with speed relative to induced and total drag.",
+      "status": "QA_APPROVED",
+      "qa": {"technical": true, "teaching": true, "visual": true, "preview": false, "live": false},
       "lock": {"approved": false, "replacement_reason": null}
     },
     {
@@ -47,12 +47,12 @@
       "topic": "Stability",
       "concept": "Dihedral improves lateral stability in the rolling plane",
       "question_ids": [1168],
-      "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 21, "figure": "1-27", "notes": "Effect of dihedral figure showing the upward wing angle."},
-      "brief": {"student_must_understand": "Dihedral is the upward angle of the wings from root to tip and is used to improve lateral/roll stability.", "preserve": ["Original front-view aircraft figure", "Original dihedral angle indication"], "refine": ["Isolate Figure 1-27 only", "Sharpen wing geometry and label", "Make the upward wing angle visually obvious"], "add": ["PilotVault POF header", "Simple dihedral-angle emphasis", "Short lateral-stability takeaway"], "remove": ["Sweepback figure", "Unrelated page material", "Excess whitespace"]},
-      "assets": {"master_asset": null, "web_asset": null},
-      "mapping_reason": "Question 1168 asks what stability dihedral improves; Figure 1-27 is the handbook's direct dihedral reference.",
-      "status": "REFINING",
-      "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
+      "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 21, "figure": "1-27", "notes": "Effect of dihedral figure showing the upward wing angle and handbook text explaining its restoring roll tendency during a sideslip."},
+      "brief": {"student_must_understand": "Dihedral is the upward angle of the wings from root to tip and is used to improve lateral/roll stability.", "preserve": ["Original front-view aircraft figure", "Original dihedral angle indication"], "refine": ["Isolate Figure 1-27", "Sharpen wing geometry and label", "Explain the restoring roll sequence after a disturbance"], "add": ["PilotVault POF header", "Dihedral definition callout", "Lateral-stability callout", "Three-step restoring-roll explanation"], "remove": ["Sweepback figure", "Unrelated page material", "Excess whitespace"]},
+      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-dihedral-lateral-stability-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-dihedral-lateral-stability-v1.webp"},
+      "mapping_reason": "Question 1168 asks what stability dihedral improves; the visual identifies lateral/roll stability and explains the restoring tendency that creates it.",
+      "status": "QA_APPROVED",
+      "qa": {"technical": true, "teaching": true, "visual": true, "preview": false, "live": false},
       "lock": {"approved": false, "replacement_reason": null}
     },
     {
@@ -61,11 +61,11 @@
       "concept": "Higher lift-to-drag ratio produces a shallower glide angle",
       "question_ids": [1239],
       "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 32, "figure": "1-39", "notes": "Forces in a glide; handbook text states that reducing drag makes the glide angle smaller and L/D measures gliding efficiency."},
-      "brief": {"student_must_understand": "A high L/D ratio means more forward distance for each unit of height lost, producing a shallow glide.", "preserve": ["Original two glide illustrations", "Original lift, drag, weight and resultant vectors", "Original glide-angle geometry"], "refine": ["Crop to Figure 1-39 only", "Improve line and label clarity", "Contrast the shallow and steeper glide examples"], "add": ["PilotVault POF header", "Higher-L/D shallow-glide emphasis", "Short question-specific takeaway"], "remove": ["Page body text", "Unrelated margins"]},
-      "assets": {"master_asset": null, "web_asset": null},
-      "mapping_reason": "Question 1239 asks what glide angle results from a high L/D ratio; the handbook text accompanying Figure 1-39 directly explains this relationship.",
-      "status": "REFINING",
-      "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
+      "brief": {"student_must_understand": "A high L/D ratio means more forward distance for each unit of height lost, producing a shallow glide.", "preserve": ["Original two glide illustrations", "Original lift, drag, weight and resultant vectors", "Original glide-angle geometry"], "refine": ["Crop to Figure 1-39", "Improve line and label clarity", "Contrast the shallow and steeper glide examples"], "add": ["PilotVault POF header", "Higher-L/D shallow-glide callout", "Lower-L/D steeper-glide callout", "Short equilibrium takeaway"], "remove": ["Page body text", "Unrelated margins"]},
+      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-glide-ld-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-glide-ld-v1.webp"},
+      "mapping_reason": "Question 1239 asks what glide angle results from a high L/D ratio; the visual directly contrasts higher-L/D shallow glide with lower-L/D steeper glide.",
+      "status": "QA_APPROVED",
+      "qa": {"technical": true, "teaching": true, "visual": true, "preview": false, "live": false},
       "lock": {"approved": false, "replacement_reason": null}
     }
   ]

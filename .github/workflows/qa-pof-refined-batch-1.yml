@@ -17,25 +17,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify expected raster set
+      - name: Verify installed corrected raster set
         shell: bash
         run: |
           set -euo pipefail
           root='public/explanation-images/principles-of-flight/refined-batch-1'
-          test -s "$root/pof-q-3-60-bank-2g.webp"
-          test -s "$root/pof-q1131-cg-longitudinal-stability.webp"
-          test -s "$root/pof-q1153-parasite-drag.webp"
-          test -s "$root/pof-q1168-dihedral-lateral-stability.webp"
-          test -s "$root/pof-q1239-high-ld-shallow-glide.webp"
-          file "$root"/*.webp
-          sha256sum "$root"/*.webp > pof-batch-1-sha256.txt
+          test -s "$root/pof-bank-load-factor-v1.webp"
+          test -s "$root/pof-longitudinal-stability-v1.webp"
+          test -s "$root/pof-drag-curves-v1.webp"
+          test -s "$root/pof-dihedral-lateral-stability-v1.webp"
+          test -s "$root/pof-glide-ld-v1.webp"
+          file "$root"/*-v1.webp
+          sha256sum "$root"/*-v1.webp > pof-batch-1-sha256.txt
 
       - name: Upload exact committed QA assets
         uses: actions/upload-artifact@v4
         with:
-          name: pof-refined-batch-1-qa
+          name: pof-refined-batch-1-v1-qa
           path: |
-            public/explanation-images/principles-of-flight/refined-batch-1/*.webp
+            public/explanation-images/principles-of-flight/refined-batch-1/*-v1.webp
             pof-batch-1-sha256.txt
           if-no-files-found: error
           retention-days: 3

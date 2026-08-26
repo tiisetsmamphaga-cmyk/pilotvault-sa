@@ -1,0 +1,1 @@
+Container network cannot resolve github.com; connector-based GitHub workflow remains the source of truth. Recovery rule: verify connector state before any retry.

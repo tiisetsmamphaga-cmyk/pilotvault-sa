@@ -5,7 +5,7 @@ on:
     branches:
       - pof-refined-batch-1
     paths:
-      - '.pof-upload/**'
+      - '.pof-upload/READY'
 
 permissions:
   contents: write

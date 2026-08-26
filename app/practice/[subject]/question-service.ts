@@ -116,9 +116,9 @@ async function loadSubjectQuestions(
     topic: question.topic ?? undefined,
     question: question.question,
     image_url: resolveQuestionImageUrl(question.subject, question.image_url),
-    explanation_image_url: question.explanation_visual_key
-      ? `pv-atg://${question.explanation_visual_key}`
-      : question.explanation_image_url ?? undefined,
+    // Visual keys are workflow metadata. The production renderer must receive
+    // the explicitly mapped raster URL rather than an unresolved custom URI.
+    explanation_image_url: question.explanation_image_url ?? undefined,
     explanation_image_title: question.explanation_image_title ?? undefined,
     explanation_image_caption: question.explanation_image_caption ?? undefined,
     explanation_visual_key: question.explanation_visual_key ?? undefined,

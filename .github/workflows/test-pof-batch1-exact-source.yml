@@ -1,0 +1,48 @@
+name: Test POF batch 1 exact source
+
+on:
+  push:
+    branches:
+      - pof-refined-batch-1
+    paths:
+      - 'scripts/fetch_exact_pof_handbook.py'
+      - 'scripts/build_pof_batch1_exact.py'
+      - '.github/workflows/test-pof-batch1-exact-source.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned image tooling
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.3.0' 'PyMuPDF==1.26.7'
+
+      - name: Fetch exact SHA-locked handbook
+        run: python scripts/fetch_exact_pof_handbook.py /tmp/ac_61-23c_phak_canada.pdf
+
+      - name: Build exact deterministic teaching visuals
+        run: python scripts/build_pof_batch1_exact.py /tmp/ac_61-23c_phak_canada.pdf /tmp/pof-batch1-exact
+
+      - name: Verify complete exact output set
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find /tmp/pof-batch1-exact -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          sha256sum /tmp/pof-batch1-exact/*.webp
+
+      - name: Upload exact assets for visual QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch1-exact-source-qa
+          path: /tmp/pof-batch1-exact/*.webp
+          if-no-files-found: error
+          retention-days: 3

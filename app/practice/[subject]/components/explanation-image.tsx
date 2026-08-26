@@ -37,11 +37,15 @@ export function ExplanationImage({
 }: ExplanationImageProps) {
   const usesBankAngleVisual =
     src.includes("/explanation-images/human-performance/load-factor-bank-")
-  const isUnapprovedPofVisual =
-    src.includes("/explanation-images/principles-of-flight/") &&
-    !src.includes("/explanation-images/principles-of-flight/pdf-rebuild/")
 
-  if (isUnapprovedPofVisual) return null
+  const isPofVisual = src.includes("/explanation-images/principles-of-flight/")
+  const isApprovedPofRaster =
+    src.includes("/explanation-images/principles-of-flight/refined-batch-1/") &&
+    /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
+
+  // POF is fail-closed: only the approved raster library may render.
+  // Old pdf-rebuild SVG/vector assets and any unmapped/unknown POF paths stay hidden.
+  if (isPofVisual && !isApprovedPofRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
   return <StandardExplanationImage src={src} alt={alt} priority={priority} />
 }

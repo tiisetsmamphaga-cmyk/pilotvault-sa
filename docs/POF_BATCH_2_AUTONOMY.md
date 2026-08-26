@@ -1,0 +1,1 @@
+Autonomous execution continues without routine approval between batch stages; only genuine blockers stop promotion.

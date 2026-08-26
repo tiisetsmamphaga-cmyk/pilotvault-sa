@@ -1,0 +1,41 @@
+name: QA POF refined batch 1 assets
+
+on:
+  push:
+    branches:
+      - pof-refined-batch-1
+    paths:
+      - '.github/workflows/qa-pof-refined-batch-1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify expected raster set
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='public/explanation-images/principles-of-flight/refined-batch-1'
+          test -s "$root/pof-q-3-60-bank-2g.webp"
+          test -s "$root/pof-q1131-cg-longitudinal-stability.webp"
+          test -s "$root/pof-q1153-parasite-drag.webp"
+          test -s "$root/pof-q1168-dihedral-lateral-stability.webp"
+          test -s "$root/pof-q1239-high-ld-shallow-glide.webp"
+          file "$root"/*.webp
+          sha256sum "$root"/*.webp > pof-batch-1-sha256.txt
+
+      - name: Upload exact committed QA assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-refined-batch-1-qa
+          path: |
+            public/explanation-images/principles-of-flight/refined-batch-1/*.webp
+            pof-batch-1-sha256.txt
+          if-no-files-found: error
+          retention-days: 3

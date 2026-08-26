@@ -1,0 +1,1 @@
+Last prep checkpoint before asset generation.

@@ -38,6 +38,9 @@ jobs:
               'https://air.flyingway.com/books/ac_61-23c_phak_canada.pdf',
               'https://www.sheppardair.com/download/ac61-23c.pdf',
           )
+          # The verified chapter excerpt is ~487 KB; keep a lower guard that
+          # still rejects HTML/error pages while accepting this valid PDF.
+          s = s.replace('len(data) < 500_000', 'len(data) < 100_000')
           p.write_text(s)
           PY
 

@@ -13,7 +13,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/ac-ahead-cg-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/ac-ahead-cg-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "adverse-yaw-v1.svg",
@@ -22,7 +23,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/adverse-yaw-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/adverse-yaw-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "aerofoil-nomenclature-v2.svg",
@@ -31,7 +33,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/aerofoil-nomenclature-v2.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/aerofoil-nomenclature-v2.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "aft-cg-spin-v1.svg",
@@ -40,7 +43,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/aft-cg-spin-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/aft-cg-spin-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "aileron-effect-v1.svg",
@@ -49,7 +53,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/aileron-effect-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/aileron-effect-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "air-properties-v1.svg",
@@ -58,7 +63,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/air-properties-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/air-properties-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "airspeed-chain-v1.svg",
@@ -67,7 +73,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/airspeed-chain-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/airspeed-chain-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "angle-of-attack-v2.svg",
@@ -76,7 +83,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/angle-of-attack-v2.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/angle-of-attack-v2.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "angle-of-attack-v3.svg",
@@ -85,7 +93,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/angle-of-attack-v3.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/angle-of-attack-v3.webp",
       "width": 1600,
-      "height": 757
+      "height": 757,
+      "banner_crop_ratio": 0.164706
     },
     {
       "source_name": "angle-of-incidence-v1.svg",
@@ -94,7 +103,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/angle-of-incidence-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/angle-of-incidence-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "anhedral-v1.svg",
@@ -103,7 +113,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/anhedral-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/anhedral-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "anti-servo-tab-v1.svg",
@@ -112,7 +123,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/anti-servo-tab-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/anti-servo-tab-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "aspect-ratio-v1.svg",
@@ -121,7 +133,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/aspect-ratio-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/aspect-ratio-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "axes-controls-v1.svg",
@@ -130,7 +143,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/axes-controls-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/axes-controls-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "balance-tab-v1.svg",
@@ -139,7 +153,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/balance-tab-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/balance-tab-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "bank-load-factor-v1.svg",
@@ -148,7 +163,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/bank-load-factor-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/bank-load-factor-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "boundary-layer-v1.svg",
@@ -157,7 +173,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/boundary-layer-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/boundary-layer-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "centre-of-gravity-v1.svg",
@@ -166,7 +183,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/centre-of-gravity-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/centre-of-gravity-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "centre-pressure-shift-v1.svg",
@@ -175,7 +193,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/centre-pressure-shift-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/centre-pressure-shift-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "cg-centre-pressure-v1.svg",
@@ -184,7 +203,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/cg-centre-pressure-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/cg-centre-pressure-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "cg-longitudinal-stability-v1.svg",
@@ -193,7 +213,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/cg-longitudinal-stability-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/cg-longitudinal-stability-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "control-column-forward-left-v1.svg",
@@ -202,7 +223,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/control-column-forward-left-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/control-column-forward-left-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "critical-aoa-stall-v1.svg",
@@ -211,7 +233,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/critical-aoa-stall-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/critical-aoa-stall-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "descent-power-v1.svg",
@@ -220,7 +243,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/descent-power-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/descent-power-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "differential-ailerons-v1.svg",
@@ -229,7 +253,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/differential-ailerons-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/differential-ailerons-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "dihedral-lateral-stability-v1.svg",
@@ -238,7 +263,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/dihedral-lateral-stability-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/dihedral-lateral-stability-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "directional-stability-v1.svg",
@@ -247,7 +273,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/directional-stability-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/directional-stability-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "drag-curves-v1.svg",
@@ -256,7 +283,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/drag-curves-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/drag-curves-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "dry-air-composition-v1.svg",
@@ -265,7 +293,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/dry-air-composition-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/dry-air-composition-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "dutch-roll-v1.svg",
@@ -274,7 +303,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/dutch-roll-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/dutch-roll-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "dynamic-stability-v1.svg",
@@ -283,7 +313,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/dynamic-stability-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/dynamic-stability-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "elevator-effect-v1.svg",
@@ -292,7 +323,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/elevator-effect-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/elevator-effect-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "excess-thrust-climb-angle-v1.svg",
@@ -301,7 +333,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/excess-thrust-climb-angle-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/excess-thrust-climb-angle-v1.webp",
       "width": 1600,
-      "height": 757
+      "height": 757,
+      "banner_crop_ratio": 0.164706
     },
     {
       "source_name": "flap-centre-pressure-v1.svg",
@@ -310,7 +343,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/flap-centre-pressure-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/flap-centre-pressure-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "flap-vs-no-flap-v1.svg",
@@ -319,7 +353,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/flap-vs-no-flap-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/flap-vs-no-flap-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "four-forces-v2.svg",
@@ -328,7 +363,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/four-forces-v2.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/four-forces-v2.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "fowler-flap-v1.svg",
@@ -337,7 +373,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/fowler-flap-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/fowler-flap-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "frise-aileron-v1.svg",
@@ -346,7 +383,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/frise-aileron-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/frise-aileron-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "glide-forces-v1.svg",
@@ -355,7 +393,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/glide-forces-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/glide-forces-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "horn-balance-v1.svg",
@@ -364,7 +403,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/horn-balance-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/horn-balance-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "humidity-density-v1.svg",
@@ -373,7 +413,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/humidity-density-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/humidity-density-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "isa-v1.svg",
@@ -382,7 +423,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/isa-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/isa-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "leading-edge-slot-v1.svg",
@@ -391,7 +433,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/leading-edge-slot-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/leading-edge-slot-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "lift-drag-directions-v2.svg",
@@ -400,7 +443,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/lift-drag-directions-v2.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/lift-drag-directions-v2.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "lift-formula-v1.svg",
@@ -409,7 +453,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/lift-formula-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/lift-formula-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "longitudinal-dihedral-v1.svg",
@@ -418,7 +463,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/longitudinal-dihedral-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/longitudinal-dihedral-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "mass-balance-flutter-v1.svg",
@@ -427,7 +473,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/mass-balance-flutter-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/mass-balance-flutter-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "newton-laws-v1.svg",
@@ -436,7 +483,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/newton-laws-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/newton-laws-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "p-factor-v1.svg",
@@ -445,7 +493,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/p-factor-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/p-factor-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "power-on-stall-v1.svg",
@@ -454,7 +503,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/power-on-stall-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/power-on-stall-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "pressure-components-v1.svg",
@@ -463,7 +513,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/pressure-components-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/pressure-components-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "pressure-distribution-v1.svg",
@@ -472,7 +523,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/pressure-distribution-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/pressure-distribution-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "pressure-temperature-density-v1.svg",
@@ -481,7 +533,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/pressure-temperature-density-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/pressure-temperature-density-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "primary-control-effects-v1.svg",
@@ -490,7 +543,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/primary-control-effects-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/primary-control-effects-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "propeller-left-turning-v1.svg",
@@ -499,7 +553,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/propeller-left-turning-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/propeller-left-turning-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "relative-airflow-v2.svg",
@@ -508,7 +563,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/relative-airflow-v2.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/relative-airflow-v2.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "rudder-effect-v1.svg",
@@ -517,7 +573,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/rudder-effect-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/rudder-effect-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "skin-friction-v1.svg",
@@ -526,7 +583,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/skin-friction-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/skin-friction-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "slip-skid-v1.svg",
@@ -535,7 +593,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/slip-skid-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/slip-skid-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "spin-autorotation-v1.svg",
@@ -544,7 +603,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/spin-autorotation-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/spin-autorotation-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "spin-recovery-v1.svg",
@@ -553,7 +613,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/spin-recovery-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/spin-recovery-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "stall-centre-pressure-v1.svg",
@@ -562,7 +623,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/stall-centre-pressure-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/stall-centre-pressure-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "stall-warning-v1.svg",
@@ -571,7 +633,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/stall-warning-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/stall-warning-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "static-pressure-v1.svg",
@@ -580,7 +643,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/static-pressure-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/static-pressure-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "static-stability-types-v1.svg",
@@ -589,7 +653,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/static-stability-types-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/static-stability-types-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "steady-climb-forces-v1.svg",
@@ -598,7 +663,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/steady-climb-forces-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/steady-climb-forces-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "steady-climb-forces-v2.svg",
@@ -607,7 +673,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/steady-climb-forces-v2.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/steady-climb-forces-v2.webp",
       "width": 1600,
-      "height": 757
+      "height": 757,
+      "banner_crop_ratio": 0.164706
     },
     {
       "source_name": "tailplane-restoring-force-v1.svg",
@@ -616,7 +683,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/tailplane-restoring-force-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/tailplane-restoring-force-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "thrust-drag-couple-v1.svg",
@@ -625,7 +693,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/thrust-drag-couple-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/thrust-drag-couple-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "torque-reaction-v1.svg",
@@ -634,7 +703,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/torque-reaction-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/torque-reaction-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "trailing-edge-flaps-v1.svg",
@@ -643,7 +713,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/trailing-edge-flaps-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/trailing-edge-flaps-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "trim-systems-v1.svg",
@@ -652,7 +723,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/trim-systems-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/trim-systems-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "trim-tab-v1.svg",
@@ -661,7 +733,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/trim-tab-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/trim-tab-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "turn-bank-tendencies-v1.svg",
@@ -670,7 +743,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/turn-bank-tendencies-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/turn-bank-tendencies-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "turn-forces-v1.svg",
@@ -679,7 +753,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/turn-forces-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/turn-forces-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "v-speeds-v1.svg",
@@ -688,7 +763,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/v-speeds-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/v-speeds-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "va-manoeuvring-v1.svg",
@@ -697,7 +773,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/va-manoeuvring-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/va-manoeuvring-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "venturi-bernoulli-v1.svg",
@@ -706,7 +783,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/venturi-bernoulli-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/venturi-bernoulli-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "vx-vy-v1.svg",
@@ -715,7 +793,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/vx-vy-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/vx-vy-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "washout-v1.svg",
@@ -724,7 +803,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/washout-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/washout-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "wind-glide-v1.svg",
@@ -733,7 +813,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/wind-glide-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/wind-glide-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "wing-polar-v1.svg",
@@ -742,7 +823,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/wing-polar-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/wing-polar-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     },
     {
       "source_name": "wingtip-vortices-v1.svg",
@@ -751,7 +833,8 @@
       "web_asset": "public/explanation-images/principles-of-flight/raster-complete/wingtip-vortices-v1.webp",
       "public_web_url": "/explanation-images/principles-of-flight/raster-complete/wingtip-vortices-v1.webp",
       "width": 1600,
-      "height": 802
+      "height": 800,
+      "banner_crop_ratio": 0.166667
     }
   ],
   "batches": [

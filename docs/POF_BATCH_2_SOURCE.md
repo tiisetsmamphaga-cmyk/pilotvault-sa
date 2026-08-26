@@ -1,0 +1,1 @@
+Approved handbook source for Batch 2: ac_61-23c_phak_canada.pdf, Chapter 1. Primary figures: 1-1 four forces, 1-2 angle of attack, 1-4 aerofoil nomenclature, 1-6 relative wind, 1-9 Bernoulli/venturi, 1-11 lift-drag directions, 1-14 skin friction/form drag, 1-16 angle-of-attack flow behaviour.

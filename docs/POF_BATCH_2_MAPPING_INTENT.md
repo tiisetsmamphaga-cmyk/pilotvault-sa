@@ -1,0 +1,1 @@
+Batch 2 mapping intent: replace only legacy/fail-closed POF SVG explanation paths for questions whose exact concepts match the five Batch 2 teaching assets. Locked Batch 1 rows remain unchanged.

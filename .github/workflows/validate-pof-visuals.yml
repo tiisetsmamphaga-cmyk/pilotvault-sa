@@ -14,7 +14,7 @@ on:
   push:
     branches:
       - main
-      - 'pof-*'
+      - 'pof-visual-*'
     paths:
       - 'data/pof-visual-manifest.json'
       - 'data/pof-visual-manifest.schema.json'

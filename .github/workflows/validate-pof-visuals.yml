@@ -1,0 +1,76 @@
+name: Validate POF visual workflow
+
+on:
+  pull_request:
+    paths:
+      - 'data/pof-visual-manifest.json'
+      - 'data/pof-visual-manifest.schema.json'
+      - 'docs/POF_VISUAL_WORKFLOW.md'
+      - 'scripts/validate_pof_visuals.py'
+      - 'public/explanation-images/principles-of-flight/**'
+      - 'app/practice/[subject]/**'
+      - '.github/workflows/validate-pof-visuals.yml'
+  push:
+    branches:
+      - main
+      - 'pof-visual-*'
+    paths:
+      - 'data/pof-visual-manifest.json'
+      - 'data/pof-visual-manifest.schema.json'
+      - 'docs/POF_VISUAL_WORKFLOW.md'
+      - 'scripts/validate_pof_visuals.py'
+      - 'public/explanation-images/principles-of-flight/**'
+      - 'app/practice/[subject]/**'
+      - '.github/workflows/validate-pof-visuals.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate POF manifest and QA gates
+        run: python scripts/validate_pof_visuals.py
+
+      - name: Reject newly introduced POF SVG/vector explanation assets
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+            if [[ -z "$BASE" || "$BASE" == "0000000000000000000000000000000000000000" ]]; then
+              BASE="$(git rev-parse HEAD^ 2>/dev/null || true)"
+            fi
+          fi
+
+          if [[ -z "$BASE" ]]; then
+            echo "No comparison base available; manifest validation still ran."
+            exit 0
+          fi
+
+          NEW_SVGS="$(git diff --diff-filter=AM --name-only "$BASE" "${GITHUB_SHA}" -- 'public/explanation-images/principles-of-flight/**/*.svg' 'public/explanation-images/principles-of-flight/*.svg' || true)"
+          if [[ -n "$NEW_SVGS" ]]; then
+            echo "POF explanation SVG/vector assets are forbidden. Use refined raster PNG/WebP/JPG assets instead:"
+            echo "$NEW_SVGS"
+            exit 1
+          fi
+
+          echo "No new POF SVG/vector explanation assets introduced."
+
+      - name: Reject SVG references added to POF explanation code or manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RniE '\.svg([?"'"'"'[:space:]]|$)' data/pof-visual-manifest.json 'app/practice/[subject]' --include='*.json' --include='*.ts' --include='*.tsx'; then
+            echo "SVG reference detected in POF visual mapping/code. Raster explanation visuals are required."
+            exit 1
+          fi
+          echo "No SVG references detected in protected POF visual mapping/code."

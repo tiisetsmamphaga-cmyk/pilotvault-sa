@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "subject": "principles-of-flight",
+  "allowed_statuses": [
+    "SOURCE_FOUND",
+    "REFINING",
+    "QA_FAILED",
+    "QA_APPROVED",
+    "PREVIEW_READY",
+    "MAPPED",
+    "PRODUCTION_READY",
+    "LIVE_VERIFIED"
+  ],
+  "visuals": []
+}

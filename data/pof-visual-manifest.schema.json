@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pilotvault.co.za/schemas/pof-visual-manifest.schema.json",
+  "title": "PilotVault POF visual manifest",
+  "type": "object",
+  "required": ["schema_version", "subject", "allowed_statuses", "visuals"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "subject": {"const": "principles-of-flight"},
+    "allowed_statuses": {
+      "type": "array",
+      "const": ["SOURCE_FOUND", "REFINING", "QA_FAILED", "QA_APPROVED", "PREVIEW_READY", "MAPPED", "PRODUCTION_READY", "LIVE_VERIFIED"]
+    },
+    "visuals": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/visual"}
+    }
+  },
+  "$defs": {
+    "visual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visual_id", "topic", "concept", "question_ids", "source", "brief", "assets", "mapping_reason", "status", "qa", "lock"],
+      "properties": {
+        "visual_id": {"type": "string", "pattern": "^pof-[a-z0-9-]+-[0-9]{3}$"},
+        "topic": {"type": "string", "minLength": 1},
+        "concept": {"type": "string", "minLength": 1},
+        "question_ids": {"type": "array", "items": {"type": "integer"}, "minItems": 1, "uniqueItems": true},
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["document", "page", "figure", "notes"],
+          "properties": {
+            "document": {"type": "string", "minLength": 1},
+            "page": {"type": "integer", "minimum": 1},
+            "figure": {"type": ["string", "null"]},
+            "notes": {"type": "string", "minLength": 1}
+          }
+        },
+        "brief": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["student_must_understand", "preserve", "refine", "add", "remove"],
+          "properties": {
+            "student_must_understand": {"type": "string", "minLength": 1},
+            "preserve": {"type": "array", "items": {"type": "string", "minLength": 1}},
+            "refine": {"type": "array", "items": {"type": "string", "minLength": 1}},
+            "add": {"type": "array", "items": {"type": "string", "minLength": 1}},
+            "remove": {"type": "array", "items": {"type": "string", "minLength": 1}}
+          }
+        },
+        "assets": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["master_asset", "web_asset"],
+          "properties": {
+            "master_asset": {"type": ["string", "null"]},
+            "web_asset": {"type": ["string", "null"]}
+          }
+        },
+        "mapping_reason": {"type": "string", "minLength": 1},
+        "status": {"enum": ["SOURCE_FOUND", "REFINING", "QA_FAILED", "QA_APPROVED", "PREVIEW_READY", "MAPPED", "PRODUCTION_READY", "LIVE_VERIFIED"]},
+        "qa": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["technical", "teaching", "visual", "preview", "live"],
+          "properties": {
+            "technical": {"type": "boolean"},
+            "teaching": {"type": "boolean"},
+            "visual": {"type": "boolean"},
+            "preview": {"type": "boolean"},
+            "live": {"type": "boolean"}
+          }
+        },
+        "lock": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["approved", "replacement_reason"],
+          "properties": {
+            "approved": {"type": "boolean"},
+            "replacement_reason": {"enum": [null, "technical_error", "visual_error", "user_requested_change"]}
+          }
+        }
+      }
+    }
+  }
+}

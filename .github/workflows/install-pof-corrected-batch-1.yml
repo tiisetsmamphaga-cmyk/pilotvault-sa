@@ -1,0 +1,138 @@
+name: Install corrected POF batch 1
+
+on:
+  push:
+    branches:
+      - pof-refined-batch-1
+    paths:
+      - '.pof-corrected/READY'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  TARGET_DIR: public/explanation-images/principles-of-flight/refined-batch-1
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install verification dependency
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Reconstruct and verify corrected payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, zipfile
+          from PIL import Image
+
+          stage = Path('.pof-corrected')
+          parts = sorted(stage.glob('part-*'))
+          if not parts:
+              raise SystemExit('No corrected payload chunks found')
+          encoded = ''.join(p.read_text(encoding='utf-8').strip() for p in parts)
+          payload = base64.b64decode(encoded, validate=True)
+          expected = (stage / 'sha256.txt').read_text(encoding='utf-8').strip()
+          actual = hashlib.sha256(payload).hexdigest()
+          if actual != expected:
+              raise SystemExit(f'Payload SHA256 mismatch: expected {expected}, got {actual}')
+
+          archive = stage / 'payload.zip'
+          archive.write_bytes(payload)
+          target = Path('public/explanation-images/principles-of-flight/refined-batch-1')
+          target.mkdir(parents=True, exist_ok=True)
+          expected_names = {
+              'pof-bank-load-factor-v1.png', 'pof-bank-load-factor-v1.webp',
+              'pof-longitudinal-stability-v1.png', 'pof-longitudinal-stability-v1.webp',
+              'pof-drag-curves-v1.png', 'pof-drag-curves-v1.webp',
+              'pof-dihedral-lateral-stability-v1.png', 'pof-dihedral-lateral-stability-v1.webp',
+              'pof-glide-ld-v1.png', 'pof-glide-ld-v1.webp',
+          }
+          with zipfile.ZipFile(archive) as z:
+              names = set(z.namelist())
+              if names != expected_names:
+                  raise SystemExit(f'Unexpected payload contents: {sorted(names)}')
+              z.extractall(target)
+
+          for name in sorted(expected_names):
+              p = target / name
+              with Image.open(p) as im:
+                  im.verify()
+              with Image.open(p) as im:
+                  if im.width < 1000 or im.height < 700:
+                      raise SystemExit(f'{name} too small: {im.size}')
+                  print(f'VERIFIED {name}: {p.stat().st_size} bytes, {im.size}')
+          print(f'Payload verified: {actual}')
+          PY
+
+      - name: Advance corrected batch to QA_APPROVED
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          manifest_path = Path('data/pof-visual-manifest.json')
+          data = json.loads(manifest_path.read_text(encoding='utf-8'))
+          assets = {
+              'pof-bank-load-factor-001': ('pof-bank-load-factor-v1.png', 'pof-bank-load-factor-v1.webp'),
+              'pof-longitudinal-stability-001': ('pof-longitudinal-stability-v1.png', 'pof-longitudinal-stability-v1.webp'),
+              'pof-parasite-drag-001': ('pof-drag-curves-v1.png', 'pof-drag-curves-v1.webp'),
+              'pof-dihedral-001': ('pof-dihedral-lateral-stability-v1.png', 'pof-dihedral-lateral-stability-v1.webp'),
+              'pof-glide-ratio-001': ('pof-glide-ld-v1.png', 'pof-glide-ld-v1.webp'),
+          }
+          prefix = 'public/explanation-images/principles-of-flight/refined-batch-1/'
+          for visual in data['visuals']:
+              vid = visual['visual_id']
+              if vid not in assets:
+                  continue
+              if visual['status'] != 'REFINING':
+                  raise SystemExit(f'{vid} must be REFINING before approval, got {visual["status"]}')
+              master, web = assets[vid]
+              visual['assets'] = {'master_asset': prefix + master, 'web_asset': prefix + web}
+              visual['status'] = 'QA_APPROVED'
+              visual['qa'] = {'technical': True, 'teaching': True, 'visual': True, 'preview': False, 'live': False}
+              visual['lock'] = {'approved': False, 'replacement_reason': None}
+          manifest_path.write_text(json.dumps(data, indent=2) + '\n', encoding='utf-8')
+          PY
+          python scripts/validate_pof_visuals.py
+
+      - name: Commit exact corrected assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'PilotVault Visual Pipeline'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/pof-visual-manifest.json "$TARGET_DIR"
+          git rm -r .pof-corrected
+          git commit -m 'Install corrected POF batch 1 teaching visuals'
+          git push
+
+      - name: Create exact WebP QA bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum "$TARGET_DIR"/*.webp > pof-corrected-batch-1-sha256.txt
+
+      - name: Upload exact corrected QA assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-corrected-batch-1-qa
+          path: |
+            public/explanation-images/principles-of-flight/refined-batch-1/*.webp
+            pof-corrected-batch-1-sha256.txt
+          retention-days: 3
+          if-no-files-found: error

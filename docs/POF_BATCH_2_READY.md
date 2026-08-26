@@ -1,0 +1,1 @@
+Ready to generate and integrate Batch 2 raster assets.

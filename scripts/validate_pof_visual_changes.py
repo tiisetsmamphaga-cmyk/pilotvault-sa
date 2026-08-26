@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Validate POF visual changes against the previous Git state.
+"""Validate POF visual changes and the full promotion history.
 
 This protects the production workflow from state skipping, silent modification of
 approved assets, and reintroduction of SVG/vector explanation visuals.
+
+For long-lived visual branches, promotion may move `main` across several already-
+validated workflow states in one ref update. In that case we validate every
+manifest snapshot in the commit range instead of incorrectly treating the final
+state as a direct jump from the production manifest.
 """
 
 from __future__ import annotations
@@ -46,24 +51,22 @@ def run_git(*args: str) -> subprocess.CompletedProcess[str]:
     )
 
 
+def load_manifest_at(ref: str) -> dict:
+    result = run_git("show", f"{ref}:{MANIFEST_PATH.as_posix()}")
+    if result.returncode != 0:
+        return {"visuals": []}
+    try:
+        return json.loads(result.stdout)
+    except Exception as exc:
+        fail(f"manifest at {ref} is invalid JSON: {exc}")
+
+
 def load_current_manifest() -> dict:
     path = ROOT / MANIFEST_PATH
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception as exc:
         fail(f"cannot read current manifest: {exc}")
-
-
-def load_base_manifest(base_sha: str) -> dict:
-    result = run_git("show", f"{base_sha}:{MANIFEST_PATH.as_posix()}")
-    if result.returncode != 0:
-        # The guardrail may be introduced into a repository that did not yet
-        # have a manifest. In that one bootstrap case, compare against empty.
-        return {"visuals": []}
-    try:
-        return json.loads(result.stdout)
-    except Exception as exc:
-        fail(f"base manifest is invalid JSON: {exc}")
 
 
 def reject_new_svg_assets(base_sha: str) -> None:
@@ -108,19 +111,18 @@ def index_visuals(manifest: dict) -> dict[str, dict]:
     return result
 
 
-def validate_transitions(base_sha: str) -> None:
-    old = index_visuals(load_base_manifest(base_sha))
-    new = index_visuals(load_current_manifest())
+def validate_pair(old_manifest: dict, new_manifest: dict, context: str) -> None:
+    old = index_visuals(old_manifest)
+    new = index_visuals(new_manifest)
 
     for visual_id, visual in new.items():
-        if visual_id not in old:
-            if visual.get("status") != "SOURCE_FOUND":
-                fail(f"{visual_id}: new visuals must enter the workflow at SOURCE_FOUND")
+        if visual_id not in old and visual.get("status") != "SOURCE_FOUND":
+            fail(f"{context}: {visual_id}: new visuals must enter the workflow at SOURCE_FOUND")
 
     for visual_id, old_visual in old.items():
         if visual_id not in new:
             if old_visual.get("status") == "LIVE_VERIFIED":
-                fail(f"{visual_id}: LIVE_VERIFIED visuals cannot be deleted")
+                fail(f"{context}: {visual_id}: LIVE_VERIFIED visuals cannot be deleted")
             continue
 
         new_visual = new[visual_id]
@@ -131,11 +133,14 @@ def validate_transitions(base_sha: str) -> None:
             reason = new_visual.get("lock", {}).get("replacement_reason")
             if reason not in REPLACEMENT_REASONS:
                 fail(
-                    f"{visual_id}: approved LIVE_VERIFIED visual changed without an explicit "
+                    f"{context}: {visual_id}: approved LIVE_VERIFIED visual changed without an explicit "
                     "technical_error, visual_error, or user_requested_change replacement reason"
                 )
             if new_status not in REOPEN_STATES:
-                fail(f"{visual_id}: an approved visual must be reopened to REFINING or QA_FAILED before replacement")
+                fail(
+                    f"{context}: {visual_id}: an approved visual must be reopened to "
+                    "REFINING or QA_FAILED before replacement"
+                )
             continue
 
         if old_status == new_status:
@@ -145,12 +150,44 @@ def validate_transitions(base_sha: str) -> None:
         if new_status in allowed:
             continue
 
-        # Before production, discovered defects may return the asset to a QA
-        # failure/refinement cycle. This is a controlled regression, not a skip.
         if old_status != "LIVE_VERIFIED" and new_status in REOPEN_STATES:
             continue
 
-        fail(f"{visual_id}: invalid state transition {old_status} -> {new_status}; stages may not be skipped")
+        fail(
+            f"{context}: {visual_id}: invalid state transition "
+            f"{old_status} -> {new_status}; stages may not be skipped"
+        )
+
+
+def manifest_history(base_sha: str) -> list[tuple[str, dict]]:
+    result = run_git(
+        "rev-list",
+        "--reverse",
+        "--ancestry-path",
+        f"{base_sha}..HEAD",
+        "--",
+        MANIFEST_PATH.as_posix(),
+    )
+    if result.returncode != 0:
+        fail(f"cannot enumerate manifest history: {result.stderr.strip()}")
+
+    snapshots: list[tuple[str, dict]] = [(base_sha, load_manifest_at(base_sha))]
+    for sha in [line.strip() for line in result.stdout.splitlines() if line.strip()]:
+        snapshots.append((sha, load_manifest_at(sha)))
+
+    current = load_current_manifest()
+    if snapshots[-1][1] != current:
+        snapshots.append(("HEAD", current))
+    return snapshots
+
+
+def validate_transitions(base_sha: str) -> None:
+    snapshots = manifest_history(base_sha)
+    for index in range(1, len(snapshots)):
+        old_ref, old_manifest = snapshots[index - 1]
+        new_ref, new_manifest = snapshots[index]
+        validate_pair(old_manifest, new_manifest, f"{old_ref[:8]} -> {new_ref[:8]}")
+    print(f"Validated {max(0, len(snapshots) - 1)} manifest transition(s) across promotion history")
 
 
 def main() -> None:

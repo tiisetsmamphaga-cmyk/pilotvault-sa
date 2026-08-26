@@ -40,11 +40,12 @@ export function ExplanationImage({
 
   const isPofVisual = src.includes("/explanation-images/principles-of-flight/")
   const isApprovedPofRaster =
-    src.includes("/explanation-images/principles-of-flight/refined-batch-1/") &&
+    (src.includes("/explanation-images/principles-of-flight/refined-batch-1/") ||
+      src.includes("/explanation-images/principles-of-flight/raster-complete/")) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
-  // POF is fail-closed: only the approved raster library may render.
-  // Old pdf-rebuild SVG/vector assets and any unmapped/unknown POF paths stay hidden.
+  // POF is fail-closed: only explicitly approved raster libraries may render.
+  // Legacy pdf-rebuild SVG/vector assets and unknown POF paths stay hidden.
   if (isPofVisual && !isApprovedPofRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
   return <StandardExplanationImage src={src} alt={alt} priority={priority} />
@@ -54,6 +55,8 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [attempt, setAttempt] = useState(0)
   const usesNavigationTemplate = src.includes("/explanation-images/navigation/")
+  const usesPofWebsiteTemplate = src.includes("/explanation-images/principles-of-flight/raster-complete/")
+  const usesWebsiteTemplate = usesNavigationTemplate || usesPofWebsiteTemplate
   const diagramTitle = useMemo(() => formatDiagramTitle(src, alt), [src, alt])
 
   useEffect(() => {
@@ -76,8 +79,8 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
   return (
     <figure
       className={
-        usesNavigationTemplate
-          ? "mt-5 overflow-hidden border border-slate-200 bg-white"
+        usesWebsiteTemplate
+          ? "mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white"
           : "mx-auto mt-5 w-fit max-w-full overflow-hidden border border-slate-200 bg-white"
       }
     >
@@ -94,7 +97,14 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
         </div>
       )}
 
-      <div className={usesNavigationTemplate ? "overflow-hidden" : "flex max-w-full items-center justify-center overflow-hidden"}>
+      {status === "loaded" && usesPofWebsiteTemplate && (
+        <div className="bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
+          <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">PILOTVAULT PRINCIPLES OF FLIGHT</div>
+          <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">{diagramTitle}</div>
+        </div>
+      )}
+
+      <div className={usesWebsiteTemplate ? "overflow-hidden" : "flex max-w-full items-center justify-center overflow-hidden"}>
         <img
           key={`${src}-${attempt}`}
           src={resolvedSrc}
@@ -107,7 +117,7 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
           style={status === "loaded" && usesNavigationTemplate ? { marginTop: "-6%" } : undefined}
           className={
             status === "loaded"
-              ? usesNavigationTemplate
+              ? usesWebsiteTemplate
                 ? "block max-h-[32rem] w-full object-contain"
                 : "block h-auto max-h-[32rem] w-auto max-w-full object-contain"
               : "hidden"

@@ -11,6 +11,7 @@ from __future__ import annotations
 import io
 import json
 import math
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import cairosvg
@@ -23,8 +24,54 @@ QA_DIR = OUTPUT_DIR / "qa"
 MAP_PATH = ROOT / "data" / "pof-raster-conversion-map.json"
 
 BANNER_MARKER = "PILOTVAULT PRINCIPLES OF FLIGHT"
-BANNER_RATIO = 112 / 680
 BATCH_SIZE = 5
+
+
+def _number(value: str | None, default: float = 0.0) -> float:
+    if value is None:
+        return default
+    cleaned = value.strip().lower().replace("px", "")
+    try:
+        return float(cleaned)
+    except ValueError:
+        return default
+
+
+def banner_crop_ratio(svg_text: str) -> float:
+    """Return the exact top-banner height as a fraction of the SVG canvas."""
+    if BANNER_MARKER not in svg_text:
+        return 0.0
+
+    root = ET.fromstring(svg_text)
+    view_box = root.attrib.get("viewBox", "").split()
+    if len(view_box) != 4:
+        raise ValueError("POF source with banner must define a four-value viewBox")
+
+    view_width = _number(view_box[2])
+    view_height = _number(view_box[3])
+    if view_width <= 0 or view_height <= 0:
+        raise ValueError("POF source has invalid viewBox dimensions")
+
+    candidates: list[float] = []
+    for element in root.iter():
+        if not element.tag.endswith("rect"):
+            continue
+        x = _number(element.attrib.get("x"), 0.0)
+        y = _number(element.attrib.get("y"), 0.0)
+        width = _number(element.attrib.get("width"), view_width)
+        height = _number(element.attrib.get("height"), 0.0)
+        fill = element.attrib.get("fill", "").strip().lower()
+
+        is_top_full_width = abs(x) < 0.01 and abs(y) < 0.01 and abs(width - view_width) < 0.5
+        is_banner_sized = 0 < height < view_height * 0.4
+        is_non_background = fill not in {"", "#fff", "#ffffff", "white", "none"}
+        if is_top_full_width and is_banner_sized and is_non_background:
+            candidates.append(height)
+
+    if not candidates:
+        raise ValueError("PilotVault banner marker found but top banner rectangle could not be resolved")
+
+    return max(candidates) / view_height
 
 
 def render_source(svg_path: Path) -> Image.Image:
@@ -32,16 +79,17 @@ def render_source(svg_path: Path) -> Image.Image:
     png_bytes = cairosvg.svg2png(bytestring=svg_text.encode("utf-8"), output_width=1600)
     image = Image.open(io.BytesIO(png_bytes)).convert("RGB")
 
-    # Legacy diagrams used a 112px banner in a 680px-high 1200px canvas.
-    # Scale the crop proportionally after high-resolution rasterisation.
-    if BANNER_MARKER in svg_text:
-        crop_y = int(round(image.height * BANNER_RATIO))
+    crop_ratio = banner_crop_ratio(svg_text)
+    if crop_ratio:
+        crop_y = int(round(image.height * crop_ratio))
         image = image.crop((0, crop_y, image.width, image.height))
 
     return image
 
 
-def save_asset(svg_path: Path) -> dict[str, str | int]:
+def save_asset(svg_path: Path) -> dict[str, str | int | float]:
+    svg_text = svg_path.read_text(encoding="utf-8")
+    crop_ratio = banner_crop_ratio(svg_text)
     image = render_source(svg_path)
     stem = svg_path.stem
     png_path = OUTPUT_DIR / f"{stem}.png"
@@ -58,10 +106,11 @@ def save_asset(svg_path: Path) -> dict[str, str | int]:
         "public_web_url": "/" + str(webp_path.relative_to(ROOT / "public")).replace("\\", "/"),
         "width": image.width,
         "height": image.height,
+        "banner_crop_ratio": round(crop_ratio, 6),
     }
 
 
-def make_contact_sheet(batch_number: int, records: list[dict[str, str | int]]) -> str:
+def make_contact_sheet(batch_number: int, records: list[dict[str, str | int | float]]) -> str:
     thumbs: list[tuple[Image.Image, str]] = []
     cell_w, cell_h = 620, 430
     for record in records:

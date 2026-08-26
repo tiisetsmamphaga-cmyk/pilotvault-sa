@@ -27,6 +27,20 @@ jobs:
       - name: Install visual build dependencies
         run: python -m pip install --disable-pip-version-check pillow pymupdf
 
+      - name: Select accessible AC 61-23C mirror
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/build_pof_refined_batch_1.py')
+          s = p.read_text()
+          s = s.replace(
+              'https://air.flyingway.com/books/ac_61-23c_phak_canada.pdf',
+              'https://www.sheppardair.com/download/ac61-23c.pdf',
+          )
+          p.write_text(s)
+          PY
+
       - name: Build refined handbook-based teaching visuals
         run: python scripts/build_pof_refined_batch_1.py
 

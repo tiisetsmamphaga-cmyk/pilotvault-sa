@@ -4,7 +4,7 @@
 
 This protocol is the standing operating authority for completing Principles of Flight visual work without routine interruptions.
 
-The goal is continuous execution across batches while preserving the PilotVault POF quality gates, fail-closed behavior, deployment policy, and exact resume checkpoints.
+The goal is continuous execution across batches while preserving the PilotVault POF quality gates, fail-closed behavior, deployment policy, exact resume checkpoints, and truthful execution status in the chat.
 
 ## Standing authorization
 
@@ -14,39 +14,49 @@ The active instruction is:
 
 This standing authorization remains active until explicitly revoked or replaced.
 
+## Active-turn execution rule
+
+Autonomous execution only exists while the current ChatGPT turn is actively running.
+
+- Progress updates are intermediate status messages inside the active turn and do not pause work.
+- After posting a progress update, continue directly with the next tool/action unless a genuine stop condition is reached.
+- Do not send a final response merely to say that work is continuing.
+- A final response means the active execution run has ended, paused at a verified checkpoint, completed a requested scope, or hit a genuine blocker.
+- Never claim to be working in the background after a final response has been sent.
+- If the chat UI is idle after a final response, execution has stopped until a new user turn starts another active run.
+- If an execution limit forces the turn to end before the work is complete, persist the exact checkpoint and state clearly that the run has stopped; never imply invisible continuation.
+
+The preferred long-run pattern is:
+
+`tool/action -> short progress update -> tool/action -> short progress update -> ... -> verified checkpoint/blocker/completion -> final response`
+
 ## Batch rules
 
 - Maximum five visual concepts per batch.
-- A completed batch immediately rolls into the next batch; a batch boundary is not a stop point.
+- A completed batch immediately rolls into the next batch; a batch boundary is not a stop point while the active turn is still running.
 - The five locked Batch 1 visuals remain the minimum quality benchmark.
 - No generic, approximate, placeholder, bulk-converted, or loosely related visual may be used to keep progress moving.
 - If a correct teaching visual is not ready, fail closed and show no image.
 
-## User reporting cadence
+## User progress visibility
 
-Normal progress messages are suppressed.
+Short progress updates are enabled during active execution.
 
-Send the user a progress report only after every three completed batches.
+Post a concise update at meaningful checkpoints such as:
 
-The reporting windows are therefore:
+- source/question set selected
+- a visual is refined or rejected
+- technical/teaching/visual QA passes or fails
+- preview is ready
+- mappings are applied
+- production is deployed
+- live verification is complete
 
-- Batches 2-4 -> report
-- Batches 5-7 -> report
-- Batches 8-10 -> report
-- continue in groups of three thereafter
+These updates are informational only. They must not pause execution or wait for user acknowledgement.
 
-A report is also allowed before the three-batch boundary only when a stop condition below is reached and user input is genuinely required.
+A more complete summary may still be given after every three completed batches, but that summary is not a stop point and does not replace the live checkpoint updates.
 
-Do not send routine messages such as:
-
-- asking whether to continue
-- announcing the start of the next batch
-- reporting ordinary GitHub commits
-- reporting ordinary QA passes
-- reporting routine Supabase mappings
-- reporting ordinary preview creation
-
-Record those events in the persistent state instead.
+Do not ask whether to continue unless a genuine stop condition requires a user decision.
 
 ## Allowed autonomous actions
 

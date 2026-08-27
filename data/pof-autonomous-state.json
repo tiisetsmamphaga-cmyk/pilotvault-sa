@@ -37,7 +37,7 @@
   "current_batch": 6,
   "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_6_PREVIEW_READY",
+  "last_verified_checkpoint": "POF_BATCH_6_MAPPED",
   "production_state": {
     "approved_live_visuals": 25,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Map the five Batch 6 visuals to their exact Supabase questions in one fail-closed transaction, verify the rows, then advance PREVIEW_READY to MAPPED only after database verification passes",
+  "next_action": "Run final repository and deployment-readiness checks, remove temporary Batch 6 workflows, then advance MAPPED to PRODUCTION_READY before merging to main",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

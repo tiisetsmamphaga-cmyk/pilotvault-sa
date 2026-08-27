@@ -1,0 +1,31 @@
+name: Mark POF Batches 2-4 PREVIEW_READY
+
+on:
+  push:
+    branches:
+      - pof-batches-2-4-clean-v2
+    paths:
+      - 'scripts/mark_pof_batches_2_4_preview_ready.py'
+      - '.github/workflows/mark-pof-batches-2-4-preview-ready.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  mark-preview-ready:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mark preview gate complete
+        run: python scripts/mark_pof_batches_2_4_preview_ready.py
+      - name: Validate manifest
+        run: python scripts/validate_pof_visuals.py
+      - name: Commit PREVIEW_READY manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-visual-manifest.json
+          git commit -m 'Mark POF Batches 2-4 preview verified'
+          git push origin HEAD:pof-batches-2-4-clean-v2

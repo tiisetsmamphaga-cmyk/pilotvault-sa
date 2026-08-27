@@ -1,0 +1,126 @@
+name: Repair POF Batch 5 20-degree visual
+
+on:
+  push:
+    branches:
+      - pof-autonomous-batch5
+    paths:
+      - .github/workflows/pof-batch5-repair-20deg.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-autonomous-batch5
+          fetch-depth: 0
+      - run: python -m pip install --quiet pillow
+
+      - name: Build low-bank zoom v2
+        shell: python
+        run: |
+          from pathlib import Path
+          from math import cos, radians
+          from PIL import Image, ImageDraw, ImageFont
+
+          out=Path('public/explanation-images/principles-of-flight/refined-batch-5')
+          W,H=1600,1050
+          BG='#F7F9FC'; WHITE='#FFFFFF'; NAVY='#0B1F33'; DARK='#172033'; MUTED='#667085'; GRID='#DCE3EA'; GOLD='#F4B400'; GOLD_DARK='#A97800'; PALE='#FFF7D6'
+          regular='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; bold='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+          def f(s,b=False): return ImageFont.truetype(bold if b else regular,s)
+          im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
+          d.text((100,62),'20° BANK — LOAD-FACTOR READ-OFF',font=f(48,True),fill=DARK)
+          d.text((100,126),'Low-bank zoom of Figure 1-34 relationship • level coordinated turn • n = 1 / cos(bank)',font=f(25),fill=MUTED)
+          d.line((100,168,1500,168),fill=GRID,width=2)
+          d.rounded_rectangle((90,205,1090,940),radius=28,fill=WHITE,outline=GRID,width=2)
+          d.rounded_rectangle((1130,235,1510,925),radius=28,fill=WHITE,outline=GRID,width=2)
+
+          left,top,right,bottom=175,275,1015,835
+          x0,x1=0.0,30.0; y0,y1=1.0,1.15
+          def px(x): return left+(x-x0)/(x1-x0)*(right-left)
+          def py(y): return bottom-(y-y0)/(y1-y0)*(bottom-top)
+          for xv in range(0,31,5):
+              x=px(xv); d.line((x,top,x,bottom),fill=GRID,width=1); d.text((x,bottom+18),f'{xv}°',font=f(20),fill=MUTED,anchor='ma')
+          for yv in (1.00,1.025,1.05,1.075,1.10,1.125,1.15):
+              y=py(yv); d.line((left,y,right,y),fill=GRID,width=1)
+              label=f'{yv:.3f}' if yv not in (1.00,1.05,1.10,1.15) else f'{yv:.2f}'
+              d.text((left-18,y),label,font=f(18),fill=MUTED,anchor='rm')
+          d.line((left,bottom,right,bottom),fill=DARK,width=3); d.line((left,top,left,bottom),fill=DARK,width=3)
+          d.text(((left+right)/2,892),'BANK ANGLE',font=f(25,True),fill=DARK,anchor='ma')
+          ylab=Image.new('RGBA',(250,55),(0,0,0,0)); yd=ImageDraw.Draw(ylab); yd.text((125,28),'LOAD FACTOR (G)',font=f(25,True),fill=DARK,anchor='mm'); ylab=ylab.rotate(90,expand=True); im.paste(ylab,(72,420),ylab); d=ImageDraw.Draw(im)
+
+          pts=[]
+          for i in range(601):
+              bank=30*i/600; n=1/cos(radians(bank)); pts.append((px(bank),py(n)))
+          d.line(pts,fill=NAVY,width=7,joint='curve')
+
+          bank=20.0; exact=1/cos(radians(bank)); shown=1.06; xp,yp=px(bank),py(exact)
+          def dash_line(a,b,c,dv,horizontal=True):
+              if horizontal:
+                  x=a
+                  while x<c:
+                      xe=min(x+14,c); d.line((x,b,xe,dv),fill=GOLD_DARK,width=4); x=xe+10
+              else:
+                  y=b
+                  while y<dv:
+                      ye=min(y+14,dv); d.line((a,y,c,ye),fill=GOLD_DARK,width=4); y=ye+10
+          dash_line(left,yp,xp,yp,True); dash_line(xp,yp,xp,bottom,False)
+          d.ellipse((xp-13,yp-13,xp+13,yp+13),fill=GOLD,outline=DARK,width=3)
+          d.rounded_rectangle((690,315,980,415),radius=20,fill=PALE,outline=GOLD_DARK,width=2)
+          d.text((835,350),'20°  →  ≈ 1.06 G',font=f(27,True),fill=GOLD_DARK,anchor='mm')
+
+          d.text((1170,280),'READ-OFF',font=f(20),fill=GOLD_DARK)
+          d.text((1170,325),'20°',font=f(47,True),fill=DARK)
+          d.text((1170,390),'≈ 1.06 G',font=f(47,True),fill=NAVY)
+          d.line((1170,470,1470,470),fill=GRID,width=2)
+          d.text((1170,505),'STRUCTURAL LOAD',font=f(20),fill=MUTED)
+          d.text((1170,550),'3,000 lb',font=f(31,True),fill=DARK)
+          d.text((1170,600),'× 1.06 G',font=f(31,True),fill=DARK)
+          d.line((1170,650,1420,650),fill=DARK,width=2)
+          d.text((1170,680),'≈ 3,180 lb',font=f(31,True),fill=GOLD_DARK)
+          d.text((1170,765),'The zoom keeps the small',font=f(25),fill=MUTED)
+          d.text((1170,800),'low-bank change readable.',font=f(25),fill=MUTED)
+
+          png=out/'pof-load-factor-20deg-v2.png'; webp=out/'pof-load-factor-20deg-v2.webp'
+          im.save(png,'PNG',optimize=True); im.save(webp,'WEBP',quality=94,method=6)
+          for p,fmt in ((png,'PNG'),(webp,'WEBP')):
+              with Image.open(p) as chk:
+                  assert chk.size==(1600,1050) and chk.format==fmt
+
+      - name: Replace rejected v1 reference without advancing stage
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          path=Path('data/pof-visual-manifest.json'); data=json.loads(path.read_text())
+          targets=[v for v in data['visuals'] if v['visual_id']=='pof-load-factor-20deg-001']
+          assert len(targets)==1
+          v=targets[0]; assert v['status']=='REFINING'
+          root='public/explanation-images/principles-of-flight/refined-batch-5'
+          v['assets']={'master_asset':f'{root}/pof-load-factor-20deg-v2.png','web_asset':f'{root}/pof-load-factor-20deg-v2.webp'}
+          path.write_text(json.dumps(data,indent=2)+'\n')
+          state_path=Path('data/pof-autonomous-state.json'); state=json.loads(state_path.read_text())
+          state['last_verified_checkpoint']='POF_BATCH_5_REFINING_20DEG_V2_READY_FOR_REVIEW'
+          state['next_action']='Batch 5: re-review 20-degree v2 and compare all five candidates against the locked Batch 1 quality benchmark; remain REFINING until all five pass'
+          state_path.write_text(json.dumps(state,indent=2)+'\n')
+
+      - name: Remove rejected v1 and validate
+        run: |
+          rm -f public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v1.png
+          rm -f public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v1.webp
+          ! find public/explanation-images/principles-of-flight/refined-batch-5 -type f -name '*.svg' | grep .
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py e9247b4fb85f8ff23f29aa6ff22ee872eb495af1
+
+      - name: Commit repaired REFINING candidate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/explanation-images/principles-of-flight/refined-batch-5 data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git diff --cached --quiet && exit 0
+          git commit -m "pof: refine 20-degree load-factor visual v2 [skip ci]"
+          git push origin HEAD:pof-autonomous-batch5

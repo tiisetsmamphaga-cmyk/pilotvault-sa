@@ -1,0 +1,55 @@
+name: Promote POF Batch 6 mapped
+
+on:
+  push:
+    branches:
+      - pof-batch6
+    paths:
+      - .github/workflows/pof-batch6-mapped.yml
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch6
+          fetch-depth: 0
+      - name: Promote five visuals to MAPPED
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          ids={
+            'pof-wing-polar-min-drag-001',
+            'pof-wing-polar-best-ld-001',
+            'pof-wing-polar-critical-aoa-001',
+            'pof-induced-drag-vortex-origin-001',
+            'pof-vertical-fin-directional-stability-001'
+          }
+          p=Path('data/pof-visual-manifest.json'); data=json.loads(p.read_text()); count=0
+          for v in data['visuals']:
+              if v['visual_id'] not in ids: continue
+              assert v['status']=='PREVIEW_READY'
+              assert v['qa']['technical'] and v['qa']['teaching'] and v['qa']['visual'] and v['qa']['preview']
+              v['status']='MAPPED'; count+=1
+          assert count==5
+          p.write_text(json.dumps(data,indent=2)+'\n')
+          sp=Path('data/pof-autonomous-state.json'); s=json.loads(sp.read_text())
+          s['last_verified_checkpoint']='POF_BATCH_6_MAPPED'
+          s['next_action']='Run final repository and deployment-readiness checks, remove temporary Batch 6 workflows, then advance MAPPED to PRODUCTION_READY before merging to main'
+          sp.write_text(json.dumps(s,indent=2)+'\n')
+      - name: Validate MAPPED promotion
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py edec7a577c6068f7a795d55f051ef0e4e67fa955
+      - name: Commit MAPPED checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "pof: promote Batch 6 to MAPPED [skip ci]"
+          git push origin HEAD:pof-batch6

@@ -1,0 +1,74 @@
+name: Approve POF Batch 6 rendered QA
+
+on:
+  push:
+    branches:
+      - pof-batch6
+    paths:
+      - .github/workflows/pof-batch6-qa-approve.yml
+
+permissions:
+  contents: write
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch6
+          fetch-depth: 0
+
+      - name: Persist five actual-image inspection passes
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          ids={
+            'pof-wing-polar-min-drag-001',
+            'pof-wing-polar-best-ld-001',
+            'pof-wing-polar-critical-aoa-001',
+            'pof-induced-drag-vortex-origin-001',
+            'pof-vertical-fin-directional-stability-001'
+          }
+          p=Path('data/pof-visual-manifest.json'); data=json.loads(p.read_text()); count=0
+          for v in data['visuals']:
+              if v['visual_id'] not in ids: continue
+              assert v['status']=='REFINING'
+              v['qa']['technical']=True
+              v['qa']['teaching']=True
+              v['qa']['visual']=True
+              v['status']='QA_APPROVED'
+              note='Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed.'
+              if v['visual_id']=='pof-induced-drag-vortex-origin-001':
+                  note='Actual rendered WebP inspected against locked Batch 1 quality reference. Two earlier REFINING layouts were rejected for label collisions; the simplified third rendering was re-inspected and passed with clean separation of pressure, vortex and force-vector teaching stages.'
+              v['visual_inspection']={
+                'actual_image_reviewed':True,
+                'batch1_quality_reference':True,
+                'teaching_relationship_obvious':True,
+                'technically_credible':True,
+                'generic_placeholder_appearance':False,
+                'review_note':note
+              }
+              count+=1
+          assert count==5
+          p.write_text(json.dumps(data,indent=2)+'\n')
+
+          sp=Path('data/pof-autonomous-state.json'); state=json.loads(sp.read_text())
+          state['last_verified_checkpoint']='POF_BATCH_6_QA_APPROVED'
+          state['next_action']='Create one intentional preview branch for Batch 6, explicitly allow refined-batch-6 in the POF renderer, verify the real explanation component and rendered assets, then advance to PREVIEW_READY only if live preview QA passes'
+          sp.write_text(json.dumps(state,indent=2)+'\n')
+
+      - name: Validate QA_APPROVED promotion
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py edec7a577c6068f7a795d55f051ef0e4e67fa955
+
+      - name: Commit QA_APPROVED checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "pof: approve Batch 6 rendered QA [skip ci]"
+          git push origin HEAD:pof-batch6

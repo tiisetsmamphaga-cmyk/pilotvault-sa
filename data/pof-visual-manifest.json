@@ -1848,7 +1848,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-min-drag-v1.webp"
       },
       "mapping_reason": "The question requires interpreting Figure PPL PoF-2 and specifically identifying point 3 as the minimum-drag angle of attack.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -1922,7 +1922,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-best-ld-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the best-angle point on the referenced polar; the visual teaches the maximum-L/D tangent method and point 4.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -1996,7 +1996,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-critical-aoa-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the critical-angle point on the referenced polar; point 6 is the maximum-CL peak.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2070,7 +2070,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.webp"
       },
       "mapping_reason": "Question 1178 asks what creates induced drag; the visual directly connects the top/bottom pressure difference to wingtip roll-up and the induced-drag consequence.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2148,7 +2148,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-vertical-fin-directional-stability-v1.webp"
       },
       "mapping_reason": "These questions all ask the same directional-stability relationship and the approved handbook directly explains the vertical fin weather-vane restoring action.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,

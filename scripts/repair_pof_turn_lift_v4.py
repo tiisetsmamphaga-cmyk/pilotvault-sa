@@ -61,25 +61,20 @@ def main():
     d.line([bank_a, bank_b], fill=NAVY, width=7)
     d.ellipse([origin[0]-13, origin[1]-13, origin[0]+13, origin[1]+13], outline=NAVY, width=4, fill=WHITE)
 
-    # Weight and vertical component share the aircraft reference point.
     arrow(d, origin, (760, 190), BLUE, width=9, head=25)
     arrow(d, origin, (760, 710), NAVY, width=9, head=25)
-
-    # Horizontal centripetal component and total lift resultant.
     arrow(d, origin, (385, 472), RED, width=9, head=25)
     total_end = (590, 222)
     arrow(d, origin, total_end, GOLD, width=10, head=25)
 
-    # Light construction lines make the vector resolution explicit.
     d.line([(590, 222), (760, 222)], fill=LINE, width=3)
     d.line([(590, 222), (590, 472)], fill=LINE, width=3)
 
-    d.text((360, 258), "TOTAL LIFT", font(31, True), fill="#a66a00")
+    d.text((360, 258), "TOTAL LIFT", font=font(31, True), fill="#a66a00")
     d.multiline_text((800, 245), "VERTICAL COMPONENT\nsupports weight", font=font(28, True), fill=BLUE, spacing=2)
     d.multiline_text((145, 520), "HORIZONTAL COMPONENT\nprovides centripetal force", font=font(28, True), fill=RED, spacing=2)
     center(d, (760, 748), "WEIGHT", font(30, True), NAVY)
 
-    # Footer takeaway card; website owns PilotVault branding/header.
     card = (170, 820, 1340, 915)
     d.rounded_rectangle(card, radius=20, fill=PALE, outline="#bfd0e4", width=2)
     center(d, (755, 845), "Vertical lift supports weight; horizontal lift provides centripetal force.", font(26, True), NAVY)
@@ -96,7 +91,6 @@ def main():
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-turn-lift-components-v4.png",
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-turn-lift-components-v4.webp",
     }
-    # Replacement stays in refinement until this exact rendered v4 is re-checked.
     visual["status"] = "REFINING"
     visual["qa"] = {"technical": False, "teaching": False, "visual": False, "preview": False, "live": False}
     visual["lock"] = {"approved": False, "replacement_reason": None}

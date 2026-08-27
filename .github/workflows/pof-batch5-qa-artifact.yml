@@ -1,0 +1,30 @@
+name: Package POF Batch 5 QA artifact
+
+on:
+  push:
+    branches:
+      - pof-autonomous-batch5
+    paths:
+      - .github/workflows/pof-batch5-qa-artifact.yml
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-autonomous-batch5
+      - name: Verify exact candidate set
+        run: |
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-5 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-5 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
+          ! find public/explanation-images/principles-of-flight/refined-batch-5 -type f -name '*.svg' | grep .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch5-pixel-qa
+          path: public/explanation-images/principles-of-flight/refined-batch-5/*.webp
+          if-no-files-found: error
+          compression-level: 0

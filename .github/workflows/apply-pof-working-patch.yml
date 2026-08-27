@@ -1,0 +1,35 @@
+name: Apply POF working patch
+
+on:
+  push:
+    branches:
+      - pof-batch-2-rebuild
+    paths:
+      - 'data/pof-batch-2-4-working-patch.json'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch-2-rebuild
+          fetch-depth: 0
+      - name: Apply manifest patch
+        run: python scripts/apply_pof_working_patch.py
+      - name: Commit manifest update
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/pof-visual-manifest.json; then
+            echo 'No manifest changes required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-visual-manifest.json
+          git commit -m 'Apply POF batch manifest transition'
+          git push origin HEAD:pof-batch-2-rebuild

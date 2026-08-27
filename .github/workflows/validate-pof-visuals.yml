@@ -8,6 +8,7 @@ on:
       - 'docs/POF_VISUAL_WORKFLOW.md'
       - 'scripts/validate_pof_visuals.py'
       - 'scripts/validate_pof_visual_changes.py'
+      - 'scripts/validate_pof_renderer_allowlist.py'
       - 'public/explanation-images/principles-of-flight/**'
       - 'app/practice/**'
       - '.github/workflows/validate-pof-visuals.yml'
@@ -22,6 +23,7 @@ on:
       - 'docs/POF_VISUAL_WORKFLOW.md'
       - 'scripts/validate_pof_visuals.py'
       - 'scripts/validate_pof_visual_changes.py'
+      - 'scripts/validate_pof_renderer_allowlist.py'
       - 'public/explanation-images/principles-of-flight/**'
       - 'app/practice/**'
       - '.github/workflows/validate-pof-visuals.yml'
@@ -39,6 +41,9 @@ jobs:
 
       - name: Validate POF manifest and QA gates
         run: python scripts/validate_pof_visuals.py
+
+      - name: Validate explicit production renderer batch allow-list
+        run: python scripts/validate_pof_renderer_allowlist.py
 
       - name: Resolve comparison base
         shell: bash

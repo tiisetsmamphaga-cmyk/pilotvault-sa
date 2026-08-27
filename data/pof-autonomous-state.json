@@ -5,16 +5,34 @@
   "authorization": "Complete POF autonomously until the suitable visual system is complete",
   "batch_limit": 5,
   "report_every_completed_batches": 3,
-  "routine_progress_messages": false,
-  "exception_reporting": [
-    "source_ambiguity",
-    "irreversible_product_risk",
-    "unrecoverable_external_blocker"
+  "routine_progress_messages": true,
+  "progress_update_mode": "meaningful_checkpoint",
+  "progress_update_checkpoints": [
+    "source_selected",
+    "visual_refined",
+    "qa_passed_or_failed",
+    "preview_ready",
+    "mapped",
+    "production_deployed",
+    "live_verified"
   ],
+  "progress_updates_pause_work": false,
+  "active_turn_required_for_execution": true,
+  "final_reply_ends_active_execution": true,
+  "background_execution_claims_forbidden": true,
+  "idle_chat_means_execution_stopped": true,
   "quality_reference": {
     "locked_batch_1_visuals": 5,
     "minimum_standard": "Batch 1 quality or better",
     "fail_closed": true
+  },
+  "stage_gate": {
+    "rule_document": "docs/POF_STAGE_GATE_RULE.md",
+    "hard_gate_enabled": true,
+    "known_defects_may_advance": false,
+    "fix_later_policy_allowed": false,
+    "checkpoint_only_after_verification": true,
+    "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
   },
   "current_batch": 5,
   "completed_batches_since_last_user_report": 0,
@@ -31,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Start Batch 5 from exact POF questions and approved handbook sources, continue autonomously through Batches 5-7, and report after Batch 7 unless a genuine stop condition occurs",
+  "next_action": "Batch 5: verify up to five exact question-specific concepts against approved handbook sources at SOURCE_FOUND; do not advance any concept with a known defect or ambiguity",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

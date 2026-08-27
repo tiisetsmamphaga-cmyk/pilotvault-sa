@@ -25,7 +25,7 @@ ASSETS = {
     "pof-speed-squared-lift-drag-001": (3, "pof-speed-squared-lift-drag-v1"),
     "pof-wing-area-lift-drag-001": (3, "pof-wing-area-lift-drag-v1"),
     "pof-aircraft-axes-controls-001": (4, "pof-aircraft-axes-controls-v1"),
-    "pof-critical-aoa-stall-001": (4, "pof-critical-aoa-stall-v3"),
+    "pof-critical-aoa-stall-001": (4, "pof-critical-aoa-stall-v4"),
     "pof-stability-types-001": (4, "pof-stability-types-v1"),
     "pof-turn-lift-components-001": (4, "pof-turn-lift-components-v4"),
     "pof-washout-wing-twist-001": (4, "pof-washout-wing-twist-v1"),
@@ -101,13 +101,39 @@ def refining() -> None:
     print("REFINING replay prepared: 15 visuals attached to reviewed raster pairs")
 
 
+def qa_approved() -> None:
+    data = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    visuals = {v["visual_id"]: v for v in data.get("visuals", [])}
+    if len(data.get("visuals", [])) != 20:
+        raise SystemExit(f"QA_APPROVED promotion requires exactly 20 manifest visuals; got {len(data.get('visuals', []))}")
+    for visual_id, (batch, stem) in ASSETS.items():
+        v = visuals.get(visual_id)
+        if not v or v.get("status") != "REFINING":
+            raise SystemExit(f"{visual_id}: expected REFINING before QA_APPROVED; got {None if not v else v.get('status')}")
+        expected = {
+            "master_asset": f"{ASSET_ROOT}/refined-batch-{batch}/{stem}.png",
+            "web_asset": f"{ASSET_ROOT}/refined-batch-{batch}/{stem}.webp",
+        }
+        if v.get("assets") != expected:
+            raise SystemExit(f"{visual_id}: asset drift: {v.get('assets')} != {expected}")
+        for path in expected.values():
+            p = ROOT / path
+            if not p.exists() or p.stat().st_size == 0:
+                raise SystemExit(f"Missing approved raster asset: {path}")
+        v["status"] = "QA_APPROVED"
+        v["qa"] = {"technical": True, "teaching": True, "visual": True, "preview": False, "live": False}
+        v["lock"] = {"approved": False, "replacement_reason": None}
+    write(data)
+    print("QA_APPROVED promotion prepared: 15 rendered and technically reviewed visuals")
+
+
 def main() -> None:
-    if len(sys.argv) != 2 or sys.argv[1] not in {"source-found", "refining"}:
-        raise SystemExit("usage: replay_pof_batches_2_4.py source-found|refining")
-    if sys.argv[1] == "source-found":
-        source_found()
-    else:
-        refining()
+    allowed={"source-found","refining","qa-approved"}
+    if len(sys.argv) != 2 or sys.argv[1] not in allowed:
+        raise SystemExit("usage: replay_pof_batches_2_4.py source-found|refining|qa-approved")
+    if sys.argv[1] == "source-found": source_found()
+    elif sys.argv[1] == "refining": refining()
+    else: qa_approved()
 
 
 if __name__ == "__main__":

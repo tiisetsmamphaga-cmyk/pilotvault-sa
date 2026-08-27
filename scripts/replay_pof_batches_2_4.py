@@ -11,6 +11,25 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data/pof-visual-manifest.json"
 SCRATCH_REF = "origin/pof-batch-2-rebuild"
 PLAN_PATH = "data/pof-batches-2-4-plan.json"
+ASSET_ROOT = "public/explanation-images/principles-of-flight"
+
+ASSETS = {
+    "pof-angle-of-attack-definition-001": (2, "pof-angle-of-attack-definition-v3"),
+    "pof-chord-line-001": (2, "pof-chord-line-v2"),
+    "pof-four-forces-equilibrium-001": (2, "pof-four-forces-level-flight-v2"),
+    "pof-lift-relative-airflow-001": (2, "pof-lift-relative-airflow-v2"),
+    "pof-venturi-bernoulli-001": (2, "pof-venturi-bernoulli-v2"),
+    "pof-angle-of-incidence-001": (3, "pof-angle-of-incidence-v5"),
+    "pof-centre-of-pressure-001": (3, "pof-centre-of-pressure-v1"),
+    "pof-relative-airflow-001": (3, "pof-relative-airflow-v1"),
+    "pof-speed-squared-lift-drag-001": (3, "pof-speed-squared-lift-drag-v1"),
+    "pof-wing-area-lift-drag-001": (3, "pof-wing-area-lift-drag-v1"),
+    "pof-aircraft-axes-controls-001": (4, "pof-aircraft-axes-controls-v1"),
+    "pof-critical-aoa-stall-001": (4, "pof-critical-aoa-stall-v3"),
+    "pof-stability-types-001": (4, "pof-stability-types-v1"),
+    "pof-turn-lift-components-001": (4, "pof-turn-lift-components-v4"),
+    "pof-washout-wing-twist-001": (4, "pof-washout-wing-twist-v1"),
+}
 
 
 def git_show(ref_path: str) -> str:
@@ -26,7 +45,8 @@ def load_plan() -> list[dict]:
     visuals = [v for batch in data["batches"] for v in batch["visuals"]]
     if len(visuals) != 15:
         raise SystemExit(f"Expected 15 planned visuals, got {len(visuals)}")
-    # Locked semantic correction: numerical critical-AoA questions are excluded.
+    if set(ASSETS) != {v["visual_id"] for v in visuals}:
+        raise SystemExit("Asset registry does not exactly match the 15 planned visuals")
     critical = next(v for v in visuals if v["visual_id"] == "pof-critical-aoa-stall-001")
     if critical["question_ids"] != [1212, 1236, 1324, 1329]:
         raise SystemExit(f"Critical-AoA mapping drifted: {critical['question_ids']}")
@@ -58,10 +78,36 @@ def source_found() -> None:
     print("SOURCE_FOUND replay prepared: 15 visuals; total manifest visuals=20")
 
 
+def refining() -> None:
+    data = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    visuals = {v["visual_id"]: v for v in data.get("visuals", [])}
+    if len(data.get("visuals", [])) != 20:
+        raise SystemExit(f"REFINING replay requires exactly 20 manifest visuals; got {len(data.get('visuals', []))}")
+    for visual_id, (batch, stem) in ASSETS.items():
+        v = visuals.get(visual_id)
+        if not v or v.get("status") != "SOURCE_FOUND":
+            raise SystemExit(f"{visual_id}: expected SOURCE_FOUND before REFINING; got {None if not v else v.get('status')}")
+        master = f"{ASSET_ROOT}/refined-batch-{batch}/{stem}.png"
+        web = f"{ASSET_ROOT}/refined-batch-{batch}/{stem}.webp"
+        for path in (master, web):
+            p = ROOT / path
+            if not p.exists() or p.stat().st_size == 0:
+                raise SystemExit(f"Missing raster asset: {path}")
+        v["assets"] = {"master_asset": master, "web_asset": web}
+        v["status"] = "REFINING"
+        v["qa"] = {"technical": False, "teaching": False, "visual": False, "preview": False, "live": False}
+        v["lock"] = {"approved": False, "replacement_reason": None}
+    write(data)
+    print("REFINING replay prepared: 15 visuals attached to reviewed raster pairs")
+
+
 def main() -> None:
-    if len(sys.argv) != 2 or sys.argv[1] != "source-found":
-        raise SystemExit("usage: replay_pof_batches_2_4.py source-found")
-    source_found()
+    if len(sys.argv) != 2 or sys.argv[1] not in {"source-found", "refining"}:
+        raise SystemExit("usage: replay_pof_batches_2_4.py source-found|refining")
+    if sys.argv[1] == "source-found":
+        source_found()
+    else:
+        refining()
 
 
 if __name__ == "__main__":

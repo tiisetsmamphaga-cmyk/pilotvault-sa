@@ -1,0 +1,54 @@
+name: Normalize POF Batch 5 source manifest
+
+on:
+  push:
+    branches:
+      - pof-autonomous-batch5
+    paths:
+      - .github/workflows/pof-batch5-source-normalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-autonomous-batch5
+          fetch-depth: 0
+
+      - name: Add explicit null raster slots at SOURCE_FOUND
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          path = Path('data/pof-visual-manifest.json')
+          data = json.loads(path.read_text())
+          ids = {
+              'pof-load-factor-20deg-001',
+              'pof-load-factor-50deg-001',
+              'pof-load-limit-2-5g-bank-001',
+              'pof-load-limit-3-8g-bank-001',
+              'pof-fowler-flap-area-001',
+          }
+          targets = [v for v in data['visuals'] if v['visual_id'] in ids]
+          assert len(targets) == 5
+          for v in targets:
+              assert v['status'] == 'SOURCE_FOUND'
+              v['assets'] = {'master_asset': None, 'web_asset': None}
+          path.write_text(json.dumps(data, indent=2) + '\n')
+
+      - name: Run canonical POF manifest validator
+        run: python scripts/validate_pof_visuals.py
+
+      - name: Commit normalized SOURCE_FOUND checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json
+          git diff --cached --quiet && exit 0
+          git commit -m "pof: normalize Batch 5 SOURCE_FOUND manifest [skip ci]"
+          git push origin HEAD:pof-autonomous-batch5

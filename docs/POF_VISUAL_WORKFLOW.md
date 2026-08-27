@@ -24,6 +24,7 @@ No stage may be skipped.
 10. Never test experimental visual changes directly on `main`. Use a branch and Vercel preview first.
 11. Never overwrite an approved visual because a newer version seems prettier. Approved assets are locked unless there is a technical error, visual defect or explicit user-requested change.
 12. A batch is not complete until the live PilotVault experience has been verified.
+13. PilotVault branding belongs in the website shell. New POF learning images must not have the PilotVault banner baked into the image itself.
 
 ## Required states
 
@@ -142,6 +143,26 @@ Keep two outputs where practical:
 - **Web:** high-quality WebP
 
 Do not destroy legibility to chase a small file size.
+
+## Branding separation
+
+From the complete raster library onward, the learning asset contains only the teaching content. The PilotVault navy/gold subject banner and diagram title are rendered by the website UI. This keeps the asset reusable, prevents duplicated branding, and lets the site control responsive presentation.
+
+Batch 1 is grandfathered and remains unchanged because it was already approved and locked before this rule was introduced.
+
+## Legacy source-to-raster migration
+
+Existing POF source artwork may be migrated from a legacy vector source into the raster production library without redrawing the teaching body when all of the following are true:
+
+1. The source artwork was already explicitly mapped to the relevant POF question concept.
+2. The production PNG is pixel-faithful to the source teaching body after removal of the old baked website banner.
+3. The WebP delivery asset passes raster integrity and compression QA against the PNG master.
+4. The database mapping is changed from the legacy source path to the exact raster path without changing the question or answer content.
+5. The production renderer remains fail-closed for legacy SVG/vector URLs.
+6. The migrated library passes preview, production and live verification before it is locked.
+7. Hashes and promotion state are recorded so a live-verified raster cannot be silently regenerated or replaced.
+
+Legacy SVG files may remain in the repository only as non-production source history. They must never be referenced by the production database or rendered as POF explanation images.
 
 ## Preview gate
 

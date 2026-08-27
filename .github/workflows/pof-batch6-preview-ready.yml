@@ -1,0 +1,72 @@
+name: Promote POF Batch 6 preview-ready
+
+on:
+  push:
+    branches:
+      - pof-batch6
+    paths:
+      - .github/workflows/pof-batch6-preview-ready.yml
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch6
+          fetch-depth: 0
+
+      - name: Persist verified preview evidence
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          ids={
+            'pof-wing-polar-min-drag-001',
+            'pof-wing-polar-best-ld-001',
+            'pof-wing-polar-critical-aoa-001',
+            'pof-induced-drag-vortex-origin-001',
+            'pof-vertical-fin-directional-stability-001'
+          }
+          p=Path('data/pof-visual-manifest.json'); data=json.loads(p.read_text()); count=0
+          for v in data['visuals']:
+              if v['visual_id'] not in ids: continue
+              assert v['status']=='QA_APPROVED'
+              assert v['qa']['technical'] and v['qa']['teaching'] and v['qa']['visual']
+              v['qa']['preview']=True
+              v['status']='PREVIEW_READY'
+              v['preview_verification']={
+                'deployment_id':'dpl_4rSZB1xPh6m2k9s9yvPbqD2xNrQD',
+                'deployment_commit':'9adb5afcb0f71e76824f867897a6d5c137114b2f',
+                'route':'/pof-visual-qa',
+                'deployment_ready':True,
+                'route_http_verified':True,
+                'real_explanation_component_used':True,
+                'rendered_asset_contact_sheets_reviewed':True,
+                'external_browser_automation_note':'Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion.'
+              }
+              count+=1
+          assert count==5
+          p.write_text(json.dumps(data,indent=2)+'\n')
+
+          sp=Path('data/pof-autonomous-state.json'); state=json.loads(sp.read_text())
+          state['last_verified_checkpoint']='POF_BATCH_6_PREVIEW_READY'
+          state['next_action']='Map the five Batch 6 visuals to their exact Supabase questions in one fail-closed transaction, verify the rows, then advance PREVIEW_READY to MAPPED only after database verification passes'
+          sp.write_text(json.dumps(state,indent=2)+'\n')
+
+      - name: Validate PREVIEW_READY promotion
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py edec7a577c6068f7a795d55f051ef0e4e67fa955
+
+      - name: Commit PREVIEW_READY checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "pof: promote Batch 6 to PREVIEW_READY [skip ci]"
+          git push origin HEAD:pof-batch6

@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 """Validate POF visual changes and the full promotion history.
 
-This protects the production workflow from state skipping, silent modification of
-approved assets, and reintroduction of SVG/vector explanation visuals.
-
-For long-lived visual branches, promotion may move `main` across several already-
-validated workflow states in one ref update. In that case we validate every
-manifest snapshot in the commit range instead of incorrectly treating the final
-state as a direct jump from the production manifest.
+Protects the production workflow from state skipping, silent modification of
+approved assets, reintroduction of SVG/vector explanation visuals, and addition
+of unmanifested or bulk-generated raster libraries.
 """
 
 from __future__ import annotations
@@ -19,7 +15,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = Path("data/pof-visual-manifest.json")
-POF_RENDERER = ROOT / "app" / "practice" / "[subject]" / "components" / "principles-of-flight-visual.tsx"
+POF_IMAGE_ROOT = Path("public/explanation-images/principles-of-flight")
+POF_RENDERER = ROOT / "app" / "practice" / "[subject]" / "components" / "explanation-image.tsx"
+RASTER_SUFFIXES = {".png", ".webp", ".jpg", ".jpeg"}
 
 FORWARD = {
     "SOURCE_FOUND": {"REFINING"},
@@ -69,7 +67,22 @@ def load_current_manifest() -> dict:
         fail(f"cannot read current manifest: {exc}")
 
 
-def reject_new_svg_assets(base_sha: str) -> None:
+def manifest_asset_paths(manifest: dict) -> set[str]:
+    paths: set[str] = set()
+    for visual in manifest.get("visuals", []):
+        if not isinstance(visual, dict):
+            continue
+        assets = visual.get("assets", {})
+        if not isinstance(assets, dict):
+            continue
+        for field in ("master_asset", "web_asset"):
+            value = assets.get(field)
+            if isinstance(value, str) and value.strip():
+                paths.add(value.strip())
+    return paths
+
+
+def changed_pof_assets(base_sha: str) -> list[str]:
     result = run_git(
         "diff",
         "--diff-filter=AM",
@@ -77,16 +90,40 @@ def reject_new_svg_assets(base_sha: str) -> None:
         base_sha,
         "HEAD",
         "--",
-        "public/explanation-images/principles-of-flight",
+        POF_IMAGE_ROOT.as_posix(),
     )
     if result.returncode != 0:
         fail(f"git diff failed while checking POF assets: {result.stderr.strip()}")
+    return [line.strip() for line in result.stdout.splitlines() if line.strip()]
 
-    svg_paths = [line.strip() for line in result.stdout.splitlines() if line.strip().lower().endswith(".svg")]
+
+def reject_new_svg_assets(base_sha: str) -> None:
+    svg_paths = [path for path in changed_pof_assets(base_sha) if path.lower().endswith(".svg")]
     if svg_paths:
+        fail("new or modified POF SVG/vector explanation assets are forbidden: " + ", ".join(svg_paths))
+
+
+def reject_unmanifested_new_rasters(base_sha: str) -> None:
+    manifest_paths = manifest_asset_paths(load_current_manifest())
+    raster_paths = [
+        path for path in changed_pof_assets(base_sha)
+        if Path(path.lower()).suffix in RASTER_SUFFIXES
+    ]
+    unmanifested = [path for path in raster_paths if path not in manifest_paths]
+    if unmanifested:
         fail(
-            "new or modified POF SVG/vector explanation assets are forbidden: "
-            + ", ".join(svg_paths)
+            "new or modified POF raster assets must be explicitly represented in data/pof-visual-manifest.json: "
+            + ", ".join(unmanifested)
+        )
+
+    bad_location = [
+        path for path in raster_paths
+        if "/refined-batch-" not in f"/{path}"
+    ]
+    if bad_location:
+        fail(
+            "new POF production rasters must live in an explicit refined batch directory; bulk libraries are forbidden: "
+            + ", ".join(bad_location)
         )
 
 
@@ -96,7 +133,12 @@ def reject_svg_references() -> None:
         fail("the POF manifest contains an SVG reference")
 
     if POF_RENDERER.exists() and ".svg" in POF_RENDERER.read_text(encoding="utf-8").lower():
-        fail("principles-of-flight-visual.tsx contains an SVG reference")
+        fail("the production POF explanation renderer contains an SVG reference")
+
+
+def reject_bulk_library_references() -> None:
+    if POF_RENDERER.exists() and "raster-complete" in POF_RENDERER.read_text(encoding="utf-8").lower():
+        fail("the production POF renderer still approves the deprecated raster-complete bulk library")
 
 
 def index_visuals(manifest: dict) -> dict[str, dict]:
@@ -196,7 +238,9 @@ def main() -> None:
 
     base_sha = sys.argv[1].strip()
     reject_new_svg_assets(base_sha)
+    reject_unmanifested_new_rasters(base_sha)
     reject_svg_references()
+    reject_bulk_library_references()
     validate_transitions(base_sha)
     print("POF visual change validation PASSED")
 

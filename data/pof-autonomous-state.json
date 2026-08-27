@@ -5,7 +5,18 @@
   "authorization": "Complete POF autonomously until the suitable visual system is complete",
   "batch_limit": 5,
   "report_every_completed_batches": 3,
-  "routine_progress_messages": false,
+  "routine_progress_messages": true,
+  "progress_update_mode": "meaningful_checkpoint",
+  "progress_update_checkpoints": [
+    "source_selected",
+    "visual_refined",
+    "qa_passed_or_failed",
+    "preview_ready",
+    "mapped",
+    "production_deployed",
+    "live_verified"
+  ],
+  "progress_updates_pause_work": false,
   "exception_reporting": [
     "source_ambiguity",
     "irreversible_product_risk",
@@ -19,7 +30,7 @@
   "current_batch": 2,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 1,
-  "last_verified_checkpoint": "POF_RESET_TO_LOCKED_BATCH_1_ONLY",
+  "last_verified_checkpoint": "BATCHES_2_TO_4_REFINEMENT_IN_PROGRESS",
   "production_state": {
     "approved_live_visuals": 5,
     "rejected_non_batch_1_mappings": 0,
@@ -31,7 +42,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Start Batch 2 from exact POF questions and approved handbook sources, create at most five question-specific visuals, and continue through the workflow without routine user messaging",
+  "next_action": "Continue Batches 2 to 4 through question-specific refinement and QA while posting short progress updates at meaningful checkpoints; updates never pause execution",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

@@ -325,16 +325,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-angle-of-attack-definition-v3.webp"
       },
       "mapping_reason": "The visual directly teaches the exact two lines used to define angle of attack.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -395,16 +395,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-chord-line-v2.webp"
       },
       "mapping_reason": "Question 1119 asks for the name of the exact leading-edge-to-trailing-edge reference line shown.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -469,16 +469,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-four-forces-level-flight-v2.webp"
       },
       "mapping_reason": "The diagram directly displays the equilibrium relationship asked by all three questions.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -543,16 +543,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-lift-relative-airflow-v2.webp"
       },
       "mapping_reason": "The visual answers the exact directional relationship tested by these questions.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -620,16 +620,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-venturi-bernoulli-v2.webp"
       },
       "mapping_reason": "The diagram directly visualizes the continuity and Bernoulli changes tested by the selected questions.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -690,16 +690,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-angle-of-incidence-v5.webp"
       },
       "mapping_reason": "The diagram shows the exact two references used to define angle of incidence.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -762,16 +762,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-centre-of-pressure-v1.webp"
       },
       "mapping_reason": "The selected questions ask exactly what the labelled resultant-force application point is called.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -831,16 +831,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-relative-airflow-v1.webp"
       },
       "mapping_reason": "Question 1962 asks for the exact direction relationship displayed.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -902,16 +902,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-speed-squared-lift-drag-v1.webp"
       },
       "mapping_reason": "The selected questions all require recognizing the same square-law speed relationship.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -972,16 +972,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-wing-area-lift-drag-v1.webp"
       },
       "mapping_reason": "Question 1253 isolates wing surface area while holding AoA, airspeed and density unchanged.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1055,16 +1055,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-aircraft-axes-controls-v1.webp"
       },
       "mapping_reason": "The diagram provides the complete axis-motion-control reference directly tested by these questions.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1129,16 +1129,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v4.webp"
       },
       "mapping_reason": "The selected questions ask whether the stalling/critical AoA changes with operating factors, which the visual directly addresses.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1202,16 +1202,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-stability-types-v1.webp"
       },
       "mapping_reason": "The chosen questions are direct definitions contained in this stability classification visual.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1276,16 +1276,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-turn-lift-components-v4.webp"
       },
       "mapping_reason": "The visual directly resolves the exact total-lift components named in both questions.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1352,16 +1352,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-washout-wing-twist-v1.webp"
       },
       "mapping_reason": "The selected questions ask either what washout means or how the same twist prevents premature wingtip stall.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1381,6 +1381,375 @@
         "real_explanation_component_used": true,
         "rendered_asset_contact_sheets_reviewed": true,
         "external_browser_automation_note": "Vercel Authentication blocks unauthenticated GitHub-hosted Chromium; protected route and component sources were verified through authenticated Vercel access."
+      }
+    },
+    {
+      "visual_id": "pof-load-factor-20deg-001",
+      "topic": "Turns & Load Factor",
+      "concept": "A 20 degree level bank gives approximately 1.06 G, so a 3,000 lb aeroplane supports about 3,180 lb",
+      "question_ids": [
+        -4
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 27,
+        "figure": "1-34",
+        "notes": "Load Factor and Stall Speed chart. In a constant-altitude turn load factor depends on bank angle; at 20 degrees n = 1/cos(20 degrees) about 1.064, matching the question's approximate 1.06 chart read-off."
+      },
+      "brief": {
+        "student_must_understand": "Read approximately 1.06 G at 20 degrees bank, then multiply 3,000 lb by 1.06 to obtain approximately 3,180 lb structural load.",
+        "preserve": [
+          "Bank-angle axis",
+          "Load-factor curve relationship",
+          "20 degree to approximately 1.06 G read-off"
+        ],
+        "refine": [
+          "Use a clean chart crop/reconstruction faithful to Figure 1-34",
+          "Make the 20 degree read-off visually unmistakable",
+          "Keep the worked multiplication separate and uncluttered"
+        ],
+        "add": [
+          "20 degree guide",
+          "approximately 1.06 G guide",
+          "3,000 lb x 1.06 = approximately 3,180 lb worked result"
+        ],
+        "remove": [
+          "Unrelated stall-speed emphasis",
+          "Other bank-angle examples",
+          "Baked PilotVault banner"
+        ]
+      },
+      "mapping_reason": "Question -4 explicitly requires the Figure PPL PoF-1 load-factor read-off at 20 degrees and then applies that factor to 3,000 lb.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v2.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v2.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      }
+    },
+    {
+      "visual_id": "pof-load-factor-50deg-001",
+      "topic": "Turns & Load Factor",
+      "concept": "A 50 degree level bank gives approximately 1.56 G, so a 4,600 lb aeroplane supports about 7,160 lb",
+      "question_ids": [
+        -5
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 27,
+        "figure": "1-34",
+        "notes": "Load Factor and Stall Speed chart. The handbook notes load factor rises rapidly after 50 degrees; n = 1/cos(50 degrees) about 1.556, matching the question's approximate 1.56 chart read-off."
+      },
+      "brief": {
+        "student_must_understand": "Read approximately 1.56 G at 50 degrees bank, then multiply 4,600 lb by 1.56 to obtain approximately 7,160 lb structural load.",
+        "preserve": [
+          "Bank-angle axis",
+          "Load-factor curve relationship",
+          "50 degree to approximately 1.56 G read-off"
+        ],
+        "refine": [
+          "Use a clean chart crop/reconstruction faithful to Figure 1-34",
+          "Make the 50 degree read-off visually unmistakable",
+          "Keep the worked multiplication separate and uncluttered"
+        ],
+        "add": [
+          "50 degree guide",
+          "approximately 1.56 G guide",
+          "4,600 lb x 1.56 = approximately 7,160 lb worked result"
+        ],
+        "remove": [
+          "Unrelated stall-speed emphasis",
+          "Other bank-angle examples",
+          "Baked PilotVault banner"
+        ]
+      },
+      "mapping_reason": "Question -5 explicitly requires the Figure PPL PoF-1 load-factor read-off at 50 degrees and then applies that factor to 4,600 lb.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      }
+    },
+    {
+      "visual_id": "pof-load-limit-2-5g-bank-001",
+      "topic": "Turns & Load Factor",
+      "concept": "A +2.5 G level-turn limit corresponds to a maximum bank angle of approximately 66 degrees",
+      "question_ids": [
+        -2
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 27,
+        "figure": "1-34",
+        "notes": "Load Factor and Stall Speed chart relates bank angle to load factor in a constant-altitude turn. Solving cos(bank)=1/2.5 gives 66.4 degrees, consistent with the chart read-off."
+      },
+      "brief": {
+        "student_must_understand": "Start at 2.5 G on the load-factor scale, meet the level-turn curve, and read approximately 66 degrees bank.",
+        "preserve": [
+          "Load-factor axis",
+          "Bank-angle axis",
+          "Figure 1-34 curve geometry"
+        ],
+        "refine": [
+          "Use a clean chart crop/reconstruction faithful to Figure 1-34",
+          "Make the reverse read-off path from 2.5 G to bank angle obvious"
+        ],
+        "add": [
+          "2.5 G guide",
+          "Curve intersection marker",
+          "approximately 66 degree bank guide"
+        ],
+        "remove": [
+          "Structural-load multiplication",
+          "Unrelated chart examples",
+          "Baked PilotVault banner"
+        ]
+      },
+      "mapping_reason": "Question -2 explicitly asks for the bank angle corresponding to a +2.5 G limit on Figure PPL PoF-1.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      }
+    },
+    {
+      "visual_id": "pof-load-limit-3-8g-bank-001",
+      "topic": "Turns & Load Factor",
+      "concept": "A +3.8 G level-turn limit corresponds to a maximum bank angle of approximately 75 degrees",
+      "question_ids": [
+        -1
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 27,
+        "figure": "1-34",
+        "notes": "Load Factor and Stall Speed chart relates bank angle to load factor in a constant-altitude turn. Solving cos(bank)=1/3.8 gives 74.7 degrees, consistent with the approximately 75 degree chart read-off."
+      },
+      "brief": {
+        "student_must_understand": "Start at 3.8 G on the load-factor scale, meet the level-turn curve, and read approximately 75 degrees bank.",
+        "preserve": [
+          "Load-factor axis",
+          "Bank-angle axis",
+          "Figure 1-34 curve geometry"
+        ],
+        "refine": [
+          "Use a clean chart crop/reconstruction faithful to Figure 1-34",
+          "Make the reverse read-off path from 3.8 G to bank angle obvious"
+        ],
+        "add": [
+          "3.8 G guide",
+          "Curve intersection marker",
+          "approximately 75 degree bank guide"
+        ],
+        "remove": [
+          "Structural-load multiplication",
+          "Unrelated chart examples",
+          "Baked PilotVault banner"
+        ]
+      },
+      "mapping_reason": "Question -1 explicitly asks for the bank angle corresponding to a +3.8 G limit on Figure PPL PoF-1.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      }
+    },
+    {
+      "visual_id": "pof-fowler-flap-area-001",
+      "topic": "Flaps & Glide",
+      "concept": "A Fowler flap slides rearward before/while deflecting, increasing wing area and camber",
+      "question_ids": [
+        1201
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 1,
+        "figure": "2-1",
+        "notes": "Figure 2-1 shows the four common flap types. The accompanying handbook text states that a Fowler flap tilts downward and slides rearward on tracks, increasing angle of attack, wing camber, and wing area."
+      },
+      "brief": {
+        "student_must_understand": "The defining movement is rearward travel: the Fowler flap extends the wing's effective chord/area before or as it deflects, so wing area increases.",
+        "preserve": [
+          "Retracted trailing-edge geometry",
+          "Rearward track movement",
+          "Extended Fowler-flap position",
+          "Increase in wing area relationship"
+        ],
+        "refine": [
+          "Use a clean side-on aerofoil comparison derived from Figure 2-1",
+          "Make rearward travel and added wing area immediately readable",
+          "Keep camber increase secondary to the tested wing-area point"
+        ],
+        "add": [
+          "Rearward-motion arrow",
+          "Retracted versus extended comparison",
+          "Wing area increases callout"
+        ],
+        "remove": [
+          "Other flap types",
+          "Generic aircraft scene",
+          "Baked PilotVault banner"
+        ]
+      },
+      "mapping_reason": "Question 1201 asks the primary purpose/effect of the Fowler flap; Figure 2-1 and its text directly show that rearward extension increases wing area.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
       }
     }
   ]

@@ -5,23 +5,41 @@
   "authorization": "Complete POF autonomously until the suitable visual system is complete",
   "batch_limit": 5,
   "report_every_completed_batches": 3,
-  "routine_progress_messages": false,
-  "exception_reporting": [
-    "source_ambiguity",
-    "irreversible_product_risk",
-    "unrecoverable_external_blocker"
+  "routine_progress_messages": true,
+  "progress_update_mode": "meaningful_checkpoint",
+  "progress_update_checkpoints": [
+    "source_selected",
+    "visual_refined",
+    "qa_passed_or_failed",
+    "preview_ready",
+    "mapped",
+    "production_deployed",
+    "live_verified"
   ],
+  "progress_updates_pause_work": false,
+  "active_turn_required_for_execution": true,
+  "final_reply_ends_active_execution": true,
+  "background_execution_claims_forbidden": true,
+  "idle_chat_means_execution_stopped": true,
   "quality_reference": {
     "locked_batch_1_visuals": 5,
     "minimum_standard": "Batch 1 quality or better",
     "fail_closed": true
   },
-  "current_batch": 2,
+  "stage_gate": {
+    "rule_document": "docs/POF_STAGE_GATE_RULE.md",
+    "hard_gate_enabled": true,
+    "known_defects_may_advance": false,
+    "fix_later_policy_allowed": false,
+    "checkpoint_only_after_verification": true,
+    "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
+  },
+  "current_batch": 5,
   "completed_batches_since_last_user_report": 0,
-  "last_user_report_batch": 1,
-  "last_verified_checkpoint": "POF_RESET_TO_LOCKED_BATCH_1_ONLY",
+  "last_user_report_batch": 4,
+  "last_verified_checkpoint": "POF_BATCH_5_PRODUCTION_READY",
   "production_state": {
-    "approved_live_visuals": 5,
+    "approved_live_visuals": 20,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -31,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Start Batch 2 from exact POF questions and approved handbook sources, create at most five question-specific visuals, and continue through the workflow without routine user messaging",
+  "next_action": "Remove temporary final-validation/promotion workflows, open and merge Batch 5 PR to main, verify the exact production deployment and student explanation rendering, then promote PRODUCTION_READY -> LIVE_VERIFIED and lock all five assets",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

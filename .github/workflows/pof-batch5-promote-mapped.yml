@@ -1,0 +1,57 @@
+name: Promote POF Batch 5 mapped
+
+on:
+  push:
+    branches: [pof-batch5-clean-v2]
+    paths: [.github/workflows/pof-batch5-promote-mapped.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch5-clean-v2
+          fetch-depth: 0
+      - name: Promote exact Batch 5 entries to MAPPED
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          ids = {
+            'pof-load-factor-20deg-001',
+            'pof-load-factor-50deg-001',
+            'pof-load-limit-2-5g-bank-001',
+            'pof-load-limit-3-8g-bank-001',
+            'pof-fowler-flap-area-001',
+          }
+          p = Path('data/pof-visual-manifest.json')
+          data = json.loads(p.read_text())
+          targets = [v for v in data['visuals'] if v['visual_id'] in ids]
+          assert len(targets) == 5
+          for v in targets:
+              assert v['status'] == 'PREVIEW_READY', (v['visual_id'], v['status'])
+              assert v['qa']['preview'] is True
+              assert v['preview_verification']['deployment_id'] == 'dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8'
+              v['status'] = 'MAPPED'
+          p.write_text(json.dumps(data, indent=2) + '\n')
+
+          sp = Path('data/pof-autonomous-state.json')
+          state = json.loads(sp.read_text())
+          state['last_verified_checkpoint'] = 'POF_BATCH_5_MAPPED'
+          state['next_action'] = 'Remove temporary Batch 5 QA route/workflows, validate production diff, open production PR to main, and merge only after repository checks are clean'
+          sp.write_text(json.dumps(state, indent=2) + '\n')
+      - name: Validate promotion history
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py e9247b4fb85f8ff23f29aa6ff22ee872eb495af1
+      - name: Commit mapped checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "pof: promote Batch 5 to MAPPED [skip ci]"
+          git push origin HEAD:pof-batch5-clean-v2

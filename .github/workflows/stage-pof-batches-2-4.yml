@@ -1,0 +1,36 @@
+name: Stage POF batches 2-4
+
+on:
+  push:
+    branches:
+      - pof-batch-2-rebuild
+    paths:
+      - 'data/pof-batches-2-4-plan.json'
+      - 'scripts/sync_pof_batch_plan.py'
+      - '.github/workflows/stage-pof-batches-2-4.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Append staged SOURCE_FOUND visuals
+        run: python scripts/sync_pof_batch_plan.py
+      - name: Validate manifest
+        run: python scripts/validate_pof_visuals.py
+      - name: Commit staged manifest if changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/pof-visual-manifest.json; then
+            echo 'Manifest already synchronized.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-visual-manifest.json
+          git commit -m 'Stage POF batches 2-4 in visual manifest'
+          git push

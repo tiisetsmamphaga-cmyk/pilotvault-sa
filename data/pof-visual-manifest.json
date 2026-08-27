@@ -285,51 +285,50 @@
     {
       "visual_id": "pof-angle-of-attack-definition-001",
       "topic": "Aerofoils & Lift",
-      "concept": "Angle of attack is the angle between the chord line and the relative airflow",
+      "concept": "Angle of attack is the angle between the chord line and relative airflow",
       "question_ids": [
         1151,
         1300,
         1321
       ],
-      "reuse_justification": "All three questions test the same definition: angle of attack is measured between the aerofoil chord line and relative airflow.",
+      "reuse_justification": "The three mapped questions are wording variants of the same definition: chord line versus relative airflow.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 2,
         "figure": "1-2",
-        "notes": "The handbook defines angle of attack as the angle between the wing chord line and relative wind/airflow and Figure 1-2 illustrates that relationship."
+        "notes": "Handbook defines angle of attack from wing chord to relative wind/flightpath, not to the horizon."
       },
       "brief": {
-        "student_must_understand": "Angle of attack is referenced to the relative airflow, not the horizon, and is measured from the chord line.",
+        "student_must_understand": "See the chord line, relative airflow and the included angle alpha as the definition of angle of attack.",
         "preserve": [
-          "Chord-line reference",
-          "Relative-airflow direction",
-          "Angle geometry"
+          "Chord line",
+          "Relative airflow direction",
+          "Angle alpha"
         ],
         "refine": [
-          "Make the two reference lines unmistakable",
-          "Keep arrows and angle marker technically consistent"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "Short chord-line label",
-          "Short relative-airflow label",
-          "Question-specific angle marker"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Decorative elements",
-          "Generic aircraft-scene content",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-angle-of-attack-definition-v3.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-angle-of-attack-definition-v3.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The visual directly teaches the exact two lines used to define angle of attack.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "These questions all ask the same geometric definition of angle of attack.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -473,51 +472,51 @@
     {
       "visual_id": "pof-lift-relative-airflow-001",
       "topic": "Aerofoils & Lift",
-      "concept": "Lift is perpendicular to relative airflow while drag is parallel to it",
+      "concept": "Lift acts perpendicular to relative airflow while drag acts parallel",
       "question_ids": [
         1113,
         1316,
         1983
       ],
-      "reuse_justification": "These questions test the same force-direction geometry: lift is perpendicular to relative airflow/flight path and drag is parallel to it.",
+      "reuse_justification": "Each mapped question asks the same force-direction relationship; the visual explicitly shows both lift perpendicular and drag parallel to the relative airflow.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
-        "page": 6,
+        "page": 7,
         "figure": "1-11",
-        "notes": "Figure 1-11 shows lift acting 90 degrees to relative wind and drag acting parallel to it."
+        "notes": "Handbook force-vector relationship: lift perpendicular and drag parallel to relative airflow/flightpath."
       },
       "brief": {
-        "student_must_understand": "Lift direction is defined relative to the airflow, not simply as vertical, while drag lies along the airflow direction.",
+        "student_must_understand": "Read lift at 90 degrees to the relative airflow and drag parallel to it.",
         "preserve": [
-          "Relative-airflow arrow",
-          "90-degree lift relationship",
-          "Parallel drag relationship"
+          "Relative airflow arrow",
+          "Lift vector",
+          "Drag vector",
+          "90-degree relation"
         ],
         "refine": [
-          "Make the 90-degree relationship obvious",
-          "Keep the aerodynamic force origin clear"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "Lift label",
-          "Drag label",
-          "Relative airflow label",
-          "90-degree marker"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Unrelated force components",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-lift-relative-airflow-v2.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-lift-relative-airflow-v2.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The visual answers the exact directional relationship tested by these questions.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "These questions directly test the orientation of lift and drag to the reference airflow/flightpath.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -537,7 +536,7 @@
     {
       "visual_id": "pof-venturi-bernoulli-001",
       "topic": "Basic Aerodynamics",
-      "concept": "In a subsonic venturi the throat has higher velocity and lower static pressure while mass flow remains continuous",
+      "concept": "In a venturi, reduced area raises velocity and lowers static pressure while mass flow remains continuous",
       "question_ids": [
         1110,
         1140,
@@ -546,45 +545,46 @@
         1313,
         1973
       ],
-      "reuse_justification": "All six questions test the same continuity/Bernoulli relationship through a converging-diverging subsonic venturi.",
+      "reuse_justification": "The visual contains the exact variables tested across these questions: area, velocity, pressure and continuous mass flow through the same venturi.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 5,
         "figure": "1-9",
-        "notes": "The handbook explains that constricting a flow passage increases velocity and decreases pressure while the same flow continues through the tube."
+        "notes": "Handbook Bernoulli/continuity relationship through a constricted flow passage."
       },
       "brief": {
-        "student_must_understand": "As area decreases toward the throat, subsonic velocity increases and static pressure decreases; the trend reverses after the throat.",
+        "student_must_understand": "See the constricted throat as the high-velocity, low-static-pressure region and understand continuity through the passage.",
         "preserve": [
-          "Wide-throat-wide geometry",
-          "Flow direction",
-          "Velocity increase",
-          "Pressure decrease"
+          "Wide section",
+          "Narrow throat",
+          "Velocity change",
+          "Static pressure change",
+          "Flow direction"
         ],
         "refine": [
-          "Use consistent arrows through the complete venturi",
-          "Clearly distinguish area, velocity and pressure"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "LOW V / HIGH P",
-          "HIGH V / LOW P",
-          "Mass flow continuous"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Carburettor-specific detail",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-venturi-bernoulli-v2.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-venturi-bernoulli-v2.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The diagram directly visualizes the continuity and Bernoulli changes tested by the selected questions.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "The mapped questions are all direct continuity/Bernoulli consequences of the same venturi flow relationship.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -604,7 +604,7 @@
     {
       "visual_id": "pof-angle-of-incidence-001",
       "topic": "Wing Design",
-      "concept": "Angle of incidence is the fixed angle between the wing chord line and aircraft longitudinal axis",
+      "concept": "Angle of incidence is the fixed angle between wing chord and aircraft longitudinal axis",
       "question_ids": [
         1152
       ],
@@ -612,39 +612,39 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 2,
         "figure": "1-3",
-        "notes": "The handbook defines angle of incidence as the angle formed by the wing chord line and longitudinal axis; it is fixed by design."
+        "notes": "Handbook definition states angle of incidence is formed by the wing chord and airplane longitudinal axis and is fixed by design."
       },
       "brief": {
-        "student_must_understand": "Incidence is fixed wing-to-fuselage geometry and must not be confused with angle of attack.",
+        "student_must_understand": "Distinguish fixed wing incidence from angle of attack by comparing chord line with aircraft longitudinal axis.",
         "preserve": [
           "Wing chord line",
-          "Line parallel to longitudinal axis",
-          "Fixed angle marker"
+          "Aircraft longitudinal axis",
+          "Included incidence angle"
         ],
         "refine": [
-          "Make both reference lines distinct",
-          "Avoid relative-airflow arrows that could confuse AoA"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "ANGLE OF INCIDENCE (FIXED)",
-          "Chord line",
-          "Longitudinal-axis reference"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Angle-of-attack terminology",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-angle-of-incidence-v5.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-angle-of-incidence-v5.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The diagram shows the exact two references used to define angle of incidence.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "Question 1152 directly asks for this fixed geometric relationship.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -726,7 +726,7 @@
     {
       "visual_id": "pof-relative-airflow-001",
       "topic": "Basic Aerodynamics",
-      "concept": "Relative airflow is parallel and opposite to the aircraft flight path",
+      "concept": "Relative airflow is parallel and opposite to the aircraft direction of movement",
       "question_ids": [
         1962
       ],
@@ -734,38 +734,39 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 3,
         "figure": "1-6",
-        "notes": "The handbook states that relative wind flows parallel with and opposite to the direction of flight."
+        "notes": "Handbook defines relative wind as parallel and opposite to the direction of flight."
       },
       "brief": {
-        "student_must_understand": "Relative airflow is defined from aircraft motion through the air and points opposite the flight path.",
+        "student_must_understand": "See flight direction and relative airflow as parallel but opposite arrows.",
         "preserve": [
-          "Aircraft direction",
-          "Flight-path arrow",
-          "Opposite relative-airflow arrow"
+          "Aircraft/flight direction",
+          "Relative airflow direction",
+          "Parallel/opposite relationship"
         ],
         "refine": [
-          "Keep the two arrows collinear and opposite",
-          "Use a clean side-view aircraft"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "FLIGHT PATH",
-          "RELATIVE AIRFLOW"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Wind-from-ground references",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-relative-airflow-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-relative-airflow-v1.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "Question 1962 asks for the exact direction relationship displayed.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "Question 1962 directly asks the relative-airflow definition.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -785,48 +786,50 @@
     {
       "visual_id": "pof-speed-squared-lift-drag-001",
       "topic": "Aerofoils & Lift",
-      "concept": "With other variables fixed, lift and drag vary with airspeed squared",
+      "concept": "Lift and aerodynamic drag forces vary with the square of airspeed when other terms are fixed",
       "question_ids": [
         1145,
         1303,
         2034
       ],
-      "reuse_justification": "These questions all test the same V-squared proportionality: doubling airspeed produces four times the relevant aerodynamic force when the other variables are fixed.",
+      "reuse_justification": "Each mapped question holds the other relevant factors constant and asks the V-squared outcome; the same V-to-2V comparison answers all three.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
-        "page": 11,
-        "figure": null,
-        "notes": "The handbook states that tests show lift and drag vary as the square of velocity and that doubling speed quadruples lift and drag when angle of attack remains unchanged."
+        "page": 8,
+        "figure": "Lift/drag equations",
+        "notes": "Handbook lift/drag relationships include dynamic pressure proportional to V squared; parasite drag text notes doubling speed produces four times drag."
       },
       "brief": {
-        "student_must_understand": "The velocity term is squared, so a 2x speed change produces a 4x force change under the stated fixed conditions.",
+        "student_must_understand": "Compare V with 2V and see the resulting force change from 1x to 4x when the other factors stay constant.",
         "preserve": [
           "V squared relationship",
-          "2x to 4x numerical relationship"
+          "V to 2V comparison",
+          "1x to 4x force result"
         ],
         "refine": [
-          "Keep the causal math simple",
-          "Separate lift and drag labels without suggesting their coefficients are identical"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "L, D proportional to V squared",
-          "2V -> 4L / 4D under fixed conditions"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Irrelevant drag-curve shapes",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-speed-squared-lift-drag-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-speed-squared-lift-drag-v1.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The selected questions all require recognizing the same square-law speed relationship.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "The mapped questions all test the same square-law consequence of doubling airspeed.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -846,47 +849,48 @@
     {
       "visual_id": "pof-wing-area-lift-drag-001",
       "topic": "Aerofoils & Lift",
-      "concept": "With other variables fixed, lift and drag are directly proportional to wing area",
+      "concept": "Increasing reference wing area increases lift and drag in direct proportion when other factors remain fixed",
       "question_ids": [
         1253
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
-        "page": 10,
-        "figure": null,
-        "notes": "The handbook states that lift and drag are proportional to wing area; doubling area doubles lift and drag when other variables remain unchanged."
+        "page": 6,
+        "figure": "Lift/drag equations",
+        "notes": "Aerodynamic lift and drag equations both include reference area S as a direct multiplier."
       },
       "brief": {
-        "student_must_understand": "More reference wing area produces proportionally more lift and drag under otherwise identical conditions.",
+        "student_must_understand": "See that increasing wing area with speed, density and angle of attack unchanged increases both lift and drag.",
         "preserve": [
-          "Same aerofoil/conditions comparison",
-          "Area proportionality"
+          "Reference wing area S",
+          "Larger wing area",
+          "Lift comparison",
+          "Drag comparison"
         ],
         "refine": [
-          "Compare two clearly different wing areas",
-          "Hold all non-area factors visually constant"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "S x2",
-          "L x2",
-          "D x2",
-          "Other variables unchanged"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Flap deployment cues",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-wing-area-lift-drag-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-wing-area-lift-drag-v1.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "Question 1253 isolates wing surface area while holding AoA, airspeed and density unchanged.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "Question 1253 directly isolates wing surface area while holding the other factors constant.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -906,60 +910,58 @@
     {
       "visual_id": "pof-aircraft-axes-controls-001",
       "topic": "Flight Controls & Axes",
-      "concept": "Pitch, roll and yaw occur about the lateral, longitudinal and vertical axes through the CG and are controlled by elevator, ailerons and rudder",
+      "concept": "Roll, pitch and yaw occur about the longitudinal, lateral and vertical axes intersecting at CG",
       "question_ids": [
         1118,
         1121,
-        1124,
         1127,
         1128,
-        1135,
         1144,
         1147,
         1284,
         1291,
         1963
       ],
-      "reuse_justification": "Every mapped question tests one element of the same three-axis/control system shown together: axis name, rotational motion, associated primary control, or the common CG intersection.",
+      "reuse_justification": "All mapped questions are direct lookups within the same axes-and-controls relationship; the diagram labels every axis, motion, control and CG intersection explicitly.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 17,
         "figure": "1-21",
-        "notes": "The handbook lists the lateral, longitudinal and vertical axes, states that all three intersect at the centre of gravity, and associates aircraft motion with those axes; the control sections associate elevator, ailerons and rudder with pitch, roll and yaw."
+        "notes": "Handbook defines the three aircraft axes, states they intersect at centre of gravity, and relates rotation about them."
       },
       "brief": {
-        "student_must_understand": "Roll-longitudinal-ailerons, pitch-lateral-elevator and yaw-vertical-rudder are three linked pairs, and all axes pass through CG.",
+        "student_must_understand": "Associate longitudinal/roll/ailerons, lateral/pitch/elevator and vertical/yaw/rudder, all through the CG.",
         "preserve": [
           "Three perpendicular axes",
-          "CG intersection",
-          "Correct motion names",
-          "Correct control associations"
+          "Centre of gravity intersection",
+          "Roll/aileron",
+          "Pitch/elevator",
+          "Yaw/rudder"
         ],
         "refine": [
-          "Use an isometric light-aircraft view",
-          "Keep labels spatially separated"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "ROLL / LONGITUDINAL / AILERONS",
-          "PITCH / LATERAL / ELEVATOR",
-          "YAW / VERTICAL / RUDDER",
-          "CG"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Secondary controls",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-aircraft-axes-controls-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-aircraft-axes-controls-v1.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The diagram provides the complete axis-motion-control reference directly tested by these questions.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "The mapped questions test the same three-axis geometry and primary-control associations.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -979,51 +981,54 @@
     {
       "visual_id": "pof-critical-aoa-stall-001",
       "topic": "Stalls",
-      "concept": "A wing stalls when its critical angle of attack is reached or exceeded; the critical angle itself is not changed by speed, weight, bank or altitude for the same configuration",
+      "concept": "A wing stalls when its critical angle of attack is exceeded; critical AoA is essentially fixed for a given configuration",
       "question_ids": [
         1212,
         1236,
         1324,
-        1329
+        1329,
+        1978,
+        2008
       ],
-      "reuse_justification": "All four questions test the invariant critical/stalling angle-of-attack concept rather than a specific stall-speed value.",
+      "reuse_justification": "All mapped questions concern the same critical-AoA limit; the diagram shows the approach to and exceedance of that limit rather than implying stall is caused by a specific airspeed.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
-        "page": 10,
+        "page": 9,
         "figure": "1-16",
-        "notes": "The handbook describes separation progressing as critical AoA is approached, states the wing stalls at critical AoA, and says the stall is completely dependent on angle of attack."
+        "notes": "Handbook shows airflow as angle of attack increases toward the critical angle and separation/stall beyond it."
       },
       "brief": {
-        "student_must_understand": "Stall is an angle-of-attack event; other factors change the speed or condition at which the wing reaches critical AoA, not the fundamental critical angle for the configuration.",
+        "student_must_understand": "Recognize stall as an angle-of-attack limit rather than a single airspeed and see airflow separation beyond the critical AoA.",
         "preserve": [
-          "Attached flow below critical AoA",
-          "Separated flow at critical AoA",
-          "Critical-angle marker"
+          "Normal attached flow",
+          "Approaching critical AoA",
+          "Separated stalled flow",
+          "Angle progression"
         ],
         "refine": [
-          "Make flow separation obvious",
-          "Avoid tying the teaching point to one exact SACAA stall-angle number"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "BELOW CRITICAL AoA",
-          "CRITICAL AoA / STALL",
-          "Speed/weight/bank change when it is reached"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Specific 10-18 degree exam answer",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v3.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v3.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The selected questions ask whether the stalling/critical AoA changes with operating factors, which the visual directly addresses.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "The mapped questions test critical/stalling angle magnitude or its essentially fixed nature for a given aerofoil/configuration.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -1043,50 +1048,51 @@
     {
       "visual_id": "pof-stability-types-001",
       "topic": "Stability",
-      "concept": "Positive, neutral and negative static stability describe the initial tendency after displacement; positive dynamic stability damps oscillations",
+      "concept": "Positive, neutral and negative static stability plus positive dynamic damping",
       "question_ids": [
         1155,
         1167,
         2005
       ],
-      "reuse_justification": "These questions test definitions represented in the same handbook stability taxonomy: return tendency, positive dynamic stability, and neutral static stability.",
+      "reuse_justification": "Each mapped question is explicitly represented: return toward original state, damped positive dynamic response, and remaining in the new position for neutral static stability.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 16,
-        "figure": "1-19 / 1-20",
-        "notes": "The handbook illustrates positive, neutral and negative stability with ball analogies and explains dynamic stability as damping oscillations toward the original condition."
+        "figure": "1-19/1-20",
+        "notes": "Handbook illustrates positive, neutral and negative stability with ball analogies and explains dynamic damping of oscillations."
       },
       "brief": {
-        "student_must_understand": "Positive tends back, neutral remains displaced, negative diverges; positive dynamic stability reduces oscillation amplitude with time.",
+        "student_must_understand": "Distinguish returning, remaining and diverging responses after disturbance, and recognize positive dynamic stability as damping oscillations.",
         "preserve": [
-          "Bowl/flat/inverted-bowl static analogies",
-          "Damped oscillation concept"
+          "Positive ball-in-bowl",
+          "Neutral flat surface",
+          "Negative inverted bowl",
+          "Damped oscillation trace"
         ],
         "refine": [
-          "Keep static and dynamic ideas visually separated",
-          "Use minimal labels"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "POSITIVE",
-          "NEUTRAL",
-          "NEGATIVE",
-          "DYNAMIC: oscillations damp"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Increasing-amplitude dynamically unstable case",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-stability-types-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-stability-types-v1.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The chosen questions are direct definitions contained in this stability classification visual.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "The mapped questions ask for stable return behavior, passenger-aircraft positive dynamic stability, or neutral static behavior.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -1106,51 +1112,51 @@
     {
       "visual_id": "pof-turn-lift-components-001",
       "topic": "Turns & Load Factor",
-      "concept": "In a balanced level turn total lift resolves into a vertical component supporting weight and a horizontal centripetal component producing the turn",
+      "concept": "In a balanced level turn, tilted total lift resolves into vertical support and horizontal centripetal force",
       "question_ids": [
         1230,
         1278
       ],
-      "reuse_justification": "The two questions are duplicate formulations of the same balanced-level-turn lift-component relationship.",
+      "reuse_justification": "The two mapped questions are duplicate phrasings of the identical balanced-turn force relationship.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
-        "page": 34,
-        "figure": "1-40",
-        "notes": "Figure 1-40 and accompanying text resolve banked total lift into vertical and horizontal components; the vertical component opposes gravity and the horizontal component produces the turning force."
+        "page": 31,
+        "figure": "Turn force components",
+        "notes": "Handbook turn-force discussion resolves banked lift into a vertical component supporting weight and a horizontal component producing the turn."
       },
       "brief": {
-        "student_must_understand": "Bank tilts total lift; its vertical component supports weight and its horizontal component provides centripetal force.",
+        "student_must_understand": "See total lift tilted with bank and resolve it into vertical and horizontal components.",
         "preserve": [
-          "Banked total-lift vector",
+          "Total lift vector",
           "Vertical component",
           "Horizontal centripetal component",
-          "Weight"
+          "Weight",
+          "Bank reference"
         ],
         "refine": [
-          "Use clean vector geometry",
-          "Keep component arrows aligned to the total lift resolution"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "TOTAL LIFT",
-          "VERTICAL COMPONENT",
-          "CENTRIPETAL COMPONENT",
-          "WEIGHT"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Centrifugal-force teaching as the primary answer",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-turn-lift-components-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-turn-lift-components-v1.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The visual directly resolves the exact total-lift components named in both questions.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "Questions 1230 and 1278 are exact duplicates testing the two components represented by total lift in a balanced level turn.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -1170,7 +1176,7 @@
     {
       "visual_id": "pof-washout-wing-twist-001",
       "topic": "Wing Design",
-      "concept": "Washout reduces angle of incidence toward the wingtip so the root reaches critical AoA first and aileron effectiveness is preserved longer",
+      "concept": "Washout decreases wing incidence toward the tip so the root stalls first and aileron effectiveness is preserved",
       "question_ids": [
         1169,
         1206,
@@ -1178,45 +1184,45 @@
         1295,
         1347
       ],
-      "reuse_justification": "These questions all test the same washout geometry or its direct root-first-stall consequence; induced-drag-only washout questions are intentionally excluded.",
+      "reuse_justification": "All mapped questions are either the exact geometric definition of washout or the direct consequence shown by that geometry: delaying wingtip stall.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 11,
-        "figure": null,
-        "notes": "The handbook describes wing twist with a lower angle of incidence at the tip so that the root approaches critical AoA and stalls first, preserving lateral control near the stall."
+        "figure": "Wing washout relationship",
+        "notes": "Syllabus/handbook wing-design relationship: geometric twist reduces incidence toward the tip, delaying tip stall and preserving outboard control effectiveness."
       },
       "brief": {
-        "student_must_understand": "Washout is geometric twist: tip incidence is lower than root incidence, encouraging a root-first stall and keeping the aileron region flying longer.",
+        "student_must_understand": "See higher incidence at the root and lower incidence at the tip, with the root reaching stall first.",
         "preserve": [
-          "Root-to-tip twist",
-          "Higher root incidence",
-          "Lower tip incidence",
-          "Root-first stall sequence"
+          "Root section",
+          "Tip section",
+          "Decreasing incidence toward tip",
+          "Root-first stall takeaway"
         ],
         "refine": [
-          "Use plan/section comparison that makes twist obvious",
-          "Keep stall-order callout secondary to geometry"
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
         ],
         "add": [
-          "ROOT: higher incidence",
-          "TIP: lower incidence",
-          "ROOT STALLS FIRST"
+          "Question-specific labels and concise takeaway only"
         ],
         "remove": [
-          "Induced-drag reduction as the main teaching point",
+          "Unrelated handbook page content",
+          "Generic decorative elements",
           "Baked PilotVault banner"
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-washout-wing-twist-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-washout-wing-twist-v1.webp"
+        "master_asset": null,
+        "web_asset": null
       },
-      "mapping_reason": "The selected questions ask either what washout means or how the same twist prevents premature wingtip stall.",
-      "status": "QA_APPROVED",
+      "mapping_reason": "The mapped questions ask for washout geometry or its wingtip-stall prevention effect.",
+      "status": "SOURCE_FOUND",
       "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
+        "technical": false,
+        "teaching": false,
+        "visual": false,
         "preview": false,
         "live": false
       },
@@ -1232,6 +1238,169 @@
         "no_baked_pilotvault_banner": true,
         "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
+    },
+    {
+      "visual_id": "pof-chord-line-definition-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "Chord line is the straight reference line from leading edge to trailing edge",
+      "question_ids": [
+        1119
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 3,
+        "figure": "1-4",
+        "notes": "Handbook nomenclature defines chord as the imaginary straight line from leading edge to trailing edge."
+      },
+      "brief": {
+        "student_must_understand": "Identify the chord as the straight line joining the leading and trailing edges of the aerofoil.",
+        "preserve": [
+          "Leading edge",
+          "Trailing edge",
+          "Straight chord reference"
+        ],
+        "refine": [
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
+        ],
+        "add": [
+          "Question-specific labels and concise takeaway only"
+        ],
+        "remove": [
+          "Unrelated handbook page content",
+          "Generic decorative elements",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Question 1119 directly asks for the name of the straight line joining the aerofoil leading and trailing edges.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-four-forces-level-flight-001",
+      "topic": "Four Forces",
+      "concept": "Steady level flight has lift equal weight and thrust equal drag",
+      "question_ids": [
+        1123,
+        1146,
+        1294
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 1,
+        "figure": "1-1",
+        "notes": "Four-force equilibrium in steady straight-and-level constant-speed flight."
+      },
+      "brief": {
+        "student_must_understand": "See the four opposing forces and the two equilibrium equalities for steady level flight.",
+        "preserve": [
+          "Lift upward",
+          "Weight downward",
+          "Thrust forward",
+          "Drag rearward"
+        ],
+        "refine": [
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
+        ],
+        "add": [
+          "Question-specific labels and concise takeaway only"
+        ],
+        "remove": [
+          "Unrelated handbook page content",
+          "Generic decorative elements",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The mapped questions test the condition and equality relationships of the same four-force equilibrium.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "All three questions test the same steady-level-flight equilibrium: L=W and T=D, with 1123 asking the condition in which that equilibrium exists."
+    },
+    {
+      "visual_id": "pof-centre-of-pressure-definition-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "Centre of pressure is the point through which resultant lift acts",
+      "question_ids": [
+        1142,
+        1286,
+        1301
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 7,
+        "figure": "1-11",
+        "notes": "Handbook force diagram locates the resultant aerodynamic force/lift action on the aerofoil."
+      },
+      "brief": {
+        "student_must_understand": "Identify the point of application of the resultant lift force as the centre of pressure.",
+        "preserve": [
+          "Aerofoil section",
+          "Centre-of-pressure point",
+          "Resultant lift vector"
+        ],
+        "refine": [
+          "Redraw the source relationship as a clean question-focused teaching diagram",
+          "Keep only labels needed to answer the mapped question(s)",
+          "Use high-contrast geometry and readable force/airflow directions"
+        ],
+        "add": [
+          "Question-specific labels and concise takeaway only"
+        ],
+        "remove": [
+          "Unrelated handbook page content",
+          "Generic decorative elements",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The mapped questions are exact wording variants of the centre-of-pressure definition.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "All mapped questions ask the same definition: the point through which total/resultant lift acts."
     }
   ]
 }

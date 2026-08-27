@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "subject": "principles-of-flight",
+  "status": "MAPPED",
+  "active_question_count": 360,
+  "active_visual_count": 79,
+  "library_asset_count": 83,
+  "no_baked_banner": true,
+  "website_branding": true,
+  "qa": {
+    "source_body_fidelity": true,
+    "raster_integrity": true,
+    "preview_build": true,
+    "live": false
+  },
+  "lock": {
+    "approved": false,
+    "replacement_reason": null
+  }
+}

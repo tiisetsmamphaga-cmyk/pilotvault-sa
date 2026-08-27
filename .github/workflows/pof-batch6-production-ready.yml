@@ -1,0 +1,68 @@
+name: Promote POF Batch 6 production-ready
+
+on:
+  push:
+    branches:
+      - pof-batch6
+    paths:
+      - .github/workflows/pof-batch6-production-ready.yml
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch6
+          fetch-depth: 0
+
+      - name: Enforce production-readiness preflight
+        run: |
+          test ! -f app/pof-visual-qa/page.tsx
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-6 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-6 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          ! find public/explanation-images/principles-of-flight/refined-batch-6 -type f -name '*.svg' | grep .
+          grep -F 'refined-batch-(?:1|2|3|4|5|6)' 'app/practice/[subject]/components/explanation-image.tsx'
+          test "$(find .github/workflows -maxdepth 1 -type f -name 'pof-batch6-*' | wc -l)" -eq 1
+
+      - name: Promote five visuals to PRODUCTION_READY
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          ids={
+            'pof-wing-polar-min-drag-001',
+            'pof-wing-polar-best-ld-001',
+            'pof-wing-polar-critical-aoa-001',
+            'pof-induced-drag-vortex-origin-001',
+            'pof-vertical-fin-directional-stability-001'
+          }
+          p=Path('data/pof-visual-manifest.json'); data=json.loads(p.read_text()); count=0
+          for v in data['visuals']:
+              if v['visual_id'] not in ids: continue
+              assert v['status']=='MAPPED'
+              assert v['qa']['technical'] and v['qa']['teaching'] and v['qa']['visual'] and v['qa']['preview']
+              assert not v['lock']['approved']
+              v['status']='PRODUCTION_READY'; count+=1
+          assert count==5
+          p.write_text(json.dumps(data,indent=2)+'\n')
+          sp=Path('data/pof-autonomous-state.json'); s=json.loads(sp.read_text())
+          s['last_verified_checkpoint']='POF_BATCH_6_PRODUCTION_READY'
+          s['next_action']='Remove the temporary production-readiness workflow, merge Batch 6 to main, verify the exact READY production deployment and public raster delivery, then mark Supabase and manifest LIVE_VERIFIED and lock the five visuals'
+          sp.write_text(json.dumps(s,indent=2)+'\n')
+
+      - name: Validate PRODUCTION_READY promotion
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py edec7a577c6068f7a795d55f051ef0e4e67fa955
+
+      - name: Commit PRODUCTION_READY checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "pof: promote Batch 6 to PRODUCTION_READY [skip ci]"
+          git push origin HEAD:pof-batch6

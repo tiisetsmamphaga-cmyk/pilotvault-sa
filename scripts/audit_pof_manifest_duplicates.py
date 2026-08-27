@@ -19,3 +19,9 @@ for qid, rows in sorted(dup.items()):
     print(f'QUESTION {qid}')
     for visual_id, status, web_asset in rows:
         print(f'  {visual_id} | {status} | {web_asset}')
+
+print('--- NON-BATCH1 VISUAL STATE ---')
+for v in data.get('visuals', [])[5:]:
+    a = v.get('assets', {})
+    q = ','.join(str(x) for x in v.get('question_ids', []))
+    print(f'{v.get("visual_id")} | {v.get("status")} | q={q} | master={a.get("master_asset")} | web={a.get("web_asset")}')

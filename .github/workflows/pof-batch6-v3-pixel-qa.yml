@@ -1,0 +1,25 @@
+name: Package POF Batch 6 induced-drag v3 pixel QA
+
+on:
+  push:
+    branches:
+      - pof-batch6
+    paths:
+      - .github/workflows/pof-batch6-v3-pixel-qa.yml
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch6
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch6-v3-pixel-qa
+          path: public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.webp
+          if-no-files-found: error
+          compression-level: 0

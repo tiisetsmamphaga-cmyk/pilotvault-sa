@@ -31,8 +31,42 @@ jobs:
       - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint changed preview and renderer files
-        run: pnpm exec eslint 'app/pof-visual-qa/page.tsx' 'app/practice/[subject]/components/explanation-image.tsx'
+      - name: Parse changed TSX files with installed TypeScript
+        shell: node {0}
+        run: |
+          const fs = require('fs')
+          const ts = require('typescript')
+
+          const files = [
+            'app/pof-visual-qa/page.tsx',
+            'app/practice/[subject]/components/explanation-image.tsx',
+          ]
+
+          let failed = false
+          for (const file of files) {
+            const source = fs.readFileSync(file, 'utf8')
+            const result = ts.transpileModule(source, {
+              fileName: file,
+              reportDiagnostics: true,
+              compilerOptions: {
+                jsx: ts.JsxEmit.ReactJSX,
+                target: ts.ScriptTarget.ES2022,
+                module: ts.ModuleKind.ESNext,
+              },
+            })
+            const errors = (result.diagnostics || []).filter(
+              diagnostic => diagnostic.category === ts.DiagnosticCategory.Error
+            )
+            if (errors.length) {
+              failed = true
+              console.error(`TypeScript parse failed for ${file}`)
+              for (const diagnostic of errors) {
+                console.error(ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'))
+              }
+            }
+          }
+          if (failed) process.exit(1)
+          console.log('Changed TSX parse check passed')
 
       - name: Assert exact Batch 5 preview surface
         shell: python

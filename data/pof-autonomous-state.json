@@ -35,7 +35,15 @@
   "current_batch": 2,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 1,
-  "last_verified_checkpoint": "BATCHES_2_TO_4_REFINEMENT_IN_PROGRESS",
+  "last_verified_checkpoint": "BATCHES_2_TO_4_SOURCE_FOUND_MANIFEST_STAGED",
+  "active_work": {
+    "batches": [2, 3, 4],
+    "visual_concepts": 15,
+    "source_found_manifest_entries": 15,
+    "reviewed_raster_pairs": 15,
+    "asset_generation_workflow": "queued_or_running",
+    "database_mappings_applied": 0
+  },
   "production_state": {
     "approved_live_visuals": 5,
     "rejected_non_batch_1_mappings": 0,
@@ -47,7 +55,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "When the user starts or continues an active POF work turn, continue Batches 2 to 4 through question-specific refinement and QA while posting short checkpoint updates; do not send a final reply until the active run actually stops, reaches a verified checkpoint requested for reporting, completes scope, or hits a genuine blocker",
+  "next_action": "Verify the deterministic GitHub raster-generation run. If successful, confirm all 30 files and 15 REFINING manifest entries, then promote only visually/source-approved entries to QA_APPROVED before creating one deliberate preview branch.",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

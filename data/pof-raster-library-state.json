@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "subject": "principles-of-flight",
-  "status": "PRODUCTION_READY",
+  "status": "LIVE_VERIFIED",
   "active_question_count": 360,
   "active_visual_count": 79,
   "library_asset_count": 83,
@@ -11,10 +11,10 @@
     "source_body_fidelity": true,
     "raster_integrity": true,
     "preview_build": true,
-    "live": false
+    "live": true
   },
   "lock": {
-    "approved": false,
+    "approved": true,
     "replacement_reason": null
   }
 }

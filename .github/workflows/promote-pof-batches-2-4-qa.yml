@@ -1,0 +1,42 @@
+name: Promote POF batches 2-4 to QA approved
+
+on:
+  push:
+    branches:
+      - pof-batch-2-rebuild
+    paths:
+      - 'data/pof-batches-2-4-reviewed-hashes.json'
+      - 'scripts/promote_pof_batches_2_4_qa.py'
+      - '.github/workflows/promote-pof-batches-2-4-qa.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install pinned image dependency
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+      - name: Verify reviewed hashes and promote QA state
+        run: python scripts/promote_pof_batches_2_4_qa.py
+      - name: Validate manifest gates
+        run: python scripts/validate_pof_visuals.py
+      - name: Validate REFINING to QA_APPROVED transition
+        run: python scripts/validate_pof_visual_changes.py "$(git rev-parse HEAD)"
+      - name: Commit QA-approved manifest state
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/pof-visual-manifest.json; then
+            echo 'Manifest already QA-approved.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-visual-manifest.json
+          git commit -m 'Promote POF batches 2-4 to QA approved'
+          git push

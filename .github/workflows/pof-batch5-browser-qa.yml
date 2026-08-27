@@ -1,0 +1,112 @@
+name: POF Batch 5 browser rendering QA
+
+on:
+  push:
+    branches:
+      - pof-batch5-clean-v2
+    paths:
+      - .github/workflows/pof-batch5-browser-qa.yml
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch5-clean-v2
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build exact preview source
+        run: pnpm run build
+
+      - name: Install Chromium QA runner
+        run: |
+          pnpm dlx playwright@1.55.0 install --with-deps chromium
+
+      - name: Start built app
+        run: |
+          (pnpm start > /tmp/pof-next.log 2>&1 & echo $! > /tmp/pof-next.pid)
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:3000/pof-visual-qa >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/pof-next.log
+          exit 1
+
+      - name: Render and validate all five visuals
+        run: |
+          cat > /tmp/pof-browser-qa.mjs <<'NODE'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs';
+
+          const expected = [
+            '/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v2.webp',
+            '/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.webp',
+            '/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.webp',
+            '/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.webp',
+            '/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.webp',
+          ];
+
+          const browser = await chromium.launch({ headless: true });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, deviceScaleFactor: 1 });
+          const failedResponses = [];
+          page.on('response', response => {
+            const url = new URL(response.url());
+            if (expected.includes(url.pathname) && response.status() !== 200) {
+              failedResponses.push({ path: url.pathname, status: response.status() });
+            }
+          });
+
+          const response = await page.goto('http://127.0.0.1:3000/pof-visual-qa', { waitUntil: 'networkidle' });
+          if (!response || response.status() !== 200) throw new Error(`QA route status ${response?.status()}`);
+          await page.waitForFunction(() => document.querySelectorAll('img').length === 5);
+          await page.waitForFunction(() => [...document.images].every(img => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0));
+
+          const data = await page.locator('img').evaluateAll(imgs => imgs.map(img => ({
+            src: new URL(img.src).pathname,
+            naturalWidth: img.naturalWidth,
+            naturalHeight: img.naturalHeight,
+            renderedWidth: img.getBoundingClientRect().width,
+            renderedHeight: img.getBoundingClientRect().height,
+          })));
+          if (data.length !== 5) throw new Error(`Expected 5 images, got ${data.length}`);
+          const found = new Set(data.map(x => x.src));
+          if (found.size !== expected.length || expected.some(path => !found.has(path))) {
+            throw new Error(`Unexpected image set: ${JSON.stringify(data)}`);
+          }
+          if (failedResponses.length) throw new Error(`Failed image responses: ${JSON.stringify(failedResponses)}`);
+          if (data.some(x => x.naturalWidth !== 1600 || x.naturalHeight !== 1050 || x.renderedWidth <= 0 || x.renderedHeight <= 0)) {
+            throw new Error(`Invalid image dimensions: ${JSON.stringify(data)}`);
+          }
+
+          fs.mkdirSync('/tmp/pof-browser-qa', { recursive: true });
+          fs.writeFileSync('/tmp/pof-browser-qa/results.json', JSON.stringify({ routeStatus: 200, images: data }, null, 2));
+          await page.screenshot({ path: '/tmp/pof-browser-qa/pof-batch5-browser-qa.png', fullPage: true });
+          console.log(JSON.stringify({ routeStatus: 200, imageCount: data.length, images: data }, null, 2));
+          await browser.close();
+          NODE
+          cd /tmp
+          pnpm dlx --package=playwright@1.55.0 node /tmp/pof-browser-qa.mjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch5-browser-qa
+          path: /tmp/pof-browser-qa
+          if-no-files-found: error
+          compression-level: 0

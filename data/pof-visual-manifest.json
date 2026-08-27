@@ -927,8 +927,8 @@
         ]
       },
       "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v3.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v3.webp"
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v4.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v4.webp"
       },
       "mapping_reason": "The selected questions ask whether the stalling/critical AoA changes with operating factors, which the visual directly addresses.",
       "status": "REFINING",

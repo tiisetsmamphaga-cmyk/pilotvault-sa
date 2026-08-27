@@ -1,0 +1,245 @@
+name: Refine POF Batch 6 raster candidates
+
+on:
+  push:
+    branches:
+      - pof-batch6
+    paths:
+      - .github/workflows/pof-batch6-refine.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch6
+          fetch-depth: 0
+      - run: python -m pip install --quiet pillow
+
+      - name: Generate five question-specific raster candidates
+        shell: python
+        run: |
+          from pathlib import Path
+          from math import sqrt, sin, cos, pi
+          from PIL import Image, ImageDraw, ImageFont
+
+          OUT=Path('public/explanation-images/principles-of-flight/refined-batch-6')
+          OUT.mkdir(parents=True,exist_ok=True)
+          W,H=1600,1050
+          BG='#F7F9FC'; WHITE='#FFFFFF'; NAVY='#0B1F33'; DARK='#172033'; MUTED='#667085'; GRID='#DCE3EA'; GOLD='#F4B400'; GOLD_DARK='#9B7200'; PALE='#FFF7D6'; BLUE='#EAF1F8'; RED='#B42318'; RED_PALE='#FEE4E2'
+          REG='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+          def f(s,b=False): return ImageFont.truetype(BOLD if b else REG,s)
+          def rounded(d,box,fill=WHITE,outline=GRID,r=28,w=2): d.rounded_rectangle(box,radius=r,fill=fill,outline=outline,width=w)
+          def arrow(d,start,end,fill=NAVY,width=7,head=20):
+              d.line((*start,*end),fill=fill,width=width)
+              x1,y1=start; x2,y2=end; dx=x2-x1; dy=y2-y1; L=(dx*dx+dy*dy)**0.5 or 1
+              ux,uy=dx/L,dy/L; px,py=-uy,ux
+              a=(x2-head*ux+head*.55*px,y2-head*uy+head*.55*py); b=(x2-head*ux-head*.55*px,y2-head*uy-head*.55*py)
+              d.polygon([end,a,b],fill=fill)
+          def save(im,stem):
+              im.save(OUT/f'{stem}.png','PNG',optimize=True)
+              im.save(OUT/f'{stem}.webp','WEBP',quality=94,method=6)
+          def title(d,primary,secondary):
+              d.text((100,60),primary,font=f(45,True),fill=DARK)
+              d.text((100,120),secondary,font=f(23),fill=MUTED)
+              d.line((100,165,1500,165),fill=GRID,width=2)
+
+          # Shared schematic wing polar. Points are positioned to express the source relationships:
+          # 3 = minimum CD / furthest left, 4 = origin-tangent / max L:D, 6 = maximum CL.
+          polar_pts=[
+              (0.040,-0.12),(0.031,0.00),(0.026,0.18),(0.024,0.36),(0.026,0.58),
+              (0.031,0.82),(0.040,1.08),(0.054,1.32),(0.073,1.50),(0.096,1.60),
+              (0.124,1.62),(0.154,1.58),(0.183,1.46)
+          ]
+          point_values={'3':(0.024,0.36),'4':(0.040,1.08),'6':(0.124,1.62)}
+
+          def polar(stem,focus,heading,explain):
+              im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
+              title(d,heading,'Figure PPL PoF-2 relationship • lift coefficient CL versus drag coefficient CD')
+              rounded(d,(90,205,1110,935)); rounded(d,(1150,235,1510,900))
+              L,T,R,B=185,270,1035,840
+              xmin,xmax=0.0,0.20; ymin,ymax=-0.2,1.8
+              def px(x): return L+(x-xmin)/(xmax-xmin)*(R-L)
+              def py(y): return B-(y-ymin)/(ymax-ymin)*(B-T)
+              for x in [0,.04,.08,.12,.16,.20]:
+                  xx=px(x); d.line((xx,T,xx,B),fill=GRID,width=1); d.text((xx,B+16),f'{x:.2f}',font=f(18),fill=MUTED,anchor='ma')
+              for y in [0,.4,.8,1.2,1.6]:
+                  yy=py(y); d.line((L,yy,R,yy),fill=GRID,width=1); d.text((L-15,yy),f'{y:.1f}',font=f(18),fill=MUTED,anchor='rm')
+              d.line((L,B,R,B),fill=DARK,width=3); d.line((L,T,L,B),fill=DARK,width=3)
+              d.text(((L+R)/2,895),'DRAG COEFFICIENT  CD',font=f(24,True),fill=DARK,anchor='ma')
+              lab=Image.new('RGBA',(330,55),(0,0,0,0)); ld=ImageDraw.Draw(lab); ld.text((165,28),'LIFT COEFFICIENT  CL',font=f(24,True),fill=DARK,anchor='mm'); lab=lab.rotate(90,expand=True); im.paste(lab,(70,390),lab); d=ImageDraw.Draw(im)
+              pts=[(px(x),py(y)) for x,y in polar_pts]; d.line(pts,fill=NAVY,width=7,joint='curve')
+
+              # All source point numbers remain visible, but only the tested point receives emphasis.
+              offsets={'3':(-58,30),'4':(24,-12),'6':(25,-25)}
+              for label,(x,y) in point_values.items():
+                  xx,yy=px(x),py(y); is_focus=label==focus
+                  rad=15 if is_focus else 10; fill=GOLD if is_focus else WHITE; outline=GOLD_DARK if is_focus else NAVY
+                  d.ellipse((xx-rad,yy-rad,xx+rad,yy+rad),fill=fill,outline=outline,width=4 if is_focus else 3)
+                  ox,oy=offsets[label]; d.text((xx+ox,yy+oy),label,font=f(29,True),fill=GOLD_DARK if is_focus else DARK)
+
+              fx,fy=point_values[focus]; fpx,fpy=px(fx),py(fy)
+              if focus=='3':
+                  # vertical minimum-CD read-off
+                  d.line((fpx,T+20,fpx,B),fill=GOLD_DARK,width=3)
+                  d.text((fpx+14,T+30),'minimum CD',font=f(21,True),fill=GOLD_DARK)
+              elif focus=='4':
+                  # tangent from graph origin to point 4
+                  ox,oy=px(0),py(0); d.line((ox,oy,fpx,fpy),fill=GOLD_DARK,width=4)
+                  d.text((350,690),'tangent from origin',font=f(21,True),fill=GOLD_DARK)
+              elif focus=='6':
+                  d.line((L,fpy,R-20,fpy),fill=GOLD_DARK,width=3)
+                  d.text((R-185,fpy-38),'maximum CL',font=f(21,True),fill=GOLD_DARK)
+                  arrow(d,(px(.16),py(1.58)),(px(.18),py(1.47)),fill=RED,width=4,head=16)
+                  d.text((px(.15),py(1.36)),'lift falls after peak',font=f(19,True),fill=RED)
+
+              d.text((1190,285),'ANSWER POINT',font=f(18,True),fill=GOLD_DARK)
+              d.text((1190,325),focus,font=f(72,True),fill=DARK)
+              d.line((1190,425,1465,425),fill=GRID,width=2)
+              lines=explain
+              yy=475
+              for line in lines:
+                  d.text((1190,yy),line,font=f(23,True if yy==475 else False),fill=DARK if yy==475 else MUTED)
+                  yy+=48
+              d.rounded_rectangle((1185,735,1475,835),radius=20,fill=PALE,outline=GOLD_DARK,width=2)
+              cue={'3':'smallest CD','4':'maximum L/D','6':'maximum CL'}[focus]
+              d.text((1330,785),cue,font=f(26,True),fill=GOLD_DARK,anchor='mm')
+              save(im,stem)
+
+          polar('pof-wing-polar-min-drag-v1','3','MINIMUM DRAG ON THE WING POLAR',['Point 3 is the','furthest-left point','on the polar.'])
+          polar('pof-wing-polar-best-ld-v1','4','BEST L/D ANGLE ON THE WING POLAR',['Point 4 is where','a line from the origin','is tangent to the polar.'])
+          polar('pof-wing-polar-critical-aoa-v1','6','CRITICAL ANGLE OF ATTACK ON THE POLAR',['Point 6 is the','maximum-CL peak','before lift falls.'])
+
+          def induced_drag():
+              im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
+              title(d,'WHY LIFT CREATES INDUCED DRAG','Upper/lower pressure difference → wingtip roll-up → downwash and rearward aerodynamic component')
+              rounded(d,(90,205,1510,930))
+              # Left: pressure difference cross-section
+              d.text((140,250),'1  PRESSURE DIFFERENCE',font=f(27,True),fill=DARK)
+              # airfoil side view
+              cx,cy,chord=170,430,500
+              upper=[]; lower=[]
+              for i in range(101):
+                  x=i/100; yt=5*.12*(.2969*sqrt(max(x,1e-8))-.126*x-.3516*x*x+.2843*x**3-.1015*x**4)
+                  upper.append((cx+x*chord,cy-yt*chord)); lower.append((cx+x*chord,cy+yt*chord))
+              d.polygon(upper+list(reversed(lower)),fill=BLUE,outline=NAVY)
+              d.text((420,325),'LOW PRESSURE',font=f(24,True),fill=NAVY,anchor='mm')
+              d.text((420,535),'HIGH PRESSURE',font=f(24,True),fill=GOLD_DARK,anchor='mm')
+              for xx in (250,390,530):
+                  arrow(d,(xx,520),(xx,470),fill=GOLD_DARK,width=4,head=14)
+              # Middle: front wing tip roll-up
+              d.text((720,250),'2  AIR SPILLS AROUND TIP',font=f(27,True),fill=DARK)
+              d.rounded_rectangle((760,380,1110,470),radius=28,fill=BLUE,outline=NAVY,width=4)
+              d.text((935,425),'WING',font=f(25,True),fill=NAVY,anchor='mm')
+              # spiral at tip
+              pts=[]
+              cx2,cy2=1120,475
+              for i in range(100):
+                  t=i/99*2.2*pi; r=85*(1-i/125); pts.append((cx2+r*cos(t),cy2+r*sin(t)))
+              d.line(pts,fill=GOLD_DARK,width=7)
+              arrow(d,(1060,520),(1120,550),fill=GOLD_DARK,width=4,head=14)
+              d.text((950,600),'tip vortex / roll-up',font=f(23,True),fill=GOLD_DARK,anchor='mm')
+              # Bottom: lift vector tilted rearward
+              d.line((155,690,1450,690),fill=GRID,width=2)
+              d.text((140,730),'3  REARWARD COMPONENT OF THE AERODYNAMIC FORCE',font=f(27,True),fill=DARK)
+              base=(565,855); arrow(d,base,(565,735),fill=NAVY,width=7,head=20); d.text((585,735),'LIFT',font=f(23,True),fill=NAVY)
+              arrow(d,base,(520,742),fill=GOLD_DARK,width=7,head=20); d.text((350,760),'resultant tilted rearward',font=f(22),fill=MUTED)
+              arrow(d,(565,855),(445,855),fill=RED,width=7,head=20); d.text((375,885),'INDUCED DRAG',font=f(24,True),fill=RED,anchor='ma')
+              d.rounded_rectangle((950,755,1435,890),radius=22,fill=PALE,outline=GOLD_DARK,width=2)
+              d.text((1192,800),'Pressure difference is the cause.',font=f(25,True),fill=DARK,anchor='mm')
+              d.text((1192,845),'Induced drag is the lift by-product.',font=f(22),fill=GOLD_DARK,anchor='mm')
+              save(im,'pof-induced-drag-vortex-origin-v1')
+
+          def fin_stability():
+              im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
+              title(d,'VERTICAL FIN = DIRECTIONAL STABILITY','The fin sits aft of the CG and weather-vanes the aircraft back toward the relative airflow')
+              rounded(d,(90,205,1510,930))
+              d.text((145,250),'TOP VIEW — YAW DISTURBANCE',font=f(27,True),fill=DARK)
+              # desired flight path and relative wind
+              d.line((190,525,1410,525),fill=GRID,width=4)
+              arrow(d,(1360,355),(1060,355),fill=MUTED,width=5,head=18)
+              d.text((1210,315),'RELATIVE AIRFLOW',font=f(21,True),fill=MUTED,anchor='mm')
+              # aircraft yawed nose right, drawn as polygon along rotated body axis
+              # center approx 760,540, axis vector (0.94,-0.34)
+              ux,uy=.94,-.34; vx,vy=-uy,ux; c=(760,540)
+              def pt(a,b): return (c[0]+a*ux+b*vx,c[1]+a*uy+b*vy)
+              fus=[pt(390,0),pt(250,55),pt(-280,42),pt(-380,0),pt(-280,-42),pt(250,-55)]
+              d.polygon(fus,fill=WHITE,outline=NAVY)
+              # wings
+              d.polygon([pt(60,0),pt(-40,245),pt(-110,235),pt(-50,0)],fill=BLUE,outline=NAVY)
+              d.polygon([pt(60,0),pt(-40,-245),pt(-110,-235),pt(-50,0)],fill=BLUE,outline=NAVY)
+              # horizontal tail and prominent fin location
+              d.polygon([pt(-280,0),pt(-315,130),pt(-350,120),pt(-325,0)],fill=BLUE,outline=NAVY)
+              d.polygon([pt(-280,0),pt(-315,-130),pt(-350,-120),pt(-325,0)],fill=BLUE,outline=NAVY)
+              fin=pt(-310,0); d.ellipse((fin[0]-18,fin[1]-18,fin[0]+18,fin[1]+18),fill=GOLD,outline=GOLD_DARK,width=3)
+              d.text((fin[0]-30,fin[1]+50),'VERTICAL FIN',font=f(22,True),fill=GOLD_DARK,anchor='mm')
+              # CG
+              cg=pt(20,0); d.ellipse((cg[0]-13,cg[1]-13,cg[0]+13,cg[1]+13),fill=DARK); d.text((cg[0]+35,cg[1]+30),'CG',font=f(22,True),fill=DARK)
+              # tail side force from airflow, restoring moment
+              force_start=pt(-310,0); force_end=(force_start[0]+15,force_start[1]+125)
+              arrow(d,force_start,force_end,fill=GOLD_DARK,width=7,head=20); d.text((force_end[0]+90,force_end[1]-10),'TAIL SIDE FORCE',font=f(21,True),fill=GOLD_DARK)
+              # restoring yaw arc around CG
+              box=(cg[0]-170,cg[1]-170,cg[0]+170,cg[1]+170); d.arc(box,start=215,end=330,fill=RED,width=7)
+              # arrow head near end
+              arrow(d,(cg[0]+135,cg[1]-95),(cg[0]+165,cg[1]-45),fill=RED,width=5,head=17)
+              d.text((cg[0]+195,cg[1]-120),'RESTORING YAW',font=f(22,True),fill=RED)
+              # explanation panel
+              d.rounded_rectangle((1050,690,1440,870),radius=24,fill=PALE,outline=GOLD_DARK,width=2)
+              d.text((1090,730),'Yaw disturbance',font=f(22),fill=DARK)
+              d.text((1090,775),'→ airflow loads the fin',font=f(22),fill=DARK)
+              d.text((1090,820),'→ nose returns toward airflow',font=f(22,True),fill=GOLD_DARK)
+              save(im,'pof-vertical-fin-directional-stability-v1')
+
+          induced_drag(); fin_stability()
+
+          expected=['pof-wing-polar-min-drag-v1','pof-wing-polar-best-ld-v1','pof-wing-polar-critical-aoa-v1','pof-induced-drag-vortex-origin-v1','pof-vertical-fin-directional-stability-v1']
+          for stem in expected:
+              for ext,fmt in [('png','PNG'),('webp','WEBP')]:
+                  p=OUT/f'{stem}.{ext}'
+                  with Image.open(p) as im:
+                      assert im.size==(W,H) and im.format==fmt
+          assert len(list(OUT.glob('*')))==10
+
+      - name: Attach assets and enter REFINING
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          stems={
+            'pof-wing-polar-min-drag-001':'pof-wing-polar-min-drag-v1',
+            'pof-wing-polar-best-ld-001':'pof-wing-polar-best-ld-v1',
+            'pof-wing-polar-critical-aoa-001':'pof-wing-polar-critical-aoa-v1',
+            'pof-induced-drag-vortex-origin-001':'pof-induced-drag-vortex-origin-v1',
+            'pof-vertical-fin-directional-stability-001':'pof-vertical-fin-directional-stability-v1'
+          }
+          root='public/explanation-images/principles-of-flight/refined-batch-6'
+          p=Path('data/pof-visual-manifest.json'); data=json.loads(p.read_text()); count=0
+          for v in data['visuals']:
+              stem=stems.get(v['visual_id'])
+              if not stem: continue
+              assert v['status']=='SOURCE_FOUND'; assert v['assets']=={'master_asset':None,'web_asset':None}
+              v['assets']={'master_asset':f'{root}/{stem}.png','web_asset':f'{root}/{stem}.webp'}
+              v['status']='REFINING'; count+=1
+          assert count==5
+          p.write_text(json.dumps(data,indent=2)+'\n')
+          sp=Path('data/pof-autonomous-state.json'); state=json.loads(sp.read_text()); state['last_verified_checkpoint']='POF_BATCH_6_REFINING_CANDIDATES'; state['next_action']='Batch 6: inspect all five rendered candidates against source fidelity and the locked Batch 1 quality benchmark; do not promote until all five pass'; sp.write_text(json.dumps(state,indent=2)+'\n')
+
+      - name: Validate REFINING gate
+        run: |
+          ! find public/explanation-images/principles-of-flight/refined-batch-6 -type f -name '*.svg' | grep .
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-6 -type f -name '*.png' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-6 -type f -name '*.webp' | wc -l)" -eq 5
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py edec7a577c6068f7a795d55f051ef0e4e67fa955
+
+      - name: Commit REFINING checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/explanation-images/principles-of-flight/refined-batch-6 data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "pof: generate Batch 6 REFINING raster candidates [skip ci]"
+          git push origin HEAD:pof-batch6

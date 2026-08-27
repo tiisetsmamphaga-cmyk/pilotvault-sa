@@ -1,5 +1,6 @@
 name: POF Batch 5 browser rendering QA
 
+# Trigger note: rerun against the exact current renderer checkpoint.
 on:
   push:
     branches: [pof-batch5-clean-v2]

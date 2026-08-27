@@ -325,17 +325,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-angle-of-attack-definition-v3.webp"
       },
       "mapping_reason": "The visual directly teaches the exact two lines used to define angle of attack.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -377,17 +385,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-chord-line-v2.webp"
       },
       "mapping_reason": "Question 1119 asks for the name of the exact leading-edge-to-trailing-edge reference line shown.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -433,17 +449,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-four-forces-level-flight-v2.webp"
       },
       "mapping_reason": "The diagram directly displays the equilibrium relationship asked by all three questions.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -489,17 +513,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-lift-relative-airflow-v2.webp"
       },
       "mapping_reason": "The visual answers the exact directional relationship tested by these questions.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -548,17 +580,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-venturi-bernoulli-v2.webp"
       },
       "mapping_reason": "The diagram directly visualizes the continuity and Bernoulli changes tested by the selected questions.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -600,17 +640,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-angle-of-incidence-v5.webp"
       },
       "mapping_reason": "The diagram shows the exact two references used to define angle of incidence.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -654,17 +702,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-centre-of-pressure-v1.webp"
       },
       "mapping_reason": "The selected questions ask exactly what the labelled resultant-force application point is called.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -705,17 +761,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-relative-airflow-v1.webp"
       },
       "mapping_reason": "Question 1962 asks for the exact direction relationship displayed.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -758,17 +822,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-speed-squared-lift-drag-v1.webp"
       },
       "mapping_reason": "The selected questions all require recognizing the same square-law speed relationship.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -810,17 +882,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-wing-area-lift-drag-v1.webp"
       },
       "mapping_reason": "Question 1253 isolates wing surface area while holding AoA, airspeed and density unchanged.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -875,17 +955,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-aircraft-axes-controls-v1.webp"
       },
       "mapping_reason": "The diagram provides the complete axis-motion-control reference directly tested by these questions.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -931,17 +1019,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v3.webp"
       },
       "mapping_reason": "The selected questions ask whether the stalling/critical AoA changes with operating factors, which the visual directly addresses.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -986,17 +1082,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-stability-types-v1.webp"
       },
       "mapping_reason": "The chosen questions are direct definitions contained in this stability classification visual.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -1042,17 +1146,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-turn-lift-components-v1.webp"
       },
       "mapping_reason": "The visual directly resolves the exact total-lift components named in both questions.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     },
     {
@@ -1100,17 +1212,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-washout-wing-twist-v1.webp"
       },
       "mapping_reason": "The selected questions ask either what washout means or how the same twist prevents premature wingtip stall.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "question_specific": true,
+        "source_grounded": true,
+        "no_baked_pilotvault_banner": true,
+        "review_notes": "Actual rendered master/delivery pair reviewed against the locked Batch 1 quality standard; weaker revisions were rejected before this promotion."
       }
     }
   ]

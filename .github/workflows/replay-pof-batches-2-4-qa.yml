@@ -6,6 +6,7 @@ on:
       - pof-batches-2-4-clean-v2
     paths:
       - 'scripts/replay_pof_batches_2_4.py'
+      - 'scripts/record_pof_visual_inspections.py'
       - '.github/workflows/replay-pof-batches-2-4-qa.yml'
 
 permissions:
@@ -47,6 +48,8 @@ jobs:
                   assert im.width>=1000 and im.height>=600,(p,im.size)
           print('Final raster integrity passed:',len(files))
           PY
+      - name: Record actual rendered-image inspections
+        run: python scripts/record_pof_visual_inspections.py
       - name: Promote exact assets to QA_APPROVED
         run: python scripts/replay_pof_batches_2_4.py qa-approved
       - name: Validate manifest after QA promotion

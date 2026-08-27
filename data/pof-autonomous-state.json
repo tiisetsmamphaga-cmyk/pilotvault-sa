@@ -37,7 +37,7 @@
   "current_batch": 5,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_5_REFINING_FINAL_CANDIDATES",
+  "last_verified_checkpoint": "POF_BATCH_5_QA_APPROVED",
   "production_state": {
     "approved_live_visuals": 20,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Inspect all five exact rendered Batch 5 candidates against source fidelity and locked Batch 1 quality; no QA promotion until all five pass",
+  "next_action": "Create one intentional preview branch for Batch 5, allow only the explicit refined-batch-5 path in the POF renderer, verify the real explanation component and all five rendered assets, then promote QA_APPROVED -> PREVIEW_READY only if preview QA is clean",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

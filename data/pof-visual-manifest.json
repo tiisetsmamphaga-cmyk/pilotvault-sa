@@ -1420,11 +1420,11 @@
         ]
       },
       "mapping_reason": "Question -4 explicitly requires the Figure PPL PoF-1 load-factor read-off at 20 degrees and then applies that factor to 3,000 lb.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
@@ -1435,6 +1435,14 @@
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v2.png",
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v2.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
       }
     },
     {
@@ -1474,11 +1482,11 @@
         ]
       },
       "mapping_reason": "Question -5 explicitly requires the Figure PPL PoF-1 load-factor read-off at 50 degrees and then applies that factor to 4,600 lb.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
@@ -1489,6 +1497,14 @@
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.png",
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
       }
     },
     {
@@ -1527,11 +1543,11 @@
         ]
       },
       "mapping_reason": "Question -2 explicitly asks for the bank angle corresponding to a +2.5 G limit on Figure PPL PoF-1.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
@@ -1542,6 +1558,14 @@
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.png",
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
       }
     },
     {
@@ -1580,11 +1604,11 @@
         ]
       },
       "mapping_reason": "Question -1 explicitly asks for the bank angle corresponding to a +3.8 G limit on Figure PPL PoF-1.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
@@ -1595,6 +1619,14 @@
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.png",
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
       }
     },
     {
@@ -1635,11 +1667,11 @@
         ]
       },
       "mapping_reason": "Question 1201 asks the primary purpose/effect of the Fowler flap; Figure 2-1 and its text directly show that rearward extension increases wing area.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
@@ -1650,6 +1682,14 @@
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.png",
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.webp"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
       }
     }
   ]

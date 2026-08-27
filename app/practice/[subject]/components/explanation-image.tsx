@@ -40,12 +40,12 @@ export function ExplanationImage({
 
   const isPofVisual = src.includes("/explanation-images/principles-of-flight/")
   const isApprovedPofRaster =
-    src.includes("/explanation-images/principles-of-flight/refined-batch-1/") &&
+    /\/explanation-images\/principles-of-flight\/refined-batch-(?:1|2|3|4)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
-  // POF is fail-closed. Until a new batch individually passes the full
-  // question -> source -> refinement -> visual inspection -> preview -> live
-  // workflow, only the five locked Batch 1 raster assets may render.
+  // POF is fail-closed. Only individually QA-approved refined raster batches
+  // may render. Legacy, bulk-generated, unmanifested and vector POF assets stay
+  // blocked even when they exist on an old branch or deployment.
   if (isPofVisual && !isApprovedPofRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
   return <StandardExplanationImage src={src} alt={alt} priority={priority} />

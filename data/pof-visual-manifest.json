@@ -1431,6 +1431,10 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
       }
     },
     {
@@ -1481,6 +1485,10 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
       }
     },
     {
@@ -1530,6 +1538,10 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
       }
     },
     {
@@ -1579,6 +1591,10 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
       }
     },
     {
@@ -1630,6 +1646,10 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
       }
     }
   ]

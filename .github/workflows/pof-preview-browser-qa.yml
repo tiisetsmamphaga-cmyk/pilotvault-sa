@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat > /tmp/pof-browser-qa.mjs <<'JS'
+          cat > ./pof-browser-qa.mjs <<'JS'
           import { chromium } from 'playwright'
           import fs from 'node:fs/promises'
 
@@ -58,7 +58,6 @@ jobs:
                 loaded: imgs.filter(i => i.complete && i.naturalWidth > 0).length,
                 broken: imgs.filter(i => !i.complete || i.naturalWidth === 0).map(i => i.getAttribute('src')),
                 visibleErrors: [...document.querySelectorAll('main [role="alert"]')].map(x => x.textContent?.trim()),
-                loadingTextCount: [...document.querySelectorAll('main span')].filter(x => x.textContent?.includes('Loading explanation diagram')).length,
                 width: document.documentElement.clientWidth,
                 scrollWidth: document.documentElement.scrollWidth,
               }
@@ -78,7 +77,8 @@ jobs:
           await inspect('mobile', { width: 390, height: 844 }, true)
           await browser.close()
           JS
-          node /tmp/pof-browser-qa.mjs
+          node ./pof-browser-qa.mjs
+          rm -f ./pof-browser-qa.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: pof-preview-browser-qa

@@ -4,7 +4,7 @@
   "mode": "AUTONOMOUS",
   "authorization": "Complete POF autonomously until the suitable visual system is complete",
   "batch_limit": 5,
-  "report_every_completed_batches": 3,
+  "formal_summary_every_completed_batches": 3,
   "routine_progress_messages": true,
   "progress_update_mode": "meaningful_checkpoint",
   "progress_update_checkpoints": [
@@ -17,6 +17,11 @@
     "live_verified"
   ],
   "progress_updates_pause_work": false,
+  "active_turn_required_for_execution": true,
+  "final_reply_ends_active_execution": true,
+  "background_execution_claims_forbidden": true,
+  "final_reply_may_not_claim_continuation": true,
+  "idle_chat_means_execution_stopped": true,
   "exception_reporting": [
     "source_ambiguity",
     "irreversible_product_risk",
@@ -42,7 +47,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Continue Batches 2 to 4 through question-specific refinement and QA while posting short progress updates at meaningful checkpoints; updates never pause execution",
+  "next_action": "When the user starts or continues an active POF work turn, continue Batches 2 to 4 through question-specific refinement and QA while posting short checkpoint updates; do not send a final reply until the active run actually stops, reaches a verified checkpoint requested for reporting, completes scope, or hits a genuine blocker",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

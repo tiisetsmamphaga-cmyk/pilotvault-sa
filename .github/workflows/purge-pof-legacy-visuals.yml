@@ -19,10 +19,11 @@ jobs:
           ref: fix/pof-quality-gate-reset
           fetch-depth: 0
 
-      - name: Remove all rejected pre-workflow POF visual libraries
+      - name: Remove every rejected pre-workflow POF visual library
         shell: bash
         run: |
           set -euo pipefail
+          test -d public/explanation-images/principles-of-flight/refined-batch-1
           git rm -r public/explanation-images/principles-of-flight/static-v4
           git rm -r public/explanation-images/principles-of-flight/pdf-rebuild
           git config user.name "PilotVault Automation"

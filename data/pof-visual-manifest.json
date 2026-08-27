@@ -1,72 +1,1117 @@
 {
   "schema_version": 1,
   "subject": "principles-of-flight",
-  "allowed_statuses": ["SOURCE_FOUND", "REFINING", "QA_FAILED", "QA_APPROVED", "PREVIEW_READY", "MAPPED", "PRODUCTION_READY", "LIVE_VERIFIED"],
+  "allowed_statuses": [
+    "SOURCE_FOUND",
+    "REFINING",
+    "QA_FAILED",
+    "QA_APPROVED",
+    "PREVIEW_READY",
+    "MAPPED",
+    "PRODUCTION_READY",
+    "LIVE_VERIFIED"
+  ],
   "visuals": [
     {
       "visual_id": "pof-bank-load-factor-001",
       "topic": "Turns & Load Factor",
       "concept": "60 degree bank corresponds to a 2.0 G load factor in a level turn",
-      "question_ids": [-3],
-      "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 27, "figure": "1-34", "notes": "Load Factor and Stall Speed chart; handbook states 60 degrees bank produces a load factor of 2.00."},
-      "brief": {"student_must_understand": "Read the load-factor curve at 60 degrees bank and see that the load factor is 2.0 G.", "preserve": ["Original handbook graph axes", "Original load-factor curve", "Original stall-speed curve"], "refine": ["Crop to the chart only", "Improve clarity and contrast", "Guide the eye precisely to the 60 degree and 2.0 G intersection"], "add": ["PilotVault POF header", "Accurate gold read-off guides", "Short question-specific takeaway"], "remove": ["Page body text", "Caption if it competes with the teaching point", "Unrelated margins"]},
-      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.webp"},
+      "question_ids": [
+        -3
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 27,
+        "figure": "1-34",
+        "notes": "Load Factor and Stall Speed chart; handbook states 60 degrees bank produces a load factor of 2.00."
+      },
+      "brief": {
+        "student_must_understand": "Read the load-factor curve at 60 degrees bank and see that the load factor is 2.0 G.",
+        "preserve": [
+          "Original handbook graph axes",
+          "Original load-factor curve",
+          "Original stall-speed curve"
+        ],
+        "refine": [
+          "Crop to the chart only",
+          "Improve clarity and contrast",
+          "Guide the eye precisely to the 60 degree and 2.0 G intersection"
+        ],
+        "add": [
+          "PilotVault POF header",
+          "Accurate gold read-off guides",
+          "Short question-specific takeaway"
+        ],
+        "remove": [
+          "Page body text",
+          "Caption if it competes with the teaching point",
+          "Unrelated margins"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.webp"
+      },
       "mapping_reason": "The question explicitly asks for the load factor at 60 degrees bank and Figure 1-34 directly provides that read-off.",
       "status": "LIVE_VERIFIED",
-      "qa": {"technical": true, "teaching": true, "visual": true, "preview": true, "live": true},
-      "lock": {"approved": true, "replacement_reason": null}
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      }
     },
     {
       "visual_id": "pof-longitudinal-stability-001",
       "topic": "Stability",
       "concept": "CG position relative to centre of lift/pressure determines longitudinal stability",
-      "question_ids": [1131],
-      "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 19, "figure": "1-24", "notes": "Positive stability figure; text states centre of lift behind centre of gravity with a balancing downward tail force."},
-      "brief": {"student_must_understand": "Longitudinal stability depends on the CG position relative to the centre of lift/pressure, with the tail providing a balancing downforce in the stable arrangement.", "preserve": ["Original aircraft figure", "Original lift, weight and tail-force vectors", "Relative fore-aft position shown in the handbook"], "refine": ["Use the handbook's stability figures", "Enlarge and sharpen the aircraft and force arrows", "Make the CG/lift relationship easy to scan"], "add": ["PilotVault POF header", "Clear neutral, unstable/aft-CG and positive-stability comparison", "Short takeaway"], "remove": ["Page paragraphs", "Unrelated margins"]},
-      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v1.webp"},
+      "question_ids": [
+        1131
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 19,
+        "figure": "1-24",
+        "notes": "Positive stability figure; text states centre of lift behind centre of gravity with a balancing downward tail force."
+      },
+      "brief": {
+        "student_must_understand": "Longitudinal stability depends on the CG position relative to the centre of lift/pressure, with the tail providing a balancing downforce in the stable arrangement.",
+        "preserve": [
+          "Original aircraft figure",
+          "Original lift, weight and tail-force vectors",
+          "Relative fore-aft position shown in the handbook"
+        ],
+        "refine": [
+          "Use the handbook's stability figures",
+          "Enlarge and sharpen the aircraft and force arrows",
+          "Make the CG/lift relationship easy to scan"
+        ],
+        "add": [
+          "PilotVault POF header",
+          "Clear neutral, unstable/aft-CG and positive-stability comparison",
+          "Short takeaway"
+        ],
+        "remove": [
+          "Page paragraphs",
+          "Unrelated margins"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v1.webp"
+      },
       "mapping_reason": "Question 1131 asks which factor affects longitudinal stability; the visual directly compares how CG position relative to lift/pressure changes pitch stability.",
       "status": "LIVE_VERIFIED",
-      "qa": {"technical": true, "teaching": true, "visual": true, "preview": true, "live": true},
-      "lock": {"approved": true, "replacement_reason": null}
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      }
     },
     {
       "visual_id": "pof-parasite-drag-001",
       "topic": "Drag",
       "concept": "Parasite/profile drag increases with airspeed",
-      "question_ids": [1153],
-      "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 9, "figure": "1-15", "notes": "Typical airplane drag curves showing induced drag, parasite drag and total drag."},
-      "brief": {"student_must_understand": "The parasite/profile-drag curve rises with speed while induced drag falls; total drag is the sum and reaches a minimum at Vmd.", "preserve": ["Original drag curves", "Speed axis", "Drag axis", "Original labels"], "refine": ["Crop to Figure 1-15 only", "Improve curve and label legibility", "Emphasize the parasite-drag relationship without obscuring the source"], "add": ["PilotVault POF header", "Low-speed/high-speed drag callouts", "Minimum-total-drag Vmd callout", "Short question-specific takeaway"], "remove": ["Surrounding page text", "Unrelated margins"]},
-      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-drag-curves-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-drag-curves-v1.webp"},
+      "question_ids": [
+        1153
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 9,
+        "figure": "1-15",
+        "notes": "Typical airplane drag curves showing induced drag, parasite drag and total drag."
+      },
+      "brief": {
+        "student_must_understand": "The parasite/profile-drag curve rises with speed while induced drag falls; total drag is the sum and reaches a minimum at Vmd.",
+        "preserve": [
+          "Original drag curves",
+          "Speed axis",
+          "Drag axis",
+          "Original labels"
+        ],
+        "refine": [
+          "Crop to Figure 1-15 only",
+          "Improve curve and label legibility",
+          "Emphasize the parasite-drag relationship without obscuring the source"
+        ],
+        "add": [
+          "PilotVault POF header",
+          "Low-speed/high-speed drag callouts",
+          "Minimum-total-drag Vmd callout",
+          "Short question-specific takeaway"
+        ],
+        "remove": [
+          "Surrounding page text",
+          "Unrelated margins"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-drag-curves-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-drag-curves-v1.webp"
+      },
       "mapping_reason": "Question 1153 tests recognition of the parasite/profile-drag curve; the visual clearly labels parasite drag and shows why it rises with speed relative to induced and total drag.",
       "status": "LIVE_VERIFIED",
-      "qa": {"technical": true, "teaching": true, "visual": true, "preview": true, "live": true},
-      "lock": {"approved": true, "replacement_reason": null}
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      }
     },
     {
       "visual_id": "pof-dihedral-001",
       "topic": "Stability",
       "concept": "Dihedral improves lateral stability in the rolling plane",
-      "question_ids": [1168],
-      "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 21, "figure": "1-27", "notes": "Effect of dihedral figure showing the upward wing angle and handbook text explaining its restoring roll tendency during a sideslip."},
-      "brief": {"student_must_understand": "Dihedral is the upward angle of the wings from root to tip and is used to improve lateral/roll stability.", "preserve": ["Original front-view aircraft figure", "Original dihedral angle indication"], "refine": ["Isolate Figure 1-27", "Sharpen wing geometry and label", "Explain the restoring roll sequence after a disturbance"], "add": ["PilotVault POF header", "Dihedral definition callout", "Lateral-stability callout", "Three-step restoring-roll explanation"], "remove": ["Sweepback figure", "Unrelated page material", "Excess whitespace"]},
-      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-dihedral-lateral-stability-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-dihedral-lateral-stability-v1.webp"},
+      "question_ids": [
+        1168
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 21,
+        "figure": "1-27",
+        "notes": "Effect of dihedral figure showing the upward wing angle and handbook text explaining its restoring roll tendency during a sideslip."
+      },
+      "brief": {
+        "student_must_understand": "Dihedral is the upward angle of the wings from root to tip and is used to improve lateral/roll stability.",
+        "preserve": [
+          "Original front-view aircraft figure",
+          "Original dihedral angle indication"
+        ],
+        "refine": [
+          "Isolate Figure 1-27",
+          "Sharpen wing geometry and label",
+          "Explain the restoring roll sequence after a disturbance"
+        ],
+        "add": [
+          "PilotVault POF header",
+          "Dihedral definition callout",
+          "Lateral-stability callout",
+          "Three-step restoring-roll explanation"
+        ],
+        "remove": [
+          "Sweepback figure",
+          "Unrelated page material",
+          "Excess whitespace"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-dihedral-lateral-stability-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-dihedral-lateral-stability-v1.webp"
+      },
       "mapping_reason": "Question 1168 asks what stability dihedral improves; the visual identifies lateral/roll stability and explains the restoring tendency that creates it.",
       "status": "LIVE_VERIFIED",
-      "qa": {"technical": true, "teaching": true, "visual": true, "preview": true, "live": true},
-      "lock": {"approved": true, "replacement_reason": null}
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      }
     },
     {
       "visual_id": "pof-glide-ratio-001",
       "topic": "Flaps & Glide",
       "concept": "Higher lift-to-drag ratio produces a shallower glide angle",
-      "question_ids": [1239],
-      "source": {"document": "ac_61-23c_phak_canada.pdf", "page": 32, "figure": "1-39", "notes": "Forces in a glide; handbook text states that reducing drag makes the glide angle smaller and L/D measures gliding efficiency."},
-      "brief": {"student_must_understand": "A high L/D ratio means more forward distance for each unit of height lost, producing a shallow glide.", "preserve": ["Original two glide illustrations", "Original lift, drag, weight and resultant vectors", "Original glide-angle geometry"], "refine": ["Crop to Figure 1-39", "Improve line and label clarity", "Contrast the shallow and steeper glide examples"], "add": ["PilotVault POF header", "Higher-L/D shallow-glide callout", "Lower-L/D steeper-glide callout", "Short equilibrium takeaway"], "remove": ["Page body text", "Unrelated margins"]},
-      "assets": {"master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-glide-ld-v1.png", "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-glide-ld-v1.webp"},
+      "question_ids": [
+        1239
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 32,
+        "figure": "1-39",
+        "notes": "Forces in a glide; handbook text states that reducing drag makes the glide angle smaller and L/D measures gliding efficiency."
+      },
+      "brief": {
+        "student_must_understand": "A high L/D ratio means more forward distance for each unit of height lost, producing a shallow glide.",
+        "preserve": [
+          "Original two glide illustrations",
+          "Original lift, drag, weight and resultant vectors",
+          "Original glide-angle geometry"
+        ],
+        "refine": [
+          "Crop to Figure 1-39",
+          "Improve line and label clarity",
+          "Contrast the shallow and steeper glide examples"
+        ],
+        "add": [
+          "PilotVault POF header",
+          "Higher-L/D shallow-glide callout",
+          "Lower-L/D steeper-glide callout",
+          "Short equilibrium takeaway"
+        ],
+        "remove": [
+          "Page body text",
+          "Unrelated margins"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-glide-ld-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-1/pof-glide-ld-v1.webp"
+      },
       "mapping_reason": "Question 1239 asks what glide angle results from a high L/D ratio; the visual directly contrasts higher-L/D shallow glide with lower-L/D steeper glide.",
       "status": "LIVE_VERIFIED",
-      "qa": {"technical": true, "teaching": true, "visual": true, "preview": true, "live": true},
-      "lock": {"approved": true, "replacement_reason": null}
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-angle-of-attack-definition-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "Angle of attack is the angle between the chord line and the relative airflow",
+      "question_ids": [
+        1151,
+        1300,
+        1321
+      ],
+      "reuse_justification": "All three questions test the same definition: angle of attack is measured between the aerofoil chord line and relative airflow.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 2,
+        "figure": "1-2",
+        "notes": "The handbook defines angle of attack as the angle between the wing chord line and relative wind/airflow and Figure 1-2 illustrates that relationship."
+      },
+      "brief": {
+        "student_must_understand": "Angle of attack is referenced to the relative airflow, not the horizon, and is measured from the chord line.",
+        "preserve": [
+          "Chord-line reference",
+          "Relative-airflow direction",
+          "Angle geometry"
+        ],
+        "refine": [
+          "Make the two reference lines unmistakable",
+          "Keep arrows and angle marker technically consistent"
+        ],
+        "add": [
+          "Short chord-line label",
+          "Short relative-airflow label",
+          "Question-specific angle marker"
+        ],
+        "remove": [
+          "Decorative elements",
+          "Generic aircraft-scene content",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The visual directly teaches the exact two lines used to define angle of attack.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-chord-line-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "The chord line is the straight line from leading edge to trailing edge",
+      "question_ids": [
+        1119
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 3,
+        "figure": "1-4",
+        "notes": "The handbook defines chord as the imaginary straight line drawn from the leading edge to the trailing edge of an airfoil section."
+      },
+      "brief": {
+        "student_must_understand": "The chord line joins the leading edge and trailing edge with a straight reference line.",
+        "preserve": [
+          "Leading edge",
+          "Trailing edge",
+          "Straight chord reference"
+        ],
+        "refine": [
+          "Use a clean aerofoil section",
+          "Make endpoints obvious"
+        ],
+        "add": [
+          "Leading-edge label",
+          "Trailing-edge label",
+          "Chord-line label"
+        ],
+        "remove": [
+          "Unrelated camber terminology",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Question 1119 asks for the name of the exact leading-edge-to-trailing-edge reference line shown.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-four-forces-equilibrium-001",
+      "topic": "Four Forces",
+      "concept": "In steady level constant-speed flight lift equals weight and thrust equals drag",
+      "question_ids": [
+        1123,
+        1146,
+        1294
+      ],
+      "reuse_justification": "All three questions test the same steady-level-flight equilibrium relationship between lift, weight, thrust and drag.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 1,
+        "figure": "1-1",
+        "notes": "The handbook states that in unaccelerated steady flight the opposing forces are in equilibrium: lift equals weight and thrust equals drag."
+      },
+      "brief": {
+        "student_must_understand": "Constant-speed level flight has balanced vertical and horizontal force pairs.",
+        "preserve": [
+          "Lift upward",
+          "Weight downward",
+          "Thrust forward",
+          "Drag rearward"
+        ],
+        "refine": [
+          "Keep opposing arrows visually equal",
+          "Use a clean light-aircraft silhouette"
+        ],
+        "add": [
+          "LIFT = WEIGHT",
+          "THRUST = DRAG",
+          "Steady level flight cue"
+        ],
+        "remove": [
+          "Unrelated climb/descent forces",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The diagram directly displays the equilibrium relationship asked by all three questions.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-lift-relative-airflow-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "Lift is perpendicular to relative airflow while drag is parallel to it",
+      "question_ids": [
+        1113,
+        1316,
+        1983
+      ],
+      "reuse_justification": "These questions test the same force-direction geometry: lift is perpendicular to relative airflow/flight path and drag is parallel to it.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 6,
+        "figure": "1-11",
+        "notes": "Figure 1-11 shows lift acting 90 degrees to relative wind and drag acting parallel to it."
+      },
+      "brief": {
+        "student_must_understand": "Lift direction is defined relative to the airflow, not simply as vertical, while drag lies along the airflow direction.",
+        "preserve": [
+          "Relative-airflow arrow",
+          "90-degree lift relationship",
+          "Parallel drag relationship"
+        ],
+        "refine": [
+          "Make the 90-degree relationship obvious",
+          "Keep the aerodynamic force origin clear"
+        ],
+        "add": [
+          "Lift label",
+          "Drag label",
+          "Relative airflow label",
+          "90-degree marker"
+        ],
+        "remove": [
+          "Unrelated force components",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The visual answers the exact directional relationship tested by these questions.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-venturi-bernoulli-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "In a subsonic venturi the throat has higher velocity and lower static pressure while mass flow remains continuous",
+      "question_ids": [
+        1110,
+        1140,
+        1148,
+        1306,
+        1313,
+        1973
+      ],
+      "reuse_justification": "All six questions test the same continuity/Bernoulli relationship through a converging-diverging subsonic venturi.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 5,
+        "figure": "1-9",
+        "notes": "The handbook explains that constricting a flow passage increases velocity and decreases pressure while the same flow continues through the tube."
+      },
+      "brief": {
+        "student_must_understand": "As area decreases toward the throat, subsonic velocity increases and static pressure decreases; the trend reverses after the throat.",
+        "preserve": [
+          "Wide-throat-wide geometry",
+          "Flow direction",
+          "Velocity increase",
+          "Pressure decrease"
+        ],
+        "refine": [
+          "Use consistent arrows through the complete venturi",
+          "Clearly distinguish area, velocity and pressure"
+        ],
+        "add": [
+          "LOW V / HIGH P",
+          "HIGH V / LOW P",
+          "Mass flow continuous"
+        ],
+        "remove": [
+          "Carburettor-specific detail",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The diagram directly visualizes the continuity and Bernoulli changes tested by the selected questions.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-angle-of-incidence-001",
+      "topic": "Wing Design",
+      "concept": "Angle of incidence is the fixed angle between the wing chord line and aircraft longitudinal axis",
+      "question_ids": [
+        1152
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 2,
+        "figure": "1-3",
+        "notes": "The handbook defines angle of incidence as the angle formed by the wing chord line and longitudinal axis; it is fixed by design."
+      },
+      "brief": {
+        "student_must_understand": "Incidence is fixed wing-to-fuselage geometry and must not be confused with angle of attack.",
+        "preserve": [
+          "Wing chord line",
+          "Line parallel to longitudinal axis",
+          "Fixed angle marker"
+        ],
+        "refine": [
+          "Make both reference lines distinct",
+          "Avoid relative-airflow arrows that could confuse AoA"
+        ],
+        "add": [
+          "ANGLE OF INCIDENCE (FIXED)",
+          "Chord line",
+          "Longitudinal-axis reference"
+        ],
+        "remove": [
+          "Angle-of-attack terminology",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The diagram shows the exact two references used to define angle of incidence.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-centre-of-pressure-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "Centre of pressure is the point through which the resultant lift force acts",
+      "question_ids": [
+        1142,
+        1286,
+        1301
+      ],
+      "reuse_justification": "All three questions ask for the same definition of centre of pressure as the point through which total/resultant lift acts.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 6,
+        "figure": "1-11",
+        "notes": "The handbook describes the centre of lift, also referred to as centre of pressure, as the imaginary point representing the resultant of all lift forces."
+      },
+      "brief": {
+        "student_must_understand": "Distributed wing lift can be represented by one resultant lift vector acting through the centre of pressure.",
+        "preserve": [
+          "Aerofoil section",
+          "Resultant lift vector",
+          "Point on aerofoil"
+        ],
+        "refine": [
+          "Make the force application point visually dominant",
+          "Avoid implying the point is fixed for all AoA"
+        ],
+        "add": [
+          "CENTRE OF PRESSURE",
+          "Resultant lift"
+        ],
+        "remove": [
+          "CG relationship unless needed",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The selected questions ask exactly what the labelled resultant-force application point is called.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-relative-airflow-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "Relative airflow is parallel and opposite to the aircraft flight path",
+      "question_ids": [
+        1962
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 3,
+        "figure": "1-6",
+        "notes": "The handbook states that relative wind flows parallel with and opposite to the direction of flight."
+      },
+      "brief": {
+        "student_must_understand": "Relative airflow is defined from aircraft motion through the air and points opposite the flight path.",
+        "preserve": [
+          "Aircraft direction",
+          "Flight-path arrow",
+          "Opposite relative-airflow arrow"
+        ],
+        "refine": [
+          "Keep the two arrows collinear and opposite",
+          "Use a clean side-view aircraft"
+        ],
+        "add": [
+          "FLIGHT PATH",
+          "RELATIVE AIRFLOW"
+        ],
+        "remove": [
+          "Wind-from-ground references",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Question 1962 asks for the exact direction relationship displayed.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-speed-squared-lift-drag-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "With other variables fixed, lift and drag vary with airspeed squared",
+      "question_ids": [
+        1145,
+        1303,
+        2034
+      ],
+      "reuse_justification": "These questions all test the same V-squared proportionality: doubling airspeed produces four times the relevant aerodynamic force when the other variables are fixed.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 11,
+        "figure": null,
+        "notes": "The handbook states that tests show lift and drag vary as the square of velocity and that doubling speed quadruples lift and drag when angle of attack remains unchanged."
+      },
+      "brief": {
+        "student_must_understand": "The velocity term is squared, so a 2x speed change produces a 4x force change under the stated fixed conditions.",
+        "preserve": [
+          "V squared relationship",
+          "2x to 4x numerical relationship"
+        ],
+        "refine": [
+          "Keep the causal math simple",
+          "Separate lift and drag labels without suggesting their coefficients are identical"
+        ],
+        "add": [
+          "L, D proportional to V squared",
+          "2V -> 4L / 4D under fixed conditions"
+        ],
+        "remove": [
+          "Irrelevant drag-curve shapes",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The selected questions all require recognizing the same square-law speed relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-wing-area-lift-drag-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "With other variables fixed, lift and drag are directly proportional to wing area",
+      "question_ids": [
+        1253
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 10,
+        "figure": null,
+        "notes": "The handbook states that lift and drag are proportional to wing area; doubling area doubles lift and drag when other variables remain unchanged."
+      },
+      "brief": {
+        "student_must_understand": "More reference wing area produces proportionally more lift and drag under otherwise identical conditions.",
+        "preserve": [
+          "Same aerofoil/conditions comparison",
+          "Area proportionality"
+        ],
+        "refine": [
+          "Compare two clearly different wing areas",
+          "Hold all non-area factors visually constant"
+        ],
+        "add": [
+          "S x2",
+          "L x2",
+          "D x2",
+          "Other variables unchanged"
+        ],
+        "remove": [
+          "Flap deployment cues",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Question 1253 isolates wing surface area while holding AoA, airspeed and density unchanged.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-aircraft-axes-controls-001",
+      "topic": "Flight Controls & Axes",
+      "concept": "Pitch, roll and yaw occur about the lateral, longitudinal and vertical axes through the CG and are controlled by elevator, ailerons and rudder",
+      "question_ids": [
+        1118,
+        1121,
+        1124,
+        1127,
+        1128,
+        1135,
+        1144,
+        1147,
+        1284,
+        1291,
+        1963
+      ],
+      "reuse_justification": "Every mapped question tests one element of the same three-axis/control system shown together: axis name, rotational motion, associated primary control, or the common CG intersection.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 17,
+        "figure": "1-21",
+        "notes": "The handbook lists the lateral, longitudinal and vertical axes, states that all three intersect at the centre of gravity, and associates aircraft motion with those axes; the control sections associate elevator, ailerons and rudder with pitch, roll and yaw."
+      },
+      "brief": {
+        "student_must_understand": "Roll-longitudinal-ailerons, pitch-lateral-elevator and yaw-vertical-rudder are three linked pairs, and all axes pass through CG.",
+        "preserve": [
+          "Three perpendicular axes",
+          "CG intersection",
+          "Correct motion names",
+          "Correct control associations"
+        ],
+        "refine": [
+          "Use an isometric light-aircraft view",
+          "Keep labels spatially separated"
+        ],
+        "add": [
+          "ROLL / LONGITUDINAL / AILERONS",
+          "PITCH / LATERAL / ELEVATOR",
+          "YAW / VERTICAL / RUDDER",
+          "CG"
+        ],
+        "remove": [
+          "Secondary controls",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The diagram provides the complete axis-motion-control reference directly tested by these questions.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-critical-aoa-stall-001",
+      "topic": "Stalls",
+      "concept": "A wing stalls when its critical angle of attack is reached or exceeded; the critical angle itself is not changed by speed, weight, bank or altitude for the same configuration",
+      "question_ids": [
+        1212,
+        1236,
+        1324,
+        1329
+      ],
+      "reuse_justification": "All four questions test the invariant critical/stalling angle-of-attack concept rather than a specific stall-speed value.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 10,
+        "figure": "1-16",
+        "notes": "The handbook describes separation progressing as critical AoA is approached, states the wing stalls at critical AoA, and says the stall is completely dependent on angle of attack."
+      },
+      "brief": {
+        "student_must_understand": "Stall is an angle-of-attack event; other factors change the speed or condition at which the wing reaches critical AoA, not the fundamental critical angle for the configuration.",
+        "preserve": [
+          "Attached flow below critical AoA",
+          "Separated flow at critical AoA",
+          "Critical-angle marker"
+        ],
+        "refine": [
+          "Make flow separation obvious",
+          "Avoid tying the teaching point to one exact SACAA stall-angle number"
+        ],
+        "add": [
+          "BELOW CRITICAL AoA",
+          "CRITICAL AoA / STALL",
+          "Speed/weight/bank change when it is reached"
+        ],
+        "remove": [
+          "Specific 10-18 degree exam answer",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The selected questions ask whether the stalling/critical AoA changes with operating factors, which the visual directly addresses.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-stability-types-001",
+      "topic": "Stability",
+      "concept": "Positive, neutral and negative static stability describe the initial tendency after displacement; positive dynamic stability damps oscillations",
+      "question_ids": [
+        1155,
+        1167,
+        2005
+      ],
+      "reuse_justification": "These questions test definitions represented in the same handbook stability taxonomy: return tendency, positive dynamic stability, and neutral static stability.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 16,
+        "figure": "1-19 / 1-20",
+        "notes": "The handbook illustrates positive, neutral and negative stability with ball analogies and explains dynamic stability as damping oscillations toward the original condition."
+      },
+      "brief": {
+        "student_must_understand": "Positive tends back, neutral remains displaced, negative diverges; positive dynamic stability reduces oscillation amplitude with time.",
+        "preserve": [
+          "Bowl/flat/inverted-bowl static analogies",
+          "Damped oscillation concept"
+        ],
+        "refine": [
+          "Keep static and dynamic ideas visually separated",
+          "Use minimal labels"
+        ],
+        "add": [
+          "POSITIVE",
+          "NEUTRAL",
+          "NEGATIVE",
+          "DYNAMIC: oscillations damp"
+        ],
+        "remove": [
+          "Increasing-amplitude dynamically unstable case",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The chosen questions are direct definitions contained in this stability classification visual.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-turn-lift-components-001",
+      "topic": "Turns & Load Factor",
+      "concept": "In a balanced level turn total lift resolves into a vertical component supporting weight and a horizontal centripetal component producing the turn",
+      "question_ids": [
+        1230,
+        1278
+      ],
+      "reuse_justification": "The two questions are duplicate formulations of the same balanced-level-turn lift-component relationship.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 34,
+        "figure": "1-40",
+        "notes": "Figure 1-40 and accompanying text resolve banked total lift into vertical and horizontal components; the vertical component opposes gravity and the horizontal component produces the turning force."
+      },
+      "brief": {
+        "student_must_understand": "Bank tilts total lift; its vertical component supports weight and its horizontal component provides centripetal force.",
+        "preserve": [
+          "Banked total-lift vector",
+          "Vertical component",
+          "Horizontal centripetal component",
+          "Weight"
+        ],
+        "refine": [
+          "Use clean vector geometry",
+          "Keep component arrows aligned to the total lift resolution"
+        ],
+        "add": [
+          "TOTAL LIFT",
+          "VERTICAL COMPONENT",
+          "CENTRIPETAL COMPONENT",
+          "WEIGHT"
+        ],
+        "remove": [
+          "Centrifugal-force teaching as the primary answer",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The visual directly resolves the exact total-lift components named in both questions.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-washout-wing-twist-001",
+      "topic": "Wing Design",
+      "concept": "Washout reduces angle of incidence toward the wingtip so the root reaches critical AoA first and aileron effectiveness is preserved longer",
+      "question_ids": [
+        1169,
+        1206,
+        1210,
+        1295,
+        1347
+      ],
+      "reuse_justification": "These questions all test the same washout geometry or its direct root-first-stall consequence; induced-drag-only washout questions are intentionally excluded.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 11,
+        "figure": null,
+        "notes": "The handbook describes wing twist with a lower angle of incidence at the tip so that the root approaches critical AoA and stalls first, preserving lateral control near the stall."
+      },
+      "brief": {
+        "student_must_understand": "Washout is geometric twist: tip incidence is lower than root incidence, encouraging a root-first stall and keeping the aileron region flying longer.",
+        "preserve": [
+          "Root-to-tip twist",
+          "Higher root incidence",
+          "Lower tip incidence",
+          "Root-first stall sequence"
+        ],
+        "refine": [
+          "Use plan/section comparison that makes twist obvious",
+          "Keep stall-order callout secondary to geometry"
+        ],
+        "add": [
+          "ROOT: higher incidence",
+          "TIP: lower incidence",
+          "ROOT STALLS FIRST"
+        ],
+        "remove": [
+          "Induced-drag reduction as the main teaching point",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The selected questions ask either what washout means or how the same twist prevents premature wingtip stall.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
     }
   ]
 }

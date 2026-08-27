@@ -1,0 +1,31 @@
+name: Purge rejected POF legacy visuals
+
+on:
+  push:
+    branches:
+      - fix/pof-quality-gate-reset
+    paths:
+      - '.github/workflows/purge-pof-legacy-visuals.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/pof-quality-gate-reset
+          fetch-depth: 0
+
+      - name: Remove all rejected pre-workflow POF visual libraries
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm -r public/explanation-images/principles-of-flight/static-v4
+          git rm -r public/explanation-images/principles-of-flight/pdf-rebuild
+          git config user.name "PilotVault Automation"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Purge rejected legacy POF visual libraries"
+          git push origin HEAD:fix/pof-quality-gate-reset

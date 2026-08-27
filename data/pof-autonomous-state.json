@@ -37,7 +37,7 @@
   "current_batch": 6,
   "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_5_LIVE_VERIFIED",
+  "last_verified_checkpoint": "POF_BATCH_6_PRODUCTION_READY",
   "production_state": {
     "approved_live_visuals": 25,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Batch 6: select no more than five remaining question-specific POF visual concepts, verify exact source relationships, and persist SOURCE_FOUND before refinement begins",
+  "next_action": "Remove the temporary production-readiness workflow, merge Batch 6 to main, verify the exact READY production deployment and public raster delivery, then mark Supabase and manifest LIVE_VERIFIED and lock the five visuals",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

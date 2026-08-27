@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "subject": "principles-of-flight",
+  "mode": "AUTONOMOUS",
+  "authorization": "Complete POF autonomously until the suitable visual system is complete",
+  "batch_limit": 5,
+  "report_every_completed_batches": 3,
+  "routine_progress_messages": false,
+  "exception_reporting": [
+    "source_ambiguity",
+    "irreversible_product_risk",
+    "unrecoverable_external_blocker"
+  ],
+  "quality_reference": {
+    "locked_batch_1_visuals": 5,
+    "minimum_standard": "Batch 1 quality or better",
+    "fail_closed": true
+  },
+  "current_batch": 2,
+  "completed_batches_since_last_user_report": 0,
+  "last_user_report_batch": 1,
+  "last_verified_checkpoint": "POF_RESET_TO_LOCKED_BATCH_1_ONLY",
+  "production_state": {
+    "approved_live_visuals": 5,
+    "rejected_non_batch_1_mappings": 0,
+    "legacy_bulk_visuals_allowed": false
+  },
+  "deployment_policy": {
+    "working_branch_auto_deploy": false,
+    "preview_branch_pattern": "preview/*",
+    "one_deliberate_preview_per_qa_approved_state": true,
+    "main_production_deploy": true
+  },
+  "next_action": "Start Batch 2 from exact POF questions and approved handbook sources, create at most five question-specific visuals, and continue through the workflow without routine user messaging",
+  "stop_conditions": [
+    "source_ambiguity",
+    "irreversible_product_risk",
+    "unrecoverable_external_blocker"
+  ]
+}

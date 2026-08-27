@@ -23,11 +23,11 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          from PIL import Image, ImageOps, ImageDraw
+          from PIL import Image, ImageDraw
           folder=Path('public/explanation-images/principles-of-flight/refined-batch-4')
           names=[
             'pof-aircraft-axes-controls-v1.png',
-            'pof-critical-aoa-stall-v3.png',
+            'pof-critical-aoa-stall-v4.png',
             'pof-stability-types-v1.png',
             'pof-turn-lift-components-v4.png',
             'pof-washout-wing-twist-v1.png',

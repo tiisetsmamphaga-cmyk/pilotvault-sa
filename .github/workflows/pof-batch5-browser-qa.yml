@@ -39,9 +39,10 @@ jobs:
       - name: Build exact preview source
         run: pnpm run build
 
-      - name: Install Chromium QA runner
+      - name: Install workspace-local Chromium QA runner
         run: |
-          pnpm dlx playwright@1.55.0 install --with-deps chromium
+          pnpm add --save-dev --ignore-workspace-root-check playwright@1.55.0
+          pnpm exec playwright install --with-deps chromium
 
       - name: Start built app
         run: |
@@ -57,7 +58,7 @@ jobs:
 
       - name: Render and validate all five visuals
         run: |
-          cat > /tmp/pof-browser-qa.mjs <<'NODE'
+          cat > .pof-browser-qa.mjs <<'NODE'
           import { chromium } from 'playwright';
           import fs from 'node:fs';
 
@@ -107,8 +108,7 @@ jobs:
           console.log(JSON.stringify({ routeStatus: 200, imageCount: data.length, images: data }, null, 2));
           await browser.close();
           NODE
-          cd /tmp
-          pnpm dlx --package=playwright@1.55.0 node /tmp/pof-browser-qa.mjs
+          node .pof-browser-qa.mjs
 
       - uses: actions/upload-artifact@v4
         with:

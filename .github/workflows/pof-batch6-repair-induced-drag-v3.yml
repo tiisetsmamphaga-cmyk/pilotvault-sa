@@ -1,0 +1,111 @@
+name: Repair POF Batch 6 induced-drag visual v3
+
+on:
+  push:
+    branches:
+      - pof-batch6
+    paths:
+      - .github/workflows/pof-batch6-repair-induced-drag-v3.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch6
+          fetch-depth: 0
+      - run: python -m pip install --quiet pillow
+
+      - name: Rebuild clean force-vector panel at same asset path
+        shell: python
+        run: |
+          from pathlib import Path
+          from math import sqrt, cos, sin, pi
+          from PIL import Image, ImageDraw, ImageFont
+
+          OUT=Path('public/explanation-images/principles-of-flight/refined-batch-6')
+          W,H=1600,1050
+          BG='#F7F9FC'; WHITE='#FFFFFF'; NAVY='#0B1F33'; DARK='#172033'; MUTED='#667085'; GRID='#DCE3EA'; GOLD_DARK='#9B7200'; PALE='#FFF7D6'; BLUE='#EAF1F8'; RED='#B42318'
+          REG='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+          def f(s,b=False): return ImageFont.truetype(BOLD if b else REG,s)
+          def arrow(d,start,end,fill=NAVY,width=7,head=20):
+              d.line((*start,*end),fill=fill,width=width)
+              x1,y1=start; x2,y2=end; dx=x2-x1; dy=y2-y1; L=(dx*dx+dy*dy)**0.5 or 1
+              ux,uy=dx/L,dy/L; px,py=-uy,ux
+              a=(x2-head*ux+head*.55*px,y2-head*uy+head*.55*py); b=(x2-head*ux-head*.55*px,y2-head*uy-head*.55*py)
+              d.polygon([end,a,b],fill=fill)
+
+          im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
+          d.text((100,60),'WHY LIFT CREATES INDUCED DRAG',font=f(45,True),fill=DARK)
+          d.text((100,120),'Upper/lower pressure difference → wingtip roll-up → downwash and rearward aerodynamic component',font=f(23),fill=MUTED)
+          d.line((100,165,1500,165),fill=GRID,width=2)
+          d.rounded_rectangle((90,205,1510,930),radius=28,fill=WHITE,outline=GRID,width=2)
+
+          d.text((140,250),'1  PRESSURE DIFFERENCE',font=f(27,True),fill=DARK)
+          cx,cy,chord=170,430,500; upper=[]; lower=[]
+          for i in range(101):
+              x=i/100; yt=5*.12*(.2969*sqrt(max(x,1e-8))-.126*x-.3516*x*x+.2843*x**3-.1015*x**4)
+              upper.append((cx+x*chord,cy-yt*chord)); lower.append((cx+x*chord,cy+yt*chord))
+          d.polygon(upper+list(reversed(lower)),fill=BLUE,outline=NAVY)
+          d.text((420,325),'LOW PRESSURE',font=f(24,True),fill=NAVY,anchor='mm')
+          d.text((420,535),'HIGH PRESSURE',font=f(24,True),fill=GOLD_DARK,anchor='mm')
+          for xx in (250,390,530): arrow(d,(xx,520),(xx,470),fill=GOLD_DARK,width=4,head=14)
+
+          d.text((720,250),'2  AIR SPILLS AROUND TIP',font=f(27,True),fill=DARK)
+          d.rounded_rectangle((760,380,1110,470),radius=28,fill=BLUE,outline=NAVY,width=4)
+          d.text((935,425),'WING',font=f(25,True),fill=NAVY,anchor='mm')
+          pts=[]; cx2,cy2=1120,475
+          for i in range(100):
+              t=i/99*2.2*pi; r=85*(1-i/125); pts.append((cx2+r*cos(t),cy2+r*sin(t)))
+          d.line(pts,fill=GOLD_DARK,width=7)
+          arrow(d,(1060,520),(1120,550),fill=GOLD_DARK,width=4,head=14)
+          d.text((950,600),'tip vortex / roll-up',font=f(23,True),fill=GOLD_DARK,anchor='mm')
+
+          d.line((145,650,1365,650),fill=GRID,width=2)
+          d.text((140,690),'3  THE AERODYNAMIC FORCE TILTS AFT',font=f(27,True),fill=DARK)
+
+          # Diagram-only zone: labels deliberately separated from arrow geometry.
+          base=(515,850)
+          arrow(d,base,(515,720),fill=NAVY,width=7,head=20)
+          d.text((545,720),'LIFT',font=f(22,True),fill=NAVY)
+          arrow(d,base,(455,735),fill=GOLD_DARK,width=7,head=20)
+          d.text((170,745),'RESULTANT FORCE',font=f(20,True),fill=GOLD_DARK)
+          arrow(d,base,(360,850),fill=RED,width=7,head=20)
+          d.text((360,892),'INDUCED DRAG',font=f(23,True),fill=RED,anchor='ma')
+
+          # Explanation lives only in a separate card—nothing crosses the vector diagram.
+          d.rounded_rectangle((850,705,1435,885),radius=22,fill=PALE,outline=GOLD_DARK,width=2)
+          d.text((1142,752),'Downwash tilts the total aerodynamic force aft.',font=f(22,True),fill=DARK,anchor='mm')
+          d.text((1142,805),'The rearward component of that force',font=f(20),fill=MUTED,anchor='mm')
+          d.text((1142,845),'is induced drag.',font=f(24,True),fill=GOLD_DARK,anchor='mm')
+
+          png=OUT/'pof-induced-drag-vortex-origin-v1.png'; webp=OUT/'pof-induced-drag-vortex-origin-v1.webp'
+          im.save(png,'PNG',optimize=True); im.save(webp,'WEBP',quality=94,method=6)
+          for p,fmt in ((png,'PNG'),(webp,'WEBP')):
+              with Image.open(p) as chk: assert chk.size==(W,H) and chk.format==fmt
+
+      - name: Validate unchanged REFINING stage
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py edec7a577c6068f7a795d55f051ef0e4e67fa955
+
+      - name: Update checkpoint and commit
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/pof-autonomous-state.json'); s=json.loads(p.read_text())
+          s['last_verified_checkpoint']='POF_BATCH_6_REFINING_INDUCED_DRAG_V3_READY_FOR_REVIEW'
+          s['next_action']='Re-inspect the simplified induced-drag raster; if it passes, Batch 6 has 5/5 rendered QA passes and may advance to QA_APPROVED'
+          p.write_text(json.dumps(s,indent=2)+'\n')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.png public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.webp data/pof-autonomous-state.json
+          git commit -m "pof: simplify Batch 6 induced-drag force panel [skip ci]"
+          git push origin HEAD:pof-batch6

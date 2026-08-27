@@ -26,6 +26,7 @@
         "topic": {"type": "string", "minLength": 1},
         "concept": {"type": "string", "minLength": 1},
         "question_ids": {"type": "array", "items": {"type": "integer"}, "minItems": 1, "uniqueItems": true},
+        "reuse_justification": {"type": ["string", "null"]},
         "source": {
           "type": "object",
           "additionalProperties": false,
@@ -59,6 +60,15 @@
           }
         },
         "mapping_reason": {"type": "string", "minLength": 1},
+        "visual_inspection": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["actual_image_reviewed", "batch1_quality_reference"],
+          "properties": {
+            "actual_image_reviewed": {"type": "boolean"},
+            "batch1_quality_reference": {"type": "boolean"}
+          }
+        },
         "status": {"enum": ["SOURCE_FOUND", "REFINING", "QA_FAILED", "QA_APPROVED", "PREVIEW_READY", "MAPPED", "PRODUCTION_READY", "LIVE_VERIFIED"]},
         "qa": {
           "type": "object",

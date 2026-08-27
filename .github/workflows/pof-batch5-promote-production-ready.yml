@@ -1,0 +1,52 @@
+name: Promote POF Batch 5 production-ready
+
+on:
+  push:
+    branches: [pof-batch5-clean-v2]
+    paths: [.github/workflows/pof-batch5-promote-production-ready.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch5-clean-v2
+          fetch-depth: 0
+      - name: Promote Batch 5
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          ids = {
+            'pof-load-factor-20deg-001',
+            'pof-load-factor-50deg-001',
+            'pof-load-limit-2-5g-bank-001',
+            'pof-load-limit-3-8g-bank-001',
+            'pof-fowler-flap-area-001',
+          }
+          p=Path('data/pof-visual-manifest.json'); data=json.loads(p.read_text())
+          targets=[v for v in data['visuals'] if v['visual_id'] in ids]; assert len(targets)==5
+          for v in targets:
+              assert v['status']=='MAPPED', (v['visual_id'],v['status'])
+              assert v['qa']['preview'] is True
+              v['status']='PRODUCTION_READY'
+          p.write_text(json.dumps(data,indent=2)+'\n')
+          sp=Path('data/pof-autonomous-state.json'); state=json.loads(sp.read_text())
+          state['last_verified_checkpoint']='POF_BATCH_5_PRODUCTION_READY'
+          state['next_action']='Remove temporary final-validation/promotion workflows, open and merge Batch 5 PR to main, verify the exact production deployment and student explanation rendering, then promote PRODUCTION_READY -> LIVE_VERIFIED and lock all five assets'
+          sp.write_text(json.dumps(state,indent=2)+'\n')
+      - name: Validate promotion history
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py e9247b4fb85f8ff23f29aa6ff22ee872eb495af1
+      - name: Commit production-ready checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "pof: promote Batch 5 to PRODUCTION_READY [skip ci]"
+          git push origin HEAD:pof-batch5-clean-v2

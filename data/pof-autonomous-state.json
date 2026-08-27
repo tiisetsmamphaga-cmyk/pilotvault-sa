@@ -16,12 +16,12 @@
     "minimum_standard": "Batch 1 quality or better",
     "fail_closed": true
   },
-  "current_batch": 2,
+  "current_batch": 5,
   "completed_batches_since_last_user_report": 0,
-  "last_user_report_batch": 1,
-  "last_verified_checkpoint": "POF_RESET_TO_LOCKED_BATCH_1_ONLY",
+  "last_user_report_batch": 4,
+  "last_verified_checkpoint": "POF_BATCHES_2_4_LIVE_VERIFIED_LOCKED",
   "production_state": {
-    "approved_live_visuals": 5,
+    "approved_live_visuals": 20,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -31,7 +31,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Start Batch 2 from exact POF questions and approved handbook sources, create at most five question-specific visuals, and continue through the workflow without routine user messaging",
+  "next_action": "Start Batch 5 from exact POF questions and approved handbook sources, continue autonomously through Batches 5-7, and report after Batch 7 unless a genuine stop condition occurs",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

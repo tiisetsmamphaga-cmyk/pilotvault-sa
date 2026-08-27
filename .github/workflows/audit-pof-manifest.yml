@@ -1,0 +1,19 @@
+name: Audit POF manifest duplicates
+
+on:
+  push:
+    branches:
+      - pof-batch-2-rebuild
+    paths:
+      - 'scripts/audit_pof_manifest_duplicates.py'
+      - '.github/workflows/audit-pof-manifest.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/audit_pof_manifest_duplicates.py

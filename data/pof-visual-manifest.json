@@ -1848,12 +1848,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-min-drag-v1.webp"
       },
       "mapping_reason": "The question requires interpreting Figure PPL PoF-2 and specifically identifying point 3 as the minimum-drag angle of attack.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1867,6 +1867,16 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_4rSZB1xPh6m2k9s9yvPbqD2xNrQD",
+        "deployment_commit": "9adb5afcb0f71e76824f867897a6d5c137114b2f",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "rendered_asset_contact_sheets_reviewed": true,
+        "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
       }
     },
     {
@@ -1912,12 +1922,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-best-ld-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the best-angle point on the referenced polar; the visual teaches the maximum-L/D tangent method and point 4.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1931,6 +1941,16 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_4rSZB1xPh6m2k9s9yvPbqD2xNrQD",
+        "deployment_commit": "9adb5afcb0f71e76824f867897a6d5c137114b2f",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "rendered_asset_contact_sheets_reviewed": true,
+        "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
       }
     },
     {
@@ -1976,12 +1996,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-critical-aoa-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the critical-angle point on the referenced polar; point 6 is the maximum-CL peak.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1995,6 +2015,16 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_4rSZB1xPh6m2k9s9yvPbqD2xNrQD",
+        "deployment_commit": "9adb5afcb0f71e76824f867897a6d5c137114b2f",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "rendered_asset_contact_sheets_reviewed": true,
+        "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
       }
     },
     {
@@ -2040,12 +2070,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.webp"
       },
       "mapping_reason": "Question 1178 asks what creates induced drag; the visual directly connects the top/bottom pressure difference to wingtip roll-up and the induced-drag consequence.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -2059,6 +2089,16 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference. Two earlier REFINING layouts were rejected for label collisions; the simplified third rendering was re-inspected and passed with clean separation of pressure, vortex and force-vector teaching stages."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_4rSZB1xPh6m2k9s9yvPbqD2xNrQD",
+        "deployment_commit": "9adb5afcb0f71e76824f867897a6d5c137114b2f",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "rendered_asset_contact_sheets_reviewed": true,
+        "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
       }
     },
     {
@@ -2108,12 +2148,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-vertical-fin-directional-stability-v1.webp"
       },
       "mapping_reason": "These questions all ask the same directional-stability relationship and the approved handbook directly explains the vertical fin weather-vane restoring action.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -2127,6 +2167,16 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_4rSZB1xPh6m2k9s9yvPbqD2xNrQD",
+        "deployment_commit": "9adb5afcb0f71e76824f867897a6d5c137114b2f",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "rendered_asset_contact_sheets_reviewed": true,
+        "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
       }
     }
   ]

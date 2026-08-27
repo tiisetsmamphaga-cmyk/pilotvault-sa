@@ -40,12 +40,12 @@ export function ExplanationImage({
 
   const isPofVisual = src.includes("/explanation-images/principles-of-flight/")
   const isApprovedPofRaster =
-    (src.includes("/explanation-images/principles-of-flight/refined-batch-1/") ||
-      src.includes("/explanation-images/principles-of-flight/raster-complete/")) &&
+    src.includes("/explanation-images/principles-of-flight/refined-batch-1/") &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
-  // POF is fail-closed: only explicitly approved raster libraries may render.
-  // Legacy pdf-rebuild SVG/vector assets and unknown POF paths stay hidden.
+  // POF is fail-closed. Until a new batch individually passes the full
+  // question -> source -> refinement -> visual inspection -> preview -> live
+  // workflow, only the five locked Batch 1 raster assets may render.
   if (isPofVisual && !isApprovedPofRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
   return <StandardExplanationImage src={src} alt={alt} priority={priority} />
@@ -55,8 +55,7 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [attempt, setAttempt] = useState(0)
   const usesNavigationTemplate = src.includes("/explanation-images/navigation/")
-  const usesPofWebsiteTemplate = src.includes("/explanation-images/principles-of-flight/raster-complete/")
-  const usesWebsiteTemplate = usesNavigationTemplate || usesPofWebsiteTemplate
+  const usesWebsiteTemplate = usesNavigationTemplate
   const diagramTitle = useMemo(() => formatDiagramTitle(src, alt), [src, alt])
 
   useEffect(() => {
@@ -93,13 +92,6 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
       {status === "loaded" && usesNavigationTemplate && (
         <div className="bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
           <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">PILOTVAULT NAVIGATION</div>
-          <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">{diagramTitle}</div>
-        </div>
-      )}
-
-      {status === "loaded" && usesPofWebsiteTemplate && (
-        <div className="bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
-          <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">PILOTVAULT PRINCIPLES OF FLIGHT</div>
           <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">{diagramTitle}</div>
         </div>
       )}

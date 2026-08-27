@@ -1848,17 +1848,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-min-drag-v1.webp"
       },
       "mapping_reason": "The question requires interpreting Figure PPL PoF-2 and specifically identifying point 3 as the minimum-drag angle of attack.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
       }
     },
     {
@@ -1904,17 +1912,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-best-ld-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the best-angle point on the referenced polar; the visual teaches the maximum-L/D tangent method and point 4.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
       }
     },
     {
@@ -1960,17 +1976,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-critical-aoa-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the critical-angle point on the referenced polar; point 6 is the maximum-CL peak.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
       }
     },
     {
@@ -2016,17 +2040,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.webp"
       },
       "mapping_reason": "Question 1178 asks what creates induced drag; the visual directly connects the top/bottom pressure difference to wingtip roll-up and the induced-drag consequence.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference. Two earlier REFINING layouts were rejected for label collisions; the simplified third rendering was re-inspected and passed with clean separation of pressure, vortex and force-vector teaching stages."
       }
     },
     {
@@ -2076,17 +2108,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-vertical-fin-directional-stability-v1.webp"
       },
       "mapping_reason": "These questions all ask the same directional-stability relationship and the approved handbook directly explains the vertical fin weather-vane restoring action.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Actual rendered WebP inspected against locked Batch 1 quality reference; technical relationship, labels, readability and question-specific teaching point passed."
       }
     }
   ]

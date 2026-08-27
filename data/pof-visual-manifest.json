@@ -1420,12 +1420,12 @@
         ]
       },
       "mapping_reason": "Question -4 explicitly requires the Figure PPL PoF-1 load-factor read-off at 20 degrees and then applies that factor to 3,000 lb.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1443,6 +1443,18 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
       }
     },
     {
@@ -1482,12 +1494,12 @@
         ]
       },
       "mapping_reason": "Question -5 explicitly requires the Figure PPL PoF-1 load-factor read-off at 50 degrees and then applies that factor to 4,600 lb.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1505,6 +1517,18 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
       }
     },
     {
@@ -1543,12 +1567,12 @@
         ]
       },
       "mapping_reason": "Question -2 explicitly asks for the bank angle corresponding to a +2.5 G limit on Figure PPL PoF-1.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1566,6 +1590,18 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
       }
     },
     {
@@ -1604,12 +1640,12 @@
         ]
       },
       "mapping_reason": "Question -1 explicitly asks for the bank angle corresponding to a +3.8 G limit on Figure PPL PoF-1.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1627,6 +1663,18 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
       }
     },
     {
@@ -1667,12 +1715,12 @@
         ]
       },
       "mapping_reason": "Question 1201 asks the primary purpose/effect of the Fowler flap; Figure 2-1 and its text directly show that rearward extension increases wing area.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -1690,6 +1738,18 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact rendered WebP reviewed at REFINING against the locked Batch 1 pof-bank-load-factor visual. All five final Batch 5 candidates passed. The original 20-degree v1 was rejected for compressed low-bank readability; Batch 5 was replayed from the clean SOURCE_FOUND checkpoint with reviewed v2, so the rejected v1 is absent from this promotion history."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Fi6AFLi1oah2nxeVB7cPf8UBm7Y8",
+        "deployment_commit": "489bfbc27293547c8c17488426529a366cbce5ef",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "browser_hydration_render_verified": true,
+        "browser_qa_run_id": 33120334538,
+        "all_five_expected_assets_rendered": true,
+        "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
       }
     }
   ]

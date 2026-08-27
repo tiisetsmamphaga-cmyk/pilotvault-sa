@@ -1,0 +1,46 @@
+name: Mark POF Batches 2-4 MAPPED
+
+on:
+  push:
+    branches:
+      - pof-batches-2-4-clean-v2
+    paths:
+      - '.github/workflows/mark-pof-batches-2-4-mapped.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  mark-mapped:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Promote verified preview entries to MAPPED
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/pof-visual-manifest.json')
+          data = json.loads(path.read_text())
+          locked = {'pof-bank-load-factor-001','pof-longitudinal-stability-001','pof-parasite-drag-001','pof-dihedral-001','pof-glide-ratio-001'}
+          planned = [v for v in data['visuals'] if v['visual_id'] not in locked]
+          if len(planned) != 15:
+            raise SystemExit(f'Expected 15 Batch 2-4 visuals, got {len(planned)}')
+          for v in planned:
+            if v.get('status') != 'PREVIEW_READY' or not v.get('qa', {}).get('preview'):
+              raise SystemExit(f"{v['visual_id']}: expected PREVIEW_READY with preview QA true")
+            v['status'] = 'MAPPED'
+          path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+          print('Marked 15 Batch 2-4 visuals MAPPED')
+          PY
+      - name: Validate POF manifest
+        run: python scripts/validate_pof_visuals.py
+      - name: Commit mapped checkpoint
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-visual-manifest.json
+          git commit -m 'Mark POF Batches 2-4 mapped to Supabase'
+          git push origin HEAD:pof-batches-2-4-clean-v2

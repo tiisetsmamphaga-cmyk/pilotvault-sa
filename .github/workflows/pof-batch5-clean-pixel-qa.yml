@@ -1,0 +1,35 @@
+name: Package clean POF Batch 5 pixel QA
+
+on:
+  push:
+    branches:
+      - pof-batch5-clean-v2
+    paths:
+      - .github/workflows/pof-batch5-clean-pixel-qa.yml
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch5-clean-v2
+      - name: Verify QA set
+        run: |
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-5 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          test -f public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.webp
+          ! find public/explanation-images/principles-of-flight/refined-batch-5 -type f -name '*.svg' | grep .
+      - name: Stage exact QA files
+        run: |
+          mkdir -p /tmp/pof-batch5-qa
+          cp public/explanation-images/principles-of-flight/refined-batch-5/*.webp /tmp/pof-batch5-qa/
+          cp public/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v1.webp /tmp/pof-batch5-qa/BATCH1_REFERENCE__pof-bank-load-factor-v1.webp
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch5-clean-pixel-qa
+          path: /tmp/pof-batch5-qa/*.webp
+          if-no-files-found: error
+          compression-level: 0

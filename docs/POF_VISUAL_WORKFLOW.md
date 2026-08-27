@@ -10,6 +10,21 @@ Principles of Flight visuals are paid learning assets, not decoration. Every vis
 
 No stage may be skipped.
 
+## Quality reference
+
+The five locked Batch 1 visuals are the minimum accepted quality reference for POF.
+
+A new visual must be comparable to Batch 1 in all of these ways:
+
+- based on an exact verified source figure or source relationship
+- refined specifically for the exact question being answered
+- visually clean enough to look like a premium aviation learning product
+- technically faithful to the handbook
+- immediately understandable to a student who answered incorrectly
+- not a generic diagram, placeholder, rough geometric sketch, automated infographic or bulk-converted legacy asset
+
+A technically correct but visually weak image fails.
+
 ## Non-negotiable rules
 
 1. Start from an exact PilotVault question and its verified correct answer/explanation.
@@ -20,15 +35,18 @@ No stage may be skipped.
 6. Keep visuals simple, readable, premium and directly relevant to the question.
 7. POF learning visuals must be raster assets (`.png`, `.webp`, `.jpg`, `.jpeg`). **Do not create or introduce SVG/vector explanation visuals.**
 8. If a suitable raster teaching visual is not ready, show no explanation image rather than substituting a vector, placeholder, generic infographic or loosely related figure.
-9. Work in batches of at most five visual concepts. A visual may map to multiple questions only when each mapping is explicitly justified.
-10. Never test experimental visual changes directly on `main`. Use a branch and Vercel preview first.
-11. Never overwrite an approved visual because a newer version seems prettier. Approved assets are locked unless there is a technical error, visual defect or explicit user-requested change.
-12. A batch is not complete until the live PilotVault experience has been verified.
-13. PilotVault branding belongs in the website shell. New POF learning images must not have the PilotVault banner baked into the image itself.
+9. Work in batches of at most five visual concepts.
+10. A visual may map to multiple questions only when those questions test the same exact visual relationship. Sharing a topic is not sufficient.
+11. Never bulk-convert legacy diagrams into production learning assets. Legacy artwork may only be used as source/reference material and must still pass the full question-specific refinement workflow.
+12. Never auto-generate a large visual library and mark it approved from file integrity, dimensions, hashes or HTTP checks alone. Those are technical checks, not teaching or visual approval.
+13. Never test experimental visual changes directly on `main`. Use a branch and Vercel preview first.
+14. Never overwrite an approved visual because a newer version seems prettier. Approved assets are locked unless there is a technical error, visual defect or explicit user-requested change.
+15. A batch is not complete until the live PilotVault experience has been visually inspected and verified.
+16. PilotVault branding belongs in the website shell. New POF learning images must not have the PilotVault banner baked into the image itself.
 
 ## Required states
 
-Every visual in `data/pof-visual-manifest.json` must have exactly one of these states:
+Every approved workflow visual in `data/pof-visual-manifest.json` must have exactly one of these states:
 
 - `SOURCE_FOUND`
 - `REFINING`
@@ -113,13 +131,15 @@ Any failure sets status to `QA_FAILED`.
 
 All must pass:
 
-- directly helps answer the question
+- directly helps answer the exact question
 - concept becomes easier to understand
+- the visual relationship shown is the relationship being tested
 - no irrelevant theory
 - no unnecessary complexity
 - suitable for a student who answered incorrectly
+- any reuse across questions is explicitly justified as the same exact visual concept
 
-An attractive image that does not teach the answer fails.
+An attractive image that does not teach the answer fails. A generic topic image fails.
 
 ## Gate 3: Visual QA
 
@@ -133,7 +153,23 @@ All must pass:
 - no spelling errors
 - no AI artifacts
 - no distorted aircraft/components
-- consistent PilotVault presentation
+- no crude placeholder geometry
+- no generic template look
+- presentation quality comparable to the locked Batch 1 reference visuals
+
+## Mandatory human visual-inspection gate
+
+Before `QA_APPROVED`, the actual rendered image must be visually inspected as an image, not only checked through metadata or code.
+
+The inspection must answer yes to all of the following:
+
+1. Would this look acceptable next to a locked Batch 1 visual?
+2. Does the picture itself make the answer relationship obvious?
+3. Is the aircraft/component representation credible and clean?
+4. Does the visual avoid the appearance of a generic generated infographic?
+5. Is every annotation necessary for this exact question?
+
+If any answer is no, the visual remains `REFINING` or becomes `QA_FAILED`.
 
 ## Export standard
 
@@ -146,23 +182,17 @@ Do not destroy legibility to chase a small file size.
 
 ## Branding separation
 
-From the complete raster library onward, the learning asset contains only the teaching content. The PilotVault navy/gold subject banner and diagram title are rendered by the website UI. This keeps the asset reusable, prevents duplicated branding, and lets the site control responsive presentation.
+From Batch 2 onward, the learning asset contains only teaching content. The PilotVault navy/gold subject banner and diagram title are rendered by the website UI. This keeps the asset reusable, prevents duplicated branding, and lets the site control responsive presentation.
 
 Batch 1 is grandfathered and remains unchanged because it was already approved and locked before this rule was introduced.
 
-## Legacy source-to-raster migration
+## Legacy artwork rule
 
-Existing POF source artwork may be migrated from a legacy vector source into the raster production library without redrawing the teaching body when all of the following are true:
+Legacy POF SVGs, rasterized legacy diagrams and old generated concept artwork are **reference material only**.
 
-1. The source artwork was already explicitly mapped to the relevant POF question concept.
-2. The production PNG is pixel-faithful to the source teaching body after removal of the old baked website banner.
-3. The WebP delivery asset passes raster integrity and compression QA against the PNG master.
-4. The database mapping is changed from the legacy source path to the exact raster path without changing the question or answer content.
-5. The production renderer remains fail-closed for legacy SVG/vector URLs.
-6. The migrated library passes preview, production and live verification before it is locked.
-7. Hashes and promotion state are recorded so a live-verified raster cannot be silently regenerated or replaced.
+They may not be mapped directly to production questions merely because they are technically correct or previously existed. Every new production asset must go through the exact-question source, design brief, refinement, visual inspection, preview and live verification gates above.
 
-Legacy SVG files may remain in the repository only as non-production source history. They must never be referenced by the production database or rendered as POF explanation images.
+No bulk legacy migration is permitted.
 
 ## Preview gate
 
@@ -171,11 +201,14 @@ Before production:
 1. Assets and code live on a preview branch.
 2. Vercel preview must build successfully.
 3. The actual explanation UI must be checked for size, sharpness, crop, title/caption placement and mobile readability.
-4. Only then can status become `PREVIEW_READY`.
+4. The actual image must be visually compared against the Batch 1 quality reference.
+5. Only then can status become `PREVIEW_READY`.
 
 ## Mapping gate
 
-Each question mapping must be explicit and include a mapping reason. Reuse is allowed only when the same visual genuinely explains the mapped question.
+Each question mapping must be explicit and include a mapping reason.
+
+Reuse is allowed only when the same visual genuinely explains the same exact relationship being tested. For example, a generic adverse-yaw image cannot be reused for separate questions about yaw direction, angle-of-attack effect, rudder coordination and induced drag unless the single visual explicitly and cleanly teaches all of those relationships without becoming cluttered.
 
 Mapping is not complete merely because two questions share a topic.
 
@@ -202,6 +235,7 @@ Only then can status become `LIVE_VERIFIED`.
 - good desktop presentation
 - good mobile presentation
 - acceptable loading behavior
+- visual quality still comparable to the approved Batch 1 reference in the real UI
 
 ## Approved asset lock
 
@@ -215,18 +249,19 @@ Never silently regenerate or replace an approved asset.
 
 ## Failure handling
 
-- Image problem -> fix only the image asset.
+- Image problem -> remove/disable the bad mapping first, then fix only the image asset.
 - Mapping problem -> rollback only the mapping.
 - Code problem -> rollback the code commit.
 - Preview/Vercel problem -> do not promote.
 - Source ambiguity -> stop at source/design brief stage.
 - Technical uncertainty -> return to the handbook.
+- Visual quality below Batch 1 -> fail closed; do not map it.
 
-Do not solve a local failure by redesigning the visual system.
+Do not solve a local failure by weakening the visual standard.
 
 ## Batch completion definition
 
-A batch is complete only when every visual in the batch is technically approved, visually approved, preview verified, correctly mapped, production deployed and live verified.
+A batch is complete only when every visual in the batch is technically approved, teaching approved, visually approved by actual inspection, preview verified, correctly mapped, production deployed and live verified.
 
 Reporting format:
 

@@ -23,6 +23,13 @@ STATUSES = [
 ]
 RASTER_EXTENSIONS = {".png", ".webp", ".jpg", ".jpeg"}
 ASSET_ROOT = "public/explanation-images/principles-of-flight/"
+BATCH1_GRANDFATHERED = {
+    "pof-bank-load-factor-001",
+    "pof-longitudinal-stability-001",
+    "pof-parasite-drag-001",
+    "pof-dihedral-001",
+    "pof-glide-ratio-001",
+}
 
 
 def fail(message: str) -> None:
@@ -82,6 +89,12 @@ def main() -> None:
         require(isinstance(question_ids, list) and question_ids, f"{visual_id}: question_ids must be a non-empty list")
         require(all(isinstance(q, int) for q in question_ids), f"{visual_id}: every question_id must be an integer")
         require(len(question_ids) == len(set(question_ids)), f"{visual_id}: duplicate question IDs within the entry")
+        if len(question_ids) > 1:
+            reuse = visual.get("reuse_justification")
+            require(
+                isinstance(reuse, str) and reuse.strip(),
+                f"{visual_id}: reuse_justification is required when one visual maps to multiple questions",
+            )
         for qid in question_ids:
             previous = question_owner.get(qid)
             require(previous is None or previous == visual_id, f"question {qid} is mapped to both {previous} and {visual_id}; explicit one-visual ownership is required")
@@ -111,6 +124,11 @@ def main() -> None:
 
         if status in {"QA_APPROVED", "PREVIEW_READY", "MAPPED", "PRODUCTION_READY", "LIVE_VERIFIED"}:
             require(qa["technical"] and qa["teaching"] and qa["visual"], f"{visual_id}: technical, teaching and visual QA must pass before {status}")
+            if visual_id not in BATCH1_GRANDFATHERED:
+                inspection = visual.get("visual_inspection")
+                require(isinstance(inspection, dict), f"{visual_id}: visual_inspection is required before {status}")
+                require(inspection.get("actual_image_reviewed") is True, f"{visual_id}: actual rendered image must be reviewed before {status}")
+                require(inspection.get("batch1_quality_reference") is True, f"{visual_id}: image must explicitly pass the Batch 1 quality-reference check before {status}")
         if status in {"PREVIEW_READY", "MAPPED", "PRODUCTION_READY", "LIVE_VERIFIED"}:
             require(qa["preview"], f"{visual_id}: preview QA must pass before {status}")
         if status == "LIVE_VERIFIED":

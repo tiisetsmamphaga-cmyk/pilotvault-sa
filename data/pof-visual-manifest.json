@@ -1420,7 +1420,7 @@
         ]
       },
       "mapping_reason": "Question -4 explicitly requires the Figure PPL PoF-1 load-factor read-off at 20 degrees and then applies that factor to 3,000 lb.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -1433,8 +1433,8 @@
         "replacement_reason": null
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v1.webp"
       }
     },
     {
@@ -1474,7 +1474,7 @@
         ]
       },
       "mapping_reason": "Question -5 explicitly requires the Figure PPL PoF-1 load-factor read-off at 50 degrees and then applies that factor to 4,600 lb.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -1487,8 +1487,8 @@
         "replacement_reason": null
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.webp"
       }
     },
     {
@@ -1527,7 +1527,7 @@
         ]
       },
       "mapping_reason": "Question -2 explicitly asks for the bank angle corresponding to a +2.5 G limit on Figure PPL PoF-1.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -1540,8 +1540,8 @@
         "replacement_reason": null
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.webp"
       }
     },
     {
@@ -1580,7 +1580,7 @@
         ]
       },
       "mapping_reason": "Question -1 explicitly asks for the bank angle corresponding to a +3.8 G limit on Figure PPL PoF-1.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -1593,8 +1593,8 @@
         "replacement_reason": null
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.webp"
       }
     },
     {
@@ -1635,7 +1635,7 @@
         ]
       },
       "mapping_reason": "Question 1201 asks the primary purpose/effect of the Fowler flap; Figure 2-1 and its text directly show that rearward extension increases wing area.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -1648,8 +1648,8 @@
         "replacement_reason": null
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.webp"
       }
     }
   ]

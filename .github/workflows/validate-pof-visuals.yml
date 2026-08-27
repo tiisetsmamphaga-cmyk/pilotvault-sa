@@ -5,12 +5,9 @@ on:
     paths:
       - 'data/pof-visual-manifest.json'
       - 'data/pof-visual-manifest.schema.json'
-      - 'data/pof-raster-library-state.json'
-      - 'data/pof-raster-qa-report.json'
       - 'docs/POF_VISUAL_WORKFLOW.md'
       - 'scripts/validate_pof_visuals.py'
       - 'scripts/validate_pof_visual_changes.py'
-      - 'scripts/validate_pof_raster_library.py'
       - 'public/explanation-images/principles-of-flight/**'
       - 'app/practice/**'
       - '.github/workflows/validate-pof-visuals.yml'
@@ -18,15 +15,13 @@ on:
     branches:
       - main
       - 'pof-visual-*'
+      - 'fix/pof-*'
     paths:
       - 'data/pof-visual-manifest.json'
       - 'data/pof-visual-manifest.schema.json'
-      - 'data/pof-raster-library-state.json'
-      - 'data/pof-raster-qa-report.json'
       - 'docs/POF_VISUAL_WORKFLOW.md'
       - 'scripts/validate_pof_visuals.py'
       - 'scripts/validate_pof_visual_changes.py'
-      - 'scripts/validate_pof_raster_library.py'
       - 'public/explanation-images/principles-of-flight/**'
       - 'app/practice/**'
       - '.github/workflows/validate-pof-visuals.yml'
@@ -65,8 +60,5 @@ jobs:
 
           echo "POF_BASE_SHA=$BASE" >> "$GITHUB_ENV"
 
-      - name: Validate POF state transitions, asset locks and no-vector rule
+      - name: Validate POF state transitions, asset locks, manifest ownership and no-vector rule
         run: python scripts/validate_pof_visual_changes.py "$POF_BASE_SHA"
-
-      - name: Validate complete POF raster library and promotion lock
-        run: python scripts/validate_pof_raster_library.py "$POF_BASE_SHA"

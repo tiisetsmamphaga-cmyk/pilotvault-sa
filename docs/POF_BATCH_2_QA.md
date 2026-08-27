@@ -1,1 +1,0 @@
-Batch 2 QA gates will require technical correctness against the handbook, question-specific teaching value, raster-only output, no baked PilotVault banner, readable labels, and preview/live verification before lock.

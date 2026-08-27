@@ -1,1 +1,0 @@
-Batch 2 concepts locked for autonomous execution: angle of attack; lift/drag directions; four forces; venturi/Bernoulli; boundary layer/transition/skin friction.

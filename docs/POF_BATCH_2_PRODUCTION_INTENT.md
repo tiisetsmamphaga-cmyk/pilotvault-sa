@@ -1,1 +1,0 @@
-Batch 2 production intent is approved under the standing autonomous completion mandate.

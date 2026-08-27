@@ -1,1 +1,0 @@
-Generation gate opened after source and question audit.

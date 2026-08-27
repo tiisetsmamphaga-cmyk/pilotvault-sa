@@ -1,1 +1,0 @@
-Visual style: clean instructional aviation diagram, readable at mobile size, minimal clutter, technically faithful to handbook source, raster export only, no banner embedded in image.

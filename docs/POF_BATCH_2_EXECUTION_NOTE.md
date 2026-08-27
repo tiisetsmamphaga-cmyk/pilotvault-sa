@@ -1,1 +1,0 @@
-Execution note: Batch 2 will be produced from handbook-grounded diagrams and integrated only after validation. This note records the autonomous run checkpoint.

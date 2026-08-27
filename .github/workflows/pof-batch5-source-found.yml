@@ -49,8 +49,8 @@ jobs:
               },
               "mapping_reason": "Question -4 explicitly requires the Figure PPL PoF-1 load-factor read-off at 20 degrees and then applies that factor to 3,000 lb.",
               "status": "SOURCE_FOUND",
-              "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
-              "lock": {"approved": false, "replacement_reason": null}
+              "qa": {"technical": False, "teaching": False, "visual": False, "preview": False, "live": False},
+              "lock": {"approved": False, "replacement_reason": None}
             },
             {
               "visual_id": "pof-load-factor-50deg-001",
@@ -72,8 +72,8 @@ jobs:
               },
               "mapping_reason": "Question -5 explicitly requires the Figure PPL PoF-1 load-factor read-off at 50 degrees and then applies that factor to 4,600 lb.",
               "status": "SOURCE_FOUND",
-              "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
-              "lock": {"approved": false, "replacement_reason": null}
+              "qa": {"technical": False, "teaching": False, "visual": False, "preview": False, "live": False},
+              "lock": {"approved": False, "replacement_reason": None}
             },
             {
               "visual_id": "pof-load-limit-2-5g-bank-001",
@@ -95,8 +95,8 @@ jobs:
               },
               "mapping_reason": "Question -2 explicitly asks for the bank angle corresponding to a +2.5 G limit on Figure PPL PoF-1.",
               "status": "SOURCE_FOUND",
-              "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
-              "lock": {"approved": false, "replacement_reason": null}
+              "qa": {"technical": False, "teaching": False, "visual": False, "preview": False, "live": False},
+              "lock": {"approved": False, "replacement_reason": None}
             },
             {
               "visual_id": "pof-load-limit-3-8g-bank-001",
@@ -118,8 +118,8 @@ jobs:
               },
               "mapping_reason": "Question -1 explicitly asks for the bank angle corresponding to a +3.8 G limit on Figure PPL PoF-1.",
               "status": "SOURCE_FOUND",
-              "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
-              "lock": {"approved": false, "replacement_reason": null}
+              "qa": {"technical": False, "teaching": False, "visual": False, "preview": False, "live": False},
+              "lock": {"approved": False, "replacement_reason": None}
             },
             {
               "visual_id": "pof-fowler-flap-area-001",
@@ -141,8 +141,8 @@ jobs:
               },
               "mapping_reason": "Question 1201 asks the primary purpose/effect of the Fowler flap; Figure 2-1 and its text directly show that rearward extension increases wing area.",
               "status": "SOURCE_FOUND",
-              "qa": {"technical": false, "teaching": false, "visual": false, "preview": false, "live": false},
-              "lock": {"approved": false, "replacement_reason": null}
+              "qa": {"technical": False, "teaching": False, "visual": False, "preview": False, "live": False},
+              "lock": {"approved": False, "replacement_reason": None}
             }
           ]
 

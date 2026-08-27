@@ -1,0 +1,35 @@
+name: Replay POF Batches 2-4 SOURCE_FOUND
+
+on:
+  push:
+    branches:
+      - pof-batches-2-4-clean-v2
+    paths:
+      - 'scripts/replay_pof_batches_2_4.py'
+      - '.github/workflows/replay-pof-batches-2-4-source.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch scratch planning ref
+        run: git fetch origin pof-batch-2-rebuild:refs/remotes/origin/pof-batch-2-rebuild
+      - name: Replay SOURCE_FOUND state
+        run: python scripts/replay_pof_batches_2_4.py source-found
+      - name: Validate manifest structure
+        run: python scripts/validate_pof_visuals.py
+      - name: Commit SOURCE_FOUND manifest state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-visual-manifest.json
+          git commit -m 'Stage POF Batches 2-4 sources'
+          git push origin HEAD:pof-batches-2-4-clean-v2

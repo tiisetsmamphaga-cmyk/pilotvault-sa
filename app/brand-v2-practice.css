@@ -1,0 +1,94 @@
+/* Practice-menu Brand v2 compatibility. Exam simulator/result UI already uses the new palette. */
+
+main[class~="bg-[#071522]"][class~="text-white"] {
+  background-color: #f8fafc !important;
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > header {
+  background-color: rgba(31, 78, 121, 0.97) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > header [class~="text-[#f4b400]"] {
+  color: #d6e6f7 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > header [class~="text-[#071426]"] {
+  color: #1f4e79 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="bg-[#0b1d31]"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f1720 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="border-[#29476d]"] {
+  border-color: #e2e8f0 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="text-white"] {
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="text-[#b8c7d9]"],
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="text-[#8fa7c2]"] {
+  color: #64748b !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="bg-[#f4b400]/20"],
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="bg-[#f4b400]/10"] {
+  background-color: #d6e6f7 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="text-[#f4b400]"] {
+  color: #1f4e79 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="bg-[#f4b400]"] {
+  background-color: #1f4e79 !important;
+  color: #ffffff !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="text-[#06111f]"] {
+  color: #ffffff !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="hover:bg-[#0d2238]"]:hover {
+  background-color: #ffffff !important;
+  border-color: rgba(31, 78, 121, 0.45) !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="group-hover:bg-[#ffc62a]"]:is(.group:hover *) {
+  background-color: #183d60 !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="hover:bg-[#f4b400]"]:hover,
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="group-hover:bg-[#f4b400]"]:is(.group:hover *) {
+  background-color: #1f4e79 !important;
+  color: #ffffff !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] > section [class~="hover:border-[#f4b400]"]:hover {
+  border-color: rgba(31, 78, 121, 0.5) !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] circle[fill="#071522"] {
+  fill: #ffffff !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] circle[stroke="#244667"] {
+  stroke: #dbe4ec !important;
+}
+
+main[class~="bg-[#071522]"][class~="text-white"] circle[stroke="#3b82f6"] {
+  stroke: #1f4e79 !important;
+}
+
+/* The mock instruction modal is already white/blue; preserve its white text on blue header. */
+main[class~="bg-[#071522]"] [class~="bg-[#1f4e79]"] [class~="text-white"] {
+  color: #ffffff !important;
+}

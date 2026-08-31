@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import './brand-v2-bridge.css'
 import './brand-v2-profile.css'
+import './brand-v2-practice.css'
 
 const inter = Inter({ 
   subsets: ["latin"],

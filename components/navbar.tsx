@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { VaultLoadingScreen } from "@/components/vault-loading-screen"
 import { supabase } from "@/src/lib/supabase"
 
 const navLinks = [
@@ -18,6 +19,8 @@ const navLinks = [
 ]
 
 type AuthMode = "login" | "signup" | "reset"
+
+const LOGIN_ANIMATION_MIN_MS = 1650
 
 export function Navbar() {
   const authDialogRef = useRef<HTMLDivElement>(null)
@@ -110,6 +113,7 @@ export function Navbar() {
       }
     }
 
+    const loginStartedAt = authMode === "login" ? Date.now() : 0
     setLoading(true)
 
     const { data, error } =
@@ -160,7 +164,11 @@ export function Navbar() {
       return
     }
 
-    setLoading(false)
+    const elapsed = Date.now() - loginStartedAt
+    if (elapsed < LOGIN_ANIMATION_MIN_MS) {
+      await new Promise((resolve) => setTimeout(resolve, LOGIN_ANIMATION_MIN_MS - elapsed))
+    }
+
     window.location.href = "/dashboard"
   }
 
@@ -181,9 +189,7 @@ export function Navbar() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event) => {
-      if (event === "PASSWORD_RECOVERY") {
-        showPasswordRecovery()
-      }
+      if (event === "PASSWORD_RECOVERY") showPasswordRecovery()
     })
 
     return () => subscription.unsubscribe()
@@ -192,10 +198,7 @@ export function Navbar() {
   useEffect(() => {
     const openSignup = () => openAuth("signup")
     window.addEventListener("open-signup-modal", openSignup)
-
-    return () => {
-      window.removeEventListener("open-signup-modal", openSignup)
-    }
+    return () => window.removeEventListener("open-signup-modal", openSignup)
   }, [])
 
   useEffect(() => {
@@ -203,7 +206,7 @@ export function Navbar() {
 
     const previousOverflow = document.body.style.overflow
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setAuthOpen(false)
+      if (event.key === "Escape" && !loading) setAuthOpen(false)
     }
 
     document.body.style.overflow = "hidden"
@@ -214,7 +217,7 @@ export function Navbar() {
       document.body.style.overflow = previousOverflow
       window.removeEventListener("keydown", closeOnEscape)
     }
-  }, [authOpen])
+  }, [authOpen, loading])
 
   return (
     <>
@@ -258,7 +261,6 @@ export function Navbar() {
               >
                 Login
               </Button>
-
               <Button
                 type="button"
                 onClick={() => openAuth("signup")}
@@ -306,7 +308,6 @@ export function Navbar() {
                   >
                     Login
                   </Button>
-
                   <Button
                     type="button"
                     onClick={() => openAuth("signup")}
@@ -324,7 +325,9 @@ export function Navbar() {
       {authOpen && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/65 px-4 py-6 backdrop-blur-sm"
-          onMouseDown={() => setAuthOpen(false)}
+          onMouseDown={() => {
+            if (!loading) setAuthOpen(false)
+          }}
           role="presentation"
         >
           <motion.div
@@ -341,7 +344,8 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setAuthOpen(false)}
-              className="absolute right-4 top-4 rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+              disabled={loading}
+              className="absolute right-4 top-4 rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-40"
               aria-label="Close auth modal"
             >
               <X className="h-5 w-5" />
@@ -350,7 +354,6 @@ export function Navbar() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#1f4e79]">
               PilotVault SA
             </p>
-
             <h2 id="auth-title" className="mt-3 pr-8 text-2xl font-bold text-slate-900">
               {authMode === "login"
                 ? "Welcome back, pilot."
@@ -358,7 +361,6 @@ export function Navbar() {
                   ? "Start your 3-day free trial."
                   : "Choose a new password."}
             </h2>
-
             <p className="mt-2 text-sm leading-6 text-slate-600">
               {authMode === "login"
                 ? "Log in to continue your SACAA exam preparation."
@@ -371,6 +373,7 @@ export function Navbar() {
               <div className="my-6 grid grid-cols-2 rounded-xl bg-[#f1f5f9] p-1">
                 <button
                   type="button"
+                  disabled={loading}
                   onClick={() => {
                     setAuthMode("login")
                     setAuthMessage("")
@@ -379,13 +382,13 @@ export function Navbar() {
                     authMode === "login"
                       ? "bg-[#1f4e79] text-white shadow-sm"
                       : "text-slate-600 hover:text-slate-900"
-                  }`}
+                  } disabled:opacity-60`}
                 >
                   Login
                 </button>
-
                 <button
                   type="button"
+                  disabled={loading}
                   onClick={() => {
                     setAuthMode("signup")
                     setAuthMessage("")
@@ -394,7 +397,7 @@ export function Navbar() {
                     authMode === "signup"
                       ? "bg-[#1f4e79] text-white shadow-sm"
                       : "text-slate-600 hover:text-slate-900"
-                  }`}
+                  } disabled:opacity-60`}
                 >
                   Free Trial
                 </button>
@@ -447,7 +450,7 @@ export function Navbar() {
                   <button
                     type="button"
                     onClick={handlePasswordResetRequest}
-                    disabled={resetRequestLoading}
+                    disabled={resetRequestLoading || loading}
                     className="text-sm font-semibold text-[#1f4e79] transition hover:text-[#183d60] disabled:cursor-wait disabled:opacity-60"
                   >
                     {resetRequestLoading ? "Sending reset email..." : "Forgot password?"}
@@ -468,7 +471,10 @@ export function Navbar() {
               )}
 
               {authMessage && (
-                <p className="rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm text-slate-700" role="status">
+                <p
+                  className="rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm text-slate-700"
+                  role="status"
+                >
                   {authMessage}
                 </p>
               )}
@@ -489,6 +495,10 @@ export function Navbar() {
             </form>
           </motion.div>
         </div>
+      )}
+
+      {loading && authMode === "login" && (
+        <VaultLoadingScreen message="Unlocking your dashboard..." />
       )}
     </>
   )

@@ -1,0 +1,149 @@
+/*
+ * PilotVault Brand v2 compatibility layer.
+ *
+ * The landing page and core student routes now use the Brand v2 palette
+ * directly. These selectors keep the remaining legacy marketing/legal/profile
+ * layouts visually consistent while their markup is migrated incrementally.
+ * The original gold is intentionally reserved for logo artwork only.
+ */
+
+/* Legacy marketing shells: keep layout, switch the visual language to light SaaS. */
+div[class~="bg-[#06111f]"][class~="text-white"] {
+  background-color: #f8fafc !important;
+  color: #0f1720 !important;
+}
+
+div[class~="bg-[#06111f]"][class~="text-white"] > main {
+  color: #0f1720 !important;
+}
+
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-white"] {
+  color: #0f1720 !important;
+}
+
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-white/42"],
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-white/40"],
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-white/25"],
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-white/12"] {
+  color: #64748b !important;
+}
+
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-slate-100"],
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-slate-200"] {
+  color: #334155 !important;
+}
+
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-slate-300"],
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-slate-400"] {
+  color: #64748b !important;
+}
+
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-slate-500"],
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class~="text-slate-600"] {
+  color: #64748b !important;
+}
+
+/* Legacy translucent navy cards become white or soft-slate surfaces. */
+[class~="bg-[#081726]/82"],
+[class~="bg-[#081726]/80"],
+[class~="bg-[#081726]/72"],
+[class~="bg-[#081726]/70"],
+[class~="bg-[#081726]/60"],
+[class~="bg-[#081726]/45"] {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+[class~="bg-[#0a1a2c]"] {
+  background-color: #f1f5f9 !important;
+}
+
+[class~="bg-white/[0.025]"] {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Remaining legacy structural borders. */
+[class~="border-[#1e3a5f]/70"],
+[class~="border-[#1e3a5f]/60"],
+[class~="border-[#1e3a5f]/50"],
+[class~="border-[#355274]"] {
+  border-color: #e2e8f0 !important;
+}
+
+[class~="divide-[#1e3a5f]"] > :not(:last-child) {
+  border-color: #e2e8f0 !important;
+}
+
+/* Gold utilities that survived in legacy markup render as PilotVault blue. */
+[class~="text-[#f4b400]/55"],
+[class~="text-[#f4b400]/50"],
+[class~="text-[#f4b400]/40"] {
+  color: rgba(31, 78, 121, 0.68) !important;
+}
+
+[class~="bg-[#f4b400]/8"],
+[class~="bg-[#f4b400]/5"] {
+  background-color: rgba(214, 230, 247, 0.55) !important;
+}
+
+[class~="border-[#f4b400]/25"],
+[class~="border-[#f4b400]/20"],
+[class~="border-[#f4b400]/15"],
+[class~="border-[#f4b400]/10"] {
+  border-color: rgba(31, 78, 121, 0.22) !important;
+}
+
+[class~="hover:bg-[#ffd054]"]:hover {
+  background-color: #183d60 !important;
+  color: #ffffff !important;
+}
+
+[class~="hover:bg-[#f4b400]/5"]:hover,
+[class~="group-open:bg-[#f4b400]/10"][open] {
+  background-color: #d6e6f7 !important;
+}
+
+[class~="hover:border-[#f4b400]/70"]:hover,
+[class~="group-hover:border-[#f4b400]/60"]:is(.group:hover *),
+[class~="group-open:border-[#f4b400]/60"]:is(.group[open] *) {
+  border-color: rgba(31, 78, 121, 0.6) !important;
+}
+
+/* Replace decorative old-gold gradients without touching geometry/layout. */
+[class*="bg-[radial-gradient"][class*="rgba(244,180,0"] {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(31, 78, 121, 0.13), transparent 30%),
+    radial-gradient(circle at 88% 72%, rgba(214, 230, 247, 0.8), transparent 38%) !important;
+}
+
+[class*="bg-[linear-gradient"][class*="rgba(244,180,0"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(214, 230, 247, 0.88),
+    rgba(255, 255, 255, 0.98) 46%,
+    rgba(241, 245, 249, 0.96)
+  ) !important;
+}
+
+/* Grid overlays used on the old dark marketing hero become subtle slate lines. */
+div[class~="bg-[#06111f]"][class~="text-white"] > main [class*="background-image:linear-gradient(rgba(255,255,255"] {
+  opacity: 0.45 !important;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.18) 1px, transparent 1px) !important;
+}
+
+/* Preserve white copy only when the component itself is intentionally blue. */
+[class~="bg-[#1f4e79]"] [class~="text-white"],
+[class~="bg-[#183d60]"] [class~="text-white"],
+[class~="bg-[#1f4e79]"][class~="text-white"],
+[class~="bg-[#183d60]"][class~="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Old dark focus-ring offsets should no longer flash navy/gold on light pages. */
+[class~="focus-visible:ring-offset-[#06111f]"]:focus-visible,
+[class~="focus-visible:ring-offset-[#081726]"]:focus-visible {
+  --tw-ring-offset-color: #f8fafc !important;
+}
+
+/* Preserve functional exam/status colours. Intentionally no overrides for red, amber/yellow or green. */

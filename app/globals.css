@@ -4,82 +4,86 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #06111f;
-  --foreground: #ffffff;
-  --card: #0b1f35;
-  --card-foreground: #ffffff;
-  --popover: #0b1f35;
-  --popover-foreground: #ffffff;
-  --primary: #f4b400;
-  --primary-foreground: #06111f;
-  --secondary: #0b1f35;
-  --secondary-foreground: #ffffff;
-  --muted: #0b1f35;
-  --muted-foreground: #94a3b8;
-  --accent: #f4b400;
-  --accent-foreground: #06111f;
+  --background: #f8fafc;
+  --foreground: #0f1720;
+  --card: #ffffff;
+  --card-foreground: #0f1720;
+  --popover: #ffffff;
+  --popover-foreground: #0f1720;
+  --primary: #1f4e79;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f1720;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #d6e6f7;
+  --accent-foreground: #183d60;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #1e3a5f;
-  --input: #1e3a5f;
-  --ring: #f4b400;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #1f4e79;
+  --chart-1: #1f4e79;
+  --chart-2: #53789b;
+  --chart-3: #7daed6;
+  --chart-4: #94a3b8;
+  --chart-5: #334155;
   --radius: 0.625rem;
-  --sidebar: #0b1f35;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #f4b400;
-  --sidebar-primary-foreground: #06111f;
-  --sidebar-accent: #1e3a5f;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1e3a5f;
-  --sidebar-ring: #f4b400;
-  
-  /* Custom PilotVault colors */
-  --navy-dark: #06111f;
-  --navy-medium: #0b1f35;
-  --navy-light: #1e3a5f;
-  --gold: #f4b400;
-  --gold-hover: #d9a000;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f1720;
+  --sidebar-primary: #1f4e79;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #183d60;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #1f4e79;
+
+  /* PilotVault Brand v2 */
+  --pilot-blue: #1f4e79;
+  --pilot-blue-deep: #183d60;
+  --pilot-blue-soft: #d6e6f7;
+  --pilot-slate: #334155;
+  --pilot-ink: #0f1720;
+  --pilot-surface: #ffffff;
+  --pilot-canvas: #f8fafc;
+
+  /* Compatibility aliases for older components. The original gold remains in logo assets only. */
+  --navy-dark: #f8fafc;
+  --navy-medium: #ffffff;
+  --navy-light: #e2e8f0;
+  --gold: #1f4e79;
+  --gold-hover: #183d60;
   --success: #22c55e;
 }
 
 .dark {
-  --background: #06111f;
+  --background: #0f1720;
   --foreground: #ffffff;
-  --card: #0b1f35;
+  --card: #172331;
   --card-foreground: #ffffff;
-  --popover: #0b1f35;
+  --popover: #172331;
   --popover-foreground: #ffffff;
-  --primary: #f4b400;
-  --primary-foreground: #06111f;
-  --secondary: #0b1f35;
+  --primary: #7daed6;
+  --primary-foreground: #0f1720;
+  --secondary: #1e293b;
   --secondary-foreground: #ffffff;
-  --muted: #0b1f35;
-  --muted-foreground: #94a3b8;
-  --accent: #f4b400;
-  --accent-foreground: #06111f;
+  --muted: #1e293b;
+  --muted-foreground: #cbd5e1;
+  --accent: #1f4e79;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: #1e3a5f;
-  --input: #1e3a5f;
-  --ring: #f4b400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #0b1f35;
+  --destructive-foreground: #ffffff;
+  --border: #334155;
+  --input: #475569;
+  --ring: #7daed6;
+  --sidebar: #172331;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #f4b400;
-  --sidebar-primary-foreground: #06111f;
-  --sidebar-accent: #1e3a5f;
+  --sidebar-primary: #7daed6;
+  --sidebar-primary-foreground: #0f1720;
+  --sidebar-accent: #1e293b;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1e3a5f;
-  --sidebar-ring: #f4b400;
+  --sidebar-border: #334155;
+  --sidebar-ring: #7daed6;
 }
 
 @theme inline {
@@ -121,8 +125,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  
-  /* Custom colors */
   --color-navy-dark: var(--navy-dark);
   --color-navy-medium: var(--navy-medium);
   --color-navy-light: var(--navy-light);
@@ -135,22 +137,102 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
+
+/* Brand v2 bridge for pages that still carry the original navy/gold utility classes. */
+main[class~="bg-[#06111f]"] {
+  background-color: #f8fafc !important;
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#06111f]"] > header,
+header[class~="bg-[#06111f]/95"] {
+  background-color: rgba(31, 78, 121, 0.97) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+}
+
+main[class~="bg-[#06111f]"] > header [class~="text-[#f4b400]"],
+header[class~="bg-[#06111f]/95"] [class~="text-[#f4b400]"] {
+  color: #d6e6f7 !important;
+}
+
+main[class~="bg-[#06111f]"] > section [class~="text-white"] {
+  color: #0f1720 !important;
+}
+
+[class~="bg-[#071426]"][class~="text-white"],
+[class~="bg-[#1f4e79]"][class~="text-white"],
+[class~="bg-[#183d60]"][class~="text-white"] {
+  color: #ffffff !important;
+}
+
+[class~="bg-[#06111f]"] { background-color: #f8fafc !important; }
+[class~="bg-[#081726]"] { background-color: #ffffff !important; }
+[class~="bg-[#0b1f35]"] { background-color: #f1f5f9 !important; }
+[class~="bg-[#1e3a5f]"] { background-color: #d6e6f7 !important; }
+[class~="bg-[#071426]"] { background-color: #183d60 !important; }
+
+[class~="border-[#1e3a5f]"] { border-color: #e2e8f0 !important; }
+[class~="border-[#f4b400]"] { border-color: #1f4e79 !important; }
+[class~="border-[#f4b400]/30"] { border-color: rgba(31, 78, 121, 0.3) !important; }
+[class~="border-[#f4b400]/40"] { border-color: rgba(31, 78, 121, 0.4) !important; }
+[class~="border-[#f4b400]/50"] { border-color: rgba(31, 78, 121, 0.5) !important; }
+[class~="border-[#f4b400]/60"] { border-color: rgba(31, 78, 121, 0.6) !important; }
+
+[class~="divide-[#1e3a5f]"] > :not(:last-child) {
+  border-color: #e2e8f0 !important;
+}
+
+[class~="text-[#f4b400]"] { color: #1f4e79 !important; }
+[class~="text-[#f4b400]/50"] { color: rgba(31, 78, 121, 0.5) !important; }
+[class~="text-[#f4b400]/60"] { color: rgba(31, 78, 121, 0.6) !important; }
+[class~="text-[#06111f]"] { color: #ffffff !important; }
+[class~="text-[#b9c1cb]"] { color: #64748b !important; }
+[class~="text-[#9ca9b9]"] { color: #64748b !important; }
+[class~="text-[#707782]"] { color: #64748b !important; }
+[class~="text-[#718096]"] { color: #64748b !important; }
+
+[class~="bg-[#f4b400]"] { background-color: #1f4e79 !important; }
+[class~="bg-[#f4b400]/10"] { background-color: rgba(214, 230, 247, 0.72) !important; }
+[class~="bg-[#f4b400]/15"] { background-color: rgba(214, 230, 247, 0.82) !important; }
+[class~="bg-[#f4b400]/20"] { background-color: #d6e6f7 !important; }
+[class~="bg-[#f4b400]/30"] { background-color: rgba(125, 174, 214, 0.28) !important; }
+
+[class~="hover:bg-[#d9a000]"]:hover { background-color: #183d60 !important; }
+[class~="hover:bg-[#f4b400]"]:hover { background-color: #1f4e79 !important; color: #ffffff !important; }
+[class~="hover:bg-[#1e3a5f]"]:hover { background-color: #e2e8f0 !important; }
+[class~="hover:border-[#f4b400]"]:hover { border-color: #1f4e79 !important; }
+[class~="hover:border-[#f4b400]/50"]:hover { border-color: rgba(31, 78, 121, 0.5) !important; }
+[class~="hover:border-[#f4b400]/60"]:hover { border-color: rgba(31, 78, 121, 0.6) !important; }
+[class~="hover:text-[#f4b400]"]:hover { color: #1f4e79 !important; }
+[class~="hover:text-[#183d60]"]:hover { color: #183d60 !important; }
+
+[class~="group-hover:bg-[#f4b400]/20"]:is(.group:hover *) {
+  background-color: #d6e6f7 !important;
+}
+[class~="group-hover:text-[#f4b400]"]:is(.group:hover *) {
+  color: #1f4e79 !important;
+}
+
+[class~="focus:border-[#f4b400]"]:focus { border-color: #1f4e79 !important; }
+[class~="focus:ring-[#f4b400]"]:focus { --tw-ring-color: #1f4e79 !important; }
+[class~="focus-visible:ring-[#f4b400]/70"]:focus-visible { --tw-ring-color: rgba(31, 78, 121, 0.7) !important; }
 
 @keyframes pv-plane-takeoff {
   0% {
     opacity: 0;
     transform: translate3d(-10px, 8px, 0) rotate(2deg) scale(0.82);
   }
-  10% {
-    opacity: 1;
-  }
+  10% { opacity: 1; }
   38% {
     opacity: 1;
     transform: translate3d(68px, -3px, 0) rotate(-1deg) scale(0.94);
@@ -174,9 +256,7 @@
     opacity: 0.18;
     stroke-dashoffset: 52;
   }
-  35%, 78% {
-    opacity: 1;
-  }
+  35%, 78% { opacity: 1; }
   100% {
     opacity: 0.18;
     stroke-dashoffset: 0;

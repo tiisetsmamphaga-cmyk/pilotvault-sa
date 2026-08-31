@@ -50,12 +50,9 @@ export function Navbar() {
     setAuthMessage("")
     setResetRequestLoading(true)
 
-    const { error } = await supabase.auth.resetPasswordForEmail(
-      normalizedEmail,
-      {
-        redirectTo: `${window.location.origin}/`,
-      }
-    )
+    const { error } = await supabase.auth.resetPasswordForEmail(normalizedEmail, {
+      redirectTo: `${window.location.origin}/`,
+    })
 
     setResetRequestLoading(false)
 
@@ -84,9 +81,7 @@ export function Navbar() {
       }
 
       setLoading(true)
-
       const { error } = await supabase.auth.updateUser({ password })
-
       setLoading(false)
 
       if (error) {
@@ -138,9 +133,7 @@ export function Navbar() {
 
     if (authMode === "signup") {
       if (data.user) {
-        const trialEndsAt = new Date(
-          Date.now() + 3 * 24 * 60 * 60 * 1000
-        ).toISOString()
+        const trialEndsAt = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()
 
         const { error: profileError } = await supabase.from("Profiles").insert({
           id: data.user.id,
@@ -229,7 +222,7 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed left-0 right-0 top-0 z-50 border-b border-[#1e3a5f] bg-[#06111f]/95 backdrop-blur-md"
+        className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#1f4e79]/95 shadow-sm backdrop-blur-md"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid h-20 grid-cols-[180px_1fr_auto] items-center gap-4 lg:grid-cols-[220px_1fr_220px]">
@@ -249,19 +242,19 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-gray-300 transition-colors hover:text-[#f4b400]"
+                  className="text-sm font-medium text-blue-50 transition-colors hover:text-white"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
 
-            <div className="hidden items-center justify-end gap-4 lg:flex">
+            <div className="hidden items-center justify-end gap-3 lg:flex">
               <Button
                 type="button"
                 onClick={() => openAuth("login")}
                 variant="outline"
-                className="border-[#1e3a5f] text-white hover:bg-[#1e3a5f] hover:text-white"
+                className="border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
               >
                 Login
               </Button>
@@ -269,7 +262,7 @@ export function Navbar() {
               <Button
                 type="button"
                 onClick={() => openAuth("signup")}
-                className="bg-[#f4b400] font-semibold text-[#06111f] hover:bg-[#d9a000]"
+                className="bg-white font-semibold text-[#1f4e79] hover:bg-[#f1f5f9]"
               >
                 Start Free Trial
               </Button>
@@ -278,14 +271,10 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="justify-self-end rounded-lg p-2 text-white transition hover:bg-[#0b1c30] lg:hidden"
+              className="justify-self-end rounded-lg p-2 text-white transition hover:bg-white/10 lg:hidden"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
@@ -294,26 +283,26 @@ export function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               transition={{ duration: 0.25 }}
-              className="border-t border-[#1e3a5f] px-2 py-5 lg:hidden"
+              className="border-t border-white/15 px-2 py-5 lg:hidden"
             >
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="rounded-lg px-2 py-2 text-base text-gray-300 transition-colors hover:bg-[#0b1c30] hover:text-[#f4b400]"
+                    className="rounded-lg px-3 py-2 text-base text-blue-50 transition-colors hover:bg-white/10 hover:text-white"
                   >
                     {link.name}
                   </Link>
                 ))}
 
-                <div className="mt-3 flex flex-col gap-3 border-t border-[#1e3a5f] pt-5">
+                <div className="mt-3 flex flex-col gap-3 border-t border-white/15 pt-5">
                   <Button
                     type="button"
                     onClick={() => openAuth("login")}
                     variant="outline"
-                    className="w-full border-[#1e3a5f] text-white hover:bg-[#1e3a5f] hover:text-white"
+                    className="w-full border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
                   >
                     Login
                   </Button>
@@ -321,7 +310,7 @@ export function Navbar() {
                   <Button
                     type="button"
                     onClick={() => openAuth("signup")}
-                    className="w-full bg-[#f4b400] font-semibold text-[#06111f] hover:bg-[#d9a000]"
+                    className="w-full bg-white font-semibold text-[#1f4e79] hover:bg-[#f1f5f9]"
                   >
                     Start Free Trial
                   </Button>
@@ -334,7 +323,7 @@ export function Navbar() {
 
       {authOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/65 px-4 py-6 backdrop-blur-sm"
           onMouseDown={() => setAuthOpen(false)}
           role="presentation"
         >
@@ -343,7 +332,7 @@ export function Navbar() {
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             onMouseDown={(event) => event.stopPropagation()}
-            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#1e3a5f] bg-[#081726] p-6 shadow-2xl"
+            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6 text-slate-900 shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="auth-title"
@@ -352,17 +341,17 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setAuthOpen(false)}
-              className="absolute right-4 top-4 text-gray-400 hover:text-white"
+              className="absolute right-4 top-4 rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
               aria-label="Close auth modal"
             >
               <X className="h-5 w-5" />
             </button>
 
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#f4b400]">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#1f4e79]">
               PilotVault SA
             </p>
 
-            <h2 id="auth-title" className="mt-3 pr-8 text-2xl font-bold text-white">
+            <h2 id="auth-title" className="mt-3 pr-8 text-2xl font-bold text-slate-900">
               {authMode === "login"
                 ? "Welcome back, pilot."
                 : authMode === "signup"
@@ -370,15 +359,16 @@ export function Navbar() {
                   : "Choose a new password."}
             </h2>
 
-            <p className="mt-2 text-sm leading-6 text-gray-400">
+            <p className="mt-2 text-sm leading-6 text-slate-600">
               {authMode === "login"
                 ? "Log in to continue your SACAA exam preparation."
                 : authMode === "signup"
                   ? "Create your account and start preparing with realistic SACAA-style questions, mock exams, and progress tracking."
                   : "Enter a new password for your PilotVault account."}
             </p>
+
             {authMode !== "reset" && (
-              <div className="my-6 grid grid-cols-2 rounded-xl bg-[#0b1c30] p-1">
+              <div className="my-6 grid grid-cols-2 rounded-xl bg-[#f1f5f9] p-1">
                 <button
                   type="button"
                   onClick={() => {
@@ -387,8 +377,8 @@ export function Navbar() {
                   }}
                   className={`rounded-lg py-2 text-sm font-semibold transition ${
                     authMode === "login"
-                      ? "bg-[#f4b400] text-[#06111f]"
-                      : "text-gray-300 hover:text-white"
+                      ? "bg-[#1f4e79] text-white shadow-sm"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   Login
@@ -402,8 +392,8 @@ export function Navbar() {
                   }}
                   className={`rounded-lg py-2 text-sm font-semibold transition ${
                     authMode === "signup"
-                      ? "bg-[#f4b400] text-[#06111f]"
-                      : "text-gray-300 hover:text-white"
+                      ? "bg-[#1f4e79] text-white shadow-sm"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   Free Trial
@@ -426,7 +416,7 @@ export function Navbar() {
                   placeholder="Full name"
                   value={fullName}
                   onChange={(event) => setFullName(event.target.value)}
-                  className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#d6e6f7]"
                 />
               )}
 
@@ -438,7 +428,7 @@ export function Navbar() {
                   placeholder="Email address"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#d6e6f7]"
                 />
               )}
 
@@ -449,7 +439,7 @@ export function Navbar() {
                 placeholder={authMode === "reset" ? "New password" : "Password"}
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
-                className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
+                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#d6e6f7]"
               />
 
               {authMode === "login" && (
@@ -458,7 +448,7 @@ export function Navbar() {
                     type="button"
                     onClick={handlePasswordResetRequest}
                     disabled={resetRequestLoading}
-                    className="text-sm font-semibold text-[#f4b400] transition hover:text-[#ffd054] disabled:cursor-wait disabled:opacity-60"
+                    className="text-sm font-semibold text-[#1f4e79] transition hover:text-[#183d60] disabled:cursor-wait disabled:opacity-60"
                   >
                     {resetRequestLoading ? "Sending reset email..." : "Forgot password?"}
                   </button>
@@ -469,23 +459,16 @@ export function Navbar() {
                 <input
                   type="password"
                   autoComplete="new-password"
-                  aria-label={
-                    authMode === "reset" ? "Confirm new password" : "Confirm password"
-                  }
-                  placeholder={
-                    authMode === "reset" ? "Confirm new password" : "Confirm password"
-                  }
+                  aria-label={authMode === "reset" ? "Confirm new password" : "Confirm password"}
+                  placeholder={authMode === "reset" ? "Confirm new password" : "Confirm password"}
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
-                  className="w-full rounded-xl border border-[#1e3a5f] bg-[#0b1c30] px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#f4b400] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#d6e6f7]"
                 />
               )}
 
               {authMessage && (
-                <p
-                  className="rounded-xl border border-[#1e3a5f] bg-[#06111f] px-4 py-3 text-sm text-gray-300"
-                  role="status"
-                >
+                <p className="rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm text-slate-700" role="status">
                   {authMessage}
                 </p>
               )}
@@ -493,7 +476,7 @@ export function Navbar() {
               <Button
                 type="submit"
                 disabled={loading || resetRequestLoading}
-                className="w-full bg-[#f4b400] py-6 font-bold text-[#06111f] hover:bg-[#d9a000] disabled:opacity-60"
+                className="w-full bg-[#1f4e79] py-6 font-bold text-white hover:bg-[#183d60] disabled:opacity-60"
               >
                 {loading
                   ? "Please wait..."

@@ -60,12 +60,8 @@ export function PricingSection() {
   }
 
   return (
-    <section
-      id="pricing"
-      className="bg-[#06111f] py-16 sm:py-20 lg:py-24"
-    >
+    <section id="pricing" className="border-y border-slate-200 bg-[#f8fafc] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,87 +69,61 @@ export function PricingSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto mb-10 max-w-3xl text-center sm:mb-12"
         >
-          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-            Simple, Transparent{" "}
-            <span className="text-[#f4b400]">Pricing</span>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#1f4e79]">Simple, transparent pricing</p>
+          <h2 className="mb-4 text-3xl font-bold text-slate-900 sm:text-4xl">
+            Choose the plan that fits your training
           </h2>
-
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg">
-            Choose the plan that fits your training goals. Available plans
-            include a 3-day free trial.
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            Focus on one subject or prepare across your licence. Available plans include a 3-day free trial.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
-
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.4,
-                delay: index * 0.1,
-              }}
-              className={`relative rounded-2xl border p-6 lg:p-8 ${
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className={`relative rounded-2xl border bg-white p-6 shadow-sm transition-shadow hover:shadow-md lg:p-8 ${
                 plan.popular
-                  ? "border-[#f4b400] bg-[#0b1f35] shadow-lg shadow-[#f4b400]/10 lg:-mt-4"
+                  ? "border-[#1f4e79] ring-1 ring-[#1f4e79]/10 lg:-mt-4"
                   : plan.comingSoon
-                    ? "border-[#1e3a5f]/70 bg-[#0b1f35]/70 opacity-90"
-                    : "border-[#1e3a5f] bg-[#0b1f35]"
+                    ? "border-slate-200 opacity-90"
+                    : "border-slate-200"
               }`}
             >
               {plan.popular && (
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f4b400] px-4 py-1 text-xs font-bold text-[#06111f]">
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1f4e79] px-4 py-1 text-xs font-bold text-white shadow-sm">
                   MOST POPULAR
                 </div>
               )}
 
               {plan.comingSoon && (
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#1e3a5f] bg-[#06111f] px-4 py-1 text-xs font-bold text-gray-300">
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full border border-slate-300 bg-white px-4 py-1 text-xs font-bold text-slate-600">
                   COMING SOON
                 </div>
               )}
 
               <div className="mb-6 text-center">
-                <h3 className="mb-2 text-xl font-bold text-white">
-                  {plan.name}
-                </h3>
-
-                <p className="mb-4 text-sm text-gray-400">
-                  {plan.description}
-                </p>
-
+                <h3 className="mb-2 text-xl font-bold text-slate-900">{plan.name}</h3>
+                <p className="mb-4 text-sm text-slate-500">{plan.description}</p>
                 <div className="flex items-end justify-center gap-1">
-                  <span
-                    className={`font-bold ${
-                      plan.comingSoon
-                        ? "text-3xl text-gray-300"
-                        : "text-4xl text-white"
-                    }`}
-                  >
+                  <span className={`font-bold ${plan.comingSoon ? "text-3xl text-slate-500" : "text-4xl text-slate-900"}`}>
                     {plan.price}
                   </span>
-
-                  {plan.period && (
-                    <span className="mb-1 text-gray-400">
-                      {plan.period}
-                    </span>
-                  )}
+                  {plan.period && <span className="mb-1 text-slate-500">{plan.period}</span>}
                 </div>
               </div>
 
               <ul className="mb-8 space-y-4">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f4b400]/20">
-                      <Check className="h-3 w-3 text-[#f4b400]" />
+                    <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#d6e6f7]">
+                      <Check className="h-3 w-3 text-[#1f4e79]" />
                     </div>
-
-                    <span className="text-sm text-gray-300">
-                      {feature}
-                    </span>
+                    <span className="text-sm text-slate-700">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -164,17 +134,16 @@ export function PricingSection() {
                 onClick={plan.comingSoon ? undefined : openSignupModal}
                 className={`w-full font-semibold ${
                   plan.comingSoon
-                    ? "cursor-not-allowed bg-gray-700 text-gray-400 hover:bg-gray-700"
+                    ? "cursor-not-allowed bg-slate-200 text-slate-500 hover:bg-slate-200"
                     : plan.popular
-                      ? "bg-[#f4b400] text-[#06111f] hover:bg-[#d9a000]"
-                      : "bg-[#1e3a5f] text-white hover:bg-[#2a4a6f]"
+                      ? "bg-[#1f4e79] text-white hover:bg-[#183d60]"
+                      : "border border-[#1f4e79] bg-white text-[#1f4e79] hover:bg-[#f1f5f9]"
                 }`}
               >
                 {plan.comingSoon ? "Coming Soon" : "Start Free Trial"}
               </Button>
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>

@@ -1,0 +1,76 @@
+/* Profile-only Brand v2 colour cleanup. No layout or account logic changes. */
+
+/* The profile page still carries the old colour tokens in its markup. */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] {
+  background-color: #f8fafc !important;
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > h1,
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section h2[class~="text-white"] {
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f1720 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] [class~="text-white"] {
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#d6dee8]"],
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#9ca9b9]"],
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#b9c1cb]"],
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#718096]"] {
+  color: #64748b !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-white/10"] {
+  background-color: #f1f5f9 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#f4b400]"],
+[class~="text-[#b47f00]"] {
+  color: #1f4e79 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-[#f4b400]"],
+[class~="bg-[#f4b400]"] {
+  background-color: #1f4e79 !important;
+  color: #ffffff !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-[#f4b400]/15"] {
+  background-color: #d6e6f7 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="border-[#f4b400]"] {
+  border-color: #1f4e79 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-[#071426]"] {
+  background-color: #1f4e79 !important;
+}
+
+[class~="hover:bg-[#ffc31a]"]:hover,
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="hover:bg-[#f4b400]"]:hover {
+  background-color: #183d60 !important;
+  color: #ffffff !important;
+}
+
+[class*="focus:shadow-[0_0_0_3px_rgba(244,180,0"]:focus {
+  box-shadow: 0 0 0 3px rgba(31, 78, 121, 0.14) !important;
+}
+
+/* Keep score/status semantics readable on the new light cards. */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-emerald-300"] {
+  color: #059669 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-red-300"] {
+  color: #dc2626 !important;
+}

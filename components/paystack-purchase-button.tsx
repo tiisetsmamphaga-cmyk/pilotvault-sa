@@ -70,13 +70,13 @@ export function PaystackPurchaseButton({
         type="button"
         onClick={startPayment}
         disabled={loading}
-        className="w-full rounded-xl bg-[#f4b400] px-5 py-3 text-sm font-bold text-[#06111f] transition hover:bg-[#d9a000] disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl bg-[#1f4e79] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#183d60] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading ? "Opening secure checkout..." : children}
       </button>
 
       {errorMessage && (
-        <p className="mt-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm leading-6 text-red-200">
+        <p className="mt-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-6 text-red-700">
           {errorMessage}
         </p>
       )}

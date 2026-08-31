@@ -1,0 +1,46 @@
+/* Small edge-state overrides left in legacy route markup. */
+
+main[class~="bg-[#06111f]"][class~="text-white"] {
+  background-color: #f8fafc !important;
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-white"] [class~="bg-[#081726]"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-white"] [class~="text-white"] {
+  color: #0f1720 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-white"] [class~="text-gray-400"],
+main[class~="bg-[#06111f]"][class~="text-white"] [class~="text-gray-300"] {
+  color: #64748b !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-white"] [class~="text-[#f4b400]"] {
+  color: #1f4e79 !important;
+}
+
+/* Blue controls and headers must retain white foregrounds. */
+main[class~="bg-[#06111f]"] [class~="bg-[#1f4e79]"][class~="text-white"],
+main[class~="bg-[#06111f]"] [class~="bg-[#183d60]"][class~="text-white"],
+main[class~="bg-[#06111f]"] [class~="bg-[#1f4e79]"] [class~="text-white"],
+main[class~="bg-[#06111f]"] [class~="bg-[#183d60]"] [class~="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Older hex hover tokens that otherwise flash gold during transition. */
+[class~="hover:bg-[#ffd24d]"]:hover,
+[class~="hover:bg-[#ffc31a]"]:hover,
+[class~="group-hover:bg-[#ffc62a]"]:is(.group:hover *) {
+  background-color: #183d60 !important;
+  color: #ffffff !important;
+}
+
+/* Legacy modal accent text used a darker gold. */
+[class~="text-[#b47f00]"] {
+  color: #1f4e79 !important;
+}

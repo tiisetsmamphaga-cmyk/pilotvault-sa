@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Check } from "lucide-react"
 
@@ -97,24 +98,53 @@ export default async function UpgradePage({
     : null
 
   return (
-    <main className="min-h-screen bg-[#f8fafc] text-slate-900">
-      <header className="border-b border-white/15 bg-[#1f4e79] text-white shadow-sm">
-        <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#d6e6f7] sm:text-xs">
-              PilotVault SA
-            </p>
-            <h1 className="mt-1 text-base font-bold sm:text-lg">
-              Upgrade Access
-            </h1>
+    <main className="min-h-screen bg-[#eef3f8] text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-white/15 bg-[#1f4e79]/96 text-white backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-[72px] sm:px-6 lg:px-8">
+          <div className="flex min-w-0 items-center gap-3">
+            <Link href="/dashboard" className="shrink-0" aria-label="PilotVault dashboard">
+              <Image
+                src="/images/Header logo.png"
+                alt="PilotVault SA"
+                width={180}
+                height={54}
+                className="h-auto w-[132px] object-contain sm:w-[154px]"
+                priority
+              />
+            </Link>
+            <span className="hidden h-7 w-px bg-white/20 sm:block" />
+            <span className="hidden text-sm font-medium text-blue-50/90 sm:block">
+              Plans
+            </span>
           </div>
 
-          <Link
-            href="/dashboard"
-            className="rounded-xl border border-white/25 bg-white/10 px-3 py-2 text-xs font-semibold text-white transition hover:bg-white/15 sm:px-4 sm:py-3 sm:text-sm"
-          >
-            Dashboard
-          </Link>
+          <nav aria-label="Plans navigation" className="hidden items-center gap-1 md:flex">
+            <Link
+              href="/dashboard"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white"
+            >
+              Dashboard
+            </Link>
+            <Link
+              href="/practice"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white"
+            >
+              Practice
+            </Link>
+            <Link
+              href="/upgrade"
+              aria-current="page"
+              className="rounded-lg bg-white/12 px-3 py-2 text-sm font-semibold text-white"
+            >
+              Plans
+            </Link>
+            <Link
+              href="/profile"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white"
+            >
+              Profile
+            </Link>
+          </nav>
         </div>
       </header>
 
@@ -124,9 +154,9 @@ export default async function UpgradePage({
             Continue your preparation
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
             Unlock the full PilotVault experience.
-          </h2>
+          </h1>
 
           <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Your trial gives you a limited 25-question mock exam set. Upgrade to
@@ -158,11 +188,11 @@ export default async function UpgradePage({
               )}
 
               <div className="text-center">
-                <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
+                <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
                   {plan.productCode === "subject" && selectedSubjectLabel
                     ? selectedSubjectLabel
                     : plan.name}
-                </h3>
+                </h2>
 
                 <p className="mt-3 min-h-0 text-sm leading-6 text-slate-600 sm:min-h-12">
                   {plan.productCode === "subject" && selectedSubjectLabel
@@ -209,7 +239,7 @@ export default async function UpgradePage({
                 </button>
               ) : plan.productCode === "subject" && !selectedSubject ? (
                 <Link
-                  href="/dashboard"
+                  href="/practice"
                   className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#1f4e79] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#183d60] sm:mt-8"
                 >
                   Choose a Subject

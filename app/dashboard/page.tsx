@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
   Brain,
+  CheckCircle2,
   ChevronRight,
   Cloud,
   Compass,
@@ -148,9 +149,7 @@ export default function DashboardPage() {
     profile?.subscription_expires_at !== null &&
     new Date(profile.subscription_expires_at) > new Date()
 
-  const hasSubjectAccess = (slug: string) => {
-    if (isTrialUser || isPplUser) return true
-
+  const hasDirectSubjectAccess = (slug: string) => {
     return subjectAccess.some((access) => {
       const isSameSubject = access.subject === slug
       const isActive = access.access_status === "active"
@@ -158,6 +157,16 @@ export default function DashboardPage() {
 
       return isSameSubject && isActive && isNotExpired
     })
+  }
+
+  const hasSubjectAccess = (slug: string) => {
+    if (isTrialUser || isPplUser) return true
+    return hasDirectSubjectAccess(slug)
+  }
+
+  const ownsSubject = (slug: string) => {
+    if (isPplUser) return true
+    return hasDirectSubjectAccess(slug)
   }
 
   const dashboardStats = useMemo(() => {
@@ -380,13 +389,17 @@ export default function DashboardPage() {
                 </h2>
                 <p className="mt-1 text-xs text-slate-500">Select a subject to start training.</p>
               </div>
+              <div className="flex shrink-0 items-center gap-1.5 text-[11px] font-medium text-slate-500">
+                <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                <span>Owned</span>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {subjects.map((subject) => {
                 const Icon = subject.icon
                 const unlocked = hasSubjectAccess(subject.slug)
-                const stats = dashboardStats.perSubject[subject.slug]
+                const owned = ownsSubject(subject.slug)
 
                 return (
                   <Link
@@ -396,7 +409,7 @@ export default function DashboardPage() {
                         ? `/practice/${subject.slug}`
                         : `/upgrade?subject=${subject.slug}`
                     }
-                    className={`group flex min-h-[88px] items-center gap-3 rounded-xl border px-3.5 py-3.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/35 sm:px-4 ${
+                    className={`group flex min-h-[76px] items-center gap-3 rounded-xl border px-3.5 py-3.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/35 sm:min-h-[82px] sm:px-4 ${
                       unlocked
                         ? "border-[#d2dde7] bg-[#f8fafc] hover:border-[#9fb6ca] hover:bg-white"
                         : "border-[#dbe3ea] bg-[#f1f4f7] opacity-65"
@@ -420,16 +433,17 @@ export default function DashboardPage() {
                       >
                         {subject.name}
                       </h3>
-                      <p className="mt-1 text-[11px] leading-4 text-slate-500">
-                        {stats?.count
-                          ? `${stats.average}% average · ${stats.count} mock${stats.count === 1 ? "" : "s"}`
-                          : unlocked
-                            ? "No mock history yet"
-                            : "Upgrade required"}
-                      </p>
                     </div>
 
-                    {unlocked ? (
+                    {owned ? (
+                      <span
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700"
+                        aria-label="Owned subject"
+                        title="Owned"
+                      >
+                        <CheckCircle2 className="h-4 w-4" />
+                      </span>
+                    ) : unlocked ? (
                       <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#1f4e79]" />
                     ) : (
                       <LockKeyhole className="h-4 w-4 shrink-0 text-slate-400" />

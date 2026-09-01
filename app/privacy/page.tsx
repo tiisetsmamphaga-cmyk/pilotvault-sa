@@ -1,4 +1,5 @@
-import Link from "next/link"
+import { Footer } from "@/components/footer"
+import { Navbar } from "@/components/navbar"
 
 const sections = [
   {
@@ -49,34 +50,18 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#f8fafc] text-slate-900">
-      <header className="border-b border-white/15 bg-[#1f4e79] text-white shadow-sm">
-        <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#d6e6f7]">
-              PilotVault SA
-            </p>
-            <h1 className="mt-1 text-lg font-bold">Privacy Policy</h1>
-          </div>
+    <main className="min-h-screen bg-[#eef3f8] text-slate-900">
+      <Navbar />
 
-          <Link
-            href="/"
-            className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-          >
-            Back Home
-          </Link>
-        </div>
-      </header>
-
-      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+      <section className="mx-auto max-w-5xl px-4 pb-12 pt-32 sm:px-6 sm:pb-16 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-6 sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#1f4e79]">
             Last Updated
           </p>
           <p className="mt-2 text-slate-500">June 2026</p>
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900">
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900">
             Privacy Policy
-          </h2>
+          </h1>
           <p className="mt-6 leading-8 text-slate-600">
             PilotVault SA respects your privacy and is committed to protecting
             your personal information. This Privacy Policy explains how we
@@ -89,9 +74,9 @@ export default function PrivacyPolicyPage() {
           {sections.map((section) => (
             <article
               key={section.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-6"
             >
-              <h3 className="text-xl font-bold text-slate-900">{section.title}</h3>
+              <h2 className="text-xl font-bold text-slate-900">{section.title}</h2>
               {section.body && (
                 <p className="mt-4 leading-7 text-slate-600">{section.body}</p>
               )}
@@ -106,6 +91,8 @@ export default function PrivacyPolicyPage() {
           ))}
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }

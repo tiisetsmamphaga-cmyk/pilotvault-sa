@@ -1,14 +1,21 @@
-/* Brand v2 header identity
-   During the Brand v2 migration several app screens still render the old
-   text-only "PilotVault SA" eyebrow. Keep the existing page structure and
-   controls intact, but use the original PilotVault header logo everywhere a
-   product header exposes that text label. */
+/* Brand v2 app header identity.
+   The dashboard header is the reference: original PilotVault logo, a slim
+   divider, then the current app section / subject title. Marketing pages keep
+   their full website navbar. */
 
-/* Practice hub, Upgrade, Topic selection and other blue app headers that use
-   an eyebrow label followed by the page/subject title. */
+/* Subject-level app headers (training mode + topic selection). */
+main > header[class~="bg-[#1f4e79]"] > div > div:first-child,
+main > header[class~="bg-[#081726]/95"] > div > div:first-child {
+  display: flex !important;
+  min-width: 0;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
 main > header[class~="bg-[#1f4e79]"] > div > div:first-child > p:first-child,
 main > header[class~="bg-[#081726]/95"] > div > div:first-child > p:first-child {
   display: block !important;
+  flex: 0 0 auto;
   width: 148px !important;
   height: 44px !important;
   margin: 0 !important;
@@ -24,9 +31,33 @@ main > header[class~="bg-[#081726]/95"] > div > div:first-child > p:first-child 
   user-select: none;
 }
 
-/* Active exam + exam results use a heading instead of the eyebrow label. */
+main > header[class~="bg-[#1f4e79]"] > div > div:first-child > p:first-child + h1,
+main > header[class~="bg-[#081726]/95"] > div > div:first-child > p:first-child + h1 {
+  min-width: 0;
+  margin: 0 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+  padding-left: 12px;
+  color: #eff6ff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 28px !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Active exam + exam results use h1 for the brand and p for context. */
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child {
+  display: flex !important;
+  min-width: 0;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
 main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child > h1:first-child {
   display: block !important;
+  flex: 0 0 auto;
   width: 148px !important;
   height: 44px !important;
   margin: 0 !important;
@@ -41,25 +72,86 @@ main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child > h1:f
   user-select: none;
 }
 
-/* Profile has a compact in-page header rather than a semantic <header>. */
-main[class~="bg-[#06111f]"] > section > div:first-child > p:first-of-type {
-  display: block !important;
-  width: 142px !important;
-  height: 42px !important;
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child > h1:first-child + p {
+  min-width: 0;
   margin: 0 !important;
-  overflow: hidden !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+  padding-left: 12px;
+  color: #eff6ff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 28px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Profile historically used an in-page toolbar rather than a semantic header.
+   Give it the same full-width blue header treatment without changing account
+   logic or the mobile bottom navigation. */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section {
+  padding-top: 0 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child {
+  min-height: 72px;
+  background: #1f4e79;
+  box-shadow: 0 0 0 100vmax #1f4e79;
+  clip-path: inset(0 -100vmax);
+  gap: 12px !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > p:first-of-type {
+  order: -1;
+  display: flex !important;
+  min-width: 238px !important;
+  width: auto !important;
+  height: 44px !important;
+  margin: 0 !important;
+  padding-left: 154px;
+  align-items: center;
+  overflow: visible !important;
   background-image: url("/images/Header logo.png") !important;
   background-repeat: no-repeat !important;
-  background-position: right center !important;
-  background-size: contain !important;
+  background-position: left center !important;
+  background-size: 148px auto !important;
   color: transparent !important;
   font-size: 0 !important;
   line-height: 0 !important;
   letter-spacing: 0 !important;
   user-select: none;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > p:first-of-type::after {
+  content: "Profile";
+  display: block;
+  margin-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+  padding-left: 12px;
+  color: #eff6ff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  white-space: nowrap;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > a:first-child {
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > a:first-child:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
 }
 
 @media (max-width: 639px) {
+  /* Match the dashboard mobile header: retain the logo and controls, hide the
+     divider/title when horizontal space is tight. */
   main > header[class~="bg-[#1f4e79]"] > div > div:first-child > p:first-child,
   main > header[class~="bg-[#081726]/95"] > div > div:first-child > p:first-child,
   main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child > h1:first-child {
@@ -67,8 +159,25 @@ main[class~="bg-[#06111f]"] > section > div:first-child > p:first-of-type {
     height: 38px !important;
   }
 
-  main[class~="bg-[#06111f]"] > section > div:first-child > p:first-of-type {
-    width: 124px !important;
+  main > header[class~="bg-[#1f4e79]"] > div > div:first-child > p:first-child + h1,
+  main > header[class~="bg-[#081726]/95"] > div > div:first-child > p:first-child + h1,
+  main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child > h1:first-child + p {
+    display: none !important;
+  }
+
+  main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child {
+    min-height: 64px;
+  }
+
+  main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > p:first-of-type {
+    min-width: 128px !important;
+    width: 128px !important;
     height: 38px !important;
+    padding-left: 0;
+    background-size: 128px auto !important;
+  }
+
+  main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > p:first-of-type::after {
+    display: none;
   }
 }

@@ -34,12 +34,12 @@
     "checkpoint_only_after_verification": true,
     "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
   },
-  "current_batch": 5,
-  "completed_batches_since_last_user_report": 0,
+  "current_batch": 6,
+  "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_5_PRODUCTION_READY",
+  "last_verified_checkpoint": "POF_BATCH_5_LIVE_VERIFIED",
   "production_state": {
-    "approved_live_visuals": 20,
+    "approved_live_visuals": 25,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Remove temporary final-validation/promotion workflows, open and merge Batch 5 PR to main, verify the exact production deployment and student explanation rendering, then promote PRODUCTION_READY -> LIVE_VERIFIED and lock all five assets",
+  "next_action": "Batch 6: select no more than five remaining question-specific POF visual concepts, verify exact source relationships, and persist SOURCE_FOUND before refinement begins",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

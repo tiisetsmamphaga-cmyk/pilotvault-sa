@@ -1420,16 +1420,16 @@
         ]
       },
       "mapping_reason": "Question -4 explicitly requires the Figure PPL PoF-1 load-factor read-off at 20 degrees and then applies that factor to 3,000 lb.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "assets": {
@@ -1455,6 +1455,17 @@
         "browser_qa_run_id": 33120334538,
         "all_five_expected_assets_rendered": true,
         "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_DhjDQp31a75bZpPW3C3xnE17wrAu",
+        "production_commit": "c09d25ff49d77843f4565d557f38acd4231d6b3b",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 5 WebP assets were verified live on pilotvault.co.za from the READY Vercel deployment, and all five exact Supabase question mappings were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -1494,16 +1505,16 @@
         ]
       },
       "mapping_reason": "Question -5 explicitly requires the Figure PPL PoF-1 load-factor read-off at 50 degrees and then applies that factor to 4,600 lb.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "assets": {
@@ -1529,6 +1540,17 @@
         "browser_qa_run_id": 33120334538,
         "all_five_expected_assets_rendered": true,
         "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_DhjDQp31a75bZpPW3C3xnE17wrAu",
+        "production_commit": "c09d25ff49d77843f4565d557f38acd4231d6b3b",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 5 WebP assets were verified live on pilotvault.co.za from the READY Vercel deployment, and all five exact Supabase question mappings were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -1567,16 +1589,16 @@
         ]
       },
       "mapping_reason": "Question -2 explicitly asks for the bank angle corresponding to a +2.5 G limit on Figure PPL PoF-1.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "assets": {
@@ -1602,6 +1624,17 @@
         "browser_qa_run_id": 33120334538,
         "all_five_expected_assets_rendered": true,
         "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_DhjDQp31a75bZpPW3C3xnE17wrAu",
+        "production_commit": "c09d25ff49d77843f4565d557f38acd4231d6b3b",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 5 WebP assets were verified live on pilotvault.co.za from the READY Vercel deployment, and all five exact Supabase question mappings were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -1640,16 +1673,16 @@
         ]
       },
       "mapping_reason": "Question -1 explicitly asks for the bank angle corresponding to a +3.8 G limit on Figure PPL PoF-1.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "assets": {
@@ -1675,6 +1708,17 @@
         "browser_qa_run_id": 33120334538,
         "all_five_expected_assets_rendered": true,
         "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_DhjDQp31a75bZpPW3C3xnE17wrAu",
+        "production_commit": "c09d25ff49d77843f4565d557f38acd4231d6b3b",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 5 WebP assets were verified live on pilotvault.co.za from the READY Vercel deployment, and all five exact Supabase question mappings were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -1715,16 +1759,16 @@
         ]
       },
       "mapping_reason": "Question 1201 asks the primary purpose/effect of the Fowler flap; Figure 2-1 and its text directly show that rearward extension increases wing area.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "assets": {
@@ -1750,6 +1794,17 @@
         "browser_qa_run_id": 33120334538,
         "all_five_expected_assets_rendered": true,
         "static_asset_probe_note": "Protected Vercel preview returns SSO redirect for direct raw-asset probes; exact commit passed local Chromium HTTP/render checks and authenticated preview route returned 200 with all five asset references."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_DhjDQp31a75bZpPW3C3xnE17wrAu",
+        "production_commit": "c09d25ff49d77843f4565d557f38acd4231d6b3b",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 5 WebP assets were verified live on pilotvault.co.za from the READY Vercel deployment, and all five exact Supabase question mappings were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     }
   ]

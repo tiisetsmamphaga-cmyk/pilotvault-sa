@@ -4,11 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
-  ArrowRight,
-  BarChart3,
-  BookOpen,
   Brain,
-  ClipboardList,
   Cloud,
   Compass,
   LockKeyhole,
@@ -17,7 +13,6 @@ import {
   Plane,
   Radio,
   Scale,
-  Trophy,
   UserRound,
   Wrench,
 } from "lucide-react"
@@ -52,15 +47,24 @@ const subjects = [
 ]
 
 function formatSubjectName(slug: string) {
-  return subjects.find((subject) => subject.slug === slug)?.name ??
+  return (
+    subjects.find((subject) => subject.slug === slug)?.name ??
     slug
       .split("-")
       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
       .join(" ")
+  )
 }
 
 function getFirstName(fullName: string | undefined) {
   return fullName?.trim().split(/\s+/)[0] || "Pilot"
+}
+
+function formatShortDate(value: string) {
+  return new Intl.DateTimeFormat("en-ZA", {
+    day: "2-digit",
+    month: "short",
+  }).format(new Date(value))
 }
 
 export default function DashboardPage() {
@@ -202,9 +206,9 @@ export default function DashboardPage() {
   if (loadError) {
     return (
       <main className="min-h-screen bg-[#eef3f8] px-4 py-10 text-slate-900 sm:px-6">
-        <div className="mx-auto max-w-xl rounded-3xl border border-red-200 bg-white p-6 shadow-sm sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-red-600">
-            Dashboard Error
+        <div className="mx-auto max-w-xl rounded-2xl border border-red-200 bg-[#f8fafc] p-6 sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-600">
+            Dashboard error
           </p>
           <h1 className="mt-3 text-2xl font-bold">
             Your dashboard could not be loaded.
@@ -213,7 +217,7 @@ export default function DashboardPage() {
           <button
             type="button"
             onClick={() => window.location.reload()}
-            className="mt-6 rounded-xl bg-[#1f4e79] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#183d60]"
+            className="mt-6 rounded-lg bg-[#1f4e79] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#183d60]"
           >
             Try again
           </button>
@@ -239,14 +243,14 @@ export default function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-[#eef3f8] text-slate-900">
-      <header className="border-b border-white/15 bg-[#1f4e79] text-white shadow-sm">
-        <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:min-h-20 sm:px-6 lg:px-8">
+      <header className="border-b border-white/15 bg-[#1f4e79] text-white">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-18 sm:px-6 lg:px-8">
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#d6e6f7] sm:text-xs sm:tracking-[0.25em]">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#d6e6f7] sm:text-xs">
               PilotVault SA
             </p>
-            <h1 className="mt-1 truncate text-base font-bold sm:text-lg">
-              Student Dashboard
+            <h1 className="mt-0.5 truncate text-base font-semibold sm:text-lg">
+              Dashboard
             </h1>
           </div>
 
@@ -254,248 +258,183 @@ export default function DashboardPage() {
             <Link
               href="/profile"
               aria-label="Open profile"
-              title="Open profile"
-              className="group flex h-11 items-center gap-2 rounded-2xl border border-white/20 bg-white/10 p-1 text-sm font-semibold text-white transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:pr-4"
+              className="flex h-10 items-center gap-2 rounded-lg border border-white/20 px-3 text-sm font-medium text-white transition hover:bg-white/10"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-[#1f4e79] shadow-sm">
-                <UserRound className="h-4 w-4" />
-              </span>
+              <UserRound className="h-4 w-4" />
               <span className="hidden sm:inline">Profile</span>
             </Link>
-
             <button
               type="button"
               onClick={handleLogout}
-              aria-label="Log out of PilotVault"
-              title="Log out"
-              className="group flex h-11 w-11 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-blue-50 transition hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              aria-label="Log out"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-blue-50 transition hover:bg-white/10 hover:text-white"
             >
-              <LogOut className="h-[18px] w-[18px] transition-transform group-hover:translate-x-0.5" />
+              <LogOut className="h-4 w-4" />
             </button>
           </div>
         </div>
       </header>
 
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
-        <div className="overflow-hidden rounded-3xl border border-[#c8d8e8] bg-[#dce8f3] shadow-[0_14px_40px_rgba(31,78,121,0.08)]">
-          <div className="grid lg:grid-cols-[1.25fr_0.75fr]">
-            <div className="p-5 sm:p-8 lg:p-10">
-              <div className="flex flex-wrap gap-2">
-                <span className="rounded-full border border-[#1f4e79]/15 bg-white/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1f4e79]">
-                  {licenceLabel}
-                </span>
-                <span className="rounded-full border border-[#1f4e79]/15 bg-white/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-600">
-                  {planLabel}
-                </span>
-              </div>
+      <section className="mx-auto max-w-7xl px-4 py-7 sm:px-6 sm:py-9 lg:px-8">
+        <div className="mb-6 flex flex-col gap-4 border-b border-[#d5e0ea] pb-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm text-slate-500">Welcome back, {firstName}</p>
+            <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+              Practice centre
+            </h2>
+          </div>
 
-              <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-                Welcome back, {firstName}.
-              </h2>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
-                Pick up where you left off, track your mock exam performance and focus your next study session.
-              </p>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href={
-                    latestSubject && latestSubjectUnlocked
-                      ? `/practice/${latestSubject}`
-                      : "/practice"
-                  }
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1f4e79] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#183d60]"
-                >
-                  {latestSubject ? "Continue training" : "Start practising"}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/profile"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#1f4e79]/20 bg-white/70 px-5 py-3 text-sm font-bold text-[#1f4e79] transition hover:bg-white"
-                >
-                  <BarChart3 className="h-4 w-4" />
-                  View performance
-                </Link>
-              </div>
-            </div>
-
-            <div className="border-t border-[#c8d8e8] bg-[#183d60] p-5 text-white sm:p-7 lg:border-l lg:border-t-0 lg:p-8">
-              {dashboardStats.latestAttempt ? (
-                <>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-200">
-                    Latest mock exam
-                  </p>
-                  <p className="mt-3 text-xl font-bold">
-                    {formatSubjectName(dashboardStats.latestAttempt.subject)}
-                  </p>
-                  <div className="mt-6 flex items-end justify-between gap-5">
-                    <div>
-                      <p className="text-4xl font-black tracking-tight">
-                        {dashboardStats.latestAttempt.scorePercentage}%
-                      </p>
-                      <p className="mt-1 text-xs text-blue-100/80">Latest score</p>
-                    </div>
-                    <Link
-                      href={
-                        latestSubjectUnlocked
-                          ? `/practice/${dashboardStats.latestAttempt.subject}`
-                          : "/practice"
-                      }
-                      className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#183d60] transition hover:-translate-y-0.5"
-                      aria-label="Open latest subject"
-                    >
-                      <ArrowRight className="h-5 w-5" />
-                    </Link>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-200">
-                    Your training record
-                  </p>
-                  <ClipboardList className="mt-5 h-9 w-9 text-blue-200" />
-                  <p className="mt-4 text-xl font-bold">No mock exams yet</p>
-                  <p className="mt-2 text-sm leading-6 text-blue-100/80">
-                    Complete your first mock exam and your performance snapshot will appear here.
-                  </p>
-                </>
-              )}
-            </div>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-600">
+            <span><strong className="font-semibold text-slate-900">{licenceLabel}</strong> licence</span>
+            <span className="hidden h-4 w-px bg-slate-300 sm:block" />
+            <span><strong className="font-semibold text-slate-900">{planLabel}</strong></span>
+            {latestSubject && latestSubjectUnlocked && (
+              <Link
+                href={`/practice/${latestSubject}`}
+                className="font-semibold text-[#1f4e79] hover:text-[#183d60]"
+              >
+                Continue {formatSubjectName(latestSubject)}
+              </Link>
+            )}
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm sm:p-5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
-              <BarChart3 className="h-4 w-4" />
-            </div>
-            <p className="mt-4 text-2xl font-black text-slate-950">
-              {dashboardStats.overallAverage === null
-                ? "—"
-                : `${dashboardStats.overallAverage}%`}
+        <div className="mb-7 grid grid-cols-3 overflow-hidden rounded-xl border border-[#cfdae5] bg-[#e5edf5]">
+          <div className="px-4 py-3 sm:px-5 sm:py-4">
+            <p className="text-[10px] uppercase tracking-[0.12em] text-slate-500">Mock average</p>
+            <p className="mt-1 text-lg font-bold text-slate-950 sm:text-xl">
+              {dashboardStats.overallAverage === null ? "—" : `${dashboardStats.overallAverage}%`}
             </p>
-            <p className="mt-1 text-xs font-medium text-slate-500">Overall mock average</p>
           </div>
-
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm sm:p-5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
-              <ClipboardList className="h-4 w-4" />
-            </div>
-            <p className="mt-4 text-2xl font-black text-slate-950">{attempts.length}</p>
-            <p className="mt-1 text-xs font-medium text-slate-500">Completed mock exams</p>
+          <div className="border-l border-[#cfdae5] px-4 py-3 sm:px-5 sm:py-4">
+            <p className="text-[10px] uppercase tracking-[0.12em] text-slate-500">Mock exams</p>
+            <p className="mt-1 text-lg font-bold text-slate-950 sm:text-xl">{attempts.length}</p>
           </div>
-
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm sm:p-5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
-              <BookOpen className="h-4 w-4" />
-            </div>
-            <p className="mt-4 text-2xl font-black text-slate-950">
+          <div className="border-l border-[#cfdae5] px-4 py-3 sm:px-5 sm:py-4">
+            <p className="text-[10px] uppercase tracking-[0.12em] text-slate-500">Subjects used</p>
+            <p className="mt-1 text-lg font-bold text-slate-950 sm:text-xl">
               {dashboardStats.practicedSubjects}/8
             </p>
-            <p className="mt-1 text-xs font-medium text-slate-500">Subjects practised</p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-sm sm:p-5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
-              <Trophy className="h-4 w-4" />
-            </div>
-            <p className="mt-4 truncate text-lg font-black text-slate-950 sm:text-xl">
-              {dashboardStats.strongestSubject
-                ? formatSubjectName(dashboardStats.strongestSubject[0])
-                : "—"}
-            </p>
-            <p className="mt-1 text-xs font-medium text-slate-500">Strongest mock subject</p>
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_310px]">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#1f4e79]">
-              Practice Center
-            </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
-              Choose a subject
-            </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Your mock performance is shown on each subject as you build your history.
-            </p>
-          </div>
-        </div>
+            <div className="mb-3 flex items-baseline justify-between gap-3">
+              <h3 className="text-sm font-semibold text-slate-900">Subjects</h3>
+              <p className="text-xs text-slate-500">Select a subject to study</p>
+            </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {subjects.map((subject) => {
-            const Icon = subject.icon
-            const unlocked = hasSubjectAccess(subject.slug)
-            const stats = dashboardStats.perSubject[subject.slug]
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
+              {subjects.map((subject) => {
+                const Icon = subject.icon
+                const unlocked = hasSubjectAccess(subject.slug)
+                const stats = dashboardStats.perSubject[subject.slug]
 
-            return (
-              <Link
-                key={subject.slug}
-                href={
-                  unlocked
-                    ? `/practice/${subject.slug}`
-                    : `/upgrade?subject=${subject.slug}`
-                }
-                className={`group relative flex min-h-[165px] flex-col overflow-hidden rounded-2xl border p-4 shadow-[0_6px_18px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(31,78,121,0.10)] sm:min-h-[205px] sm:p-5 ${
-                  unlocked
-                    ? "border-slate-200/90 bg-[#f7f9fc] hover:border-[#1f4e79]/45 hover:bg-white"
-                    : "border-slate-200/80 bg-[#f4f6f8] opacity-65"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-xl sm:h-12 sm:w-12 ${
+                return (
+                  <Link
+                    key={subject.slug}
+                    href={
                       unlocked
-                        ? "bg-[#cfe0f1] text-[#1f4e79]"
-                        : "bg-slate-200 text-slate-400"
+                        ? `/practice/${subject.slug}`
+                        : `/upgrade?subject=${subject.slug}`
+                    }
+                    className={`group flex min-h-[92px] items-center gap-3 rounded-xl border px-4 py-4 transition ${
+                      unlocked
+                        ? "border-[#d5e0ea] bg-[#f7f9fc] hover:border-[#9eb8cf] hover:bg-white"
+                        : "border-[#dbe3ea] bg-[#f1f4f7] opacity-60"
                     }`}
                   >
-                    <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
+                    <div
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
+                        unlocked
+                          ? "bg-[#d6e6f7] text-[#1f4e79]"
+                          : "bg-slate-200 text-slate-400"
+                      }`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </div>
 
-                  {unlocked ? (
-                    <span className="rounded-full bg-[#e4edf6] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#1f4e79]">
-                      Open
-                    </span>
-                  ) : (
-                    <LockKeyhole className="h-4 w-4 text-slate-400" />
-                  )}
-                </div>
-
-                <h3
-                  className={`mt-4 text-sm font-bold leading-snug sm:text-lg ${
-                    unlocked ? "text-slate-950" : "text-slate-500"
-                  }`}
-                >
-                  {subject.name}
-                </h3>
-
-                <div className="mt-auto flex items-end justify-between gap-2 pt-5">
-                  <div>
-                    {stats?.count ? (
-                      <>
-                        <p className="text-lg font-black text-[#1f4e79]">
-                          {stats.average}%
-                        </p>
-                        <p className="text-[10px] text-slate-500">
-                          {stats.count} mock{stats.count === 1 ? "" : "s"}
-                        </p>
-                      </>
-                    ) : (
-                      <p className="text-[10px] font-medium text-slate-400">
-                        No mock history yet
+                    <div className="min-w-0 flex-1">
+                      <h4 className={`text-sm font-semibold leading-snug ${unlocked ? "text-slate-950" : "text-slate-500"}`}>
+                        {subject.name}
+                      </h4>
+                      <p className="mt-1 text-[11px] text-slate-500">
+                        {stats?.count
+                          ? `${stats.average}% avg · ${stats.count} mock${stats.count === 1 ? "" : "s"}`
+                          : "No mock history"}
                       </p>
-                    )}
-                  </div>
+                    </div>
 
-                  {unlocked && (
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-[#1f4e79] transition group-hover:border-[#1f4e79]/30 group-hover:bg-[#1f4e79] group-hover:text-white">
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
-                  )}
+                    {!unlocked && <LockKeyhole className="h-4 w-4 shrink-0 text-slate-400" />}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+
+          <aside className="space-y-4">
+            <section className="rounded-xl border border-[#d5e0ea] bg-[#f7f9fc] p-4">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-sm font-semibold text-slate-900">Recent mocks</h3>
+                <Link href="/profile" className="text-xs font-medium text-[#1f4e79] hover:text-[#183d60]">
+                  View all
+                </Link>
+              </div>
+
+              {attempts.length ? (
+                <div className="mt-3 divide-y divide-slate-200">
+                  {attempts.slice(0, 4).map((attempt) => (
+                    <div key={attempt.id} className="flex items-center justify-between gap-3 py-3 first:pt-1 last:pb-1">
+                      <div className="min-w-0">
+                        <p className="truncate text-xs font-medium text-slate-800">
+                          {formatSubjectName(attempt.subject)}
+                        </p>
+                        <p className="mt-0.5 text-[10px] text-slate-500">
+                          {formatShortDate(attempt.completedAt)}
+                        </p>
+                      </div>
+                      <p className={`text-sm font-semibold ${attempt.scorePercentage >= 75 ? "text-emerald-700" : "text-slate-900"}`}>
+                        {attempt.scorePercentage}%
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              </Link>
-            )
-          })}
+              ) : (
+                <p className="mt-3 text-xs leading-5 text-slate-500">
+                  Your completed mock exams will appear here.
+                </p>
+              )}
+            </section>
+
+            <section className="rounded-xl border border-[#d5e0ea] bg-[#e5edf5] p-4">
+              <h3 className="text-sm font-semibold text-slate-900">Performance</h3>
+              <dl className="mt-3 space-y-2 text-xs">
+                <div className="flex items-center justify-between gap-3">
+                  <dt className="text-slate-500">Overall average</dt>
+                  <dd className="font-semibold text-slate-900">
+                    {dashboardStats.overallAverage === null ? "—" : `${dashboardStats.overallAverage}%`}
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between gap-3">
+                  <dt className="text-slate-500">Strongest subject</dt>
+                  <dd className="max-w-[150px] truncate text-right font-semibold text-slate-900">
+                    {dashboardStats.strongestSubject
+                      ? formatSubjectName(dashboardStats.strongestSubject[0])
+                      : "—"}
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between gap-3">
+                  <dt className="text-slate-500">Last mock</dt>
+                  <dd className="font-semibold text-slate-900">
+                    {dashboardStats.latestAttempt
+                      ? `${dashboardStats.latestAttempt.scorePercentage}%`
+                      : "—"}
+                  </dd>
+                </div>
+              </dl>
+            </section>
+          </aside>
         </div>
       </section>
     </main>

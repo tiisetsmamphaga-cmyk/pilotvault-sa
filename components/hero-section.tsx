@@ -24,8 +24,8 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-white pt-24 sm:pt-28 lg:pt-28">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(214,230,247,0.7),transparent_32%)]" />
+    <section className="relative overflow-hidden bg-[#eef3f8] pt-24 sm:pt-28 lg:pt-28">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(214,230,247,0.95),transparent_34%),radial-gradient(circle_at_10%_80%,rgba(31,78,121,0.07),transparent_30%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
@@ -35,7 +35,7 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="space-y-7 text-center lg:text-left"
           >
-            <div className="inline-flex items-center rounded-full border border-[#d6e6f7] bg-[#f8fafc] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#1f4e79]">
+            <div className="inline-flex items-center rounded-full border border-[#c7d7e6] bg-white/75 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#1f4e79] shadow-sm backdrop-blur-sm">
               Built by pilots. For pilots.
             </div>
 
@@ -63,7 +63,7 @@ export function HeroSection() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.15 + index * 0.08 }}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-[#f8fafc] px-3 py-3 shadow-sm sm:justify-start"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white/85 px-3 py-3 shadow-sm backdrop-blur-sm sm:justify-start"
                 >
                   <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#d6e6f7]">
                     <Check className="h-3 w-3 text-[#1f4e79]" />

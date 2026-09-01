@@ -1,0 +1,45 @@
+/*
+ * PilotVault Brand v2 soft-canvas pass.
+ *
+ * The previous light migration used too much near-white. This layer keeps
+ * white for cards and content surfaces while moving page canvases to a calm
+ * aviation slate-blue. The exam simulator remains untouched because it uses
+ * its own explicit white exam surface.
+ */
+
+:root {
+  --background: #eef3f8;
+  --pilot-canvas: #eef3f8;
+}
+
+html,
+body {
+  background-color: #eef3f8;
+}
+
+/* Core student pages that explicitly use the original Brand v2 canvas. */
+main[class~="bg-[#f8fafc]"] {
+  background-color: #eef3f8 !important;
+}
+
+/* Legacy marketing, legal and profile shells. */
+main[class~="bg-[#06111f]"],
+div[class~="bg-[#06111f]"][class~="text-white"] {
+  background-color: #eef3f8 !important;
+}
+
+/* Practice menus only. The actual exam simulator uses bg-white and is excluded. */
+main[class~="bg-[#071522]"][class~="text-white"] {
+  background-color: #eef3f8 !important;
+}
+
+/* Slightly cooler soft sections should sit behind white cards. */
+[class~="bg-[#0b1f35]"] {
+  background-color: #e5edf5 !important;
+}
+
+/* Keep focus offsets consistent with the softer canvas. */
+[class~="focus-visible:ring-offset-[#06111f]"]:focus-visible,
+[class~="focus-visible:ring-offset-[#081726]"]:focus-visible {
+  --tw-ring-offset-color: #eef3f8 !important;
+}

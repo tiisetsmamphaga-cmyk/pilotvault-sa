@@ -1,0 +1,74 @@
+/* Brand v2 header identity
+   During the Brand v2 migration several app screens still render the old
+   text-only "PilotVault SA" eyebrow. Keep the existing page structure and
+   controls intact, but use the original PilotVault header logo everywhere a
+   product header exposes that text label. */
+
+/* Practice hub, Upgrade, Topic selection and other blue app headers that use
+   an eyebrow label followed by the page/subject title. */
+main > header[class~="bg-[#1f4e79]"] > div > div:first-child > p:first-child,
+main > header[class~="bg-[#081726]/95"] > div > div:first-child > p:first-child {
+  display: block !important;
+  width: 148px !important;
+  height: 44px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background-image: url("/images/Header logo.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  background-size: contain !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  letter-spacing: 0 !important;
+  user-select: none;
+}
+
+/* Active exam + exam results use a heading instead of the eyebrow label. */
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child > h1:first-child {
+  display: block !important;
+  width: 148px !important;
+  height: 44px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background-image: url("/images/Header logo.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  background-size: contain !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  user-select: none;
+}
+
+/* Profile has a compact in-page header rather than a semantic <header>. */
+main[class~="bg-[#06111f]"] > section > div:first-child > p:first-of-type {
+  display: block !important;
+  width: 142px !important;
+  height: 42px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background-image: url("/images/Header logo.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: contain !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  letter-spacing: 0 !important;
+  user-select: none;
+}
+
+@media (max-width: 639px) {
+  main > header[class~="bg-[#1f4e79]"] > div > div:first-child > p:first-child,
+  main > header[class~="bg-[#081726]/95"] > div > div:first-child > p:first-child,
+  main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] > div:first-child > h1:first-child {
+    width: 128px !important;
+    height: 38px !important;
+  }
+
+  main[class~="bg-[#06111f]"] > section > div:first-child > p:first-of-type {
+    width: 124px !important;
+    height: 38px !important;
+  }
+}

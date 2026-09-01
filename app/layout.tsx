@@ -8,6 +8,7 @@ import './brand-v2-profile.css'
 import './brand-v2-practice.css'
 import './brand-v2-edge-cases.css'
 import './brand-v2-soft-canvas.css'
+import './brand-v2-header-logo.css'
 
 const inter = Inter({ 
   subsets: ["latin"],

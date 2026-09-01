@@ -60,7 +60,7 @@ export function PricingSection() {
   }
 
   return (
-    <section id="pricing" className="border-y border-slate-200 bg-[#f8fafc] py-16 sm:py-20 lg:py-24">
+    <section id="pricing" className="border-y border-[#d7e1ea] bg-[#e5edf5] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -86,7 +86,7 @@ export function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className={`relative rounded-2xl border bg-white p-6 shadow-sm transition-shadow hover:shadow-md lg:p-8 ${
+              className={`relative rounded-2xl border bg-white p-6 shadow-[0_12px_32px_rgba(15,23,42,0.07)] transition-all hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.10)] lg:p-8 ${
                 plan.popular
                   ? "border-[#1f4e79] ring-1 ring-[#1f4e79]/10 lg:-mt-4"
                   : plan.comingSoon

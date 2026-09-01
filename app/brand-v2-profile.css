@@ -1,76 +1,173 @@
-/* Profile-only Brand v2 colour cleanup. No layout or account logic changes. */
+/* Profile-only Brand v2 colour cleanup. No account logic changes. */
 
-/* The profile page still carries the old colour tokens in its markup. */
+/* Profile canvas */
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] {
-  background-color: #f8fafc !important;
-  color: #0f1720 !important;
+  background-color: #eef3f8 !important;
+  color: #0f172a !important;
 }
 
+/* Error-state canvas uses the same legacy tokens. */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > div > a[class~="text-white"] {
+  color: #1f4e79 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > div > a[class~="text-white"]:hover {
+  color: #183d60 !important;
+}
+
+/* Page title + identity */
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > h1,
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section h2[class~="text-white"] {
-  color: #0f1720 !important;
+  color: #0f172a !important;
 }
 
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] {
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > p[class~="text-[#f4b400]"] {
+  color: #1f4e79 !important;
+}
+
+/* Back button */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > a[class~="bg-white"] {
   background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  color: #0f1720 !important;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+  border: 1px solid #d2dde7 !important;
+  color: #1f4e79 !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06) !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child > a[class~="bg-white"]:hover {
+  background-color: #e4edf5 !important;
+  color: #183d60 !important;
+}
+
+/* Avatar */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="border-[#f4b400]"][class~="bg-[#071426]"] {
+  border-color: #9fb9d0 !important;
+  background-color: #d6e6f7 !important;
+  color: #1f4e79 !important;
+  box-shadow: none !important;
+}
+
+/* Profile name / plan text */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#b9c1cb]"] {
+  color: #64748b !important;
+}
+
+/* Licence chip */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] span[class~="bg-[#f4b400]"] {
+  background-color: #d6e6f7 !important;
+  color: #1f4e79 !important;
+}
+
+/* Active status chip */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] span[class~="bg-white"] {
+  border: 1px solid #d2dde7 !important;
+  background-color: #f8fafc !important;
+  color: #334155 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] span[class~="bg-white"] [class~="text-[#f4b400]"] {
+  color: #16a34a !important;
+}
+
+/* Main profile sections */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] {
+  background-color: #f8fafc !important;
+  border-color: #d2dde7 !important;
+  color: #0f172a !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045) !important;
 }
 
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] [class~="text-white"] {
-  color: #0f1720 !important;
+  color: #0f172a !important;
 }
 
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] [class~="divide-[#1e3a5f]"] > :not([hidden]) ~ :not([hidden]),
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] [class~="border-[#1e3a5f]"] {
+  border-color: #d8e2eb !important;
+}
+
+/* Secondary copy */
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#d6dee8]"],
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#9ca9b9]"],
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#b9c1cb]"],
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#718096]"] {
   color: #64748b !important;
 }
 
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-white/10"] {
-  background-color: #f1f5f9 !important;
-}
-
+/* Brand icons and actions */
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#f4b400]"],
 [class~="text-[#b47f00]"] {
   color: #1f4e79 !important;
 }
 
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-[#f4b400]"],
-[class~="bg-[#f4b400]"] {
-  background-color: #1f4e79 !important;
-  color: #ffffff !important;
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] button[class*="hover:text-[#f4b400]"]:hover,
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] a[class*="hover:text-[#f4b400]"]:hover {
+  color: #183d60 !important;
 }
 
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-[#f4b400]/15"] {
   background-color: #d6e6f7 !important;
 }
 
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="border-[#f4b400]"] {
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-white/10"] {
+  background-color: #e8eef4 !important;
+  color: #475569 !important;
+}
+
+/* Make interactive rows feel like product controls rather than dark-list items. */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] button:hover,
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] section[class~="bg-[#081726]"] a:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Attempts table */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-[#718096]"][class*="uppercase"] {
+  color: #64748b !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] article [class~="text-[#d6dee8]"] {
+  color: #475569 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-emerald-300"] {
+  color: #059669 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-red-300"] {
+  color: #dc2626 !important;
+}
+
+/* Non-passing scores should remain neutral, not gold. */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] article [class~="text-[#f4b400]"] {
+  color: #334155 !important;
+}
+
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] article [class~="bg-[#f4b400]/15"] {
+  background-color: #e8eef4 !important;
+}
+
+/* Profile editor + password modal */
+[class~="text-[#b47f00]"] {
+  color: #1f4e79 !important;
+}
+
+[class~="focus:border-[#f4b400]"]:focus {
   border-color: #1f4e79 !important;
-}
-
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="bg-[#071426]"] {
-  background-color: #1f4e79 !important;
-}
-
-[class~="hover:bg-[#ffc31a]"]:hover,
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="hover:bg-[#f4b400]"]:hover {
-  background-color: #183d60 !important;
-  color: #ffffff !important;
 }
 
 [class*="focus:shadow-[0_0_0_3px_rgba(244,180,0"]:focus {
   box-shadow: 0 0 0 3px rgba(31, 78, 121, 0.14) !important;
 }
 
-/* Keep score/status semantics readable on the new light cards. */
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-emerald-300"] {
-  color: #059669 !important;
+[class~="bg-[#f4b400]"][class*="font-bold"] {
+  background-color: #1f4e79 !important;
+  color: #ffffff !important;
 }
 
-main[class~="bg-[#06111f]"][class~="text-[#071426]"] [class~="text-red-300"] {
+[class~="hover:bg-[#ffc31a]"]:hover {
+  background-color: #183d60 !important;
+  color: #ffffff !important;
+}
+
+/* Keep destructive sign-out semantics red. */
+main[class~="bg-[#06111f]"][class~="text-[#071426]"] button[class*="hover:text-red-400"]:hover {
   color: #dc2626 !important;
 }

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -15,6 +16,7 @@ const navLinks = [
   { name: "Subjects", href: "/subjects" },
   { name: "Pricing", href: "/#pricing" },
   { name: "About", href: "/about" },
+  { name: "FAQ", href: "/faq" },
   { name: "Contact", href: "/#contact" },
 ]
 
@@ -23,6 +25,7 @@ type AuthMode = "login" | "signup" | "reset"
 const LOGIN_ANIMATION_MIN_MS = 1650
 
 export function Navbar() {
+  const pathname = usePathname()
   const authDialogRef = useRef<HTMLDivElement>(null)
   const [isOpen, setIsOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
@@ -34,6 +37,7 @@ export function Navbar() {
   const [loading, setLoading] = useState(false)
   const [resetRequestLoading, setResetRequestLoading] = useState(false)
   const [authMessage, setAuthMessage] = useState("")
+  const [signedIn, setSignedIn] = useState(false)
 
   const openAuth = (mode: "login" | "signup") => {
     setAuthMode(mode)
@@ -137,7 +141,9 @@ export function Navbar() {
 
     if (authMode === "signup") {
       if (data.user) {
-        const trialEndsAt = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()
+        const trialEndsAt = new Date(
+          Date.now() + 3 * 24 * 60 * 60 * 1000
+        ).toISOString()
 
         const { error: profileError } = await supabase.from("Profiles").insert({
           id: data.user.id,
@@ -166,7 +172,9 @@ export function Navbar() {
 
     const elapsed = Date.now() - loginStartedAt
     if (elapsed < LOGIN_ANIMATION_MIN_MS) {
-      await new Promise((resolve) => setTimeout(resolve, LOGIN_ANIMATION_MIN_MS - elapsed))
+      await new Promise((resolve) =>
+        setTimeout(resolve, LOGIN_ANIMATION_MIN_MS - elapsed)
+      )
     }
 
     window.location.href = "/dashboard"
@@ -196,6 +204,29 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
+    let mounted = true
+
+    void supabase.auth.getSession().then(({ data }) => {
+      if (mounted) setSignedIn(Boolean(data.session))
+    })
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSignedIn(Boolean(session))
+    })
+
+    return () => {
+      mounted = false
+      subscription.unsubscribe()
+    }
+  }, [])
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
     const openSignup = () => openAuth("signup")
     window.addEventListener("open-signup-modal", openSignup)
     return () => window.removeEventListener("open-signup-modal", openSignup)
@@ -219,62 +250,98 @@ export function Navbar() {
     }
   }, [authOpen, loading])
 
+  const linkIsActive = (href: string) => {
+    if (href === "/") return pathname === "/"
+    if (href.startsWith("/#")) return pathname === "/"
+    return pathname === href
+  }
+
   return (
     <>
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#1f4e79]/95 shadow-sm backdrop-blur-md"
+        transition={{ duration: 0.4 }}
+        className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#1f4e79]/96 shadow-sm backdrop-blur-md"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid h-20 grid-cols-[180px_1fr_auto] items-center gap-4 lg:grid-cols-[220px_1fr_220px]">
-            <Link href="/" className="flex items-center justify-start">
+          <div className="grid h-20 grid-cols-[minmax(150px,190px)_1fr_auto] items-center gap-3 xl:grid-cols-[210px_1fr_210px]">
+            <Link href="/" className="flex items-center justify-start" aria-label="PilotVault SA home">
               <Image
                 src="/images/Header logo.png"
                 alt="PilotVault SA"
                 width={300}
                 height={90}
-                className="h-16 w-auto object-contain"
+                className="h-14 w-auto object-contain sm:h-16"
                 priority
               />
             </Link>
 
-            <div className="hidden items-center justify-center gap-8 lg:flex">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm font-medium text-blue-50 transition-colors hover:text-white"
-                >
-                  {link.name}
-                </Link>
-              ))}
+            <div className="hidden items-center justify-center gap-1 xl:flex">
+              {navLinks.map((link) => {
+                const active = linkIsActive(link.href)
+
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`rounded-lg px-3 py-2 text-sm transition-colors ${
+                      active
+                        ? "bg-white/12 font-semibold text-white"
+                        : "font-medium text-blue-50 hover:bg-white/8 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
+              })}
             </div>
 
-            <div className="hidden items-center justify-end gap-3 lg:flex">
-              <Button
-                type="button"
-                onClick={() => openAuth("login")}
-                variant="outline"
-                className="border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
-              >
-                Login
-              </Button>
-              <Button
-                type="button"
-                onClick={() => openAuth("signup")}
-                className="bg-white font-semibold text-[#1f4e79] hover:bg-[#f1f5f9]"
-              >
-                Start Free Trial
-              </Button>
+            <div className="hidden items-center justify-end gap-2 xl:flex">
+              {signedIn ? (
+                <>
+                  <Link
+                    href="/profile"
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white"
+                  >
+                    Profile
+                  </Link>
+                  <Link
+                    href="/dashboard"
+                    className="inline-flex h-10 items-center justify-center rounded-lg bg-white px-4 text-sm font-semibold text-[#1f4e79] transition hover:bg-[#f1f5f9]"
+                  >
+                    Dashboard
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Button
+                    type="button"
+                    onClick={() => openAuth("login")}
+                    variant="outline"
+                    className="border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
+                  >
+                    Login
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={() => openAuth("signup")}
+                    className="bg-white font-semibold text-[#1f4e79] hover:bg-[#f1f5f9]"
+                  >
+                    Start Free Trial
+                  </Button>
+                </>
+              )}
             </div>
 
             <button
               type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              className="justify-self-end rounded-lg p-2 text-white transition hover:bg-white/10 lg:hidden"
+              onClick={() => setIsOpen((open) => !open)}
+              className="justify-self-end rounded-lg p-2 text-white transition hover:bg-white/10 xl:hidden"
               aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
+              aria-controls="pilotvault-mobile-menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -282,40 +349,71 @@ export function Navbar() {
 
           {isOpen && (
             <motion.div
+              id="pilotvault-mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
-              transition={{ duration: 0.25 }}
-              className="border-t border-white/15 px-2 py-5 lg:hidden"
+              transition={{ duration: 0.2 }}
+              className="border-t border-white/15 px-1 py-4 xl:hidden"
             >
-              <div className="flex flex-col gap-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="rounded-lg px-3 py-2 text-base text-blue-50 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+              <div className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+                {navLinks.map((link) => {
+                  const active = linkIsActive(link.href)
 
-                <div className="mt-3 flex flex-col gap-3 border-t border-white/15 pt-5">
-                  <Button
-                    type="button"
-                    onClick={() => openAuth("login")}
-                    variant="outline"
-                    className="w-full border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
-                  >
-                    Login
-                  </Button>
-                  <Button
-                    type="button"
-                    onClick={() => openAuth("signup")}
-                    className="w-full bg-white font-semibold text-[#1f4e79] hover:bg-[#f1f5f9]"
-                  >
-                    Start Free Trial
-                  </Button>
-                </div>
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      aria-current={active ? "page" : undefined}
+                      onClick={() => setIsOpen(false)}
+                      className={`rounded-lg px-3 py-2.5 text-sm transition-colors ${
+                        active
+                          ? "bg-white/12 font-semibold text-white"
+                          : "text-blue-50 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                })}
+              </div>
+
+              <div className="mt-4 flex flex-col gap-2 border-t border-white/15 pt-4 sm:flex-row">
+                {signedIn ? (
+                  <>
+                    <Link
+                      href="/profile"
+                      onClick={() => setIsOpen(false)}
+                      className="inline-flex min-h-11 flex-1 items-center justify-center rounded-lg border border-white/30 px-4 text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      Profile
+                    </Link>
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setIsOpen(false)}
+                      className="inline-flex min-h-11 flex-1 items-center justify-center rounded-lg bg-white px-4 text-sm font-semibold text-[#1f4e79] transition hover:bg-[#f1f5f9]"
+                    >
+                      Dashboard
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      type="button"
+                      onClick={() => openAuth("login")}
+                      variant="outline"
+                      className="min-h-11 flex-1 border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"
+                    >
+                      Login
+                    </Button>
+                    <Button
+                      type="button"
+                      onClick={() => openAuth("signup")}
+                      className="min-h-11 flex-1 bg-white font-semibold text-[#1f4e79] hover:bg-[#f1f5f9]"
+                    >
+                      Start Free Trial
+                    </Button>
+                  </>
+                )}
               </div>
             </motion.div>
           )}
@@ -453,7 +551,9 @@ export function Navbar() {
                     disabled={resetRequestLoading || loading}
                     className="text-sm font-semibold text-[#1f4e79] transition hover:text-[#183d60] disabled:cursor-wait disabled:opacity-60"
                   >
-                    {resetRequestLoading ? "Sending reset email..." : "Forgot password?"}
+                    {resetRequestLoading
+                      ? "Sending reset email..."
+                      : "Forgot password?"}
                   </button>
                 </div>
               )}
@@ -462,8 +562,12 @@ export function Navbar() {
                 <input
                   type="password"
                   autoComplete="new-password"
-                  aria-label={authMode === "reset" ? "Confirm new password" : "Confirm password"}
-                  placeholder={authMode === "reset" ? "Confirm new password" : "Confirm password"}
+                  aria-label={
+                    authMode === "reset" ? "Confirm new password" : "Confirm password"
+                  }
+                  placeholder={
+                    authMode === "reset" ? "Confirm new password" : "Confirm password"
+                  }
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#d6e6f7]"

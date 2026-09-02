@@ -1,8 +1,8 @@
 /* PilotVault navy anchor system.
-   Navy is used on structural brand surfaces; aviation blue remains the
-   product/action colour and light slate remains the working canvas.
+   Navy is used on structural brand surfaces and primary product actions;
+   light slate remains the working canvas.
    IMPORTANT: the active exam simulator lives inside main.bg-white and is
-   deliberately excluded from these header overrides. */
+   deliberately excluded from these overrides. */
 
 :root {
   --pv-navy: #06111f;
@@ -36,9 +36,9 @@ nav[class~="top-0"] a[href="/#contact"]:hover {
   color: #ffffff !important;
 }
 
-/* Student/product headers: navy gives the app a consistent frame while the
-   blue buttons, icons and states retain the product hierarchy. */
+/* Student/product headers use the same navy frame. */
 main:not([class~="bg-white"]) > header[class~="bg-[#1f4e79]"],
+main:not([class~="bg-white"]) > header[class~="bg-[#1F4E79]"],
 main:not([class~="bg-white"]) > header[class~="bg-[#081726]/95"] {
   background: var(--pv-navy) !important;
 }
@@ -49,13 +49,89 @@ main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child
   box-shadow: 0 0 0 100vmax var(--pv-navy) !important;
 }
 
+/* Site-wide primary-colour replacement outside the active exam simulator.
+   This catches token-based components as well as the current hard-coded
+   PilotVault blue utility classes without changing the exam UI. */
+main:not([class~="bg-white"]) {
+  --primary: var(--pv-navy);
+  --ring: var(--pv-navy);
+  --sidebar-primary: var(--pv-navy);
+  --sidebar-ring: var(--pv-navy);
+  --pilot-blue: var(--pv-navy);
+  --pilot-blue-deep: var(--pv-navy-soft);
+  --gold: var(--pv-navy);
+  --gold-hover: var(--pv-navy-soft);
+}
+
+main:not([class~="bg-white"])[class~="bg-[#1f4e79]"],
+main:not([class~="bg-white"])[class~="bg-[#1F4E79]"],
+main:not([class~="bg-white"]) [class~="bg-[#1f4e79]"],
+main:not([class~="bg-white"]) [class~="bg-[#1F4E79]"],
+main:not([class~="bg-white"]) [class~="bg-[#f4b400]"] {
+  background-color: var(--pv-navy) !important;
+}
+
+main:not([class~="bg-white"])[class~="text-[#1f4e79]"],
+main:not([class~="bg-white"])[class~="text-[#1F4E79]"],
+main:not([class~="bg-white"]) [class~="text-[#1f4e79]"],
+main:not([class~="bg-white"]) [class~="text-[#1F4E79]"],
+main:not([class~="bg-white"]) [class~="text-[#f4b400]"] {
+  color: var(--pv-navy) !important;
+}
+
+main:not([class~="bg-white"])[class~="border-[#1f4e79]"],
+main:not([class~="bg-white"])[class~="border-[#1F4E79]"],
+main:not([class~="bg-white"]) [class~="border-[#1f4e79]"],
+main:not([class~="bg-white"]) [class~="border-[#1F4E79]"],
+main:not([class~="bg-white"]) [class~="border-[#f4b400]"] {
+  border-color: var(--pv-navy) !important;
+}
+
+main:not([class~="bg-white"]) [class~="hover:bg-[#183d60]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:bg-[#1f4e79]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:bg-[#1F4E79]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:bg-[#d9a000]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:bg-[#f4b400]"]:hover {
+  background-color: var(--pv-navy-soft) !important;
+  color: #ffffff !important;
+}
+
+main:not([class~="bg-white"]) [class~="hover:text-[#183d60]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:text-[#1f4e79]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:text-[#1F4E79]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:text-[#f4b400]"]:hover {
+  color: var(--pv-navy-soft) !important;
+}
+
+main:not([class~="bg-white"]) [class~="hover:border-[#1f4e79]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:border-[#1F4E79]"]:hover,
+main:not([class~="bg-white"]) [class~="hover:border-[#f4b400]"]:hover {
+  border-color: var(--pv-navy) !important;
+}
+
+main:not([class~="bg-white"]) [class~="focus:border-[#1f4e79]"]:focus,
+main:not([class~="bg-white"]) [class~="focus:border-[#1F4E79]"]:focus,
+main:not([class~="bg-white"]) [class~="focus:border-[#f4b400]"]:focus {
+  border-color: var(--pv-navy) !important;
+}
+
+main:not([class~="bg-white"]) [class~="focus:ring-[#1f4e79]"]:focus,
+main:not([class~="bg-white"]) [class~="focus:ring-[#1F4E79]"]:focus,
+main:not([class~="bg-white"]) [class~="focus:ring-[#f4b400]"]:focus,
+main:not([class~="bg-white"]) [class~="focus-visible:ring-[#1f4e79]/40"]:focus-visible,
+main:not([class~="bg-white"]) [class~="focus-visible:ring-[#1F4E79]/40"]:focus-visible {
+  --tw-ring-color: var(--pv-navy) !important;
+}
+
 /* Auth modal: primary actions and the selected Login / Free Trial tab use
    the same navy as the main brand navigation. */
-[role="dialog"] button[class*="bg-[#1f4e79]"] {
+[role="dialog"] button[class*="bg-[#1f4e79]"],
+[role="dialog"] button[class*="bg-[#1F4E79]"] {
   background: var(--pv-navy) !important;
 }
 
-[role="dialog"] button[class*="bg-[#1f4e79]"]:hover {
+[role="dialog"] button[class*="bg-[#1f4e79]"]:hover,
+[role="dialog"] button[class*="bg-[#1F4E79]"]:hover {
   background: var(--pv-navy-soft) !important;
 }
 
@@ -67,4 +143,15 @@ main[class~="bg-[#eef3f8]"] section[aria-labelledby="dashboard-heading"] a[href^
 
 main[class~="bg-[#eef3f8]"] section[aria-labelledby="dashboard-heading"] a[href^="/practice/"]:hover {
   background: var(--pv-navy-soft) !important;
+}
+
+/* Mobile student navigation lives outside <main>, so scope it separately. */
+nav[aria-label="Student navigation"] [class~="text-[#1f4e79]"],
+nav[aria-label="Student navigation"] [class~="text-[#1F4E79]"] {
+  color: var(--pv-navy) !important;
+}
+
+nav[aria-label="Student navigation"] [class~="focus-visible:ring-[#1f4e79]/40"]:focus-visible,
+nav[aria-label="Student navigation"] [class~="focus-visible:ring-[#1F4E79]/40"]:focus-visible {
+  --tw-ring-color: var(--pv-navy) !important;
 }

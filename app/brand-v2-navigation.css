@@ -1,0 +1,23 @@
+/* Marketing navigation should stay clean and unboxed.
+   Active routes, hash links, and hover states use text emphasis only. */
+nav[class~="top-0"] a[href="/"],
+nav[class~="top-0"] a[href="/features"],
+nav[class~="top-0"] a[href="/subjects"],
+nav[class~="top-0"] a[href="/#pricing"],
+nav[class~="top-0"] a[href="/about"],
+nav[class~="top-0"] a[href="/faq"],
+nav[class~="top-0"] a[href="/#contact"] {
+  background: transparent !important;
+  font-weight: 500 !important;
+}
+
+nav[class~="top-0"] a[href="/"]:hover,
+nav[class~="top-0"] a[href="/features"]:hover,
+nav[class~="top-0"] a[href="/subjects"]:hover,
+nav[class~="top-0"] a[href="/#pricing"]:hover,
+nav[class~="top-0"] a[href="/about"]:hover,
+nav[class~="top-0"] a[href="/faq"]:hover,
+nav[class~="top-0"] a[href="/#contact"]:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+}

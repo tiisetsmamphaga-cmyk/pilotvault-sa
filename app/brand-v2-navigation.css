@@ -48,9 +48,3 @@ main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child
   background: var(--pv-navy) !important;
   box-shadow: 0 0 0 100vmax var(--pv-navy) !important;
 }
-
-/* The footer is another intentional dark brand anchor. */
-footer#contact {
-  background: var(--pv-navy) !important;
-  border-top-color: rgba(255, 255, 255, 0.08) !important;
-}

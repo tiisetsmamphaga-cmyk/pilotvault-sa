@@ -11,7 +11,7 @@ export function LoadingScreen({
 }: LoadingScreenProps) {
   return (
     <div
-      className={`fixed inset-0 z-[200] flex min-h-screen items-center justify-center overflow-hidden bg-[#0f1720] px-6 text-white ${className}`}
+      className={`fixed inset-0 z-[200] flex min-h-screen items-center justify-center overflow-hidden bg-[#06111f] px-6 text-white ${className}`}
       role="status"
       aria-busy="true"
       aria-live="polite"

@@ -58,3 +58,13 @@ main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child
 [role="dialog"] button[class*="bg-[#1f4e79]"]:hover {
   background: var(--pv-navy-soft) !important;
 }
+
+/* Dashboard: keep the continue-training CTA as a clear navy action while
+   leaving the subject cards and the exam simulator untouched. */
+main[class~="bg-[#eef3f8]"] section[aria-labelledby="dashboard-heading"] a[href^="/practice/"] {
+  background: var(--pv-navy) !important;
+}
+
+main[class~="bg-[#eef3f8]"] section[aria-labelledby="dashboard-heading"] a[href^="/practice/"]:hover {
+  background: var(--pv-navy-soft) !important;
+}

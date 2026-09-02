@@ -48,3 +48,13 @@ main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child
   background: var(--pv-navy) !important;
   box-shadow: 0 0 0 100vmax var(--pv-navy) !important;
 }
+
+/* Auth modal: primary actions and the selected Login / Free Trial tab use
+   the same navy as the main brand navigation. */
+[role="dialog"] button[class*="bg-[#1f4e79]"] {
+  background: var(--pv-navy) !important;
+}
+
+[role="dialog"] button[class*="bg-[#1f4e79]"]:hover {
+  background: var(--pv-navy-soft) !important;
+}

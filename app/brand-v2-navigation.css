@@ -1,5 +1,9 @@
 /* Marketing navigation should stay clean and unboxed.
-   Active routes, hash links, and hover states use text emphasis only. */
+   Keep the original dark navy here to anchor the site and let the logo lead. */
+nav[class~="top-0"] {
+  background: rgba(6, 17, 31, 0.97) !important;
+}
+
 nav[class~="top-0"] a[href="/"],
 nav[class~="top-0"] a[href="/features"],
 nav[class~="top-0"] a[href="/subjects"],

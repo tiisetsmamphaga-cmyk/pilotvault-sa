@@ -13,7 +13,7 @@ export function CtaSection() {
     <section className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
       <div className="absolute inset-0">
         <Image src="/images/runway.jpg" alt="Airport runway" fill className="object-cover" />
-        <div className="absolute inset-0 bg-[#183d60]/92" />
+        <div className="absolute inset-0 bg-[#06111f]/92" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

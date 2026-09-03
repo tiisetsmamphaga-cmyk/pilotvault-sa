@@ -37,7 +37,7 @@
   "current_batch": 8,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_8_REFINING",
+  "last_verified_checkpoint": "POF_BATCH_8_QA_APPROVED",
   "production_state": {
     "approved_live_visuals": 35,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Run final technical, teaching and mandatory rendered-image QA on the five exact Batch 8 PNG/WebP pairs; correct any remaining defect before QA_APPROVED.",
+  "next_action": "Run the exact Batch 8 preflight build and validation on the deployment-disabled working branch; create one deliberate preview only after the remote gate is fully green.",
   "active_batch_source_selection": {
     "batch": 8,
     "visual_concepts": 5,
@@ -92,7 +92,39 @@
       "Replaced recovery airspeed shorthand with reduce-AoA and unstall wording",
       "Placed flap emphasis at the main-wing root instead of the horizontal tail"
     ],
-    "qa_pending": true,
+    "qa_pending": false,
+    "verified": true
+  },
+  "active_batch_qa": {
+    "batch": 8,
+    "visual_concepts": 5,
+    "png_assets": 5,
+    "webp_assets": 5,
+    "svg_assets": 0,
+    "asset_dimensions": "1600x1050",
+    "actual_pngs_rendered_and_reviewed": true,
+    "actual_webps_rendered_and_reviewed": true,
+    "technical": true,
+    "teaching": true,
+    "visual": true,
+    "batch1_quality_or_better": true,
+    "generic_placeholder_appearance": false,
+    "corrections_verified": true,
+    "png_sha256": {
+      "pof-antiservo-tab-same-direction-v1.png": "da89f5f75f00a5106ec785b1054c5eadd7015471cd101732ecf3111c0dc8ced2",
+      "pof-balance-tab-opposite-v1.png": "3a6f90838160a32df8e4633a8df2c355bb900b29ecccc35c0d25cacb68e1a362",
+      "pof-flaps-steepen-glide-v1.png": "7bf26b980f36c3f46c2bd39777a2371d6d73b193b866cec6e694b6726ec893d4",
+      "pof-spin-differential-stall-v1.png": "73f109d6939bfc2f96b2b28ebc3309d8a4c01830ead1a6aaeb84481f544431b8",
+      "pof-spin-recovery-control-order-v1.png": "71eff9cf9f79a651033def75c2c2caf4d42706dfbd767d65156616182f5020e6"
+    },
+    "webp_sha256": {
+      "pof-antiservo-tab-same-direction-v1.webp": "6008a5a3db70f7640809a0e080d062160d94067bb1501719c992055845c6ccbf",
+      "pof-balance-tab-opposite-v1.webp": "f5e9b333e69ef2786e592ddc3d5b0a56a10e300bde5881eeb757bc68ed3d32f1",
+      "pof-flaps-steepen-glide-v1.webp": "85682a81b29de565f911003e53ac1e6b6bbfe3063bd40c91f173a399fd59eb94",
+      "pof-spin-differential-stall-v1.webp": "0572100ddbc03ec81a28f0a193d5a44b996bcea5d89707edf8a49b3322707706",
+      "pof-spin-recovery-control-order-v1.webp": "acd6dfb43d2c9a666a2f97b62a109b604cf069a3b57f39ef83c8704295f48caf"
+    },
+    "approved": true,
     "verified": true
   },
   "active_batch_mapping": {

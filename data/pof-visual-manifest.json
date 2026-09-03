@@ -2281,17 +2281,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.webp"
       },
       "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
       }
     },
     {
@@ -2341,17 +2349,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.webp"
       },
       "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
       }
     },
     {
@@ -2401,17 +2417,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.webp"
       },
       "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
       }
     },
     {
@@ -2462,17 +2486,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.webp"
       },
       "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
       }
     },
     {
@@ -2522,17 +2554,25 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.webp"
       },
       "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
       }
     }
   ]

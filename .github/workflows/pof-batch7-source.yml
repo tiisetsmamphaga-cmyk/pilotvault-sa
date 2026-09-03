@@ -1,0 +1,189 @@
+name: Persist POF Batch 7 source briefs
+
+on:
+  push:
+    branches:
+      - pof-batch7-source
+    paths:
+      - .github/workflows/pof-batch7-source.yml
+
+permissions:
+  contents: write
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add exactly five Batch 7 SOURCE_FOUND records
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest_path = Path('data/pof-visual-manifest.json')
+          state_path = Path('data/pof-autonomous-state.json')
+          manifest = json.loads(manifest_path.read_text())
+          state = json.loads(state_path.read_text())
+
+          if state.get('current_batch') != 7 or state.get('last_verified_checkpoint') != 'POF_BATCH_6_LIVE_VERIFIED':
+              raise SystemExit('Batch 7 source pass must start from the exact Batch 6 live-verified checkpoint')
+
+          existing_ids = {v['visual_id'] for v in manifest['visuals']}
+          existing_questions = {qid for v in manifest['visuals'] for qid in v.get('question_ids', [])}
+
+          records = [
+            {
+              'visual_id': 'pof-axes-of-rotation-001',
+              'topic': 'Flight Controls & Axes',
+              'concept': 'The aircraft axes intersect at the centre of gravity: pitch about lateral, roll about longitudinal, yaw about vertical',
+              'question_ids': [1308, 1998],
+              'reuse_justification': 'Both questions test the same Figure 1-21 geometry: the axes pass through the centre of gravity; one asks for the longitudinal roll axis and the other defines the lateral wingtip-to-wingtip axis.',
+              'source': {
+                'document': 'ac_61-23c_phak_canada.pdf',
+                'page': 18,
+                'figure': '1-21',
+                'notes': 'Figure 1-21 is the handbook axes-of-rotation figure. Adjacent text states pitch is rotation about the lateral axis, roll about the longitudinal axis, and yaw about the vertical axis.'
+              },
+              'brief': {
+                'student_must_understand': 'All three axes intersect at the centre of gravity; the lateral axis runs wingtip-to-wingtip and carries pitch, while bank/roll occurs about the longitudinal nose-to-tail axis.',
+                'preserve': ['Aircraft orientation from Figure 1-21', 'Three axes intersecting at the centre of gravity', 'Correct lateral, longitudinal and vertical axis directions'],
+                'refine': ['Redraw the source geometry cleanly at large scale', 'Make the centre-of-gravity intersection unmistakable', 'Separate axis labels so none compete visually'],
+                'add': ['Pitch / lateral-axis label', 'Roll / longitudinal-axis label', 'Yaw / vertical-axis label', 'Small CG intersection marker'],
+                'remove': ['Surrounding handbook page text', 'Decorative aviation scenery', 'Baked PilotVault branding']
+              },
+              'assets': {'master_asset': None, 'web_asset': None},
+              'mapping_reason': 'The visual directly shows the exact axis geometry tested by questions 1308 and 1998.',
+              'status': 'SOURCE_FOUND',
+              'qa': {'technical': False, 'teaching': False, 'visual': False, 'preview': False, 'live': False},
+              'lock': {'approved': False, 'replacement_reason': None}
+            },
+            {
+              'visual_id': 'pof-elevator-pitch-control-001',
+              'topic': 'Flight Controls & Axes',
+              'concept': 'Elevator deflection controls pitch about the lateral axis',
+              'question_ids': [1108],
+              'source': {
+                'document': 'ac_61-23c_phak_canada.pdf',
+                'page': 20,
+                'figure': '1-25',
+                'notes': 'Figure 1-25 shows the effect of elevators. The handbook text states that elevators provide longitudinal control around the lateral axis.'
+              },
+              'brief': {
+                'student_must_understand': 'Moving the elevator changes tail force and rotates the aircraft nose up or down in pitch about the lateral axis.',
+                'preserve': ['Horizontal-tail and elevator geometry from Figure 1-25', 'Correct elevator deflection direction', 'Pitch relationship about the lateral axis'],
+                'refine': ['Use a clean side-view tail/elevator sequence', 'Make elevator deflection and resulting pitch direction visually immediate', 'Keep force/action arrows technically consistent'],
+                'add': ['Elevator label', 'Lateral-axis/pitch callout', 'Nose-up and nose-down direction cues only where needed'],
+                'remove': ['Unrelated longitudinal-stability paragraphs', 'Trim-tab content', 'Decorative background', 'Baked PilotVault branding']
+              },
+              'assets': {'master_asset': None, 'web_asset': None},
+              'mapping_reason': 'Question 1108 asks what the elevator controls; Figure 1-25 and its adjacent text directly teach pitch about the lateral axis.',
+              'status': 'SOURCE_FOUND',
+              'qa': {'technical': False, 'teaching': False, 'visual': False, 'preview': False, 'live': False},
+              'lock': {'approved': False, 'replacement_reason': None}
+            },
+            {
+              'visual_id': 'pof-centre-of-gravity-weight-point-001',
+              'topic': 'Weight & Balance',
+              'concept': 'The centre of gravity is the aircraft balance point through which its total weight acts',
+              'question_ids': [1138],
+              'source': {
+                'document': 'ac_61-23c_phak_canada.pdf',
+                'page': 7,
+                'figure': '1-12',
+                'notes': 'Figure 1-12 is titled “Airplane suspended from the center of gravity.” The adjacent text locates the CG along the longitudinal centreline and explains that its exact location affects stability and performance.'
+              },
+              'brief': {
+                'student_must_understand': 'The centre of gravity is the single balance point of the aircraft and the point through which the resultant total-weight force acts downward.',
+                'preserve': ['Suspended-aircraft concept from Figure 1-12', 'CG location on the aircraft centreline', 'Single resultant weight line through the CG'],
+                'refine': ['Use a clean side/profile aircraft rather than a generic infographic', 'Place the CG marker precisely on the aircraft', 'Make the downward total-weight vector pass through the CG'],
+                'add': ['CG marker', 'Total weight arrow', 'Short “balance point” callout'],
+                'remove': ['Thrust and drag material from the surrounding page', 'Unrelated loading examples', 'Baked PilotVault branding']
+              },
+              'assets': {'master_asset': None, 'web_asset': None},
+              'mapping_reason': 'Question 1138 asks for the point through which total weight acts; the suspended-aircraft CG figure is the direct teaching reference.',
+              'status': 'SOURCE_FOUND',
+              'qa': {'technical': False, 'teaching': False, 'visual': False, 'preview': False, 'live': False},
+              'lock': {'approved': False, 'replacement_reason': None}
+            },
+            {
+              'visual_id': 'pof-static-dynamic-stability-001',
+              'topic': 'Stability',
+              'concept': 'An aircraft can be statically stable yet dynamically unstable when it initially returns but its oscillation amplitude grows with time',
+              'question_ids': [2000],
+              'source': {
+                'document': 'ac_61-23c_phak_canada.pdf',
+                'page': 18,
+                'figure': '1-20',
+                'notes': 'Figure 1-20 is the handbook relationship-of-oscillation-and-stability figure and is the direct source for distinguishing static tendency from dynamic oscillation behaviour.'
+              },
+              'brief': {
+                'student_must_understand': 'Positive static stability describes the initial tendency back toward equilibrium; growing oscillations after that initial return mean negative/dynamically unstable behaviour.',
+                'preserve': ['Time/response relationship shown by Figure 1-20', 'Equilibrium reference line', 'Increasing-amplitude oscillation for the dynamically unstable case'],
+                'refine': ['Isolate the exact statically-stable/dynamically-unstable trace', 'Use clean axes and a readable equilibrium line', 'Make amplitude growth obvious without extra decoration'],
+                'add': ['Initial-return callout', 'Growing-amplitude callout', 'Concise static-vs-dynamic labels'],
+                'remove': ['Other stability cases not needed to answer question 2000', 'Surrounding handbook text', 'Baked PilotVault branding']
+              },
+              'assets': {'master_asset': None, 'web_asset': None},
+              'mapping_reason': 'Question 2000 describes initial return followed by growing oscillations; Figure 1-20 directly separates those static and dynamic characteristics.',
+              'status': 'SOURCE_FOUND',
+              'qa': {'technical': False, 'teaching': False, 'visual': False, 'preview': False, 'live': False},
+              'lock': {'approved': False, 'replacement_reason': None}
+            },
+            {
+              'visual_id': 'pof-stall-speed-load-factor-001',
+              'topic': 'Turns & Load Factor',
+              'concept': 'Stall speed increases in proportion to the square root of load factor',
+              'question_ids': [2018],
+              'source': {
+                'document': 'ac_61-23c_phak_canada.pdf',
+                'page': 27,
+                'figure': '1-34',
+                'notes': 'The handbook explicitly states on page 1-27 that stalling speed increases in proportion to the square root of load factor and points the reader to Figure 1-34.'
+              },
+              'brief': {
+                'student_must_understand': 'For unchanged weight/configuration, accelerated stall speed follows VS,new = VS,1g × √n; increasing load factor therefore raises stall speed non-linearly.',
+                'preserve': ['Handbook stall-speed/load-factor relationship', 'Correct square-root relationship', 'Figure 1-34 stall-speed context'],
+                'refine': ['Use a clean formula-first teaching layout grounded in Figure 1-34', 'Show a simple 1 g to 4 g comparison without turning it into a generic infographic', 'Keep numerical examples mathematically exact'],
+                'add': ['VS,new = VS,1g × √n', '1 g → 1.00× VS reference', '4 g → 2.00× VS reference'],
+                'remove': ['Unrelated structural-category material', 'Bank-angle detail not needed for question 2018', 'Baked PilotVault branding']
+              },
+              'assets': {'master_asset': None, 'web_asset': None},
+              'mapping_reason': 'Question 2018 asks for the load-factor relationship itself; page 27 states the square-root rule explicitly and Figure 1-34 supplies the source context.',
+              'status': 'SOURCE_FOUND',
+              'qa': {'technical': False, 'teaching': False, 'visual': False, 'preview': False, 'live': False},
+              'lock': {'approved': False, 'replacement_reason': None}
+            }
+          ]
+
+          for r in records:
+              if r['visual_id'] in existing_ids:
+                  raise SystemExit(f"Visual already exists: {r['visual_id']}")
+              for qid in r['question_ids']:
+                  if qid in existing_questions:
+                      raise SystemExit(f'Question {qid} is already owned by another manifest visual')
+
+          manifest['visuals'].extend(records)
+          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
+
+          state['last_verified_checkpoint'] = 'POF_BATCH_7_SOURCE_FOUND'
+          state['next_action'] = 'Promote the five verified Batch 7 source briefs to REFINING, create question-specific raster assets from the cited handbook relationships, and inspect every rendered image against the locked Batch 1 quality benchmark before QA approval.'
+          state_path.write_text(json.dumps(state, indent=2) + '\n')
+          PY
+
+      - name: Validate source gate and history
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py c9ce30802c250044e30eee81cb0bd6e478f32268
+
+      - name: Commit verified source checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git diff --cached --quiet && exit 0
+          git commit -m "pof: persist Batch 7 source briefs"
+          git push

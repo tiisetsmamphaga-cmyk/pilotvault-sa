@@ -1,0 +1,79 @@
+name: Enter POF Batch 7 refinement
+
+on:
+  push:
+    branches:
+      - pof-batch7-source
+    paths:
+      - .github/workflows/pof-batch7-refining.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refining:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Promote exact Batch 7 records to REFINING
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest_path = Path('data/pof-visual-manifest.json')
+          state_path = Path('data/pof-autonomous-state.json')
+          manifest = json.loads(manifest_path.read_text())
+          state = json.loads(state_path.read_text())
+
+          target_ids = {
+              'pof-axes-of-rotation-001',
+              'pof-elevator-pitch-control-001',
+              'pof-centre-of-gravity-weight-point-001',
+              'pof-static-dynamic-stability-001',
+              'pof-stall-speed-load-factor-001',
+          }
+
+          if state.get('current_batch') != 7 or state.get('last_verified_checkpoint') != 'POF_BATCH_7_SOURCE_FOUND':
+              raise SystemExit('Batch 7 must be at the verified SOURCE_FOUND checkpoint before refinement')
+
+          changed = 0
+          for item in manifest['visuals']:
+              if item.get('visual_id') not in target_ids:
+                  continue
+              if item.get('status') != 'SOURCE_FOUND':
+                  raise SystemExit(f"Unexpected status for {item['visual_id']}: {item.get('status')}")
+              if item.get('assets', {}).get('master_asset') is not None or item.get('assets', {}).get('web_asset') is not None:
+                  raise SystemExit(f"Source-stage asset unexpectedly present for {item['visual_id']}")
+              if any(item.get('qa', {}).values()):
+                  raise SystemExit(f"QA flag unexpectedly true before refinement for {item['visual_id']}")
+              if item.get('lock', {}).get('approved') is not False:
+                  raise SystemExit(f"Lock unexpectedly approved before refinement for {item['visual_id']}")
+              item['status'] = 'REFINING'
+              changed += 1
+
+          if changed != 5:
+              raise SystemExit(f'Expected exactly five Batch 7 records, changed {changed}')
+
+          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
+          state['last_verified_checkpoint'] = 'POF_BATCH_7_REFINING'
+          state['next_action'] = 'Create the five Batch 7 question-specific raster assets from the verified handbook relationships; keep assets unmapped and fail closed until actual rendered-image QA passes.'
+          state_path.write_text(json.dumps(state, indent=2) + '\n')
+          PY
+
+      - name: Validate refinement transition
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py f09e1437f81d797f2b29e21e74bf85feb6dfc371
+
+      - name: Commit verified refinement checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git diff --cached --quiet && exit 0
+          git commit -m "pof: enter Batch 7 refinement"
+          git push

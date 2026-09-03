@@ -2277,8 +2277,8 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.webp"
       },
       "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
       "status": "REFINING",
@@ -2337,8 +2337,8 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.webp"
       },
       "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
       "status": "REFINING",
@@ -2397,8 +2397,8 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.webp"
       },
       "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
       "status": "REFINING",
@@ -2458,8 +2458,8 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.webp"
       },
       "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
       "status": "REFINING",
@@ -2518,8 +2518,8 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.webp"
       },
       "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
       "status": "REFINING",

@@ -34,12 +34,12 @@
     "checkpoint_only_after_verification": true,
     "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
   },
-  "current_batch": 6,
-  "completed_batches_since_last_user_report": 1,
+  "current_batch": 7,
+  "completed_batches_since_last_user_report": 2,
   "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_6_PRODUCTION_READY",
+  "last_verified_checkpoint": "POF_BATCH_6_LIVE_VERIFIED",
   "production_state": {
-    "approved_live_visuals": 25,
+    "approved_live_visuals": 30,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Remove the temporary production-readiness workflow, merge Batch 6 to main, verify the exact READY production deployment and public raster delivery, then mark Supabase and manifest LIVE_VERIFIED and lock the five visuals",
+  "next_action": "Begin Batch 7 exact-question source selection, keep the batch at five concepts maximum, and persist only source-grounded question-specific briefs before refinement.",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

@@ -1,0 +1,88 @@
+name: POF Batch 7 promote QA
+
+on:
+  push:
+    branches:
+      - pof-batch-7-rebuild
+    paths:
+      - .github/workflows/pof-batch7-promote-qa.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Promote exact reviewed Batch 7 entries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          ids = {
+            'pof-airspeed-indicator-limits-001',
+            'pof-skin-friction-boundary-layer-001',
+            'pof-induced-drag-speed-aoa-001',
+            'pof-air-density-performance-001',
+            'pof-adverse-yaw-aileron-drag-001',
+          }
+          p = Path('data/pof-visual-manifest.json')
+          m = json.loads(p.read_text())
+          seen = set()
+          note = (
+            'Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 '
+            'against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected '
+            'before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading '
+            'plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files '
+            'byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, '
+            'question-specific, and free of generic placeholder appearance.'
+          )
+          for v in m['visuals']:
+            if v.get('visual_id') not in ids:
+              continue
+            if v.get('status') != 'REFINING':
+              raise SystemExit(f"{v.get('visual_id')} expected REFINING, got {v.get('status')}")
+            a = v.get('assets', {})
+            if not a.get('master_asset') or not a.get('web_asset'):
+              raise SystemExit(f"{v.get('visual_id')} missing raster assets")
+            v['status'] = 'QA_APPROVED'
+            v['qa']['technical'] = True
+            v['qa']['teaching'] = True
+            v['qa']['visual'] = True
+            v['visual_inspection'] = {
+              'actual_image_reviewed': True,
+              'batch1_quality_reference': True,
+              'teaching_relationship_obvious': True,
+              'technically_credible': True,
+              'generic_placeholder_appearance': False,
+              'review_note': note,
+            }
+            seen.add(v['visual_id'])
+          if seen != ids:
+            raise SystemExit(f'missing Batch 7 ids: {ids-seen}')
+          p.write_text(json.dumps(m, indent=2) + '\n')
+
+          sp = Path('data/pof-autonomous-state.json')
+          s = json.loads(sp.read_text())
+          if s.get('last_verified_checkpoint') != 'POF_BATCH_7_REFINING':
+            raise SystemExit(f"unexpected state checkpoint: {s.get('last_verified_checkpoint')}")
+          s['last_verified_checkpoint'] = 'POF_BATCH_7_QA_APPROVED'
+          s['next_action'] = 'Create one intentional preview/pof-batch7 deployment from the exact QA-approved Batch 7 commit, verify the real explanation renderer and all five assets, then map only after preview verification.'
+          sp.write_text(json.dumps(s, indent=2) + '\n')
+          PY
+      - name: Validate canonical manifest
+        run: python scripts/validate_pof_visuals.py
+      - name: Validate full Batch 7 promotion history
+        run: python scripts/validate_pof_visual_changes.py c9ce30802c250044e30eee81cb0bd6e478f32268
+      - name: Commit QA-approved checkpoint
+        run: |
+          git config user.name "pilotvault-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m "POF Batch 7: QA approve reviewed rasters"
+          git push

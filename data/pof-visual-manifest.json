@@ -2281,7 +2281,7 @@
         "web_asset": null
       },
       "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -2341,7 +2341,7 @@
         "web_asset": null
       },
       "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -2401,7 +2401,7 @@
         "web_asset": null
       },
       "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -2462,7 +2462,7 @@
         "web_asset": null
       },
       "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -2522,7 +2522,7 @@
         "web_asset": null
       },
       "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,

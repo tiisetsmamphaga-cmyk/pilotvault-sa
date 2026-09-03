@@ -37,7 +37,7 @@
   "current_batch": 7,
   "completed_batches_since_last_user_report": 2,
   "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_7_SOURCE_FOUND",
+  "last_verified_checkpoint": "POF_BATCH_7_REFINING",
   "production_state": {
     "approved_live_visuals": 30,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Refine the five persisted Batch 7 concepts into question-specific raster visuals; keep mappings fail-closed until rendered-image QA and intentional preview verification pass.",
+  "next_action": "Create the five question-specific Batch 7 raster visuals from the locked source briefs, inspect rendered pixels against Batch 1 quality, and keep database mappings untouched.",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

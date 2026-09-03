@@ -2233,6 +2233,467 @@
         "db_status_live_verified": true,
         "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
+    },
+    {
+      "visual_id": "pof-airspeed-indicator-limits-001",
+      "topic": "Airspeed Limitations",
+      "concept": "The colour-coded ASI places VFE at the top of the white arc, VNO at the top of the green arc/start of yellow, and VNE at the red line",
+      "question_ids": [
+        1264,
+        1267,
+        1270,
+        1369,
+        2020,
+        2022
+      ],
+      "reuse_justification": "All six questions test the same standard ASI limit geometry and operational meaning of VFE, VNO or VNE.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 4,
+        "figure": "3-4 and 3-4b",
+        "notes": "Chapter 3 Airspeed Indicator Markings defines the white flap range and VFE upper limit, green normal range and VNO upper limit, yellow caution range, and red-line VNE."
+      },
+      "brief": {
+        "student_must_understand": "Read VFE, VNO and VNE directly from one standard colour-coded ASI.",
+        "preserve": [
+          "White, green and yellow arc order",
+          "Red VNE radial line",
+          "Relative VFE/VNO/VNE positions"
+        ],
+        "refine": [
+          "Use a clean credible light-aircraft ASI",
+          "Do not invent aircraft-specific speeds",
+          "Make the three limit boundaries unmistakable"
+        ],
+        "add": [
+          "Minimal VFE, VNO and VNE callouts",
+          "Short operational cue per limit"
+        ],
+        "remove": [
+          "Aircraft-specific numbers",
+          "Unrelated markings",
+          "Cockpit decoration",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.webp"
+      },
+      "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 6,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
+      }
+    },
+    {
+      "visual_id": "pof-skin-friction-boundary-layer-001",
+      "topic": "Drag",
+      "concept": "Air touching the wing surface is slowed by viscosity, creating skin-friction drag in the boundary layer",
+      "question_ids": [
+        1160,
+        1181,
+        1344,
+        1355,
+        1980
+      ],
+      "reuse_justification": "Each question tests the same surface-contact mechanism and its classification as skin-friction parasite drag.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 8,
+        "figure": "1-14",
+        "notes": "The handbook classifies skin friction as parasite drag, explains viscous surface drag, and Figure 1-14 contrasts skin friction with form drag."
+      },
+      "brief": {
+        "student_must_understand": "Air immediately at the surface is slowed by viscosity; that shear is skin-friction parasite drag.",
+        "preserve": [
+          "Surface-tangent airflow",
+          "Low speed at surface versus faster outer flow",
+          "Drag opposite airflow"
+        ],
+        "refine": [
+          "Show a simple boundary-layer velocity gradient",
+          "Keep the wing/surface technically credible",
+          "Make the contact mechanism obvious"
+        ],
+        "add": [
+          "Velocity-gradient arrows",
+          "Skin-friction label",
+          "Parasite-drag classification cue"
+        ],
+        "remove": [
+          "Induced-drag vortices",
+          "Generic speed lines",
+          "Decorative aircraft scene",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.webp"
+      },
+      "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 5,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
+      }
+    },
+    {
+      "visual_id": "pof-induced-drag-speed-aoa-001",
+      "topic": "Drag",
+      "concept": "In level flight, lower speed requires higher AoA and therefore greater induced drag",
+      "question_ids": [
+        1158,
+        1197,
+        1276,
+        1293,
+        1981
+      ],
+      "reuse_justification": "All five questions test the same chain: speed down -> required AoA up -> induced drag up, or equivalently AoA up -> induced drag up.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 8,
+        "figure": "1-15",
+        "notes": "The induced-drag section states induced drag rises with AoA and when the airplane is flown slower; Figure 1-15 shows induced drag high at low speed and decreasing with speed."
+      },
+      "brief": {
+        "student_must_understand": "Low speed in level flight requires higher AoA, so induced drag is high; higher speed lowers required AoA and induced drag.",
+        "preserve": [
+          "Induced-drag curve high at low speed",
+          "Low speed linked to higher required AoA",
+          "Critical AoA remains unchanged"
+        ],
+        "refine": [
+          "Use one simple speed-versus-induced-drag curve plus two wing-AoA states",
+          "Keep axes unambiguous",
+          "Avoid unrelated total/parasite drag clutter"
+        ],
+        "add": [
+          "LOW SPEED / HIGH AoA cue",
+          "HIGHER SPEED / LOWER AoA cue",
+          "Induced-drag cue"
+        ],
+        "remove": [
+          "Full three-curve chart",
+          "Unrelated vortex scene",
+          "Decorative aircraft art",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.webp"
+      },
+      "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 5,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
+      }
+    },
+    {
+      "visual_id": "pof-air-density-performance-001",
+      "topic": "ISA & Air Density",
+      "concept": "Higher altitude, temperature and humidity reduce density; lower density degrades lift/propulsive performance, lengthens take-off and reduces climb",
+      "question_ids": [
+        1266,
+        1268,
+        1269,
+        1345,
+        1350,
+        1961
+      ],
+      "reuse_justification": "These questions test branches of the same density-performance chain: temperature, pressure/altitude and water-vapour content determine density and reduced density degrades performance.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 12,
+        "figure": "1-17",
+        "notes": "Figure 1-17 and text connect altitude, temperature and humidity to density, take-off run and rate of climb; warm and humid air are less dense and lower density reduces performance."
+      },
+      "brief": {
+        "student_must_understand": "Hotter, higher and more humid conditions reduce density; lower density means poorer performance, longer take-off and weaker climb.",
+        "preserve": [
+          "Altitude, temperature and humidity as separate drivers",
+          "All arrows lead to lower density",
+          "Performance consequences in correct direction"
+        ],
+        "refine": [
+          "Use a clean cause-effect flow, not generic weather art",
+          "Make density the central physical link",
+          "Use one credible take-off/climb cue"
+        ],
+        "add": [
+          "Density-down node",
+          "Longer take-off arrow",
+          "Lower climb-performance arrow"
+        ],
+        "remove": [
+          "Weather icons without aerodynamic meaning",
+          "Exact runway numbers",
+          "Unrelated ISA constants",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.webp"
+      },
+      "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 6,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
+      }
+    },
+    {
+      "visual_id": "pof-adverse-yaw-aileron-drag-001",
+      "topic": "Aileron Drag",
+      "concept": "The down-going aileron increases local AoA/lift and induced drag, yawing the nose opposite the intended roll unless coordinated with rudder",
+      "question_ids": [
+        1164,
+        1174,
+        2017
+      ],
+      "reuse_justification": "All three questions test the same adverse-yaw mechanism: extra induced drag on the down-going-aileron wing causes initial yaw opposite roll and same-direction rudder coordinates it.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 23,
+        "figure": "1-30",
+        "notes": "Figure 1-30 establishes that lowering an aileron increases local AoA and lift. The induced-drag section on page 1-8 establishes greater AoA/lift produces greater induced drag; together with the exact exam relationship this yields adverse yaw."
+      },
+      "brief": {
+        "student_must_understand": "For a left roll the right aileron goes down, gains lift and drag, so the nose initially yaws right; left rudder coordinates the roll.",
+        "preserve": [
+          "Correct left-roll aileron deflections",
+          "More lift/drag on down-going right aileron",
+          "Yaw opposite intended roll",
+          "Same-direction rudder correction"
+        ],
+        "refine": [
+          "Use a top/rear view where roll and yaw cannot be confused",
+          "Show drag asymmetry without exaggerated vortices",
+          "Keep rudder correction secondary to cause"
+        ],
+        "add": [
+          "ROLL LEFT arrow",
+          "INITIAL YAW RIGHT arrow",
+          "More induced drag on right wing",
+          "Small LEFT RUDDER cue"
+        ],
+        "remove": [
+          "Differential/Frise geometry",
+          "Slip-skid ball",
+          "Generic motion trails",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.webp"
+      },
+      "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
+      "status": "PRODUCTION_READY",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 3,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
+      }
     }
   ]
 }

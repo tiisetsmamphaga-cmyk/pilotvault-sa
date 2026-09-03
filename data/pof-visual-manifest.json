@@ -2281,12 +2281,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.webp"
       },
       "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -2300,6 +2300,23 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
       }
     },
     {
@@ -2349,12 +2366,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.webp"
       },
       "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -2368,6 +2385,23 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
       }
     },
     {
@@ -2417,12 +2451,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.webp"
       },
       "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -2436,6 +2470,23 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
       }
     },
     {
@@ -2486,12 +2537,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.webp"
       },
       "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -2505,6 +2556,23 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
       }
     },
     {
@@ -2554,12 +2622,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.webp"
       },
       "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -2573,6 +2641,23 @@
         "technically_credible": true,
         "generic_placeholder_appearance": false,
         "review_note": "Exact GitHub Actions generated PNG/WebP bytes were downloaded and visually inspected at 1600x1050 against the locked Batch 1 and successful Batch 6 quality references. First-pass defects were corrected before this promotion: skin-friction footer overlap, induced-drag force-vector direction, and a misleading plan-view roll arc in the adverse-yaw diagram. Final runner artifacts matched the reviewed local files byte-for-byte across all 10 assets; all five teaching relationships are technically credible, readable, question-specific, and free of generic placeholder appearance."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2rfhRwZYhNRJXWmPK9bzUVzqeTMU",
+        "deployment_commit": "1d1758aa5a5ee6e7ddad22e38fbb6bc8b4f4f911",
+        "deployment_tree": "4c5e057cab2b3e1d5f917a594196a9dcd04d4183",
+        "qa_source_commit": "74f9249cc6387c104c844a1a493ed12cc2138dbe",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_verified": true,
+        "real_explanation_component_used": true,
+        "all_five_webp_assets_decoded": true,
+        "asset_dimensions": "1600x1050",
+        "aspect_ratio_preserved": true,
+        "desktop_layout_verified": true,
+        "mobile_layout_verified_on_identical_tree": true,
+        "error_overlay_absent": true,
+        "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
       }
     }
   ]

@@ -37,7 +37,7 @@
   "current_batch": 7,
   "completed_batches_since_last_user_report": 2,
   "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_7_QA_APPROVED",
+  "last_verified_checkpoint": "POF_BATCH_7_PREVIEW_READY",
   "production_state": {
     "approved_live_visuals": 30,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Create one intentional preview/pof-batch7 deployment from the exact QA-approved Batch 7 commit, verify the real explanation renderer and all five assets, then map only after preview verification.",
+  "next_action": "Map the five Batch 7 visuals to their exact Supabase questions in one fail-closed transaction, verify every intended row and absence of duplicate ownership, then advance PREVIEW_READY to MAPPED only after database verification passes.",
   "stop_conditions": [
     "source_ambiguity",
     "irreversible_product_risk",

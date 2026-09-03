@@ -1,0 +1,44 @@
+name: POF Batch 7 refinement checkpoint
+on:
+  push:
+    branches: [pof-batch-7-rebuild]
+    paths: [.github/workflows/pof-batch7-refining.yml]
+permissions:
+  contents: write
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - name: Promote exact Batch 7 entries to REFINING
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          mp=Path('data/pof-visual-manifest.json'); sp=Path('data/pof-autonomous-state.json')
+          m=json.loads(mp.read_text()); s=json.loads(sp.read_text())
+          ids={'pof-airspeed-indicator-limits-001','pof-skin-friction-boundary-layer-001','pof-induced-drag-speed-aoa-001','pof-air-density-performance-001','pof-adverse-yaw-aileron-drag-001'}
+          seen=set()
+          for v in m['visuals']:
+              if v.get('visual_id') in ids:
+                  if v.get('status')!='SOURCE_FOUND': raise SystemExit(f"{v['visual_id']} expected SOURCE_FOUND, got {v.get('status')}")
+                  v['status']='REFINING'; seen.add(v['visual_id'])
+          if seen!=ids: raise SystemExit(f'missing ids: {sorted(ids-seen)}')
+          mp.write_text(json.dumps(m,indent=2)+'\n')
+          s['last_verified_checkpoint']='POF_BATCH_7_REFINING'
+          s['next_action']='Create the five question-specific Batch 7 raster visuals from the locked source briefs, inspect rendered pixels against Batch 1 quality, and keep database mappings untouched.'
+          sp.write_text(json.dumps(s,indent=2)+'\n')
+          PY
+      - name: Validate transition history
+        run: |
+          python3 scripts/validate_pof_visuals.py
+          python3 scripts/validate_pof_visual_changes.py c9ce30802c250044e30eee81cb0bd6e478f32268
+      - name: Commit verified refinement checkpoint
+        run: |
+          git config user.name 'PilotVault Automation'
+          git config user.email 'actions@pilotvault.co.za'
+          git rm .github/workflows/pof-batch7-refining.yml
+          git add data/pof-visual-manifest.json data/pof-autonomous-state.json
+          git commit -m 'POF Batch 7: enter refinement'
+          git push

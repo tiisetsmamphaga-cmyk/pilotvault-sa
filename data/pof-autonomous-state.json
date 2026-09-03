@@ -37,7 +37,7 @@
   "current_batch": 8,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_7_LIVE_VERIFIED",
+  "last_verified_checkpoint": "POF_BATCH_8_SOURCE_SELECTED",
   "production_state": {
     "approved_live_visuals": 35,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,29 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Begin Batch 8 exact-question source selection, keep the batch at five concepts maximum, and persist only source-grounded question-specific briefs before refinement.",
+  "next_action": "Refine the five persisted Batch 8 source-grounded design briefs into raster teaching assets, visually inspect every rendered image, run technical/teaching/visual QA, and fail closed before any preview or database mapping.",
+  "active_batch_source_selection": {
+    "batch": 8,
+    "status": "SOURCE_FOUND",
+    "source_document": "ac_61-23c_phak_canada.pdf",
+    "source_selection_file": "data/pof-batch-8-source-selection.json",
+    "visual_concepts": 5,
+    "candidate_question_mappings": 19,
+    "technical_source_grounded": true,
+    "design_briefs_persisted": true,
+    "verified": true
+  },
+  "visual_requirement_audit": {
+    "audit_file": "data/pof-visual-requirement-audit.json",
+    "total_pof_questions": 365,
+    "live_verified_question_mappings": 93,
+    "remaining_rows_audited": 272,
+    "remaining_visual_required": 207,
+    "remaining_no_visual_required": 65,
+    "total_visual_required_question_universe": 300,
+    "question_coverage_completion_percent": 31.0,
+    "verified": true
+  },
   "active_batch_mapping": {
     "batch": 7,
     "project_ref": "kkmlfbxfopwulwkloaoc",

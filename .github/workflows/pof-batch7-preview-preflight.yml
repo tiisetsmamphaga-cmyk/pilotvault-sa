@@ -35,4 +35,11 @@ jobs:
           test "$(find public/explanation-images/principles-of-flight/refined-batch-7 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
           test "$(find public/explanation-images/principles-of-flight/refined-batch-7 -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 0
       - name: Production Next.js build
+        # The build imports both browser and server Supabase clients, but this
+        # preflight never connects to a database. Keep production credentials
+        # out of Actions and scope inert values to this build step only.
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://pof-batch7-ci.invalid
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: pof-batch7-ci-anon-placeholder
+          SUPABASE_SERVICE_ROLE_KEY: pof-batch7-ci-service-role-placeholder
         run: npm run build

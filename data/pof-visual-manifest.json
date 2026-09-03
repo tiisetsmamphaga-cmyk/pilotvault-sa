@@ -2281,16 +2281,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.webp"
       },
       "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2321,9 +2321,24 @@
       "mapping_verification": {
         "project_ref": "kkmlfbxfopwulwkloaoc",
         "question_row_count": 6,
-        "database_status": "MAPPED",
+        "database_status": "LIVE_VERIFIED",
         "exact_rows_verified": true,
         "duplicate_ownership_absent": true
+      },
+      "live_verification": {
+        "deployment_id": "dpl_2nnFwPSRnAm81uDCfWcrj4tGwJA7",
+        "production_commit": "213651b69a9e27f1f4f395c1dcc0db1f9af81b5f",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "production_asset_bytes_match": true,
+        "real_renderer_verified_on_preview": true,
+        "exact_production_artifact_verified": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The real ExplanationImage renderer and all five exact Batch 7 WebPs were verified on the READY preview. The matching READY production deployment served every live WebP from pilotvault.co.za with HTTP 200, image/webp and bytes matching the approved assets; all 25 exact Supabase mappings were read back as LIVE_VERIFIED with no unexpected owners. The production QA browser had no student auth session, so no signed-in attempt inspection is claimed."
       }
     },
     {
@@ -2373,16 +2388,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.webp"
       },
       "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2413,9 +2428,24 @@
       "mapping_verification": {
         "project_ref": "kkmlfbxfopwulwkloaoc",
         "question_row_count": 5,
-        "database_status": "MAPPED",
+        "database_status": "LIVE_VERIFIED",
         "exact_rows_verified": true,
         "duplicate_ownership_absent": true
+      },
+      "live_verification": {
+        "deployment_id": "dpl_2nnFwPSRnAm81uDCfWcrj4tGwJA7",
+        "production_commit": "213651b69a9e27f1f4f395c1dcc0db1f9af81b5f",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "production_asset_bytes_match": true,
+        "real_renderer_verified_on_preview": true,
+        "exact_production_artifact_verified": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The real ExplanationImage renderer and all five exact Batch 7 WebPs were verified on the READY preview. The matching READY production deployment served every live WebP from pilotvault.co.za with HTTP 200, image/webp and bytes matching the approved assets; all 25 exact Supabase mappings were read back as LIVE_VERIFIED with no unexpected owners. The production QA browser had no student auth session, so no signed-in attempt inspection is claimed."
       }
     },
     {
@@ -2465,16 +2495,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.webp"
       },
       "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2505,9 +2535,24 @@
       "mapping_verification": {
         "project_ref": "kkmlfbxfopwulwkloaoc",
         "question_row_count": 5,
-        "database_status": "MAPPED",
+        "database_status": "LIVE_VERIFIED",
         "exact_rows_verified": true,
         "duplicate_ownership_absent": true
+      },
+      "live_verification": {
+        "deployment_id": "dpl_2nnFwPSRnAm81uDCfWcrj4tGwJA7",
+        "production_commit": "213651b69a9e27f1f4f395c1dcc0db1f9af81b5f",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "production_asset_bytes_match": true,
+        "real_renderer_verified_on_preview": true,
+        "exact_production_artifact_verified": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The real ExplanationImage renderer and all five exact Batch 7 WebPs were verified on the READY preview. The matching READY production deployment served every live WebP from pilotvault.co.za with HTTP 200, image/webp and bytes matching the approved assets; all 25 exact Supabase mappings were read back as LIVE_VERIFIED with no unexpected owners. The production QA browser had no student auth session, so no signed-in attempt inspection is claimed."
       }
     },
     {
@@ -2558,16 +2603,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.webp"
       },
       "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2598,9 +2643,24 @@
       "mapping_verification": {
         "project_ref": "kkmlfbxfopwulwkloaoc",
         "question_row_count": 6,
-        "database_status": "MAPPED",
+        "database_status": "LIVE_VERIFIED",
         "exact_rows_verified": true,
         "duplicate_ownership_absent": true
+      },
+      "live_verification": {
+        "deployment_id": "dpl_2nnFwPSRnAm81uDCfWcrj4tGwJA7",
+        "production_commit": "213651b69a9e27f1f4f395c1dcc0db1f9af81b5f",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "production_asset_bytes_match": true,
+        "real_renderer_verified_on_preview": true,
+        "exact_production_artifact_verified": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The real ExplanationImage renderer and all five exact Batch 7 WebPs were verified on the READY preview. The matching READY production deployment served every live WebP from pilotvault.co.za with HTTP 200, image/webp and bytes matching the approved assets; all 25 exact Supabase mappings were read back as LIVE_VERIFIED with no unexpected owners. The production QA browser had no student auth session, so no signed-in attempt inspection is claimed."
       }
     },
     {
@@ -2650,16 +2710,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.webp"
       },
       "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2690,9 +2750,24 @@
       "mapping_verification": {
         "project_ref": "kkmlfbxfopwulwkloaoc",
         "question_row_count": 3,
-        "database_status": "MAPPED",
+        "database_status": "LIVE_VERIFIED",
         "exact_rows_verified": true,
         "duplicate_ownership_absent": true
+      },
+      "live_verification": {
+        "deployment_id": "dpl_2nnFwPSRnAm81uDCfWcrj4tGwJA7",
+        "production_commit": "213651b69a9e27f1f4f395c1dcc0db1f9af81b5f",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "production_asset_bytes_match": true,
+        "real_renderer_verified_on_preview": true,
+        "exact_production_artifact_verified": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The real ExplanationImage renderer and all five exact Batch 7 WebPs were verified on the READY preview. The matching READY production deployment served every live WebP from pilotvault.co.za with HTTP 200, image/webp and bytes matching the approved assets; all 25 exact Supabase mappings were read back as LIVE_VERIFIED with no unexpected owners. The production QA browser had no student auth session, so no signed-in attempt inspection is claimed."
       }
     }
   ]

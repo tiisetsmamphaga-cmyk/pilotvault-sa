@@ -34,12 +34,12 @@
     "checkpoint_only_after_verification": true,
     "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
   },
-  "current_batch": 7,
-  "completed_batches_since_last_user_report": 2,
-  "last_user_report_batch": 4,
-  "last_verified_checkpoint": "POF_BATCH_7_PRODUCTION_READY",
+  "current_batch": 8,
+  "completed_batches_since_last_user_report": 0,
+  "last_user_report_batch": 7,
+  "last_verified_checkpoint": "POF_BATCH_7_LIVE_VERIFIED",
   "production_state": {
-    "approved_live_visuals": 30,
+    "approved_live_visuals": 35,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -49,13 +49,13 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Commit and push the exact production-ready Batch 7 state, merge it once into main, wait for the matching Vercel production deployment to become READY, then verify all five live assets, the real explanation UI, and all 25 database mappings before LIVE_VERIFIED lock.",
+  "next_action": "Begin Batch 8 exact-question source selection, keep the batch at five concepts maximum, and persist only source-grounded question-specific briefs before refinement.",
   "active_batch_mapping": {
     "batch": 7,
     "project_ref": "kkmlfbxfopwulwkloaoc",
     "mapped_question_rows": 25,
     "visual_keys": 5,
-    "database_status": "MAPPED",
+    "database_status": "LIVE_VERIFIED",
     "exact_match_count": 25,
     "unexpected_owner_count": 0,
     "verified": true
@@ -74,6 +74,21 @@
     "next_build_routes": 20,
     "production_build_passed": true,
     "typescript_note": "The standalone full-repository type check still reports pre-existing errors in src/lib/client-data-cache.ts, which is unchanged from main and outside the Batch 7 diff; the exact production candidate compiled successfully in the Next.js production build.",
+    "verified": true
+  },
+  "live_verification": {
+    "batch": 7,
+    "deployment_id": "dpl_2nnFwPSRnAm81uDCfWcrj4tGwJA7",
+    "production_commit": "213651b69a9e27f1f4f395c1dcc0db1f9af81b5f",
+    "domain": "pilotvault.co.za",
+    "production_assets_verified": 5,
+    "mapped_question_rows": 25,
+    "exact_asset_bytes_match": true,
+    "exact_database_rows_live_verified": true,
+    "unexpected_database_owners": 0,
+    "real_renderer_verified_on_preview": true,
+    "signed_in_student_attempt_inspected": false,
+    "verification_note": "The production QA browser had no student auth session, so no signed-in attempt inspection is claimed. The real renderer was verified on the exact READY preview; the matching READY production artifact, all five live WebP bytes, and all 25 exact Supabase mappings were independently verified.",
     "verified": true
   },
   "stop_conditions": [

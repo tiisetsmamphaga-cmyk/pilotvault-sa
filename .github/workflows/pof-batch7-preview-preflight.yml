@@ -1,0 +1,39 @@
+name: POF Batch 7 preview preflight
+
+on:
+  push:
+    branches:
+      - pof-batch-7-rebuild
+    paths:
+      - .github/workflows/pof-batch7-preview-preflight.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate canonical POF manifest
+        run: python scripts/validate_pof_visuals.py
+      - name: Validate full Batch 7 promotion history
+        run: python scripts/validate_pof_visual_changes.py c9ce30802c250044e30eee81cb0bd6e478f32268
+      - name: Verify temporary QA route and exact renderer allowlist
+        run: |
+          test -f app/pof-visual-qa/page.tsx
+          grep -F 'refined-batch-(?:1|2|3|4|5|6|7)' 'app/practice/[subject]/components/explanation-image.tsx'
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-7 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-7 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-7 -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 0
+      - name: Production Next.js build
+        run: npm run build

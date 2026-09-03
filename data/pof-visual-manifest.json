@@ -2281,7 +2281,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.webp"
       },
       "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2317,6 +2317,13 @@
         "mobile_layout_verified_on_identical_tree": true,
         "error_overlay_absent": true,
         "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 6,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -2366,7 +2373,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.webp"
       },
       "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2402,6 +2409,13 @@
         "mobile_layout_verified_on_identical_tree": true,
         "error_overlay_absent": true,
         "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 5,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -2451,7 +2465,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.webp"
       },
       "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2487,6 +2501,13 @@
         "mobile_layout_verified_on_identical_tree": true,
         "error_overlay_absent": true,
         "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 5,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -2537,7 +2558,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.webp"
       },
       "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2573,6 +2594,13 @@
         "mobile_layout_verified_on_identical_tree": true,
         "error_overlay_absent": true,
         "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 6,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -2622,7 +2650,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.webp"
       },
       "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2658,6 +2686,13 @@
         "mobile_layout_verified_on_identical_tree": true,
         "error_overlay_absent": true,
         "verification_note": "The protected READY Vercel preview was opened through authenticated access and rendered all five exact Batch 7 WebPs through ExplanationImage. Browser inspection confirmed complete decoding at 1600x1050, correct responsive aspect ratio, no stretching or broken-image state, and no Next.js error overlay. Desktop was rechecked on the deployed URL; mobile was checked from the exact identical Git tree because Vercel protection prevented a second authenticated device-emulation handoff."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "question_row_count": 3,
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "duplicate_ownership_absent": true
       }
     }
   ]

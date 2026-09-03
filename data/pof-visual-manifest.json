@@ -1848,16 +1848,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-min-drag-v1.webp"
       },
       "mapping_reason": "The question requires interpreting Figure PPL PoF-2 and specifically identifying point 3 as the minimum-drag angle of attack.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1877,6 +1877,17 @@
         "real_explanation_component_used": true,
         "rendered_asset_contact_sheets_reviewed": true,
         "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_H7WfHDdvjNoA53T59U5Ljz5aLTwV",
+        "production_commit": "840c76a535541a451e3e4fef35fecbffc66357ea",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -1922,16 +1933,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-best-ld-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the best-angle point on the referenced polar; the visual teaches the maximum-L/D tangent method and point 4.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -1951,6 +1962,17 @@
         "real_explanation_component_used": true,
         "rendered_asset_contact_sheets_reviewed": true,
         "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_H7WfHDdvjNoA53T59U5Ljz5aLTwV",
+        "production_commit": "840c76a535541a451e3e4fef35fecbffc66357ea",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -1996,16 +2018,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-critical-aoa-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the critical-angle point on the referenced polar; point 6 is the maximum-CL peak.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2025,6 +2047,17 @@
         "real_explanation_component_used": true,
         "rendered_asset_contact_sheets_reviewed": true,
         "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_H7WfHDdvjNoA53T59U5Ljz5aLTwV",
+        "production_commit": "840c76a535541a451e3e4fef35fecbffc66357ea",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -2070,16 +2103,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.webp"
       },
       "mapping_reason": "Question 1178 asks what creates induced drag; the visual directly connects the top/bottom pressure difference to wingtip roll-up and the induced-drag consequence.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2099,6 +2132,17 @@
         "real_explanation_component_used": true,
         "rendered_asset_contact_sheets_reviewed": true,
         "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_H7WfHDdvjNoA53T59U5Ljz5aLTwV",
+        "production_commit": "840c76a535541a451e3e4fef35fecbffc66357ea",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     },
     {
@@ -2148,16 +2192,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-vertical-fin-directional-stability-v1.webp"
       },
       "mapping_reason": "These questions all ask the same directional-stability relationship and the approved handbook directly explains the vertical fin weather-vane restoring action.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -2177,6 +2221,17 @@
         "real_explanation_component_used": true,
         "rendered_asset_contact_sheets_reviewed": true,
         "external_browser_automation_note": "Exact preview deployment is READY and /pof-visual-qa returned HTTP 200 with all five Batch 6 assets rendered through ExplanationImage. Direct static-asset requests are protected by Vercel Authentication and redirect to SSO; actual raster pixels were independently inspected from exact branch artifacts before preview promotion."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_H7WfHDdvjNoA53T59U5Ljz5aLTwV",
+        "production_commit": "840c76a535541a451e3e4fef35fecbffc66357ea",
+        "domain": "pilotvault.co.za",
+        "all_five_production_assets_verified": true,
+        "production_assets_http_200": true,
+        "production_assets_content_type_webp": true,
+        "db_mapping_verified": true,
+        "db_status_live_verified": true,
+        "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
       }
     }
   ]

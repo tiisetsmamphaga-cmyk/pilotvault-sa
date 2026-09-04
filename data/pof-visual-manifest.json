@@ -2820,7 +2820,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-balance-tab-opposite-v1.webp"
       },
       "mapping_reason": "These questions ask either the relative movement or force-reducing purpose of a balance tab; one opposite-deflection teaching visual directly explains both parts of that exact mechanism.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2888,7 +2888,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-antiservo-tab-same-direction-v1.webp"
       },
       "mapping_reason": "Each question asks how correct anti-balance/anti-servo tab operation is recognized; the source figure's same-direction motion is the exact answer relationship.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -2957,7 +2957,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-spin-differential-stall-v1.webp"
       },
       "mapping_reason": "The questions all ask which wing is more stalled or at the greater AoA during autorotation; the visual isolates that exact inner-versus-outer wing state.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3024,7 +3024,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-spin-recovery-control-order-v1.webp"
       },
       "mapping_reason": "Both questions explicitly ask which control is used first; the FAA recovery template provides the exact rudder-before-elevator order with the required manufacturer-procedure caveat.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3097,7 +3097,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-flaps-steepen-glide-v1.webp"
       },
       "mapping_reason": "Every selected question asks for the L/D, descent-angle, descent-rate, or maximum-distance consequence of flap extension in a glide; one clean-versus-flaps path comparison directly teaches the shared relationship.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,

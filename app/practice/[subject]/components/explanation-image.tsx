@@ -40,7 +40,7 @@ export function ExplanationImage({
 
   const isPofVisual = src.includes("/explanation-images/principles-of-flight/")
   const isApprovedPofRaster =
-    /\/explanation-images\/principles-of-flight\/refined-batch-(?:1|2|3|4|5|6|7|8|9)\//.test(src) &&
+    /\/explanation-images\/principles-of-flight\/refined-batch-(?:1|2|3|4|5|6|7|8|9|10)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   // POF is fail-closed. Only individually QA-approved refined raster batches

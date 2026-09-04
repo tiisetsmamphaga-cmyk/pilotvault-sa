@@ -162,6 +162,15 @@
     "post_commit_readback_verified": true,
     "verified": true
   },
+  "queued_batch_source_selection": {
+    "batch": 9,
+    "selection_file": "data/pof-batch-9-source-selection.json",
+    "source_document": "ac_61-23c_phak_canada.pdf",
+    "visual_concepts": 5,
+    "planned_question_rows": 19,
+    "status": "SOURCE_FOUND",
+    "verified": true
+  },
   "visual_requirement_audit": {
     "audit_file": "data/pof-visual-requirement-audit.json",
     "total_pof_questions": 365,
@@ -175,7 +184,7 @@
   },
   "production_readiness": {
     "batch": 8,
-    "base_main_commit": "534338ab34e3cc8dba2614133fd400fad094b209",
+    "base_main_commit": "9e196a8efe5c94fefcd7e1473fb508041bcdce19",
     "production_file_count": 14,
     "png_assets": 5,
     "webp_assets": 5,
@@ -188,6 +197,7 @@
     "sharp_only_build_script_policy": true,
     "next_build_routes": 20,
     "production_build_passed": true,
+    "concurrent_batch_9_source_selection_preserved": true,
     "build_environment_note": "The exact production candidate compiled with inert, step-scoped Supabase placeholders; no production database credential was placed in source or CI.",
     "verified": true
   },

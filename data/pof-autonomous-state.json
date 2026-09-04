@@ -37,7 +37,7 @@
   "current_batch": 8,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_8_QA_APPROVED",
+  "last_verified_checkpoint": "POF_BATCH_8_PREVIEW_READY",
   "production_state": {
     "approved_live_visuals": 35,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Run the exact Batch 8 preflight build and validation on the deployment-disabled working branch; create one deliberate preview only after the remote gate is fully green.",
+  "next_action": "Map the five Batch 8 visuals to their 25 exact Supabase questions in one fail-closed transaction, verify every intended row and absence of unexpected ownership, then advance PREVIEW_READY to MAPPED only after database verification passes.",
   "active_batch_source_selection": {
     "batch": 8,
     "visual_concepts": 5,
@@ -125,6 +125,29 @@
       "pof-spin-recovery-control-order-v1.webp": "acd6dfb43d2c9a666a2f97b62a109b604cf069a3b57f39ef83c8704295f48caf"
     },
     "approved": true,
+    "verified": true
+  },
+  "active_batch_preview": {
+    "batch": 8,
+    "deployment_id": "dpl_9UJHNsFfUHgVv1TLy7XTqrN9Q21Y",
+    "deployment_url": "pilotvault-712pu1gmh-tiisetsmamphaga-8884s-projects.vercel.app",
+    "deployment_state": "READY",
+    "preview_branch": "preview/pof-batch8",
+    "preview_commit": "12a56b384ed8bea9d21bcf43041e3cdc8132b6a2",
+    "preflight_commit": "52c0abc63d9730032fa6014316a79537fc99dcb6",
+    "exact_git_tree": "feb538e8b44acd8033e64eec58b9865c210d9537",
+    "remote_preflight_run": 33796555350,
+    "remote_preflight_green": true,
+    "qa_route": "/pof-visual-qa",
+    "real_explanation_image_renderer_verified": true,
+    "rendered_webp_assets": 5,
+    "all_images_complete": true,
+    "natural_dimensions": "1600x1050",
+    "displayed_dimensions": "780x512",
+    "aspect_ratio_preserved": true,
+    "all_five_visually_inspected_in_viewport": true,
+    "pilotvault_console_errors": 0,
+    "supabase_mapping_performed": false,
     "verified": true
   },
   "active_batch_mapping": {

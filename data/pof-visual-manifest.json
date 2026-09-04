@@ -3635,21 +3635,31 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-pressure-distribution-lift-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-pressure-distribution-lift-v1.webp"
       },
       "mapping_reason": "The two questions directly ask which pressure distribution creates lift; the visual will show that exact upper/lower pressure relationship.",
-      "status": "SOURCE_FOUND",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "review_note": "Actual 1600x1050 PNG render and the actual WebP output set were visually inspected. Adverse-yaw drag-label clipping and propeller rotation-label overlap were corrected before approval; the pressure visual was simplified to avoid unnecessary faster/slower-airflow wording. Final geometry, arrows, labels and teaching relationships passed the locked Batch 1 quality bar."
       }
     },
     {
@@ -3694,21 +3704,31 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-adverse-yaw-high-aoa-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-adverse-yaw-high-aoa-v1.webp"
       },
       "mapping_reason": "The questions ask when adverse yaw is most noticeable or how it changes with AoA; a low-vs-high AoA comparison teaches that exact relationship.",
-      "status": "SOURCE_FOUND",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "review_note": "Actual 1600x1050 PNG render and the actual WebP output set were visually inspected. Adverse-yaw drag-label clipping and propeller rotation-label overlap were corrected before approval; the pressure visual was simplified to avoid unnecessary faster/slower-airflow wording. Final geometry, arrows, labels and teaching relationships passed the locked Batch 1 quality bar."
       }
     },
     {
@@ -3748,21 +3768,31 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-venturi-continuity-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-venturi-continuity-v1.webp"
       },
       "mapping_reason": "Question 1966 tests the exact continuity/Bernoulli changes through a venturi throat, which the visual will label directly.",
-      "status": "SOURCE_FOUND",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "review_note": "Actual 1600x1050 PNG render and the actual WebP output set were visually inspected. Adverse-yaw drag-label clipping and propeller rotation-label overlap were corrected before approval; the pressure visual was simplified to avoid unnecessary faster/slower-airflow wording. Final geometry, arrows, labels and teaching relationships passed the locked Batch 1 quality bar."
       }
     },
     {
@@ -3811,21 +3841,31 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-level-turn-force-balance-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-level-turn-force-balance-v1.webp"
       },
       "mapping_reason": "These questions all ask about the same level-turn force balance, its centripetal source, the AoA increase needed to maintain altitude, or the associated resultant load.",
-      "status": "SOURCE_FOUND",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "review_note": "Actual 1600x1050 PNG render and the actual WebP output set were visually inspected. Adverse-yaw drag-label clipping and propeller rotation-label overlap were corrected before approval; the pressure visual was simplified to avoid unnecessary faster/slower-airflow wording. Final geometry, arrows, labels and teaching relationships passed the locked Batch 1 quality bar."
       }
     },
     {
@@ -3868,21 +3908,31 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-propeller-left-turning-tendencies-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-propeller-left-turning-tendencies-v1.webp"
       },
       "mapping_reason": "Question 1948 asks the torque-reaction roll direction and question 1950 asks the P-factor/right-rudder correction; the two-panel visual separates those exact effects.",
-      "status": "SOURCE_FOUND",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "review_note": "Actual 1600x1050 PNG render and the actual WebP output set were visually inspected. Adverse-yaw drag-label clipping and propeller rotation-label overlap were corrected before approval; the pressure visual was simplified to avoid unnecessary faster/slower-airflow wording. Final geometry, arrows, labels and teaching relationships passed the locked Batch 1 quality bar."
       }
     }
   ]

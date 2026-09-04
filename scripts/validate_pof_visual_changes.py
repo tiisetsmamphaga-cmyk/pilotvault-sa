@@ -3,11 +3,15 @@
 
 Protects the production workflow from state skipping, silent modification of
 approved assets, reintroduction of SVG/vector explanation visuals, and addition
-of unmanifested or bulk-generated raster libraries.
+of unmanifested or bulk-generated raster libraries. Locked visuals may only
+expand their question coverage when the artwork/source/brief/QA/lock record is
+byte-for-byte equivalent at the manifest-data level; this supports audited
+reuse without reopening or replacing an approved visual.
 """
 
 from __future__ import annotations
 
+import copy
 import json
 import subprocess
 import sys
@@ -153,6 +157,41 @@ def index_visuals(manifest: dict) -> dict[str, dict]:
     return result
 
 
+def is_locked_mapping_only_expansion(old_visual: dict, new_visual: dict) -> bool:
+    """Allow a LIVE_VERIFIED visual to cover additional exact-equivalent rows.
+
+    Only question_ids and reuse_justification may change. Existing question
+    ownership cannot be removed, the new coverage must be a strict expansion,
+    and every source/artwork/brief/QA/lock/status field must remain identical.
+    """
+    if old_visual.get("status") != "LIVE_VERIFIED" or new_visual.get("status") != "LIVE_VERIFIED":
+        return False
+
+    old_ids = old_visual.get("question_ids")
+    new_ids = new_visual.get("question_ids")
+    if not isinstance(old_ids, list) or not isinstance(new_ids, list):
+        return False
+    if not all(isinstance(qid, int) for qid in old_ids + new_ids):
+        return False
+
+    old_set = set(old_ids)
+    new_set = set(new_ids)
+    if not old_set < new_set:
+        return False
+
+    reuse = new_visual.get("reuse_justification")
+    if not isinstance(reuse, str) or not reuse.strip():
+        return False
+
+    old_fixed = copy.deepcopy(old_visual)
+    new_fixed = copy.deepcopy(new_visual)
+    for item in (old_fixed, new_fixed):
+        item.pop("question_ids", None)
+        item.pop("reuse_justification", None)
+
+    return old_fixed == new_fixed
+
+
 def validate_pair(old_manifest: dict, new_manifest: dict, context: str) -> None:
     old = index_visuals(old_manifest)
     new = index_visuals(new_manifest)
@@ -172,11 +211,14 @@ def validate_pair(old_manifest: dict, new_manifest: dict, context: str) -> None:
         new_status = new_visual.get("status")
 
         if old_status == "LIVE_VERIFIED" and old_visual != new_visual:
+            if is_locked_mapping_only_expansion(old_visual, new_visual):
+                continue
             reason = new_visual.get("lock", {}).get("replacement_reason")
             if reason not in REPLACEMENT_REASONS:
                 fail(
-                    f"{context}: {visual_id}: approved LIVE_VERIFIED visual changed without an explicit "
-                    "technical_error, visual_error, or user_requested_change replacement reason"
+                    f"{context}: {visual_id}: approved LIVE_VERIFIED visual changed outside a strict "
+                    "mapping-only expansion and without an explicit technical_error, visual_error, "
+                    "or user_requested_change replacement reason"
                 )
             if new_status not in REOPEN_STATES:
                 fail(

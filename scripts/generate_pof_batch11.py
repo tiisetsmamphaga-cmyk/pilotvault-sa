@@ -78,9 +78,10 @@ for cx in (422,1177):
 draw_airfoil_with_flap(d,422,520,False); draw_airfoil_with_flap(d,1177,520,True)
 # lift and drag vectors
 arrow(d,(422,430),(422,310),fill=NAVY,width=8,head=22); d.text((sc(447),sc(315)),"LIFT",font=font(20,True),fill=NAVY)
-arrow(d,(422,520),(335,520),fill=MUTED,width=6,head=18); d.text((sc(320),sc(545)),"DRAG",font=font(18,True),fill=MUTED)
+# Drag is parallel to and in the same direction as the relative wind.
+arrow(d,(422,520),(509,520),fill=MUTED,width=6,head=18); d.text((sc(447),sc(545)),"DRAG",font=font(18,True),fill=MUTED)
 arrow(d,(1177,430),(1177,275),fill=GOLD,width=11,head=26); d.text((sc(1205),sc(285)),"MORE LIFT",font=font(21,True),fill=GOLD)
-arrow(d,(1177,520),(1035,520),fill=RED,width=9,head=24); d.text((sc(1020),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)
+arrow(d,(1177,520),(1319,520),fill=RED,width=9,head=24); d.text((sc(1205),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)
 box(d,(175,700,670,815),fill=PALE_NAVY,outline=PALE_NAVY,width=1,radius=15); center_text(d,(422,738),"Baseline camber",font(20,True),NAVY); center_text(d,(422,780),"Reference lift + drag",font(18),MUTED)
 box(d,(930,700,1425,815),fill=PALE_GOLD,outline=PALE_GOLD,width=1,radius=15); center_text(d,(1177,738),"Camber increases",font(20,True),GOLD); center_text(d,(1177,780),"Lift ↑  and  drag ↑",font(23,True),INK)
 box(d,(260,910,1340,990),fill=NAVY,outline=NAVY,width=1,radius=18); center_text(d,(800,950),"Same AoA + airspeed  →  FLAP DOWN gives more lift and more drag",font(25,True),WHITE)
@@ -176,8 +177,13 @@ cg=rot((cx,cy+20)); d.ellipse((sc(cg[0]-12),sc(cg[1]-12),sc(cg[0]+12),sc(cg[1]+1
 # relative wind vertical down
 for xx in (270,345): arrow(d,(xx,290),(xx,680),fill=MUTED,width=5,head=18)
 d.text((sc(185),sc(250)),"RELATIVE WIND",font=font(18,True),fill=MUTED)
-# tail force to right and restoring curved arrow / simple arc points
-finpt=rot((cx,cy+165)); arrow(d,(finpt[0],finpt[1]),(finpt[0]+150,finpt[1]),fill=GOLD,width=8,head=22); d.text((sc(finpt[0]+35),sc(finpt[1]+25)),"Fin sideforce",font=font(17,True),fill=GOLD)
+# Fin sideforce is lateral: perpendicular to the yawed aircraft longitudinal axis.
+# For a 15-degree clockwise yaw, the local right-lateral unit vector is (cos(ang), sin(ang)).
+finpt=rot((cx,cy+165))
+lat=(math.cos(ang),math.sin(ang))
+finend=(finpt[0]+150*lat[0],finpt[1]+150*lat[1])
+arrow(d,(finpt[0],finpt[1]),finend,fill=GOLD,width=8,head=22)
+d.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,True),fill=GOLD)
 # curved restoring arc
 arcbox=(sc(cg[0]-170),sc(cg[1]-170),sc(cg[0]+170),sc(cg[1]+170)); d.arc(arcbox,start=225,end=340,fill=GREEN,width=sc(8)); arrow(d,(cg[0]+155,cg[1]-64),(cg[0]+120,cg[1]-110),fill=GREEN,width=7,head=20); d.text((sc(cg[0]+105),sc(cg[1]-165)),"RESTORING YAW",font=font(19,True),fill=GREEN)
 box(d,(185,805,960,865),fill=PALE_GOLD,outline=PALE_GOLD,width=1,radius=14); center_text(d,(572,835),"Fin behind CG → restoring weathercock moment",font(21,True),NAVY)

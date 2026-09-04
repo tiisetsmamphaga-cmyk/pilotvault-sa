@@ -39,7 +39,7 @@ jobs:
 
       - name: Assert exact Batch 10 mapped starting tree
         run: |
-          test "$(git rev-parse HEAD)" = "0eeeeaebfb6ea3d1900b6a8342c48788b4162b89"
+          test "$(git rev-parse HEAD)" = "9c4da5a599403721d7c623da59b964a4cef152b1"
           git merge-base --is-ancestor 10cf5745d5abb1c9302c9d3d920ad34767465cfc HEAD
           python scripts/validate_pof_visuals.py
           python - <<'PY'
@@ -50,6 +50,46 @@ jobs:
           assert state['last_verified_checkpoint'] == 'POF_BATCH_10_PREVIEW_READY'
           assert state['active_batch_preview']['deployment_id'] == 'dpl_8xeGExzePF5NscgTqMzieJjNQENt'
           assert state['active_batch_preview']['verified'] is True
+          PY
+
+      - name: Prove locked mapping expansion guard remains fail-closed
+        run: |
+          python - <<'PY'
+          import copy
+          from scripts.validate_pof_visual_changes import is_locked_mapping_only_expansion
+
+          old = {
+              'visual_id': 'pof-test-001',
+              'status': 'LIVE_VERIFIED',
+              'question_ids': [1, 2],
+              'source': {'document': 'source.pdf', 'page': 1, 'notes': 'locked'},
+              'brief': {'student_must_understand': 'x', 'preserve': [], 'refine': [], 'add': [], 'remove': []},
+              'assets': {'master_asset': 'public/explanation-images/principles-of-flight/refined-batch-1/a.png', 'web_asset': 'public/explanation-images/principles-of-flight/refined-batch-1/a.webp'},
+              'mapping_reason': 'locked',
+              'qa': {'technical': True, 'teaching': True, 'visual': True, 'preview': True, 'live': True},
+              'lock': {'approved': True, 'replacement_reason': None},
+          }
+          expanded = copy.deepcopy(old)
+          expanded['question_ids'] = [1, 2, 3]
+          expanded['reuse_justification'] = 'Question 3 tests the exact same locked visual relationship.'
+          assert is_locked_mapping_only_expansion(old, expanded) is True
+
+          changed_asset = copy.deepcopy(expanded)
+          changed_asset['assets']['web_asset'] = 'public/explanation-images/principles-of-flight/refined-batch-1/changed.webp'
+          assert is_locked_mapping_only_expansion(old, changed_asset) is False
+
+          changed_brief = copy.deepcopy(expanded)
+          changed_brief['brief']['student_must_understand'] = 'changed'
+          assert is_locked_mapping_only_expansion(old, changed_brief) is False
+
+          removed_owner = copy.deepcopy(expanded)
+          removed_owner['question_ids'] = [2, 3]
+          assert is_locked_mapping_only_expansion(old, removed_owner) is False
+
+          reopened = copy.deepcopy(expanded)
+          reopened['status'] = 'REFINING'
+          assert is_locked_mapping_only_expansion(old, reopened) is False
+          print('Locked mapping expansion guard self-test PASSED')
           PY
 
       - name: Persist MAPPED checkpoint
@@ -125,6 +165,7 @@ jobs:
           rm -f .github/workflows/pof-batch10-refine-qa.yml
           rm -f .github/workflows/pof-batch10-preview-preflight.yml
           rm -f .github/workflows/pof-batch10-preview-checkpoint.yml
+          rm -f .github/workflows/pof-batch10-production-promote.yml
           rm -f app/pof-visual-qa/page.tsx
           rmdir app/pof-visual-qa 2>/dev/null || true
           rm -f scripts/generate_pof_batch10.py
@@ -137,7 +178,7 @@ jobs:
           state['production_readiness'] = {
               'batch': 10,
               'base_main_commit': '10cf5745d5abb1c9302c9d3d920ad34767465cfc',
-              'production_file_count': 14,
+              'production_file_count': 15,
               'png_assets': 5,
               'webp_assets': 5,
               'svg_assets': 0,
@@ -167,6 +208,7 @@ jobs:
           test ! -e .github/workflows/pof-batch10-refine-qa.yml
           test ! -e .github/workflows/pof-batch10-preview-preflight.yml
           test ! -e .github/workflows/pof-batch10-preview-checkpoint.yml
+          test ! -e .github/workflows/pof-batch10-production-promote.yml
           grep -F 'refined-batch-(?:1|2|3|4|5|6|7|8|9|10)' 'app/practice/[subject]/components/explanation-image.tsx'
           test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
           test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
@@ -178,6 +220,7 @@ jobs:
               'data/pof-autonomous-state.json',
               'data/pof-batch-10-source-selection.json',
               'data/pof-visual-manifest.json',
+              'scripts/validate_pof_visual_changes.py',
               'public/explanation-images/principles-of-flight/refined-batch-10/pof-adverse-yaw-high-aoa-v1.png',
               'public/explanation-images/principles-of-flight/refined-batch-10/pof-adverse-yaw-high-aoa-v1.webp',
               'public/explanation-images/principles-of-flight/refined-batch-10/pof-level-turn-force-balance-v1.png',
@@ -254,7 +297,7 @@ jobs:
         run: |
           python scripts/validate_pof_visuals.py
           python scripts/validate_pof_visual_changes.py 10cf5745d5abb1c9302c9d3d920ad34767465cfc
-          test "$(git diff --name-only 10cf5745d5abb1c9302c9d3d920ad34767465cfc..HEAD | wc -l)" -eq 14
+          test "$(git diff --name-only 10cf5745d5abb1c9302c9d3d920ad34767465cfc..HEAD | wc -l)" -eq 15
 
       - name: Final build on exact commit to be promoted
         env:

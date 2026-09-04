@@ -4068,7 +4068,9 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 2, Wing Flaps / Figure 2-1",
-        "notes": "The handbook describes flap extension as changing the wing lifting characteristics and increasing lift and drag."
+        "notes": "The handbook describes flap extension as changing the wing lifting characteristics and increasing lift and drag.",
+        "page": 2,
+        "figure": "2-1"
       },
       "brief": {
         "student_must_understand": "For the same baseline angle of attack and airspeed, flap extension increases camber, producing more lift and more drag.",
@@ -4136,7 +4138,9 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 2, Flight Control Systems / Wing Flaps",
-        "notes": "The handbook states that flaps change wing lifting characteristics and decrease the speed at which the wing stalls."
+        "notes": "The handbook states that flaps change wing lifting characteristics and decrease the speed at which the wing stalls.",
+        "page": 2,
+        "figure": "2-1"
       },
       "brief": {
         "student_must_understand": "With weight and load factor held constant, the higher lift capability available with flaps lowers stall speed.",
@@ -4203,7 +4207,9 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 2, Figure 2-1 — Fowler flap",
-        "notes": "The handbook distinguishes the Fowler flap by its rearward travel, which increases wing area as it extends."
+        "notes": "The handbook distinguishes the Fowler flap by its rearward travel, which increases wing area as it extends.",
+        "page": 2,
+        "figure": "2-1"
       },
       "brief": {
         "student_must_understand": "Unlike a simple hinged flap, a Fowler flap slides aft before/down as it extends, increasing effective wing area.",
@@ -4271,7 +4277,9 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 1, Static and Dynamic Stability / Figures 1-19 and 1-20",
-        "notes": "The handbook separates initial static response from the time history of dynamic oscillation and damping."
+        "notes": "The handbook separates initial static response from the time history of dynamic oscillation and damping.",
+        "page": 16,
+        "figure": "1-19 / 1-20"
       },
       "brief": {
         "student_must_understand": "An aeroplane can initially tend back toward trim yet still be dynamically unstable if each oscillation grows; a dynamically stable response damps toward trim.",
@@ -4339,7 +4347,9 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 1, Directional Stability / Figure 1-31",
-        "notes": "The handbook describes the vertical fin behind the CG as a weather-vane surface that returns a yawed aeroplane toward its original direction."
+        "notes": "The handbook describes the vertical fin behind the CG as a weather-vane surface that returns a yawed aeroplane toward its original direction.",
+        "page": 24,
+        "figure": "1-31"
       },
       "brief": {
         "student_must_understand": "When the aeroplane yaws away from the relative wind, airflow on the fin behind the CG produces a restoring moment; increasing aft vertical area increases directional stability.",

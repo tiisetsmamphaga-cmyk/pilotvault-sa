@@ -3117,6 +3117,305 @@
         "approved": true,
         "replacement_reason": null
       }
+    },
+    {
+      "visual_id": "pof-climb-force-components-001",
+      "topic": "Climb Performance",
+      "concept": "Steady-climb force components: lift is less than total weight and thrust is greater than drag",
+      "question_ids": [
+        1219,
+        1252,
+        1256,
+        1288,
+        1298,
+        1351
+      ],
+      "reuse_justification": "All six questions test the same exact steady-climb force relationship.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 30,
+        "figure": "Figure 1-37 — Forces acting on an airplane in a climb",
+        "notes": "The handbook resolves weight into a component opposing lift and a rearward component along the flight path. In equilibrium, thrust balances drag plus the rearward weight component, while lift balances only the perpendicular component of weight."
+      },
+      "brief": {
+        "student_must_understand": "In a steady climb the aircraft is not climbing because lift exceeds weight. Weight is resolved relative to the inclined flight path, so wing lift is less than total weight and thrust must exceed drag.",
+        "preserve": [
+          "Inclined climb flight path",
+          "Lift perpendicular to the flight path",
+          "Drag opposite the flight path",
+          "Thrust along the flight path",
+          "Weight vertically downward",
+          "Weight components parallel and perpendicular to the flight path"
+        ],
+        "refine": [
+          "Make the two weight components visually obvious",
+          "Separate the force vectors cleanly from the aircraft silhouette",
+          "Emphasize T > D and L < W only after the vector geometry is visible"
+        ],
+        "add": [
+          "Compact T > D callout",
+          "Compact L < W callout",
+          "Short note that the rearward weight component is what makes the thrust requirement exceed drag"
+        ],
+        "remove": [
+          "Unrelated page text",
+          "Any claim that excess lift is the cause of climb",
+          "Baked PilotVault branding"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-best-rate-excess-power-001",
+      "topic": "Climb Performance",
+      "concept": "Best rate of climb Vy occurs where excess power is greatest",
+      "question_ids": [
+        1215,
+        1244
+      ],
+      "reuse_justification": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 31,
+        "figure": "Figure 1-38 — Power available vs. power required",
+        "notes": "The handbook states that the vertical distance between power-available and power-required curves is excess power and that the best climbing airspeed is where excess power is maximum."
+      },
+      "brief": {
+        "student_must_understand": "Vy is the speed that gives the greatest altitude gain per unit time because it occurs at maximum excess power.",
+        "preserve": [
+          "Power available curve",
+          "Power required curve",
+          "Airspeed horizontal axis",
+          "Power vertical axis",
+          "Vertical separation between the curves as excess power"
+        ],
+        "refine": [
+          "Clean and enlarge the two curves",
+          "Highlight the maximum vertical separation",
+          "Label the corresponding airspeed as Vy without inventing a numeric speed"
+        ],
+        "add": [
+          "Maximum excess power bracket",
+          "Vy marker",
+          "Greatest height per unit time takeaway"
+        ],
+        "remove": [
+          "Page clutter",
+          "Irrelevant performance-chart detail",
+          "Baked PilotVault branding"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-vx-obstacle-clearance-001",
+      "topic": "Climb Performance",
+      "concept": "Best angle of climb Vx gives the greatest height gain over the shortest horizontal distance and is used for obstacle clearance",
+      "question_ids": [
+        1217,
+        1220,
+        1221,
+        1371,
+        1377
+      ],
+      "reuse_justification": "All five questions test the same exact Vx/obstacle-clearance relationship.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 65,
+        "figure": null,
+        "notes": "The handbook defines Vx as the speed for best angle of climb and explicitly identifies best-angle climb speed as important for a short-field takeoff where an obstacle must be cleared."
+      },
+      "brief": {
+        "student_must_understand": "Vx is about height gained per horizontal distance, not height gained per unit time. It produces the steepest ground-referenced climb path for obstacle clearance under the stated conditions.",
+        "preserve": [
+          "Vx = best angle of climb",
+          "Obstacle-clearance use case",
+          "Horizontal distance as the comparison basis",
+          "No numeric Vx value unless aircraft-specific data are provided"
+        ],
+        "refine": [
+          "Use a clean side-view climb-path comparison",
+          "Make the shorter horizontal distance to clear a fixed obstacle visually obvious",
+          "Avoid implying that Vx is the best-rate speed"
+        ],
+        "add": [
+          "Vx label",
+          "Fixed-height obstacle",
+          "Greatest height per shortest horizontal distance takeaway"
+        ],
+        "remove": [
+          "Aircraft-specific numbers",
+          "Unrelated runway performance data",
+          "Baked PilotVault branding"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-wind-glide-ground-track-001",
+      "topic": "Flaps & Glide",
+      "concept": "Wind changes glide path over the ground, not the aerodynamic glide angle or air-mass rate of descent at the same optimum glide condition",
+      "question_ids": [
+        1209,
+        1254,
+        1373
+      ],
+      "reuse_justification": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 33,
+        "figure": null,
+        "notes": "The handbook states that into-wind glide covers less ground distance and appears steeper to a ground observer, while downwind glide covers more ground distance. It explicitly states the actual glide angle through the moving air mass is unchanged and that the rate of descent is the same in both cases."
+      },
+      "brief": {
+        "student_must_understand": "A headwind reduces groundspeed, so the aircraft covers less ground for the same height loss and the ground-referenced glide path is steeper. A tailwind does the opposite. The aerodynamic glide through the air mass is unchanged by steady wind.",
+        "preserve": [
+          "Same starting altitude",
+          "Same optimum glide condition through the air mass",
+          "Headwind = shorter ground distance and steeper observed path",
+          "Tailwind = longer ground distance and shallower observed path",
+          "Same rate of descent through the air mass"
+        ],
+        "refine": [
+          "Use a matched side-by-side headwind/tailwind comparison",
+          "Hold height loss constant in both panels",
+          "Make the ground-distance difference the main visual cue"
+        ],
+        "add": [
+          "Headwind and tailwind arrows",
+          "Ground-distance brackets",
+          "Same rate of descent note",
+          "Ground path: steeper vs shallower labels"
+        ],
+        "remove": [
+          "Any suggestion that steady wind changes L/D",
+          "Any suggestion that steady wind directly changes the air-mass rate of descent",
+          "Baked PilotVault branding"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-elevator-trim-tab-setting-001",
+      "topic": "Trim & Balance Tabs",
+      "concept": "A conventional adjustable elevator trim tab keeps its selected angle relative to the elevator; its aerodynamic force then biases the elevator",
+      "question_ids": [
+        1190,
+        1305,
+        2012
+      ],
+      "reuse_justification": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 20,
+        "figure": "Figure 1-26 — Effect of trim tabs",
+        "notes": "The handbook describes the elevator trim tab as a separately controlled auxiliary surface on the elevator and states that an upward tab deflection forces the elevator downward while a downward tab deflection forces the elevator upward. The selected trim-tab angle is treated relative to the control surface, not as an automatically coupled balance tab."
+      },
+      "brief": {
+        "student_must_understand": "A simple trim tab is not a balance tab. Once set, it keeps the selected angle relative to the elevator as the elevator moves; airflow on the tab supplies a force that helps hold the elevator in the trimmed position.",
+        "preserve": [
+          "Trim tab hinged to the elevator trailing edge",
+          "Trim tab separately adjustable from the primary elevator control",
+          "Selected tab angle shown relative to the elevator",
+          "Aerodynamic force on the tab biases the elevator in the opposite direction"
+        ],
+        "refine": [
+          "Show the tab/elevator relationship in two elevator positions",
+          "Keep the selected tab angle relative to the elevator visually constant",
+          "Differentiate simple trim-tab behavior from automatically coupled balance-tab behavior"
+        ],
+        "add": [
+          "Selected trim angle marker",
+          "Relative-to-elevator reference line",
+          "Small airflow-force arrow where it helps explain the bias"
+        ],
+        "remove": [
+          "Balance-tab or antiservo-tab behavior",
+          "Ambiguous fixed-to-horizon interpretation",
+          "Baked PilotVault branding"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
     }
   ]
 }

@@ -3168,13 +3168,21 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-climb-force-components-v1.webp"
       },
       "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. Lift is perpendicular to the climb path, thrust and drag lie along it, weight remains vertical, and the W-parallel/W-perpendicular decomposition supports L < W and T > D without implying excess lift."
       },
       "lock": {
         "approved": false,
@@ -3226,13 +3234,21 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-best-rate-excess-power-v1.webp"
       },
       "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. The corrected Vy marker, endpoint dots, dashed projection, and maximum-excess-power bracket share one airspeed at the visibly widest vertical gap between the power-available and power-required curves."
       },
       "lock": {
         "approved": false,
@@ -3286,13 +3302,21 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-vx-obstacle-clearance-v1.webp"
       },
       "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. The Vx path clearly clears the fixed obstacle over the marked short horizontal distance; the intersecting Vy comparison path was removed and angle-versus-rate is distinguished in text."
       },
       "lock": {
         "approved": false,
@@ -3346,13 +3370,21 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-wind-glide-ground-track-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. Both panels use the same starting height and air-mass glide condition; headwind yields the shorter, steeper ground path while tailwind yields the longer, shallower ground path, with equal rate of descent stated and shown."
       },
       "lock": {
         "approved": false,
@@ -3404,13 +3436,21 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-elevator-trim-tab-setting-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. Both elevator positions show the trim tab exactly 15 degrees below a reference line extending the local elevator chord, making the constant selected angle relative to the elevator explicit and distinct from coupled tab behavior."
       },
       "lock": {
         "approved": false,

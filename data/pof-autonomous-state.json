@@ -37,7 +37,7 @@
   "current_batch": 9,
   "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_9_REFINED",
+  "last_verified_checkpoint": "POF_BATCH_9_QA_APPROVED",
   "production_state": {
     "approved_live_visuals": 40,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Run final technical, teaching, and rendered visual QA on the five Batch 9 PNG/WebP pairs; persist QA_APPROVED only if every exact output meets the locked Batch 1 standard.",
+  "next_action": "Prepare the temporary Batch 9 QA route and safe CI preflight, validate the exact five PNG/five WebP/no-SVG boundary, and create one preview only after the full remote preflight is green.",
   "active_batch_source_selection": {
     "batch": 9,
     "status": "SOURCE_FOUND",
@@ -90,10 +90,42 @@
       "Removed the Vy comparison path that intersected the Vx obstacle",
       "Set both conventional trim-tab panels to the same explicit 15-degree angle relative to the elevator"
     ],
-    "qa_pending": true,
+    "qa_pending": false,
     "verified": true
   },
-  "active_batch_qa": null,
+  "active_batch_qa": {
+    "batch": 9,
+    "visual_concepts": 5,
+    "png_assets": 5,
+    "webp_assets": 5,
+    "svg_assets": 0,
+    "asset_dimensions": "1600x1050",
+    "actual_pngs_rendered_and_reviewed": true,
+    "actual_webps_rendered_and_reviewed": true,
+    "technical": true,
+    "teaching": true,
+    "visual": true,
+    "batch1_quality_or_better": true,
+    "generic_placeholder_appearance": false,
+    "corrections_verified": true,
+    "png_palette_optimized_without_geometry_or_text_changes": true,
+    "png_sha256": {
+      "pof-best-rate-excess-power-v1.png": "718f66d17464d53a4199357c5d25a9e59fe96858da543e001b055b682098a1f4",
+      "pof-climb-force-components-v1.png": "068e84b89c1973754c5c711a2e04ba06343d090a55e8eb7324f04aa057ad12ec",
+      "pof-elevator-trim-tab-setting-v1.png": "806f132c39871cbe759ddc06cd9109769bd5fad98a0cc83c4962a9d1f71c1ba5",
+      "pof-vx-obstacle-clearance-v1.png": "91be353ee54a32810fa61ab178256f6eac4588ca6d6c770ada4f969ac712e638",
+      "pof-wind-glide-ground-track-v1.png": "b511446afa5918e90425f9dce92bb4829d738297f2e300c1d08fa991dcf7bec4"
+    },
+    "webp_sha256": {
+      "pof-best-rate-excess-power-v1.webp": "ca5224a37e764d82b8e1a4f2894da8d59e8cb70875febc50ecc2fcb6d2cd63d7",
+      "pof-climb-force-components-v1.webp": "305c40802628e121a02e1292417dc82446b5344af143b032d7783eccb77f9fad",
+      "pof-elevator-trim-tab-setting-v1.webp": "f6c77aa82ea5c69799e45cae2c68c08dc6ac6eaf654535e65c509915eb558e4f",
+      "pof-vx-obstacle-clearance-v1.webp": "df7d78e253f488bb5107fc230e0f91c653a888c54d5533fc0e392d914cafa093",
+      "pof-wind-glide-ground-track-v1.webp": "d5eed3f35a1a1e1afe6234d7385f361452041d397bcb299bfe967532e527a71d"
+    },
+    "approved": true,
+    "verified": true
+  },
   "active_batch_preview": null,
   "active_batch_mapping": {
     "batch": 8,

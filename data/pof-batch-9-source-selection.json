@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 9,
-  "status": "PREVIEW_READY",
+  "status": "MAPPED",
   "selected_date": "2026-09-03",
   "batch_limit": 5,
   "source_document": "ac_61-23c_phak_canada.pdf",
@@ -55,7 +55,7 @@
         ]
       },
       "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-best-rate-excess-power-001",
@@ -99,7 +99,7 @@
         ]
       },
       "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-vx-obstacle-clearance-001",
@@ -143,7 +143,7 @@
         ]
       },
       "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-wind-glide-ground-track-001",
@@ -187,7 +187,7 @@
         ]
       },
       "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-elevator-trim-tab-setting-001",
@@ -233,7 +233,7 @@
         ]
       },
       "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     }
   ],
   "coverage": {
@@ -246,9 +246,9 @@
     "refinement_started": true,
     "qa_approved": true,
     "preview_ready": true,
-    "mapped": false,
+    "mapped": true,
     "production_ready": false,
     "live_verified": false
   },
-  "next_action": "Map the 19 exact verified question rows fail-closed and independently read them back before production preparation."
+  "next_action": "Remove temporary QA-only files, validate the exact production diff and full history, and pass the production build before promotion to main."
 }

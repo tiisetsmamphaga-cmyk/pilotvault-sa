@@ -29,23 +29,19 @@ jobs:
       - name: Install deterministic raster dependency
         run: pip install pillow==12.3.0
 
-      - name: Patch only the two failed geometries
+      - name: Fix only the failed directional inset text fit
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
           p = Path('scripts/generate_pof_batch11.py')
           s = p.read_text()
-          old_flap = 'arrow(d,(422,520),(335,520),fill=MUTED,width=6,head=18); d.text((sc(320),sc(545)),"DRAG",font=font(18,True),fill=MUTED)\narrow(d,(1177,430),(1177,275),fill=GOLD,width=11,head=26); d.text((sc(1205),sc(285)),"MORE LIFT",font=font(21,True),fill=GOLD)\narrow(d,(1177,520),(1035,520),fill=RED,width=9,head=24); d.text((sc(1020),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)'
-          new_flap = '# Drag is parallel to and in the same direction as the relative wind.\narrow(d,(422,520),(509,520),fill=MUTED,width=6,head=18); d.text((sc(447),sc(545)),"DRAG",font=font(18,True),fill=MUTED)\narrow(d,(1177,430),(1177,275),fill=GOLD,width=11,head=26); d.text((sc(1205),sc(285)),"MORE LIFT",font=font(21,True),fill=GOLD)\narrow(d,(1177,520),(1319,520),fill=RED,width=9,head=24); d.text((sc(1205),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)'
-          assert old_flap in s, 'Flap geometry source changed; fail closed.'
-          s = s.replace(old_flap, new_flap, 1)
-          old_fin = '# tail force to right and restoring curved arrow / simple arc points\nfinpt=rot((cx,cy+165)); arrow(d,(finpt[0],finpt[1]),(finpt[0]+150,finpt[1]),fill=GOLD,width=8,head=22); d.text((sc(finpt[0]+35),sc(finpt[1]+25)),"Fin sideforce",font=font(17,True),fill=GOLD)'
-          new_fin = '# Fin sideforce is lateral: perpendicular to the yawed aircraft longitudinal axis.\n# For a 15-degree clockwise yaw, the local right-lateral unit vector is (cos(ang), sin(ang)).\nfinpt=rot((cx,cy+165))\nlat=(math.cos(ang),math.sin(ang))\nfinend=(finpt[0]+150*lat[0],finpt[1]+150*lat[1])\narrow(d,(finpt[0],finpt[1]),finend,fill=GOLD,width=8,head=22)\nd.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,True),fill=GOLD)'
-          assert old_fin in s, 'Directional-stability geometry source changed; fail closed.'
-          s = s.replace(old_fin, new_fin, 1)
+          old = 'center_text(d,(1325,867),"More area aft of CG → stronger directional stability",font(16,True),WHITE)'
+          new = 'center_text(d,(1325,867),"More area aft of CG → stronger stability",font(14,True),WHITE)'
+          assert old in s, 'Inset source changed; fail closed.'
+          s = s.replace(old, new, 1)
           p.write_text(s)
-          print('Patched exactly two known technical defects.')
+          print('Corrected the one clipped inset label only.')
           PY
 
       - name: Regenerate all five Batch 11 raster pairs
@@ -66,9 +62,7 @@ jobs:
               'pof-directional-fin-weathercock-v1',
           }
           png = sorted(out.glob('*.png')); webp = sorted(out.glob('*.webp')); svg = sorted(out.glob('*.svg'))
-          assert len(png) == 5, len(png)
-          assert len(webp) == 5, len(webp)
-          assert len(svg) == 0, len(svg)
+          assert len(png) == 5 and len(webp) == 5 and len(svg) == 0
           assert {p.stem for p in png} == expected
           assert {p.stem for p in webp} == expected
           for p in png + webp:
@@ -78,7 +72,7 @@ jobs:
           print('Boundary green: exactly 5 PNG + 5 WebP + 0 SVG; all 1600x1050.')
           PY
 
-      - name: Build actual-raster contact sheet
+      - name: Build final actual-raster contact sheet
         shell: bash
         run: |
           python - <<'PY'
@@ -93,31 +87,31 @@ jobs:
               'pof-directional-fin-weathercock-v1.png',
           ]
           target_w, label_h, gap = 900, 34, 18
-          panels = []
+          panels=[]
           for name in files:
-              im = Image.open(root / name).convert('RGB')
-              h = round(target_w * im.height / im.width)
-              im = im.resize((target_w, h), Image.Resampling.LANCZOS)
-              canvas = Image.new('RGB', (target_w, label_h + h), 'white')
-              d = ImageDraw.Draw(canvas); d.text((10, 8), name, fill='black'); canvas.paste(im, (0, label_h)); panels.append(canvas)
-          sheet = Image.new('RGB', (target_w, sum(x.height for x in panels) + gap*(len(panels)-1)), 'white')
-          y = 0
+              im=Image.open(root/name).convert('RGB')
+              h=round(target_w*im.height/im.width)
+              im=im.resize((target_w,h),Image.Resampling.LANCZOS)
+              canvas=Image.new('RGB',(target_w,label_h+h),'white')
+              d=ImageDraw.Draw(canvas); d.text((10,8),name,fill='black'); canvas.paste(im,(0,label_h)); panels.append(canvas)
+          sheet=Image.new('RGB',(target_w,sum(x.height for x in panels)+gap*(len(panels)-1)),'white')
+          y=0
           for panel in panels:
-              sheet.paste(panel, (0, y)); y += panel.height + gap
-          out = Path('/tmp/pof-batch11-corrected-contact.jpg')
-          sheet.save(out, 'JPEG', quality=90, optimize=True, progressive=True)
+              sheet.paste(panel,(0,y)); y += panel.height+gap
+          out=Path('/tmp/pof-batch11-final-contact.jpg')
+          sheet.save(out,'JPEG',quality=92,optimize=True,progressive=True)
           print(f'CONTACT_BYTES={out.stat().st_size}')
           PY
 
-      - name: Upload corrected contact sheet
+      - name: Upload final contact sheet
         uses: actions/upload-artifact@v4
         with:
-          name: pof-batch11-corrected-contact-sheet
-          path: /tmp/pof-batch11-corrected-contact.jpg
+          name: pof-batch11-final-contact-sheet
+          path: /tmp/pof-batch11-final-contact.jpg
           if-no-files-found: error
           retention-days: 1
 
-      - name: Commit corrected generator and rasters
+      - name: Commit final visual correction
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -125,5 +119,5 @@ jobs:
           git add scripts/generate_pof_batch11.py public/explanation-images/principles-of-flight/refined-batch-11
           git diff --cached --check
           git diff --cached --quiet && { echo 'No correction diff produced'; exit 1; }
-          git commit -m "Correct POF Batch 11 raster geometry"
+          git commit -m "Fix POF Batch 11 directional inset fit"
           git push origin HEAD:pof-batch-11-rebuild

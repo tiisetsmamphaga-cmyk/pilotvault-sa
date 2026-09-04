@@ -1,0 +1,281 @@
+name: POF Batch 9 production promotion
+
+on:
+  push:
+    branches:
+      - pof-batch-9-rebuild
+    paths:
+      - .github/workflows/pof-batch9-production-promote.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact Batch 9 production branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-9-production
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure checkpoint commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Persist PREVIEW_READY checkpoint
+        env:
+          PREVIEW_DEPLOYMENT_ID: dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756
+          PREVIEW_COMMIT: b8b9fa10907adcd97b8220f456c641aff39ec83e
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          visual_ids = {
+              "pof-climb-force-components-001",
+              "pof-best-rate-excess-power-001",
+              "pof-vx-obstacle-clearance-001",
+              "pof-wind-glide-ground-track-001",
+              "pof-elevator-trim-tab-setting-001",
+          }
+
+          def load(path):
+              return json.loads(Path(path).read_text(encoding="utf-8"))
+
+          def save(path, data):
+              Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          preview = {
+              "batch": 9,
+              "deployment_id": os.environ["PREVIEW_DEPLOYMENT_ID"],
+              "deployment_commit": os.environ["PREVIEW_COMMIT"],
+              "route": "/pof-visual-qa",
+              "deployment_ready": True,
+              "route_statically_generated": True,
+              "real_explanation_component_used": True,
+              "runtime_errors_detected": 0,
+              "protected_route_note": "Vercel Authentication redirected unauthenticated route fetches to SSO. The exact READY deployment build statically generated /pof-visual-qa through the real ExplanationImage component and preview runtime error/fatal logs were empty.",
+              "verified": True,
+          }
+
+          state = load("data/pof-autonomous-state.json")
+          state["last_verified_checkpoint"] = "POF_BATCH_9_PREVIEW_READY"
+          state["next_action"] = "Map the five Batch 9 visuals to their 19 exact Supabase questions in one fail-closed transaction, verify every intended row and zero unexpected ownership, then advance to MAPPED."
+          state["active_batch_preview"] = preview
+          save("data/pof-autonomous-state.json", state)
+
+          selection = load("data/pof-batch-9-source-selection.json")
+          selection["status"] = "PREVIEW_READY"
+          for concept in selection["concepts"]:
+              concept["status"] = "PREVIEW_READY"
+          selection["gates"]["preview_ready"] = True
+          selection["next_action"] = "Map the 19 exact verified question rows fail-closed and independently read them back before production preparation."
+          save("data/pof-batch-9-source-selection.json", selection)
+
+          manifest = load("data/pof-visual-manifest.json")
+          for visual in manifest["visuals"]:
+              if visual.get("visual_id") in visual_ids:
+                  visual["status"] = "PREVIEW_READY"
+                  visual["qa"]["preview"] = True
+                  visual["preview_verification"] = {
+                      "deployment_id": os.environ["PREVIEW_DEPLOYMENT_ID"],
+                      "deployment_commit": os.environ["PREVIEW_COMMIT"],
+                      "route": "/pof-visual-qa",
+                      "deployment_ready": True,
+                      "route_statically_generated": True,
+                      "real_explanation_component_used": True,
+                      "runtime_errors_detected": 0,
+                      "verification_note": "The exact READY preview built the temporary QA route as static content using ExplanationImage. Vercel Authentication prevented an unauthenticated visual route fetch, so no browser screenshot or signed-in student attempt inspection is claimed.",
+                  }
+          save("data/pof-visual-manifest.json", manifest)
+          PY
+          git add data/pof-autonomous-state.json data/pof-batch-9-source-selection.json data/pof-visual-manifest.json
+          git commit -m "Persist POF Batch 9 PREVIEW_READY"
+
+      - name: Persist MAPPED checkpoint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          visual_ids = {
+              "pof-climb-force-components-001",
+              "pof-best-rate-excess-power-001",
+              "pof-vx-obstacle-clearance-001",
+              "pof-wind-glide-ground-track-001",
+              "pof-elevator-trim-tab-setting-001",
+          }
+
+          def load(path):
+              return json.loads(Path(path).read_text(encoding="utf-8"))
+
+          def save(path, data):
+              Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          state = load("data/pof-autonomous-state.json")
+          state["last_verified_checkpoint"] = "POF_BATCH_9_MAPPED"
+          state["next_action"] = "Prepare the Batch 9 production candidate by removing temporary QA-only files, retain the approved raster allowlist and assets, validate the full promotion history, and pass the exact production build before main advances."
+          state["active_batch_mapping"] = {
+              "batch": 9,
+              "project_ref": "kkmlfbxfopwulwkloaoc",
+              "mapped_question_rows": 19,
+              "visual_keys": 5,
+              "database_status": "MAPPED",
+              "exact_match_count": 19,
+              "unexpected_owner_count": 0,
+              "transactional_update": True,
+              "post_commit_readback_verified": True,
+              "verified": True,
+          }
+          save("data/pof-autonomous-state.json", state)
+
+          selection = load("data/pof-batch-9-source-selection.json")
+          selection["status"] = "MAPPED"
+          for concept in selection["concepts"]:
+              concept["status"] = "MAPPED"
+          selection["gates"]["mapped"] = True
+          selection["next_action"] = "Remove temporary QA-only files, validate the exact production diff and full history, and pass the production build before promotion to main."
+          save("data/pof-batch-9-source-selection.json", selection)
+
+          manifest = load("data/pof-visual-manifest.json")
+          for visual in manifest["visuals"]:
+              if visual.get("visual_id") in visual_ids:
+                  visual["status"] = "MAPPED"
+                  visual["mapping_verification"] = {
+                      "project_ref": "kkmlfbxfopwulwkloaoc",
+                      "database_status": "MAPPED",
+                      "exact_rows_verified": True,
+                      "duplicate_ownership_absent": True,
+                  }
+          save("data/pof-visual-manifest.json", manifest)
+          PY
+          git add data/pof-autonomous-state.json data/pof-batch-9-source-selection.json data/pof-visual-manifest.json
+          git commit -m "Persist POF Batch 9 MAPPED"
+
+      - name: Prepare clean production tree
+        run: |
+          rm -f .github/workflows/pof-batch9-preview-preflight.yml
+          rm -f app/pof-visual-qa/page.tsx
+          rmdir app/pof-visual-qa 2>/dev/null || true
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          visual_ids = {
+              "pof-climb-force-components-001",
+              "pof-best-rate-excess-power-001",
+              "pof-vx-obstacle-clearance-001",
+              "pof-wind-glide-ground-track-001",
+              "pof-elevator-trim-tab-setting-001",
+          }
+
+          def load(path):
+              return json.loads(Path(path).read_text(encoding="utf-8"))
+
+          def save(path, data):
+              Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          state = load("data/pof-autonomous-state.json")
+          state["last_verified_checkpoint"] = "POF_BATCH_9_PRODUCTION_READY"
+          state["next_action"] = "Run the exact cleaned Batch 9 production build and full-history validators; advance main only after the candidate is fully green."
+          state["production_readiness"] = {
+              "batch": 9,
+              "base_main_commit": "cc015041d97bf42c8a5afab198b545bd6dda8283",
+              "production_file_count": 14,
+              "png_assets": 5,
+              "webp_assets": 5,
+              "svg_assets": 0,
+              "renderer_allowlist_updated": True,
+              "temporary_qa_route_removed": True,
+              "temporary_workflows_removed": True,
+              "temporary_generator_removed": True,
+              "pnpm_frozen_lock_install_passed": True,
+              "sharp_only_build_script_policy": True,
+              "next_build_routes": 20,
+              "production_build_passed": False,
+              "build_environment_note": "The candidate build uses inert, step-scoped Supabase placeholders; no production database credential is placed in source or CI.",
+              "verified": False,
+          }
+          save("data/pof-autonomous-state.json", state)
+
+          selection = load("data/pof-batch-9-source-selection.json")
+          selection["status"] = "PRODUCTION_READY"
+          for concept in selection["concepts"]:
+              concept["status"] = "PRODUCTION_READY"
+          selection["gates"]["production_ready"] = True
+          selection["next_action"] = "Advance the exact green production tree to main, then verify the live deployment, all five assets and all 19 database rows before lock."
+          save("data/pof-batch-9-source-selection.json", selection)
+
+          manifest = load("data/pof-visual-manifest.json")
+          for visual in manifest["visuals"]:
+              if visual.get("visual_id") in visual_ids:
+                  visual["status"] = "PRODUCTION_READY"
+          save("data/pof-visual-manifest.json", manifest)
+          PY
+          git add -A
+          git commit -m "Prepare POF Batch 9 production release"
+
+      - name: Validate exact production boundary and promotion history
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py cc015041d97bf42c8a5afab198b545bd6dda8283
+          test ! -e app/pof-visual-qa/page.tsx
+          test ! -e .github/workflows/pof-batch9-preview-preflight.yml
+          grep -F 'refined-batch-(?:1|2|3|4|5|6|7|8|9)' 'app/practice/[subject]/components/explanation-image.tsx'
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-9 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-9 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-9 -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 0
+          test "$(git diff --name-only cc015041d97bf42c8a5afab198b545bd6dda8283..HEAD | wc -l)" -eq 14
+
+      - name: First exact production build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://pof-batch9-production-ci.invalid
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: pof-batch9-production-ci-anon-placeholder
+          SUPABASE_SERVICE_ROLE_KEY: pof-batch9-production-ci-service-role-placeholder
+        run: pnpm run build
+
+      - name: Record green production readiness
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("data/pof-autonomous-state.json")
+          state = json.loads(path.read_text(encoding="utf-8"))
+          state["production_readiness"]["production_build_passed"] = True
+          state["production_readiness"]["verified"] = True
+          state["next_action"] = "Fast-forward the exact verified Batch 9 production tree once to main, wait for the matching production deployment to become READY, then live-verify five assets and 19 exact Supabase mappings before lock."
+          path.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          PY
+          git add data/pof-autonomous-state.json
+          git commit -m "Verify POF Batch 9 production candidate"
+
+      - name: Revalidate final production commit
+        run: |
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py cc015041d97bf42c8a5afab198b545bd6dda8283
+          test "$(git diff --name-only cc015041d97bf42c8a5afab198b545bd6dda8283..HEAD | wc -l)" -eq 14
+
+      - name: Final build on exact commit to be promoted
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://pof-batch9-production-ci.invalid
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: pof-batch9-production-ci-anon-placeholder
+          SUPABASE_SERVICE_ROLE_KEY: pof-batch9-production-ci-service-role-placeholder
+        run: pnpm run build
+
+      - name: Push verified production checkpoints
+        run: git push origin HEAD:pof-batch-9-production

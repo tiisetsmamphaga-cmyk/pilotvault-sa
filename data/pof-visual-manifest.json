@@ -3168,12 +3168,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-climb-force-components-v1.webp"
       },
       "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "visual_inspection": {
@@ -3187,6 +3187,16 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
+        "deployment_commit": "b8b9fa10907adcd97b8220f456c641aff39ec83e",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "runtime_errors_detected": 0,
+        "verification_note": "The exact READY preview built the temporary QA route as static content using ExplanationImage. Vercel Authentication prevented an unauthenticated visual route fetch, so no browser screenshot or signed-in student attempt inspection is claimed."
       }
     },
     {
@@ -3234,12 +3244,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-best-rate-excess-power-v1.webp"
       },
       "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "visual_inspection": {
@@ -3253,6 +3263,16 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
+        "deployment_commit": "b8b9fa10907adcd97b8220f456c641aff39ec83e",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "runtime_errors_detected": 0,
+        "verification_note": "The exact READY preview built the temporary QA route as static content using ExplanationImage. Vercel Authentication prevented an unauthenticated visual route fetch, so no browser screenshot or signed-in student attempt inspection is claimed."
       }
     },
     {
@@ -3302,12 +3322,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-vx-obstacle-clearance-v1.webp"
       },
       "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "visual_inspection": {
@@ -3321,6 +3341,16 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
+        "deployment_commit": "b8b9fa10907adcd97b8220f456c641aff39ec83e",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "runtime_errors_detected": 0,
+        "verification_note": "The exact READY preview built the temporary QA route as static content using ExplanationImage. Vercel Authentication prevented an unauthenticated visual route fetch, so no browser screenshot or signed-in student attempt inspection is claimed."
       }
     },
     {
@@ -3370,12 +3400,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-wind-glide-ground-track-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "visual_inspection": {
@@ -3389,6 +3419,16 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
+        "deployment_commit": "b8b9fa10907adcd97b8220f456c641aff39ec83e",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "runtime_errors_detected": 0,
+        "verification_note": "The exact READY preview built the temporary QA route as static content using ExplanationImage. Vercel Authentication prevented an unauthenticated visual route fetch, so no browser screenshot or signed-in student attempt inspection is claimed."
       }
     },
     {
@@ -3436,12 +3476,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-elevator-trim-tab-setting-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "visual_inspection": {
@@ -3455,6 +3495,16 @@
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
+        "deployment_commit": "b8b9fa10907adcd97b8220f456c641aff39ec83e",
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "runtime_errors_detected": 0,
+        "verification_note": "The exact READY preview built the temporary QA route as static content using ExplanationImage. Vercel Authentication prevented an unauthenticated visual route fetch, so no browser screenshot or signed-in student attempt inspection is claimed."
       }
     }
   ]

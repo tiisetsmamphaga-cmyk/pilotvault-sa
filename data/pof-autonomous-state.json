@@ -37,7 +37,7 @@
   "current_batch": 9,
   "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_9_QA_APPROVED",
+  "last_verified_checkpoint": "POF_BATCH_9_PREVIEW_READY",
   "production_state": {
     "approved_live_visuals": 40,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Prepare the temporary Batch 9 QA route and safe CI preflight, validate the exact five PNG/five WebP/no-SVG boundary, and create one preview only after the full remote preflight is green.",
+  "next_action": "Map the five Batch 9 visuals to their 19 exact Supabase questions in one fail-closed transaction, verify every intended row and zero unexpected ownership, then advance to MAPPED.",
   "active_batch_source_selection": {
     "batch": 9,
     "status": "SOURCE_FOUND",
@@ -126,7 +126,18 @@
     "approved": true,
     "verified": true
   },
-  "active_batch_preview": null,
+  "active_batch_preview": {
+    "batch": 9,
+    "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
+    "deployment_commit": "b8b9fa10907adcd97b8220f456c641aff39ec83e",
+    "route": "/pof-visual-qa",
+    "deployment_ready": true,
+    "route_statically_generated": true,
+    "real_explanation_component_used": true,
+    "runtime_errors_detected": 0,
+    "protected_route_note": "Vercel Authentication redirected unauthenticated route fetches to SSO. The exact READY deployment build statically generated /pof-visual-qa through the real ExplanationImage component and preview runtime error/fatal logs were empty.",
+    "verified": true
+  },
   "active_batch_mapping": {
     "batch": 8,
     "project_ref": "kkmlfbxfopwulwkloaoc",

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 9,
-  "status": "QA_APPROVED",
+  "status": "PREVIEW_READY",
   "selected_date": "2026-09-03",
   "batch_limit": 5,
   "source_document": "ac_61-23c_phak_canada.pdf",
@@ -12,7 +12,14 @@
       "visual_id": "pof-climb-force-components-001",
       "topic": "Climb Performance",
       "concept": "Steady-climb force components: lift is less than total weight and thrust is greater than drag",
-      "question_ids": [1219,1252,1256,1288,1298,1351],
+      "question_ids": [
+        1219,
+        1252,
+        1256,
+        1288,
+        1298,
+        1351
+      ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "pdf_page": 30,
@@ -48,13 +55,16 @@
         ]
       },
       "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
-      "status": "QA_APPROVED"
+      "status": "PREVIEW_READY"
     },
     {
       "visual_id": "pof-best-rate-excess-power-001",
       "topic": "Climb Performance",
       "concept": "Best rate of climb Vy occurs where excess power is greatest",
-      "question_ids": [1215,1244],
+      "question_ids": [
+        1215,
+        1244
+      ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "pdf_page": 31,
@@ -89,13 +99,19 @@
         ]
       },
       "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
-      "status": "QA_APPROVED"
+      "status": "PREVIEW_READY"
     },
     {
       "visual_id": "pof-vx-obstacle-clearance-001",
       "topic": "Climb Performance",
       "concept": "Best angle of climb Vx gives the greatest height gain over the shortest horizontal distance and is used for obstacle clearance",
-      "question_ids": [1217,1220,1221,1371,1377],
+      "question_ids": [
+        1217,
+        1220,
+        1221,
+        1371,
+        1377
+      ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "pdf_page": 65,
@@ -127,13 +143,17 @@
         ]
       },
       "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
-      "status": "QA_APPROVED"
+      "status": "PREVIEW_READY"
     },
     {
       "visual_id": "pof-wind-glide-ground-track-001",
       "topic": "Flaps & Glide",
       "concept": "Wind changes glide path over the ground, not the aerodynamic glide angle or air-mass rate of descent at the same optimum glide condition",
-      "question_ids": [1209,1254,1373],
+      "question_ids": [
+        1209,
+        1254,
+        1373
+      ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "pdf_page": 33,
@@ -167,16 +187,23 @@
         ]
       },
       "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
-      "status": "QA_APPROVED"
+      "status": "PREVIEW_READY"
     },
     {
       "visual_id": "pof-elevator-trim-tab-setting-001",
       "topic": "Trim & Balance Tabs",
       "concept": "A conventional adjustable elevator trim tab keeps its selected angle relative to the elevator; its aerodynamic force then biases the elevator",
-      "question_ids": [1190,1305,2012],
+      "question_ids": [
+        1190,
+        1305,
+        2012
+      ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
-        "pdf_pages": [20,21],
+        "pdf_pages": [
+          20,
+          21
+        ],
         "printed_page": "1-20",
         "figure": "Figure 1-26 — Effect of trim tabs",
         "notes": "The handbook describes the elevator trim tab as a separately controlled auxiliary surface on the elevator and states that an upward tab deflection forces the elevator downward while a downward tab deflection forces the elevator upward. The selected trim-tab angle is treated relative to the control surface, not as an automatically coupled balance tab."
@@ -206,7 +233,7 @@
         ]
       },
       "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
-      "status": "QA_APPROVED"
+      "status": "PREVIEW_READY"
     }
   ],
   "coverage": {
@@ -218,10 +245,10 @@
     "design_briefs_persisted": true,
     "refinement_started": true,
     "qa_approved": true,
-    "preview_ready": false,
+    "preview_ready": true,
     "mapped": false,
     "production_ready": false,
     "live_verified": false
   },
-  "next_action": "Run the safe Batch 9 preview preflight and create one deliberate preview only after every remote gate is green."
+  "next_action": "Map the 19 exact verified question rows fail-closed and independently read them back before production preparation."
 }

@@ -1,0 +1,69 @@
+name: POF Batch 10 preview preflight
+
+on:
+  push:
+    branches:
+      - pof-batch-10-rebuild
+    paths:
+      - .github/workflows/pof-batch10-preview-preflight.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact Batch 10 preflight tree
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-10-rebuild
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Assert exact QA-approved ancestry and preview-only diff
+        run: |
+          git merge-base --is-ancestor ea40ec00fb6de181ec04f4fde3854c0f279da359 HEAD
+          test "$(git diff --name-only ea40ec00fb6de181ec04f4fde3854c0f279da359..HEAD | sort | tr '\n' ' ')" = ".github/workflows/pof-batch10-preview-preflight.yml app/pof-visual-qa/page.tsx app/practice/[subject]/components/explanation-image.tsx "
+
+      - name: Validate canonical manifest and Batch 10 raster boundary
+        run: |
+          python scripts/validate_pof_visuals.py
+          grep -F 'refined-batch-(?:1|2|3|4|5|6|7|8|9|10)' 'app/practice/[subject]/components/explanation-image.tsx'
+          test "$(grep -c 'refined-batch-10/.*\.webp' app/pof-visual-qa/page.tsx)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state = json.loads(Path('data/pof-autonomous-state.json').read_text())
+          assert state['current_batch'] == 10
+          assert state['last_verified_checkpoint'] == 'POF_BATCH_10_QA_APPROVED'
+          qa = state['active_batch_qa']
+          assert qa['approved'] is True and qa['verified'] is True
+          assert qa['visual_concepts'] == 5 and qa['png_assets'] == 5 and qa['webp_assets'] == 5 and qa['svg_assets'] == 0
+          PY
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build exact preview candidate with inert Supabase configuration
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://pof-batch10-preview-ci.invalid
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: pof-batch10-preview-ci-anon-placeholder
+          SUPABASE_SERVICE_ROLE_KEY: pof-batch10-preview-ci-service-role-placeholder
+        run: pnpm run build
+
+      - name: Assert QA route was generated
+        run: |
+          test -e app/pof-visual-qa/page.tsx
+          grep -F 'POF Batch 10' app/pof-visual-qa/page.tsx

@@ -1,0 +1,85 @@
+name: POF Batch 11 preview preflight
+
+on:
+  push:
+    branches:
+      - pof-batch-11-rebuild
+    paths:
+      - .github/workflows/pof-batch11-preview-preflight.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact Batch 11 preflight tree
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-11-rebuild
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Assert exact QA-approved ancestry and preview-only diff
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 0804bdabe3532712f0a8ea9c71fd1b494e916878 HEAD
+          test "$(git diff --name-only 0804bdabe3532712f0a8ea9c71fd1b494e916878..HEAD | sort | tr '\n' ' ')" = ".github/workflows/pof-batch11-preview-preflight.yml app/pof-visual-qa/page.tsx app/practice/[subject]/components/explanation-image.tsx "
+
+      - name: Validate canonical manifest and Batch 11 raster boundary
+        shell: bash
+        run: |
+          python scripts/validate_pof_visuals.py
+          grep -F 'refined-batch-(?:1|2|3|4|5|6|7|8|9|10|11)' 'app/practice/[subject]/components/explanation-image.tsx'
+          test "$(grep -c 'refined-batch-11/.*\.webp' app/pof-visual-qa/page.tsx)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-11 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-11 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-11 -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          sel=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
+          man=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in sel['concepts']}
+          rows=[v for v in man['visuals'] if v['visual_id'] in ids]
+          assert state['current_batch']==11
+          assert state['last_verified_checkpoint']=='POF_BATCH_11_QA_APPROVED'
+          assert state['active_batch_qa']['status']=='QA_APPROVED'
+          assert state['active_batch_qa']['verified'] is True
+          assert state['active_batch_qa']['known_defects_remaining']==0
+          assert sel['status']=='QA_APPROVED'
+          assert sel['gates']['qa_approved'] is True
+          assert sel['gates']['preview_ready'] is False
+          assert len(rows)==5
+          assert sum(len(v['question_ids']) for v in rows)==12
+          assert all(v['status']=='QA_APPROVED' for v in rows)
+          assert all(v['qa']['technical'] and v['qa']['teaching'] and v['qa']['visual'] for v in rows)
+          assert all(not v['qa']['preview'] and not v['qa']['live'] for v in rows)
+          PY
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build exact preview candidate with inert Supabase configuration
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://pof-batch11-preview-ci.invalid
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: pof-batch11-preview-ci-anon-placeholder
+          SUPABASE_SERVICE_ROLE_KEY: pof-batch11-preview-ci-service-role-placeholder
+        run: pnpm run build
+
+      - name: Assert real QA route source exists
+        shell: bash
+        run: |
+          test -e app/pof-visual-qa/page.tsx
+          grep -F 'POF Batch 11' app/pof-visual-qa/page.tsx
+          grep -F 'ExplanationImage' app/pof-visual-qa/page.tsx

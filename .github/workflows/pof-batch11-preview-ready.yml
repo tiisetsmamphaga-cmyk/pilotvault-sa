@@ -1,0 +1,147 @@
+name: POF Batch 11 preview-ready checkpoint
+
+on:
+  push:
+    branches:
+      - pof-batch-11-rebuild
+    paths:
+      - .github/workflows/pof-batch11-preview-ready.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Batch 11 work branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-11-rebuild
+          fetch-depth: 0
+
+      - name: Persist exact PREVIEW_READY state
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def load(p): return json.loads(Path(p).read_text())
+          def save(p,d): Path(p).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+
+          state_path='data/pof-autonomous-state.json'
+          sel_path='data/pof-batch-11-source-selection.json'
+          man_path='data/pof-visual-manifest.json'
+          state=load(state_path); sel=load(sel_path); man=load(man_path)
+
+          ids={
+            'pof-trailing-edge-flap-lift-drag-001',
+            'pof-flap-stall-speed-001',
+            'pof-fowler-flap-wing-area-001',
+            'pof-static-dynamic-stability-response-001',
+            'pof-directional-fin-weathercock-001',
+          }
+          rows=[v for v in man['visuals'] if v['visual_id'] in ids]
+          concepts=[c for c in sel['concepts'] if c['visual_id'] in ids]
+
+          assert state['current_batch']==11
+          assert state['last_verified_checkpoint']=='POF_BATCH_11_QA_APPROVED'
+          assert state['active_batch_qa']['status']=='QA_APPROVED'
+          assert state['active_batch_qa']['known_defects_remaining']==0
+          assert sel['status']=='QA_APPROVED'
+          assert sel['gates']['qa_approved'] is True
+          assert sel['gates']['preview_ready'] is False
+          assert len(rows)==5 and len(concepts)==5
+          assert sum(len(v['question_ids']) for v in rows)==12
+          assert all(v['status']=='QA_APPROVED' for v in rows)
+          assert all(v['qa']=={'technical':True,'teaching':True,'visual':True,'preview':False,'live':False} for v in rows)
+
+          verification={
+            'deployment_id':'dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp',
+            'deployment_commit':'6651f3c60bc5f43f69f8640d968a171fba254cc2',
+            'preflight_commit':'9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9',
+            'preflight_run':33900736232,
+            'identical_tree_to_preflight':True,
+            'route':'/pof-visual-qa',
+            'deployment_ready':True,
+            'route_http_status':200,
+            'route_statically_generated':True,
+            'real_explanation_component_used':True,
+            'five_batch11_webp_references_present':True,
+            'runtime_errors_detected':0,
+            'signed_in_student_attempt_inspected':False,
+            'intermediate_same_tree_deployment_id':'dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9',
+            'intermediate_same_tree_deployment_commit':'9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9',
+            'same_tree_duplicate_detected':True,
+            'verification_note':'The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed.'
+          }
+
+          for v in rows:
+              v['status']='PREVIEW_READY'
+              v['qa']['preview']=True
+              v['preview_verification']=verification.copy()
+          for c in concepts:
+              c['status']='PREVIEW_READY'
+
+          sel['status']='PREVIEW_READY'
+          sel['gates']['preview_ready']=True
+          sel['next_action']='Run the fail-closed exact Supabase mapping transaction for the 12 new Batch 11 question rows, then independently read back all 12 mappings before production preparation.'
+
+          state['last_verified_checkpoint']='POF_BATCH_11_PREVIEW_READY'
+          state['active_batch_source_selection']['status']='PREVIEW_READY'
+          state['active_batch_refinement']['status']='PREVIEW_READY'
+          state['active_batch_qa']['status']='PREVIEW_READY'
+          state['active_batch_preview']={
+            'batch':11,
+            'status':'PREVIEW_READY',
+            'deployment_id':'dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp',
+            'deployment_commit':'6651f3c60bc5f43f69f8640d968a171fba254cc2',
+            'preflight_commit':'9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9',
+            'preflight_run':33900736232,
+            'identical_tree_to_preflight':True,
+            'route':'/pof-visual-qa',
+            'route_http_status':200,
+            'route_statically_generated':True,
+            'real_explanation_component_used':True,
+            'runtime_errors_detected':0,
+            'same_tree_duplicate_detected':True,
+            'intermediate_same_tree_deployment_id':'dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9',
+            'verified':True
+          }
+          state['next_action']='Map exactly the 12 new Batch 11 POF question rows in Supabase through a guarded transaction and verify 12/12 exact readback with zero unexpected owners before production.'
+
+          save(man_path,man); save(sel_path,sel); save(state_path,state)
+          print('POF_BATCH_11_PREVIEW_READY persisted for 5 visuals / 12 planned mappings.')
+          PY
+
+      - name: Validate PREVIEW_READY manifest
+        run: |
+          python scripts/validate_pof_visuals.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
+          m=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in q['concepts']}
+          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          assert s['last_verified_checkpoint']=='POF_BATCH_11_PREVIEW_READY'
+          assert s['active_batch_preview']['verified'] is True
+          assert q['status']=='PREVIEW_READY' and q['gates']['preview_ready'] is True
+          assert len(rows)==5 and sum(len(v['question_ids']) for v in rows)==12
+          assert all(v['status']=='PREVIEW_READY' and v['qa']['preview'] for v in rows)
+          assert all(not v['qa']['live'] for v in rows)
+          print('Exact PREVIEW_READY validation passed.')
+          PY
+
+      - name: Commit preview-ready checkpoint
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
+          git diff --cached --check
+          git commit -m "Mark POF Batch 11 preview ready"
+          git push origin HEAD:pof-batch-11-rebuild

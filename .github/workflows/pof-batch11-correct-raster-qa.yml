@@ -1,4 +1,4 @@
-name: POF Batch 11 Correct Raster QA
+name: POF Batch 11 Final WebP Inspection
 
 on:
   push:
@@ -9,87 +9,38 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  correct-raster-qa:
+  inspect-webp:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout exact Batch 11 work branch
         uses: actions/checkout@v4
         with:
           ref: pof-batch-11-rebuild
-          fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install deterministic raster dependency
-        run: pip install pillow==12.3.0
-
-      - name: Fix only the failed directional inset text fit
+      - name: Build contact sheet from actual WebP files
         shell: bash
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/generate_pof_batch11.py')
-          s = p.read_text()
-          old = 'center_text(d,(1325,867),"More area aft of CG → stronger directional stability",font(16,True),WHITE)'
-          new = 'center_text(d,(1325,867),"More area aft of CG → stronger stability",font(14,True),WHITE)'
-          assert old in s, 'Inset source changed; fail closed.'
-          s = s.replace(old, new, 1)
-          p.write_text(s)
-          print('Corrected the one clipped inset label only.')
-          PY
-
-      - name: Regenerate all five Batch 11 raster pairs
-        run: python scripts/generate_pof_batch11.py
-
-      - name: Verify exact raster boundary and dimensions
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          from PIL import Image
-          out = Path('public/explanation-images/principles-of-flight/refined-batch-11')
-          expected = {
-              'pof-trailing-edge-flap-lift-drag-v1',
-              'pof-flap-stall-speed-v1',
-              'pof-fowler-flap-wing-area-v1',
-              'pof-static-dynamic-stability-response-v1',
-              'pof-directional-fin-weathercock-v1',
-          }
-          png = sorted(out.glob('*.png')); webp = sorted(out.glob('*.webp')); svg = sorted(out.glob('*.svg'))
-          assert len(png) == 5 and len(webp) == 5 and len(svg) == 0
-          assert {p.stem for p in png} == expected
-          assert {p.stem for p in webp} == expected
-          for p in png + webp:
-              with Image.open(p) as im:
-                  assert im.size == (1600, 1050), (p, im.size)
-                  assert im.mode in ('RGB', 'RGBA'), (p, im.mode)
-          print('Boundary green: exactly 5 PNG + 5 WebP + 0 SVG; all 1600x1050.')
-          PY
-
-      - name: Build final actual-raster contact sheet
-        shell: bash
-        run: |
+          python -m pip install --quiet pillow==12.3.0
           python - <<'PY'
           from PIL import Image, ImageDraw
           from pathlib import Path
-          root = Path('public/explanation-images/principles-of-flight/refined-batch-11')
-          files = [
-              'pof-trailing-edge-flap-lift-drag-v1.png',
-              'pof-flap-stall-speed-v1.png',
-              'pof-fowler-flap-wing-area-v1.png',
-              'pof-static-dynamic-stability-response-v1.png',
-              'pof-directional-fin-weathercock-v1.png',
+          root=Path('public/explanation-images/principles-of-flight/refined-batch-11')
+          files=[
+            'pof-trailing-edge-flap-lift-drag-v1.webp',
+            'pof-flap-stall-speed-v1.webp',
+            'pof-fowler-flap-wing-area-v1.webp',
+            'pof-static-dynamic-stability-response-v1.webp',
+            'pof-directional-fin-weathercock-v1.webp',
           ]
-          target_w, label_h, gap = 900, 34, 18
+          target_w,label_h,gap=900,34,18
           panels=[]
           for name in files:
-              im=Image.open(root/name).convert('RGB')
+              p=root/name
+              im=Image.open(p).convert('RGB')
+              assert im.size==(1600,1050),(name,im.size)
               h=round(target_w*im.height/im.width)
               im=im.resize((target_w,h),Image.Resampling.LANCZOS)
               canvas=Image.new('RGB',(target_w,label_h+h),'white')
@@ -97,27 +48,16 @@ jobs:
           sheet=Image.new('RGB',(target_w,sum(x.height for x in panels)+gap*(len(panels)-1)),'white')
           y=0
           for panel in panels:
-              sheet.paste(panel,(0,y)); y += panel.height+gap
-          out=Path('/tmp/pof-batch11-final-contact.jpg')
+              sheet.paste(panel,(0,y)); y+=panel.height+gap
+          out=Path('/tmp/pof-batch11-final-webp-contact.jpg')
           sheet.save(out,'JPEG',quality=92,optimize=True,progressive=True)
-          print(f'CONTACT_BYTES={out.stat().st_size}')
+          print(f'WEBP_CONTACT_BYTES={out.stat().st_size}')
           PY
 
-      - name: Upload final contact sheet
+      - name: Upload WebP contact sheet
         uses: actions/upload-artifact@v4
         with:
-          name: pof-batch11-final-contact-sheet
-          path: /tmp/pof-batch11-final-contact.jpg
+          name: pof-batch11-final-webp-contact-sheet
+          path: /tmp/pof-batch11-final-webp-contact.jpg
           if-no-files-found: error
           retention-days: 1
-
-      - name: Commit final visual correction
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/generate_pof_batch11.py public/explanation-images/principles-of-flight/refined-batch-11
-          git diff --cached --check
-          git diff --cached --quiet && { echo 'No correction diff produced'; exit 1; }
-          git commit -m "Fix POF Batch 11 directional inset fit"
-          git push origin HEAD:pof-batch-11-rebuild

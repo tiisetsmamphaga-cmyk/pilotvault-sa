@@ -1,0 +1,133 @@
+name: POF Batch 10 preview checkpoint
+
+on:
+  push:
+    branches:
+      - pof-batch-10-rebuild
+    paths:
+      - .github/workflows/pof-batch10-preview-checkpoint.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Batch 10 working branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-10-rebuild
+          fetch-depth: 0
+
+      - name: Configure checkpoint commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Assert exact verified preview tree ancestry
+        run: |
+          git merge-base --is-ancestor a83f73655b3120fd2af998198a87ded430804cc4 HEAD
+          test "$(git diff --name-only a83f73655b3120fd2af998198a87ded430804cc4..HEAD | sort | tr '\n' ' ')" = ".github/workflows/pof-batch10-preview-checkpoint.yml "
+
+      - name: Persist PREVIEW_READY checkpoint
+        env:
+          PREVIEW_DEPLOYMENT_ID: dpl_8xeGExzePF5NscgTqMzieJjNQENt
+          PREVIEW_COMMIT: a83f73655b3120fd2af998198a87ded430804cc4
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          visual_ids = {
+              "pof-pressure-distribution-lift-001",
+              "pof-adverse-yaw-high-aoa-001",
+              "pof-venturi-continuity-001",
+              "pof-level-turn-force-balance-001",
+              "pof-propeller-left-turning-tendencies-001",
+          }
+
+          def load(path):
+              return json.loads(Path(path).read_text(encoding="utf-8"))
+
+          def save(path, data):
+              Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          preview = {
+              "batch": 10,
+              "deployment_id": os.environ["PREVIEW_DEPLOYMENT_ID"],
+              "deployment_commit": os.environ["PREVIEW_COMMIT"],
+              "route": "/pof-visual-qa",
+              "deployment_ready": True,
+              "route_statically_generated": True,
+              "real_explanation_component_used": True,
+              "runtime_errors_detected": 0,
+              "protected_route_note": "Vercel Authentication redirected unauthenticated QA-route fetches to SSO. The exact READY deployment build statically generated /pof-visual-qa through the real ExplanationImage component and preview error/fatal runtime logs were empty.",
+              "discarded_deployments": [
+                  {
+                      "deployment_id": "dpl_GjGuj3r5CYPdkqFoSWJwmJ6ouRpU",
+                      "deployment_commit": "9585a766963eec6169189fd3dfa9f2d6703c20c9",
+                      "reason": "A preview-branch write did not contain the verified Batch 10 renderer/QA tree. It was fail-closed, excluded from mapping and never used as release evidence."
+                  }
+              ],
+              "verified": True,
+          }
+
+          state = load("data/pof-autonomous-state.json")
+          assert state["current_batch"] == 10
+          assert state["last_verified_checkpoint"] == "POF_BATCH_10_QA_APPROVED"
+          state["last_verified_checkpoint"] = "POF_BATCH_10_PREVIEW_READY"
+          state["next_action"] = "Map the five Batch 10 visuals to their 17 exact preflight-approved Supabase rows in one fail-closed transaction, then independently verify exact ownership before production preparation."
+          state["active_batch_preview"] = preview
+          save("data/pof-autonomous-state.json", state)
+
+          selection = load("data/pof-batch-10-source-selection.json")
+          assert selection["status"] == "QA_APPROVED"
+          selection["status"] = "PREVIEW_READY"
+          for concept in selection["concepts"]:
+              assert concept["visual_id"] in visual_ids
+              concept["status"] = "PREVIEW_READY"
+          selection["gates"]["preview_ready"] = True
+          selection["next_action"] = "Map the 17 exact verified question rows fail-closed and independently read them back before production preparation."
+          save("data/pof-batch-10-source-selection.json", selection)
+
+          manifest = load("data/pof-visual-manifest.json")
+          touched = 0
+          for visual in manifest["visuals"]:
+              if visual.get("visual_id") in visual_ids:
+                  assert visual["status"] == "QA_APPROVED"
+                  visual["status"] = "PREVIEW_READY"
+                  visual["qa"]["preview"] = True
+                  visual["preview_verification"] = {
+                      "deployment_id": os.environ["PREVIEW_DEPLOYMENT_ID"],
+                      "deployment_commit": os.environ["PREVIEW_COMMIT"],
+                      "route": "/pof-visual-qa",
+                      "deployment_ready": True,
+                      "route_statically_generated": True,
+                      "real_explanation_component_used": True,
+                      "runtime_errors_detected": 0,
+                      "verification_note": "The exact READY preview statically generated the Batch 10 QA route through ExplanationImage. Vercel Authentication prevented an unauthenticated visual-route screenshot, so no browser screenshot or signed-in student attempt is claimed."
+                  }
+                  touched += 1
+          assert touched == 5, f"expected 5 Batch 10 visuals, touched {touched}"
+          save("data/pof-visual-manifest.json", manifest)
+          PY
+
+      - name: Validate PREVIEW_READY state
+        run: |
+          python scripts/validate_pof_visuals.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state = json.loads(Path('data/pof-autonomous-state.json').read_text())
+          assert state['last_verified_checkpoint'] == 'POF_BATCH_10_PREVIEW_READY'
+          assert state['active_batch_preview']['deployment_id'] == 'dpl_8xeGExzePF5NscgTqMzieJjNQENt'
+          assert state['active_batch_preview']['verified'] is True
+          PY
+
+      - name: Commit PREVIEW_READY checkpoint
+        run: |
+          git add data/pof-autonomous-state.json data/pof-batch-10-source-selection.json data/pof-visual-manifest.json
+          git commit -m "Persist POF Batch 10 PREVIEW_READY"
+          git push origin HEAD:pof-batch-10-rebuild

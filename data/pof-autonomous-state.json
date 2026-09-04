@@ -37,7 +37,7 @@
   "current_batch": 10,
   "completed_batches_since_last_user_report": 2,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_10_QA_APPROVED",
+  "last_verified_checkpoint": "POF_BATCH_10_PREVIEW_READY",
   "production_state": {
     "approved_live_visuals": 45,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Create exactly one Batch 10 QA preview using the real ExplanationImage component and the five approved WebPs, verify the renderer/deployment fail-closed, then persist PREVIEW_READY before any new-row mapping.",
+  "next_action": "Map the five Batch 10 visuals to their 17 exact preflight-approved Supabase rows in one fail-closed transaction, then independently verify exact ownership before production preparation.",
   "active_batch_source_selection": {
     "batch": 10,
     "status": "SOURCE_FOUND",
@@ -123,7 +123,25 @@
     "approved": true,
     "verified": true
   },
-  "active_batch_preview": null,
+  "active_batch_preview": {
+    "batch": 10,
+    "deployment_id": "dpl_8xeGExzePF5NscgTqMzieJjNQENt",
+    "deployment_commit": "a83f73655b3120fd2af998198a87ded430804cc4",
+    "route": "/pof-visual-qa",
+    "deployment_ready": true,
+    "route_statically_generated": true,
+    "real_explanation_component_used": true,
+    "runtime_errors_detected": 0,
+    "protected_route_note": "Vercel Authentication redirected unauthenticated QA-route fetches to SSO. The exact READY deployment build statically generated /pof-visual-qa through the real ExplanationImage component and preview error/fatal runtime logs were empty.",
+    "discarded_deployments": [
+      {
+        "deployment_id": "dpl_GjGuj3r5CYPdkqFoSWJwmJ6ouRpU",
+        "deployment_commit": "9585a766963eec6169189fd3dfa9f2d6703c20c9",
+        "reason": "A preview-branch write did not contain the verified Batch 10 renderer/QA tree. It was fail-closed, excluded from mapping and never used as release evidence."
+      }
+    ],
+    "verified": true
+  },
   "active_batch_mapping": {
     "batch": 9,
     "project_ref": "kkmlfbxfopwulwkloaoc",

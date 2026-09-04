@@ -37,7 +37,7 @@
   "current_batch": 10,
   "completed_batches_since_last_user_report": 2,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_10_REFINING",
+  "last_verified_checkpoint": "POF_BATCH_10_QA_APPROVED",
   "production_state": {
     "approved_live_visuals": 45,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Complete deterministic raster refinement, inspect the actual PNG/WebP outputs against Batch 1 quality, then advance to QA_APPROVED only if all five pass.",
+  "next_action": "Create exactly one Batch 10 QA preview using the real ExplanationImage component and the five approved WebPs, verify the renderer/deployment fail-closed, then persist PREVIEW_READY before any new-row mapping.",
   "active_batch_source_selection": {
     "batch": 10,
     "status": "SOURCE_FOUND",
@@ -79,16 +79,50 @@
   "active_batch_refinement": {
     "batch": 10,
     "visual_concepts": 5,
-    "planned_png_assets": 5,
-    "planned_webp_assets": 5,
+    "png_assets": 5,
+    "webp_assets": 5,
     "svg_assets": 0,
     "asset_dimensions": "1600x1050",
-    "source_to_refined_pairs": 5,
-    "refinement_execution_verified_later_by_run": 33846476738,
-    "reconstructed_checkpoint_note": "This persistence checkpoint was reconstructed from the verified Batch 10 refinement evidence after the history validator identified that the original refinement workflow had performed the work but had not committed the intermediate REFINING manifest state.",
+    "actual_outputs_rendered": true,
+    "corrections_completed": [
+      "Removed clipped high-AoA drag annotation",
+      "Separated propeller clockwise label from rotation arc",
+      "Removed unnecessary faster/slower airflow labels from pressure-distribution visual"
+    ],
     "verified": true
   },
-  "active_batch_qa": null,
+  "active_batch_qa": {
+    "batch": 10,
+    "visual_concepts": 5,
+    "png_assets": 5,
+    "webp_assets": 5,
+    "svg_assets": 0,
+    "asset_dimensions": "1600x1050",
+    "actual_pngs_rendered_and_reviewed": true,
+    "actual_webps_rendered_and_reviewed": true,
+    "technical": true,
+    "teaching": true,
+    "visual": true,
+    "batch1_quality_or_better": true,
+    "generic_placeholder_appearance": false,
+    "corrections_verified": true,
+    "png_sha256": {
+      "pof-pressure-distribution-lift-v1.png": "e0d22722ec916f1092a0591587b7941ff3543115fd41481f025eb6850245d2a1",
+      "pof-adverse-yaw-high-aoa-v1.png": "32e57e76ea477978fe6202c384664b67266567fee099df74b075d72d15ab64fe",
+      "pof-venturi-continuity-v1.png": "bb016bf0288df50f9fbb6cb87b7602c6c8917d4ddd91f87606d8880126248f23",
+      "pof-level-turn-force-balance-v1.png": "36f93395967c48163632f52fc28d998af80819f83c7d24a9115a656c658265bd",
+      "pof-propeller-left-turning-tendencies-v1.png": "767eecd8c610195620dc677d728a1661f26239e7db6e09c7a675f52db04f3466"
+    },
+    "webp_sha256": {
+      "pof-pressure-distribution-lift-v1.webp": "4efe961788de4286b2bb94dbd27ffc43d1284647de813fe6685b3c000bfcb11b",
+      "pof-adverse-yaw-high-aoa-v1.webp": "14cdc9e8dc02a826bf9b7773bbb1e0b9c7567407d43c7dbb6e8b9db21ba8cc8b",
+      "pof-venturi-continuity-v1.webp": "b7f861b52639cd76677c1b3c9a4aaef95c625f3b4cb5790acb790b14ecb39b1a",
+      "pof-level-turn-force-balance-v1.webp": "ec9237b41719489b38a8e0dd891234a4bc049a9e06f71b884e63aa028e0cfafb",
+      "pof-propeller-left-turning-tendencies-v1.webp": "ed13656bc97e6894360bc162e430c6a105eca44c7e7d2e96b64930761fdc4908"
+    },
+    "approved": true,
+    "verified": true
+  },
   "active_batch_preview": null,
   "active_batch_mapping": {
     "batch": 9,

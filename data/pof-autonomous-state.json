@@ -37,7 +37,7 @@
   "current_batch": 11,
   "completed_batches_since_last_user_report": 3,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_10_LIVE_VERIFIED",
+  "last_verified_checkpoint": "POF_BATCH_11_SOURCE_FOUND",
   "production_state": {
     "approved_live_visuals": 50,
     "rejected_non_batch_1_mappings": 0,
@@ -49,8 +49,16 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Begin Batch 11 source selection from the remaining audited visual-required POF rows, preserving the same five-visual hard stage gate.",
-  "active_batch_source_selection": null,
+  "next_action": "Persist the Batch 11 REFINING checkpoint and render all five selected concepts as 1600x1050 PNG+WebP pairs, then perform technical, teaching and visual QA.",
+  "active_batch_source_selection": {
+    "batch": 11,
+    "source_file": "data/pof-batch-11-source-selection.json",
+    "new_visual_concepts": 5,
+    "planned_question_rows": 12,
+    "status": "SOURCE_FOUND",
+    "database_preflight_verified": true,
+    "verified": true
+  },
   "active_batch_refinement": null,
   "active_batch_qa": null,
   "active_batch_preview": null,
@@ -69,12 +77,12 @@
   "visual_requirement_audit": {
     "audit_file": "data/pof-visual-requirement-audit.json",
     "total_pof_questions": 365,
-    "live_verified_question_mappings": 174,
-    "remaining_rows_audited": 191,
-    "remaining_visual_required": 126,
+    "live_verified_question_mappings": 190,
+    "remaining_rows_audited": 175,
+    "remaining_visual_required": 110,
     "remaining_no_visual_required": 65,
     "total_visual_required_question_universe": 300,
-    "question_coverage_completion_percent": 58.0,
+    "question_coverage_completion_percent": 63.3,
     "verified": true
   },
   "production_readiness": {
@@ -120,11 +128,11 @@
     "unrecoverable_external_blocker"
   ],
   "active_batch_reuse_sweep": {
-    "batch": 10,
-    "mapped_question_rows": 20,
-    "reused_live_visuals": 6,
+    "batch": 11,
+    "mapped_question_rows": 16,
+    "reused_live_visuals": 2,
     "database_status": "LIVE_VERIFIED",
-    "exact_match_count": 20,
+    "exact_match_count": 16,
     "mismatch_count": 0,
     "verified": true
   }

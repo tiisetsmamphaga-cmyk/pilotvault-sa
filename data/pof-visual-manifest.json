@@ -3639,7 +3639,7 @@
         "web_asset": null
       },
       "mapping_reason": "The two questions directly ask which pressure distribution creates lift; the visual will show that exact upper/lower pressure relationship.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -3698,7 +3698,7 @@
         "web_asset": null
       },
       "mapping_reason": "The questions ask when adverse yaw is most noticeable or how it changes with AoA; a low-vs-high AoA comparison teaches that exact relationship.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -3752,7 +3752,7 @@
         "web_asset": null
       },
       "mapping_reason": "Question 1966 tests the exact continuity/Bernoulli changes through a venturi throat, which the visual will label directly.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -3815,7 +3815,7 @@
         "web_asset": null
       },
       "mapping_reason": "These questions all ask about the same level-turn force balance, its centripetal source, the AoA increase needed to maintain altitude, or the associated resultant load.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -3872,7 +3872,7 @@
         "web_asset": null
       },
       "mapping_reason": "Question 1948 asks the torque-reaction roll direction and question 1950 asks the P-factor/right-rudder correction; the two-panel visual separates those exact effects.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,

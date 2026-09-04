@@ -3639,7 +3639,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-pressure-distribution-lift-v1.webp"
       },
       "mapping_reason": "The two questions directly ask which pressure distribution creates lift; the visual will show that exact upper/lower pressure relationship.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3725,7 +3725,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-adverse-yaw-high-aoa-v1.webp"
       },
       "mapping_reason": "The questions ask when adverse yaw is most noticeable or how it changes with AoA; a low-vs-high AoA comparison teaches that exact relationship.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3806,7 +3806,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-venturi-continuity-v1.webp"
       },
       "mapping_reason": "Question 1966 tests the exact continuity/Bernoulli changes through a venturi throat, which the visual will label directly.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3896,7 +3896,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-level-turn-force-balance-v1.webp"
       },
       "mapping_reason": "These questions all ask about the same level-turn force balance, its centripetal source, the AoA increase needed to maintain altitude, or the associated resultant load.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3980,7 +3980,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-propeller-left-turning-tendencies-v1.webp"
       },
       "mapping_reason": "Question 1948 asks the torque-reaction roll direction and question 1950 asks the P-factor/right-rudder correction; the two-panel visual separates those exact effects.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,

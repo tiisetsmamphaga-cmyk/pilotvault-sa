@@ -34,12 +34,12 @@
     "checkpoint_only_after_verification": true,
     "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
   },
-  "current_batch": 8,
-  "completed_batches_since_last_user_report": 0,
+  "current_batch": 9,
+  "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_8_PRODUCTION_READY",
+  "last_verified_checkpoint": "POF_BATCH_8_LIVE_VERIFIED",
   "production_state": {
-    "approved_live_visuals": 35,
+    "approved_live_visuals": 40,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -49,113 +49,17 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Persist and merge the exact production-ready Batch 8 tree once into main, wait for the matching Vercel production deployment to become READY, then verify all five live assets and all 25 Supabase mappings before LIVE_VERIFIED lock.",
-  "active_batch_source_selection": {
-    "batch": 8,
-    "visual_concepts": 5,
-    "planned_question_rows": 25,
-    "visual_keys": [
-      "pof-balance-tab-opposite-001",
-      "pof-antiservo-tab-same-direction-001",
-      "pof-spin-differential-stall-001",
-      "pof-spin-recovery-control-order-001",
-      "pof-flaps-steepen-glide-001"
-    ],
-    "source_documents": [
-      "FAA-H-8083-25C_PHAK_Chapter_6.pdf",
-      "FAA-H-8083-3C_AFH_Chapter_5.pdf",
-      "FAA-H-8083-3C_AFH_Glossary.pdf",
-      "FAA-H-8083-3C_AFH_Chapter_9.pdf"
-    ],
-    "database_preflight": {
-      "existing_question_rows": 25,
-      "correct_subject_rows": 25,
-      "unowned_question_rows": 25,
-      "already_owned_rows": 0,
-      "planned_key_or_url_collisions": 0,
-      "verified": true
-    },
-    "verified": true
-  },
-  "active_batch_refinement": {
-    "batch": 8,
-    "visual_concepts": 5,
-    "png_assets": 5,
-    "webp_assets": 5,
-    "svg_assets": 0,
-    "asset_dimensions": "1600x1050",
-    "source_to_refined_pairs": 5,
-    "actual_outputs_rendered": true,
-    "technical_corrections_completed": [
-      "Removed the ambiguous balance-tab downward motion arrow",
-      "Corrected left-spin pilot-left versus viewer-right wing orientation",
-      "Replaced recovery airspeed shorthand with reduce-AoA and unstall wording",
-      "Placed flap emphasis at the main-wing root instead of the horizontal tail"
-    ],
-    "qa_pending": false,
-    "verified": true
-  },
-  "active_batch_qa": {
-    "batch": 8,
-    "visual_concepts": 5,
-    "png_assets": 5,
-    "webp_assets": 5,
-    "svg_assets": 0,
-    "asset_dimensions": "1600x1050",
-    "actual_pngs_rendered_and_reviewed": true,
-    "actual_webps_rendered_and_reviewed": true,
-    "technical": true,
-    "teaching": true,
-    "visual": true,
-    "batch1_quality_or_better": true,
-    "generic_placeholder_appearance": false,
-    "corrections_verified": true,
-    "png_sha256": {
-      "pof-antiservo-tab-same-direction-v1.png": "da89f5f75f00a5106ec785b1054c5eadd7015471cd101732ecf3111c0dc8ced2",
-      "pof-balance-tab-opposite-v1.png": "3a6f90838160a32df8e4633a8df2c355bb900b29ecccc35c0d25cacb68e1a362",
-      "pof-flaps-steepen-glide-v1.png": "7bf26b980f36c3f46c2bd39777a2371d6d73b193b866cec6e694b6726ec893d4",
-      "pof-spin-differential-stall-v1.png": "73f109d6939bfc2f96b2b28ebc3309d8a4c01830ead1a6aaeb84481f544431b8",
-      "pof-spin-recovery-control-order-v1.png": "71eff9cf9f79a651033def75c2c2caf4d42706dfbd767d65156616182f5020e6"
-    },
-    "webp_sha256": {
-      "pof-antiservo-tab-same-direction-v1.webp": "6008a5a3db70f7640809a0e080d062160d94067bb1501719c992055845c6ccbf",
-      "pof-balance-tab-opposite-v1.webp": "f5e9b333e69ef2786e592ddc3d5b0a56a10e300bde5881eeb757bc68ed3d32f1",
-      "pof-flaps-steepen-glide-v1.webp": "85682a81b29de565f911003e53ac1e6b6bbfe3063bd40c91f173a399fd59eb94",
-      "pof-spin-differential-stall-v1.webp": "0572100ddbc03ec81a28f0a193d5a44b996bcea5d89707edf8a49b3322707706",
-      "pof-spin-recovery-control-order-v1.webp": "acd6dfb43d2c9a666a2f97b62a109b604cf069a3b57f39ef83c8704295f48caf"
-    },
-    "approved": true,
-    "verified": true
-  },
-  "active_batch_preview": {
-    "batch": 8,
-    "deployment_id": "dpl_9UJHNsFfUHgVv1TLy7XTqrN9Q21Y",
-    "deployment_url": "pilotvault-712pu1gmh-tiisetsmamphaga-8884s-projects.vercel.app",
-    "deployment_state": "READY",
-    "preview_branch": "preview/pof-batch8",
-    "preview_commit": "12a56b384ed8bea9d21bcf43041e3cdc8132b6a2",
-    "preflight_commit": "52c0abc63d9730032fa6014316a79537fc99dcb6",
-    "exact_git_tree": "feb538e8b44acd8033e64eec58b9865c210d9537",
-    "remote_preflight_run": 33796555350,
-    "remote_preflight_green": true,
-    "qa_route": "/pof-visual-qa",
-    "real_explanation_image_renderer_verified": true,
-    "rendered_webp_assets": 5,
-    "all_images_complete": true,
-    "natural_dimensions": "1600x1050",
-    "displayed_dimensions": "780x512",
-    "aspect_ratio_preserved": true,
-    "all_five_visually_inspected_in_viewport": true,
-    "pilotvault_console_errors": 0,
-    "supabase_mapping_performed": false,
-    "verified": true
-  },
+  "next_action": "Promote the queued Batch 9 source selection into the manifest at SOURCE_FOUND, verify its 19 intended question rows are correctly scoped and unowned, then begin refinement under the same fail-closed gates.",
+  "active_batch_source_selection": null,
+  "active_batch_refinement": null,
+  "active_batch_qa": null,
+  "active_batch_preview": null,
   "active_batch_mapping": {
     "batch": 8,
     "project_ref": "kkmlfbxfopwulwkloaoc",
     "mapped_question_rows": 25,
     "visual_keys": 5,
-    "database_status": "MAPPED",
+    "database_status": "LIVE_VERIFIED",
     "exact_match_count": 25,
     "unexpected_owner_count": 0,
     "transactional_update": true,
@@ -174,12 +78,12 @@
   "visual_requirement_audit": {
     "audit_file": "data/pof-visual-requirement-audit.json",
     "total_pof_questions": 365,
-    "live_verified_question_mappings": 93,
-    "remaining_rows_audited": 272,
-    "remaining_visual_required": 207,
+    "live_verified_question_mappings": 118,
+    "remaining_rows_audited": 247,
+    "remaining_visual_required": 182,
     "remaining_no_visual_required": 65,
     "total_visual_required_question_universe": 300,
-    "question_coverage_completion_percent": 31.0,
+    "question_coverage_completion_percent": 39.3,
     "verified": true
   },
   "production_readiness": {
@@ -202,18 +106,21 @@
     "verified": true
   },
   "live_verification": {
-    "batch": 7,
-    "deployment_id": "dpl_2nnFwPSRnAm81uDCfWcrj4tGwJA7",
-    "production_commit": "213651b69a9e27f1f4f395c1dcc0db1f9af81b5f",
+    "batch": 8,
+    "deployment_id": "dpl_8Lx51CBVmeBLFe1gyyfBhvrTKUjJ",
+    "production_commit": "c73d021d57a20e7d48c97d8514af49e0dbf885ee",
     "domain": "pilotvault.co.za",
     "production_assets_verified": 5,
     "mapped_question_rows": 25,
-    "exact_asset_bytes_match": true,
+    "exact_deployment_commit_match": true,
+    "all_production_webps_decoded": true,
+    "natural_dimensions": "1600x1050",
     "exact_database_rows_live_verified": true,
     "unexpected_database_owners": 0,
     "real_renderer_verified_on_preview": true,
     "signed_in_student_attempt_inspected": false,
-    "verification_note": "The production QA browser had no student auth session, so no signed-in attempt inspection is claimed. The real renderer was verified on the exact READY preview; the matching READY production artifact, all five live WebP bytes, and all 25 exact Supabase mappings were independently verified.",
+    "github_validation_run": 33834380307,
+    "verification_note": "The real ExplanationImage renderer was verified on the exact READY preview. The matching main commit reached a READY production deployment, all five live WebPs decoded completely at 1600x1050 on pilotvault.co.za, and all 25 exact Supabase mappings were independently read back with zero unexpected owners. No signed-in student attempt inspection is claimed.",
     "verified": true
   },
   "stop_conditions": [

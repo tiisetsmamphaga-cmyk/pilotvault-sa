@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "subject": "principles-of-flight",
-  "audit_date": "2026-09-03",
+  "audit_date": "2026-09-04",
   "source_of_question_state": "live Supabase public.questions",
   "audit_rule": {
     "visual_required_when": [
@@ -19,13 +19,13 @@
   },
   "snapshot": {
     "total_pof_questions": 365,
-    "live_verified_question_mappings": 93,
-    "remaining_question_rows_audited": 272,
-    "remaining_visual_required": 207,
+    "live_verified_question_mappings": 118,
+    "remaining_question_rows_audited": 247,
+    "remaining_visual_required": 182,
     "remaining_no_visual_required": 65,
     "total_visual_required_question_universe": 300,
-    "question_coverage_completion_percent": 31.0,
-    "calculation": "93 / (93 + 207) * 100"
+    "question_coverage_completion_percent": 39.3,
+    "calculation": "118 / (118 + 182) * 100"
   },
   "visual_required_remaining_by_topic": {
     "Aerofoils & Lift": [1114,1116,1117,1129,1139,1150,1283,1292,1349,1949,1974,1975,1978,1979,2002],
@@ -33,13 +33,13 @@
     "Basic Aerodynamics": [1948,1950,1964,1965,1966,1972],
     "Climb Performance": [1215,1217,1219,1220,1221,1244,1252,1256,1288,1298,1351,1371,1377,2014],
     "Drag": [1163,1176,1183,1189,1282,1296,1297,1322,1356,1357,1984,2036],
-    "Flaps & Glide": [1202,1207,1209,1211,1213,1223,1225,1229,1232,1241,1254,1281,1330,1332,1333,1335,1342,1346,1358,1368,1373,1951,1985,1991,1992,1995,1999,2003],
+    "Flaps & Glide": [1209,1213,1223,1225,1229,1232,1254,1281,1333,1335,1342,1346,1358,1373,1951,1985,1992,1995,1999,2003],
     "Flight Controls & Axes": [1108,1109,1120,1134,1149,1308,1327,1998,2028],
     "Four Forces": [1106,1125,1126,1246],
-    "Spins": [1222,1237,1242,1249,1257,1336,1339,1348,1362,1370,2025],
+    "Spins": [1242,1249,1339,1370,2025],
     "Stability": [1111,1112,1115,1130,1133,1141,1166,1172,1179,1187,1188,1192,1195,1198,1280,1285,1289,1302,1307,1310,1318,1319,1320,1325,1331,1337,1340,1341,1352,1987,1988,1989,1990,1996,1997,2000,2001,2006],
     "Stalls": [1199,1203,1205,1208,1224,1238,1248,1255,1323,1326,1334,1338,2008,2010],
-    "Trim & Balance Tabs": [1157,1159,1161,1165,1180,1190,1277,1279,1299,1304,1305,1309,1311,1317,1354,1361,1986,2009,2012,2013,2015,2019,2023,2024,2026,2027],
+    "Trim & Balance Tabs": [1161,1165,1180,1190,1279,1304,1305,1317,1986,2012,2015,2019,2023,2026,2027],
     "Turns & Load Factor": [1200,1204,1214,1216,1227,1228,1231,1235,1240,1245,1250,1251,1328,1360,1363,1375,1378],
     "Wing Design": [1171,1185,1186,1314,2004]
   },
@@ -60,7 +60,7 @@
     "Weight & Balance": [1138]
   },
   "notes": [
-    "The existing 93 LIVE_VERIFIED mappings remain approved and are counted inside the visual-required universe.",
+    "The existing 118 LIVE_VERIFIED mappings remain approved and are counted inside the visual-required universe.",
     "The 65 no-visual rows should not receive a decorative or generic explanation image merely to increase coverage.",
     "This audit establishes question coverage only. It does not estimate the number of visual assets remaining because one approved asset may legitimately serve multiple exact-equivalent questions."
   ]

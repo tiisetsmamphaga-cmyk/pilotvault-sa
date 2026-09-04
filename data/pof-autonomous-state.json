@@ -37,7 +37,7 @@
   "current_batch": 8,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_8_MAPPED",
+  "last_verified_checkpoint": "POF_BATCH_8_PRODUCTION_READY",
   "production_state": {
     "approved_live_visuals": 35,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Prepare the Batch 8 production candidate by removing the temporary QA route and preflight workflow, retain the approved raster allowlist and assets, pass the exact 20-route production build, then merge once into main.",
+  "next_action": "Persist and merge the exact production-ready Batch 8 tree once into main, wait for the matching Vercel production deployment to become READY, then verify all five live assets and all 25 Supabase mappings before LIVE_VERIFIED lock.",
   "active_batch_source_selection": {
     "batch": 8,
     "visual_concepts": 5,
@@ -163,9 +163,9 @@
     "verified": true
   },
   "production_readiness": {
-    "batch": 7,
-    "base_main_commit": "c9ce30802c250044e30eee81cb0bd6e478f32268",
-    "production_file_count": 13,
+    "batch": 8,
+    "base_main_commit": "534338ab34e3cc8dba2614133fd400fad094b209",
+    "production_file_count": 14,
     "png_assets": 5,
     "webp_assets": 5,
     "svg_assets": 0,
@@ -173,9 +173,11 @@
     "temporary_qa_route_removed": true,
     "temporary_workflows_removed": true,
     "temporary_generator_removed": true,
+    "pnpm_frozen_lock_install_passed": true,
+    "sharp_only_build_script_policy": true,
     "next_build_routes": 20,
     "production_build_passed": true,
-    "typescript_note": "The standalone full-repository type check still reports pre-existing errors in src/lib/client-data-cache.ts, which is unchanged from main and outside the Batch 7 diff; the exact production candidate compiled successfully in the Next.js production build.",
+    "build_environment_note": "The exact production candidate compiled with inert, step-scoped Supabase placeholders; no production database credential was placed in source or CI.",
     "verified": true
   },
   "live_verification": {

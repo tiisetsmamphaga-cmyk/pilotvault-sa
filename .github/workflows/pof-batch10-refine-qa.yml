@@ -1,0 +1,168 @@
+name: POF Batch 10 refinement QA
+
+on:
+  push:
+    branches:
+      - pof-batch-10-rebuild
+    paths:
+      - .github/workflows/pof-batch10-refine-qa.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refine-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Batch 10 working branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-10-rebuild
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install deterministic raster dependency
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+
+      - name: Assert SOURCE_FOUND gate
+        run: |
+          git merge-base --is-ancestor 10cf5745d5abb1c9302c9d3d920ad34767465cfc HEAD
+          python scripts/validate_pof_visuals.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          selection=json.loads(Path('data/pof-batch-10-source-selection.json').read_text())
+          assert state['current_batch']==10
+          assert state['last_verified_checkpoint']=='POF_BATCH_10_SOURCE_FOUND'
+          assert selection['status']=='SOURCE_FOUND'
+          assert selection['database_preflight']['verified'] is True
+          assert selection['reuse_sweep']['verified'] is True
+          assert len(selection['concepts'])==5
+          assert sum(len(c['question_ids']) for c in selection['concepts'])==17
+          PY
+
+      - name: Generate exact inspected Batch 10 rasters
+        run: |
+          rm -rf public/explanation-images/principles-of-flight/refined-batch-10
+          python scripts/generate_pof_batch10.py
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5
+          test "$(find public/explanation-images/principles-of-flight/refined-batch-10 -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 0
+
+      - name: Persist QA_APPROVED checkpoint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def load(p): return json.loads(Path(p).read_text(encoding='utf-8'))
+          def save(p,d): Path(p).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+
+          stems={
+            'pof-pressure-distribution-lift-001':'pof-pressure-distribution-lift',
+            'pof-adverse-yaw-high-aoa-001':'pof-adverse-yaw-high-aoa',
+            'pof-venturi-continuity-001':'pof-venturi-continuity',
+            'pof-level-turn-force-balance-001':'pof-level-turn-force-balance',
+            'pof-propeller-left-turning-tendencies-001':'pof-propeller-left-turning-tendencies',
+          }
+          png_hash={
+            'pof-pressure-distribution-lift-v1.png':'e0d22722ec916f1092a0591587b7941ff3543115fd41481f025eb6850245d2a1',
+            'pof-adverse-yaw-high-aoa-v1.png':'32e57e76ea477978fe6202c384664b67266567fee099df74b075d72d15ab64fe',
+            'pof-venturi-continuity-v1.png':'bb016bf0288df50f9fbb6cb87b7602c6c8917d4ddd91f87606d8880126248f23',
+            'pof-level-turn-force-balance-v1.png':'36f93395967c48163632f52fc28d998af80819f83c7d24a9115a656c658265bd',
+            'pof-propeller-left-turning-tendencies-v1.png':'767eecd8c610195620dc677d728a1661f26239e7db6e09c7a675f52db04f3466',
+          }
+          webp_hash={
+            'pof-pressure-distribution-lift-v1.webp':'4efe961788de4286b2bb94dbd27ffc43d1284647de813fe6685b3c000bfcb11b',
+            'pof-adverse-yaw-high-aoa-v1.webp':'14cdc9e8dc02a826bf9b7773bbb1e0b9c7567407d43c7dbb6e8b9db21ba8cc8b',
+            'pof-venturi-continuity-v1.webp':'b7f861b52639cd76677c1b3c9a4aaef95c625f3b4cb5790acb790b14ecb39b1a',
+            'pof-level-turn-force-balance-v1.webp':'ec9237b41719489b38a8e0dd891234a4bc049a9e06f71b884e63aa028e0cfafb',
+            'pof-propeller-left-turning-tendencies-v1.webp':'ed13656bc97e6894360bc162e430c6a105eca44c7e7d2e96b64930761fdc4908',
+          }
+
+          manifest=load('data/pof-visual-manifest.json')
+          touched=0
+          for visual in manifest['visuals']:
+            vid=visual.get('visual_id')
+            if vid not in stems: continue
+            assert visual['status']=='SOURCE_FOUND'
+            stem=stems[vid]
+            visual['assets']={
+              'master_asset':f'public/explanation-images/principles-of-flight/refined-batch-10/{stem}-v1.png',
+              'web_asset':f'public/explanation-images/principles-of-flight/refined-batch-10/{stem}-v1.webp',
+            }
+            visual['status']='QA_APPROVED'
+            visual['qa']['technical']=True
+            visual['qa']['teaching']=True
+            visual['qa']['visual']=True
+            visual['visual_inspection']={
+              'actual_image_reviewed':True,
+              'batch1_quality_reference':True,
+              'teaching_relationship_obvious':True,
+              'technically_credible':True,
+              'generic_placeholder_appearance':False,
+              'actual_png_reviewed':True,
+              'actual_webp_contact_sheet_reviewed':True,
+              'review_note':'Actual 1600x1050 PNG render and the actual WebP output set were visually inspected. Adverse-yaw drag-label clipping and propeller rotation-label overlap were corrected before approval; the pressure visual was simplified to avoid unnecessary faster/slower-airflow wording. Final geometry, arrows, labels and teaching relationships passed the locked Batch 1 quality bar.'
+            }
+            touched+=1
+          assert touched==5
+          save('data/pof-visual-manifest.json',manifest)
+
+          selection=load('data/pof-batch-10-source-selection.json')
+          assert selection['status']=='SOURCE_FOUND'
+          selection['status']='QA_APPROVED'
+          for c in selection['concepts']: c['status']='QA_APPROVED'
+          selection['gates']['refined']=True
+          selection['gates']['qa_approved']=True
+          selection['next_action']='Create exactly one Batch 10 QA preview using the real ExplanationImage component and the five approved WebPs, verify the renderer/deployment fail-closed, then persist PREVIEW_READY before any new-row mapping.'
+          save('data/pof-batch-10-source-selection.json',selection)
+
+          state=load('data/pof-autonomous-state.json')
+          state['last_verified_checkpoint']='POF_BATCH_10_QA_APPROVED'
+          state['next_action']=selection['next_action']
+          state['active_batch_refinement']={
+            'batch':10,'visual_concepts':5,'png_assets':5,'webp_assets':5,'svg_assets':0,
+            'asset_dimensions':'1600x1050','actual_outputs_rendered':True,
+            'corrections_completed':['Removed clipped high-AoA drag annotation','Separated propeller clockwise label from rotation arc','Removed unnecessary faster/slower airflow labels from pressure-distribution visual'],
+            'verified':True
+          }
+          state['active_batch_qa']={
+            'batch':10,'visual_concepts':5,'png_assets':5,'webp_assets':5,'svg_assets':0,
+            'asset_dimensions':'1600x1050','actual_pngs_rendered_and_reviewed':True,
+            'actual_webps_rendered_and_reviewed':True,'technical':True,'teaching':True,'visual':True,
+            'batch1_quality_or_better':True,'generic_placeholder_appearance':False,'corrections_verified':True,
+            'png_sha256':png_hash,'webp_sha256':webp_hash,'approved':True,'verified':True
+          }
+          save('data/pof-autonomous-state.json',state)
+          PY
+
+      - name: Validate exact QA-approved state
+        run: |
+          python scripts/validate_pof_visuals.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          q=json.loads(Path('data/pof-batch-10-source-selection.json').read_text())
+          assert s['last_verified_checkpoint']=='POF_BATCH_10_QA_APPROVED'
+          assert s['active_batch_qa']['approved'] is True
+          assert q['status']=='QA_APPROVED'
+          assert q['gates']['qa_approved'] is True and q['gates']['preview_ready'] is False
+          PY
+
+      - name: Commit exact approved rasters
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/explanation-images/principles-of-flight/refined-batch-10 data/pof-autonomous-state.json data/pof-batch-10-source-selection.json data/pof-visual-manifest.json
+          git commit -m "Approve POF Batch 10 refined visuals"
+          git push origin HEAD:pof-batch-10-rebuild

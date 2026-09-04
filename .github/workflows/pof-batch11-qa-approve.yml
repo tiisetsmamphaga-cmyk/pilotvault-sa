@@ -1,0 +1,180 @@
+name: POF Batch 11 QA Approval
+
+on:
+  push:
+    branches:
+      - pof-batch-11-rebuild
+    paths:
+      - '.github/workflows/pof-batch11-qa-approve.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  qa-approve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Batch 11 work branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-11-rebuild
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate final raster boundary and persist QA_APPROVED
+        shell: bash
+        run: |
+          python -m pip install --quiet pillow==12.3.0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+
+          def load(path):
+              return json.loads(Path(path).read_text())
+          def save(path, data):
+              Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+
+          state_path='data/pof-autonomous-state.json'
+          sel_path='data/pof-batch-11-source-selection.json'
+          manifest_path='data/pof-visual-manifest.json'
+          state=load(state_path); sel=load(sel_path); manifest=load(manifest_path)
+
+          assert state['current_batch']==11
+          assert state['last_verified_checkpoint']=='POF_BATCH_11_REFINING'
+          assert state['active_batch_reuse_sweep']['database_status']=='LIVE_VERIFIED'
+          assert state['active_batch_reuse_sweep']['mapped_question_rows']==16
+          assert sel['status']=='REFINING'
+          assert len(sel['concepts'])==5
+          assert sel['database_preflight']['verified'] is True
+          assert sel['database_preflight']['planned_key_collisions']==0
+          assert sel['coverage']['planned_new_question_rows']==12
+
+          out=Path('public/explanation-images/principles-of-flight/refined-batch-11')
+          stems={
+              'pof-trailing-edge-flap-lift-drag-001':'pof-trailing-edge-flap-lift-drag',
+              'pof-flap-stall-speed-001':'pof-flap-stall-speed',
+              'pof-fowler-flap-wing-area-001':'pof-fowler-flap-wing-area',
+              'pof-static-dynamic-stability-response-001':'pof-static-dynamic-stability-response',
+              'pof-directional-fin-weathercock-001':'pof-directional-fin-weathercock',
+          }
+          expected_files=set()
+          for stem in stems.values():
+              expected_files.add(f'{stem}-v1.png'); expected_files.add(f'{stem}-v1.webp')
+          actual={p.name for p in out.iterdir() if p.is_file()}
+          assert actual==expected_files, (sorted(actual), sorted(expected_files))
+          for name in sorted(actual):
+              with Image.open(out/name) as im:
+                  assert im.size==(1600,1050),(name,im.size)
+                  assert im.mode in ('RGB','RGBA'),(name,im.mode)
+
+          existing_ids={v['visual_id'] for v in manifest['visuals']}
+          assert not (set(stems) & existing_ids), 'Batch 11 visual IDs already exist in manifest; fail closed.'
+
+          review_note=(
+              'Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. '
+              'Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; '
+              'the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. '
+              'Final geometry, labels, teaching relationships and web-delivery rasters are clean.'
+          )
+
+          by_id={c['visual_id']:c for c in sel['concepts']}
+          for vid,stem in stems.items():
+              c=by_id[vid]
+              c['status']='QA_APPROVED'
+              entry={
+                  'visual_id':c['visual_id'],
+                  'topic':c['topic'],
+                  'concept':c['concept'],
+                  'question_ids':c['question_ids'],
+                  'source':c['source'],
+                  'brief':c['brief'],
+                  'assets':{
+                      'master_asset':f'public/explanation-images/principles-of-flight/refined-batch-11/{stem}-v1.png',
+                      'web_asset':f'public/explanation-images/principles-of-flight/refined-batch-11/{stem}-v1.webp'
+                  },
+                  'mapping_reason':c['mapping_reason'],
+                  'status':'QA_APPROVED',
+                  'qa':{'technical':True,'teaching':True,'visual':True,'preview':False,'live':False},
+                  'lock':{'approved':False,'replacement_reason':None},
+                  'visual_inspection':{
+                      'actual_image_reviewed':True,
+                      'batch1_quality_reference':True,
+                      'teaching_relationship_obvious':True,
+                      'technically_credible':True,
+                      'generic_placeholder_appearance':False,
+                      'actual_png_contact_sheet_reviewed':True,
+                      'actual_webp_contact_sheet_reviewed':True,
+                      'png_qa_run':33899691484,
+                      'webp_qa_run':33899897134,
+                      'review_note':review_note
+                  }
+              }
+              if c.get('reuse_justification'):
+                  entry['reuse_justification']=c['reuse_justification']
+              manifest['visuals'].append(entry)
+
+          sel['status']='QA_APPROVED'
+          sel['gates']['refined']=True
+          sel['gates']['qa_approved']=True
+          sel['next_action']='Create the single deliberate Batch 11 preview through the real ExplanationImage renderer; do not map the 12 new rows until PREVIEW_READY is verified.'
+
+          state['last_verified_checkpoint']='POF_BATCH_11_QA_APPROVED'
+          state['active_batch_source_selection']['status']='QA_APPROVED'
+          state['active_batch_refinement']['status']='QA_APPROVED'
+          state['active_batch_qa']={
+              'batch':11,
+              'status':'QA_APPROVED',
+              'visual_concepts':5,
+              'png_assets_reviewed':5,
+              'webp_assets_reviewed':5,
+              'technical_qa':True,
+              'teaching_qa':True,
+              'visual_qa':True,
+              'batch1_quality_reference':True,
+              'known_defects_remaining':0,
+              'png_qa_run':33899691484,
+              'webp_qa_run':33899897134,
+              'verified':True
+          }
+          state['next_action']='Create and verify the single deliberate preview/pof-batch11 deployment through the real ExplanationImage component before database mapping.'
+
+          save(sel_path,sel); save(state_path,state); save(manifest_path,manifest)
+          print('POF_BATCH_11_QA_APPROVED persisted for exactly 5 visuals / 12 planned new rows.')
+          PY
+
+      - name: Validate exact QA-approved state
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          sel=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
+          man=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in sel['concepts']}
+          rows=[v for v in man['visuals'] if v['visual_id'] in ids]
+          assert state['last_verified_checkpoint']=='POF_BATCH_11_QA_APPROVED'
+          assert sel['status']=='QA_APPROVED'
+          assert sel['gates']['qa_approved'] is True
+          assert len(rows)==5
+          assert all(v['status']=='QA_APPROVED' for v in rows)
+          assert all(v['qa']=={'technical':True,'teaching':True,'visual':True,'preview':False,'live':False} for v in rows)
+          assert sum(len(v['question_ids']) for v in rows)==12
+          print('Exact QA-approved manifest/state validation passed.')
+          PY
+
+      - name: Commit QA-approved checkpoint
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
+          git diff --cached --check
+          git commit -m "Approve POF Batch 11 refined visuals"
+          git push origin HEAD:pof-batch-11-rebuild

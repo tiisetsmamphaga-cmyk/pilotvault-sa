@@ -34,12 +34,12 @@
     "checkpoint_only_after_verification": true,
     "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
   },
-  "current_batch": 10,
-  "completed_batches_since_last_user_report": 2,
+  "current_batch": 11,
+  "completed_batches_since_last_user_report": 3,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_10_PRODUCTION_READY",
+  "last_verified_checkpoint": "POF_BATCH_10_LIVE_VERIFIED",
   "production_state": {
-    "approved_live_visuals": 45,
+    "approved_live_visuals": 50,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -49,105 +49,17 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Fast-forward this exact verified Batch 10 production tree to main, wait for the matching Vercel production deployment, then live-verify five assets and 17 exact database rows before lock.",
-  "active_batch_source_selection": {
-    "batch": 10,
-    "status": "SOURCE_FOUND",
-    "source_selection_file": "data/pof-batch-10-source-selection.json",
-    "source_documents": [
-      "ac_61-23c_phak_canada.pdf"
-    ],
-    "visual_concepts": 5,
-    "planned_question_rows": 17,
-    "visual_keys": [
-      "pof-pressure-distribution-lift-001",
-      "pof-adverse-yaw-high-aoa-001",
-      "pof-venturi-continuity-001",
-      "pof-level-turn-force-balance-001",
-      "pof-propeller-left-turning-tendencies-001"
-    ],
-    "database_preflight": {
-      "existing_question_rows": 17,
-      "correct_subject_rows": 17,
-      "unowned_question_rows": 17,
-      "already_owned_rows": 0,
-      "planned_key_collisions": 0,
-      "verified": true
-    },
-    "verified": true
-  },
-  "active_batch_refinement": {
-    "batch": 10,
-    "visual_concepts": 5,
-    "png_assets": 5,
-    "webp_assets": 5,
-    "svg_assets": 0,
-    "asset_dimensions": "1600x1050",
-    "actual_outputs_rendered": true,
-    "corrections_completed": [
-      "Removed clipped high-AoA drag annotation",
-      "Separated propeller clockwise label from rotation arc",
-      "Removed unnecessary faster/slower airflow labels from pressure-distribution visual"
-    ],
-    "verified": true
-  },
-  "active_batch_qa": {
-    "batch": 10,
-    "visual_concepts": 5,
-    "png_assets": 5,
-    "webp_assets": 5,
-    "svg_assets": 0,
-    "asset_dimensions": "1600x1050",
-    "actual_pngs_rendered_and_reviewed": true,
-    "actual_webps_rendered_and_reviewed": true,
-    "technical": true,
-    "teaching": true,
-    "visual": true,
-    "batch1_quality_or_better": true,
-    "generic_placeholder_appearance": false,
-    "corrections_verified": true,
-    "png_sha256": {
-      "pof-pressure-distribution-lift-v1.png": "e0d22722ec916f1092a0591587b7941ff3543115fd41481f025eb6850245d2a1",
-      "pof-adverse-yaw-high-aoa-v1.png": "32e57e76ea477978fe6202c384664b67266567fee099df74b075d72d15ab64fe",
-      "pof-venturi-continuity-v1.png": "bb016bf0288df50f9fbb6cb87b7602c6c8917d4ddd91f87606d8880126248f23",
-      "pof-level-turn-force-balance-v1.png": "36f93395967c48163632f52fc28d998af80819f83c7d24a9115a656c658265bd",
-      "pof-propeller-left-turning-tendencies-v1.png": "767eecd8c610195620dc677d728a1661f26239e7db6e09c7a675f52db04f3466"
-    },
-    "webp_sha256": {
-      "pof-pressure-distribution-lift-v1.webp": "4efe961788de4286b2bb94dbd27ffc43d1284647de813fe6685b3c000bfcb11b",
-      "pof-adverse-yaw-high-aoa-v1.webp": "14cdc9e8dc02a826bf9b7773bbb1e0b9c7567407d43c7dbb6e8b9db21ba8cc8b",
-      "pof-venturi-continuity-v1.webp": "b7f861b52639cd76677c1b3c9a4aaef95c625f3b4cb5790acb790b14ecb39b1a",
-      "pof-level-turn-force-balance-v1.webp": "ec9237b41719489b38a8e0dd891234a4bc049a9e06f71b884e63aa028e0cfafb",
-      "pof-propeller-left-turning-tendencies-v1.webp": "ed13656bc97e6894360bc162e430c6a105eca44c7e7d2e96b64930761fdc4908"
-    },
-    "approved": true,
-    "verified": true
-  },
-  "active_batch_preview": {
-    "batch": 10,
-    "deployment_id": "dpl_8xeGExzePF5NscgTqMzieJjNQENt",
-    "deployment_commit": "a83f73655b3120fd2af998198a87ded430804cc4",
-    "route": "/pof-visual-qa",
-    "deployment_ready": true,
-    "route_statically_generated": true,
-    "real_explanation_component_used": true,
-    "runtime_errors_detected": 0,
-    "protected_route_note": "Vercel Authentication redirected unauthenticated QA-route fetches to SSO. The exact READY deployment build statically generated /pof-visual-qa through the real ExplanationImage component and preview error/fatal runtime logs were empty.",
-    "discarded_deployments": [
-      {
-        "deployment_id": "dpl_GjGuj3r5CYPdkqFoSWJwmJ6ouRpU",
-        "deployment_commit": "9585a766963eec6169189fd3dfa9f2d6703c20c9",
-        "reason": "A preview-branch write did not contain the verified Batch 10 renderer/QA tree. It was fail-closed, excluded from mapping and never used as release evidence."
-      }
-    ],
-    "verified": true
-  },
+  "next_action": "Begin Batch 11 source selection from the remaining audited visual-required POF rows, preserving the same five-visual hard stage gate.",
+  "active_batch_source_selection": null,
+  "active_batch_refinement": null,
+  "active_batch_qa": null,
+  "active_batch_preview": null,
   "active_batch_mapping": {
     "batch": 10,
     "project_ref": "kkmlfbxfopwulwkloaoc",
     "mapped_question_rows": 17,
     "visual_keys": 5,
-    "database_status": "MAPPED",
+    "database_status": "LIVE_VERIFIED",
     "exact_match_count": 17,
     "unexpected_owner_count": 0,
     "transactional_update": true,
@@ -157,12 +69,12 @@
   "visual_requirement_audit": {
     "audit_file": "data/pof-visual-requirement-audit.json",
     "total_pof_questions": 365,
-    "live_verified_question_mappings": 157,
-    "remaining_rows_audited": 208,
-    "remaining_visual_required": 143,
+    "live_verified_question_mappings": 174,
+    "remaining_rows_audited": 191,
+    "remaining_visual_required": 126,
     "remaining_no_visual_required": 65,
     "total_visual_required_question_universe": 300,
-    "question_coverage_completion_percent": 52.3,
+    "question_coverage_completion_percent": 58.0,
     "verified": true
   },
   "production_readiness": {
@@ -183,12 +95,13 @@
     "verified": true
   },
   "live_verification": {
-    "batch": 9,
-    "deployment_id": "dpl_HJbAmGLQ9rVgAnNwvAHHU6qgtCvt",
-    "production_commit": "2fa8dbf36489bedd89a3d9b1c49b7e7cf3b967fc",
+    "batch": 10,
+    "deployment_id": "dpl_Hj5gq7nZsTZQtMDY3XD2nscBXvp3",
+    "production_commit": "bc6b171108bc385d5d842605bb632e738be7ed2e",
     "domain": "pilotvault.co.za",
     "production_assets_verified": 5,
-    "mapped_question_rows": 19,
+    "mapped_question_rows": 17,
+    "reused_live_question_rows": 20,
     "exact_deployment_commit_match": true,
     "all_production_webps_reachable": true,
     "live_delivery_content_type": "image/webp",
@@ -197,8 +110,8 @@
     "unexpected_database_owners": 0,
     "real_renderer_build_verified_on_preview": true,
     "signed_in_student_attempt_inspected": false,
-    "github_validation_run": 33837776484,
-    "verification_note": "The exact Batch 9 main commit reached READY production on pilotvault.co.za. All five production WebP endpoints returned the intended image/webp assets, and all 19 exact Supabase rows were transactionally advanced to LIVE_VERIFIED with independent grouped readback and zero unexpected owners. The protected preview route was statically generated through the real ExplanationImage component with zero runtime errors; no signed-in student-attempt screenshot is claimed.",
+    "github_validation_run": 33850331676,
+    "verification_note": "The exact Batch 10 production content commit reached READY production on pilotvault.co.za. All five Batch 10 production WebP endpoints returned HTTP 200 image/webp assets. All 17 new Supabase mappings were transactionally advanced from MAPPED to LIVE_VERIFIED with independent grouped readback and zero unexpected owners; the 20 Batch 10 safe-reuse rows were already LIVE_VERIFIED. The protected preview route was statically generated through the real ExplanationImage component with zero preview runtime errors; no signed-in student-attempt screenshot is claimed.",
     "verified": true
   },
   "stop_conditions": [

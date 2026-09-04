@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 10,
-  "status": "PRODUCTION_READY",
+  "status": "LIVE_VERIFIED",
   "selected_date": "2026-09-04",
   "batch_limit": 5,
   "source_document": "ac_61-23c_phak_canada.pdf",
@@ -64,7 +64,7 @@
         ]
       },
       "mapping_reason": "The two questions directly ask which pressure distribution creates lift; the visual will show that exact upper/lower pressure relationship.",
-      "status": "PRODUCTION_READY"
+      "status": "LIVE_VERIFIED"
     },
     {
       "visual_id": "pof-adverse-yaw-high-aoa-001",
@@ -108,7 +108,7 @@
         ]
       },
       "mapping_reason": "The questions ask when adverse yaw is most noticeable or how it changes with AoA; a low-vs-high AoA comparison teaches that exact relationship.",
-      "status": "PRODUCTION_READY"
+      "status": "LIVE_VERIFIED"
     },
     {
       "visual_id": "pof-venturi-continuity-001",
@@ -147,7 +147,7 @@
         ]
       },
       "mapping_reason": "Question 1966 tests the exact continuity/Bernoulli changes through a venturi throat, which the visual will label directly.",
-      "status": "PRODUCTION_READY"
+      "status": "LIVE_VERIFIED"
     },
     {
       "visual_id": "pof-level-turn-force-balance-001",
@@ -195,7 +195,7 @@
         ]
       },
       "mapping_reason": "These questions all ask about the same level-turn force balance, its centripetal source, the AoA increase needed to maintain altitude, or the associated resultant load.",
-      "status": "PRODUCTION_READY"
+      "status": "LIVE_VERIFIED"
     },
     {
       "visual_id": "pof-propeller-left-turning-tendencies-001",
@@ -237,7 +237,7 @@
         ]
       },
       "mapping_reason": "Question 1948 asks the torque-reaction roll direction and question 1950 asks the P-factor/right-rudder correction; the two-panel visual separates those exact effects.",
-      "status": "PRODUCTION_READY"
+      "status": "LIVE_VERIFIED"
     }
   ],
   "coverage": {
@@ -261,7 +261,7 @@
     "preview_ready": true,
     "mapped": true,
     "production_ready": true,
-    "live_verified": false
+    "live_verified": true
   },
-  "next_action": "Advance the exact green production tree to main, then live-verify all five assets and all 17 database rows before lock."
+  "next_action": "Batch 10 is locked and live verified. Begin Batch 11 source selection from the remaining audited visual-required POF rows."
 }

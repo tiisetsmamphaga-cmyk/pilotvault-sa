@@ -34,32 +34,16 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-
           p = Path('scripts/generate_pof_batch11.py')
           s = p.read_text()
-
-          old_flap = '''arrow(d,(422,520),(335,520),fill=MUTED,width=6,head=18); d.text((sc(320),sc(545)),"DRAG",font=font(18,True),fill=MUTED)
-arrow(d,(1177,430),(1177,275),fill=GOLD,width=11,head=26); d.text((sc(1205),sc(285)),"MORE LIFT",font=font(21,True),fill=GOLD)
-arrow(d,(1177,520),(1035,520),fill=RED,width=9,head=24); d.text((sc(1020),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)'''
-          new_flap = '''# Drag is parallel to and in the same direction as the relative wind.
-arrow(d,(422,520),(509,520),fill=MUTED,width=6,head=18); d.text((sc(447),sc(545)),"DRAG",font=font(18,True),fill=MUTED)
-arrow(d,(1177,430),(1177,275),fill=GOLD,width=11,head=26); d.text((sc(1205),sc(285)),"MORE LIFT",font=font(21,True),fill=GOLD)
-arrow(d,(1177,520),(1319,520),fill=RED,width=9,head=24); d.text((sc(1205),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)'''
+          old_flap = 'arrow(d,(422,520),(335,520),fill=MUTED,width=6,head=18); d.text((sc(320),sc(545)),"DRAG",font=font(18,True),fill=MUTED)\narrow(d,(1177,430),(1177,275),fill=GOLD,width=11,head=26); d.text((sc(1205),sc(285)),"MORE LIFT",font=font(21,True),fill=GOLD)\narrow(d,(1177,520),(1035,520),fill=RED,width=9,head=24); d.text((sc(1020),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)'
+          new_flap = '# Drag is parallel to and in the same direction as the relative wind.\narrow(d,(422,520),(509,520),fill=MUTED,width=6,head=18); d.text((sc(447),sc(545)),"DRAG",font=font(18,True),fill=MUTED)\narrow(d,(1177,430),(1177,275),fill=GOLD,width=11,head=26); d.text((sc(1205),sc(285)),"MORE LIFT",font=font(21,True),fill=GOLD)\narrow(d,(1177,520),(1319,520),fill=RED,width=9,head=24); d.text((sc(1205),sc(550)),"MORE DRAG",font=font(20,True),fill=RED)'
           assert old_flap in s, 'Flap geometry source changed; fail closed.'
           s = s.replace(old_flap, new_flap, 1)
-
-          old_fin = '''# tail force to right and restoring curved arrow / simple arc points
-finpt=rot((cx,cy+165)); arrow(d,(finpt[0],finpt[1]),(finpt[0]+150,finpt[1]),fill=GOLD,width=8,head=22); d.text((sc(finpt[0]+35),sc(finpt[1]+25)),"Fin sideforce",font=font(17,True),fill=GOLD)'''
-          new_fin = '''# Fin sideforce is lateral: perpendicular to the yawed aircraft longitudinal axis.
-# For a 15-degree clockwise yaw, the local right-lateral unit vector is (cos(ang), sin(ang)).
-finpt=rot((cx,cy+165))
-lat=(math.cos(ang),math.sin(ang))
-finend=(finpt[0]+150*lat[0],finpt[1]+150*lat[1])
-arrow(d,(finpt[0],finpt[1]),finend,fill=GOLD,width=8,head=22)
-d.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,True),fill=GOLD)'''
+          old_fin = '# tail force to right and restoring curved arrow / simple arc points\nfinpt=rot((cx,cy+165)); arrow(d,(finpt[0],finpt[1]),(finpt[0]+150,finpt[1]),fill=GOLD,width=8,head=22); d.text((sc(finpt[0]+35),sc(finpt[1]+25)),"Fin sideforce",font=font(17,True),fill=GOLD)'
+          new_fin = '# Fin sideforce is lateral: perpendicular to the yawed aircraft longitudinal axis.\n# For a 15-degree clockwise yaw, the local right-lateral unit vector is (cos(ang), sin(ang)).\nfinpt=rot((cx,cy+165))\nlat=(math.cos(ang),math.sin(ang))\nfinend=(finpt[0]+150*lat[0],finpt[1]+150*lat[1])\narrow(d,(finpt[0],finpt[1]),finend,fill=GOLD,width=8,head=22)\nd.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,True),fill=GOLD)'
           assert old_fin in s, 'Directional-stability geometry source changed; fail closed.'
           s = s.replace(old_fin, new_fin, 1)
-
           p.write_text(s)
           print('Patched exactly two known technical defects.')
           PY
@@ -73,7 +57,6 @@ d.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,Tr
           python - <<'PY'
           from pathlib import Path
           from PIL import Image
-
           out = Path('public/explanation-images/principles-of-flight/refined-batch-11')
           expected = {
               'pof-trailing-edge-flap-lift-drag-v1',
@@ -82,9 +65,7 @@ d.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,Tr
               'pof-static-dynamic-stability-response-v1',
               'pof-directional-fin-weathercock-v1',
           }
-          png = sorted(out.glob('*.png'))
-          webp = sorted(out.glob('*.webp'))
-          svg = sorted(out.glob('*.svg'))
+          png = sorted(out.glob('*.png')); webp = sorted(out.glob('*.webp')); svg = sorted(out.glob('*.svg'))
           assert len(png) == 5, len(png)
           assert len(webp) == 5, len(webp)
           assert len(svg) == 0, len(svg)
@@ -103,7 +84,6 @@ d.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,Tr
           python - <<'PY'
           from PIL import Image, ImageDraw
           from pathlib import Path
-
           root = Path('public/explanation-images/principles-of-flight/refined-batch-11')
           files = [
               'pof-trailing-edge-flap-lift-drag-v1.png',
@@ -119,10 +99,7 @@ d.text((sc(finpt[0]+28),sc(finpt[1]+42)),"LATERAL FIN SIDEFORCE",font=font(16,Tr
               h = round(target_w * im.height / im.width)
               im = im.resize((target_w, h), Image.Resampling.LANCZOS)
               canvas = Image.new('RGB', (target_w, label_h + h), 'white')
-              d = ImageDraw.Draw(canvas)
-              d.text((10, 8), name, fill='black')
-              canvas.paste(im, (0, label_h))
-              panels.append(canvas)
+              d = ImageDraw.Draw(canvas); d.text((10, 8), name, fill='black'); canvas.paste(im, (0, label_h)); panels.append(canvas)
           sheet = Image.new('RGB', (target_w, sum(x.height for x in panels) + gap*(len(panels)-1)), 'white')
           y = 0
           for panel in panels:

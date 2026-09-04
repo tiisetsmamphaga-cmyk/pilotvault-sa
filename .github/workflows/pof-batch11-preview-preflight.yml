@@ -33,7 +33,7 @@ jobs:
         shell: bash
         run: |
           git merge-base --is-ancestor 0804bdabe3532712f0a8ea9c71fd1b494e916878 HEAD
-          test "$(git diff --name-only 0804bdabe3532712f0a8ea9c71fd1b494e916878..HEAD | sort | tr '\n' ' ')" = ".github/workflows/pof-batch11-preview-preflight.yml app/pof-visual-qa/page.tsx app/practice/[subject]/components/explanation-image.tsx "
+          test "$(git diff --name-only 0804bdabe3532712f0a8ea9c71fd1b494e916878..HEAD | sort | tr '\n' ' ')" = ".github/workflows/pof-batch11-preview-preflight.yml app/pof-visual-qa/page.tsx app/practice/[subject]/components/explanation-image.tsx data/pof-batch-11-source-selection.json data/pof-visual-manifest.json "
 
       - name: Validate canonical manifest and Batch 11 raster boundary
         shell: bash
@@ -65,6 +65,7 @@ jobs:
           assert all(v['status']=='QA_APPROVED' for v in rows)
           assert all(v['qa']['technical'] and v['qa']['teaching'] and v['qa']['visual'] for v in rows)
           assert all(not v['qa']['preview'] and not v['qa']['live'] for v in rows)
+          assert all(isinstance(v['source'].get('page'), int) and v['source']['page'] > 0 for v in rows)
           PY
 
       - name: Install dependencies

@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Run the exact cleaned Batch 9 production build and full-history validators; advance main only after the candidate is fully green.",
+  "next_action": "Fast-forward the exact verified Batch 9 production tree once to main, wait for the matching production deployment to become READY, then live-verify five assets and 19 exact Supabase mappings before lock.",
   "active_batch_source_selection": {
     "batch": 9,
     "status": "SOURCE_FOUND",
@@ -175,9 +175,9 @@
     "pnpm_frozen_lock_install_passed": true,
     "sharp_only_build_script_policy": true,
     "next_build_routes": 20,
-    "production_build_passed": false,
+    "production_build_passed": true,
     "build_environment_note": "The candidate build uses inert, step-scoped Supabase placeholders; no production database credential is placed in source or CI.",
-    "verified": false
+    "verified": true
   },
   "live_verification": {
     "batch": 8,

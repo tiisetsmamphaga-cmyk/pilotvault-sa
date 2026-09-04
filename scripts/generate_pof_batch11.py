@@ -196,7 +196,7 @@ for y,label,wid,force in [(390,"SMALLER",75,60),(650,"LARGER",135,110)]:
     d.polygon(pts([(1325-wid/2,y),(1325+wid/2,y),(1325+wid/2,y-95),(1325-wid/2,y-95)]),fill=PALE_GOLD,outline=GOLD)
     arrow(d,(1325,y-50),(1325+force,y-50),fill=GOLD,width=6 if force==60 else 9,head=18)
     center_text(d,(1325,y+55),"restoring force" + (" ↑" if label=="LARGER" else ""),font(16,True),GREEN if label=="LARGER" else MUTED)
-box(d,(1120,835,1530,900),fill=NAVY,outline=NAVY,width=1,radius=14); center_text(d,(1325,867),"More area aft of CG → stronger directional stability",font(16,True),WHITE)
+box(d,(1120,835,1530,900),fill=NAVY,outline=NAVY,width=1,radius=14); center_text(d,(1325,867),"More area aft of CG → stronger stability",font(14,True),WHITE)
 box(d,(250,925,1050,995),fill=WHITE,outline=GOLD,width=2,radius=18); center_text(d,(650,960),"No rudder input required: this is inherent stability",font(22,True),NAVY)
 save_pair(im,"pof-directional-fin-weathercock")
 

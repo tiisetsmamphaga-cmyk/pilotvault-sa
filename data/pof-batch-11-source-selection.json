@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 11,
-  "status": "REFINING",
+  "status": "QA_APPROVED",
   "selected_date": "2026-09-04",
   "batch_limit": 5,
   "source_document": "ac_61-23c_phak_canada.pdf",
@@ -61,7 +61,7 @@
         ]
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "REFINING"
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-flap-stall-speed-001",
@@ -102,7 +102,7 @@
         ]
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "REFINING"
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-fowler-flap-wing-area-001",
@@ -141,7 +141,7 @@
         ]
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "REFINING"
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-static-dynamic-stability-response-001",
@@ -183,7 +183,7 @@
         ]
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "REFINING"
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-directional-fin-weathercock-001",
@@ -224,7 +224,7 @@
         ]
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "REFINING"
+      "status": "QA_APPROVED"
     }
   ],
   "coverage": {
@@ -243,12 +243,12 @@
   },
   "gates": {
     "source_selected": true,
-    "refined": false,
-    "qa_approved": false,
+    "refined": true,
+    "qa_approved": true,
     "preview_ready": false,
     "mapped": false,
     "production_ready": false,
     "live_verified": false
   },
-  "next_action": "Render all five Batch 11 raster pairs, inspect actual outputs, and do not advance until technical, teaching and visual QA are fully green."
+  "next_action": "Create the single deliberate Batch 11 preview through the real ExplanationImage renderer; do not map the 12 new rows until PREVIEW_READY is verified."
 }

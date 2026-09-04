@@ -37,7 +37,7 @@
   "current_batch": 11,
   "completed_batches_since_last_user_report": 3,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_11_REFINING",
+  "last_verified_checkpoint": "POF_BATCH_11_QA_APPROVED",
   "production_state": {
     "approved_live_visuals": 50,
     "rejected_non_batch_1_mappings": 0,
@@ -49,19 +49,19 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Render all five Batch 11 raster pairs and perform technical, teaching and visual QA on the actual outputs.",
+  "next_action": "Create and verify the single deliberate preview/pof-batch11 deployment through the real ExplanationImage component before database mapping.",
   "active_batch_source_selection": {
     "batch": 11,
     "source_file": "data/pof-batch-11-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 12,
-    "status": "REFINING",
+    "status": "QA_APPROVED",
     "database_preflight_verified": true,
     "verified": true
   },
   "active_batch_refinement": {
     "batch": 11,
-    "status": "REFINING",
+    "status": "QA_APPROVED",
     "visual_concepts": 5,
     "planned_png_assets": 5,
     "planned_webp_assets": 5,
@@ -70,7 +70,21 @@
     "output_directory": "public/explanation-images/principles-of-flight/refined-batch-11",
     "verified": true
   },
-  "active_batch_qa": null,
+  "active_batch_qa": {
+    "batch": 11,
+    "status": "QA_APPROVED",
+    "visual_concepts": 5,
+    "png_assets_reviewed": 5,
+    "webp_assets_reviewed": 5,
+    "technical_qa": true,
+    "teaching_qa": true,
+    "visual_qa": true,
+    "batch1_quality_reference": true,
+    "known_defects_remaining": 0,
+    "png_qa_run": 33899691484,
+    "webp_qa_run": 33899897134,
+    "verified": true
+  },
   "active_batch_preview": null,
   "active_batch_mapping": {
     "batch": 10,

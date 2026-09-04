@@ -37,7 +37,7 @@
   "current_batch": 10,
   "completed_batches_since_last_user_report": 2,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_10_PREVIEW_READY",
+  "last_verified_checkpoint": "POF_BATCH_10_MAPPED",
   "production_state": {
     "approved_live_visuals": 45,
     "rejected_non_batch_1_mappings": 0,
@@ -49,7 +49,7 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Map the five Batch 10 visuals to their 17 exact preflight-approved Supabase rows in one fail-closed transaction, then independently verify exact ownership before production preparation.",
+  "next_action": "Validate the clean Batch 10 production boundary and pass the exact production build before advancing to PRODUCTION_READY.",
   "active_batch_source_selection": {
     "batch": 10,
     "status": "SOURCE_FOUND",
@@ -143,12 +143,12 @@
     "verified": true
   },
   "active_batch_mapping": {
-    "batch": 9,
+    "batch": 10,
     "project_ref": "kkmlfbxfopwulwkloaoc",
-    "mapped_question_rows": 19,
+    "mapped_question_rows": 17,
     "visual_keys": 5,
-    "database_status": "LIVE_VERIFIED",
-    "exact_match_count": 19,
+    "database_status": "MAPPED",
+    "exact_match_count": 17,
     "unexpected_owner_count": 0,
     "transactional_update": true,
     "post_commit_readback_verified": true,
@@ -166,9 +166,9 @@
     "verified": true
   },
   "production_readiness": {
-    "batch": 9,
-    "base_main_commit": "cc015041d97bf42c8a5afab198b545bd6dda8283",
-    "production_file_count": 14,
+    "batch": 10,
+    "base_main_commit": "10cf5745d5abb1c9302c9d3d920ad34767465cfc",
+    "production_file_count": 15,
     "png_assets": 5,
     "webp_assets": 5,
     "svg_assets": 0,
@@ -176,12 +176,11 @@
     "temporary_qa_route_removed": true,
     "temporary_workflows_removed": true,
     "temporary_generator_removed": true,
-    "pnpm_frozen_lock_install_passed": true,
-    "sharp_only_build_script_policy": true,
+    "pnpm_frozen_lock_install_passed": false,
     "next_build_routes": 20,
-    "production_build_passed": true,
+    "production_build_passed": false,
     "build_environment_note": "The candidate build uses inert, step-scoped Supabase placeholders; no production database credential is placed in source or CI.",
-    "verified": true
+    "verified": false
   },
   "live_verification": {
     "batch": 9,

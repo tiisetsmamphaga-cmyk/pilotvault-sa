@@ -3639,7 +3639,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-pressure-distribution-lift-v1.webp"
       },
       "mapping_reason": "The two questions directly ask which pressure distribution creates lift; the visual will show that exact upper/lower pressure relationship.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3670,6 +3670,13 @@
         "real_explanation_component_used": true,
         "runtime_errors_detected": 0,
         "verification_note": "The exact READY preview statically generated the Batch 10 QA route through ExplanationImage. Vercel Authentication prevented an unauthenticated visual-route screenshot, so no browser screenshot or signed-in student attempt is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "exact_match_count": 17,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -3718,7 +3725,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-adverse-yaw-high-aoa-v1.webp"
       },
       "mapping_reason": "The questions ask when adverse yaw is most noticeable or how it changes with AoA; a low-vs-high AoA comparison teaches that exact relationship.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3749,6 +3756,13 @@
         "real_explanation_component_used": true,
         "runtime_errors_detected": 0,
         "verification_note": "The exact READY preview statically generated the Batch 10 QA route through ExplanationImage. Vercel Authentication prevented an unauthenticated visual-route screenshot, so no browser screenshot or signed-in student attempt is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "exact_match_count": 17,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -3792,7 +3806,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-venturi-continuity-v1.webp"
       },
       "mapping_reason": "Question 1966 tests the exact continuity/Bernoulli changes through a venturi throat, which the visual will label directly.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3823,6 +3837,13 @@
         "real_explanation_component_used": true,
         "runtime_errors_detected": 0,
         "verification_note": "The exact READY preview statically generated the Batch 10 QA route through ExplanationImage. Vercel Authentication prevented an unauthenticated visual-route screenshot, so no browser screenshot or signed-in student attempt is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "exact_match_count": 17,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -3875,7 +3896,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-level-turn-force-balance-v1.webp"
       },
       "mapping_reason": "These questions all ask about the same level-turn force balance, its centripetal source, the AoA increase needed to maintain altitude, or the associated resultant load.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3906,6 +3927,13 @@
         "real_explanation_component_used": true,
         "runtime_errors_detected": 0,
         "verification_note": "The exact READY preview statically generated the Batch 10 QA route through ExplanationImage. Vercel Authentication prevented an unauthenticated visual-route screenshot, so no browser screenshot or signed-in student attempt is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "exact_match_count": 17,
+        "duplicate_ownership_absent": true
       }
     },
     {
@@ -3952,7 +3980,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-propeller-left-turning-tendencies-v1.webp"
       },
       "mapping_reason": "Question 1948 asks the torque-reaction roll direction and question 1950 asks the P-factor/right-rudder correction; the two-panel visual separates those exact effects.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3983,6 +4011,13 @@
         "real_explanation_component_used": true,
         "runtime_errors_detected": 0,
         "verification_note": "The exact READY preview statically generated the Batch 10 QA route through ExplanationImage. Vercel Authentication prevented an unauthenticated visual-route screenshot, so no browser screenshot or signed-in student attempt is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "exact_rows_verified": true,
+        "exact_match_count": 17,
+        "duplicate_ownership_absent": true
       }
     }
   ]

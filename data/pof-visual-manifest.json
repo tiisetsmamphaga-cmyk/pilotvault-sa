@@ -4101,12 +4101,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-trailing-edge-flap-lift-drag-v1.webp"
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4125,7 +4125,26 @@
         "webp_qa_run": 33899897134,
         "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
-      "reuse_justification": "All four questions test the same flap effect: more lift at a given angle of attack and airspeed, with increased drag."
+      "reuse_justification": "All four questions test the same flap effect: more lift at a given angle of attack and airspeed, with increased drag.",
+      "preview_verification": {
+        "deployment_id": "dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp",
+        "deployment_commit": "6651f3c60bc5f43f69f8640d968a171fba254cc2",
+        "preflight_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "preflight_run": 33900736232,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch11_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "intermediate_same_tree_deployment_id": "dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9",
+        "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "same_tree_duplicate_detected": true,
+        "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      }
     },
     {
       "visual_id": "pof-flap-stall-speed-001",
@@ -4171,12 +4190,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-flap-stall-speed-v1.webp"
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4195,7 +4214,26 @@
         "webp_qa_run": 33899897134,
         "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
-      "reuse_justification": "Both questions test the same operational result of flap extension: stall speed decreases."
+      "reuse_justification": "Both questions test the same operational result of flap extension: stall speed decreases.",
+      "preview_verification": {
+        "deployment_id": "dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp",
+        "deployment_commit": "6651f3c60bc5f43f69f8640d968a171fba254cc2",
+        "preflight_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "preflight_run": 33900736232,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch11_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "intermediate_same_tree_deployment_id": "dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9",
+        "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "same_tree_duplicate_detected": true,
+        "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      }
     },
     {
       "visual_id": "pof-fowler-flap-wing-area-001",
@@ -4240,12 +4278,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-fowler-flap-wing-area-v1.webp"
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4263,6 +4301,25 @@
         "png_qa_run": 33899691484,
         "webp_qa_run": 33899897134,
         "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp",
+        "deployment_commit": "6651f3c60bc5f43f69f8640d968a171fba254cc2",
+        "preflight_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "preflight_run": 33900736232,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch11_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "intermediate_same_tree_deployment_id": "dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9",
+        "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "same_tree_duplicate_detected": true,
+        "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
       }
     },
     {
@@ -4310,12 +4367,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-static-dynamic-stability-response-v1.webp"
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4334,7 +4391,26 @@
         "webp_qa_run": 33899897134,
         "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
-      "reuse_justification": "The three questions are one response-system concept: initial restoring tendency versus damping or growth of oscillations over time."
+      "reuse_justification": "The three questions are one response-system concept: initial restoring tendency versus damping or growth of oscillations over time.",
+      "preview_verification": {
+        "deployment_id": "dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp",
+        "deployment_commit": "6651f3c60bc5f43f69f8640d968a171fba254cc2",
+        "preflight_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "preflight_run": 33900736232,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch11_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "intermediate_same_tree_deployment_id": "dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9",
+        "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "same_tree_duplicate_detected": true,
+        "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      }
     },
     {
       "visual_id": "pof-directional-fin-weathercock-001",
@@ -4380,12 +4456,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-directional-fin-weathercock-v1.webp"
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4404,7 +4480,26 @@
         "webp_qa_run": 33899897134,
         "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
-      "reuse_justification": "Both questions test the same directional-stability mechanism: aft vertical side area produces a restoring yaw moment, and more aft keel/fin area strengthens it."
+      "reuse_justification": "Both questions test the same directional-stability mechanism: aft vertical side area produces a restoring yaw moment, and more aft keel/fin area strengthens it.",
+      "preview_verification": {
+        "deployment_id": "dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp",
+        "deployment_commit": "6651f3c60bc5f43f69f8640d968a171fba254cc2",
+        "preflight_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "preflight_run": 33900736232,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch11_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "intermediate_same_tree_deployment_id": "dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9",
+        "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+        "same_tree_duplicate_detected": true,
+        "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      }
     }
   ]
 }

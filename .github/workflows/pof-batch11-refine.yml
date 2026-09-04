@@ -1,0 +1,116 @@
+name: POF Batch 11 refinement
+
+on:
+  push:
+    branches:
+      - pof-batch-11-rebuild
+    paths:
+      - .github/workflows/pof-batch11-refine.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Batch 11 work branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-11-rebuild
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install renderer dependency
+        run: pip install pillow
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Assert SOURCE_FOUND gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          sel=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
+          assert state['current_batch']==11
+          assert state['last_verified_checkpoint']=='POF_BATCH_11_SOURCE_FOUND'
+          assert state['active_batch_reuse_sweep']['database_status']=='LIVE_VERIFIED'
+          assert state['active_batch_reuse_sweep']['mapped_question_rows']==16
+          assert sel['status']=='SOURCE_FOUND'
+          assert len(sel['concepts'])==5
+          assert sel['database_preflight']['verified'] is True
+          assert sel['database_preflight']['planned_key_collisions']==0
+          assert sel['coverage']['planned_new_question_rows']==12
+          PY
+
+      - name: Persist distinct REFINING checkpoint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          def load(p): return json.loads(Path(p).read_text())
+          def save(p,d): Path(p).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+          sp='data/pof-batch-11-source-selection.json'; sel=load(sp)
+          sel['status']='REFINING'
+          for c in sel['concepts']:
+              assert c['status']=='SOURCE_FOUND'
+              c['status']='REFINING'
+          sel['next_action']='Render all five Batch 11 raster pairs, inspect actual outputs, and do not advance until technical, teaching and visual QA are fully green.'
+          save(sp,sel)
+          stp='data/pof-autonomous-state.json'; state=load(stp)
+          state['last_verified_checkpoint']='POF_BATCH_11_REFINING'
+          state['active_batch_source_selection']['status']='REFINING'
+          state['active_batch_refinement']={
+              'batch':11,
+              'status':'REFINING',
+              'visual_concepts':5,
+              'planned_png_assets':5,
+              'planned_webp_assets':5,
+              'planned_svg_assets':0,
+              'target_dimensions':'1600x1050',
+              'output_directory':'public/explanation-images/principles-of-flight/refined-batch-11',
+              'verified':True
+          }
+          state['next_action']='Render all five Batch 11 raster pairs and perform technical, teaching and visual QA on the actual outputs.'
+          save(stp,state)
+          PY
+          git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json
+          git commit -m "Checkpoint POF Batch 11 REFINING"
+          git push origin HEAD:pof-batch-11-rebuild
+
+      - name: Render Batch 11 raster pairs
+        run: python scripts/generate_pof_batch11.py
+
+      - name: Verify raster boundary and dimensions
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          out=Path('public/explanation-images/principles-of-flight/refined-batch-11')
+          png=sorted(out.glob('*.png')); webp=sorted(out.glob('*.webp')); svg=sorted(out.glob('*.svg'))
+          assert len(png)==5, len(png)
+          assert len(webp)==5, len(webp)
+          assert len(svg)==0, len(svg)
+          stems={p.stem.replace('-v1','') for p in png}
+          assert stems=={p.stem.replace('-v1','') for p in webp}
+          for p in png+webp:
+              with Image.open(p) as im:
+                  assert im.size==(1600,1050), (p,im.size)
+                  assert im.mode in ('RGB','RGBA'), (p,im.mode)
+          print('Batch 11: exactly 5 PNG + 5 WebP + 0 SVG, all 1600x1050')
+          PY
+
+      - name: Commit rendered outputs
+        run: |
+          git add public/explanation-images/principles-of-flight/refined-batch-11
+          git commit -m "Render POF Batch 11 visuals"
+          git push origin HEAD:pof-batch-11-rebuild

@@ -1,0 +1,71 @@
+name: POF Batch 11 Visual Inspection
+
+on:
+  push:
+    branches:
+      - pof-batch-11-rebuild
+    paths:
+      - '.github/workflows/pof-batch11-visual-inspection.yml'
+      - 'public/explanation-images/principles-of-flight/refined-batch-11/**'
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact work branch
+        uses: actions/checkout@v4
+
+      - name: Build compact visual contact sheet
+        shell: bash
+        run: |
+          python -m pip install --quiet pillow
+          python - <<'PY'
+          from PIL import Image, ImageOps, ImageDraw, ImageFont
+          from pathlib import Path
+          import base64, textwrap
+
+          root = Path('public/explanation-images/principles-of-flight/refined-batch-11')
+          files = [
+              'pof-trailing-edge-flap-lift-drag-v1.png',
+              'pof-flap-stall-speed-v1.png',
+              'pof-fowler-flap-wing-area-v1.png',
+              'pof-static-dynamic-stability-response-v1.png',
+              'pof-directional-fin-weathercock-v1.png',
+          ]
+
+          target_w = 900
+          label_h = 34
+          gap = 18
+          panels = []
+          for name in files:
+              p = root / name
+              im = Image.open(p).convert('RGB')
+              if im.size != (1600, 1050):
+                  raise SystemExit(f'Unexpected dimensions for {name}: {im.size}')
+              h = round(target_w * im.height / im.width)
+              im = im.resize((target_w, h), Image.Resampling.LANCZOS)
+              canvas = Image.new('RGB', (target_w, label_h + h), 'white')
+              d = ImageDraw.Draw(canvas)
+              d.text((10, 8), name, fill='black')
+              canvas.paste(im, (0, label_h))
+              panels.append(canvas)
+
+          total_h = sum(p.height for p in panels) + gap * (len(panels)-1)
+          sheet = Image.new('RGB', (target_w, total_h), 'white')
+          y = 0
+          for panel in panels:
+              sheet.paste(panel, (0, y))
+              y += panel.height + gap
+
+          out = Path('/tmp/pof-batch11-contact.jpg')
+          sheet.save(out, 'JPEG', quality=68, optimize=True, progressive=True)
+          data = base64.b64encode(out.read_bytes()).decode('ascii')
+          print('BATCH11_CONTACT_BEGIN')
+          for line in textwrap.wrap(data, 1000):
+              print(line)
+          print('BATCH11_CONTACT_END')
+          print(f'CONTACT_BYTES={out.stat().st_size}')
+          PY

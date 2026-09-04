@@ -3168,7 +3168,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-climb-force-components-v1.webp"
       },
       "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3250,7 +3250,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-best-rate-excess-power-v1.webp"
       },
       "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3334,7 +3334,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-vx-obstacle-clearance-v1.webp"
       },
       "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3418,7 +3418,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-wind-glide-ground-track-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -3500,7 +3500,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-elevator-trim-tab-setting-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,

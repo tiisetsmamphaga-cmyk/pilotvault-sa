@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 9,
-  "status": "SOURCE_FOUND",
+  "status": "REFINING",
   "selected_date": "2026-09-03",
   "batch_limit": 5,
   "source_document": "ac_61-23c_phak_canada.pdf",
@@ -48,7 +48,7 @@
         ]
       },
       "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
-      "status": "SOURCE_FOUND"
+      "status": "REFINING"
     },
     {
       "visual_id": "pof-best-rate-excess-power-001",
@@ -89,7 +89,7 @@
         ]
       },
       "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
-      "status": "SOURCE_FOUND"
+      "status": "REFINING"
     },
     {
       "visual_id": "pof-vx-obstacle-clearance-001",
@@ -127,7 +127,7 @@
         ]
       },
       "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
-      "status": "SOURCE_FOUND"
+      "status": "REFINING"
     },
     {
       "visual_id": "pof-wind-glide-ground-track-001",
@@ -167,7 +167,7 @@
         ]
       },
       "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
-      "status": "SOURCE_FOUND"
+      "status": "REFINING"
     },
     {
       "visual_id": "pof-elevator-trim-tab-setting-001",
@@ -206,7 +206,7 @@
         ]
       },
       "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
-      "status": "SOURCE_FOUND"
+      "status": "REFINING"
     }
   ],
   "coverage": {
@@ -216,12 +216,12 @@
   "gates": {
     "technical_source_grounded": true,
     "design_briefs_persisted": true,
-    "refinement_started": false,
+    "refinement_started": true,
     "qa_approved": false,
     "preview_ready": false,
     "mapped": false,
     "production_ready": false,
     "live_verified": false
   },
-  "next_action": "Refine these five source-grounded concepts into raster teaching assets, visually inspect every rendered image, and fail closed on any concept that does not meet the locked Batch 1 quality standard."
+  "next_action": "Run final technical, teaching, and rendered visual QA on the five exact raster pairs; fail closed before preview if any output is not fully accurate and readable."
 }

@@ -37,7 +37,7 @@
   "current_batch": 8,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_8_SOURCE_SELECTED",
+  "last_verified_checkpoint": "POF_BATCH_8_SOURCE_FOUND",
   "production_state": {
     "approved_live_visuals": 35,
     "rejected_non_batch_1_mappings": 0,
@@ -49,16 +49,32 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Refine the five persisted Batch 8 source-grounded design briefs into raster teaching assets, visually inspect every rendered image, run technical/teaching/visual QA, and fail closed before any preview or database mapping.",
+  "next_action": "Refine the five source-grounded Batch 8 visual concepts into individual raster teaching assets, then run technical, teaching and mandatory image-render QA before any preview.",
   "active_batch_source_selection": {
     "batch": 8,
-    "status": "SOURCE_FOUND",
-    "source_document": "ac_61-23c_phak_canada.pdf",
-    "source_selection_file": "data/pof-batch-8-source-selection.json",
     "visual_concepts": 5,
-    "candidate_question_mappings": 19,
-    "technical_source_grounded": true,
-    "design_briefs_persisted": true,
+    "planned_question_rows": 25,
+    "visual_keys": [
+      "pof-balance-tab-opposite-001",
+      "pof-antiservo-tab-same-direction-001",
+      "pof-spin-differential-stall-001",
+      "pof-spin-recovery-control-order-001",
+      "pof-flaps-steepen-glide-001"
+    ],
+    "source_documents": [
+      "FAA-H-8083-25C_PHAK_Chapter_6.pdf",
+      "FAA-H-8083-3C_AFH_Chapter_5.pdf",
+      "FAA-H-8083-3C_AFH_Glossary.pdf",
+      "FAA-H-8083-3C_AFH_Chapter_9.pdf"
+    ],
+    "database_preflight": {
+      "existing_question_rows": 25,
+      "correct_subject_rows": 25,
+      "unowned_question_rows": 25,
+      "already_owned_rows": 0,
+      "planned_key_or_url_collisions": 0,
+      "verified": true
+    },
     "verified": true
   },
   "visual_requirement_audit": {

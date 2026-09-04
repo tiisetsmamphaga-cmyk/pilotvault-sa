@@ -2769,6 +2769,314 @@
         "signed_in_student_attempt_inspected": false,
         "verification_note": "The real ExplanationImage renderer and all five exact Batch 7 WebPs were verified on the READY preview. The matching READY production deployment served every live WebP from pilotvault.co.za with HTTP 200, image/webp and bytes matching the approved assets; all 25 exact Supabase mappings were read back as LIVE_VERIFIED with no unexpected owners. The production QA browser had no student auth session, so no signed-in attempt inspection is claimed."
       }
+    },
+    {
+      "visual_id": "pof-balance-tab-opposite-001",
+      "topic": "Trim & Balance Tabs",
+      "concept": "A balance tab moves opposite the primary control surface so its aerodynamic force assists surface movement and reduces pilot control force",
+      "question_ids": [
+        1159,
+        1299,
+        1311,
+        1361,
+        2009,
+        2013,
+        2024
+      ],
+      "reuse_justification": "All seven questions test the same balance-tab relationship: the tab deflects opposite the attached primary surface and thereby provides aerodynamic assistance that reduces control force.",
+      "source": {
+        "document": "FAA-H-8083-25C_PHAK_Chapter_6.pdf",
+        "page": 11,
+        "figure": null,
+        "notes": "The FAA Pilot's Handbook of Aeronautical Knowledge, Chapter 6, states that balance tabs automatically move opposite the main control surface; the resulting airflow counterbalances pressure on the main surface and reduces the force needed to move it."
+      },
+      "brief": {
+        "student_must_understand": "When the elevator, rudder, or aileron moves one way, its balance tab moves the opposite way; airflow on the tab helps move the main surface instead of adding pilot effort.",
+        "preserve": [
+          "Tab motion opposite the primary surface",
+          "Tab mounted at the primary surface trailing edge",
+          "Aerodynamic assistance in the direction of commanded primary-surface movement",
+          "Reduced pilot control force"
+        ],
+        "refine": [
+          "Use one credible generic control-surface section rather than three separate aircraft controls",
+          "Make the two opposite deflections immediately readable",
+          "Separate the movement relationship from the resulting assistance"
+        ],
+        "add": [
+          "Primary-surface direction arrow",
+          "Opposite tab-direction arrow",
+          "Short assisting-force cue"
+        ],
+        "remove": [
+          "Trim-wheel operation",
+          "Anti-servo comparison",
+          "Aircraft-specific linkage detail",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "These questions ask either the relative movement or force-reducing purpose of a balance tab; one opposite-deflection teaching visual directly explains both parts of that exact mechanism.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-antiservo-tab-same-direction-001",
+      "topic": "Trim & Balance Tabs",
+      "concept": "An anti-servo tab moves in the same direction as the stabilator, increasing aerodynamic resistance and control feel so the all-moving tail is less sensitive",
+      "question_ids": [
+        1157,
+        1277,
+        1309,
+        1354
+      ],
+      "reuse_justification": "All four questions test the identical anti-balance/anti-servo preflight relationship: the tab must move in the same direction as the stabilator or elevator-like surface.",
+      "source": {
+        "document": "FAA-H-8083-25C_PHAK_Chapter_6.pdf",
+        "page": 11,
+        "figure": "6-21",
+        "notes": "The FAA Pilot's Handbook of Aeronautical Knowledge, Chapter 6, states and illustrates that an antiservo tab moves in the same direction as the stabilator, making it less sensitive by opposing the force exerted by the pilot."
+      },
+      "brief": {
+        "student_must_understand": "The stabilator and anti-servo tab deflect together in the same direction; the tab adds resistance/control feel rather than helping the surface move.",
+        "preserve": [
+          "All-moving stabilator geometry",
+          "Anti-servo tab at the stabilator trailing edge",
+          "Same-direction deflection",
+          "Increased control resistance and reduced sensitivity"
+        ],
+        "refine": [
+          "Use a clean side-view tail section",
+          "Make same-direction movement unmistakable",
+          "Keep the resistance cue secondary to the preflight movement check"
+        ],
+        "add": [
+          "Matching stabilator and tab arrows",
+          "SAME DIRECTION cue",
+          "Small MORE CONTROL FEEL note"
+        ],
+        "remove": [
+          "Conventional elevator geometry",
+          "Balance-tab comparison",
+          "Trim-wheel detail",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Each question asks how correct anti-balance/anti-servo tab operation is recognized; the source figure's same-direction motion is the exact answer relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-spin-differential-stall-001",
+      "topic": "Spins",
+      "concept": "During spin autorotation the descending inner wing is more deeply stalled at the greater angle of attack while the rising outer wing is less stalled",
+      "question_ids": [
+        1237,
+        1257,
+        1348,
+        1362
+      ],
+      "reuse_justification": "All four questions test the same autorotation asymmetry; the left-spin wording simply identifies the left wing as the descending inner wing.",
+      "source": {
+        "document": "FAA-H-8083-3C_AFH_Glossary.pdf",
+        "page": 14,
+        "figure": null,
+        "notes": "The FAA Airplane Flying Handbook glossary defines a spin as autorotation and states that the rising wing is less stalled than the descending wing, producing rolling, yawing and pitching motion. Chapter 5, Figure 5-15, independently identifies a spin as an aggravated stall and autorotation."
+      },
+      "brief": {
+        "student_must_understand": "In a left spin, the left/inner wing descends and is more deeply stalled at the greater AoA; the right/outer wing rises and is less stalled.",
+        "preserve": [
+          "Left-spin rotation sense",
+          "Left wing as descending inner wing",
+          "Greater AoA and deeper stall on the inner wing",
+          "Outer wing rising and less stalled"
+        ],
+        "refine": [
+          "Use a credible front-oblique aircraft view where left and right cannot be confused",
+          "Show differential wing state without implying either wing produces normal unstalled lift",
+          "Keep the autorotation path subordinate to the wing comparison"
+        ],
+        "add": [
+          "INNER / DESCENDING / MORE STALLED label",
+          "OUTER / RISING / LESS STALLED label",
+          "Small left-spin rotation arrow",
+          "Relative AoA comparison cue"
+        ],
+        "remove": [
+          "Recovery procedure steps",
+          "Cockpit instruments",
+          "Dramatic cloud or terrain scene",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The questions all ask which wing is more stalled or at the greater AoA during autorotation; the visual isolates that exact inner-versus-outer wing state.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-spin-recovery-control-order-001",
+      "topic": "Spins",
+      "concept": "In the generic FAA spin-recovery sequence, full opposite rudder is applied before brisk forward elevator reduces angle of attack",
+      "question_ids": [
+        1222,
+        1336
+      ],
+      "reuse_justification": "Both questions test the identical control-order relationship: rudder is applied before elevator during the generic spin-recovery sequence.",
+      "source": {
+        "document": "FAA-H-8083-3C_AFH_Chapter_5.pdf",
+        "page": 24,
+        "figure": "5-17",
+        "notes": "The FAA Airplane Flying Handbook's six-step generic spin-recovery template places full opposite rudder at step 3 and positive brisk forward elevator immediately after it at step 4. The handbook explicitly requires aircraft-specific manufacturer procedures to take precedence."
+      },
+      "brief": {
+        "student_must_understand": "After power idle and ailerons neutral, apply full rudder opposite the rotation, then immediately move the elevator briskly forward to reduce AoA; the question-specific answer is rudder before elevator.",
+        "preserve": [
+          "Manufacturer procedure precedence warning",
+          "Power idle before control sequence",
+          "Ailerons neutral",
+          "Full opposite rudder before forward elevator",
+          "Elevator forward immediately after rudder application"
+        ],
+        "refine": [
+          "Emphasize steps 3 and 4 while retaining enough sequence context to avoid unsafe shorthand",
+          "Use conventional control icons or aircraft-control callouts",
+          "Make BEFORE visually unambiguous"
+        ],
+        "add": [
+          "Numbered compact recovery sequence",
+          "Strong 3 RUDDER then 4 ELEVATOR emphasis",
+          "Aircraft-specific POH/AFM precedence note"
+        ],
+        "remove": [
+          "Mnemonic-only presentation",
+          "Inner/outer wing theory",
+          "Unqualified universal-procedure claim",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Both questions explicitly ask which control is used first; the FAA recovery template provides the exact rudder-before-elevator order with the required manufacturer-procedure caveat.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-flaps-steepen-glide-001",
+      "topic": "Flaps & Glide",
+      "concept": "Extending trailing-edge flaps adds drag, reduces glide efficiency and maximum forward distance, and makes the power-off descent path steeper",
+      "question_ids": [
+        1202,
+        1207,
+        1211,
+        1241,
+        1330,
+        1332,
+        1368,
+        1991
+      ],
+      "reuse_justification": "All eight questions test consequences of the same flap-in-glide relationship: added drag reduces L/D and forward range, so the glide steepens and rate of descent increases.",
+      "source": {
+        "document": "FAA-H-8083-3C_AFH_Chapter_9.pdf",
+        "page": 1,
+        "figure": "9-2",
+        "notes": "The FAA Airplane Flying Handbook states that flap extension produces greater drag and permits a steeper descent angle; Figure 9-2 compares the resulting approach angles. FAA-H-8083-25C, Chapter 6, further states that flaps increase lift and induced drag and that later extension increases drag with little additional lift."
+      },
+      "brief": {
+        "student_must_understand": "From the same starting height, the clean aircraft follows the shallower, longer best-glide path; flap extension adds drag, reduces L/D and range, and produces a steeper path with greater height loss per forward distance.",
+        "preserve": [
+          "Same starting height for clean and flap configurations",
+          "Clean path longer and shallower",
+          "Flaps path shorter and steeper",
+          "Lower L/D and greater rate of descent with flaps"
+        ],
+        "refine": [
+          "Use a clean side-by-side or overlaid glide-path comparison",
+          "Show credible flap deflection on the flaps-down aircraft",
+          "Keep path geometry and labels readable at mobile size"
+        ],
+        "add": [
+          "CLEAN: higher L/D / longer glide cue",
+          "FLAPS DOWN: more drag / lower L/D cue",
+          "Forward-distance comparison",
+          "Height-loss reference"
+        ],
+        "remove": [
+          "Powered approach technique",
+          "Runway aiming-point instruction",
+          "Aircraft-specific speeds or flap angles",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Every selected question asks for the L/D, descent-angle, descent-rate, or maximum-distance consequence of flap extension in a glide; one clean-versus-flaps path comparison directly teaches the shared relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
     }
   ]
 }

@@ -37,7 +37,7 @@
   "current_batch": 11,
   "completed_batches_since_last_user_report": 3,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_11_SOURCE_FOUND",
+  "last_verified_checkpoint": "POF_BATCH_11_REFINING",
   "production_state": {
     "approved_live_visuals": 50,
     "rejected_non_batch_1_mappings": 0,
@@ -49,17 +49,27 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Persist the Batch 11 REFINING checkpoint and render all five selected concepts as 1600x1050 PNG+WebP pairs, then perform technical, teaching and visual QA.",
+  "next_action": "Render all five Batch 11 raster pairs and perform technical, teaching and visual QA on the actual outputs.",
   "active_batch_source_selection": {
     "batch": 11,
     "source_file": "data/pof-batch-11-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 12,
-    "status": "SOURCE_FOUND",
+    "status": "REFINING",
     "database_preflight_verified": true,
     "verified": true
   },
-  "active_batch_refinement": null,
+  "active_batch_refinement": {
+    "batch": 11,
+    "status": "REFINING",
+    "visual_concepts": 5,
+    "planned_png_assets": 5,
+    "planned_webp_assets": 5,
+    "planned_svg_assets": 0,
+    "target_dimensions": "1600x1050",
+    "output_directory": "public/explanation-images/principles-of-flight/refined-batch-11",
+    "verified": true
+  },
   "active_batch_qa": null,
   "active_batch_preview": null,
   "active_batch_mapping": {

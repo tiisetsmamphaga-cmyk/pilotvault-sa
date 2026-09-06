@@ -1,0 +1,257 @@
+name: POF Batch 13 source checkpoint
+
+on:
+  push:
+    branches:
+      - pof-batch-13-rebuild
+
+permissions:
+  contents: write
+
+jobs:
+  source-checkpoint:
+    runs-on: ubuntu-latest
+    env:
+      BASE_SHA: 10e184f149cd0e6aa3c2034cd5c40fafb88cc744
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: pof-batch-13-rebuild
+
+      - name: Assert clean Batch 12 base
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor "$BASE_SHA" HEAD
+          mapfile -t changed < <(git diff --name-only "$BASE_SHA" HEAD)
+          test "${#changed[@]}" -eq 1
+          test "${changed[0]}" = ".github/workflows/pof-batch13-source-checkpoint.yml"
+
+      - name: Persist Batch 13 reuse and SOURCE_FOUND
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          additions = {
+              'pof-longitudinal-stability-001': [1112, 1310],
+              'pof-aileron-further-effects-001': [1154],
+              'pof-parasite-drag-001': [1163, 1176],
+              'pof-critical-aoa-stall-001': [1199],
+              'pof-glide-ratio-001': [1281],
+              'pof-aspect-ratio-induced-drag-001': [1322],
+              'pof-induced-drag-vortex-origin-001': [1296, 1297],
+              'pof-lift-relative-airflow-001': [1974],
+              'pof-wing-polar-critical-aoa-001': [1979],
+          }
+          justifications = {
+              'pof-longitudinal-stability-001': 'All mapped questions use the same locked longitudinal-stability relationship: CG position relative to centre of pressure/lift governs pitch stability, and moving the CG aft reduces stability and pitch-control margin.',
+              'pof-aileron-further-effects-001': 'All mapped questions test the same locked sequence for aileron-only input: roll is primary, yaw follows as a further effect, and an uncorrected imbalance can progress toward a spiral dive.',
+              'pof-parasite-drag-001': 'All mapped questions read the same locked drag-curve relationships: induced drag is the falling low-speed curve, parasite/profile drag is the rising high-speed curve, total drag is their sum, and its minimum is Vmd.',
+              'pof-critical-aoa-stall-001': 'All mapped questions use the same locked critical-angle relationship: the wing stalls at the critical angle of attack; increased weight or load factor raises stall speed but does not change the critical angle for the same configuration.',
+              'pof-glide-ratio-001': 'All mapped questions test the same locked relationship: a higher lift-to-drag ratio produces more forward distance per unit height lost and therefore a shallower glide angle.',
+              'pof-aspect-ratio-induced-drag-001': 'All mapped questions test the same locked geometry/drag relationship: higher aspect ratio means relatively longer span and shorter mean chord and produces less induced drag than a lower-aspect-ratio wing under comparable lift conditions.',
+              'pof-induced-drag-vortex-origin-001': 'All mapped questions test the same locked causal relationship: lift-producing pressure difference drives wingtip roll-up/downwash and creates the rearward force component called induced drag.',
+              'pof-lift-relative-airflow-001': 'All mapped questions test the same locked force-direction definition: lift acts perpendicular to relative airflow while drag acts parallel to it.',
+              'pof-wing-polar-critical-aoa-001': 'All mapped questions use the same locked wing-polar relationship: CL reaches its maximum at the critical/stalling angle of attack before increasing separation causes lift coefficient to fall.',
+          }
+
+          manifest_path = Path('data/pof-visual-manifest.json')
+          manifest = json.loads(manifest_path.read_text())
+          found = set()
+          for visual in manifest['visuals']:
+              vid = visual.get('visual_id')
+              if vid not in additions:
+                  continue
+              found.add(vid)
+              assert visual.get('status') == 'LIVE_VERIFIED', (vid, visual.get('status'))
+              assert visual.get('qa', {}).get('live') is True, vid
+              assert visual.get('lock', {}).get('approved') is True, vid
+              before = set(visual.get('question_ids', []))
+              added = set(additions[vid])
+              assert before.isdisjoint(added), (vid, before & added)
+              visual['question_ids'] = sorted(before | added)
+              visual['reuse_justification'] = justifications[vid]
+          assert found == set(additions), (found, set(additions))
+          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
+
+          selection = {
+              'schema_version': 1,
+              'subject': 'principles-of-flight',
+              'batch': 13,
+              'status': 'SOURCE_FOUND',
+              'base_main_commit': '10e184f149cd0e6aa3c2034cd5c40fafb88cc744',
+              'reuse_sweep': {
+                  'mapped_question_rows': 12,
+                  'reused_live_visuals': 9,
+                  'database_status': 'LIVE_VERIFIED',
+                  'question_ids': [1112,1154,1163,1176,1199,1281,1296,1297,1310,1322,1974,1979],
+                  'exact_match_count': 12,
+                  'mismatch_count': 0,
+                  'verified': True
+              },
+              'concepts': [
+                  {
+                      'visual_id': 'pof-longitudinal-dihedral-pitch-stability-001',
+                      'topic': 'Stability',
+                      'question_ids': [1130,1166,1187,1198,1325,1337],
+                      'status': 'SOURCE_FOUND',
+                      'teaching_target': 'Show the legacy syllabus term longitudinal dihedral as the tailplane set at a lower incidence than the mainplane, and connect that geometry to longitudinal/pitch stability about the lateral axis.',
+                      'source': {
+                          'syllabus_document': 'Princaple Of Flight - Mohamed Elgharib 1 (1).pdf',
+                          'syllabus_notes': 'Exact POF wording defines longitudinal dihedral as tailplane lower incidence than mainplane and links it to stability in the pitching plane/about the lateral axis.',
+                          'technical_document': 'ac_61-23c_phak_canada.pdf',
+                          'technical_reference': 'Longitudinal Stability about the Lateral Axis; Figures 1-22 to 1-24',
+                          'technical_notes': 'CG/lift/tail-force geometry and restoring tailplane action support the pitch-stability teaching relationship.'
+                      }
+                  },
+                  {
+                      'visual_id': 'pof-flap-centre-pressure-pitch-001',
+                      'topic': 'Flaps & Glide',
+                      'question_ids': [1223,1346],
+                      'status': 'SOURCE_FOUND',
+                      'teaching_target': 'For the conventional/plain trailing-edge flap case used by the questions, show flap extension moving the centre of pressure aft and creating a nose-down pitching moment.',
+                      'source': {
+                          'document': 'FAA Pilot’s Handbook of Aeronautical Knowledge, Chapter 6',
+                          'reference': 'plain-flap centre-of-pressure discussion',
+                          'notes': 'FAA text explicitly states that the plain flap increases camber/lift/drag and moves the centre of pressure aft, producing a nose-down pitching moment.'
+                      }
+                  },
+                  {
+                      'visual_id': 'pof-slip-skid-ball-left-turn-001',
+                      'topic': 'Turns & Load Factor',
+                      'question_ids': [1228,1235,1250],
+                      'status': 'SOURCE_FOUND',
+                      'teaching_target': 'In a left turn, show ball left/inside = slip, centred = coordinated, and ball right/outside = skid.',
+                      'source': {
+                          'document': 'FAA Pilot’s Handbook of Aeronautical Knowledge, Chapter 8',
+                          'reference': 'Figure 8-22 and inclinometer text',
+                          'notes': 'FAA figure/text explicitly distinguish slipping, coordinated and skidding turns and state that the ball moves inside in a slip and outside in a skid.'
+                      }
+                  },
+                  {
+                      'visual_id': 'pof-control-mass-balance-flutter-001',
+                      'topic': 'Trim & Balance Tabs',
+                      'question_ids': [1161,1165,1279,1304,1986],
+                      'status': 'SOURCE_FOUND',
+                      'teaching_target': 'Define aeroelastic flutter as destructive self-excited oscillation and show a control-surface mass balance/counterweight ahead of the hinge reducing flutter susceptibility.',
+                      'source': {
+                          'document': 'FAA AC 23.629-1B and FAA Airframe Handbook',
+                          'reference': 'control-surface mass balancing / flutter guidance',
+                          'notes': 'FAA guidance identifies control-surface mass balance as a flutter-prevention measure and describes adding weight forward of the hinge line for static balance.'
+                      }
+                  },
+                  {
+                      'visual_id': 'pof-control-aerodynamic-balance-horn-inset-001',
+                      'topic': 'Trim & Balance Tabs',
+                      'question_ids': [1180,1317,2019],
+                      'status': 'SOURCE_FOUND',
+                      'teaching_target': 'Contrast horn balance and inset-hinge aerodynamic balance, showing how area ahead of the hinge lets aerodynamic force assist surface movement and reduce pilot control force.',
+                      'source': {
+                          'document': 'FAA Airframe Handbook and UK CAA Standards Document 10',
+                          'reference': 'Aerodynamic balance methods; horn balance and inset hinge',
+                          'notes': 'Official guidance lists horn balance and inset-hinge methods and explains the aerodynamic assistance produced by control-surface area ahead of the hinge.'
+                      }
+                  }
+              ],
+              'planned_new_visual_concepts': 5,
+              'planned_new_question_rows': 19,
+              'planned_total_batch_gain': 31,
+              'database_preflight': {
+                  'checked_rows': 19,
+                  'correct_subject_rows': 19,
+                  'refining_rows': 19,
+                  'untouched_rows': 19,
+                  'planned_visual_keys': 5,
+                  'existing_key_collisions': 0,
+                  'verified': True
+              },
+              'coverage_after_reuse': {
+                  'live_verified_question_mappings': 224,
+                  'total_visual_required_question_universe': 300,
+                  'completion_percent': 74.7,
+                  'remaining_visual_required': 76,
+                  'remaining_no_visual_required': 65,
+                  'remaining_rows_audited': 141
+              },
+              'next_action': 'Persist a distinct Batch 13 REFINING checkpoint before rendering exactly five new 1600x1050 PNG/WebP pairs.'
+          }
+          Path('data/pof-batch-13-source-selection.json').write_text(json.dumps(selection, indent=2) + '\n')
+
+          state_path = Path('data/pof-autonomous-state.json')
+          state = json.loads(state_path.read_text())
+          assert state['current_batch'] == 13
+          assert state['last_verified_checkpoint'] == 'POF_BATCH_12_LIVE_VERIFIED'
+          assert state['production_state']['approved_live_visuals'] == 60
+          assert state['visual_requirement_audit']['live_verified_question_mappings'] == 212
+          state['last_verified_checkpoint'] = 'POF_BATCH_13_SOURCE_FOUND'
+          state['next_action'] = 'Persist a distinct Batch 13 REFINING checkpoint before rendering exactly five new 1600x1050 PNG/WebP pairs.'
+          state['active_batch_reuse_sweep'] = {
+              'batch': 13,
+              'mapped_question_rows': 12,
+              'reused_live_visuals': 9,
+              'database_status': 'LIVE_VERIFIED',
+              'exact_match_count': 12,
+              'mismatch_count': 0,
+              'verified': True
+          }
+          state['active_batch_source_selection'] = {
+              'batch': 13,
+              'source_file': 'data/pof-batch-13-source-selection.json',
+              'new_visual_concepts': 5,
+              'planned_question_rows': 19,
+              'status': 'SOURCE_FOUND',
+              'database_preflight_verified': True,
+              'verified': True
+          }
+          state['active_batch_refinement'] = None
+          state['active_batch_qa'] = None
+          state['active_batch_preview'] = None
+          state['active_batch_mapping'] = None
+          audit = state['visual_requirement_audit']
+          audit['live_verified_question_mappings'] = 224
+          audit['remaining_rows_audited'] = 141
+          audit['remaining_visual_required'] = 76
+          audit['remaining_no_visual_required'] = 65
+          audit['total_visual_required_question_universe'] = 300
+          audit['question_coverage_completion_percent'] = 74.7
+          audit['verified'] = True
+          state_path.write_text(json.dumps(state, indent=2) + '\n')
+          PY
+
+      - name: Validate SOURCE_FOUND transition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py "$BASE_SHA"
+
+      - name: Assert exact checkpoint tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/pof-batch13-source-checkpoint.yml
+          mapfile -t changed < <(git diff --name-only "$BASE_SHA" | sort)
+          expected=(
+            data/pof-autonomous-state.json
+            data/pof-batch-13-source-selection.json
+            data/pof-visual-manifest.json
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Commit Batch 13 SOURCE_FOUND
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-autonomous-state.json data/pof-batch-13-source-selection.json data/pof-visual-manifest.json
+          git rm .github/workflows/pof-batch13-source-checkpoint.yml
+          git commit -m 'Checkpoint POF Batch 13 source selection'
+          git push origin HEAD:pof-batch-13-rebuild

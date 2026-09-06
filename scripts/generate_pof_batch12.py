@@ -86,6 +86,26 @@ def curved_arrow(d, center, radius, start_deg, end_deg, fill=GOLD, width=7, head
     polyline(d,seq,fill=fill,width=width)
     arrow(d,seq[-2],seq[-1],fill=fill,width=width,head=head)
 
+def front_aircraft(d,cx,cy,bank_deg=0,highlight_ailerons=False):
+    # Front-view geometry makes roll/bank unmistakable. Positive bank_deg raises viewer-left wing.
+    ang=math.radians(bank_deg)
+    def rot(x,y):
+        return (cx+x*math.cos(ang)-y*math.sin(ang), cy+x*math.sin(ang)+y*math.cos(ang))
+    # horizon / roll reference
+    line(d,(cx-155,cy+115),(cx+155,cy+115),fill=LIGHT,width=3)
+    # fuselage/nose
+    c=rot(0,0)
+    d.ellipse((sc(c[0]-34),sc(c[1]-45),sc(c[0]+34),sc(c[1]+45)),fill=WHITE,outline=NAVY,width=sc(4))
+    # wings
+    l0=rot(-28,0); lt=rot(-145,18); r0=rot(28,0); rt=rot(145,18)
+    line(d,l0,lt,fill=NAVY,width=10); line(d,r0,rt,fill=NAVY,width=10)
+    # aileron cues at outer trailing portions
+    if highlight_ailerons:
+        la1=rot(-95,20); la2=rot(-142,35); ra1=rot(95,20); ra2=rot(142,5)
+        line(d,la1,la2,fill=GOLD,width=8); line(d,ra1,ra2,fill=RED,width=8)
+    # vertical tail hint
+    t1=rot(0,-35); t2=rot(0,-105); line(d,t1,t2,fill=NAVY,width=5)
+
 # 1 — Rudder: yaw -> roll -> possible spiral
 im,d=new_canvas("Rudder: Primary and Further Effects","The order matters: yaw first, then roll; an uncorrected imbalance can develop into a spiral dive.")
 frames=[(75,220,515,850),(580,220,1020,850),(1085,220,1525,850)]
@@ -100,11 +120,11 @@ top_aircraft(d,295,535,0.9,angle_deg=16,accent=NAVY,rudder=True)
 curved_arrow(d,(295,535),155,-78,-12,fill=GOLD,width=6,head=18)
 center_text(d,(295,755),"Aircraft yaws about the vertical axis",font(17),MUTED)
 # frame 2
-center_text(d,(800,385),"SIDEFORCE IMBALANCE",font(17,True),NAVY)
-top_aircraft(d,800,535,0.9,angle_deg=15,bank=True,accent=NAVY)
-arrow(d,(655,535),(720,500),fill=GOLD,width=5,head=16)
-arrow(d,(945,535),(880,570),fill=GOLD,width=5,head=16)
-center_text(d,(800,755),"Yawed flight develops a rolling tendency",font(17),MUTED)
+center_text(d,(800,385),"ROLL DEVELOPS",font(17,True),NAVY)
+front_aircraft(d,800,545,bank_deg=-22,highlight_ailerons=False)
+curved_arrow(d,(800,545),145,200,330,fill=GOLD,width=6,head=18)
+center_text(d,(800,705),"FRONT VIEW",font(15,True),MUTED)
+center_text(d,(800,755),"The yaw-induced imbalance develops bank",font(17),MUTED)
 # frame 3
 center_text(d,(1305,385),"CONTINUED IMBALANCE",font(17,True),RED)
 # spiral path
@@ -131,9 +151,10 @@ for i,b in enumerate(frames):
     center_text(d,((b[0]+b[2])/2,267),labels[i][0],font(18,True),MUTED)
     center_text(d,((b[0]+b[2])/2,307),labels[i][1],font(27,True),GOLD if i==0 else NAVY)
 center_text(d,(295,385),"AILERON INPUT",font(17,True),GOLD)
-top_aircraft(d,295,535,0.9,bank=True,accent=NAVY,aileron=True)
-curved_arrow(d,(295,535),145,205,330,fill=GOLD,width=6,head=18)
-center_text(d,(295,755),"Aircraft rolls about the longitudinal axis",font(17),MUTED)
+front_aircraft(d,295,545,bank_deg=-24,highlight_ailerons=True)
+curved_arrow(d,(295,545),145,200,330,fill=GOLD,width=6,head=18)
+center_text(d,(295,705),"FRONT VIEW",font(15,True),MUTED)
+center_text(d,(295,755),"Aileron input produces roll first",font(17),MUTED)
 center_text(d,(800,385),"SECONDARY YAW",font(17,True),NAVY)
 top_aircraft(d,800,535,0.9,angle_deg=15,bank=True,accent=NAVY)
 curved_arrow(d,(800,535),150,-82,-18,fill=GOLD,width=6,head=18)

@@ -37,7 +37,7 @@
   "current_batch": 12,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 11,
-  "last_verified_checkpoint": "POF_BATCH_11_LIVE_VERIFIED",
+  "last_verified_checkpoint": "POF_BATCH_12_SOURCE_FOUND",
   "production_state": {
     "approved_live_visuals": 55,
     "rejected_non_batch_1_mappings": 0,
@@ -49,8 +49,16 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Begin Batch 12 source selection from the remaining audited visual-required POF rows, preserving the five-visual hard quality gate and fail-closed verification rules.",
-  "active_batch_source_selection": null,
+  "next_action": "Refine the five locked Batch 12 source concepts into exact 1600x1050 raster pairs, preserving the five-visual hard quality gate.",
+  "active_batch_source_selection": {
+    "batch": 12,
+    "source_file": "data/pof-batch-12-source-selection.json",
+    "new_visual_concepts": 5,
+    "planned_question_rows": 10,
+    "status": "SOURCE_FOUND",
+    "database_preflight_verified": true,
+    "verified": true
+  },
   "active_batch_refinement": null,
   "active_batch_qa": null,
   "active_batch_preview": null,

@@ -4630,6 +4630,291 @@
         "asset_reachable": true,
         "database_rows_live_verified": true
       }
+    },
+    {
+      "visual_id": "pof-rudder-further-effects-001",
+      "topic": "Flight Controls & Axes",
+      "concept": "Rudder input produces yaw first; the resulting aerodynamic imbalance then develops roll and, if left uncorrected, can progress into a spiral dive.",
+      "question_ids": [
+        1109,
+        1327
+      ],
+      "source": {
+        "document": "POF mock exams written by Rihan.pdf",
+        "page": 20,
+        "figure": null,
+        "location": "FLIGHT CONTROLS section, pages 20-21",
+        "notes": "The source explicitly states the primary and further effects of rudder: yaw, then roll, followed by spiral dive."
+      },
+      "brief": {
+        "student_must_understand": "The sequence is causal and ordered: rudder -> yaw -> roll -> possible spiral dive if the imbalance is not corrected.",
+        "preserve": [
+          "Clear three-stage sequence",
+          "Aircraft attitude readable from above/three-quarter view",
+          "Yaw must appear before roll"
+        ],
+        "refine": [
+          "Use three clean frames with arrows between stages",
+          "Show rudder deflection only at the initiating stage",
+          "Avoid implying that a brief rudder input automatically guarantees a spiral dive"
+        ],
+        "add": [
+          "PRIMARY: YAW",
+          "SECONDARY: ROLL",
+          "IF UNCORRECTED: SPIRAL DIVE"
+        ],
+        "remove": [
+          "Generic three-axis diagram",
+          "Unrelated adverse-yaw material",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "Both target rows test the exact same ordered rudder-effect sequence."
+    },
+    {
+      "visual_id": "pof-aileron-further-effects-001",
+      "topic": "Flight Controls & Axes",
+      "concept": "Aileron input produces roll first; secondary yaw then develops and, if the resulting imbalance is left uncorrected, the aircraft can progress into a spiral dive.",
+      "question_ids": [
+        1120,
+        1149
+      ],
+      "source": {
+        "document": "POF mock exams written by Rihan.pdf",
+        "page": 20,
+        "figure": null,
+        "location": "FLIGHT CONTROLS section, pages 20-21",
+        "notes": "The source explicitly gives roll, then yaw, followed by spiral dive for aileron-only input."
+      },
+      "brief": {
+        "student_must_understand": "The sequence is ordered: aileron -> roll -> yaw -> possible spiral dive if uncorrected.",
+        "preserve": [
+          "Aileron deflection visibly initiates roll",
+          "Roll precedes yaw",
+          "Final spiral state shown as a consequence, not an instantaneous effect"
+        ],
+        "refine": [
+          "Use three sequential aircraft attitudes",
+          "Keep directional arrows unambiguous",
+          "Do not merge this with adverse-yaw-at-high-AoA teaching"
+        ],
+        "add": [
+          "PRIMARY: ROLL",
+          "SECONDARY: YAW",
+          "IF UNCORRECTED: SPIRAL DIVE"
+        ],
+        "remove": [
+          "Rudder-first sequence",
+          "Generic controls table",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship."
+    },
+    {
+      "visual_id": "pof-control-column-forward-left-001",
+      "topic": "Flight Controls & Axes",
+      "concept": "Moving the control column forward and left simultaneously lowers the elevator, raises the left aileron, and lowers the right aileron.",
+      "question_ids": [
+        2028
+      ],
+      "source": {
+        "document": "421864604-Principles-of-flight-questions-pdf.pdf",
+        "page": 18,
+        "figure": null,
+        "location": "Question 114; cross-checked with ac_61-23c_phak_canada.pdf Figures 1-25 and 1-30",
+        "notes": "Question source states the exact surface movements. PHAK Figure 1-30 confirms left-stick aileron motion; Figure 1-25 confirms forward-column elevator-down motion."
+      },
+      "brief": {
+        "student_must_understand": "Forward-left column displacement combines two independent control responses: pitch-forward elevator-down plus left-roll aileron differential.",
+        "preserve": [
+          "Cockpit control-column cue",
+          "Left/right wing labels",
+          "Tail elevator visible"
+        ],
+        "refine": [
+          "Show one input arrow at the column and three synchronized surface callouts",
+          "Use rear/three-quarter aircraft view so all surfaces are readable",
+          "Make left/right aircraft sides impossible to confuse"
+        ],
+        "add": [
+          "COLUMN: FORWARD + LEFT",
+          "LEFT AILERON: UP",
+          "RIGHT AILERON: DOWN",
+          "ELEVATOR: DOWN"
+        ],
+        "remove": [
+          "Extra trim-tab motion",
+          "Rudder movement",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-aspect-ratio-induced-drag-001",
+      "topic": "Wing Design",
+      "concept": "Aspect ratio compares wingspan with mean aerodynamic chord; for comparable lift conditions, a higher-aspect-ratio wing produces less induced drag than a lower-aspect-ratio wing.",
+      "question_ids": [
+        1171,
+        1185,
+        1186,
+        1314
+      ],
+      "source": {
+        "document": "POF mock exams written by Rihan.pdf",
+        "page": 7,
+        "figure": null,
+        "location": "DRAG section, page 7",
+        "notes": "The source states both the aspect-ratio definition and the high-AR/low-AR induced-drag relationship."
+      },
+      "brief": {
+        "student_must_understand": "High aspect ratio means relatively long span and short mean chord, and it reduces induced drag compared with a low-aspect-ratio wing.",
+        "preserve": [
+          "Equal-area-style comparison where practical",
+          "Span and mean-chord dimension cues",
+          "Qualitative induced-drag comparison only"
+        ],
+        "refine": [
+          "Use top-view high-AR versus low-AR planforms",
+          "Make the span/chord ratio visually obvious",
+          "Show weaker versus stronger wingtip-vortex/induced-drag cue without adding unsupported numbers"
+        ],
+        "add": [
+          "HIGH AR: longer span / shorter chord",
+          "LOW AR: shorter span / broader chord",
+          "HIGH AR -> LESS INDUCED DRAG"
+        ],
+        "remove": [
+          "Absolute drag coefficients",
+          "Performance numbers",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "Four rows test the same aspect-ratio geometry and its induced-drag consequence."
+    },
+    {
+      "visual_id": "pof-anhedral-wing-geometry-001",
+      "topic": "Wing Design",
+      "concept": "Anhedral is the wing geometry in which the wings slope downward from root to tip when viewed from the front.",
+      "question_ids": [
+        2004
+      ],
+      "source": {
+        "document": "421864604-Principles-of-flight-questions-pdf.pdf",
+        "page": 9,
+        "figure": null,
+        "location": "Question 55; geometry cross-check against PHAK Figure 1-27 dihedral definition",
+        "notes": "The question source explicitly defines downward root-to-tip inclination as anhedral; PHAK Figure 1-27 provides the opposite dihedral geometry for a clean contrast."
+      },
+      "brief": {
+        "student_must_understand": "From a front view, anhedral means each wingtip sits lower than its wing root; it is the opposite geometric sense of dihedral.",
+        "preserve": [
+          "Front-view aircraft reference",
+          "Horizontal datum through roots",
+          "Clear downward root-to-tip slope"
+        ],
+        "refine": [
+          "Use anhedral as the dominant panel with a small dihedral contrast inset only if needed",
+          "Keep stability implications secondary to the geometry",
+          "Avoid perspective that makes the slope ambiguous"
+        ],
+        "add": [
+          "ANHEDRAL",
+          "ROOT -> TIP: DOWNWARD",
+          "Front view"
+        ],
+        "remove": [
+          "Sweepback",
+          "Washout",
+          "Taper",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
     }
   ]
 }

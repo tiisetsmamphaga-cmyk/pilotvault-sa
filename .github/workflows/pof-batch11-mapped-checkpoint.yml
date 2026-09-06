@@ -1,0 +1,145 @@
+name: POF Batch 11 mapped checkpoint
+
+on:
+  push:
+    branches:
+      - pof-batch-11-rebuild
+    paths:
+      - .github/workflows/pof-batch11-mapped-checkpoint.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Batch 11 work branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-11-rebuild
+          fetch-depth: 0
+
+      - name: Persist exact MAPPED state
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def load(p): return json.loads(Path(p).read_text())
+          def save(p,d): Path(p).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+
+          state_path='data/pof-autonomous-state.json'
+          sel_path='data/pof-batch-11-source-selection.json'
+          man_path='data/pof-visual-manifest.json'
+          state=load(state_path); sel=load(sel_path); man=load(man_path)
+
+          ids={
+            'pof-trailing-edge-flap-lift-drag-001',
+            'pof-flap-stall-speed-001',
+            'pof-fowler-flap-wing-area-001',
+            'pof-static-dynamic-stability-response-001',
+            'pof-directional-fin-weathercock-001',
+          }
+          rows=[v for v in man['visuals'] if v['visual_id'] in ids]
+          concepts=[c for c in sel['concepts'] if c['visual_id'] in ids]
+
+          assert state['current_batch']==11
+          assert state['last_verified_checkpoint']=='POF_BATCH_11_PREVIEW_READY'
+          assert state['active_batch_preview']['verified'] is True
+          assert sel['status']=='PREVIEW_READY'
+          assert sel['gates']['preview_ready'] is True
+          assert sel['gates']['mapped'] is False
+          assert len(rows)==5 and len(concepts)==5
+          assert sum(len(v['question_ids']) for v in rows)==12
+          assert all(v['status']=='PREVIEW_READY' for v in rows)
+          assert all(v['qa']['preview'] and not v['qa']['live'] for v in rows)
+
+          mapping_evidence={
+            'project_ref':'kkmlfbxfopwulwkloaoc',
+            'database_status':'MAPPED',
+            'intended_rows':12,
+            'exact_match_count':12,
+            'mapped_status_count':12,
+            'unexpected_owner_count':0,
+            'transactional_update':True,
+            'post_commit_readback_verified':True,
+            'preconditions':{
+              'existing_rows':12,
+              'correct_subject_rows':12,
+              'unowned_refining_rows':12,
+              'already_owned_rows':0,
+              'planned_key_collisions':0
+            },
+            'verified':True,
+            'verification_note':'After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners.'
+          }
+
+          for v in rows:
+              v['status']='MAPPED'
+              v['mapping_verification']=mapping_evidence.copy()
+          for c in concepts:
+              c['status']='MAPPED'
+
+          sel['status']='MAPPED'
+          sel['gates']['mapped']=True
+          sel['next_action']='Construct the clean Batch 11 production history/candidate from the locked Batch 10 main checkpoint, excluding all temporary QA routes, generators and workflows; validate history and build with inert Supabase CI placeholders before main promotion.'
+
+          state['last_verified_checkpoint']='POF_BATCH_11_MAPPED'
+          state['active_batch_source_selection']['status']='MAPPED'
+          state['active_batch_refinement']['status']='MAPPED'
+          state['active_batch_qa']['status']='MAPPED'
+          state['active_batch_preview']['status']='MAPPED'
+          state['active_batch_mapping']={
+            'batch':11,
+            'project_ref':'kkmlfbxfopwulwkloaoc',
+            'mapped_question_rows':12,
+            'visual_keys':5,
+            'database_status':'MAPPED',
+            'exact_match_count':12,
+            'unexpected_owner_count':0,
+            'transactional_update':True,
+            'post_commit_readback_verified':True,
+            'verified':True
+          }
+          state['next_action']='Build a clean Batch 11 production candidate with exact stage history, 5 PNG + 5 WebP, renderer Batch 11 allowlist and state/manifest only; require full validators and green frozen-lock production build before main.'
+
+          save(man_path,man); save(sel_path,sel); save(state_path,state)
+          print('POF_BATCH_11_MAPPED persisted for exactly 12 rows / 5 visual keys.')
+          PY
+
+      - name: Validate mapped state
+        shell: bash
+        run: |
+          python scripts/validate_pof_visuals.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
+          m=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in q['concepts']}
+          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          assert s['last_verified_checkpoint']=='POF_BATCH_11_MAPPED'
+          assert s['active_batch_mapping']['database_status']=='MAPPED'
+          assert s['active_batch_mapping']['exact_match_count']==12
+          assert s['active_batch_mapping']['unexpected_owner_count']==0
+          assert q['status']=='MAPPED' and q['gates']['mapped'] is True
+          assert len(rows)==5 and sum(len(v['question_ids']) for v in rows)==12
+          assert all(v['status']=='MAPPED' for v in rows)
+          assert all(v['qa']['preview'] and not v['qa']['live'] for v in rows)
+          assert all(v['mapping_verification']['exact_match_count']==12 for v in rows)
+          print('Exact MAPPED checkpoint validation passed.')
+          PY
+
+      - name: Commit mapped checkpoint
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
+          git diff --cached --check
+          git commit -m "Mark POF Batch 11 mapped"
+          git push origin HEAD:pof-batch-11-rebuild

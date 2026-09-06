@@ -1,0 +1,155 @@
+name: POF Batch 13 repair manifest history
+
+on:
+  push:
+    branches:
+      - pof-batch-13-rebuild
+
+permissions:
+  contents: write
+
+env:
+  REFINING_SHA: b5eeb938ed3359543379c254d77b26b068dc604b
+  GENERATOR_COMMIT: 9175cd0d9cbfb66dca95b2e55bac456465c9f2e2
+
+jobs:
+  repair-history:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: pof-batch-13-rebuild
+
+      - name: Assert exact REFINING checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "$REFINING_SHA"
+          mapfile -t changed < <(git diff --name-only "$REFINING_SHA" HEAD)
+          test "${#changed[@]}" -eq 1
+          test "${changed[0]}" = ".github/workflows/pof-batch13-repair-history.yml"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          selection=json.loads(Path('data/pof-batch-13-source-selection.json').read_text())
+          assert state['last_verified_checkpoint']=='POF_BATCH_13_REFINING'
+          assert state['visual_requirement_audit']['live_verified_question_mappings']==224
+          assert selection['status']=='REFINING'
+          assert all(c['status']=='REFINING' for c in selection['concepts'])
+          PY
+
+      - name: Install Pillow
+        shell: bash
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Recover and execute the successful renderer
+        shell: bash
+        run: |
+          set -euo pipefail
+          git show "$GENERATOR_COMMIT:.github/workflows/pof-batch13-refine.yml" > /tmp/original-refine.yml
+          python - <<'PY'
+          from pathlib import Path
+          lines=Path('/tmp/original-refine.yml').read_text().splitlines()
+          marker=next(i for i,l in enumerate(lines) if l.strip()=='- name: Render five Batch 13 visual pairs')
+          start=next(i for i in range(marker,len(lines)) if "python - <<'PY'" in lines[i])+1
+          end=next(i for i in range(start,len(lines)) if lines[i].strip()=='PY')
+          code=[]
+          for line in lines[start:end]:
+              code.append(line[10:] if line.startswith('          ') else line)
+          exec(compile('\n'.join(code)+'\n','batch13-render','exec'),{'__name__':'__main__'})
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          out=Path('public/explanation-images/principles-of-flight/refined-batch-13')
+          assert len(list(out.glob('*.png')))==5
+          assert len(list(out.glob('*.webp')))==5
+          assert len(list(out.glob('*.svg')))==0
+          for p in list(out.glob('*.png'))+list(out.glob('*.webp')):
+              with Image.open(p) as im: assert im.size==(1600,1050),(p,im.size)
+          assert Path('/tmp/pof-batch13-webp-contact.png').exists()
+          assert Path('/tmp/pof-batch13-png-contact.png').exists()
+          PY
+
+      - name: Introduce five manifest visuals at SOURCE_FOUND
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          lines=Path('/tmp/original-refine.yml').read_text().splitlines()
+          marker=next(i for i,l in enumerate(lines) if l.strip()=='- name: Register REFINING manifest entries and validate rasters')
+          start=next(i for i in range(marker,len(lines)) if "python - <<'PY'" in lines[i])+1
+          end=next(i for i in range(start,len(lines)) if lines[i].strip()=='PY')
+          code=[]
+          for line in lines[start:end]:
+              code.append(line[10:] if line.startswith('          ') else line)
+          source='\n'.join(code)+'\n'
+          source=source.replace("'status':'REFINING'","'status':'SOURCE_FOUND'")
+          exec(compile(source,'batch13-manifest-source','exec'),{'__name__':'__main__'})
+          PY
+          python scripts/validate_pof_visuals.py
+          rm .github/workflows/pof-batch13-repair-history.yml
+          python scripts/validate_pof_visual_changes.py "$REFINING_SHA"
+          mapfile -t changed < <(git diff --name-only "$REFINING_SHA" | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 11
+          test "$(printf '%s\n' "${changed[@]}" | grep -c '^public/explanation-images/principles-of-flight/refined-batch-13/')" -eq 10
+          printf '%s\n' "${changed[@]}" | grep -qx 'data/pof-visual-manifest.json'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-visual-manifest.json public/explanation-images/principles-of-flight/refined-batch-13
+          git add -u .github/workflows/pof-batch13-repair-history.yml
+          git commit -m 'Register POF Batch 13 visuals as source found'
+
+      - name: Transition manifest SOURCE_FOUND to REFINING
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          ids={
+            'pof-longitudinal-dihedral-pitch-stability-001',
+            'pof-flap-centre-pressure-pitch-001',
+            'pof-slip-skid-ball-left-turn-001',
+            'pof-control-mass-balance-flutter-001',
+            'pof-control-aerodynamic-balance-horn-inset-001',
+          }
+          p=Path('data/pof-visual-manifest.json'); m=json.loads(p.read_text()); found=set()
+          for v in m['visuals']:
+              if v.get('visual_id') not in ids: continue
+              found.add(v['visual_id'])
+              assert v['status']=='SOURCE_FOUND',(v['visual_id'],v['status'])
+              assert v['qa']=={'technical':False,'teaching':False,'visual':False,'preview':False,'live':False}
+              assert v['lock']['approved'] is False
+              v['status']='REFINING'
+          assert found==ids
+          p.write_text(json.dumps(m,indent=2)+'\n')
+          PY
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py HEAD
+          mapfile -t changed < <(git diff --name-only HEAD)
+          test "${#changed[@]}" -eq 1
+          test "${changed[0]}" = 'data/pof-visual-manifest.json'
+          git add data/pof-visual-manifest.json
+          git commit -m 'Advance POF Batch 13 manifest to refining'
+          git push origin HEAD:pof-batch-13-rebuild
+
+      - name: Upload actual WebP contact sheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch13-webp-contact-sheet
+          path: /tmp/pof-batch13-webp-contact.png
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Upload actual PNG contact sheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch13-png-contact-sheet
+          path: /tmp/pof-batch13-png-contact.png
+          if-no-files-found: error
+          retention-days: 1

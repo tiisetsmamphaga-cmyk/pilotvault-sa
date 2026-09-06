@@ -5205,6 +5205,302 @@
         "asset_reachable": true,
         "database_rows_live_verified": true
       }
+    },
+    {
+      "visual_id": "pof-longitudinal-dihedral-pitch-stability-001",
+      "topic": "Stability",
+      "concept": "Longitudinal dihedral is the legacy syllabus relationship in which the tailplane is set at a lower angle of incidence than the mainplane, supporting longitudinal stability in pitch about the lateral axis.",
+      "question_ids": [
+        1130,
+        1166,
+        1187,
+        1198,
+        1325,
+        1337
+      ],
+      "source": {
+        "document": "POF mock exams written by Rihan.pdf",
+        "page": 16,
+        "figure": null,
+        "location": "STABILITY section, visible pages 15-17",
+        "notes": "The syllabus material explicitly defines longitudinal dihedral as tailplane incidence lower than mainplane and links it to stability in the pitching plane/about the lateral axis."
+      },
+      "brief": {
+        "student_must_understand": "Do not confuse longitudinal dihedral with wing dihedral: here it means the tailplane incidence is lower than the mainplane and the stability concerned is pitch/longitudinal stability about the lateral axis.",
+        "preserve": [
+          "Aircraft longitudinal-axis reference",
+          "Separate mainplane and tailplane chord/incidence lines",
+          "Pitch/lateral-axis relationship"
+        ],
+        "refine": [
+          "Use a clean side-view geometry",
+          "Make lower tailplane incidence visually explicit",
+          "Keep geometric wing dihedral out of the visual"
+        ],
+        "add": [
+          "MAINPLANE incidence",
+          "TAILPLANE lower incidence",
+          "PITCH / lateral axis",
+          "Longitudinal stability"
+        ],
+        "remove": [
+          "Wing dihedral front view",
+          "Yaw/roll stability material",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-longitudinal-dihedral-pitch-stability-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-longitudinal-dihedral-pitch-stability-v1.webp"
+      },
+      "mapping_reason": "All six questions test the same legacy longitudinal-dihedral definition and its pitch/lateral-axis stability relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "All six questions test the same exact geometry and stability relationship: tailplane lower incidence than mainplane, providing longitudinal/pitch stability about the lateral axis."
+    },
+    {
+      "visual_id": "pof-flap-centre-pressure-pitch-001",
+      "topic": "Flaps & Glide",
+      "concept": "On the conventional/plain trailing-edge flap case used in the questions, flap extension moves the centre of pressure aft and creates a nose-down pitching moment.",
+      "question_ids": [
+        1223,
+        1346
+      ],
+      "source": {
+        "document": "FAA-H-8083-25B Pilot\u2019s Handbook of Aeronautical Knowledge",
+        "page": 8,
+        "figure": "6-17",
+        "location": "Chapter 6, page 6-8",
+        "notes": "FAA text states that a plain flap increases camber/lift/drag and moves CP aft, resulting in a nose-down pitching moment."
+      },
+      "brief": {
+        "student_must_understand": "With the CG/reference fixed, plain-flap extension shifts the centre of pressure aft and produces a nose-down pitching tendency.",
+        "preserve": [
+          "Fixed CG/reference",
+          "Before/after flap geometry",
+          "Aft CP movement"
+        ],
+        "refine": [
+          "Compare flap up and flap down directly",
+          "Make CP positions and lift lines unmistakable",
+          "State conventional/plain flap scope"
+        ],
+        "add": [
+          "CP shifts aft",
+          "nose-down pitching tendency"
+        ],
+        "remove": [
+          "Generic flap benefits",
+          "Stall-speed teaching",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-flap-centre-pressure-pitch-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-flap-centre-pressure-pitch-v1.webp"
+      },
+      "mapping_reason": "Both questions ask the initial centre-of-pressure movement when trailing-edge flaps are lowered.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "Both questions test the same conventional/plain-flap result: centre of pressure initially moves aft, producing a nose-down pitching tendency."
+    },
+    {
+      "visual_id": "pof-slip-skid-ball-left-turn-001",
+      "topic": "Turns & Load Factor",
+      "concept": "In a left turn, ball left/inside indicates a slip, ball centred indicates coordinated flight, and ball right/outside indicates a skid.",
+      "question_ids": [
+        1228,
+        1235,
+        1250
+      ],
+      "source": {
+        "document": "FAA-H-8083-25B Pilot\u2019s Handbook of Aeronautical Knowledge",
+        "page": 18,
+        "figure": "8-22",
+        "location": "Chapter 8, page 8-18",
+        "notes": "FAA Figure 8-22 and inclinometer text state that the ball moves inside in a slip, remains centred when coordinated, and moves outside in a skid."
+      },
+      "brief": {
+        "student_must_understand": "For a left turn specifically, inside is left and outside is right: ball left=slip, centred=coordinated, ball right=skid.",
+        "preserve": [
+          "Same left-turn context in all panels",
+          "Actual ball positions",
+          "Inside/outside wording"
+        ],
+        "refine": [
+          "Use three side-by-side instrument panels",
+          "Make left-turn direction explicit",
+          "Keep slip/skid labels impossible to swap"
+        ],
+        "add": [
+          "SLIP / inside",
+          "COORDINATED / centred",
+          "SKID / outside",
+          "Step on the ball"
+        ],
+        "remove": [
+          "Right-turn examples",
+          "Unrelated turn-rate calculations",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-slip-skid-ball-left-turn-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-slip-skid-ball-left-turn-v1.webp"
+      },
+      "mapping_reason": "The three questions collectively test the exact left-turn inclinometer states shown in the three-panel visual.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "All three questions are direct readings of the same left-turn inclinometer relationship: inside/left=slip, centre=balanced, outside/right=skid."
+    },
+    {
+      "visual_id": "pof-control-mass-balance-flutter-001",
+      "topic": "Trim & Balance Tabs",
+      "concept": "Control-surface mass balancing places counterweight mass ahead of the hinge to reduce inertial unbalance and susceptibility to aeroelastic flutter.",
+      "question_ids": [
+        1161,
+        1165,
+        1279,
+        1304,
+        1986
+      ],
+      "source": {
+        "document": "FAA AC 23.629-1B",
+        "page": 9,
+        "figure": null,
+        "location": "Chapter 3, paragraph 7 BALANCE",
+        "notes": "FAA guidance states that control surfaces and tabs are mass balanced to prevent inertial rotation about their hinges in flutter modes and discusses balance weights/distribution."
+      },
+      "brief": {
+        "student_must_understand": "Flutter is a self-excited aeroelastic oscillation; a mass balance/counterweight ahead of the hinge reduces inertial unbalance and flutter susceptibility.",
+        "preserve": [
+          "Hinge line",
+          "Counterweight ahead of hinge",
+          "Control-surface relationship"
+        ],
+        "refine": [
+          "Separate geometry from flutter definition",
+          "Avoid claiming mass balance guarantees flutter immunity",
+          "Keep mass balance distinct from aerodynamic balance"
+        ],
+        "add": [
+          "COUNTERWEIGHT",
+          "AHEAD OF HINGE",
+          "self-excited oscillation"
+        ],
+        "remove": [
+          "Horn/inset aerodynamic balance",
+          "Generic vibration imagery",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-control-mass-balance-flutter-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-control-mass-balance-flutter-v1.webp"
+      },
+      "mapping_reason": "Four questions ask why/which mass balance is used for flutter and one asks the flutter definition; the visual teaches the same linked mechanism without claiming complete flutter protection.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "The mapped rows test the same tightly linked teaching relationship: aeroelastic flutter is oscillatory surface/structure motion and control-surface mass balance ahead of the hinge is used to reduce its susceptibility."
+    },
+    {
+      "visual_id": "pof-control-aerodynamic-balance-horn-inset-001",
+      "topic": "Trim & Balance Tabs",
+      "concept": "Horn balance and inset-hinge aerodynamic balance place control-surface area ahead of the hinge so aerodynamic load assists movement and reduces pilot control force.",
+      "question_ids": [
+        1180,
+        1317,
+        2019
+      ],
+      "source": {
+        "document": "UK CAA Standards Document 10v8",
+        "page": 55,
+        "figure": null,
+        "location": "Flight Controls objectives 205-207",
+        "notes": "CAA objectives explicitly list inset hinge and horn balance as methods of aerodynamic balance and separately distinguish mass balance/flutter."
+      },
+      "brief": {
+        "student_must_understand": "Aerodynamic balance uses surface area ahead of the hinge\u2014via a horn or inset hinge\u2014to create an assisting aerodynamic moment and reduce control force; it is not mass balance.",
+        "preserve": [
+          "Hinge line",
+          "Area ahead of hinge",
+          "Assisting aerodynamic force/moment"
+        ],
+        "refine": [
+          "Contrast horn and inset-hinge methods side by side",
+          "Make ahead-of-hinge area obvious",
+          "Explicitly distinguish aerodynamic from mass balance"
+        ],
+        "add": [
+          "HORN BALANCE",
+          "INSET HINGE",
+          "assisting moment",
+          "reduced control force"
+        ],
+        "remove": [
+          "Counterweights",
+          "Flutter mechanism",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-control-aerodynamic-balance-horn-inset-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-control-aerodynamic-balance-horn-inset-v1.webp"
+      },
+      "mapping_reason": "The three questions test horn balance or inset-hinge aerodynamic balancing; the visual contrasts those exact methods.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "All three rows test the same aerodynamic-balance principle: control-surface area ahead of the hinge reduces hinge moment/control force, implemented by horn balance or inset hinge."
     }
   ]
 }

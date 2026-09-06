@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 12,
-  "status": "MAPPED",
+  "status": "PRODUCTION_READY",
   "base_main_commit": "dd0ed27ffff37b1a742d28e1a2080bac518fa924",
   "quality_reference": "Batch 1 quality or better",
   "fail_closed": true,
@@ -62,7 +62,7 @@
         ]
       },
       "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
-      "status": "MAPPED"
+      "status": "PRODUCTION_READY"
     },
     {
       "visual_id": "pof-aileron-further-effects-001",
@@ -103,7 +103,7 @@
         ]
       },
       "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
-      "status": "MAPPED"
+      "status": "PRODUCTION_READY"
     },
     {
       "visual_id": "pof-control-column-forward-left-001",
@@ -144,7 +144,7 @@
         ]
       },
       "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
-      "status": "MAPPED"
+      "status": "PRODUCTION_READY"
     },
     {
       "visual_id": "pof-aspect-ratio-induced-drag-001",
@@ -187,7 +187,7 @@
         ]
       },
       "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
-      "status": "MAPPED"
+      "status": "PRODUCTION_READY"
     },
     {
       "visual_id": "pof-anhedral-wing-geometry-001",
@@ -228,7 +228,7 @@
         ]
       },
       "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
-      "status": "MAPPED"
+      "status": "PRODUCTION_READY"
     }
   ],
   "gates": {
@@ -237,8 +237,8 @@
     "qa_approved": true,
     "preview_ready": true,
     "mapped": true,
-    "production_ready": false,
+    "production_ready": true,
     "live_verified": false
   },
-  "next_action": "Construct a clean Batch 12 production candidate preserving exact stage history, excluding temporary QA route, generator and workflows; require full validators and green frozen-lock build before main."
+  "next_action": "Promote this exact clean Batch 12 production candidate to main after final validation; then verify all five production WebPs before advancing the 10 mapped database rows."
 }

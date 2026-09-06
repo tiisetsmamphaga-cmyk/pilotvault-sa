@@ -4674,7 +4674,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-rudder-further-effects-v1.webp"
       },
       "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4779,7 +4779,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aileron-further-effects-v1.webp"
       },
       "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4884,7 +4884,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-control-column-forward-left-v1.webp"
       },
       "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4990,7 +4990,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aspect-ratio-induced-drag-v1.webp"
       },
       "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -5095,7 +5095,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-anhedral-wing-geometry-v1.webp"
       },
       "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,

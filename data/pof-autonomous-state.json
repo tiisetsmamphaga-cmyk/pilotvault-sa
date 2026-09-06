@@ -37,7 +37,7 @@
   "current_batch": 11,
   "completed_batches_since_last_user_report": 3,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_11_QA_APPROVED",
+  "last_verified_checkpoint": "POF_BATCH_11_PREVIEW_READY",
   "production_state": {
     "approved_live_visuals": 50,
     "rejected_non_batch_1_mappings": 0,
@@ -49,19 +49,19 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Create and verify the single deliberate preview/pof-batch11 deployment through the real ExplanationImage component before database mapping.",
+  "next_action": "Map exactly the 12 new Batch 11 POF question rows in Supabase through a guarded transaction and verify 12/12 exact readback with zero unexpected owners before production.",
   "active_batch_source_selection": {
     "batch": 11,
     "source_file": "data/pof-batch-11-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 12,
-    "status": "QA_APPROVED",
+    "status": "PREVIEW_READY",
     "database_preflight_verified": true,
     "verified": true
   },
   "active_batch_refinement": {
     "batch": 11,
-    "status": "QA_APPROVED",
+    "status": "PREVIEW_READY",
     "visual_concepts": 5,
     "planned_png_assets": 5,
     "planned_webp_assets": 5,
@@ -72,7 +72,7 @@
   },
   "active_batch_qa": {
     "batch": 11,
-    "status": "QA_APPROVED",
+    "status": "PREVIEW_READY",
     "visual_concepts": 5,
     "png_assets_reviewed": 5,
     "webp_assets_reviewed": 5,
@@ -85,7 +85,23 @@
     "webp_qa_run": 33899897134,
     "verified": true
   },
-  "active_batch_preview": null,
+  "active_batch_preview": {
+    "batch": 11,
+    "status": "PREVIEW_READY",
+    "deployment_id": "dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp",
+    "deployment_commit": "6651f3c60bc5f43f69f8640d968a171fba254cc2",
+    "preflight_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
+    "preflight_run": 33900736232,
+    "identical_tree_to_preflight": true,
+    "route": "/pof-visual-qa",
+    "route_http_status": 200,
+    "route_statically_generated": true,
+    "real_explanation_component_used": true,
+    "runtime_errors_detected": 0,
+    "same_tree_duplicate_detected": true,
+    "intermediate_same_tree_deployment_id": "dpl_HeqK5Ba6AhnrHTdZwwRZLNc2FrW9",
+    "verified": true
+  },
   "active_batch_mapping": {
     "batch": 10,
     "project_ref": "kkmlfbxfopwulwkloaoc",

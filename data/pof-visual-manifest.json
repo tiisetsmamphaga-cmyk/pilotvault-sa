@@ -4101,16 +4101,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-trailing-edge-flap-lift-drag-v1.webp"
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4163,6 +4163,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_6MLdWmykRcmmpfR58Pxs7oUzmYib",
+        "production_commit": "591a8ab30d28d048dd3ec34c7f0a3c6906fa3435",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -4209,16 +4216,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-flap-stall-speed-v1.webp"
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4271,6 +4278,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_6MLdWmykRcmmpfR58Pxs7oUzmYib",
+        "production_commit": "591a8ab30d28d048dd3ec34c7f0a3c6906fa3435",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -4316,16 +4330,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-fowler-flap-wing-area-v1.webp"
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4377,6 +4391,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_6MLdWmykRcmmpfR58Pxs7oUzmYib",
+        "production_commit": "591a8ab30d28d048dd3ec34c7f0a3c6906fa3435",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -4424,16 +4445,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-static-dynamic-stability-response-v1.webp"
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4486,6 +4507,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_6MLdWmykRcmmpfR58Pxs7oUzmYib",
+        "production_commit": "591a8ab30d28d048dd3ec34c7f0a3c6906fa3435",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -4532,16 +4560,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-directional-fin-weathercock-v1.webp"
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4594,6 +4622,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_6MLdWmykRcmmpfR58Pxs7oUzmYib",
+        "production_commit": "591a8ab30d28d048dd3ec34c7f0a3c6906fa3435",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     }
   ]

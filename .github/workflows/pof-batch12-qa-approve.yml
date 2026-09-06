@@ -20,6 +20,13 @@ jobs:
           ref: pof-batch-12-rebuild
           fetch-depth: 0
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deterministic raster dependency
+        run: pip install pillow==12.3.0
+
       - name: Persist exact QA-approved manifest/state
         shell: bash
         run: |

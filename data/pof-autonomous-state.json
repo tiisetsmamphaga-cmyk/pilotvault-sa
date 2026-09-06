@@ -37,7 +37,7 @@
   "current_batch": 12,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 11,
-  "last_verified_checkpoint": "POF_BATCH_12_QA_APPROVED",
+  "last_verified_checkpoint": "POF_BATCH_12_PREVIEW_READY",
   "production_state": {
     "approved_live_visuals": 55,
     "rejected_non_batch_1_mappings": 0,
@@ -49,19 +49,19 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Create and verify the single deliberate preview/pof-batch12 deployment through the real ExplanationImage component before database mapping.",
+  "next_action": "Map exactly the 10 new Batch 12 POF rows in Supabase through a guarded transaction and verify 10/10 exact readback with zero unexpected owners before production.",
   "active_batch_source_selection": {
     "batch": 12,
     "source_file": "data/pof-batch-12-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 10,
-    "status": "QA_APPROVED",
+    "status": "PREVIEW_READY",
     "database_preflight_verified": true,
     "verified": true
   },
   "active_batch_refinement": {
     "batch": 12,
-    "status": "QA_APPROVED",
+    "status": "PREVIEW_READY",
     "visual_concepts": 5,
     "planned_png_assets": 5,
     "planned_webp_assets": 5,
@@ -72,7 +72,7 @@
   },
   "active_batch_qa": {
     "batch": 12,
-    "status": "QA_APPROVED",
+    "status": "PREVIEW_READY",
     "visual_concepts": 5,
     "png_assets_reviewed": 5,
     "webp_assets_reviewed": 5,
@@ -85,7 +85,26 @@
     "png_qa_run": 34032159714,
     "verified": true
   },
-  "active_batch_preview": null,
+  "active_batch_preview": {
+    "batch": 12,
+    "status": "PREVIEW_READY",
+    "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
+    "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
+    "preflight_commit": "e4bc9bc87074637556a90b65f15bc4e9055fa425",
+    "preflight_run": 34032411532,
+    "identical_tree_to_preflight": true,
+    "route": "/pof-visual-qa",
+    "deployment_ready": true,
+    "alias_error": null,
+    "route_http_status": 200,
+    "route_statically_generated": true,
+    "real_explanation_component_used": true,
+    "five_batch12_webp_references_present": true,
+    "runtime_errors_detected": 0,
+    "signed_in_student_attempt_inspected": false,
+    "verification_note": "The single deliberate Batch 12 preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. Vercel reached READY with no alias error. The real ExplanationImage QA route returned HTTP 200, was statically prerendered, contained all five Batch 12 WebP references and produced no error/fatal runtime logs. No signed-in student-attempt screenshot is claimed.",
+    "verified": true
+  },
   "active_batch_mapping": {
     "batch": 11,
     "project_ref": "kkmlfbxfopwulwkloaoc",

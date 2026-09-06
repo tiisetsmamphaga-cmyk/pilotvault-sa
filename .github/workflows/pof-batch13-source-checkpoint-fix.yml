@@ -1,0 +1,88 @@
+name: POF Batch 13 source checkpoint fix
+
+on:
+  push:
+    branches:
+      - pof-batch-13-rebuild
+
+permissions:
+  contents: write
+
+jobs:
+  source-checkpoint-fix:
+    runs-on: ubuntu-latest
+    env:
+      BASE_SHA: 10e184f149cd0e6aa3c2034cd5c40fafb88cc744
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: pof-batch-13-rebuild
+
+      - name: Assert guarded starting point
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor "$BASE_SHA" HEAD
+          mapfile -t changed < <(git diff --name-only "$BASE_SHA" HEAD | sort)
+          expected=(
+            .github/workflows/pof-batch13-source-checkpoint-fix.yml
+            .github/workflows/pof-batch13-source-checkpoint.yml
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 2
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Execute already-validated source persistence logic
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/workflows/pof-batch13-source-checkpoint.yml')
+          lines = path.read_text().splitlines()
+          start = next(i for i, line in enumerate(lines) if "python - <<'PY'" in line) + 1
+          end = next(i for i in range(start, len(lines)) if lines[i].strip() == 'PY')
+          code_lines = []
+          for line in lines[start:end]:
+              code_lines.append(line[10:] if line.startswith('          ') else line)
+          code = '\n'.join(code_lines) + '\n'
+          exec(compile(code, str(path), 'exec'), {'__name__': '__main__'})
+          PY
+
+      - name: Validate SOURCE_FOUND transition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py "$BASE_SHA"
+
+      - name: Assert exact checkpoint tree including new file
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/pof-batch13-source-checkpoint.yml
+          rm .github/workflows/pof-batch13-source-checkpoint-fix.yml
+          git add -N data/pof-batch-13-source-selection.json
+          mapfile -t changed < <(git diff --name-only "$BASE_SHA" | sort)
+          expected=(
+            data/pof-autonomous-state.json
+            data/pof-batch-13-source-selection.json
+            data/pof-visual-manifest.json
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Commit Batch 13 SOURCE_FOUND
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-autonomous-state.json data/pof-batch-13-source-selection.json data/pof-visual-manifest.json
+          git add -u .github/workflows/pof-batch13-source-checkpoint.yml .github/workflows/pof-batch13-source-checkpoint-fix.yml
+          git commit -m 'Checkpoint POF Batch 13 source selection'
+          git push origin HEAD:pof-batch-13-rebuild

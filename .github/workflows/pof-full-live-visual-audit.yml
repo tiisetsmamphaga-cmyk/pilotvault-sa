@@ -51,19 +51,21 @@ jobs:
 
           inventory=[]
           by_batch={}
+          dims_by_batch={}
           for batch,v,p in live:
               assert p.exists(), p
               with Image.open(p) as im:
-                  assert im.size==(1600,1050),(p,im.size)
+                  dims=list(im.size)
               by_batch.setdefault(batch,[]).append((v,p))
+              dims_by_batch.setdefault(batch,set()).add(tuple(dims))
               source=v.get('source',{})
-              source_text=json.dumps(source).lower()
               provenance_text=json.dumps(v).lower()
               evidence_terms=['crop','cropped','extract','extracted','source image','source figure used','pdf figure used','redraw from source figure','traced from']
               inventory.append({
                   'batch':batch,
                   'visual_id':v['visual_id'],
                   'web_asset':str(p),
+                  'dimensions':dims,
                   'source':source,
                   'question_ids':v.get('question_ids',[]),
                   'visual_inspection':v.get('visual_inspection'),
@@ -73,7 +75,7 @@ jobs:
           # one 5-up sheet per batch, preserving full image aspect
           for batch,items in sorted(by_batch.items()):
               assert len(items)==5,(batch,len(items))
-              canvas=Image.new('RGB',(1800,3500),'#0a1118')
+              canvas=Image.new('RGB',(1800,6000),'#0a1118')
               d=ImageDraw.Draw(canvas)
               d.text((60,30),f'POF LIVE AUDIT — BATCH {batch}',font=F(38,True),fill='white')
               y=100
@@ -85,7 +87,7 @@ jobs:
                   y+=im.height+12
                   d.text((60,y),v['visual_id'],font=F(25,True),fill='white')
                   y+=55
-              crop=canvas.crop((0,0,1800,min(3500,y+30)))
+              crop=canvas.crop((0,0,1800,min(6000,y+30)))
               crop.save(out/f'batch-{batch:02d}.jpg','JPEG',quality=92)
 
           # four overview sheets, 15 thumbs each
@@ -107,6 +109,7 @@ jobs:
           summary={
               'live_visuals':len(live),
               'batches':{str(k):len(v) for k,v in sorted(by_batch.items())},
+              'dimensions_by_batch':{str(k):[list(x) for x in sorted(v)] for k,v in sorted(dims_by_batch.items())},
               'explicit_pdf_figure_use_evidence_count':sum(1 for x in inventory if x['explicit_pdf_figure_use_evidence']),
           }
           Path('/tmp/pof-live-summary.json').write_text(json.dumps(summary,indent=2)+'\n')

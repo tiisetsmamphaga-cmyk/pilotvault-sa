@@ -4674,12 +4674,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-rudder-further-effects-v1.webp"
       },
       "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4698,7 +4698,24 @@
         "png_qa_run": 34032159714,
         "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
-      "reuse_justification": "Both target rows test the exact same ordered rudder-effect sequence."
+      "reuse_justification": "Both target rows test the exact same ordered rudder-effect sequence.",
+      "preview_verification": {
+        "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
+        "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
+        "preflight_commit": "e4bc9bc87074637556a90b65f15bc4e9055fa425",
+        "preflight_run": 34032411532,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "alias_error": null,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch12_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The single deliberate Batch 12 preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. Vercel reached READY with no alias error. The real ExplanationImage QA route returned HTTP 200, was statically prerendered, contained all five Batch 12 WebP references and produced no error/fatal runtime logs. No signed-in student-attempt screenshot is claimed."
+      }
     },
     {
       "visual_id": "pof-aileron-further-effects-001",
@@ -4743,12 +4760,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aileron-further-effects-v1.webp"
       },
       "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4767,7 +4784,24 @@
         "png_qa_run": 34032159714,
         "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
-      "reuse_justification": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship."
+      "reuse_justification": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
+      "preview_verification": {
+        "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
+        "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
+        "preflight_commit": "e4bc9bc87074637556a90b65f15bc4e9055fa425",
+        "preflight_run": 34032411532,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "alias_error": null,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch12_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The single deliberate Batch 12 preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. Vercel reached READY with no alias error. The real ExplanationImage QA route returned HTTP 200, was statically prerendered, contained all five Batch 12 WebP references and produced no error/fatal runtime logs. No signed-in student-attempt screenshot is claimed."
+      }
     },
     {
       "visual_id": "pof-control-column-forward-left-001",
@@ -4812,12 +4846,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-control-column-forward-left-v1.webp"
       },
       "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4835,6 +4869,23 @@
         "webp_qa_run": 34032083486,
         "png_qa_run": 34032159714,
         "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
+        "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
+        "preflight_commit": "e4bc9bc87074637556a90b65f15bc4e9055fa425",
+        "preflight_run": 34032411532,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "alias_error": null,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch12_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The single deliberate Batch 12 preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. Vercel reached READY with no alias error. The real ExplanationImage QA route returned HTTP 200, was statically prerendered, contained all five Batch 12 WebP references and produced no error/fatal runtime logs. No signed-in student-attempt screenshot is claimed."
       }
     },
     {
@@ -4882,12 +4933,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aspect-ratio-induced-drag-v1.webp"
       },
       "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4906,7 +4957,24 @@
         "png_qa_run": 34032159714,
         "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
-      "reuse_justification": "Four rows test the same aspect-ratio geometry and its induced-drag consequence."
+      "reuse_justification": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
+      "preview_verification": {
+        "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
+        "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
+        "preflight_commit": "e4bc9bc87074637556a90b65f15bc4e9055fa425",
+        "preflight_run": 34032411532,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "alias_error": null,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch12_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The single deliberate Batch 12 preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. Vercel reached READY with no alias error. The real ExplanationImage QA route returned HTTP 200, was statically prerendered, contained all five Batch 12 WebP references and produced no error/fatal runtime logs. No signed-in student-attempt screenshot is claimed."
+      }
     },
     {
       "visual_id": "pof-anhedral-wing-geometry-001",
@@ -4951,12 +5019,12 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-anhedral-wing-geometry-v1.webp"
       },
       "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
-      "status": "QA_APPROVED",
+      "status": "PREVIEW_READY",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": false,
+        "preview": true,
         "live": false
       },
       "lock": {
@@ -4974,6 +5042,23 @@
         "webp_qa_run": 34032083486,
         "png_qa_run": 34032159714,
         "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
+      },
+      "preview_verification": {
+        "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
+        "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
+        "preflight_commit": "e4bc9bc87074637556a90b65f15bc4e9055fa425",
+        "preflight_run": 34032411532,
+        "identical_tree_to_preflight": true,
+        "route": "/pof-visual-qa",
+        "deployment_ready": true,
+        "alias_error": null,
+        "route_http_status": 200,
+        "route_statically_generated": true,
+        "real_explanation_component_used": true,
+        "five_batch12_webp_references_present": true,
+        "runtime_errors_detected": 0,
+        "signed_in_student_attempt_inspected": false,
+        "verification_note": "The single deliberate Batch 12 preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. Vercel reached READY with no alias error. The real ExplanationImage QA route returned HTTP 200, was statically prerendered, contained all five Batch 12 WebP references and produced no error/fatal runtime logs. No signed-in student-attempt screenshot is claimed."
       }
     }
   ]

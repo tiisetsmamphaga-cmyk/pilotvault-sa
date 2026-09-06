@@ -4674,7 +4674,7 @@
         "web_asset": null
       },
       "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -4731,7 +4731,7 @@
         "web_asset": null
       },
       "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -4788,7 +4788,7 @@
         "web_asset": null
       },
       "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -4846,7 +4846,7 @@
         "web_asset": null
       },
       "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -4903,7 +4903,7 @@
         "web_asset": null
       },
       "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,

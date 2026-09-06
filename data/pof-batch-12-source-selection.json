@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 12,
-  "status": "SOURCE_FOUND",
+  "status": "REFINING",
   "base_main_commit": "dd0ed27ffff37b1a742d28e1a2080bac518fa924",
   "quality_reference": "Batch 1 quality or better",
   "fail_closed": true,
@@ -235,5 +235,5 @@
     "production_ready": false,
     "live_verified": false
   },
-  "next_action": "Refine exactly these five Batch 12 concepts into 1600x1050 PNG + WebP assets, then visually inspect the actual raster outputs before QA approval."
+  "next_action": "Generate exactly five Batch 12 PNG + WebP raster pairs at 1600x1050, then inspect actual outputs before QA approval."
 }

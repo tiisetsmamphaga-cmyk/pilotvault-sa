@@ -1,0 +1,202 @@
+name: POF Batch 12 live lock
+
+on:
+  push:
+    branches:
+      - pof-visual-batch12-lock
+
+permissions:
+  contents: write
+
+jobs:
+  live-lock:
+    runs-on: ubuntu-latest
+    env:
+      BASE_SHA: 83179b610a1414b6596d077e39fde62a45e002dd
+      PRODUCTION_DEPLOYMENT: dpl_CRvsBBtTFVpAEMJjSmSbpvJ7W2HZ
+      PRODUCTION_COMMIT: 83179b610a1414b6596d077e39fde62a45e002dd
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: pof-visual-batch12-lock
+
+      - name: Assert clean live-lock starting point
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "$BASE_SHA"
+          mapfile -t changed < <(git diff --name-only "$BASE_SHA" HEAD)
+          test "${#changed[@]}" -eq 1
+          test "${changed[0]}" = ".github/workflows/pof-batch12-live-lock.yml"
+
+      - name: Persist Batch 12 LIVE_VERIFIED metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          base_sha = os.environ['BASE_SHA']
+          deployment = os.environ['PRODUCTION_DEPLOYMENT']
+          production_commit = os.environ['PRODUCTION_COMMIT']
+          run_id = int(os.environ['GITHUB_RUN_ID'])
+
+          visual_ids = {
+              'pof-rudder-further-effects-001',
+              'pof-aileron-further-effects-001',
+              'pof-control-column-forward-left-001',
+              'pof-aspect-ratio-induced-drag-001',
+              'pof-anhedral-wing-geometry-001',
+          }
+
+          manifest_path = Path('data/pof-visual-manifest.json')
+          manifest = json.loads(manifest_path.read_text())
+          found = set()
+          for visual in manifest['visuals']:
+              if visual.get('visual_id') not in visual_ids:
+                  continue
+              found.add(visual['visual_id'])
+              assert visual.get('status') == 'PRODUCTION_READY', (visual['visual_id'], visual.get('status'))
+              assert visual.get('qa', {}).get('technical') is True
+              assert visual.get('qa', {}).get('teaching') is True
+              assert visual.get('qa', {}).get('visual') is True
+              assert visual.get('qa', {}).get('preview') is True
+              assert visual.get('qa', {}).get('live') is False
+              assert visual.get('lock', {}).get('approved') is False
+              assert visual.get('lock', {}).get('replacement_reason') is None
+              visual['status'] = 'LIVE_VERIFIED'
+              visual['qa']['live'] = True
+              visual['lock']['approved'] = True
+              visual['live_verification'] = {
+                  'deployment_id': deployment,
+                  'production_commit': production_commit,
+                  'domain': 'pilotvault.co.za',
+                  'asset_reachable': True,
+                  'database_rows_live_verified': True,
+              }
+          assert found == visual_ids, (found, visual_ids)
+          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
+
+          selection_path = Path('data/pof-batch-12-source-selection.json')
+          selection = json.loads(selection_path.read_text())
+          assert selection['batch'] == 12
+          assert selection['status'] == 'PRODUCTION_READY'
+          assert selection['gates']['production_ready'] is True
+          assert selection['gates']['live_verified'] is False
+          selection['status'] = 'LIVE_VERIFIED'
+          for concept in selection['concepts']:
+              assert concept['visual_id'] in visual_ids
+              assert concept['status'] == 'PRODUCTION_READY'
+              concept['status'] = 'LIVE_VERIFIED'
+          selection['gates']['live_verified'] = True
+          selection['next_action'] = 'Begin Batch 13 source selection from the remaining audited visual-required rows using the same five-visual hard quality gate.'
+          selection_path.write_text(json.dumps(selection, indent=2) + '\n')
+
+          state_path = Path('data/pof-autonomous-state.json')
+          state = json.loads(state_path.read_text())
+          assert state['current_batch'] == 12
+          assert state['last_verified_checkpoint'] == 'POF_BATCH_12_PRODUCTION_READY'
+          assert state['production_state']['approved_live_visuals'] == 55
+          assert state['visual_requirement_audit']['live_verified_question_mappings'] == 202
+          assert state['visual_requirement_audit']['remaining_visual_required'] == 98
+
+          state['current_batch'] = 13
+          state['completed_batches_since_last_user_report'] = 1
+          state['last_verified_checkpoint'] = 'POF_BATCH_12_LIVE_VERIFIED'
+          state['production_state']['approved_live_visuals'] = 60
+          state['next_action'] = 'Begin Batch 13 source selection from the remaining audited visual-required rows using the same five-visual hard quality gate.'
+          for field in ('active_batch_source_selection', 'active_batch_refinement', 'active_batch_qa', 'active_batch_preview'):
+              if isinstance(state.get(field), dict) and state[field].get('batch') == 12:
+                  state[field]['status'] = 'LIVE_VERIFIED'
+          mapping = state.get('active_batch_mapping', {})
+          if mapping.get('batch') == 12:
+              mapping['database_status'] = 'LIVE_VERIFIED'
+              mapping['exact_match_count'] = 10
+              mapping['unexpected_owner_count'] = 0
+              mapping['post_commit_readback_verified'] = True
+              mapping['verified'] = True
+
+          audit = state['visual_requirement_audit']
+          audit['live_verified_question_mappings'] = 212
+          audit['remaining_rows_audited'] = 153
+          audit['remaining_visual_required'] = 88
+          audit['remaining_no_visual_required'] = 65
+          audit['total_visual_required_question_universe'] = 300
+          audit['question_coverage_completion_percent'] = 70.7
+          audit['verified'] = True
+
+          state['live_verification'] = {
+              'batch': 12,
+              'deployment_id': deployment,
+              'production_commit': production_commit,
+              'domain': 'pilotvault.co.za',
+              'production_assets_verified': 5,
+              'mapped_question_rows': 10,
+              'reused_live_question_rows': 0,
+              'exact_deployment_commit_match': True,
+              'all_production_webps_reachable': True,
+              'live_delivery_content_type': 'image/webp',
+              'repository_asset_dimensions': '1600x1050',
+              'exact_database_rows_live_verified': True,
+              'unexpected_database_owners': 0,
+              'real_renderer_build_verified_on_preview': True,
+              'signed_in_student_attempt_inspected': False,
+              'github_validation_run': run_id,
+              'preview_preflight_run': 34032411532,
+              'verification_note': 'The exact Batch 12 production candidate reached READY on pilotvault.co.za with no alias error. All five Batch 12 WebP endpoints were explicitly fetched from the production alias and returned HTTP 200 image/webp. The exact 10 Supabase mappings were transactionally advanced from MAPPED to LIVE_VERIFIED and independently read back 10/10 across five keys with zero unexpected owners. Preview rendering used the real ExplanationImage component; no signed-in student-attempt screenshot is claimed.',
+              'verified': True,
+          }
+          state_path.write_text(json.dumps(state, indent=2) + '\n')
+          PY
+
+      - name: Validate manifest and full promotion transition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py "$BASE_SHA"
+
+      - name: Install dependencies with frozen lockfile
+        shell: bash
+        run: |
+          set -euo pipefail
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Fresh production build with inert Supabase placeholders
+        shell: bash
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: inert-ci-placeholder-key
+        run: |
+          set -euo pipefail
+          pnpm build
+
+      - name: Assert metadata-only final tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/pof-batch12-live-lock.yml
+          mapfile -t changed < <(git diff --name-only "$BASE_SHA" | sort)
+          printf '%s\n' "${changed[@]}"
+          expected=(
+            data/pof-autonomous-state.json
+            data/pof-batch-12-source-selection.json
+            data/pof-visual-manifest.json
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Commit verified Batch 12 lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pof-autonomous-state.json data/pof-batch-12-source-selection.json data/pof-visual-manifest.json
+          git rm .github/workflows/pof-batch12-live-lock.yml
+          git commit -m 'Lock POF Batch 12 live verification'
+          git push origin HEAD:pof-visual-batch12-lock

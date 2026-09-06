@@ -4101,7 +4101,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-trailing-edge-flap-lift-drag-v1.webp"
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4144,6 +4144,25 @@
         "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
         "same_tree_duplicate_detected": true,
         "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "intended_rows": 12,
+        "exact_match_count": 12,
+        "mapped_status_count": 12,
+        "unexpected_owner_count": 0,
+        "transactional_update": true,
+        "post_commit_readback_verified": true,
+        "preconditions": {
+          "existing_rows": 12,
+          "correct_subject_rows": 12,
+          "unowned_refining_rows": 12,
+          "already_owned_rows": 0,
+          "planned_key_collisions": 0
+        },
+        "verified": true,
+        "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
       }
     },
     {
@@ -4190,7 +4209,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-flap-stall-speed-v1.webp"
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4233,6 +4252,25 @@
         "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
         "same_tree_duplicate_detected": true,
         "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "intended_rows": 12,
+        "exact_match_count": 12,
+        "mapped_status_count": 12,
+        "unexpected_owner_count": 0,
+        "transactional_update": true,
+        "post_commit_readback_verified": true,
+        "preconditions": {
+          "existing_rows": 12,
+          "correct_subject_rows": 12,
+          "unowned_refining_rows": 12,
+          "already_owned_rows": 0,
+          "planned_key_collisions": 0
+        },
+        "verified": true,
+        "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
       }
     },
     {
@@ -4278,7 +4316,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-fowler-flap-wing-area-v1.webp"
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4320,6 +4358,25 @@
         "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
         "same_tree_duplicate_detected": true,
         "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "intended_rows": 12,
+        "exact_match_count": 12,
+        "mapped_status_count": 12,
+        "unexpected_owner_count": 0,
+        "transactional_update": true,
+        "post_commit_readback_verified": true,
+        "preconditions": {
+          "existing_rows": 12,
+          "correct_subject_rows": 12,
+          "unowned_refining_rows": 12,
+          "already_owned_rows": 0,
+          "planned_key_collisions": 0
+        },
+        "verified": true,
+        "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
       }
     },
     {
@@ -4367,7 +4424,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-static-dynamic-stability-response-v1.webp"
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4410,6 +4467,25 @@
         "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
         "same_tree_duplicate_detected": true,
         "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "intended_rows": 12,
+        "exact_match_count": 12,
+        "mapped_status_count": 12,
+        "unexpected_owner_count": 0,
+        "transactional_update": true,
+        "post_commit_readback_verified": true,
+        "preconditions": {
+          "existing_rows": 12,
+          "correct_subject_rows": 12,
+          "unowned_refining_rows": 12,
+          "already_owned_rows": 0,
+          "planned_key_collisions": 0
+        },
+        "verified": true,
+        "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
       }
     },
     {
@@ -4456,7 +4532,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-directional-fin-weathercock-v1.webp"
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "PREVIEW_READY",
+      "status": "MAPPED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4499,6 +4575,25 @@
         "intermediate_same_tree_deployment_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
         "same_tree_duplicate_detected": true,
         "verification_note": "The canonical READY preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. The real ExplanationImage QA route returned HTTP 200, was prerendered as static content, contained all five Batch 11 WebP references, and produced no preview runtime errors. An earlier ref update also produced a READY deployment of the exact preflight commit before the deployment list refreshed; both deployments contain the identical validated tree. No signed-in student attempt or browser screenshot is claimed."
+      },
+      "mapping_verification": {
+        "project_ref": "kkmlfbxfopwulwkloaoc",
+        "database_status": "MAPPED",
+        "intended_rows": 12,
+        "exact_match_count": 12,
+        "mapped_status_count": 12,
+        "unexpected_owner_count": 0,
+        "transactional_update": true,
+        "post_commit_readback_verified": true,
+        "preconditions": {
+          "existing_rows": 12,
+          "correct_subject_rows": 12,
+          "unowned_refining_rows": 12,
+          "already_owned_rows": 0,
+          "planned_key_collisions": 0
+        },
+        "verified": true,
+        "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 12 selected POF rows from untouched REFINING state to the five Batch 11 visual keys. Independent readback returned 12/12 exact expected key/url/title/caption/status rows and zero unexpected owners."
       }
     }
   ]

@@ -37,7 +37,7 @@
   "current_batch": 11,
   "completed_batches_since_last_user_report": 3,
   "last_user_report_batch": 7,
-  "last_verified_checkpoint": "POF_BATCH_11_PREVIEW_READY",
+  "last_verified_checkpoint": "POF_BATCH_11_MAPPED",
   "production_state": {
     "approved_live_visuals": 50,
     "rejected_non_batch_1_mappings": 0,
@@ -49,19 +49,19 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Map exactly the 12 new Batch 11 POF question rows in Supabase through a guarded transaction and verify 12/12 exact readback with zero unexpected owners before production.",
+  "next_action": "Build a clean Batch 11 production candidate with exact stage history, 5 PNG + 5 WebP, renderer Batch 11 allowlist and state/manifest only; require full validators and green frozen-lock production build before main.",
   "active_batch_source_selection": {
     "batch": 11,
     "source_file": "data/pof-batch-11-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 12,
-    "status": "PREVIEW_READY",
+    "status": "MAPPED",
     "database_preflight_verified": true,
     "verified": true
   },
   "active_batch_refinement": {
     "batch": 11,
-    "status": "PREVIEW_READY",
+    "status": "MAPPED",
     "visual_concepts": 5,
     "planned_png_assets": 5,
     "planned_webp_assets": 5,
@@ -72,7 +72,7 @@
   },
   "active_batch_qa": {
     "batch": 11,
-    "status": "PREVIEW_READY",
+    "status": "MAPPED",
     "visual_concepts": 5,
     "png_assets_reviewed": 5,
     "webp_assets_reviewed": 5,
@@ -87,7 +87,7 @@
   },
   "active_batch_preview": {
     "batch": 11,
-    "status": "PREVIEW_READY",
+    "status": "MAPPED",
     "deployment_id": "dpl_3pK41x9wvFGtSf6CcJAaYcj6bqRp",
     "deployment_commit": "6651f3c60bc5f43f69f8640d968a171fba254cc2",
     "preflight_commit": "9034a16fc5f27bf0beb4b58443ecd7f72ddc2da9",
@@ -103,12 +103,12 @@
     "verified": true
   },
   "active_batch_mapping": {
-    "batch": 10,
+    "batch": 11,
     "project_ref": "kkmlfbxfopwulwkloaoc",
-    "mapped_question_rows": 17,
+    "mapped_question_rows": 12,
     "visual_keys": 5,
-    "database_status": "LIVE_VERIFIED",
-    "exact_match_count": 17,
+    "database_status": "MAPPED",
+    "exact_match_count": 12,
     "unexpected_owner_count": 0,
     "transactional_update": true,
     "post_commit_readback_verified": true,

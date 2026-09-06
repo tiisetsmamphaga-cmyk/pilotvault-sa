@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 11,
-  "status": "PREVIEW_READY",
+  "status": "MAPPED",
   "selected_date": "2026-09-04",
   "batch_limit": 5,
   "source_document": "ac_61-23c_phak_canada.pdf",
@@ -63,7 +63,7 @@
         ]
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-flap-stall-speed-001",
@@ -106,7 +106,7 @@
         ]
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-fowler-flap-wing-area-001",
@@ -147,7 +147,7 @@
         ]
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-static-dynamic-stability-response-001",
@@ -191,7 +191,7 @@
         ]
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     },
     {
       "visual_id": "pof-directional-fin-weathercock-001",
@@ -234,7 +234,7 @@
         ]
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "PREVIEW_READY"
+      "status": "MAPPED"
     }
   ],
   "coverage": {
@@ -256,9 +256,9 @@
     "refined": true,
     "qa_approved": true,
     "preview_ready": true,
-    "mapped": false,
+    "mapped": true,
     "production_ready": false,
     "live_verified": false
   },
-  "next_action": "Run the fail-closed exact Supabase mapping transaction for the 12 new Batch 11 question rows, then independently read back all 12 mappings before production preparation."
+  "next_action": "Construct the clean Batch 11 production history/candidate from the locked Batch 10 main checkpoint, excluding all temporary QA routes, generators and workflows; validate history and build with inert Supabase CI placeholders before main promotion."
 }

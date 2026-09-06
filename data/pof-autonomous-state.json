@@ -34,12 +34,12 @@
     "checkpoint_only_after_verification": true,
     "principle": "Perfect current stage -> verify -> persist checkpoint -> only then advance"
   },
-  "current_batch": 12,
-  "completed_batches_since_last_user_report": 0,
+  "current_batch": 13,
+  "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 11,
-  "last_verified_checkpoint": "POF_BATCH_12_PRODUCTION_READY",
+  "last_verified_checkpoint": "POF_BATCH_12_LIVE_VERIFIED",
   "production_state": {
-    "approved_live_visuals": 55,
+    "approved_live_visuals": 60,
     "rejected_non_batch_1_mappings": 0,
     "legacy_bulk_visuals_allowed": false
   },
@@ -49,19 +49,19 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Fast-forward main to this exact green Batch 12 production candidate; wait for matching READY Vercel production, verify all five live WebPs, then advance the exact 10 DB rows to LIVE_VERIFIED.",
+  "next_action": "Begin Batch 13 source selection from the remaining audited visual-required rows using the same five-visual hard quality gate.",
   "active_batch_source_selection": {
     "batch": 12,
     "source_file": "data/pof-batch-12-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 10,
-    "status": "PRODUCTION_READY",
+    "status": "LIVE_VERIFIED",
     "database_preflight_verified": true,
     "verified": true
   },
   "active_batch_refinement": {
     "batch": 12,
-    "status": "PRODUCTION_READY",
+    "status": "LIVE_VERIFIED",
     "visual_concepts": 5,
     "planned_png_assets": 5,
     "planned_webp_assets": 5,
@@ -72,7 +72,7 @@
   },
   "active_batch_qa": {
     "batch": 12,
-    "status": "PRODUCTION_READY",
+    "status": "LIVE_VERIFIED",
     "visual_concepts": 5,
     "png_assets_reviewed": 5,
     "webp_assets_reviewed": 5,
@@ -87,7 +87,7 @@
   },
   "active_batch_preview": {
     "batch": 12,
-    "status": "PRODUCTION_READY",
+    "status": "LIVE_VERIFIED",
     "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
     "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
     "preflight_commit": "e4bc9bc87074637556a90b65f15bc4e9055fa425",
@@ -110,7 +110,7 @@
     "project_ref": "kkmlfbxfopwulwkloaoc",
     "mapped_question_rows": 10,
     "visual_keys": 5,
-    "database_status": "MAPPED",
+    "database_status": "LIVE_VERIFIED",
     "exact_match_count": 10,
     "unexpected_owner_count": 0,
     "transactional_update": true,
@@ -120,12 +120,12 @@
   "visual_requirement_audit": {
     "audit_file": "data/pof-visual-requirement-audit.json",
     "total_pof_questions": 365,
-    "live_verified_question_mappings": 202,
-    "remaining_rows_audited": 163,
-    "remaining_visual_required": 98,
+    "live_verified_question_mappings": 212,
+    "remaining_rows_audited": 153,
+    "remaining_visual_required": 88,
     "remaining_no_visual_required": 65,
     "total_visual_required_question_universe": 300,
-    "question_coverage_completion_percent": 67.3,
+    "question_coverage_completion_percent": 70.7,
     "verified": true
   },
   "production_readiness": {
@@ -146,13 +146,13 @@
     "verified": true
   },
   "live_verification": {
-    "batch": 11,
-    "deployment_id": "dpl_6MLdWmykRcmmpfR58Pxs7oUzmYib",
-    "production_commit": "591a8ab30d28d048dd3ec34c7f0a3c6906fa3435",
+    "batch": 12,
+    "deployment_id": "dpl_CRvsBBtTFVpAEMJjSmSbpvJ7W2HZ",
+    "production_commit": "83179b610a1414b6596d077e39fde62a45e002dd",
     "domain": "pilotvault.co.za",
     "production_assets_verified": 5,
-    "mapped_question_rows": 12,
-    "reused_live_question_rows": 16,
+    "mapped_question_rows": 10,
+    "reused_live_question_rows": 0,
     "exact_deployment_commit_match": true,
     "all_production_webps_reachable": true,
     "live_delivery_content_type": "image/webp",
@@ -161,9 +161,9 @@
     "unexpected_database_owners": 0,
     "real_renderer_build_verified_on_preview": true,
     "signed_in_student_attempt_inspected": false,
-    "github_validation_run": 34029215861,
-    "preview_preflight_run": 33900736232,
-    "verification_note": "The exact Batch 11 production content commit reached READY on pilotvault.co.za. All five Batch 11 WebP endpoints returned HTTP 200 image/webp. The exact 12 new Supabase mappings were transactionally advanced from MAPPED to LIVE_VERIFIED and independently read back 12/12 across five keys with zero unexpected owners. Sixteen safe-reuse Batch 11 rows were already LIVE_VERIFIED. Preview rendering used the real ExplanationImage component; no signed-in student-attempt screenshot is claimed.",
+    "github_validation_run": 34033877091,
+    "preview_preflight_run": 34032411532,
+    "verification_note": "The exact Batch 12 production candidate reached READY on pilotvault.co.za with no alias error. All five Batch 12 WebP endpoints were explicitly fetched from the production alias and returned HTTP 200 image/webp. The exact 10 Supabase mappings were transactionally advanced from MAPPED to LIVE_VERIFIED and independently read back 10/10 across five keys with zero unexpected owners. Preview rendering used the real ExplanationImage component; no signed-in student-attempt screenshot is claimed.",
     "verified": true
   },
   "stop_conditions": [

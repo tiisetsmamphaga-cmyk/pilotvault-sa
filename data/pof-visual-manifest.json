@@ -3157,7 +3157,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 30,
-        "figure": "Figure 1-37 — Forces acting on an airplane in a climb",
+        "figure": "Figure 1-37 \u2014 Forces acting on an airplane in a climb",
         "notes": "The handbook resolves weight into a component opposing lift and a rearward component along the flight path. In equilibrium, thrust balances drag plus the rearward weight component, while lift balances only the perpendicular component of weight."
       },
       "brief": {
@@ -3247,7 +3247,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 31,
-        "figure": "Figure 1-38 — Power available vs. power required",
+        "figure": "Figure 1-38 \u2014 Power available vs. power required",
         "notes": "The handbook states that the vertical distance between power-available and power-required curves is excess power and that the best climbing airspeed is where excess power is maximum."
       },
       "brief": {
@@ -3519,7 +3519,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 20,
-        "figure": "Figure 1-26 — Effect of trim tabs",
+        "figure": "Figure 1-26 \u2014 Effect of trim tabs",
         "notes": "The handbook describes the elevator trim tab as a separately controlled auxiliary surface on the elevator and states that an upward tab deflection forces the elevator downward while a downward tab deflection forces the elevator upward. The selected trim-tab angle is treated relative to the control surface, not as an automatically coupled balance tab."
       },
       "brief": {
@@ -4296,7 +4296,7 @@
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
-        "location": "Chapter 2, Figure 2-1 — Fowler flap",
+        "location": "Chapter 2, Figure 2-1 \u2014 Fowler flap",
         "notes": "The handbook distinguishes the Fowler flap by its rearward travel, which increases wing area as it extends.",
         "page": 2,
         "figure": "2-1"
@@ -4674,16 +4674,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-rudder-further-effects-v1.webp"
       },
       "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4734,6 +4734,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 10 selected Batch 12 POF rows from untouched REFINING state to the five intended visual keys. Independent readback returned 10/10 exact expected key/url/status mappings across five keys and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_CRvsBBtTFVpAEMJjSmSbpvJ7W2HZ",
+        "production_commit": "83179b610a1414b6596d077e39fde62a45e002dd",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -4779,16 +4786,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aileron-further-effects-v1.webp"
       },
       "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4839,6 +4846,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 10 selected Batch 12 POF rows from untouched REFINING state to the five intended visual keys. Independent readback returned 10/10 exact expected key/url/status mappings across five keys and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_CRvsBBtTFVpAEMJjSmSbpvJ7W2HZ",
+        "production_commit": "83179b610a1414b6596d077e39fde62a45e002dd",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -4884,16 +4898,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-control-column-forward-left-v1.webp"
       },
       "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -4943,6 +4957,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 10 selected Batch 12 POF rows from untouched REFINING state to the five intended visual keys. Independent readback returned 10/10 exact expected key/url/status mappings across five keys and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_CRvsBBtTFVpAEMJjSmSbpvJ7W2HZ",
+        "production_commit": "83179b610a1414b6596d077e39fde62a45e002dd",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -4990,16 +5011,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aspect-ratio-induced-drag-v1.webp"
       },
       "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -5050,6 +5071,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 10 selected Batch 12 POF rows from untouched REFINING state to the five intended visual keys. Independent readback returned 10/10 exact expected key/url/status mappings across five keys and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_CRvsBBtTFVpAEMJjSmSbpvJ7W2HZ",
+        "production_commit": "83179b610a1414b6596d077e39fde62a45e002dd",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     },
     {
@@ -5095,16 +5123,16 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-anhedral-wing-geometry-v1.webp"
       },
       "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
-      "status": "PRODUCTION_READY",
+      "status": "LIVE_VERIFIED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
         "preview": true,
-        "live": false
+        "live": true
       },
       "lock": {
-        "approved": false,
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {
@@ -5154,6 +5182,13 @@
         },
         "verified": true,
         "verification_note": "After PREVIEW_READY, a guarded all-or-nothing Supabase transaction mapped exactly the 10 selected Batch 12 POF rows from untouched REFINING state to the five intended visual keys. Independent readback returned 10/10 exact expected key/url/status mappings across five keys and zero unexpected owners."
+      },
+      "live_verification": {
+        "deployment_id": "dpl_CRvsBBtTFVpAEMJjSmSbpvJ7W2HZ",
+        "production_commit": "83179b610a1414b6596d077e39fde62a45e002dd",
+        "domain": "pilotvault.co.za",
+        "asset_reachable": true,
+        "database_rows_live_verified": true
       }
     }
   ]

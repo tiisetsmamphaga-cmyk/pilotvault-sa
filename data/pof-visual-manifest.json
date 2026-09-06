@@ -76,8 +76,10 @@
       "concept": "CG position relative to centre of lift/pressure determines longitudinal stability",
       "question_ids": [
         1106,
+        1112,
         1125,
-        1131
+        1131,
+        1310
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
@@ -124,7 +126,7 @@
         "approved": true,
         "replacement_reason": null
       },
-      "reuse_justification": "All mapped questions use the same locked stable longitudinal arrangement: the CG is forward of the centre of pressure/lift, equivalently the centre of pressure is aft of the CG."
+      "reuse_justification": "All mapped questions use the same locked longitudinal-stability relationship: CG position relative to centre of pressure/lift governs pitch stability, and moving the CG aft reduces stability and pitch-control margin."
     },
     {
       "visual_id": "pof-parasite-drag-001",
@@ -132,6 +134,8 @@
       "concept": "Parasite/profile drag increases with airspeed",
       "question_ids": [
         1153,
+        1163,
+        1176,
         1183,
         1356,
         1357,
@@ -184,7 +188,7 @@
         "approved": true,
         "replacement_reason": null
       },
-      "reuse_justification": "All mapped questions read the same locked drag-curve relationships: induced drag falls with speed, parasite drag rises, total drag reaches a minimum at Vmd, and Curve B is parasite/profile drag."
+      "reuse_justification": "All mapped questions read the same locked drag-curve relationships: induced drag is the falling low-speed curve, parasite/profile drag is the rising high-speed curve, total drag is their sum, and its minimum is Vmd."
     },
     {
       "visual_id": "pof-dihedral-001",
@@ -245,7 +249,8 @@
       "topic": "Flaps & Glide",
       "concept": "Higher lift-to-drag ratio produces a shallower glide angle",
       "question_ids": [
-        1239
+        1239,
+        1281
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
@@ -292,7 +297,8 @@
       "lock": {
         "approved": true,
         "replacement_reason": null
-      }
+      },
+      "reuse_justification": "All mapped questions test the same locked relationship: a higher lift-to-drag ratio produces more forward distance per unit height lost and therefore a shallower glide angle."
     },
     {
       "visual_id": "pof-angle-of-attack-definition-001",
@@ -519,9 +525,10 @@
       "question_ids": [
         1113,
         1316,
+        1974,
         1983
       ],
-      "reuse_justification": "These questions test the same force-direction geometry: lift is perpendicular to relative airflow/flight path and drag is parallel to it.",
+      "reuse_justification": "All mapped questions test the same locked force-direction definition: lift acts perpendicular to relative airflow while drag acts parallel to it.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 6,
@@ -1107,6 +1114,7 @@
       "topic": "Stalls",
       "concept": "A wing stalls when its critical angle of attack is reached or exceeded; the critical angle itself is not changed by speed, weight, bank or altitude for the same configuration",
       "question_ids": [
+        1199,
         1205,
         1208,
         1212,
@@ -1117,7 +1125,7 @@
         1329,
         1334
       ],
-      "reuse_justification": "All mapped questions test the same locked critical-AoA rule: the wing stalls at critical angle of attack; weight or bank changes the IAS at which it is reached, not the critical angle itself.",
+      "reuse_justification": "All mapped questions use the same locked critical-angle relationship: the wing stalls at the critical angle of attack; increased weight or load factor raises stall speed but does not change the critical angle for the same configuration.",
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 10,
@@ -2001,7 +2009,8 @@
       "topic": "Aerofoils & Lift",
       "concept": "On Figure PPL PoF-2, point 6 marks the critical angle of attack at maximum lift coefficient",
       "question_ids": [
-        -7
+        -7,
+        1979
       ],
       "source": {
         "document": "421864604-Principles-of-flight-questions-pdf.pdf",
@@ -2079,14 +2088,17 @@
         "db_mapping_verified": true,
         "db_status_live_verified": true,
         "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
-      }
+      },
+      "reuse_justification": "All mapped questions use the same locked wing-polar relationship: CL reaches its maximum at the critical/stalling angle of attack before increasing separation causes lift coefficient to fall."
     },
     {
       "visual_id": "pof-induced-drag-vortex-origin-001",
       "topic": "Drag",
       "concept": "Pressure difference between the lower and upper wing surfaces drives spanwise flow and wingtip vortex roll-up, producing induced drag as a by-product of lift",
       "question_ids": [
-        1178
+        1178,
+        1296,
+        1297
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
@@ -2164,7 +2176,8 @@
         "db_mapping_verified": true,
         "db_status_live_verified": true,
         "verification_note": "All five exact Batch 6 WebP assets were verified live on pilotvault.co.za from the READY Vercel production deployment. All eight exact Supabase question mappings across the five visuals were fail-closed promoted from MAPPED to LIVE_VERIFIED."
-      }
+      },
+      "reuse_justification": "All mapped questions test the same locked causal relationship: lift-producing pressure difference drives wingtip roll-up/downwash and creates the rearward force component called induced drag."
     },
     {
       "visual_id": "pof-vertical-fin-directional-stability-001",
@@ -4749,7 +4762,8 @@
       "concept": "Aileron input produces roll first; secondary yaw then develops and, if the resulting imbalance is left uncorrected, the aircraft can progress into a spiral dive.",
       "question_ids": [
         1120,
-        1149
+        1149,
+        1154
       ],
       "source": {
         "document": "POF mock exams written by Rihan.pdf",
@@ -4810,7 +4824,7 @@
         "png_qa_run": 34032159714,
         "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
-      "reuse_justification": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
+      "reuse_justification": "All mapped questions test the same locked sequence for aileron-only input: roll is primary, yaw follows as a further effect, and an uncorrected imbalance can progress toward a spiral dive.",
       "preview_verification": {
         "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
         "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",
@@ -4974,7 +4988,8 @@
         1171,
         1185,
         1186,
-        1314
+        1314,
+        1322
       ],
       "source": {
         "document": "POF mock exams written by Rihan.pdf",
@@ -5035,7 +5050,7 @@
         "png_qa_run": 34032159714,
         "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
-      "reuse_justification": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
+      "reuse_justification": "All mapped questions test the same locked geometry/drag relationship: higher aspect ratio means relatively longer span and shorter mean chord and produces less induced drag than a lower-aspect-ratio wing under comparable lift conditions.",
       "preview_verification": {
         "deployment_id": "dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8",
         "deployment_commit": "0c80feef59fdb8020893d36cc09655edf3097a12",

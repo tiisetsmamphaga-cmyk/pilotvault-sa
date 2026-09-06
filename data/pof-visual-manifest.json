@@ -4670,21 +4670,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-rudder-further-effects-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-rudder-further-effects-v1.webp"
       },
       "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "webp_qa_run": 34032083486,
+        "png_qa_run": 34032159714,
+        "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
       "reuse_justification": "Both target rows test the exact same ordered rudder-effect sequence."
     },
@@ -4727,21 +4739,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aileron-further-effects-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aileron-further-effects-v1.webp"
       },
       "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "webp_qa_run": 34032083486,
+        "png_qa_run": 34032159714,
+        "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
       "reuse_justification": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship."
     },
@@ -4784,21 +4808,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-control-column-forward-left-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-control-column-forward-left-v1.webp"
       },
       "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "webp_qa_run": 34032083486,
+        "png_qa_run": 34032159714,
+        "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       }
     },
     {
@@ -4842,21 +4878,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aspect-ratio-induced-drag-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aspect-ratio-induced-drag-v1.webp"
       },
       "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "webp_qa_run": 34032083486,
+        "png_qa_run": 34032159714,
+        "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       },
       "reuse_justification": "Four rows test the same aspect-ratio geometry and its induced-drag consequence."
     },
@@ -4899,21 +4947,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-anhedral-wing-geometry-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-anhedral-wing-geometry-v1.webp"
       },
       "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "webp_qa_run": 34032083486,
+        "png_qa_run": 34032159714,
+        "review_note": "Actual 1600x1050 WebP and PNG outputs were inspected against the locked Batch 1 quality bar. The first WebP inspection identified ambiguous roll depiction in the rudder and aileron sequence panels; those panels were redrawn using explicit front-view bank geometry before approval. Corrected WebPs and matching PNG masters were then independently inspected. Final labels, aircraft orientation, control relationships, aspect-ratio geometry and anhedral geometry are readable and technically consistent; no known defect remains."
       }
     }
   ]

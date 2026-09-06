@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 12,
-  "status": "REFINING",
+  "status": "QA_APPROVED",
   "base_main_commit": "dd0ed27ffff37b1a742d28e1a2080bac518fa924",
   "quality_reference": "Batch 1 quality or better",
   "fail_closed": true,
@@ -61,7 +61,8 @@
           "Baked PilotVault banner"
         ]
       },
-      "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence."
+      "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-aileron-further-effects-001",
@@ -101,7 +102,8 @@
           "Baked PilotVault banner"
         ]
       },
-      "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship."
+      "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-control-column-forward-left-001",
@@ -141,7 +143,8 @@
           "Baked PilotVault banner"
         ]
       },
-      "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry."
+      "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-aspect-ratio-induced-drag-001",
@@ -183,7 +186,8 @@
           "Baked PilotVault banner"
         ]
       },
-      "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence."
+      "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
+      "status": "QA_APPROVED"
     },
     {
       "visual_id": "pof-anhedral-wing-geometry-001",
@@ -223,17 +227,18 @@
           "Baked PilotVault banner"
         ]
       },
-      "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry."
+      "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
+      "status": "QA_APPROVED"
     }
   ],
   "gates": {
     "source_found": true,
-    "refined": false,
-    "qa_approved": false,
+    "refined": true,
+    "qa_approved": true,
     "preview_ready": false,
     "mapped": false,
     "production_ready": false,
     "live_verified": false
   },
-  "next_action": "Generate exactly five Batch 12 PNG + WebP raster pairs at 1600x1050, then inspect actual outputs before QA approval."
+  "next_action": "Create the single deliberate Batch 12 preview through the real ExplanationImage renderer; do not map the 10 new rows until PREVIEW_READY is verified."
 }

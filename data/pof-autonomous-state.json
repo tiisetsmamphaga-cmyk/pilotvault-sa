@@ -37,7 +37,7 @@
   "current_batch": 12,
   "completed_batches_since_last_user_report": 0,
   "last_user_report_batch": 11,
-  "last_verified_checkpoint": "POF_BATCH_12_SOURCE_FOUND",
+  "last_verified_checkpoint": "POF_BATCH_12_REFINING",
   "production_state": {
     "approved_live_visuals": 55,
     "rejected_non_batch_1_mappings": 0,
@@ -49,17 +49,27 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Refine the five locked Batch 12 source concepts into exact 1600x1050 raster pairs, preserving the five-visual hard quality gate.",
+  "next_action": "Render and visually inspect exactly five Batch 12 raster concepts; do not QA-approve any visual with a known defect.",
   "active_batch_source_selection": {
     "batch": 12,
     "source_file": "data/pof-batch-12-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 10,
-    "status": "SOURCE_FOUND",
+    "status": "REFINING",
     "database_preflight_verified": true,
     "verified": true
   },
-  "active_batch_refinement": null,
+  "active_batch_refinement": {
+    "batch": 12,
+    "status": "REFINING",
+    "visual_concepts": 5,
+    "planned_png_assets": 5,
+    "planned_webp_assets": 5,
+    "planned_svg_assets": 0,
+    "target_dimensions": "1600x1050",
+    "output_directory": "public/explanation-images/principles-of-flight/refined-batch-12",
+    "verified": true
+  },
   "active_batch_qa": null,
   "active_batch_preview": null,
   "active_batch_mapping": {

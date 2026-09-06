@@ -1,0 +1,48 @@
+name: POF Batch 12 PNG inspection
+
+on:
+  push:
+    branches:
+      - pof-batch-12-rebuild
+    paths:
+      - .github/workflows/pof-batch12-png-inspection.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch-12-rebuild
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow==12.3.0
+      - name: Verify and build PNG contact sheet
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageDraw
+          root=Path('public/explanation-images/principles-of-flight/refined-batch-12')
+          files=['pof-rudder-further-effects-v1.png','pof-aileron-further-effects-v1.png','pof-control-column-forward-left-v1.png','pof-aspect-ratio-induced-drag-v1.png','pof-anhedral-wing-geometry-v1.png']
+          tw,lh,gap=900,34,18; panels=[]
+          for name in files:
+            im=Image.open(root/name).convert('RGB'); assert im.size==(1600,1050),(name,im.size)
+            h=round(tw*im.height/im.width); im=im.resize((tw,h),Image.Resampling.LANCZOS)
+            c=Image.new('RGB',(tw,lh+h),'white'); d=ImageDraw.Draw(c); d.text((10,8),name,fill='black'); c.paste(im,(0,lh)); panels.append(c)
+          sheet=Image.new('RGB',(tw,sum(p.height for p in panels)+gap*4),'white'); y=0
+          for panel in panels: sheet.paste(panel,(0,y)); y+=panel.height+gap
+          out=Path('/tmp/pof-batch12-png-contact.jpg'); sheet.save(out,'JPEG',quality=92,optimize=True,progressive=True)
+          print('PNG masters verified: 5 x 1600x1050.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch12-png-contact-sheet
+          path: /tmp/pof-batch12-png-contact.jpg
+          if-no-files-found: error
+          retention-days: 1

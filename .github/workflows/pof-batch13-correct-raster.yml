@@ -1,0 +1,130 @@
+name: POF Batch 13 correct raster QA
+
+on:
+  push:
+    branches:
+      - pof-batch-13-rebuild
+
+permissions:
+  contents: write
+
+env:
+  REFINING_ASSET_SHA: edcf397324d1eb9c1e3481a482f98e7fc915e7ac
+  GENERATOR_COMMIT: 9175cd0d9cbfb66dca95b2e55bac456465c9f2e2
+
+jobs:
+  correct-raster:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: pof-batch-13-rebuild
+
+      - name: Assert exact refining asset state
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "$REFINING_ASSET_SHA"
+          mapfile -t changed < <(git diff --name-only "$REFINING_ASSET_SHA" HEAD)
+          test "${#changed[@]}" -eq 1
+          test "${changed[0]}" = '.github/workflows/pof-batch13-correct-raster.yml'
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          manifest=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={
+            'pof-longitudinal-dihedral-pitch-stability-001',
+            'pof-flap-centre-pressure-pitch-001',
+            'pof-slip-skid-ball-left-turn-001',
+            'pof-control-mass-balance-flutter-001',
+            'pof-control-aerodynamic-balance-horn-inset-001',
+          }
+          assert state['last_verified_checkpoint']=='POF_BATCH_13_REFINING'
+          found={v['visual_id']:v for v in manifest['visuals'] if v.get('visual_id') in ids}
+          assert set(found)==ids
+          assert all(v['status']=='REFINING' for v in found.values())
+          assert all(not v['qa']['visual'] for v in found.values())
+          PY
+
+      - name: Install Pillow
+        shell: bash
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Rerender with text-fit corrections
+        shell: bash
+        run: |
+          set -euo pipefail
+          git show "$GENERATOR_COMMIT:.github/workflows/pof-batch13-refine.yml" > /tmp/original-refine.yml
+          python - <<'PY'
+          from pathlib import Path
+          lines=Path('/tmp/original-refine.yml').read_text().splitlines()
+          marker=next(i for i,l in enumerate(lines) if l.strip()=='- name: Render five Batch 13 visual pairs')
+          start=next(i for i in range(marker,len(lines)) if "python - <<'PY'" in lines[i])+1
+          end=next(i for i in range(start,len(lines)) if lines[i].strip()=='PY')
+          code=[]
+          for line in lines[start:end]: code.append(line[10:] if line.startswith('          ') else line)
+          src='\n'.join(code)+'\n'
+          old="panel(d,(155,720,950,880),fill='#0a1b2b',outline=GOLD,width=2); txt(d,(190,750),'KEY RELATIONSHIP',24,GOLD,True); wrap(d,(190,790,910,865),'Tailplane set at a LOWER angle of incidence than the mainplane. This is the syllabus relationship called longitudinal dihedral.',28,WHITE,True)"
+          new="panel(d,(155,700,950,890),fill='#0a1b2b',outline=GOLD,width=2); txt(d,(190,725),'KEY RELATIONSHIP',24,GOLD,True); wrap(d,(190,765,910,875),'Tailplane set at a LOWER angle of incidence than the mainplane. This is the syllabus relationship called longitudinal dihedral.',24,WHITE,True,spacing=5)"
+          assert old in src
+          src=src.replace(old,new)
+          old2="d.line((690,525,535,505),fill=WHITE,width=12); d.ellipse((485,455,565,535),fill=GOLD,outline=WHITE,width=4); txt(d,(525,430),'COUNTERWEIGHT',21,GOLD,True,anchor='mm'); arrow(d,(525,445),(525,375),GOLD,6,18); txt(d,(510,780),'AHEAD OF HINGE',28,GREEN,True,anchor='mm'); wrap(d,(125,820,875,900),'Mass balancing brings the control surface’s mass distribution toward the hinge and reduces inertial rotation in a flutter mode.',24,MUTED)"
+          new2="d.line((690,525,535,505),fill=WHITE,width=12); d.ellipse((485,455,565,535),fill=GOLD,outline=WHITE,width=4); txt(d,(325,455),'COUNTERWEIGHT',20,GOLD,True); arrow(d,(465,475),(500,490),GOLD,5,14); txt(d,(510,780),'AHEAD OF HINGE',28,GREEN,True,anchor='mm'); wrap(d,(125,820,875,900),'Mass balancing brings the control surface’s mass distribution toward the hinge and reduces inertial rotation in a flutter mode.',24,MUTED)"
+          assert old2 in src
+          src=src.replace(old2,new2)
+          old3="txt(d,(1280,880),'nose-down pitching tendency',24,RED,True,anchor='mm')"
+          new3="txt(d,(1280,850),'nose-down pitching tendency',23,RED,True,anchor='mm')"
+          assert old3 in src
+          src=src.replace(old3,new3)
+          exec(compile(src,'batch13-corrected-render','exec'),{'__name__':'__main__'})
+          PY
+
+      - name: Validate corrected files and commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          out=Path('public/explanation-images/principles-of-flight/refined-batch-13')
+          assert len(list(out.glob('*.png')))==5 and len(list(out.glob('*.webp')))==5 and len(list(out.glob('*.svg')))==0
+          for p in list(out.glob('*.png'))+list(out.glob('*.webp')):
+              with Image.open(p) as im: assert im.size==(1600,1050),(p,im.size)
+          assert Path('/tmp/pof-batch13-webp-contact.png').exists()
+          assert Path('/tmp/pof-batch13-png-contact.png').exists()
+          PY
+          python scripts/validate_pof_visuals.py
+          python scripts/validate_pof_visual_changes.py "$REFINING_ASSET_SHA"
+          rm .github/workflows/pof-batch13-correct-raster.yml
+          mapfile -t changed < <(git diff --name-only "$REFINING_ASSET_SHA" | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -ge 4
+          test "$(printf '%s\n' "${changed[@]}" | grep -cv '^public/explanation-images/principles-of-flight/refined-batch-13/')" -eq 0
+          printf '%s\n' "${changed[@]}" | grep -qx 'public/explanation-images/principles-of-flight/refined-batch-13/pof-longitudinal-dihedral-pitch-stability-v1.png'
+          printf '%s\n' "${changed[@]}" | grep -qx 'public/explanation-images/principles-of-flight/refined-batch-13/pof-longitudinal-dihedral-pitch-stability-v1.webp'
+          printf '%s\n' "${changed[@]}" | grep -qx 'public/explanation-images/principles-of-flight/refined-batch-13/pof-control-mass-balance-flutter-v1.png'
+          printf '%s\n' "${changed[@]}" | grep -qx 'public/explanation-images/principles-of-flight/refined-batch-13/pof-control-mass-balance-flutter-v1.webp'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/explanation-images/principles-of-flight/refined-batch-13
+          git add -u .github/workflows/pof-batch13-correct-raster.yml
+          git commit -m 'Correct POF Batch 13 raster QA defects'
+          git push origin HEAD:pof-batch-13-rebuild
+
+      - name: Upload corrected WebP contact sheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch13-corrected-webp-contact-sheet
+          path: /tmp/pof-batch13-webp-contact.png
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Upload corrected PNG contact sheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch13-corrected-png-contact-sheet
+          path: /tmp/pof-batch13-png-contact.png
+          if-no-files-found: error
+          retention-days: 1

@@ -25,7 +25,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD^)" = "$REFINING_SHA"
+          git merge-base --is-ancestor "$REFINING_SHA" HEAD
           mapfile -t changed < <(git diff --name-only "$REFINING_SHA" HEAD)
           test "${#changed[@]}" -eq 1
           test "${changed[0]}" = ".github/workflows/pof-batch13-repair-history.yml"
@@ -93,6 +93,7 @@ jobs:
           python scripts/validate_pof_visuals.py
           rm .github/workflows/pof-batch13-repair-history.yml
           python scripts/validate_pof_visual_changes.py "$REFINING_SHA"
+          git add -N public/explanation-images/principles-of-flight/refined-batch-13/*.png public/explanation-images/principles-of-flight/refined-batch-13/*.webp
           mapfile -t changed < <(git diff --name-only "$REFINING_SHA" | sort)
           printf '%s\n' "${changed[@]}"
           test "${#changed[@]}" -eq 11

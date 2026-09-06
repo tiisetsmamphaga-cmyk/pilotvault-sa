@@ -4101,7 +4101,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-trailing-edge-flap-lift-drag-v1.webp"
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4209,7 +4209,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-flap-stall-speed-v1.webp"
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4316,7 +4316,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-fowler-flap-wing-area-v1.webp"
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4424,7 +4424,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-static-dynamic-stability-response-v1.webp"
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -4532,7 +4532,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-directional-fin-weathercock-v1.webp"
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "MAPPED",
+      "status": "PRODUCTION_READY",
       "qa": {
         "technical": true,
         "teaching": true,

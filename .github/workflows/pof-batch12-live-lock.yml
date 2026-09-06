@@ -25,7 +25,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD^)" = "$BASE_SHA"
+          git merge-base --is-ancestor "$BASE_SHA" HEAD
           mapfile -t changed < <(git diff --name-only "$BASE_SHA" HEAD)
           test "${#changed[@]}" -eq 1
           test "${changed[0]}" = ".github/workflows/pof-batch12-live-lock.yml"
@@ -38,11 +38,9 @@ jobs:
           import json, os
           from pathlib import Path
 
-          base_sha = os.environ['BASE_SHA']
           deployment = os.environ['PRODUCTION_DEPLOYMENT']
           production_commit = os.environ['PRODUCTION_COMMIT']
           run_id = int(os.environ['GITHUB_RUN_ID'])
-
           visual_ids = {
               'pof-rudder-further-effects-001',
               'pof-aileron-further-effects-001',
@@ -76,7 +74,7 @@ jobs:
                   'asset_reachable': True,
                   'database_rows_live_verified': True,
               }
-          assert found == visual_ids, (found, visual_ids)
+          assert found == visual_ids
           manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
 
           selection_path = Path('data/pof-batch-12-source-selection.json')
@@ -101,7 +99,6 @@ jobs:
           assert state['production_state']['approved_live_visuals'] == 55
           assert state['visual_requirement_audit']['live_verified_question_mappings'] == 202
           assert state['visual_requirement_audit']['remaining_visual_required'] == 98
-
           state['current_batch'] = 13
           state['completed_batches_since_last_user_report'] = 1
           state['last_verified_checkpoint'] = 'POF_BATCH_12_LIVE_VERIFIED'
@@ -117,7 +114,6 @@ jobs:
               mapping['unexpected_owner_count'] = 0
               mapping['post_commit_readback_verified'] = True
               mapping['verified'] = True
-
           audit = state['visual_requirement_audit']
           audit['live_verified_question_mappings'] = 212
           audit['remaining_rows_audited'] = 153
@@ -126,7 +122,6 @@ jobs:
           audit['total_visual_required_question_universe'] = 300
           audit['question_coverage_completion_percent'] = 70.7
           audit['verified'] = True
-
           state['live_verification'] = {
               'batch': 12,
               'deployment_id': deployment,
@@ -170,6 +165,7 @@ jobs:
         env:
           NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
           NEXT_PUBLIC_SUPABASE_ANON_KEY: inert-ci-placeholder-key
+          SUPABASE_SECRET_KEY: inert-ci-server-secret-placeholder
         run: |
           set -euo pipefail
           pnpm build

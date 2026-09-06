@@ -68,7 +68,7 @@ jobs:
           )
           for vid,stem in stems.items():
             c=by_id[vid]; c['status']='QA_APPROVED'
-            m['visuals'].append({
+            entry={
               'visual_id':c['visual_id'],'topic':c['topic'],'concept':c['concept'],'question_ids':c['question_ids'],
               'source':c['source'],'brief':c['brief'],
               'assets':{
@@ -84,7 +84,10 @@ jobs:
                 'actual_png_contact_sheet_reviewed':True,'actual_webp_contact_sheet_reviewed':True,
                 'webp_qa_run':34032083486,'png_qa_run':34032159714,'review_note':review
               }
-            })
+            }
+            if len(c['question_ids']) > 1:
+              entry['reuse_justification']=c['mapping_reason']
+            m['visuals'].append(entry)
 
           q['status']='QA_APPROVED'; q['gates']['refined']=True; q['gates']['qa_approved']=True
           q['next_action']='Create the single deliberate Batch 12 preview through the real ExplanationImage renderer; do not map the 10 new rows until PREVIEW_READY is verified.'
@@ -116,6 +119,7 @@ jobs:
           assert len(rows)==5 and sum(len(v['question_ids']) for v in rows)==10
           assert all(v['status']=='QA_APPROVED' for v in rows)
           assert all(v['qa']=={'technical':True,'teaching':True,'visual':True,'preview':False,'live':False} for v in rows)
+          assert all((len(v['question_ids'])==1) or bool(v.get('reuse_justification')) for v in rows)
           print('Batch 12 QA-approved validation passed.')
           PY
 

@@ -37,7 +37,7 @@
   "current_batch": 13,
   "completed_batches_since_last_user_report": 1,
   "last_user_report_batch": 11,
-  "last_verified_checkpoint": "POF_BATCH_13_SOURCE_FOUND",
+  "last_verified_checkpoint": "POF_BATCH_13_REFINING",
   "production_state": {
     "approved_live_visuals": 60,
     "rejected_non_batch_1_mappings": 0,
@@ -49,17 +49,27 @@
     "one_deliberate_preview_per_qa_approved_state": true,
     "main_production_deploy": true
   },
-  "next_action": "Persist a distinct Batch 13 REFINING checkpoint before rendering exactly five new 1600x1050 PNG/WebP pairs.",
+  "next_action": "Render exactly five Batch 13 1600x1050 PNG/WebP pairs, inspect the actual WebP and PNG rasters, and fail closed on any defect.",
   "active_batch_source_selection": {
     "batch": 13,
     "source_file": "data/pof-batch-13-source-selection.json",
     "new_visual_concepts": 5,
     "planned_question_rows": 19,
-    "status": "SOURCE_FOUND",
+    "status": "REFINING",
     "database_preflight_verified": true,
     "verified": true
   },
-  "active_batch_refinement": null,
+  "active_batch_refinement": {
+    "batch": 13,
+    "status": "REFINING",
+    "visual_concepts": 5,
+    "planned_png_assets": 5,
+    "planned_webp_assets": 5,
+    "planned_svg_assets": 0,
+    "target_dimensions": "1600x1050",
+    "output_directory": "public/explanation-images/principles-of-flight/refined-batch-13",
+    "verified": true
+  },
   "active_batch_qa": null,
   "active_batch_preview": null,
   "active_batch_mapping": null,

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "subject": "principles-of-flight",
   "batch": 13,
-  "status": "SOURCE_FOUND",
+  "status": "REFINING",
   "base_main_commit": "10e184f149cd0e6aa3c2034cd5c40fafb88cc744",
   "reuse_sweep": {
     "mapped_question_rows": 12,
@@ -38,7 +38,7 @@
         1325,
         1337
       ],
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "teaching_target": "Show the legacy syllabus term longitudinal dihedral as the tailplane set at a lower incidence than the mainplane, and connect that geometry to longitudinal/pitch stability about the lateral axis.",
       "source": {
         "syllabus_document": "Princaple Of Flight - Mohamed Elgharib 1 (1).pdf",
@@ -55,7 +55,7 @@
         1223,
         1346
       ],
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "teaching_target": "For the conventional/plain trailing-edge flap case used by the questions, show flap extension moving the centre of pressure aft and creating a nose-down pitching moment.",
       "source": {
         "document": "FAA Pilot\u2019s Handbook of Aeronautical Knowledge, Chapter 6",
@@ -71,7 +71,7 @@
         1235,
         1250
       ],
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "teaching_target": "In a left turn, show ball left/inside = slip, centred = coordinated, and ball right/outside = skid.",
       "source": {
         "document": "FAA Pilot\u2019s Handbook of Aeronautical Knowledge, Chapter 8",
@@ -89,7 +89,7 @@
         1304,
         1986
       ],
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "teaching_target": "Define aeroelastic flutter as destructive self-excited oscillation and show a control-surface mass balance/counterweight ahead of the hinge reducing flutter susceptibility.",
       "source": {
         "document": "FAA AC 23.629-1B and FAA Airframe Handbook",
@@ -105,7 +105,7 @@
         1317,
         2019
       ],
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "teaching_target": "Contrast horn balance and inset-hinge aerodynamic balance, showing how area ahead of the hinge lets aerodynamic force assist surface movement and reduce pilot control force.",
       "source": {
         "document": "FAA Airframe Handbook and UK CAA Standards Document 10",
@@ -134,5 +134,5 @@
     "remaining_no_visual_required": 65,
     "remaining_rows_audited": 141
   },
-  "next_action": "Persist a distinct Batch 13 REFINING checkpoint before rendering exactly five new 1600x1050 PNG/WebP pairs."
+  "next_action": "Render exactly five Batch 13 1600x1050 PNG/WebP pairs, inspect the actual WebP and PNG rasters, and fail closed on any defect."
 }

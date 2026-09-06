@@ -5254,7 +5254,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-longitudinal-dihedral-pitch-stability-v1.webp"
       },
       "mapping_reason": "All six questions test the same legacy longitudinal-dihedral definition and its pitch/lateral-axis stability relationship.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -5310,7 +5310,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-flap-centre-pressure-pitch-v1.webp"
       },
       "mapping_reason": "Both questions ask the initial centre-of-pressure movement when trailing-edge flaps are lowered.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -5369,7 +5369,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-slip-skid-ball-left-turn-v1.webp"
       },
       "mapping_reason": "The three questions collectively test the exact left-turn inclinometer states shown in the three-panel visual.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -5429,7 +5429,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-control-mass-balance-flutter-v1.webp"
       },
       "mapping_reason": "Four questions ask why/which mass balance is used for flutter and one asks the flutter definition; the visual teaches the same linked mechanism without claiming complete flutter protection.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,
@@ -5488,7 +5488,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-control-aerodynamic-balance-horn-inset-v1.webp"
       },
       "mapping_reason": "The three questions test horn balance or inset-hinge aerodynamic balancing; the visual contrasts those exact methods.",
-      "status": "SOURCE_FOUND",
+      "status": "REFINING",
       "qa": {
         "technical": false,
         "teaching": false,

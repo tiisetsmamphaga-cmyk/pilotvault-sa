@@ -4097,21 +4097,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-trailing-edge-flap-lift-drag-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-trailing-edge-flap-lift-drag-v1.webp"
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "png_qa_run": 33899691484,
+        "webp_qa_run": 33899897134,
+        "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
       "reuse_justification": "All four questions test the same flap effect: more lift at a given angle of attack and airspeed, with increased drag."
     },
@@ -4155,21 +4167,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-flap-stall-speed-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-flap-stall-speed-v1.webp"
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "png_qa_run": 33899691484,
+        "webp_qa_run": 33899897134,
+        "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
       "reuse_justification": "Both questions test the same operational result of flap extension: stall speed decreases."
     },
@@ -4212,21 +4236,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-fowler-flap-wing-area-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-fowler-flap-wing-area-v1.webp"
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "png_qa_run": 33899691484,
+        "webp_qa_run": 33899897134,
+        "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       }
     },
     {
@@ -4270,21 +4306,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-static-dynamic-stability-response-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-static-dynamic-stability-response-v1.webp"
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "png_qa_run": 33899691484,
+        "webp_qa_run": 33899897134,
+        "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
       "reuse_justification": "The three questions are one response-system concept: initial restoring tendency versus damping or growth of oscillations over time."
     },
@@ -4328,21 +4376,33 @@
         ]
       },
       "assets": {
-        "master_asset": null,
-        "web_asset": null
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-directional-fin-weathercock-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-directional-fin-weathercock-v1.webp"
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "REFINING",
+      "status": "QA_APPROVED",
       "qa": {
-        "technical": false,
-        "teaching": false,
-        "visual": false,
+        "technical": true,
+        "teaching": true,
+        "visual": true,
         "preview": false,
         "live": false
       },
       "lock": {
         "approved": false,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true,
+        "teaching_relationship_obvious": true,
+        "technically_credible": true,
+        "generic_placeholder_appearance": false,
+        "actual_png_contact_sheet_reviewed": true,
+        "actual_webp_contact_sheet_reviewed": true,
+        "png_qa_run": 33899691484,
+        "webp_qa_run": 33899897134,
+        "review_note": "Actual 1600x1050 PNG and WebP outputs were visually inspected against the locked Batch 1 quality bar. Raster QA caught and corrected three defects before approval: drag vectors were aligned with relative wind in the flap visual; the directional-fin sideforce was redrawn perpendicular to the yawed aircraft longitudinal axis; and the directional-stability inset text was resized to remove clipping. Final geometry, labels, teaching relationships and web-delivery rasters are clean."
       },
       "reuse_justification": "Both questions test the same directional-stability mechanism: aft vertical side area produces a restoring yaw moment, and more aft keel/fin area strengthens it."
     }

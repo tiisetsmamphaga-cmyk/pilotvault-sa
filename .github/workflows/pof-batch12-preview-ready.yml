@@ -1,0 +1,101 @@
+name: POF Batch 12 preview-ready checkpoint
+
+on:
+  push:
+    branches:
+      - pof-batch-12-rebuild
+    paths:
+      - .github/workflows/pof-batch12-preview-ready.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pof-batch-12-rebuild
+          fetch-depth: 0
+
+      - name: Persist exact PREVIEW_READY state
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          def load(p): return json.loads(Path(p).read_text())
+          def save(p,d): Path(p).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+          sp='data/pof-autonomous-state.json'; qp='data/pof-batch-12-source-selection.json'; mp='data/pof-visual-manifest.json'
+          s=load(sp); q=load(qp); m=load(mp)
+          ids={c['visual_id'] for c in q['concepts']}
+          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          assert s['current_batch']==12
+          assert s['last_verified_checkpoint']=='POF_BATCH_12_QA_APPROVED'
+          assert s['active_batch_qa']['status']=='QA_APPROVED' and s['active_batch_qa']['known_defects_remaining']==0
+          assert q['status']=='QA_APPROVED' and q['gates']['qa_approved'] is True and q['gates']['preview_ready'] is False
+          assert len(rows)==5 and sum(len(v['question_ids']) for v in rows)==10
+          assert all(v['status']=='QA_APPROVED' for v in rows)
+          assert all(v['qa']=={'technical':True,'teaching':True,'visual':True,'preview':False,'live':False} for v in rows)
+
+          preview={
+            'deployment_id':'dpl_2uPgzh6qdwET7V7Z1LRHcxSbSYM8',
+            'deployment_commit':'0c80feef59fdb8020893d36cc09655edf3097a12',
+            'preflight_commit':'e4bc9bc87074637556a90b65f15bc4e9055fa425',
+            'preflight_run':34032411532,
+            'identical_tree_to_preflight':True,
+            'route':'/pof-visual-qa',
+            'deployment_ready':True,
+            'alias_error':None,
+            'route_http_status':200,
+            'route_statically_generated':True,
+            'real_explanation_component_used':True,
+            'five_batch12_webp_references_present':True,
+            'runtime_errors_detected':0,
+            'signed_in_student_attempt_inspected':False,
+            'verification_note':'The single deliberate Batch 12 preview deployed an empty trigger commit whose tree is byte-identical to the fully green preflight commit. Vercel reached READY with no alias error. The real ExplanationImage QA route returned HTTP 200, was statically prerendered, contained all five Batch 12 WebP references and produced no error/fatal runtime logs. No signed-in student-attempt screenshot is claimed.'
+          }
+          for v in rows:
+            v['status']='PREVIEW_READY'; v['qa']['preview']=True; v['preview_verification']=preview.copy()
+          for c in q['concepts']: c['status']='PREVIEW_READY'
+          q['status']='PREVIEW_READY'; q['gates']['preview_ready']=True
+          q['next_action']='Run the fail-closed exact Supabase mapping transaction for the 10 new Batch 12 rows and independently verify all 10 mappings before production.'
+          s['last_verified_checkpoint']='POF_BATCH_12_PREVIEW_READY'
+          s['active_batch_source_selection']['status']='PREVIEW_READY'
+          s['active_batch_refinement']['status']='PREVIEW_READY'
+          s['active_batch_qa']['status']='PREVIEW_READY'
+          s['active_batch_preview']={'batch':12,'status':'PREVIEW_READY',**preview,'verified':True}
+          s['next_action']='Map exactly the 10 new Batch 12 POF rows in Supabase through a guarded transaction and verify 10/10 exact readback with zero unexpected owners before production.'
+          save(mp,m); save(qp,q); save(sp,s)
+          print('POF_BATCH_12_PREVIEW_READY persisted: 5 visuals / 10 planned mappings.')
+          PY
+
+      - name: Validate canonical PREVIEW_READY state
+        run: |
+          python scripts/validate_pof_visuals.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('data/pof-autonomous-state.json').read_text())
+          q=json.loads(Path('data/pof-batch-12-source-selection.json').read_text())
+          m=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in q['concepts']}; rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          assert s['last_verified_checkpoint']=='POF_BATCH_12_PREVIEW_READY'
+          assert s['active_batch_preview']['verified'] is True
+          assert q['status']=='PREVIEW_READY' and q['gates']['preview_ready'] is True
+          assert len(rows)==5 and sum(len(v['question_ids']) for v in rows)==10
+          assert all(v['status']=='PREVIEW_READY' and v['qa']['preview'] and not v['qa']['live'] for v in rows)
+          print('Batch 12 PREVIEW_READY validation passed.')
+          PY
+
+      - name: Commit preview-ready checkpoint
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-autonomous-state.json data/pof-batch-12-source-selection.json data/pof-visual-manifest.json
+          git diff --cached --check
+          git commit -m "Mark POF Batch 12 preview ready"
+          git push origin HEAD:pof-batch-12-rebuild

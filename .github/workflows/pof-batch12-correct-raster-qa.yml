@@ -1,0 +1,108 @@
+name: POF Batch 12 corrected raster QA
+
+on:
+  push:
+    branches:
+      - pof-batch-12-rebuild
+    paths:
+      - .github/workflows/pof-batch12-correct-raster-qa.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Batch 12 work branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-12-rebuild
+          fetch-depth: 0
+
+      - name: Patch only ambiguous roll panels
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/generate_pof_batch12.py')
+          s=p.read_text()
+
+          marker='''def curved_arrow(d, center, radius, start_deg, end_deg, fill=GOLD, width=7, head=20):\n    cx,cy=center\n    steps=36\n    seq=[]\n    for i in range(steps+1):\n        a=math.radians(start_deg+(end_deg-start_deg)*i/steps)\n        seq.append((cx+radius*math.cos(a),cy+radius*math.sin(a)))\n    polyline(d,seq,fill=fill,width=width)\n    arrow(d,seq[-2],seq[-1],fill=fill,width=width,head=head)\n'''
+          addition=marker+'''\ndef front_aircraft(d,cx,cy,bank_deg=0,highlight_ailerons=False):\n    # Front-view geometry makes roll/bank unmistakable. Positive bank_deg raises viewer-left wing.\n    ang=math.radians(bank_deg)\n    def rot(x,y):\n        return (cx+x*math.cos(ang)-y*math.sin(ang), cy+x*math.sin(ang)+y*math.cos(ang))\n    # horizon / roll reference\n    line(d,(cx-155,cy+115),(cx+155,cy+115),fill=LIGHT,width=3)\n    # fuselage/nose\n    c=rot(0,0)\n    d.ellipse((sc(c[0]-34),sc(c[1]-45),sc(c[0]+34),sc(c[1]+45)),fill=WHITE,outline=NAVY,width=sc(4))\n    # wings\n    l0=rot(-28,0); lt=rot(-145,18); r0=rot(28,0); rt=rot(145,18)\n    line(d,l0,lt,fill=NAVY,width=10); line(d,r0,rt,fill=NAVY,width=10)\n    # aileron cues at outer trailing portions\n    if highlight_ailerons:\n        la1=rot(-95,20); la2=rot(-142,35); ra1=rot(95,20); ra2=rot(142,5)\n        line(d,la1,la2,fill=GOLD,width=8); line(d,ra1,ra2,fill=RED,width=8)\n    # vertical tail hint\n    t1=rot(0,-35); t2=rot(0,-105); line(d,t1,t2,fill=NAVY,width=5)\n'''
+          assert marker in s, 'Helper insertion marker changed; fail closed.'
+          s=s.replace(marker,addition,1)
+
+          old_rudder='''center_text(d,(800,385),"SIDEFORCE IMBALANCE",font(17,True),NAVY)\ntop_aircraft(d,800,535,0.9,angle_deg=15,bank=True,accent=NAVY)\narrow(d,(655,535),(720,500),fill=GOLD,width=5,head=16)\narrow(d,(945,535),(880,570),fill=GOLD,width=5,head=16)\ncenter_text(d,(800,755),"Yawed flight develops a rolling tendency",font(17),MUTED)'''
+          new_rudder='''center_text(d,(800,385),"ROLL DEVELOPS",font(17,True),NAVY)\nfront_aircraft(d,800,545,bank_deg=-22,highlight_ailerons=False)\ncurved_arrow(d,(800,545),145,200,330,fill=GOLD,width=6,head=18)\ncenter_text(d,(800,705),"FRONT VIEW",font(15,True),MUTED)\ncenter_text(d,(800,755),"The yaw-induced imbalance develops bank",font(17),MUTED)'''
+          assert old_rudder in s, 'Rudder roll panel changed; fail closed.'
+          s=s.replace(old_rudder,new_rudder,1)
+
+          old_aileron='''center_text(d,(295,385),"AILERON INPUT",font(17,True),GOLD)\ntop_aircraft(d,295,535,0.9,bank=True,accent=NAVY,aileron=True)\ncurved_arrow(d,(295,535),145,205,330,fill=GOLD,width=6,head=18)\ncenter_text(d,(295,755),"Aircraft rolls about the longitudinal axis",font(17),MUTED)'''
+          new_aileron='''center_text(d,(295,385),"AILERON INPUT",font(17,True),GOLD)\nfront_aircraft(d,295,545,bank_deg=-24,highlight_ailerons=True)\ncurved_arrow(d,(295,545),145,200,330,fill=GOLD,width=6,head=18)\ncenter_text(d,(295,705),"FRONT VIEW",font(15,True),MUTED)\ncenter_text(d,(295,755),"Aileron input produces roll first",font(17),MUTED)'''
+          assert old_aileron in s, 'Aileron roll panel changed; fail closed.'
+          s=s.replace(old_aileron,new_aileron,1)
+          p.write_text(s)
+          print('Patched only the two ambiguous roll panels.')
+          PY
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Pillow and regenerate all five pairs
+        run: |
+          pip install pillow==12.3.0
+          rm -rf public/explanation-images/principles-of-flight/refined-batch-12
+          python scripts/generate_pof_batch12.py
+
+      - name: Verify boundary
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          out=Path('public/explanation-images/principles-of-flight/refined-batch-12')
+          png=sorted(out.glob('*.png')); webp=sorted(out.glob('*.webp')); svg=sorted(out.glob('*.svg'))
+          assert len(png)==5 and len(webp)==5 and len(svg)==0
+          for p in png+webp:
+            with Image.open(p) as im: assert im.size==(1600,1050),(p,im.size)
+          print('Corrected boundary green.')
+          PY
+
+      - name: Build corrected WebP contact sheet
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageDraw
+          root=Path('public/explanation-images/principles-of-flight/refined-batch-12')
+          files=['pof-rudder-further-effects-v1.webp','pof-aileron-further-effects-v1.webp','pof-control-column-forward-left-v1.webp','pof-aspect-ratio-induced-drag-v1.webp','pof-anhedral-wing-geometry-v1.webp']
+          tw,lh,gap=900,34,18; panels=[]
+          for name in files:
+            im=Image.open(root/name).convert('RGB'); h=round(tw*im.height/im.width); im=im.resize((tw,h),Image.Resampling.LANCZOS)
+            c=Image.new('RGB',(tw,lh+h),'white'); d=ImageDraw.Draw(c); d.text((10,8),name,fill='black'); c.paste(im,(0,lh)); panels.append(c)
+          sheet=Image.new('RGB',(tw,sum(p.height for p in panels)+gap*4),'white'); y=0
+          for panel in panels: sheet.paste(panel,(0,y)); y+=panel.height+gap
+          out=Path('/tmp/pof-batch12-corrected-webp-contact.jpg'); sheet.save(out,'JPEG',quality=92,optimize=True,progressive=True)
+          PY
+
+      - name: Upload corrected WebP contact sheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch12-corrected-webp-contact-sheet
+          path: /tmp/pof-batch12-corrected-webp-contact.jpg
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Commit corrected generator and rasters
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/generate_pof_batch12.py public/explanation-images/principles-of-flight/refined-batch-12
+          git diff --cached --check
+          git diff --cached --quiet && { echo 'No correction diff'; exit 1; }
+          git commit -m "Correct POF Batch 12 roll geometry"
+          git push origin HEAD:pof-batch-12-rebuild

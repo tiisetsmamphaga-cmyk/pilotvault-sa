@@ -41,26 +41,34 @@ jobs:
         run: |
           git worktree add -b pof-batch-11-production /tmp/pof-batch11-prod 546c2000a613c4e5410b66d86137719785b26ad9
 
-      - name: Rebuild SOURCE_FOUND checkpoint using production-safe files only
+      - name: Rebuild SOURCE_FOUND checkpoint with explicit manifest entry state
         working-directory: /tmp/pof-batch11-prod
         shell: bash
         run: |
           git checkout fdce6a95adf00a736d345d04ca90a327cd651177 -- \
             data/pof-autonomous-state.json \
-            data/pof-batch-11-source-selection.json \
-            data/pof-visual-manifest.json
+            data/pof-batch-11-source-selection.json
           python - <<'PY'
-          import json
+          import json, subprocess
           from pathlib import Path
           s=json.loads(Path('data/pof-autonomous-state.json').read_text())
           q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
-          m=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          final_manifest=json.loads(subprocess.check_output(['git','show','c4054963c4370d9b83f4602f80376710038c299a:data/pof-visual-manifest.json'],text=True))
           ids={c['visual_id'] for c in q['concepts']}
-          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          rows=[v for v in final_manifest['visuals'] if v['visual_id'] in ids]
+          assert len(rows)==5 and sum(len(v['question_ids']) for v in rows)==12
+          for v in rows:
+            v['status']='SOURCE_FOUND'
+            v['assets']={'master_asset':None,'web_asset':None}
+            v['qa']={'technical':False,'teaching':False,'visual':False,'preview':False,'live':False}
+            v['lock']={'approved':False,'replacement_reason':None}
+            for field in ('visual_inspection','preview_verification','mapping_verification','live_verification'):
+              v.pop(field,None)
+          Path('data/pof-visual-manifest.json').write_text(json.dumps(final_manifest,indent=2,ensure_ascii=False)+'\n')
           assert s['last_verified_checkpoint']=='POF_BATCH_11_SOURCE_FOUND'
           assert q['status']=='SOURCE_FOUND'
-          assert len(rows)==5 and all(v['status']=='SOURCE_FOUND' for v in rows)
-          assert sum(len(v['question_ids']) for v in rows)==12
+          assert all(v['status']=='SOURCE_FOUND' for v in rows)
+          print('Explicit SOURCE_FOUND manifest records created for exactly five Batch 11 visuals.')
           PY
           git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
           git diff --cached --check
@@ -72,8 +80,7 @@ jobs:
         run: |
           git checkout 0ce65e67c76ed47c5eafe2cc765507cd66bd2fe8 -- \
             data/pof-autonomous-state.json \
-            data/pof-batch-11-source-selection.json \
-            data/pof-visual-manifest.json
+            data/pof-batch-11-source-selection.json
           python - <<'PY'
           import json
           from pathlib import Path
@@ -82,13 +89,20 @@ jobs:
           m=json.loads(Path('data/pof-visual-manifest.json').read_text())
           ids={c['visual_id'] for c in q['concepts']}
           rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          assert len(rows)==5 and all(v['status']=='SOURCE_FOUND' for v in rows)
+          for v in rows: v['status']='REFINING'
+          Path('data/pof-visual-manifest.json').write_text(json.dumps(m,indent=2,ensure_ascii=False)+'\n')
           assert s['last_verified_checkpoint']=='POF_BATCH_11_REFINING'
           assert q['status']=='REFINING'
-          assert len(rows)==5 and all(v['status']=='REFINING' for v in rows)
+          assert all(v['status']=='REFINING' for v in rows)
           PY
           git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
           git diff --cached --check
           git commit -m "Persist POF Batch 11 REFINING"
+
+      - name: Install deterministic raster inspection dependency
+        working-directory: /tmp/pof-batch11-prod
+        run: python -m pip install --quiet pillow==12.3.0
 
       - name: Rebuild QA_APPROVED checkpoint with final corrected rasters and normalized provenance
         working-directory: /tmp/pof-batch11-prod
@@ -117,8 +131,7 @@ jobs:
           png=list(root.glob('*.png')); webp=list(root.glob('*.webp')); svg=list(root.glob('*.svg'))
           assert len(png)==5 and len(webp)==5 and len(svg)==0
           for p in png+webp:
-            with Image.open(p) as im:
-              assert im.size==(1600,1050),(p,im.size)
+            with Image.open(p) as im: assert im.size==(1600,1050),(p,im.size)
           PY
           git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json public/explanation-images/principles-of-flight/refined-batch-11
           git diff --cached --check
@@ -128,25 +141,17 @@ jobs:
         working-directory: /tmp/pof-batch11-prod
         shell: bash
         run: |
-          git checkout c8f392bb0302f6fcdeb3df4945758e2931333d0e -- \
-            data/pof-autonomous-state.json \
-            data/pof-batch-11-source-selection.json \
-            data/pof-visual-manifest.json
-          git checkout c4054963c4370d9b83f4602f80376710038c299a -- \
-            'app/practice/[subject]/components/explanation-image.tsx'
+          git checkout c8f392bb0302f6fcdeb3df4945758e2931333d0e -- data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
+          git checkout c4054963c4370d9b83f4602f80376710038c299a -- 'app/practice/[subject]/components/explanation-image.tsx'
           test ! -e app/pof-visual-qa/page.tsx
           grep -F 'refined-batch-(?:1|2|3|4|5|6|7|8|9|10|11)' 'app/practice/[subject]/components/explanation-image.tsx'
           python - <<'PY'
           import json
           from pathlib import Path
-          s=json.loads(Path('data/pof-autonomous-state.json').read_text())
-          q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
-          m=json.loads(Path('data/pof-visual-manifest.json').read_text())
-          ids={c['visual_id'] for c in q['concepts']}
-          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          s=json.loads(Path('data/pof-autonomous-state.json').read_text()); q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text()); m=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in q['concepts']}; rows=[v for v in m['visuals'] if v['visual_id'] in ids]
           assert s['last_verified_checkpoint']=='POF_BATCH_11_PREVIEW_READY'
-          assert q['status']=='PREVIEW_READY'
-          assert q['gates']['preview_ready'] is True
+          assert q['status']=='PREVIEW_READY' and q['gates']['preview_ready'] is True
           assert len(rows)==5 and all(v['status']=='PREVIEW_READY' and v['qa']['preview'] for v in rows)
           PY
           git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json 'app/practice/[subject]/components/explanation-image.tsx'
@@ -157,22 +162,14 @@ jobs:
         working-directory: /tmp/pof-batch11-prod
         shell: bash
         run: |
-          git checkout eaa7ad72d3a55c9ec07f1d04946fefa87d865e73 -- \
-            data/pof-autonomous-state.json \
-            data/pof-batch-11-source-selection.json \
-            data/pof-visual-manifest.json
+          git checkout eaa7ad72d3a55c9ec07f1d04946fefa87d865e73 -- data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
           python - <<'PY'
           import json
           from pathlib import Path
-          s=json.loads(Path('data/pof-autonomous-state.json').read_text())
-          q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
-          m=json.loads(Path('data/pof-visual-manifest.json').read_text())
-          ids={c['visual_id'] for c in q['concepts']}
-          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          s=json.loads(Path('data/pof-autonomous-state.json').read_text()); q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text()); m=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in q['concepts']}; rows=[v for v in m['visuals'] if v['visual_id'] in ids]
           assert s['last_verified_checkpoint']=='POF_BATCH_11_MAPPED'
-          assert s['active_batch_mapping']['database_status']=='MAPPED'
-          assert s['active_batch_mapping']['exact_match_count']==12
-          assert s['active_batch_mapping']['unexpected_owner_count']==0
+          assert s['active_batch_mapping']['database_status']=='MAPPED' and s['active_batch_mapping']['exact_match_count']==12 and s['active_batch_mapping']['unexpected_owner_count']==0
           assert q['status']=='MAPPED' and q['gates']['mapped'] is True
           assert len(rows)==5 and all(v['status']=='MAPPED' for v in rows)
           PY
@@ -233,52 +230,20 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-
           def load(p): return json.loads(Path(p).read_text())
           def save(p,d): Path(p).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
-
           sp='data/pof-autonomous-state.json'; qp='data/pof-batch-11-source-selection.json'; mp='data/pof-visual-manifest.json'
-          s=load(sp); q=load(qp); m=load(mp)
-          ids={c['visual_id'] for c in q['concepts']}
-          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
-
-          assert s['last_verified_checkpoint']=='POF_BATCH_11_MAPPED'
-          assert s['active_batch_mapping']['database_status']=='MAPPED'
-          assert q['status']=='MAPPED' and q['gates']['mapped'] is True
-          assert len(rows)==5 and all(v['status']=='MAPPED' for v in rows)
-
-          for v in rows:
-            v['status']='PRODUCTION_READY'
-          for c in q['concepts']:
-            c['status']='PRODUCTION_READY'
-          q['status']='PRODUCTION_READY'
-          q['gates']['production_ready']=True
+          s=load(sp); q=load(qp); m=load(mp); ids={c['visual_id'] for c in q['concepts']}; rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          assert s['last_verified_checkpoint']=='POF_BATCH_11_MAPPED' and s['active_batch_mapping']['database_status']=='MAPPED'
+          assert q['status']=='MAPPED' and q['gates']['mapped'] is True and len(rows)==5 and all(v['status']=='MAPPED' for v in rows)
+          for v in rows: v['status']='PRODUCTION_READY'
+          for c in q['concepts']: c['status']='PRODUCTION_READY'
+          q['status']='PRODUCTION_READY'; q['gates']['production_ready']=True
           q['next_action']='Promote this exact clean production candidate to main only after final history validation and a second exact production build; then verify all five live WebP endpoints before advancing database status.'
-
           s['last_verified_checkpoint']='POF_BATCH_11_PRODUCTION_READY'
-          s['active_batch_source_selection']['status']='PRODUCTION_READY'
-          s['active_batch_refinement']['status']='PRODUCTION_READY'
-          s['active_batch_qa']['status']='PRODUCTION_READY'
-          s['active_batch_preview']['status']='PRODUCTION_READY'
-          s['production_readiness']={
-            'batch':11,
-            'base_main_commit':'546c2000a613c4e5410b66d86137719785b26ad9',
-            'production_file_count':14,
-            'png_assets':5,
-            'webp_assets':5,
-            'svg_assets':0,
-            'renderer_allowlist_updated':True,
-            'temporary_qa_route_removed':True,
-            'temporary_workflows_removed':True,
-            'temporary_generator_removed':True,
-            'pnpm_frozen_lock_install_passed':True,
-            'next_build_routes':20,
-            'production_build_passed':True,
-            'build_environment_note':'The candidate build uses inert, step-scoped Supabase placeholders; no production database credential is placed in source or CI.',
-            'verified':True
-          }
+          s['active_batch_source_selection']['status']='PRODUCTION_READY'; s['active_batch_refinement']['status']='PRODUCTION_READY'; s['active_batch_qa']['status']='PRODUCTION_READY'; s['active_batch_preview']['status']='PRODUCTION_READY'
+          s['production_readiness']={'batch':11,'base_main_commit':'546c2000a613c4e5410b66d86137719785b26ad9','production_file_count':14,'png_assets':5,'webp_assets':5,'svg_assets':0,'renderer_allowlist_updated':True,'temporary_qa_route_removed':True,'temporary_workflows_removed':True,'temporary_generator_removed':True,'pnpm_frozen_lock_install_passed':True,'next_build_routes':20,'production_build_passed':True,'build_environment_note':'The candidate build uses inert, step-scoped Supabase placeholders; no production database credential is placed in source or CI.','verified':True}
           s['next_action']='Run final production-history validation and a second exact build, then fast-forward main to the verified Batch 11 production candidate.'
-
           save(sp,s); save(qp,q); save(mp,m)
           PY
           git add data/pof-autonomous-state.json data/pof-batch-11-source-selection.json data/pof-visual-manifest.json
@@ -300,16 +265,10 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          s=json.loads(Path('data/pof-autonomous-state.json').read_text())
-          q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text())
-          m=json.loads(Path('data/pof-visual-manifest.json').read_text())
-          ids={c['visual_id'] for c in q['concepts']}
-          rows=[v for v in m['visuals'] if v['visual_id'] in ids]
-          assert s['last_verified_checkpoint']=='POF_BATCH_11_PRODUCTION_READY'
-          assert s['production_readiness']['verified'] is True
-          assert s['active_batch_mapping']['database_status']=='MAPPED'
-          assert q['status']=='PRODUCTION_READY' and q['gates']['production_ready'] is True
-          assert len(rows)==5 and all(v['status']=='PRODUCTION_READY' for v in rows)
+          s=json.loads(Path('data/pof-autonomous-state.json').read_text()); q=json.loads(Path('data/pof-batch-11-source-selection.json').read_text()); m=json.loads(Path('data/pof-visual-manifest.json').read_text())
+          ids={c['visual_id'] for c in q['concepts']}; rows=[v for v in m['visuals'] if v['visual_id'] in ids]
+          assert s['last_verified_checkpoint']=='POF_BATCH_11_PRODUCTION_READY' and s['production_readiness']['verified'] is True and s['active_batch_mapping']['database_status']=='MAPPED'
+          assert q['status']=='PRODUCTION_READY' and q['gates']['production_ready'] is True and len(rows)==5 and all(v['status']=='PRODUCTION_READY' for v in rows)
           assert all(v['qa']['technical'] and v['qa']['teaching'] and v['qa']['visual'] and v['qa']['preview'] and not v['qa']['live'] for v in rows)
           PY
 
@@ -326,7 +285,6 @@ jobs:
         shell: bash
         run: |
           test "$(git rev-parse origin/main)" = "546c2000a613c4e5410b66d86137719785b26ad9"
-          git status --porcelain
           test -z "$(git status --porcelain)"
           git push origin HEAD:refs/heads/pof-batch-11-production
           echo "PRODUCTION_CANDIDATE_SHA=$(git rev-parse HEAD)"

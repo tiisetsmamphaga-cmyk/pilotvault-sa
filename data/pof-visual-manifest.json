@@ -4054,6 +4054,297 @@
         "asset_reachable": true,
         "database_rows_live_verified": true
       }
+    },
+    {
+      "visual_id": "pof-trailing-edge-flap-lift-drag-001",
+      "topic": "Flaps & Glide",
+      "concept": "At the same angle of attack and airspeed, lowering trailing-edge flaps increases wing camber and lift, while also increasing drag.",
+      "question_ids": [
+        1225,
+        1229,
+        1333,
+        1335
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "location": "Chapter 2, Wing Flaps / Figure 2-1",
+        "notes": "The handbook describes flap extension as changing the wing lifting characteristics and increasing lift and drag.",
+        "page": 2,
+        "figure": "2-1"
+      },
+      "brief": {
+        "student_must_understand": "For the same baseline angle of attack and airspeed, flap extension increases camber, producing more lift and more drag.",
+        "preserve": [
+          "Same relative-wind reference in both panels",
+          "Technically credible aerofoil sections",
+          "Clear flap deflection"
+        ],
+        "refine": [
+          "Compare FLAP UP versus FLAP DOWN side by side",
+          "Make lift and drag vector increases immediately readable",
+          "Do not imply all flap types increase wing area"
+        ],
+        "add": [
+          "Same AoA + airspeed",
+          "LIFT increases",
+          "DRAG increases",
+          "Camber increases"
+        ],
+        "remove": [
+          "Stall-speed material",
+          "Unrelated approach geometry",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "All four questions test the same flap effect: more lift at a given angle of attack and airspeed, with increased drag."
+    },
+    {
+      "visual_id": "pof-flap-stall-speed-001",
+      "topic": "Stalls",
+      "concept": "For the same weight and load factor, flap extension increases maximum lift capability and therefore lowers the indicated speed at which the wing stalls.",
+      "question_ids": [
+        1203,
+        1238
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "location": "Chapter 2, Flight Control Systems / Wing Flaps",
+        "notes": "The handbook states that flaps change wing lifting characteristics and decrease the speed at which the wing stalls.",
+        "page": 2,
+        "figure": "2-1"
+      },
+      "brief": {
+        "student_must_understand": "With weight and load factor held constant, the higher lift capability available with flaps lowers stall speed.",
+        "preserve": [
+          "No absolute speed values",
+          "Same weight/load-factor condition",
+          "Qualitative relationship only"
+        ],
+        "refine": [
+          "Use paired lift-capability curves or a clear before/after comparison",
+          "Keep critical-angle messaging separate from the speed result",
+          "Avoid implying bank angle has no stall-speed effect"
+        ],
+        "add": [
+          "Flaps DOWN",
+          "CLmax increases",
+          "Stall speed decreases",
+          "Same weight + load factor"
+        ],
+        "remove": [
+          "Specific aircraft V-speeds",
+          "Turn-load chart",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "Both questions test the same operational result of flap extension: stall speed decreases."
+    },
+    {
+      "visual_id": "pof-fowler-flap-wing-area-001",
+      "topic": "Flaps & Glide",
+      "concept": "A Fowler flap extends rearward as well as downward, increasing effective wing area in addition to increasing camber.",
+      "question_ids": [
+        1358
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "location": "Chapter 2, Figure 2-1 — Fowler flap",
+        "notes": "The handbook distinguishes the Fowler flap by its rearward travel, which increases wing area as it extends.",
+        "page": 2,
+        "figure": "2-1"
+      },
+      "brief": {
+        "student_must_understand": "Unlike a simple hinged flap, a Fowler flap slides aft before/down as it extends, increasing effective wing area.",
+        "preserve": [
+          "Retracted and extended geometry",
+          "Rearward translation",
+          "Downward deflection"
+        ],
+        "refine": [
+          "Make the aft translation visually dominant",
+          "Show the planform/chord-area increase with a simple dimension cue",
+          "Do not generalize the area increase to all flap types"
+        ],
+        "add": [
+          "FOWLER RETRACTED",
+          "FOWLER EXTENDED",
+          "Slides rearward",
+          "Wing area increases"
+        ],
+        "remove": [
+          "Other flap types",
+          "Performance numbers",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      }
+    },
+    {
+      "visual_id": "pof-static-dynamic-stability-response-001",
+      "topic": "Stability",
+      "concept": "Static stability describes the initial tendency after a disturbance; dynamic stability describes what the subsequent oscillations do over time.",
+      "question_ids": [
+        1331,
+        1996,
+        2000
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "location": "Chapter 1, Static and Dynamic Stability / Figures 1-19 and 1-20",
+        "notes": "The handbook separates initial static response from the time history of dynamic oscillation and damping.",
+        "page": 16,
+        "figure": "1-19 / 1-20"
+      },
+      "brief": {
+        "student_must_understand": "An aeroplane can initially tend back toward trim yet still be dynamically unstable if each oscillation grows; a dynamically stable response damps toward trim.",
+        "preserve": [
+          "Trim/reference line",
+          "Time progression",
+          "Initial restoring direction"
+        ],
+        "refine": [
+          "Use clean response-versus-time traces",
+          "Contrast damped and growing oscillations",
+          "Keep static and dynamic labels semantically separate"
+        ],
+        "add": [
+          "STATIC = initial tendency",
+          "DYNAMIC = response over time",
+          "Damped oscillations",
+          "Growing oscillations"
+        ],
+        "remove": [
+          "Control-input arrows after the disturbance",
+          "Unrelated CG geometry",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "The three questions are one response-system concept: initial restoring tendency versus damping or growth of oscillations over time."
+    },
+    {
+      "visual_id": "pof-directional-fin-weathercock-001",
+      "topic": "Stability",
+      "concept": "A vertical fin or keel area behind the centre of gravity acts like a weather vane: sideslip creates a tail sideforce that produces a restoring yawing moment.",
+      "question_ids": [
+        1341,
+        2006
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "location": "Chapter 1, Directional Stability / Figure 1-31",
+        "notes": "The handbook describes the vertical fin behind the CG as a weather-vane surface that returns a yawed aeroplane toward its original direction.",
+        "page": 24,
+        "figure": "1-31"
+      },
+      "brief": {
+        "student_must_understand": "When the aeroplane yaws away from the relative wind, airflow on the fin behind the CG produces a restoring moment; increasing aft vertical area increases directional stability.",
+        "preserve": [
+          "Top-view yawed aeroplane",
+          "CG location ahead of fin",
+          "Relative-wind direction"
+        ],
+        "refine": [
+          "Show sideforce on the fin with the correct restoring yaw direction",
+          "Use a small-area versus larger-area comparison inset",
+          "Do not show rudder deflection because this is stability, not pilot control"
+        ],
+        "add": [
+          "Fin behind CG",
+          "Restoring sideforce",
+          "Restoring yaw moment",
+          "More aft side area = stronger stability"
+        ],
+        "remove": [
+          "Rudder-command arrows",
+          "Roll coupling",
+          "Baked PilotVault banner"
+        ]
+      },
+      "assets": {
+        "master_asset": null,
+        "web_asset": null
+      },
+      "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
+      "status": "SOURCE_FOUND",
+      "qa": {
+        "technical": false,
+        "teaching": false,
+        "visual": false,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "reuse_justification": "Both questions test the same directional-stability mechanism: aft vertical side area produces a restoring yaw moment, and more aft keel/fin area strengthens it."
     }
   ]
 }

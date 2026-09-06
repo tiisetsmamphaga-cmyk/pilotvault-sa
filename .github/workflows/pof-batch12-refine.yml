@@ -1,0 +1,126 @@
+name: POF Batch 12 refinement
+
+on:
+  push:
+    branches:
+      - pof-batch-12-rebuild
+    paths:
+      - .github/workflows/pof-batch12-refine.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Batch 12 work branch
+        uses: actions/checkout@v4
+        with:
+          ref: pof-batch-12-rebuild
+          fetch-depth: 0
+
+      - name: Persist distinct REFINING checkpoint before raster output
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          sp=Path('data/pof-autonomous-state.json'); qp=Path('data/pof-batch-12-source-selection.json')
+          s=json.loads(sp.read_text()); q=json.loads(qp.read_text())
+          assert s['last_verified_checkpoint']=='POF_BATCH_12_SOURCE_FOUND'
+          assert q['status']=='SOURCE_FOUND'
+          assert q['gates']['source_found'] is True and q['gates']['refined'] is False
+          assert q['coverage']['new_visual_concepts']==5 and q['coverage']['planned_new_question_rows']==10
+          q['status']='REFINING'
+          q['next_action']='Generate exactly five Batch 12 PNG + WebP raster pairs at 1600x1050, then inspect actual outputs before QA approval.'
+          s['last_verified_checkpoint']='POF_BATCH_12_REFINING'
+          s['active_batch_source_selection']['status']='REFINING'
+          s['active_batch_refinement']={
+            'batch':12,'status':'REFINING','visual_concepts':5,'planned_png_assets':5,'planned_webp_assets':5,'planned_svg_assets':0,
+            'target_dimensions':'1600x1050','output_directory':'public/explanation-images/principles-of-flight/refined-batch-12','verified':True
+          }
+          s['next_action']='Render and visually inspect exactly five Batch 12 raster concepts; do not QA-approve any visual with a known defect.'
+          sp.write_text(json.dumps(s,indent=2,ensure_ascii=False)+'\n'); qp.write_text(json.dumps(q,indent=2,ensure_ascii=False)+'\n')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pof-autonomous-state.json data/pof-batch-12-source-selection.json
+          git diff --cached --check
+          git commit -m "Mark POF Batch 12 refining"
+          git push origin HEAD:pof-batch-12-rebuild
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deterministic raster dependency
+        run: pip install pillow==12.3.0
+
+      - name: Generate five Batch 12 raster pairs
+        run: python scripts/generate_pof_batch12.py
+
+      - name: Verify exact asset boundary and dimensions
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          out=Path('public/explanation-images/principles-of-flight/refined-batch-12')
+          expected={
+            'pof-rudder-further-effects-v1','pof-aileron-further-effects-v1','pof-control-column-forward-left-v1',
+            'pof-aspect-ratio-induced-drag-v1','pof-anhedral-wing-geometry-v1'
+          }
+          png=sorted(out.glob('*.png')); webp=sorted(out.glob('*.webp')); svg=sorted(out.glob('*.svg'))
+          assert len(png)==5 and len(webp)==5 and len(svg)==0,(len(png),len(webp),len(svg))
+          assert {p.stem for p in png}==expected
+          assert {p.stem for p in webp}==expected
+          for p in png+webp:
+            with Image.open(p) as im:
+              assert im.size==(1600,1050),(p,im.size)
+              assert im.mode in ('RGB','RGBA'),(p,im.mode)
+          print('Boundary green: exactly 5 PNG + 5 WebP + 0 SVG; all 1600x1050.')
+          PY
+
+      - name: Build contact sheet from actual WebP outputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageDraw
+          root=Path('public/explanation-images/principles-of-flight/refined-batch-12')
+          files=[
+            'pof-rudder-further-effects-v1.webp','pof-aileron-further-effects-v1.webp','pof-control-column-forward-left-v1.webp',
+            'pof-aspect-ratio-induced-drag-v1.webp','pof-anhedral-wing-geometry-v1.webp'
+          ]
+          target_w,label_h,gap=900,34,18; panels=[]
+          for name in files:
+            im=Image.open(root/name).convert('RGB'); h=round(target_w*im.height/im.width)
+            im=im.resize((target_w,h),Image.Resampling.LANCZOS)
+            c=Image.new('RGB',(target_w,label_h+h),'white'); d=ImageDraw.Draw(c); d.text((10,8),name,fill='black'); c.paste(im,(0,label_h)); panels.append(c)
+          sheet=Image.new('RGB',(target_w,sum(p.height for p in panels)+gap*(len(panels)-1)),'white'); y=0
+          for p in panels: sheet.paste(p,(0,y)); y += p.height+gap
+          out=Path('/tmp/pof-batch12-webp-contact.jpg'); sheet.save(out,'JPEG',quality=92,optimize=True,progressive=True)
+          print(f'CONTACT_BYTES={out.stat().st_size}')
+          PY
+
+      - name: Upload actual WebP contact sheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: pof-batch12-webp-contact-sheet
+          path: /tmp/pof-batch12-webp-contact.jpg
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Commit generated raster pairs
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/explanation-images/principles-of-flight/refined-batch-12 scripts/generate_pof_batch12.py
+          git diff --cached --check
+          git diff --cached --quiet && { echo 'No raster diff produced'; exit 1; }
+          git commit -m "Render POF Batch 12 refined visuals"
+          git push origin HEAD:pof-batch-12-rebuild

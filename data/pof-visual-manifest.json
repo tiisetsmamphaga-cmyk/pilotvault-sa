@@ -5628,82 +5628,18 @@
       "reuse_justification": null
     },
     {
-      "visual_id": "pof-axes-rotation-001",
-      "topic": "Basic Aerodynamics",
-      "concept": "All three axes of rotation (longitudinal/roll, lateral/pitch, vertical/yaw) intersect at the centre of gravity, each controlled by a different primary control.",
-      "question_ids": [
-        1108,
-        1118,
-        1121,
-        1124,
-        1127,
-        1128,
-        1134,
-        1135,
-        1144,
-        1147,
-        1284,
-        1291,
-        1308,
-        1963,
-        1998
-      ],
-      "source": {
-        "document": "ac_61-23c_phak_canada.pdf",
-        "page": 18,
-        "figure": "1-21",
-        "notes": "Figure 1-21, Axes of rotation. Extracted and refined directly from the source raster; no content altered."
-      },
-      "brief": {
-        "student_must_understand": "Roll/pitch/yaw occur about the longitudinal/lateral/vertical axes respectively, controlled by ailerons/elevator/rudder, all intersecting at the CG.",
-        "preserve": [
-          "Original axis geometry and labels"
-        ],
-        "refine": [
-          "Crop, upscale, sharpen"
-        ],
-        "add": [
-          "PilotVault card chrome"
-        ],
-        "remove": []
-      },
-      "assets": {
-        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-rotation-v1.png",
-        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-rotation-v1.webp"
-      },
-      "mapping_reason": "All 15 questions test the same axis/control/CG relationship shown by this one figure.",
-      "status": "LIVE_VERIFIED",
-      "qa": {
-        "technical": true,
-        "teaching": true,
-        "visual": true,
-        "preview": false,
-        "live": true
-      },
-      "lock": {
-        "approved": true,
-        "replacement_reason": null
-      },
-      "visual_inspection": {
-        "actual_image_reviewed": true,
-        "batch1_quality_reference": true
-      },
-      "reuse_justification": "All 15 questions test the identical axis-of-rotation/control/CG relationship."
-    },
-    {
       "visual_id": "pof-oscillation-stability-001",
       "topic": "Stability",
       "concept": "Damped/undamped/divergent oscillation after a disturbance corresponds to positive/neutral/negative dynamic stability.",
       "question_ids": [
         1996,
-        2000,
-        2005
+        2000
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 18,
         "figure": "1-20",
-        "notes": "Figure 1-20, Relationship of oscillation and stability. Extracted and refined directly from the source raster."
+        "notes": "Figure 1-20, Relationship of oscillation and stability. Extracted and refined directly from the source raster. CORRECTED: Q2005 was removed -- it tests neutral STATIC stability (no initial tendency to return at all), which this figure does not show (all three panels are explicitly labeled '(Positive Static)'). Reverted to REFINING pending a genuinely matching source."
       },
       "brief": {
         "student_must_understand": "The shape of the displacement-vs-time curve after a disturbance identifies the dynamic stability type.",
@@ -5739,7 +5675,7 @@
         "actual_image_reviewed": true,
         "batch1_quality_reference": true
       },
-      "reuse_justification": "All three questions test the same oscillation-shape/dynamic-stability relationship."
+      "reuse_justification": "Q1996 and Q2000 each describe one of the two shown dynamic-stability outcomes (damped vs divergent), both starting from positive static stability as the figure shows."
     },
     {
       "visual_id": "pof-venturi-effect-001",
@@ -5905,6 +5841,221 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": "All nine questions test the identical critical-AoA-invariance relationship."
+    },
+    {
+      "visual_id": "pof-axes-roll-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "Roll occurs about the longitudinal axis, controlled by ailerons.",
+      "question_ids": [
+        1121,
+        1135,
+        1308
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 18,
+        "figure": "1-21",
+        "notes": "Figure 1-21, Axes of rotation. Extracted and refined from the source raster; the target axis is highlighted with a gold outline and the other two dimmed, tailoring the same real figure to what each question specifically asks."
+      },
+      "brief": {
+        "student_must_understand": "All three questions test roll/longitudinal-axis/aileron specifically.",
+        "preserve": [
+          "Original axis geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Highlight the relevant axis, dim the other two"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "Gold highlight on the relevant axis"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-roll-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-roll-v1.webp"
+      },
+      "mapping_reason": "All three questions test roll/longitudinal-axis/aileron specifically.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All three questions test roll/longitudinal-axis/aileron specifically."
+    },
+    {
+      "visual_id": "pof-axes-pitch-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "Pitch occurs about the lateral axis, controlled by the elevator.",
+      "question_ids": [
+        1108,
+        1127,
+        1147,
+        1291,
+        1998
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 18,
+        "figure": "1-21",
+        "notes": "Figure 1-21, Axes of rotation. Extracted and refined from the source raster; the target axis is highlighted with a gold outline and the other two dimmed, tailoring the same real figure to what each question specifically asks."
+      },
+      "brief": {
+        "student_must_understand": "All five questions test pitch/lateral-axis/elevator specifically.",
+        "preserve": [
+          "Original axis geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Highlight the relevant axis, dim the other two"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "Gold highlight on the relevant axis"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-pitch-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-pitch-v1.webp"
+      },
+      "mapping_reason": "All five questions test pitch/lateral-axis/elevator specifically.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All five questions test pitch/lateral-axis/elevator specifically."
+    },
+    {
+      "visual_id": "pof-axes-yaw-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "Yaw occurs about the vertical axis, controlled by the rudder.",
+      "question_ids": [
+        1118,
+        1124,
+        1144,
+        1284
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 18,
+        "figure": "1-21",
+        "notes": "Figure 1-21, Axes of rotation. Extracted and refined from the source raster; the target axis is highlighted with a gold outline and the other two dimmed, tailoring the same real figure to what each question specifically asks."
+      },
+      "brief": {
+        "student_must_understand": "All four questions test yaw/vertical-axis/rudder specifically.",
+        "preserve": [
+          "Original axis geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Highlight the relevant axis, dim the other two"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "Gold highlight on the relevant axis"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-yaw-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-yaw-v1.webp"
+      },
+      "mapping_reason": "All four questions test yaw/vertical-axis/rudder specifically.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All four questions test yaw/vertical-axis/rudder specifically."
+    },
+    {
+      "visual_id": "pof-axes-cg-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "All three axes of rotation intersect at the centre of gravity.",
+      "question_ids": [
+        1128,
+        1963,
+        1134
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 18,
+        "figure": "1-21",
+        "notes": "Figure 1-21, Axes of rotation. Extracted and refined from the source raster; the target axis is highlighted with a gold outline and the other two dimmed, tailoring the same real figure to what each question specifically asks."
+      },
+      "brief": {
+        "student_must_understand": "All three questions test the shared CG-intersection fact, not a specific axis.",
+        "preserve": [
+          "Original axis geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Highlight the relevant axis, dim the other two"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "Gold highlight on the relevant axis"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-cg-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-cg-v1.webp"
+      },
+      "mapping_reason": "All three questions test the shared CG-intersection fact, not a specific axis.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All three questions test the shared CG-intersection fact, not a specific axis."
     }
   ]
 }

@@ -675,7 +675,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 2,
         "figure": "1-3",
-        "notes": "The handbook defines angle of incidence as the angle formed by the wing chord line and longitudinal axis; it is fixed by design."
+        "notes": "The handbook defines angle of incidence as the angle formed by the wing chord line and longitudinal axis; it is fixed by design. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Incidence is fixed wing-to-fuselage geometry and must not be confused with angle of attack.",
@@ -703,17 +703,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-angle-of-incidence-v5.webp"
       },
       "mapping_reason": "The diagram shows the exact two references used to define angle of incidence.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -748,7 +748,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 6,
         "figure": "1-11",
-        "notes": "The handbook describes the centre of lift, also referred to as centre of pressure, as the imaginary point representing the resultant of all lift forces."
+        "notes": "The handbook describes the centre of lift, also referred to as centre of pressure, as the imaginary point representing the resultant of all lift forces. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Distributed wing lift can be represented by one resultant lift vector acting through the centre of pressure.",
@@ -775,17 +775,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-centre-of-pressure-v1.webp"
       },
       "mapping_reason": "The selected questions ask exactly what the labelled resultant-force application point is called.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -817,7 +817,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 3,
         "figure": "1-6",
-        "notes": "The handbook states that relative wind flows parallel with and opposite to the direction of flight."
+        "notes": "The handbook states that relative wind flows parallel with and opposite to the direction of flight. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Relative airflow is defined from aircraft motion through the air and points opposite the flight path.",
@@ -844,17 +844,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-relative-airflow-v1.webp"
       },
       "mapping_reason": "Question 1962 asks for the exact direction relationship displayed.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -5497,6 +5497,129 @@
       "lock": {
         "approved": true,
         "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": null
+    },
+    {
+      "visual_id": "pof-cl-vs-aoa-clmax-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "CLmax occurs at the critical angle of attack.",
+      "question_ids": [],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": null,
+        "figure": null,
+        "notes": "AI-drawn original matplotlib chart, not an extraction of any real source figure. REVERTED: database row (Q1978) reset to REFINING."
+      },
+      "brief": {
+        "student_must_understand": "",
+        "preserve": [],
+        "refine": [],
+        "add": [],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-cl-vs-aoa-clmax-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-cl-vs-aoa-clmax-v1.webp"
+      },
+      "mapping_reason": "",
+      "status": "QA_FAILED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": "visual_error"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": null
+    },
+    {
+      "visual_id": "pof-cl-vs-aoa-stall-onset-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "CL falls beyond the critical AoA as the wing stalls.",
+      "question_ids": [],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": null,
+        "figure": null,
+        "notes": "AI-drawn original matplotlib chart, not an extraction of any real source figure. REVERTED: database row (Q2008) reset to REFINING."
+      },
+      "brief": {
+        "student_must_understand": "",
+        "preserve": [],
+        "refine": [],
+        "add": [],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-cl-vs-aoa-stall-onset-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-cl-vs-aoa-stall-onset-v1.webp"
+      },
+      "mapping_reason": "",
+      "status": "QA_FAILED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": "visual_error"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": null
+    },
+    {
+      "visual_id": "pof-stall-speed-bank-001",
+      "topic": "Turns & Load Factor",
+      "concept": "Stall speed multiplier increases with bank angle.",
+      "question_ids": [],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": null,
+        "figure": null,
+        "notes": "AI-drawn original matplotlib chart (1/cos(bank) derivation), not an extraction of the real Fig 1-34 raster. REVERTED: database rows (Q2016, 2018, 2021) reset to REFINING."
+      },
+      "brief": {
+        "student_must_understand": "",
+        "preserve": [],
+        "refine": [],
+        "add": [],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-stall-speed-60deg-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-stall-speed-60deg-v1.webp"
+      },
+      "mapping_reason": "",
+      "status": "QA_FAILED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,

@@ -2182,7 +2182,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 24,
         "figure": "1-31",
-        "notes": "Handbook states directional stability is accomplished by the vertical stabilizer/fin aft of the CG, acting like a weather vane; Figure 1-31 illustrates yaw control at the fin/rudder."
+        "notes": "Handbook states directional stability is accomplished by the vertical stabilizer/fin aft of the CG, acting like a weather vane; Figure 1-31 illustrates yaw control at the fin/rudder. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING, except Q1241/1330/1991 which already point to the genuine Batch 14 pof-glide-flap-001 extraction and were left untouched."
       },
       "brief": {
         "student_must_understand": "A yaw/sideslip exposes the vertical fin to relative airflow; the aerodynamic side force at the tail creates a restoring yaw moment toward the original direction.",
@@ -2214,17 +2214,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-vertical-fin-directional-stability-v1.webp"
       },
       "mapping_reason": "These questions all ask the same directional-stability relationship and the approved handbook directly explains the vertical fin weather-vane restoring action.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2880,7 +2880,7 @@
         "document": "FAA-H-8083-25C_PHAK_Chapter_6.pdf",
         "page": 11,
         "figure": "6-21",
-        "notes": "The FAA Pilot's Handbook of Aeronautical Knowledge, Chapter 6, states and illustrates that an antiservo tab moves in the same direction as the stabilator, making it less sensitive by opposing the force exerted by the pilot."
+        "notes": "The FAA Pilot's Handbook of Aeronautical Knowledge, Chapter 6, states and illustrates that an antiservo tab moves in the same direction as the stabilator, making it less sensitive by opposing the force exerted by the pilot. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING, except Q1241/1330/1991 which already point to the genuine Batch 14 pof-glide-flap-001 extraction and were left untouched."
       },
       "brief": {
         "student_must_understand": "The stabilator and anti-servo tab deflect together in the same direction; the tab adds resistance/control feel rather than helping the surface move.",
@@ -2912,13 +2912,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-antiservo-tab-same-direction-v1.webp"
       },
       "mapping_reason": "Each question asks how correct anti-balance/anti-servo tab operation is recognized; the source figure's same-direction motion is the exact answer relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2929,8 +2929,8 @@
         "review_note": "The exact optimized 1600x1050 PNG and matching WebP were rendered and inspected against the locked Batch 1 quality standard. The all-moving stabilator, pivot, dashed neutral reference, and anti-servo tab are structurally clear; the two deflection arrows visibly point in the same direction, and the added-control-feel and reduced-sensitivity outcomes are legible without obscuring the preflight relationship."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       }
     },
     {
@@ -3015,7 +3015,7 @@
         "document": "FAA-H-8083-3C_AFH_Chapter_5.pdf",
         "page": 24,
         "figure": "5-17",
-        "notes": "The FAA Airplane Flying Handbook's six-step generic spin-recovery template places full opposite rudder at step 3 and positive brisk forward elevator immediately after it at step 4. The handbook explicitly requires aircraft-specific manufacturer procedures to take precedence."
+        "notes": "The FAA Airplane Flying Handbook's six-step generic spin-recovery template places full opposite rudder at step 3 and positive brisk forward elevator immediately after it at step 4. The handbook explicitly requires aircraft-specific manufacturer procedures to take precedence. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING, except Q1241/1330/1991 which already point to the genuine Batch 14 pof-glide-flap-001 extraction and were left untouched."
       },
       "brief": {
         "student_must_understand": "After power idle and ailerons neutral, apply full rudder opposite the rotation, then immediately move the elevator briskly forward to reduce AoA; the question-specific answer is rudder before elevator.",
@@ -3048,13 +3048,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-spin-recovery-control-order-v1.webp"
       },
       "mapping_reason": "Both questions explicitly ask which control is used first; the FAA recovery template provides the exact rudder-before-elevator order with the required manufacturer-procedure caveat.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3065,8 +3065,8 @@
         "review_note": "The exact optimized 1600x1050 PNG and matching WebP were rendered and inspected against the locked Batch 1 quality standard. The complete six-step generic FAA sequence is readable, with full opposite rudder at step 3 visibly preceding forward elevator and angle-of-attack reduction at step 4. The POH/AFM precedence warning is prominent and the recovery is not presented as aircraft-universal."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       }
     },
     {
@@ -3077,18 +3077,15 @@
         1202,
         1207,
         1211,
-        1241,
-        1330,
         1332,
-        1368,
-        1991
+        1368
       ],
       "reuse_justification": "All eight questions test consequences of the same flap-in-glide relationship: added drag reduces L/D and forward range, so the glide steepens and rate of descent increases.",
       "source": {
         "document": "FAA-H-8083-3C_AFH_Chapter_9.pdf",
         "page": 1,
         "figure": "9-2",
-        "notes": "The FAA Airplane Flying Handbook states that flap extension produces greater drag and permits a steeper descent angle; Figure 9-2 compares the resulting approach angles. FAA-H-8083-25C, Chapter 6, further states that flaps increase lift and induced drag and that later extension increases drag with little additional lift."
+        "notes": "The FAA Airplane Flying Handbook states that flap extension produces greater drag and permits a steeper descent angle; Figure 9-2 compares the resulting approach angles. FAA-H-8083-25C, Chapter 6, further states that flaps increase lift and induced drag and that later extension increases drag with little additional lift. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING, except Q1241/1330/1991 which already point to the genuine Batch 14 pof-glide-flap-001 extraction and were left untouched."
       },
       "brief": {
         "student_must_understand": "From the same starting height, the clean aircraft follows the shallower, longer best-glide path; flap extension adds drag, reduces L/D and range, and produces a steeper path with greater height loss per forward distance.",
@@ -3121,13 +3118,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-flaps-steepen-glide-v1.webp"
       },
       "mapping_reason": "Every selected question asks for the L/D, descent-angle, descent-rate, or maximum-distance consequence of flap extension in a glide; one clean-versus-flaps path comparison directly teaches the shared relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3138,8 +3135,8 @@
         "review_note": "The exact optimized 1600x1050 PNG and matching WebP were rendered and inspected against the locked Batch 1 quality standard. The clean configuration follows the shallower, longer glide path, while the flaps-down configuration follows the steeper, shorter path; the main-wing-root flap cue, added-drag explanation, and reduced-glide-distance outcome agree and remain readable at application scale."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       }
     },
     {

@@ -5626,6 +5626,285 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": null
+    },
+    {
+      "visual_id": "pof-axes-rotation-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "All three axes of rotation (longitudinal/roll, lateral/pitch, vertical/yaw) intersect at the centre of gravity, each controlled by a different primary control.",
+      "question_ids": [
+        1108,
+        1118,
+        1121,
+        1124,
+        1127,
+        1128,
+        1134,
+        1135,
+        1144,
+        1147,
+        1284,
+        1291,
+        1308,
+        1963,
+        1998
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 18,
+        "figure": "1-21",
+        "notes": "Figure 1-21, Axes of rotation. Extracted and refined directly from the source raster; no content altered."
+      },
+      "brief": {
+        "student_must_understand": "Roll/pitch/yaw occur about the longitudinal/lateral/vertical axes respectively, controlled by ailerons/elevator/rudder, all intersecting at the CG.",
+        "preserve": [
+          "Original axis geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-rotation-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-axes-rotation-v1.webp"
+      },
+      "mapping_reason": "All 15 questions test the same axis/control/CG relationship shown by this one figure.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All 15 questions test the identical axis-of-rotation/control/CG relationship."
+    },
+    {
+      "visual_id": "pof-oscillation-stability-001",
+      "topic": "Stability",
+      "concept": "Damped/undamped/divergent oscillation after a disturbance corresponds to positive/neutral/negative dynamic stability.",
+      "question_ids": [
+        1996,
+        2000,
+        2005
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 18,
+        "figure": "1-20",
+        "notes": "Figure 1-20, Relationship of oscillation and stability. Extracted and refined directly from the source raster."
+      },
+      "brief": {
+        "student_must_understand": "The shape of the displacement-vs-time curve after a disturbance identifies the dynamic stability type.",
+        "preserve": [
+          "Original three-panel oscillation curves and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-oscillation-stability-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-oscillation-stability-v1.webp"
+      },
+      "mapping_reason": "Q1996/2000/2005 each describe one of the three oscillation patterns shown in this figure.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All three questions test the same oscillation-shape/dynamic-stability relationship."
+    },
+    {
+      "visual_id": "pof-venturi-effect-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "Venturi effect: as passage area decreases, velocity increases and static pressure decreases, with mass flow constant.",
+      "question_ids": [
+        1110,
+        1140,
+        1148,
+        1306,
+        1313,
+        1973
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 5,
+        "figure": "1-8",
+        "notes": "Venturi tube panel of the figure preceding Fig 1-9 (referenced in the surrounding Bernoulli/venturi text). Extracted and refined directly from the source raster."
+      },
+      "brief": {
+        "student_must_understand": "Narrowing the passage speeds up the flow and lowers static pressure; this is the physical basis of Bernoulli's principle applied to a wing.",
+        "preserve": [
+          "Original venturi tube streamlines and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-venturi-effect-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-venturi-effect-v1.webp"
+      },
+      "mapping_reason": "All six questions test the same area/velocity/pressure venturi relationship shown by this figure.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All six questions test the identical venturi area/velocity/pressure relationship."
+    },
+    {
+      "visual_id": "pof-climb-forces-001",
+      "topic": "Four Forces / Basic Aerodynamics",
+      "concept": "In a steady climb, lift is less than weight and thrust is greater than drag because weight resolves into components along and across the flight path.",
+      "question_ids": [
+        1219,
+        1252,
+        1256,
+        1288,
+        1298,
+        1351
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 30,
+        "figure": "1-37",
+        "notes": "Figure 1-37, Forces acting on an airplane in a climb. Extracted and refined directly from the source raster."
+      },
+      "brief": {
+        "student_must_understand": "Weight resolves into a component along the flight path (opposed by thrust minus drag) and a component perpendicular to it (opposed by lift), so in a climb lift < weight and thrust > drag.",
+        "preserve": [
+          "Original two-panel force-vector geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-climb-forces-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-climb-forces-v1.webp"
+      },
+      "mapping_reason": "All six questions test the same lift-vs-weight/thrust-vs-drag relationship in a climb shown by this figure.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All six questions test the identical climb force-balance relationship."
+    },
+    {
+      "visual_id": "pof-critical-aoa-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "The critical (stalling) angle of attack is constant regardless of airspeed, weight, or bank angle.",
+      "question_ids": [
+        1205,
+        1208,
+        1212,
+        1224,
+        1236,
+        1323,
+        1324,
+        1329,
+        1334
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 9,
+        "figure": "1-16",
+        "notes": "Figure 1-16, airflow at increasing angles of attack across six flight regimes. Extracted and refined directly from the source raster."
+      },
+      "brief": {
+        "student_must_understand": "Across six different flight regimes at increasing AoA, the wing always stalls at the same critical angle (here ~20 degrees), regardless of the airspeed or attitude that got it there.",
+        "preserve": [
+          "Original six-panel airflow diagrams and AoA labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-critical-aoa-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-16/pof-critical-aoa-v1.webp"
+      },
+      "mapping_reason": "All nine questions test the invariance of the critical angle of attack shown by this figure.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All nine questions test the identical critical-AoA-invariance relationship."
     }
   ]
 }

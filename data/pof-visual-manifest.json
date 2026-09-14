@@ -5190,6 +5190,178 @@
         "asset_reachable": true,
         "database_rows_live_verified": true
       }
+    },
+    {
+      "visual_id": "pof-glide-weight-001",
+      "topic": "Flaps & Glide",
+      "concept": "Glide angle at best L/D is independent of aircraft weight; weight affects best-glide speed and rate of descent, not the angle.",
+      "question_ids": [
+        1233,
+        1364
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 32,
+        "figure": "1-39",
+        "notes": "Figure 1-39 'Forces acting on an airplane in a glide' shows the lift/drag/resultant/weight force triangle and the glide angle X between the flight path and the horizontal. Text on pages 32-33 states that gross weight does not affect the gliding angle at the optimum indicated airspeed for that weight."
+      },
+      "brief": {
+        "student_must_understand": "The glide angle (X) is fixed by the lift/drag ratio, not by weight; a heavier aircraft glides at a higher speed and higher rate of descent but the same angle.",
+        "preserve": [
+          "Original Figure 1-39 force-triangle geometry",
+          "Original Lift/Drag/Resultant/Weight vectors",
+          "Original glide-angle (X) construction"
+        ],
+        "refine": [
+          "Crop to a single panel",
+          "Upscale and sharpen the low-resolution source raster",
+          "Recolor line art to house navy",
+          "Remove text glyphs that overlapped the vector arrows and relabel them in clear space"
+        ],
+        "add": [
+          "PilotVault card chrome (title/subtitle/side panel/formula bar)",
+          "Weight-vs-glide-angle key relationship callouts"
+        ],
+        "remove": [
+          "Overlapping baked-in text glyphs (relabeled, not deleted in meaning)"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-14/pof-glide-weight-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-14/pof-glide-weight-v1.webp"
+      },
+      "mapping_reason": "Both questions test the same relationship: weight has no effect on best-glide angle, only on best-glide speed and rate of descent.",
+      "status": "MAPPED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Both questions test the identical weight/glide-angle-independence relationship shown by this one figure."
+    },
+    {
+      "visual_id": "pof-glide-flap-001",
+      "topic": "Flaps & Glide",
+      "concept": "Extending flaps lowers the lift/drag ratio, steepening the glide angle and reducing gliding distance.",
+      "question_ids": [
+        1241,
+        1330,
+        1991
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 32,
+        "figure": "1-39",
+        "notes": "Figure 1-39 depicts two glide-angle scenarios side by side (shallower vs steeper glide angle X); paired here as clean vs flaps-extended to match the source figure's own two-panel comparison structure."
+      },
+      "brief": {
+        "student_must_understand": "Extending flaps adds drag and lowers L/D, so the glide angle becomes steeper and the aircraft covers less distance per unit of height lost.",
+        "preserve": [
+          "Original Figure 1-39 force-triangle geometry for both panels",
+          "Original glide-angle (X) construction"
+        ],
+        "refine": [
+          "Crop each panel from the source raster",
+          "Upscale and sharpen",
+          "Recolor to house navy",
+          "Remove overlapping text glyphs and relabel in clear space",
+          "Compose the two panels side by side as Clean vs Flaps Extended"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "Clean / Flaps Extended panel labels",
+          "Flap key-relationship callouts"
+        ],
+        "remove": [
+          "Overlapping baked-in text glyphs (relabeled, not deleted in meaning)"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-14/pof-glide-flap-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-14/pof-glide-flap-v1.webp"
+      },
+      "mapping_reason": "All three questions test the same relationship: flaps lower L/D and steepen the glide angle, shortening glide distance.",
+      "status": "MAPPED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All three questions test the identical flap/glide-angle relationship shown by this one figure."
+    },
+    {
+      "visual_id": "pof-parasite-drag-speed-001",
+      "topic": "Drag",
+      "concept": "Parasite drag increases with the square of airspeed.",
+      "question_ids": [
+        1977
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 9,
+        "figure": "1-15",
+        "notes": "Figure 1-15 'Typical airplane drag curves' shows parasite drag rising non-linearly with speed. The parasite-drag component's shape was refined/recreated as a clean vector curve since the embedded source raster is a small, low-resolution JPEG; the v-squared relationship and curve shape are preserved and not altered."
+      },
+      "brief": {
+        "student_must_understand": "Doubling airspeed quadruples parasite drag (drag factor = speed-ratio squared).",
+        "preserve": [
+          "Parasite-drag curve's non-linear, upward-curving shape vs speed"
+        ],
+        "refine": [
+          "Isolate the parasite-drag component only (omit induced/total drag, not relevant to this question)",
+          "Mark the 50kt/100kt read-off points with the 1x/4x drag values"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "50kt/100kt read-off markers",
+          "Speed-ratio-squared formula bar"
+        ],
+        "remove": [
+          "Induced and total drag curves (not tested by this question)"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-14/pof-parasite-drag-speed-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-14/pof-parasite-drag-speed-v1.webp"
+      },
+      "mapping_reason": "Question 1977 asks for the parasite-drag change from 50kt to 100kt; the chart shows exactly this read-off.",
+      "status": "MAPPED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": false
+      },
+      "lock": {
+        "approved": false,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": null
     }
   ]
 }

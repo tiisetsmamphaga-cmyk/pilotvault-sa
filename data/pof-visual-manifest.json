@@ -5791,20 +5791,17 @@
       "concept": "The critical (stalling) angle of attack is constant regardless of airspeed, weight, or bank angle.",
       "question_ids": [
         1205,
-        1208,
         1212,
         1224,
-        1236,
         1323,
         1324,
-        1329,
-        1334
+        1329
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 9,
         "figure": "1-16",
-        "notes": "Figure 1-16, airflow at increasing angles of attack across six flight regimes. Extracted and refined directly from the source raster."
+        "notes": "Figure 1-16, airflow at increasing angles of attack across six flight regimes. Extracted and refined directly from the source raster. CORRECTED: Q1208/1334 (turn/bank raising stall IAS) and Q1236 (altitude invariance) were removed -- the figure shows different level-flight speed regimes, not a turn or altitude change, so it doesn't literally depict what those three specifically ask about. Reverted to REFINING."
       },
       "brief": {
         "student_must_understand": "Across six different flight regimes at increasing AoA, the wing always stalls at the same critical angle (here ~20 degrees), regardless of the airspeed or attitude that got it there.",

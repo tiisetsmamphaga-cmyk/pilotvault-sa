@@ -135,7 +135,8 @@
         1183,
         1356,
         1357,
-        1984
+        1984,
+        1977
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
@@ -184,7 +185,7 @@
         "approved": true,
         "replacement_reason": null
       },
-      "reuse_justification": "All mapped questions read the same locked drag-curve relationships: induced drag falls with speed, parasite drag rises, total drag reaches a minimum at Vmd, and Curve B is parasite/profile drag."
+      "reuse_justification": "All mapped questions read the same locked drag-curve relationships: induced drag falls with speed, parasite drag rises, total drag reaches a minimum at Vmd, and Curve B is parasite/profile drag. Q1977 added: tests the same parasite-drag-rises-with-speed relationship shown by this chart; reused rather than building new AI-drawn art."
     },
     {
       "visual_id": "pof-dihedral-001",
@@ -5313,14 +5314,12 @@
       "visual_id": "pof-parasite-drag-speed-001",
       "topic": "Drag",
       "concept": "Parasite drag increases with the square of airspeed.",
-      "question_ids": [
-        1977
-      ],
+      "question_ids": [],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 9,
         "figure": "1-15",
-        "notes": "Figure 1-15 'Typical airplane drag curves' shows parasite drag rising non-linearly with speed. The parasite-drag component's shape was refined/recreated as a clean vector curve since the embedded source raster is a small, low-resolution JPEG; the v-squared relationship and curve shape are preserved and not altered."
+        "notes": "Figure 1-15 'Typical airplane drag curves' shows parasite drag rising non-linearly with speed. The parasite-drag component's shape was refined/recreated as a clean vector curve since the embedded source raster is a small, low-resolution JPEG; the v-squared relationship and curve shape are preserved and not altered. SUPERSEDED: this was an AI-drawn original chart even though Batch 1 already had a genuine extraction of the same Fig 1-15 source (pof-parasite-drag-001). Q1977 was remapped to reuse that real asset instead; this entry is no longer mapped to any question."
       },
       "brief": {
         "student_must_understand": "Doubling airspeed quadruples parasite drag (drag factor = speed-ratio squared).",
@@ -5345,7 +5344,7 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-14/pof-parasite-drag-speed-v1.webp"
       },
       "mapping_reason": "Question 1977 asks for the parasite-drag change from 50kt to 100kt; the chart shows exactly this read-off.",
-      "status": "MAPPED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
@@ -5355,6 +5354,151 @@
       },
       "lock": {
         "approved": false,
+        "replacement_reason": "visual_error"
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": null
+    },
+    {
+      "visual_id": "pof-turn-coordinator-slip-001",
+      "topic": "Turn Coordinator",
+      "concept": "In a left turn, the ball deflects toward the inside of the turn (left) when slipping.",
+      "question_ids": [
+        1228
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 68,
+        "figure": "3-8",
+        "notes": "Bezel, 'TURN COORDINATOR' text, '2 MIN', tick marks and L/R labels extracted from the real Fig 3-8 raster (needle removed since the source's needle-bank/ball-label pairing did not match the verified left-turn slip/skid convention -- see notes below). Ball position placed to match the verified correct answer for Q1228, not extracted from the source's own (mismatched) Skid/Slip panel labels."
+      },
+      "brief": {
+        "student_must_understand": "Ball left of centre in a left turn = slipping (too much bank for the rate of turn).",
+        "preserve": [
+          "Real gauge bezel/text/tick marks"
+        ],
+        "refine": [],
+        "add": [
+          "Ball position"
+        ],
+        "remove": [
+          "Needle (ambiguous bank direction)"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-slip-left-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-slip-left-v1.webp"
+      },
+      "mapping_reason": "Q1228 directly asks what a left-of-centre ball means in a left turn.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": null
+    },
+    {
+      "visual_id": "pof-turn-coordinator-skid-001",
+      "topic": "Turn Coordinator",
+      "concept": "In a left turn, the ball deflects toward the outside of the turn (right) when skidding.",
+      "question_ids": [
+        1250
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 68,
+        "figure": "3-8",
+        "notes": "Same extraction approach as pof-turn-coordinator-slip-001. Ball position placed to match the verified correct answer for Q1250."
+      },
+      "brief": {
+        "student_must_understand": "Ball right of centre in a left turn = skidding (too little bank for the rate of turn).",
+        "preserve": [
+          "Real gauge bezel/text/tick marks"
+        ],
+        "refine": [],
+        "add": [
+          "Ball position"
+        ],
+        "remove": [
+          "Needle (ambiguous bank direction)"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-skid-right-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-skid-right-v1.webp"
+      },
+      "mapping_reason": "Q1250 directly asks what a right-of-centre ball means in a left turn.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": null
+    },
+    {
+      "visual_id": "pof-turn-coordinator-balanced-001",
+      "topic": "Turn Coordinator",
+      "concept": "Ball centred indicates a balanced/coordinated turn.",
+      "question_ids": [
+        1235
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 68,
+        "figure": "3-8",
+        "notes": "Extracted directly from the real Fig 3-8 'Coordinated Turn' panel; only the needle was removed. Ball position (centred) is the source's own, unmodified."
+      },
+      "brief": {
+        "student_must_understand": "Ball centred = coordinated flight.",
+        "preserve": [
+          "Real gauge bezel/text/tick marks/ball position"
+        ],
+        "refine": [],
+        "add": [],
+        "remove": [
+          "Needle (ambiguous bank direction)"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-balanced-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-balanced-v1.webp"
+      },
+      "mapping_reason": "Q1235 directly asks what a centred ball means.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
         "replacement_reason": null
       },
       "visual_inspection": {

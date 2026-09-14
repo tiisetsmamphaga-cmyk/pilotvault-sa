@@ -309,7 +309,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 2,
         "figure": "1-2",
-        "notes": "The handbook defines angle of attack as the angle between the wing chord line and relative wind/airflow and Figure 1-2 illustrates that relationship."
+        "notes": "The handbook defines angle of attack as the angle between the wing chord line and relative wind/airflow and Figure 1-2 illustrates that relationship. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Angle of attack is referenced to the relative airflow, not the horizon, and is measured from the chord line.",
@@ -338,17 +338,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-angle-of-attack-definition-v3.webp"
       },
       "mapping_reason": "The visual directly teaches the exact two lines used to define angle of attack.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -380,7 +380,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 3,
         "figure": "1-4",
-        "notes": "The handbook defines chord as the imaginary straight line drawn from the leading edge to the trailing edge of an airfoil section."
+        "notes": "The handbook defines chord as the imaginary straight line drawn from the leading edge to the trailing edge of an airfoil section. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "The chord line joins the leading edge and trailing edge with a straight reference line.",
@@ -408,17 +408,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-chord-line-v2.webp"
       },
       "mapping_reason": "Question 1119 asks for the name of the exact leading-edge-to-trailing-edge reference line shown.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -453,7 +453,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 1,
         "figure": "1-1",
-        "notes": "The handbook states that in unaccelerated steady flight the opposing forces are in equilibrium: lift equals weight and thrust equals drag."
+        "notes": "The handbook states that in unaccelerated steady flight the opposing forces are in equilibrium: lift equals weight and thrust equals drag. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Constant-speed level flight has balanced vertical and horizontal force pairs.",
@@ -482,17 +482,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-four-forces-level-flight-v2.webp"
       },
       "mapping_reason": "The diagram directly displays the equilibrium relationship asked by all three questions.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -527,7 +527,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 6,
         "figure": "1-11",
-        "notes": "Figure 1-11 shows lift acting 90 degrees to relative wind and drag acting parallel to it."
+        "notes": "Figure 1-11 shows lift acting 90 degrees to relative wind and drag acting parallel to it. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Lift direction is defined relative to the airflow, not simply as vertical, while drag lies along the airflow direction.",
@@ -556,17 +556,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-lift-relative-airflow-v2.webp"
       },
       "mapping_reason": "The visual answers the exact directional relationship tested by these questions.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -604,7 +604,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 5,
         "figure": "1-9",
-        "notes": "The handbook explains that constricting a flow passage increases velocity and decreases pressure while the same flow continues through the tube."
+        "notes": "The handbook explains that constricting a flow passage increases velocity and decreases pressure while the same flow continues through the tube. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "As area decreases toward the throat, subsonic velocity increases and static pressure decreases; the trend reverses after the throat.",
@@ -633,17 +633,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-2/pof-venturi-bernoulli-v2.webp"
       },
       "mapping_reason": "The diagram directly visualizes the continuity and Bernoulli changes tested by the selected questions.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1042,7 +1042,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 17,
         "figure": "1-21",
-        "notes": "The handbook lists the lateral, longitudinal and vertical axes, states that all three intersect at the centre of gravity, and associates aircraft motion with those axes; the control sections associate elevator, ailerons and rudder with pitch, roll and yaw."
+        "notes": "The handbook lists the lateral, longitudinal and vertical axes, states that all three intersect at the centre of gravity, and associates aircraft motion with those axes; the control sections associate elevator, ailerons and rudder with pitch, roll and yaw. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Roll-longitudinal-ailerons, pitch-lateral-elevator and yaw-vertical-rudder are three linked pairs, and all axes pass through CG.",
@@ -1072,17 +1072,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-aircraft-axes-controls-v1.webp"
       },
       "mapping_reason": "The diagram provides the complete axis-motion-control reference directly tested by these questions.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1123,7 +1123,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 10,
         "figure": "1-16",
-        "notes": "The handbook describes separation progressing as critical AoA is approached, states the wing stalls at critical AoA, and says the stall is completely dependent on angle of attack."
+        "notes": "The handbook describes separation progressing as critical AoA is approached, states the wing stalls at critical AoA, and says the stall is completely dependent on angle of attack. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Stall is an angle-of-attack event; other factors change the speed or condition at which the wing reaches critical AoA, not the fundamental critical angle for the configuration.",
@@ -1151,17 +1151,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v4.webp"
       },
       "mapping_reason": "The selected questions ask whether the stalling/critical AoA changes with operating factors, which the visual directly addresses.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1196,7 +1196,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 16,
         "figure": "1-19 / 1-20",
-        "notes": "The handbook illustrates positive, neutral and negative stability with ball analogies and explains dynamic stability as damping oscillations toward the original condition."
+        "notes": "The handbook illustrates positive, neutral and negative stability with ball analogies and explains dynamic stability as damping oscillations toward the original condition. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Positive tends back, neutral remains displaced, negative diverges; positive dynamic stability reduces oscillation amplitude with time.",
@@ -1224,17 +1224,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-stability-types-v1.webp"
       },
       "mapping_reason": "The chosen questions are direct definitions contained in this stability classification visual.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1268,7 +1268,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 34,
         "figure": "1-40",
-        "notes": "Figure 1-40 and accompanying text resolve banked total lift into vertical and horizontal components; the vertical component opposes gravity and the horizontal component produces the turning force."
+        "notes": "Figure 1-40 and accompanying text resolve banked total lift into vertical and horizontal components; the vertical component opposes gravity and the horizontal component produces the turning force. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Bank tilts total lift; its vertical component supports weight and its horizontal component provides centripetal force.",
@@ -1298,17 +1298,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-turn-lift-components-v4.webp"
       },
       "mapping_reason": "The visual directly resolves the exact total-lift components named in both questions.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1416,7 +1416,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 27,
         "figure": "1-34",
-        "notes": "Load Factor and Stall Speed chart. In a constant-altitude turn load factor depends on bank angle; at 20 degrees n = 1/cos(20 degrees) about 1.064, matching the question's approximate 1.06 chart read-off."
+        "notes": "Load Factor and Stall Speed chart. In a constant-altitude turn load factor depends on bank angle; at 20 degrees n = 1/cos(20 degrees) about 1.064, matching the question's approximate 1.06 chart read-off. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Read approximately 1.06 G at 20 degrees bank, then multiply 3,000 lb by 1.06 to obtain approximately 3,180 lb structural load.",
@@ -1442,17 +1442,17 @@
         ]
       },
       "mapping_reason": "Question -4 explicitly requires the Figure PPL PoF-1 load-factor read-off at 20 degrees and then applies that factor to 3,000 lb.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-20deg-v2.png",
@@ -1501,7 +1501,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 27,
         "figure": "1-34",
-        "notes": "Load Factor and Stall Speed chart. The handbook notes load factor rises rapidly after 50 degrees; n = 1/cos(50 degrees) about 1.556, matching the question's approximate 1.56 chart read-off."
+        "notes": "Load Factor and Stall Speed chart. The handbook notes load factor rises rapidly after 50 degrees; n = 1/cos(50 degrees) about 1.556, matching the question's approximate 1.56 chart read-off. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Read approximately 1.56 G at 50 degrees bank, then multiply 4,600 lb by 1.56 to obtain approximately 7,160 lb structural load.",
@@ -1527,17 +1527,17 @@
         ]
       },
       "mapping_reason": "Question -5 explicitly requires the Figure PPL PoF-1 load-factor read-off at 50 degrees and then applies that factor to 4,600 lb.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-factor-50deg-v1.png",
@@ -1586,7 +1586,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 27,
         "figure": "1-34",
-        "notes": "Load Factor and Stall Speed chart relates bank angle to load factor in a constant-altitude turn. Solving cos(bank)=1/2.5 gives 66.4 degrees, consistent with the chart read-off."
+        "notes": "Load Factor and Stall Speed chart relates bank angle to load factor in a constant-altitude turn. Solving cos(bank)=1/2.5 gives 66.4 degrees, consistent with the chart read-off. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Start at 2.5 G on the load-factor scale, meet the level-turn curve, and read approximately 66 degrees bank.",
@@ -1611,17 +1611,17 @@
         ]
       },
       "mapping_reason": "Question -2 explicitly asks for the bank angle corresponding to a +2.5 G limit on Figure PPL PoF-1.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-2-5g-bank-v1.png",
@@ -1670,7 +1670,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 27,
         "figure": "1-34",
-        "notes": "Load Factor and Stall Speed chart relates bank angle to load factor in a constant-altitude turn. Solving cos(bank)=1/3.8 gives 74.7 degrees, consistent with the approximately 75 degree chart read-off."
+        "notes": "Load Factor and Stall Speed chart relates bank angle to load factor in a constant-altitude turn. Solving cos(bank)=1/3.8 gives 74.7 degrees, consistent with the approximately 75 degree chart read-off. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Start at 3.8 G on the load-factor scale, meet the level-turn curve, and read approximately 75 degrees bank.",
@@ -1695,17 +1695,17 @@
         ]
       },
       "mapping_reason": "Question -1 explicitly asks for the bank angle corresponding to a +3.8 G limit on Figure PPL PoF-1.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-load-limit-3-8g-bank-v1.png",
@@ -1754,7 +1754,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 1,
         "figure": "2-1",
-        "notes": "Figure 2-1 shows the four common flap types. The accompanying handbook text states that a Fowler flap tilts downward and slides rearward on tracks, increasing angle of attack, wing camber, and wing area."
+        "notes": "Figure 2-1 shows the four common flap types. The accompanying handbook text states that a Fowler flap tilts downward and slides rearward on tracks, increasing angle of attack, wing camber, and wing area. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "The defining movement is rearward travel: the Fowler flap extends the wing's effective chord/area before or as it deflects, so wing area increases.",
@@ -1781,17 +1781,17 @@
         ]
       },
       "mapping_reason": "Question 1201 asks the primary purpose/effect of the Fowler flap; Figure 2-1 and its text directly show that rearward extension increases wing area.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "assets": {
         "master_asset": "public/explanation-images/principles-of-flight/refined-batch-5/pof-fowler-flap-area-v1.png",
@@ -2273,7 +2273,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 4,
         "figure": "3-4 and 3-4b",
-        "notes": "Chapter 3 Airspeed Indicator Markings defines the white flap range and VFE upper limit, green normal range and VNO upper limit, yellow caution range, and red-line VNE."
+        "notes": "Chapter 3 Airspeed Indicator Markings defines the white flap range and VFE upper limit, green normal range and VNO upper limit, yellow caution range, and red-line VNE. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Read VFE, VNO and VNE directly from one standard colour-coded ASI.",
@@ -2303,17 +2303,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-airspeed-indicator-limits-v1.webp"
       },
       "mapping_reason": "These questions explicitly test VFE, VNO and VNE meaning/location; one standard ASI teaches those exact boundaries.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2381,7 +2381,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 8,
         "figure": "1-14",
-        "notes": "The handbook classifies skin friction as parasite drag, explains viscous surface drag, and Figure 1-14 contrasts skin friction with form drag."
+        "notes": "The handbook classifies skin friction as parasite drag, explains viscous surface drag, and Figure 1-14 contrasts skin friction with form drag. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Air immediately at the surface is slowed by viscosity; that shear is skin-friction parasite drag.",
@@ -2412,17 +2412,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-skin-friction-boundary-layer-v1.webp"
       },
       "mapping_reason": "These questions ask why air/dust at the wing surface behaves differently and/or how skin-friction resistance is classified.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2488,7 +2488,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 8,
         "figure": "1-15",
-        "notes": "The induced-drag section states induced drag rises with AoA and when the airplane is flown slower; Figure 1-15 shows induced drag high at low speed and decreasing with speed."
+        "notes": "The induced-drag section states induced drag rises with AoA and when the airplane is flown slower; Figure 1-15 shows induced drag high at low speed and decreasing with speed. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Low speed in level flight requires higher AoA, so induced drag is high; higher speed lowers required AoA and induced drag.",
@@ -2519,17 +2519,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-induced-drag-speed-aoa-v1.webp"
       },
       "mapping_reason": "The questions directly test induced drag increasing with lower speed or greater AoA, including total drag below best L/D.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2596,7 +2596,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 12,
         "figure": "1-17",
-        "notes": "Figure 1-17 and text connect altitude, temperature and humidity to density, take-off run and rate of climb; warm and humid air are less dense and lower density reduces performance."
+        "notes": "Figure 1-17 and text connect altitude, temperature and humidity to density, take-off run and rate of climb; warm and humid air are less dense and lower density reduces performance. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Hotter, higher and more humid conditions reduce density; lower density means poorer performance, longer take-off and weaker climb.",
@@ -2627,17 +2627,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-air-density-performance-v1.webp"
       },
       "mapping_reason": "The questions test how temperature, humidity and atmospheric properties affect density and aircraft lift/performance.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2701,7 +2701,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 23,
         "figure": "1-30",
-        "notes": "Figure 1-30 establishes that lowering an aileron increases local AoA and lift. The induced-drag section on page 1-8 establishes greater AoA/lift produces greater induced drag; together with the exact exam relationship this yields adverse yaw."
+        "notes": "Figure 1-30 establishes that lowering an aileron increases local AoA and lift. The induced-drag section on page 1-8 establishes greater AoA/lift produces greater induced drag; together with the exact exam relationship this yields adverse yaw. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "For a left roll the right aileron goes down, gains lift and drag, so the nose initially yaws right; left rudder coordinates the roll.",
@@ -2734,17 +2734,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-7/pof-adverse-yaw-aileron-drag-v1.webp"
       },
       "mapping_reason": "The questions ask the direction/cause of adverse aileron yaw and its rudder correction; the visual isolates the drag asymmetry that causes it.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3159,7 +3159,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 30,
         "figure": "Figure 1-37 \u2014 Forces acting on an airplane in a climb",
-        "notes": "The handbook resolves weight into a component opposing lift and a rearward component along the flight path. In equilibrium, thrust balances drag plus the rearward weight component, while lift balances only the perpendicular component of weight."
+        "notes": "The handbook resolves weight into a component opposing lift and a rearward component along the flight path. In equilibrium, thrust balances drag plus the rearward weight component, while lift balances only the perpendicular component of weight. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "In a steady climb the aircraft is not climbing because lift exceeds weight. Weight is resolved relative to the inclined flight path, so wing lift is less than total weight and thrust must exceed drag.",
@@ -3192,13 +3192,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-climb-force-components-v1.webp"
       },
       "mapping_reason": "All six questions test the same exact steady-climb force relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3209,8 +3209,8 @@
         "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. Lift is perpendicular to the climb path, thrust and drag lie along it, weight remains vertical, and the W-parallel/W-perpendicular decomposition supports L < W and T > D without implying excess lift."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "preview_verification": {
         "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
@@ -3249,7 +3249,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 31,
         "figure": "Figure 1-38 \u2014 Power available vs. power required",
-        "notes": "The handbook states that the vertical distance between power-available and power-required curves is excess power and that the best climbing airspeed is where excess power is maximum."
+        "notes": "The handbook states that the vertical distance between power-available and power-required curves is excess power and that the best climbing airspeed is where excess power is maximum. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Vy is the speed that gives the greatest altitude gain per unit time because it occurs at maximum excess power.",
@@ -3281,13 +3281,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-best-rate-excess-power-v1.webp"
       },
       "mapping_reason": "Both questions test Vy as the best-rate speed; the visual teaches the exact excess-power relationship that makes Vy the best-rate speed.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3298,8 +3298,8 @@
         "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. The corrected Vy marker, endpoint dots, dashed projection, and maximum-excess-power bracket share one airspeed at the visibly widest vertical gap between the power-available and power-required curves."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "preview_verification": {
         "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
@@ -3521,7 +3521,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 20,
         "figure": "Figure 1-26 \u2014 Effect of trim tabs",
-        "notes": "The handbook describes the elevator trim tab as a separately controlled auxiliary surface on the elevator and states that an upward tab deflection forces the elevator downward while a downward tab deflection forces the elevator upward. The selected trim-tab angle is treated relative to the control surface, not as an automatically coupled balance tab."
+        "notes": "The handbook describes the elevator trim tab as a separately controlled auxiliary surface on the elevator and states that an upward tab deflection forces the elevator downward while a downward tab deflection forces the elevator upward. The selected trim-tab angle is treated relative to the control surface, not as an automatically coupled balance tab. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "A simple trim tab is not a balance tab. Once set, it keeps the selected angle relative to the elevator as the elevator moves; airflow on the tab supplies a force that helps hold the elevator in the trimmed position.",
@@ -3552,13 +3552,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-elevator-trim-tab-setting-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact simple trim-tab setting relationship relative to the elevator.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3569,8 +3569,8 @@
         "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. Both elevator positions show the trim tab exactly 15 degrees below a reference line extending the local elevator chord, making the constant selected angle relative to the elevator explicit and distinct from coupled tab behavior."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "preview_verification": {
         "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
@@ -3609,7 +3609,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 5,
         "figure": "1-9 / 1-10",
-        "notes": "Bernoulli section and Figures 1-9/1-10 show accelerating flow over the upper surface, lower pressure above, higher pressure below, and the resulting lift force."
+        "notes": "Bernoulli section and Figures 1-9/1-10 show accelerating flow over the upper surface, lower pressure above, higher pressure below, and the resulting lift force. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "A lifting aerofoil has lower static pressure above and higher static pressure below, so the pressure imbalance produces a net upward lift force.",
@@ -3640,17 +3640,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-pressure-distribution-lift-v1.webp"
       },
       "mapping_reason": "The two questions directly ask which pressure distribution creates lift; the visual will show that exact upper/lower pressure relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3702,7 +3702,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 23,
         "figure": "1-30",
-        "notes": "Figure 1-30 shows the lowered aileron increasing local AoA and lift. The handbook induced-drag section on page 8 states induced drag increases directly with angle of attack; together they explain why adverse yaw is stronger at high AoA."
+        "notes": "Figure 1-30 shows the lowered aileron increasing local AoA and lift. The handbook induced-drag section on page 8 states induced drag increases directly with angle of attack; together they explain why adverse yaw is stronger at high AoA. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "For the same roll input, a higher baseline AoA creates a larger induced-drag difference between the wings, so adverse yaw is stronger.",
@@ -3733,17 +3733,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-adverse-yaw-high-aoa-v1.webp"
       },
       "mapping_reason": "The questions ask when adverse yaw is most noticeable or how it changes with AoA; a low-vs-high AoA comparison teaches that exact relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3791,7 +3791,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 5,
         "figure": "1-9",
-        "notes": "The handbook venturi explanation states that as the passage narrows it contains the same amount of fluid, while flow speed rises and pressure falls."
+        "notes": "The handbook venturi explanation states that as the passage narrows it contains the same amount of fluid, while flow speed rises and pressure falls. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "A smaller venturi area does not lose mass flow: the flow speeds up through the throat and static pressure falls.",
@@ -3821,17 +3821,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-venturi-continuity-v1.webp"
       },
       "mapping_reason": "Question 1966 tests the exact continuity/Bernoulli changes through a venturi throat, which the visual will label directly.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3887,7 +3887,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 26,
         "figure": "1-33",
-        "notes": "The handbook explains that banking makes wing lift pull the aeroplane into a curved path, that constant altitude requires increased wing lift/load, and Figures 1-33/1-34 show load rising with bank. Page 25 explains the weight-plus-turning-load resultant."
+        "notes": "The handbook explains that banking makes wing lift pull the aeroplane into a curved path, that constant altitude requires increased wing lift/load, and Figures 1-33/1-34 show load rising with bank. Page 25 explains the weight-plus-turning-load resultant. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Bank tilts lift: its vertical component must equal weight to hold altitude, while its horizontal component turns the aeroplane inward; achieving the larger total lift requires increased AoA and creates a higher load factor.",
@@ -3918,17 +3918,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-level-turn-force-balance-v1.webp"
       },
       "mapping_reason": "These questions all ask about the same level-turn force balance, its centripetal source, the AoA increase needed to maintain altitude, or the associated resultant load.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3978,7 +3978,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 13,
         "figure": "1-18",
-        "notes": "The handbook identifies torque reaction and asymmetric propeller loading/P-factor as left-turning forces, notes the tendency is strongest at high power/low speed/high AoA, and states right rudder is used to correct it. The torque-reaction detail continues on page 14."
+        "notes": "The handbook identifies torque reaction and asymmetric propeller loading/P-factor as left-turning forces, notes the tendency is strongest at high power/low speed/high AoA, and states right rudder is used to correct it. The torque-reaction detail continues on page 14. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING."
       },
       "brief": {
         "student_must_understand": "Clockwise propeller from the cockpit: torque reaction rolls the aircraft left; at high power/high AoA the descending blade produces more thrust, yawing left, so right rudder is required.",
@@ -4009,17 +4009,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-10/pof-propeller-left-turning-tendencies-v1.webp"
       },
       "mapping_reason": "Question 1948 asks the torque-reaction roll direction and question 1950 asks the P-factor/right-rudder correction; the two-panel visual separates those exact effects.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4069,7 +4069,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 2, Wing Flaps / Figure 2-1",
-        "notes": "The handbook describes flap extension as changing the wing lifting characteristics and increasing lift and drag.",
+        "notes": "The handbook describes flap extension as changing the wing lifting characteristics and increasing lift and drag. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING.",
         "page": 2,
         "figure": "2-1"
       },
@@ -4102,17 +4102,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-trailing-edge-flap-lift-drag-v1.webp"
       },
       "mapping_reason": "The four target questions directly ask what trailing-edge flaps do to lift and drag at a given flight condition.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4184,7 +4184,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 2, Flight Control Systems / Wing Flaps",
-        "notes": "The handbook states that flaps change wing lifting characteristics and decrease the speed at which the wing stalls.",
+        "notes": "The handbook states that flaps change wing lifting characteristics and decrease the speed at which the wing stalls. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING.",
         "page": 2,
         "figure": "2-1"
       },
@@ -4217,17 +4217,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-flap-stall-speed-v1.webp"
       },
       "mapping_reason": "Both target questions ask whether flap extension raises or lowers stall speed; the visual teaches that exact relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4298,7 +4298,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 2, Figure 2-1 \u2014 Fowler flap",
-        "notes": "The handbook distinguishes the Fowler flap by its rearward travel, which increases wing area as it extends.",
+        "notes": "The handbook distinguishes the Fowler flap by its rearward travel, which increases wing area as it extends. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING.",
         "page": 2,
         "figure": "2-1"
       },
@@ -4331,17 +4331,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-fowler-flap-wing-area-v1.webp"
       },
       "mapping_reason": "Question 1358 specifically tests the Fowler flap's area-increasing rearward extension.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4413,7 +4413,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 1, Static and Dynamic Stability / Figures 1-19 and 1-20",
-        "notes": "The handbook separates initial static response from the time history of dynamic oscillation and damping.",
+        "notes": "The handbook separates initial static response from the time history of dynamic oscillation and damping. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING.",
         "page": 16,
         "figure": "1-19 / 1-20"
       },
@@ -4446,17 +4446,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-static-dynamic-stability-response-v1.webp"
       },
       "mapping_reason": "The questions distinguish stable return, dynamically stable passenger-aircraft behavior, and statically stable but dynamically unstable growing oscillations.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4528,7 +4528,7 @@
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "location": "Chapter 1, Directional Stability / Figure 1-31",
-        "notes": "The handbook describes the vertical fin behind the CG as a weather-vane surface that returns a yawed aeroplane toward its original direction.",
+        "notes": "The handbook describes the vertical fin behind the CG as a weather-vane surface that returns a yawed aeroplane toward its original direction. REVERTED: visual inspection confirmed this is an AI-drawn/redrawn original diagram, not an extraction from the cited source figure -- the shipped artwork does not match the real source raster's style or content at all. Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure. Database rows reset to REFINING.",
         "page": 24,
         "figure": "1-31"
       },
@@ -4561,17 +4561,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-11/pof-directional-fin-weathercock-v1.webp"
       },
       "mapping_reason": "The target questions directly ask what provides directional stability and why increasing keel surface behind the CG increases it.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,

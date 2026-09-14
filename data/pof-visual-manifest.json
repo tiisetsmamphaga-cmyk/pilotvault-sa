@@ -888,7 +888,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 11,
         "figure": null,
-        "notes": "The handbook states that tests show lift and drag vary as the square of velocity and that doubling speed quadruples lift and drag when angle of attack remains unchanged."
+        "notes": "The handbook states that tests show lift and drag vary as the square of velocity and that doubling speed quadruples lift and drag when angle of attack remains unchanged. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "The velocity term is squared, so a 2x speed change produces a 4x force change under the stated fixed conditions.",
@@ -914,17 +914,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-speed-squared-lift-drag-v1.webp"
       },
       "mapping_reason": "The selected questions all require recognizing the same square-law speed relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -956,7 +956,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 10,
         "figure": null,
-        "notes": "The handbook states that lift and drag are proportional to wing area; doubling area doubles lift and drag when other variables remain unchanged."
+        "notes": "The handbook states that lift and drag are proportional to wing area; doubling area doubles lift and drag when other variables remain unchanged. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "More reference wing area produces proportionally more lift and drag under otherwise identical conditions.",
@@ -984,17 +984,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-3/pof-wing-area-lift-drag-v1.webp"
       },
       "mapping_reason": "Question 1253 isolates wing surface area while holding AoA, airspeed and density unchanged.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1344,7 +1344,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 11,
         "figure": null,
-        "notes": "The handbook describes wing twist with a lower angle of incidence at the tip so that the root approaches critical AoA and stalls first, preserving lateral control near the stall."
+        "notes": "The handbook describes wing twist with a lower angle of incidence at the tip so that the root approaches critical AoA and stalls first, preserving lateral control near the stall. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "Washout is geometric twist: tip incidence is lower than root incidence, encouraging a root-first stall and keeping the aileron region flying longer.",
@@ -1373,17 +1373,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-4/pof-washout-wing-twist-v1.webp"
       },
       "mapping_reason": "The selected questions ask either what washout means or how the same twist prevents premature wingtip stall.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1839,7 +1839,7 @@
         "document": "421864604-Principles-of-flight-questions-pdf.pdf",
         "page": 22,
         "figure": "PPL PoF-2",
-        "notes": "Question 140 explicitly references the wing polar and identifies point 3 as the angle of attack for minimum drag."
+        "notes": "Question 140 explicitly references the wing polar and identifies point 3 as the angle of attack for minimum drag. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "Minimum drag on the wing polar is read at the smallest drag coefficient, labelled point 3 in the referenced exam figure.",
@@ -1869,17 +1869,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-min-drag-v1.webp"
       },
       "mapping_reason": "The question requires interpreting Figure PPL PoF-2 and specifically identifying point 3 as the minimum-drag angle of attack.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -1922,7 +1922,7 @@
         "document": "421864604-Principles-of-flight-questions-pdf.pdf",
         "page": 22,
         "figure": "PPL PoF-2",
-        "notes": "Question 138 explicitly references the wing polar and identifies point 4 as the best angle of attack; the defining relationship is maximum L/D at the tangent from the origin."
+        "notes": "Question 138 explicitly references the wing polar and identifies point 4 as the best angle of attack; the defining relationship is maximum L/D at the tangent from the origin. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "Best angle of attack means maximum L/D and is located where a straight line from the origin is tangent to the polar, labelled point 4.",
@@ -1954,17 +1954,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-best-ld-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the best-angle point on the referenced polar; the visual teaches the maximum-L/D tangent method and point 4.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2007,7 +2007,7 @@
         "document": "421864604-Principles-of-flight-questions-pdf.pdf",
         "page": 22,
         "figure": "PPL PoF-2",
-        "notes": "Question 139 explicitly references the wing polar and identifies point 6 as the critical angle of attack; critical AoA corresponds to maximum CL before lift falls."
+        "notes": "Question 139 explicitly references the wing polar and identifies point 6 as the critical angle of attack; critical AoA corresponds to maximum CL before lift falls. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "Critical angle of attack is found at maximum CL, the top of the polar before the curve turns downward, labelled point 6.",
@@ -2039,17 +2039,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-wing-polar-critical-aoa-v1.webp"
       },
       "mapping_reason": "The question explicitly asks for the critical-angle point on the referenced polar; point 6 is the maximum-CL peak.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2092,7 +2092,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 8,
         "figure": null,
-        "notes": "Handbook induced-drag section states induced drag is an unavoidable by-product of lift and a rearward component of the lift vector; its wake-turbulence section explains that upper/lower pressure differential rolls airflow around the wingtips into vortices."
+        "notes": "Handbook induced-drag section states induced drag is an unavoidable by-product of lift and a rearward component of the lift vector; its wake-turbulence section explains that upper/lower pressure differential rolls airflow around the wingtips into vortices. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "The wing has lower pressure above and higher pressure below; air spills around the tip, creating a vortex/downwash system associated with induced drag.",
@@ -2124,17 +2124,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-6/pof-induced-drag-vortex-origin-v1.webp"
       },
       "mapping_reason": "Question 1178 asks what creates induced drag; the visual directly connects the top/bottom pressure difference to wingtip roll-up and the induced-drag consequence.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2811,7 +2811,7 @@
         "document": "FAA-H-8083-25C_PHAK_Chapter_6.pdf",
         "page": 11,
         "figure": null,
-        "notes": "The FAA Pilot's Handbook of Aeronautical Knowledge, Chapter 6, states that balance tabs automatically move opposite the main control surface; the resulting airflow counterbalances pressure on the main surface and reduces the force needed to move it."
+        "notes": "The FAA Pilot's Handbook of Aeronautical Knowledge, Chapter 6, states that balance tabs automatically move opposite the main control surface; the resulting airflow counterbalances pressure on the main surface and reduces the force needed to move it. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "When the elevator, rudder, or aileron moves one way, its balance tab moves the opposite way; airflow on the tab helps move the main surface instead of adding pilot effort.",
@@ -2843,13 +2843,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-balance-tab-opposite-v1.webp"
       },
       "mapping_reason": "These questions ask either the relative movement or force-reducing purpose of a balance tab; one opposite-deflection teaching visual directly explains both parts of that exact mechanism.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2860,8 +2860,8 @@
         "review_note": "The exact optimized 1600x1050 PNG and matching WebP were rendered and inspected against the locked Batch 1 quality standard. The primary surface and trailing-edge balance tab move in unmistakably opposite directions, while the airflow-assistance cue and reduced-pilot-force outcome remain distinct and readable. An ambiguous extra motion arrow was removed before approval."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       }
     },
     {
@@ -2947,7 +2947,7 @@
         "document": "FAA-H-8083-3C_AFH_Glossary.pdf",
         "page": 14,
         "figure": null,
-        "notes": "The FAA Airplane Flying Handbook glossary defines a spin as autorotation and states that the rising wing is less stalled than the descending wing, producing rolling, yawing and pitching motion. Chapter 5, Figure 5-15, independently identifies a spin as an aggravated stall and autorotation."
+        "notes": "The FAA Airplane Flying Handbook glossary defines a spin as autorotation and states that the rising wing is less stalled than the descending wing, producing rolling, yawing and pitching motion. Chapter 5, Figure 5-15, independently identifies a spin as an aggravated stall and autorotation. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "In a left spin, the left/inner wing descends and is more deeply stalled at the greater AoA; the right/outer wing rises and is less stalled.",
@@ -2980,13 +2980,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-8/pof-spin-differential-stall-v1.webp"
       },
       "mapping_reason": "The questions all ask which wing is more stalled or at the greater AoA during autorotation; the visual isolates that exact inner-versus-outer wing state.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -2997,8 +2997,8 @@
         "review_note": "The exact optimized 1600x1050 PNG and matching WebP were rendered and inspected against the locked Batch 1 quality standard. The corrected pilot-left wing is viewer-right, descending and more deeply stalled, while the pilot-right wing is viewer-left, rising and less stalled. Rotation, relative angle-of-attack cues, and inner/outer-wing labels are mutually consistent and readable."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       }
     },
     {
@@ -3340,7 +3340,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 65,
         "figure": null,
-        "notes": "The handbook defines Vx as the speed for best angle of climb and explicitly identifies best-angle climb speed as important for a short-field takeoff where an obstacle must be cleared."
+        "notes": "The handbook defines Vx as the speed for best angle of climb and explicitly identifies best-angle climb speed as important for a short-field takeoff where an obstacle must be cleared. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "Vx is about height gained per horizontal distance, not height gained per unit time. It produces the steepest ground-referenced climb path for obstacle clearance under the stated conditions.",
@@ -3371,13 +3371,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-vx-obstacle-clearance-v1.webp"
       },
       "mapping_reason": "All five questions test the same exact Vx/obstacle-clearance relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3388,8 +3388,8 @@
         "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. The Vx path clearly clears the fixed obstacle over the marked short horizontal distance; the intersecting Vy comparison path was removed and angle-versus-rate is distinguished in text."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "preview_verification": {
         "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
@@ -3429,7 +3429,7 @@
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 33,
         "figure": null,
-        "notes": "The handbook states that into-wind glide covers less ground distance and appears steeper to a ground observer, while downwind glide covers more ground distance. It explicitly states the actual glide angle through the moving air mass is unchanged and that the rate of descent is the same in both cases."
+        "notes": "The handbook states that into-wind glide covers less ground distance and appears steeper to a ground observer, while downwind glide covers more ground distance. It explicitly states the actual glide angle through the moving air mass is unchanged and that the rate of descent is the same in both cases. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "A headwind reduces groundspeed, so the aircraft covers less ground for the same height loss and the ground-referenced glide path is steeper. A tailwind does the opposite. The aerodynamic glide through the air mass is unchanged by steady wind.",
@@ -3462,13 +3462,13 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-9/pof-wind-glide-ground-track-v1.webp"
       },
       "mapping_reason": "All three questions test the same exact wind-versus-ground-glide-path relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -3479,8 +3479,8 @@
         "review_note": "The exact 1600x1050 PNG and optimized WebP were rendered and inspected. Both panels use the same starting height and air-mass glide condition; headwind yields the shorter, steeper ground path while tailwind yields the longer, shallower ground path, with equal rate of descent stated and shown."
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "preview_verification": {
         "deployment_id": "dpl_Hjo2wCPZF5BkFXUpU9mHsfR8E756",
@@ -4644,7 +4644,7 @@
         "page": 20,
         "figure": null,
         "location": "FLIGHT CONTROLS section, pages 20-21",
-        "notes": "The source explicitly states the primary and further effects of rudder: yaw, then roll, followed by spiral dive."
+        "notes": "The source explicitly states the primary and further effects of rudder: yaw, then roll, followed by spiral dive. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "The sequence is causal and ordered: rudder -> yaw -> roll -> possible spiral dive if the imbalance is not corrected.",
@@ -4674,17 +4674,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-rudder-further-effects-v1.webp"
       },
       "mapping_reason": "Both target rows test the exact same ordered rudder-effect sequence.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4756,7 +4756,7 @@
         "page": 20,
         "figure": null,
         "location": "FLIGHT CONTROLS section, pages 20-21",
-        "notes": "The source explicitly gives roll, then yaw, followed by spiral dive for aileron-only input."
+        "notes": "The source explicitly gives roll, then yaw, followed by spiral dive for aileron-only input. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "The sequence is ordered: aileron -> roll -> yaw -> possible spiral dive if uncorrected.",
@@ -4786,17 +4786,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aileron-further-effects-v1.webp"
       },
       "mapping_reason": "Questions 1120 and 1149 ask the same aileron-only primary/further-effect relationship.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4867,7 +4867,7 @@
         "page": 18,
         "figure": null,
         "location": "Question 114; cross-checked with ac_61-23c_phak_canada.pdf Figures 1-25 and 1-30",
-        "notes": "Question source states the exact surface movements. PHAK Figure 1-30 confirms left-stick aileron motion; Figure 1-25 confirms forward-column elevator-down motion."
+        "notes": "Question source states the exact surface movements. PHAK Figure 1-30 confirms left-stick aileron motion; Figure 1-25 confirms forward-column elevator-down motion. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "Forward-left column displacement combines two independent control responses: pitch-forward elevator-down plus left-roll aileron differential.",
@@ -4898,17 +4898,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-control-column-forward-left-v1.webp"
       },
       "mapping_reason": "Question 2028 uniquely tests the combined forward-left control-column geometry.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -4981,7 +4981,7 @@
         "page": 7,
         "figure": null,
         "location": "DRAG section, page 7",
-        "notes": "The source states both the aspect-ratio definition and the high-AR/low-AR induced-drag relationship."
+        "notes": "The source states both the aspect-ratio definition and the high-AR/low-AR induced-drag relationship. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "High aspect ratio means relatively long span and short mean chord, and it reduces induced drag compared with a low-aspect-ratio wing.",
@@ -5011,17 +5011,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-aspect-ratio-induced-drag-v1.webp"
       },
       "mapping_reason": "Four rows test the same aspect-ratio geometry and its induced-drag consequence.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,
@@ -5092,7 +5092,7 @@
         "page": 9,
         "figure": null,
         "location": "Question 55; geometry cross-check against PHAK Figure 1-27 dihedral definition",
-        "notes": "The question source explicitly defines downward root-to-tip inclination as anhedral; PHAK Figure 1-27 provides the opposite dihedral geometry for a clean contrast."
+        "notes": "The question source explicitly defines downward root-to-tip inclination as anhedral; PHAK Figure 1-27 provides the opposite dihedral geometry for a clean contrast. Reverted: this visual was an original AI-drawn diagram with no extractable source figure (source.figure was null, or cited a document not present in this repository and therefore unverifiable). Per standing policy, POF visuals must be extracted/refined from a real, accessible source figure, not invented or drawn from text alone. Database rows reset to REFINING; asset kept on disk for reference only and no longer referenced by any question."
       },
       "brief": {
         "student_must_understand": "From a front view, anhedral means each wingtip sits lower than its wing root; it is the opposite geometric sense of dihedral.",
@@ -5123,17 +5123,17 @@
         "web_asset": "public/explanation-images/principles-of-flight/refined-batch-12/pof-anhedral-wing-geometry-v1.webp"
       },
       "mapping_reason": "Question 2004 directly tests recognition of anhedral geometry.",
-      "status": "LIVE_VERIFIED",
+      "status": "QA_FAILED",
       "qa": {
         "technical": true,
         "teaching": true,
         "visual": true,
-        "preview": true,
-        "live": true
+        "preview": false,
+        "live": false
       },
       "lock": {
-        "approved": true,
-        "replacement_reason": null
+        "approved": false,
+        "replacement_reason": "visual_error"
       },
       "visual_inspection": {
         "actual_image_reviewed": true,

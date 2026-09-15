@@ -219,6 +219,7 @@ export function ExamSimulator({
                     alt={`Explanation diagram for ${currentQuestion.topic ?? formatSubjectName(subject)}`}
                     title={currentQuestion.explanation_image_title}
                     caption={currentQuestion.explanation_image_caption}
+                    template={currentQuestion.explanation_visual_template}
                     priority
                   />
                 ) : null}

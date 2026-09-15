@@ -112,6 +112,9 @@ export function ExamResults({
                       <ExplanationImage
                         src={question.explanation_image_url}
                         alt={`Explanation diagram for ${question.topic ?? formatSubjectName(subject)}`}
+                        title={question.explanation_image_title}
+                        caption={question.explanation_image_caption}
+                        template={question.explanation_visual_template}
                       />
                     ) : null}
                   </div>

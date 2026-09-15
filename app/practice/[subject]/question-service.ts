@@ -77,6 +77,7 @@ async function loadSubjectQuestions(
           explanation_image_title,
           explanation_image_caption,
           explanation_visual_key,
+          explanation_visual_template,
           option_a,
           option_b,
           option_c,
@@ -122,6 +123,7 @@ async function loadSubjectQuestions(
     explanation_image_title: question.explanation_image_title ?? undefined,
     explanation_image_caption: question.explanation_image_caption ?? undefined,
     explanation_visual_key: question.explanation_visual_key ?? undefined,
+    explanation_visual_template: question.explanation_visual_template ?? undefined,
     options: [
       question.option_a,
       question.option_b,

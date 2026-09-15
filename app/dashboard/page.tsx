@@ -5,10 +5,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
-  Brain,
   ChevronRight,
   Cloud,
   Compass,
+  Cpu,
+  Gauge,
   LockKeyhole,
   LogOut,
   Map,
@@ -16,7 +17,6 @@ import {
   Radio,
   Scale,
   UserRound,
-  Wrench,
 } from "lucide-react"
 import { PageSkeleton } from "@/components/page-skeleton"
 import {
@@ -37,12 +37,12 @@ const subjects = [
   { name: "Meteorology", slug: "meteorology", icon: Cloud },
   { name: "Air Law", slug: "air-law", icon: Scale },
   { name: "Navigation", slug: "navigation", icon: Compass },
-  { name: "Human Performance", slug: "human-performance", icon: Brain },
+  { name: "Human Performance", slug: "human-performance", icon: Gauge },
   { name: "Principles of Flight", slug: "principles-of-flight", icon: Plane },
   {
     name: "Aircraft Technical and General",
     slug: "aircraft-technical-and-general",
-    icon: Wrench,
+    icon: Cpu,
   },
   { name: "Radio Telephony", slug: "radio-telephony", icon: Radio },
   { name: "Flight Planning", slug: "flight-planning", icon: Map },
@@ -352,13 +352,11 @@ export default function DashboardPage() {
                         : "border-slate-200 opacity-70"
                     } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/35`}
                   >
-                    <span
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
-                        unlocked ? "bg-[#d6e6f7] text-[#1f4e79]" : "bg-slate-100 text-slate-400"
+                    <Icon
+                      className={`h-5 w-5 shrink-0 ${
+                        unlocked ? "text-[#1f4e79]" : "text-slate-300"
                       }`}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </span>
+                    />
 
                     <div className="min-w-0 flex-1">
                       <h3

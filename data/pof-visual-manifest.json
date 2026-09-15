@@ -6703,6 +6703,564 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": "Single-question card."
+    },
+    {
+      "visual_id": "pof-aoa-examples-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "CHORD LINE vs FLIGHT PATH — AoA = ANGLE BETWEEN CHORD LINE AND FLIGHT PATH",
+      "question_ids": [
+        1151,
+        1300,
+        1321
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 2,
+        "figure": "1-2",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-2)."
+      },
+      "brief": {
+        "student_must_understand": "CHORD LINE vs FLIGHT PATH; AoA = ANGLE BETWEEN CHORD LINE AND FLIGHT PATH",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-aoa-examples-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-aoa-examples-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-angle-of-incidence-001",
+      "topic": "Wing Design",
+      "concept": "CHORD LINE vs LONGITUDINAL AXIS — FIXED BY WING RIGGING — DOES NOT CHANGE IN FLIGHT",
+      "question_ids": [
+        1152
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 2,
+        "figure": "1-3",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-3)."
+      },
+      "brief": {
+        "student_must_understand": "CHORD LINE vs LONGITUDINAL AXIS; FIXED BY WING RIGGING — DOES NOT CHANGE IN FLIGHT",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-angle-of-incidence-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-angle-of-incidence-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Single-question card."
+    },
+    {
+      "visual_id": "pof-airfoil-nomenclature-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "LEADING EDGE → TRAILING EDGE — THE CHORD LINE IS A STRAIGHT LINE, NOT THE CAMBER",
+      "question_ids": [
+        1119
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 3,
+        "figure": "1-4",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-4)."
+      },
+      "brief": {
+        "student_must_understand": "LEADING EDGE → TRAILING EDGE; THE CHORD LINE IS A STRAIGHT LINE, NOT THE CAMBER",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-airfoil-nomenclature-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-airfoil-nomenclature-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Single-question card."
+    },
+    {
+      "visual_id": "pof-relative-wind-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "ALWAYS OPPOSITE THE FLIGHT PATH — PARALLEL TO AND OPPOSITE THE AIRCRAFT'S FLIGHT PATH",
+      "question_ids": [
+        1962
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 3,
+        "figure": "1-6",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-6)."
+      },
+      "brief": {
+        "student_must_understand": "ALWAYS OPPOSITE THE FLIGHT PATH; PARALLEL TO AND OPPOSITE THE AIRCRAFT'S FLIGHT PATH",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-relative-wind-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-relative-wind-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Single-question card."
+    },
+    {
+      "visual_id": "pof-lift-perpendicular-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "PERPENDICULAR TO RELATIVE WIND — ALSO PERPENDICULAR TO THE WINGSPAN",
+      "question_ids": [
+        1113,
+        1316,
+        1983
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 6,
+        "figure": "1-11",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-11)."
+      },
+      "brief": {
+        "student_must_understand": "PERPENDICULAR TO RELATIVE WIND; ALSO PERPENDICULAR TO THE WINGSPAN",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-lift-perpendicular-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-lift-perpendicular-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-boundary-layer-001",
+      "topic": "Drag",
+      "concept": "FORM DRAG vs SKIN FRICTION DRAG — BOUNDARY LAYER = AIR SLOWED BY SURFACE CONTACT",
+      "question_ids": [
+        1129,
+        1349,
+        1160,
+        1344,
+        1181,
+        1355,
+        1980
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 8,
+        "figure": "1-14",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-14)."
+      },
+      "brief": {
+        "student_must_understand": "FORM DRAG vs SKIN FRICTION DRAG; BOUNDARY LAYER = AIR SLOWED BY SURFACE CONTACT",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-boundary-layer-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-boundary-layer-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-left-turning-tendency-001",
+      "topic": "Basic Aerodynamics",
+      "concept": "TORQUE + GYROSCOPIC + SLIPSTREAM + P-FACTOR — ALL FOUR YAW THE AIRCRAFT LEFT AT HIGH POWER/AoA",
+      "question_ids": [
+        1948,
+        1950
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 13,
+        "figure": "1-18",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-18)."
+      },
+      "brief": {
+        "student_must_understand": "TORQUE + GYROSCOPIC + SLIPSTREAM + P-FACTOR; ALL FOUR YAW THE AIRCRAFT LEFT AT HIGH POWER/AoA",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-left-turning-tendency-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-left-turning-tendency-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-static-stability-types-001",
+      "topic": "Stability",
+      "concept": "NEUTRAL = STAYS IN THE NEW ATTITUDE — MAKES NO TENDENCY TO RETURN OR DIVERGE FURTHER",
+      "question_ids": [
+        1167,
+        2005
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 17,
+        "figure": "1-19",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-19)."
+      },
+      "brief": {
+        "student_must_understand": "NEUTRAL = STAYS IN THE NEW ATTITUDE; MAKES NO TENDENCY TO RETURN OR DIVERGE FURTHER",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-static-stability-types-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-static-stability-types-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-rudder-effect-001",
+      "topic": "Flight Controls & Axes",
+      "concept": "PRIMARY: YAW ABOUT VERTICAL AXIS — FURTHER EFFECT: ROLL (VIA SIDESLIP)",
+      "question_ids": [
+        1109,
+        1327
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 24,
+        "figure": "1-31",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-31)."
+      },
+      "brief": {
+        "student_must_understand": "PRIMARY: YAW ABOUT VERTICAL AXIS; FURTHER EFFECT: ROLL (VIA SIDESLIP)",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-rudder-effect-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-rudder-effect-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-turn-force-resolution-001",
+      "topic": "Turns & Load Factor",
+      "concept": "LIFT = VERTICAL + HORIZONTAL COMPONENTS — HORIZONTAL COMPONENT = CENTRIPETAL FORCE",
+      "question_ids": [
+        1230,
+        1278,
+        1231,
+        1328,
+        1245,
+        1378
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 34,
+        "figure": "1-40",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-40)."
+      },
+      "brief": {
+        "student_must_understand": "LIFT = VERTICAL + HORIZONTAL COMPONENTS; HORIZONTAL COMPONENT = CENTRIPETAL FORCE",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-turn-force-resolution-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-turn-force-resolution-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-power-available-required-001",
+      "topic": "Climb Performance",
+      "concept": "MAX EXCESS POWER = MAX RATE OF CLIMB — THE WIDEST GAP BETWEEN THE TWO CURVES",
+      "question_ids": [
+        1215,
+        1244
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 31,
+        "figure": "1-38",
+        "notes": "Extracted and refined directly from the source raster (Fig 1-38)."
+      },
+      "brief": {
+        "student_must_understand": "MAX EXCESS POWER = MAX RATE OF CLIMB; THE WIDEST GAP BETWEEN THE TWO CURVES",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-power-available-required-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-19/pof-power-available-required-v1.webp"
+      },
+      "mapping_reason": "Real source figure directly depicts the fact each question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
     }
   ]
 }

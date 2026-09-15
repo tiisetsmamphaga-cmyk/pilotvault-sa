@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "subject": "principles-of-flight",
-  "audit_date": "2026-09-04",
+  "audit_date": "2026-09-14",
   "source_of_question_state": "live Supabase public.questions",
   "audit_rule": {
     "visual_required_when": [
@@ -19,49 +19,53 @@
   },
   "snapshot": {
     "total_pof_questions": 365,
-    "live_verified_question_mappings": 118,
-    "remaining_question_rows_audited": 247,
-    "remaining_visual_required": 182,
-    "remaining_no_visual_required": 65,
-    "total_visual_required_question_universe": 300,
-    "question_coverage_completion_percent": 39.3,
-    "calculation": "118 / (118 + 182) * 100"
+    "live_verified_question_mappings": 232,
+    "remaining_question_rows_refining": 133,
+    "remaining_visual_required_questions": 43,
+    "remaining_no_visual_required_questions": 90,
+    "question_coverage_completion_percent": 63.6,
+    "calculation": "232 / 365 * 100",
+    "note": "232 includes 25 Batch 8 question-rows corrected from a stale REFINING status to LIVE_VERIFIED on 2026-09-14; those assets were already correct and already live, only the checkpoint was wrong."
   },
-  "visual_required_remaining_by_topic": {
-    "Aerofoils & Lift": [1114,1116,1117,1129,1139,1150,1283,1292,1349,1949,1974,1975,1978,1979,2002],
-    "Aileron Drag": [1154,1170,1175,1182,1184,1191,1290,1359],
-    "Basic Aerodynamics": [1948,1950,1964,1965,1966,1972],
-    "Climb Performance": [1215,1217,1219,1220,1221,1244,1252,1256,1288,1298,1351,1371,1377,2014],
-    "Drag": [1163,1176,1183,1189,1282,1296,1297,1322,1356,1357,1984,2036],
-    "Flaps & Glide": [1209,1213,1223,1225,1229,1232,1254,1281,1333,1335,1342,1346,1358,1373,1951,1985,1992,1995,1999,2003],
-    "Flight Controls & Axes": [1108,1109,1120,1134,1149,1308,1327,1998,2028],
-    "Four Forces": [1106,1125,1126,1246],
-    "Spins": [1242,1249,1339,1370,2025],
-    "Stability": [1111,1112,1115,1130,1133,1141,1166,1172,1179,1187,1188,1192,1195,1198,1280,1285,1289,1302,1307,1310,1318,1319,1320,1325,1331,1337,1340,1341,1352,1987,1988,1989,1990,1996,1997,2000,2001,2006],
-    "Stalls": [1199,1203,1205,1208,1224,1238,1248,1255,1323,1326,1334,1338,2008,2010],
-    "Trim & Balance Tabs": [1161,1165,1180,1190,1279,1304,1305,1317,1986,2012,2015,2019,2023,2026,2027],
-    "Turns & Load Factor": [1200,1204,1214,1216,1227,1228,1231,1235,1240,1245,1250,1251,1328,1360,1363,1375,1378],
-    "Wing Design": [1171,1185,1186,1314,2004]
+  "asset_integrity_check": {
+    "date": "2026-09-14",
+    "total_distinct_assets_on_disk": 68,
+    "total_distinct_assets_referenced_in_db": 68,
+    "orphaned_files_on_disk": 0,
+    "broken_db_references": 0,
+    "result": "clean"
   },
-  "no_visual_required_remaining_by_topic": {
-    "Aerofoils & Lift": [1122,1287,1970,1976,1982,1993],
-    "Airspeed": [1105,1136,1263,1272,1275,1372,1376],
-    "Airspeed Limitations": [1259,1260,1262,1265,2011],
-    "Basic Aerodynamics": [1107,1132,1137,1365,1366,1955,1956,1957,1958,1967,1968,1969,1971],
-    "Climb Performance": [1218],
-    "Descent Performance": [1226,1243,1374],
-    "Drag": [1156,1162,1194,1312,1315,1977],
-    "Flaps & Glide": [1233,1364],
-    "Four Forces": [1143],
-    "ISA & Air Density": [1258,1261,1271,1273,1274,1343,1367,1952,1953,1954,1959,1960],
-    "Stability": [1994],
-    "Stalls": [1234,1247],
-    "Turns & Load Factor": [2016,2018,2021,2030,2033],
-    "Weight & Balance": [1138]
-  },
+  "remaining_visual_required_concepts": [
+    {"concept": "Mass balance ahead of hinge line", "topic": "Trim & Balance Tabs", "question_ids": [1165, 1279]},
+    {"concept": "Horn balance / hinge set-back aerodynamic balance", "topic": "Trim & Balance Tabs", "question_ids": [1180, 1317, 2019]},
+    {"concept": "Longitudinal dihedral (tailplane incidence vs mainplane)", "topic": "Stability", "question_ids": [1130, 1166, 1187, 1198, 1325, 1337]},
+    {"concept": "CG position and elevator control effectiveness", "topic": "Stability", "question_ids": [1115, 1133, 1307]},
+    {"concept": "High-wing vs low-wing lateral stability comparison (no dihedral)", "topic": "Stability", "question_ids": [1988]},
+    {"concept": "Dutch roll: coupled roll-yaw oscillation", "topic": "Stability", "question_ids": [1987]},
+    {"concept": "Aerodynamic centre vs CG restoring moment", "topic": "Stability", "question_ids": [1997, 2001]},
+    {"concept": "Glide-angle / L-D triangle: weight independence, flap effect", "topic": "Flaps & Glide", "question_ids": [1233, 1241, 1330, 1364, 1991]},
+    {"concept": "Full-flap vs flapless approach: nose attitude comparison", "topic": "Flaps & Glide", "question_ids": [1213, 1232]},
+    {"concept": "Centre of pressure moves aft when flaps lowered", "topic": "Flaps & Glide", "question_ids": [1223, 1346]},
+    {"concept": "CL-vs-AoA curve shift with flaps (critical angle down, CLmax up)", "topic": "Flaps & Glide", "question_ids": [1995]},
+    {"concept": "Leading-edge slot airflow re-energisation", "topic": "Flaps & Glide", "question_ids": [1999]},
+    {"concept": "Induced-drag curve shift with increased weight", "topic": "Drag", "question_ids": [1156, 1312]},
+    {"concept": "Angle of attack vs upper-surface pressure and drag", "topic": "Drag", "question_ids": [1162, 1315]},
+    {"concept": "Washout: reduces induced drag, controls wingtip stall", "topic": "Drag", "question_ids": [1189, 1282]},
+    {"concept": "Parasite drag vs speed (quantitative, v-squared)", "topic": "Drag", "question_ids": [1977]},
+    {"concept": "Wing planform vs induced drag comparison", "topic": "Drag", "question_ids": [2036]},
+    {"concept": "CG-CP / thrust-drag couple: power change pitch effect", "topic": "Four Forces / Basic Aerodynamics", "question_ids": [1126, 1143, 1246, 1280, 1972]},
+    {"concept": "Differential ailerons reduce adverse yaw", "topic": "Aileron Drag", "question_ids": [1175, 1184]},
+    {"concept": "Frise ailerons reduce aileron drag", "topic": "Aileron Drag", "question_ids": [1182]},
+    {"concept": "Centre of pressure moves forward as AoA increases (and aft at the stall)", "topic": "Aerofoils & Lift / Stalls", "question_ids": [1114, 1292, 2010]},
+    {"concept": "Cambered aerofoil: upper-surface pressure below atmospheric at zero AoA", "topic": "Aerofoils & Lift", "question_ids": [1116]},
+    {"concept": "Va / V-n diagram: manoeuvring speed protects structure", "topic": "Airspeed Limitations", "question_ids": [2011]},
+    {"concept": "Spin autorotation: inner/outer wing AoA asymmetry", "topic": "Spins", "question_ids": [1237, 1257, 1348, 1362], "status": "LIVE_VERIFIED via Batch 8 (pof-spin-differential-stall-001)"},
+    {"concept": "Stall speed vs weight / wing loading (sqrt relationship)", "topic": "Turns & Load Factor", "question_ids": [2030, 2033]}
+  ],
   "notes": [
-    "The existing 118 LIVE_VERIFIED mappings remain approved and are counted inside the visual-required universe.",
-    "The 65 no-visual rows should not receive a decorative or generic explanation image merely to increase coverage.",
-    "This audit establishes question coverage only. It does not estimate the number of visual assets remaining because one approved asset may legitimately serve multiple exact-equivalent questions."
+    "The 24 concepts above (excluding the one already resolved via Batch 8) total 22 open concepts covering 43 open questions.",
+    "Batch limit remains 5 visual concepts per the standing POF workflow rules.",
+    "Questions not listed here (90 of the 133 REFINING rows) are definitions, memorised values, or simple verbal/calculation facts that should not receive a decorative image per the audit rule.",
+    "This audit supersedes the 2026-09-04 version, which undercounted live coverage and did not reflect Batches 9-13 or the Batch 8 status correction."
   ]
 }

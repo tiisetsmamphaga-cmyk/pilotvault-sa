@@ -208,7 +208,7 @@ export function ExamSimulator({
                 <p className="mt-4 text-sm font-semibold text-[#1f4e79]">Explanation</p>
                 <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">{currentQuestion.explanation}</p>
 
-                {isHumanPerformance && !usesApprovedBankVisual ? (
+                {isHumanPerformance && !usesApprovedBankVisual && !currentQuestion.explanation_image_url ? (
                   <HumanPerformanceVisual key={`hp-${currentQuestion.id}`} question={currentQuestion} />
                 ) : isPrinciplesOfFlight && !currentQuestion.explanation_image_url ? (
                   <PrinciplesOfFlightVisual key={`pof-${currentQuestion.id}`} question={currentQuestion} />

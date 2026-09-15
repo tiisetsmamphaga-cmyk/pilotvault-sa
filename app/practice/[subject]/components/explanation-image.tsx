@@ -66,20 +66,26 @@ export function ExplanationImage({
     /\/explanation-images\/principles-of-flight\/refined-batch-(?:1|2|3|4|5|6|7|8|9|10|11|12|13|14|16|17|18|19|20|21|22|23)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
-  // POF is fail-closed. Only individually QA-approved refined raster batches
-  // may render. Legacy, bulk-generated, unmanifested and vector POF assets stay
-  // blocked even when they exist on an old branch or deployment.
+  const isHpVisual = src.includes("/explanation-images/human-performance/refined-batch-")
+  const isApprovedHpRaster =
+    /\/explanation-images\/human-performance\/refined-batch-(?:1)\//.test(src) &&
+    /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
+
+  // POF and HP are fail-closed. Only individually QA-approved refined raster
+  // batches may render. Legacy, bulk-generated, unmanifested and vector assets
+  // stay blocked even when they exist on an old branch or deployment.
   if (isPofVisual && !isApprovedPofRaster) return null
+  if (isHpVisual && !isApprovedHpRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
 
-  const pofTemplate = isPofVisual ? parsePofTemplate(template) : null
-  if (pofTemplate) {
+  const cardTemplate = isPofVisual || isHpVisual ? parsePofTemplate(template) : null
+  if (cardTemplate) {
     return (
       <PofExplanationImage
         src={src}
         alt={alt}
         title={title}
-        template={pofTemplate}
+        template={cardTemplate}
         priority={priority}
       />
     )

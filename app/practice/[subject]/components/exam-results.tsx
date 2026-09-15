@@ -104,7 +104,7 @@ export function ExamResults({
                     </p>
                     <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-700">{question.explanation}</p>
 
-                    {isHumanPerformance && !usesApprovedBankVisual ? (
+                    {isHumanPerformance && !usesApprovedBankVisual && !question.explanation_image_url ? (
                       <HumanPerformanceVisual question={question} />
                     ) : isPrinciplesOfFlight && !question.explanation_image_url ? (
                       <PrinciplesOfFlightVisual question={question} />

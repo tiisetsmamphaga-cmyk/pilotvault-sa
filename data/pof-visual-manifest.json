@@ -5734,14 +5734,15 @@
     {
       "visual_id": "pof-climb-forces-001",
       "topic": "Four Forces / Basic Aerodynamics",
-      "concept": "In a steady climb, lift is less than weight and thrust is greater than drag because weight resolves into components along and across the flight path.",
+      "concept": "In a steady climb, lift is less than weight and thrust is greater than drag because weight resolves into components along and across the flight path. Thrust exceeding drag is the excess thrust that also determines the maximum angle of climb.",
       "question_ids": [
         1219,
         1252,
         1256,
         1288,
         1298,
-        1351
+        1351,
+        2014
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
@@ -7314,6 +7315,332 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": "All six questions test the identical keel-effect/directional-stability relationship, just reworded or narrowed to the vertical fin specifically."
+    },
+    {
+      "visual_id": "pof-center-of-gravity-001",
+      "topic": "Weight & Balance",
+      "concept": "The center of gravity is the single point through which the aircraft's total weight acts, as if the aircraft were suspended from it.",
+      "question_ids": [
+        1138
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 7,
+        "figure": "1-12",
+        "notes": "Figure 1-12, Airplane suspended from the center of gravity. Extracted and refined directly from the source raster; publisher watermark cropped out below the ground line."
+      },
+      "brief": {
+        "student_must_understand": "CG is the point through which total weight acts.",
+        "preserve": [
+          "Truck-crane silhouette",
+          "Cessna silhouette",
+          "CG suspension point"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Publisher watermark"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-gravity-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-gravity-v1.webp"
+      },
+      "mapping_reason": "Q1138 asks exactly what point total weight acts through; the figure's caption and content literally show this.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Q1138 asks exactly what point total weight acts through; the figure's caption and content literally show this."
+    },
+    {
+      "visual_id": "pof-center-of-pressure-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "The center of pressure is the point on the chord line through which the total lift (and resultant aerodynamic) force acts.",
+      "question_ids": [
+        1142,
+        1286,
+        1301
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 7,
+        "figure": "1-13",
+        "notes": "Figure 1-13, Drag acts parallel to and in the same direction as the relative wind. Extracted and refined directly from the source raster (Center of Pressure is explicitly labelled at the point where Lift/Drag/Resultant Force act)."
+      },
+      "brief": {
+        "student_must_understand": "Center of pressure is the point through which the total lift force acts.",
+        "preserve": [
+          "Chord line",
+          "Angle of attack",
+          "Relative wind",
+          "Lift/Drag/Resultant vectors",
+          "Center of Pressure label"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Unrelated paragraph text"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-pressure-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-pressure-v1.webp"
+      },
+      "mapping_reason": "All three questions ask for the definition of the point through which total lift acts; the figure explicitly labels Center of Pressure at that location.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All three questions ask for the definition of the point through which total lift acts; the figure explicitly labels Center of Pressure at that location."
+    },
+    {
+      "visual_id": "pof-drag-vs-speed-001",
+      "topic": "Drag",
+      "concept": "Induced drag is highest at low speed and falls as speed increases; parasite drag is low at low speed and rises sharply with speed; total drag is lowest at the best L/D speed.",
+      "question_ids": [
+        1158,
+        1194,
+        1197,
+        1276,
+        1293,
+        1981
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 9,
+        "figure": "1-15",
+        "notes": "Figure 1-15, Typical airplane drag curves. Extracted and refined directly from the source raster."
+      },
+      "brief": {
+        "student_must_understand": "Induced drag falls with speed, parasite drag rises with speed, and minimum total drag is at the best L/D speed.",
+        "preserve": [
+          "Drag-Pounds axis",
+          "Speed axis",
+          "Total/Parasite/Induced drag curves",
+          "Stall line"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Unrelated paragraph text"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-drag-vs-speed-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-drag-vs-speed-v1.webp"
+      },
+      "mapping_reason": "All six questions concern how induced or parasite drag varies with speed/AoA in level flight; this chart is the direct source for that relationship.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All six questions concern how induced or parasite drag varies with speed/AoA in level flight; this chart is the direct source for that relationship."
+    },
+    {
+      "visual_id": "pof-humidity-density-001",
+      "topic": "ISA & Air Density",
+      "concept": "Moist air is less dense than dry air, so humid conditions reduce lift and increase take-off run/reduce rate of climb.",
+      "question_ids": [
+        1266,
+        1269
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 12,
+        "figure": "1-17",
+        "notes": "Figure 1-17 (moisture panel), Effect of altitude, temperature, and humidity on takeoff run and rate of climb. Extracted and refined directly from the source raster (cropped to the Dry Air / Moist Air comparison only)."
+      },
+      "brief": {
+        "student_must_understand": "Humid air is less dense than dry air, which reduces lift and degrades performance.",
+        "preserve": [
+          "Dry Air panel",
+          "Moist Air panel",
+          "Takeoff-run/climb-path comparison"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Unrelated altitude/temperature panels"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-humidity-density-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-humidity-density-v1.webp"
+      },
+      "mapping_reason": "Both questions ask about humidity's effect on air density/lift performance; the figure's Dry Air vs Moist Air panels directly show this.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Both questions ask about humidity's effect on air density/lift performance; the figure's Dry Air vs Moist Air panels directly show this."
+    },
+    {
+      "visual_id": "pof-elevator-trim-tab-001",
+      "topic": "Trim & Balance Tabs",
+      "concept": "A simple elevator trim tab is set independently by the pilot; once set it holds its angle relative to the elevator to relieve control pressure at the trimmed attitude.",
+      "question_ids": [
+        1190,
+        1305,
+        2012
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 20,
+        "figure": "1-26",
+        "notes": "Figure 1-26, Effect of trim tabs. Extracted and refined directly from the source raster (all three panels with their labels)."
+      },
+      "brief": {
+        "student_must_understand": "The trim tab is a separately-adjustable surface; once set, it holds its angle relative to the elevator regardless of normal control inputs.",
+        "preserve": [
+          "Neutral elevator panel",
+          "Up-elevator panel",
+          "Trim-tab-down panel",
+          "All captions"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Unrelated paragraph text"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v1.webp"
+      },
+      "mapping_reason": "All three questions concern how a simple elevator trim tab behaves relative to the elevator; the figure's three panels show exactly this relationship.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All three questions concern how a simple elevator trim tab behaves relative to the elevator; the figure's three panels show exactly this relationship."
+    },
+    {
+      "visual_id": "pof-spin-turn-needle-001",
+      "topic": "Spins",
+      "concept": "The turn needle deflects fully toward the direction of rotation throughout a spin and remains reliable when other instruments may tumble.",
+      "question_ids": [
+        2025
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 68,
+        "figure": "3-8",
+        "notes": "Figure 3-8, Turn coordinator indications (Coordinated Turn panel). Extracted directly from the real raster; only the needle deflection (already present in the source) is used, recontextualised for spin-direction reference."
+      },
+      "brief": {
+        "student_must_understand": "The turn needle shows the direction of rotation and stays reliable throughout a spin.",
+        "preserve": [
+          "Real gauge bezel/text/tick marks/needle deflection"
+        ],
+        "refine": [],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-spin-turn-needle-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-21/pof-spin-turn-needle-v1.webp"
+      },
+      "mapping_reason": "Q2025 asks which instrument reliably indicates spin direction; the turn needle's deflection toward the turn direction is the real, literal answer.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Q2025 asks which instrument reliably indicates spin direction; the turn needle's deflection toward the turn direction is the real, literal answer."
     }
   ]
 }

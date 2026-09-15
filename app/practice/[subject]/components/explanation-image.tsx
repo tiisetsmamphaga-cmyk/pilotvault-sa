@@ -68,7 +68,7 @@ export function ExplanationImage({
 
   const isHpVisual = src.includes("/explanation-images/human-performance/refined-batch-")
   const isApprovedHpRaster =
-    /\/explanation-images\/human-performance\/refined-batch-(?:1|2|3|4|5|6)\//.test(src) &&
+    /\/explanation-images\/human-performance\/refined-batch-(?:1|2|3|4|5|6|7)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   // POF and HP are fail-closed. Only individually QA-approved refined raster

@@ -124,12 +124,28 @@ export function TrainingModeMenu({
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <div className="rounded-3xl border border-[#29476d] bg-[#0b1d31] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.14)] sm:p-8">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            Choose a training mode
-          </h2>
-          <p className="mt-2 text-sm leading-6 text-[#b8c7d9] sm:text-base">
-            Pick an option and start practising.
-          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                Choose a training mode
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-[#b8c7d9] sm:text-base">
+                Pick an option and start practising.
+              </p>
+            </div>
+
+            {isTrialAccount && (
+              <div className="sm:max-w-xs sm:text-right">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f4b400]">
+                  Trial conditions
+                </p>
+                <p className="mt-1.5 text-sm leading-6 text-[#b8c7d9]">
+                  A fixed 25-question mock exam per subject. Upgrade to unlock
+                  topic-based practice and the full question bank.
+                </p>
+              </div>
+            )}
+          </div>
 
           {manual && (
             <div className="mt-6 flex flex-col gap-4 border-t border-[#29476d] pt-5 sm:flex-row sm:items-center sm:justify-between">

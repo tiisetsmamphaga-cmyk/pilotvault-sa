@@ -77,7 +77,9 @@
       "question_ids": [
         1106,
         1125,
-        1131
+        1131,
+        1126,
+        1280
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
@@ -7641,6 +7643,61 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": "Q2025 asks which instrument reliably indicates spin direction; the turn needle's deflection toward the turn direction is the real, literal answer."
+    },
+    {
+      "visual_id": "pof-four-forces-level-001",
+      "topic": "Four Forces",
+      "concept": "In steady, unaccelerated level flight the four forces are in equilibrium: lift equals weight and thrust equals drag.",
+      "question_ids": [
+        1123,
+        1146,
+        1294
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 1,
+        "figure": "1-1",
+        "notes": "Figure 1-1, The Four Forces. Extracted and refined directly from the source raster; publisher watermark removed by flat-fill (sampled from the same plain fuselage colour) and the arrow shaft redrawn across that span."
+      },
+      "brief": {
+        "student_must_understand": "In steady level flight, lift = weight and thrust = drag.",
+        "preserve": [
+          "Lift/Weight/Thrust/Drag labelled arrows",
+          "Aircraft silhouette"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Publisher watermark",
+          "Unrelated paragraph text"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-22/pof-four-forces-level-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-22/pof-four-forces-level-v1.webp"
+      },
+      "mapping_reason": "All three questions ask for the steady-level-flight force equilibrium that this figure directly depicts.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All three questions test the identical level-flight force-equilibrium relationship."
     }
   ]
 }

@@ -1214,7 +1214,9 @@
       "question_ids": [
         2188,
         2139,
-        2122
+        2122,
+        2043,
+        2067
       ],
       "source": {
         "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
@@ -1464,6 +1466,159 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2087 asks which blood component is mainly responsible for clot formation (platelets); the figure is the source's own captioned illustration of platelets, matching its adjacent text."
+    },
+    {
+      "visual_id": "hp-respiratory-alveoli-001",
+      "topic": "Atmosphere, Respiration & Hypoxia",
+      "concept": "The alveoli are tiny air sacs where oxygen diffuses into the blood and carbon dioxide diffuses out.",
+      "question_ids": [
+        2084
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 39,
+        "figure": "3.3",
+        "notes": "Figure 3.3, The Respiratory System. Extracted directly from the embedded source raster; includes a magnified, explicitly labelled 'The Alveoli' inset showing gas exchange direction."
+      },
+      "brief": {
+        "student_must_understand": "The alveoli are the site of gas exchange: oxygen/nitrogen diffuse in, carbon dioxide/water diffuse out.",
+        "preserve": [
+          "Lungs diagram with magnified, labelled alveoli inset"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-7/hp-respiratory-alveoli-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-7/hp-respiratory-alveoli-v1.webp"
+      },
+      "mapping_reason": "Q2084 asks the function of the alveoli; the figure's own magnified inset is explicitly labelled 'The Alveoli' and shows exactly this gas-exchange direction.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2084 asks the function of the alveoli; the figure's own magnified inset is explicitly labelled 'The Alveoli' and shows exactly this gas-exchange direction."
+    },
+    {
+      "visual_id": "hp-smoking-hypoxia-001",
+      "topic": "Atmosphere, Respiration & Hypoxia",
+      "concept": "Smoking reduces the blood's oxygen-carrying capacity, so smokers feel hypoxia symptoms at a lower altitude than non-smokers.",
+      "question_ids": [
+        2186,
+        2146
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 48,
+        "figure": "3.13",
+        "notes": "Figure 3.13, Pilots who smoke have a lower Oxygen-carrying capacity. Extracted directly from the embedded source raster; contrasts a non-smoking pilot at altitude with a smoking pilot shown as effectively hypoxic at a lower altitude."
+      },
+      "brief": {
+        "student_must_understand": "Smoking reduces oxygen-carrying capacity by roughly 4,000-5,000 ft equivalent altitude, so a smoker experiences hypoxia symptoms lower down than a non-smoker.",
+        "preserve": [
+          "Non-smoker vs smoker altitude/hypoxia comparison graphic"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-7/hp-smoking-hypoxia-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-7/hp-smoking-hypoxia-v1.webp"
+      },
+      "mapping_reason": "Q2186 asks at what altitude a smoker experiences hypoxia symptoms compared with a non-smoker (lower), directly illustrated; Q2146 asks which factors increase susceptibility to hypoxia (alcohol, drugs, smoking), of which smoking is this figure's own subject.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2186 asks at what altitude a smoker experiences hypoxia symptoms compared with a non-smoker (lower), directly illustrated; Q2146 asks which factors increase susceptibility to hypoxia (alcohol, drugs, smoking), of which smoking is this figure's own subject."
+    },
+    {
+      "visual_id": "hp-oxygen-thresholds-001",
+      "topic": "Atmosphere, Respiration & Hypoxia",
+      "concept": "Up to 10,000 ft a healthy person can normally operate on air alone; above that, supplementary oxygen is required.",
+      "question_ids": [
+        2183,
+        2057,
+        2190
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 57,
+        "figure": "4.5",
+        "notes": "Figure 4.5, Thresholds of Oxygen Requirements. Extracted directly from the embedded source raster; altitude bands from 'Air Only' up to 'Oxygen Under Pressure' explicitly labelled."
+      },
+      "brief": {
+        "student_must_understand": "Hypoxia is insufficient oxygen to meet the body's needs; up to 10,000 ft air alone is normally sufficient, and prevention means staying below that altitude or using supplemental oxygen above it.",
+        "preserve": [
+          "Altitude-banded oxygen-requirement thresholds"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-7/hp-oxygen-thresholds-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-7/hp-oxygen-thresholds-v1.webp"
+      },
+      "mapping_reason": "Q2183 asks the altitude up to which a healthy person can normally operate without hypoxia (10,000 ft), the figure's own first threshold band; Q2057 asks how hypoxia is best prevented, matching the figure's own altitude-vs-oxygen-source thresholds; Q2190 asks for the definition of hypoxia, the concept this whole threshold figure exists to address.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2183 asks the altitude up to which a healthy person can normally operate without hypoxia (10,000 ft), the figure's own first threshold band; Q2057 asks how hypoxia is best prevented, matching the figure's own altitude-vs-oxygen-source thresholds; Q2190 asks for the definition of hypoxia, the concept this whole threshold figure exists to address."
     }
   ]
 }

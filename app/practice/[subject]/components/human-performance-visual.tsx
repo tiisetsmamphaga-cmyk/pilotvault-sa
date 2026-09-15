@@ -413,7 +413,7 @@ function getVisualSpec(question: Question): VisualSpec {
 function TechnicalArrow() {
   return (
     <div className="hidden items-center sm:flex" aria-hidden="true">
-      <div className="h-px w-8 bg-[#f4b400]" />
+      <div className="h-px w-8" style={{ backgroundColor: "#f4b400" }} />
       <div className="h-0 w-0 border-y-[5px] border-l-[8px] border-y-transparent border-l-[#f4b400]" />
     </div>
   )
@@ -425,7 +425,10 @@ function FlowDiagram({ left, center, right }: Pick<VisualSpec, "left" | "center"
     <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
       {cells.map((label, index) => (
         <div className="contents" key={`${label}-${index}`}>
-          <div className={`border px-4 py-4 text-center text-sm font-semibold leading-relaxed ${index === 1 ? "border-[#06111f] bg-[#06111f] text-white" : "border-slate-300 bg-white text-slate-800"}`}>
+          <div
+            className={`border px-4 py-4 text-center text-sm font-semibold leading-relaxed ${index === 1 ? "border-[#06111f] text-white" : "border-slate-300 bg-white text-slate-800"}`}
+            style={index === 1 ? { backgroundColor: "#06111f" } : undefined}
+          >
             {label}
           </div>
           {index < cells.length - 1 && <TechnicalArrow />}
@@ -448,9 +451,9 @@ function AtmosphereDiagram() {
   return (
     <div>
       <div className="flex h-16 overflow-hidden border border-[#06111f] text-xs font-bold text-white sm:text-sm">
-        <div className="flex items-center justify-center bg-[#06111f]" style={{ width: "78%" }}>N₂ 78%</div>
+        <div className="flex items-center justify-center" style={{ width: "78%", backgroundColor: "#06111f" }}>N₂ 78%</div>
         <div className="flex items-center justify-center bg-[#1f4e79]" style={{ width: "21%" }}>O₂ 21%</div>
-        <div className="min-w-10 flex-1 bg-[#f4b400]" aria-label="Other gases approximately 1 percent" />
+        <div className="min-w-10 flex-1" style={{ backgroundColor: "#f4b400" }} aria-label="Other gases approximately 1 percent" />
       </div>
       <div className="mt-2 flex justify-between text-xs text-slate-500"><span>Nitrogen</span><span>Oxygen</span><span>Other ≈ 1%</span></div>
     </div>
@@ -462,7 +465,7 @@ function AltitudeDiagram({ left, center, right }: Pick<VisualSpec, "left" | "cen
     <div className="grid gap-5 sm:grid-cols-[110px_1fr] sm:items-center">
       <div className="relative mx-auto h-56 w-20 border-l-2 border-slate-900">
         {[0, 1, 2, 3, 4].map((tick) => <div key={tick} className="absolute left-0 h-px w-4 bg-slate-900" style={{ bottom: `${tick * 25}%` }} />)}
-        <div className="absolute -left-2 -top-1 text-xs font-bold text-[#f4b400]">HIGH</div>
+        <div className="absolute -left-2 -top-1 text-xs font-bold" style={{ color: "#f4b400" }}>HIGH</div>
         <div className="absolute -bottom-1 left-5 text-xs font-bold text-slate-500">LOW</div>
         <div className="absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-xs font-semibold text-slate-600">ALTITUDE</div>
       </div>
@@ -496,11 +499,11 @@ function BloodPressureDiagram() {
     <div className="grid gap-4 sm:grid-cols-2">
       <div className="border border-slate-300 p-5 text-center">
         <div className="mx-auto mb-3 h-32 w-10 border border-slate-400 p-1"><div className="h-[80%] w-full bg-[#1f4e79]" /></div>
-        <div className="font-bold text-[#06111f]">SYSTOLIC</div><div className="mt-1 text-sm text-slate-600">heart contracts</div>
+        <div className="font-bold" style={{ color: "#06111f" }}>SYSTOLIC</div><div className="mt-1 text-sm text-slate-600">heart contracts</div>
       </div>
       <div className="border border-slate-300 p-5 text-center">
-        <div className="mx-auto mb-3 h-32 w-10 border border-slate-400 p-1"><div className="mt-[45%] h-[55%] w-full bg-[#f4b400]" /></div>
-        <div className="font-bold text-[#06111f]">DIASTOLIC</div><div className="mt-1 text-sm text-slate-600">heart relaxes</div>
+        <div className="mx-auto mb-3 h-32 w-10 border border-slate-400 p-1"><div className="mt-[45%] h-[55%] w-full" style={{ backgroundColor: "#f4b400" }} /></div>
+        <div className="font-bold" style={{ color: "#06111f" }}>DIASTOLIC</div><div className="mt-1 text-sm text-slate-600">heart relaxes</div>
       </div>
     </div>
   )
@@ -641,7 +644,7 @@ function BoyleDiagram() {
         <div className="mt-2 text-sm text-slate-600">smaller gas volume</div>
       </div>
       <div className="text-center">
-        <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-4 border-[#f4b400] text-sm font-bold">LOW P</div>
+        <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-4 text-sm font-bold" style={{ borderColor: "#f4b400" }}>LOW P</div>
         <div className="mt-2 text-sm text-slate-600">larger gas volume</div>
       </div>
     </div>
@@ -652,12 +655,16 @@ function GForceDiagram() {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {[{ title: "+G", arrow: "↓", text: "blood shifts away from the head" }, { title: "−G", arrow: "↑", text: "blood shifts toward the head" }].map((item, index) => (
-        <div key={item.title} className={`border p-5 text-center ${index === 0 ? "border-slate-300 bg-white" : "border-[#06111f] bg-[#06111f] text-white"}`}>
-          <div className={`text-xl font-black ${index === 1 ? "text-[#f4b400]" : "text-[#06111f]"}`}>{item.title}</div>
+        <div
+          key={item.title}
+          className={`border p-5 text-center ${index === 0 ? "border-slate-300 bg-white" : "border-[#06111f] text-white"}`}
+          style={index === 1 ? { backgroundColor: "#06111f" } : undefined}
+        >
+          <div className="text-xl font-black" style={{ color: index === 1 ? "#f4b400" : "#06111f" }}>{item.title}</div>
           <div className="relative mx-auto my-4 h-32 w-16">
-            <div className={`absolute left-1/2 top-0 h-10 w-10 -translate-x-1/2 rounded-full ${index === 0 ? "bg-[#06111f]" : "bg-white"}`} />
-            <div className={`absolute left-1/2 top-11 h-20 w-8 -translate-x-1/2 ${index === 0 ? "bg-[#06111f]" : "bg-white"}`} />
-            <div className="absolute left-[70%] top-9 text-5xl font-black text-[#f4b400]">{item.arrow}</div>
+            <div className={`absolute left-1/2 top-0 h-10 w-10 -translate-x-1/2 rounded-full ${index === 0 ? "" : "bg-white"}`} style={index === 0 ? { backgroundColor: "#06111f" } : undefined} />
+            <div className={`absolute left-1/2 top-11 h-20 w-8 -translate-x-1/2 ${index === 0 ? "" : "bg-white"}`} style={index === 0 ? { backgroundColor: "#06111f" } : undefined} />
+            <div className="absolute left-[70%] top-9 text-5xl font-black" style={{ color: "#f4b400" }}>{item.arrow}</div>
           </div>
           <div className="text-sm font-semibold">{item.text}</div>
         </div>
@@ -670,7 +677,7 @@ function CircadianDiagram() {
   return (
     <div className="overflow-hidden border border-slate-300">
       <div className="grid grid-cols-4 text-center text-xs font-bold text-slate-600"><div className="p-2">00:00</div><div className="p-2">06:00</div><div className="p-2">12:00</div><div className="p-2">18:00</div></div>
-      <div className="grid h-20 grid-cols-4"><div className="bg-[#06111f]" /><div className="bg-amber-100" /><div className="bg-amber-50" /><div className="bg-[#06111f]" /></div>
+      <div className="grid h-20 grid-cols-4"><div style={{ backgroundColor: "#06111f" }} /><div className="bg-amber-100" /><div className="bg-amber-50" /><div style={{ backgroundColor: "#06111f" }} /></div>
       <div className="border-t border-slate-300 p-3 text-center text-sm font-semibold text-slate-700">LIGHT / DARKNESS SYNCHRONISE THE BODY CLOCK</div>
     </div>
   )
@@ -685,7 +692,7 @@ function ChecklistDiagram() {
     <div className="border border-slate-300 p-4">
       {["1  Complete item", "2  Cross-check", "3  Continue sequence", "4  If interrupted: re-establish position"].map((item, index) => (
         <div key={item} className={`flex items-center gap-3 border-b border-slate-200 py-3 text-sm font-semibold last:border-b-0 ${index === 3 ? "text-[#92400e]" : "text-slate-800"}`}>
-          <div className={`h-4 w-4 border ${index < 3 ? "border-[#1f4e79] bg-[#1f4e79]" : "border-[#f4b400]"}`} />
+          <div className={`h-4 w-4 border ${index < 3 ? "border-[#1f4e79] bg-[#1f4e79]" : ""}`} style={index >= 3 ? { borderColor: "#f4b400" } : undefined} />
           <span>{item}</span>
         </div>
       ))}
@@ -711,7 +718,7 @@ function MotionConflictDiagram({ left, center, right }: Pick<VisualSpec, "left" 
   return (
     <div className="grid gap-4 sm:grid-cols-[1fr_150px_1fr] sm:items-center">
       <div className="border border-slate-300 p-5 text-center"><div className="text-xs font-bold tracking-widest text-slate-500">INPUT 1</div><div className="mt-2 font-bold">{left}</div></div>
-      <div className="border-2 border-[#f4b400] bg-amber-50 p-5 text-center text-sm font-black text-[#06111f]">{center}</div>
+      <div className="border-2 bg-amber-50 p-5 text-center text-sm font-black" style={{ borderColor: "#f4b400", color: "#06111f" }}>{center}</div>
       <div className="border border-slate-300 p-5 text-center"><div className="text-xs font-bold tracking-widest text-slate-500">INPUT 2 / RESPONSE</div><div className="mt-2 font-bold">{right}</div></div>
     </div>
   )
@@ -773,8 +780,8 @@ export function HumanPerformanceVisual({ question }: { question: Question }) {
         <div className="mx-auto max-w-3xl border border-slate-200 bg-[#f8fafc] p-4 sm:p-6">
           {renderDiagram(spec)}
 
-          <div className="mt-5 border-t-2 border-[#f4b400] bg-white px-4 py-3 text-sm leading-relaxed text-slate-700">
-            <span className="font-bold text-[#06111f]">EXAM NOTE: </span>{spec.note}
+          <div className="mt-5 border-t-2 bg-white px-4 py-3 text-sm leading-relaxed text-slate-700" style={{ borderColor: "#f4b400" }}>
+            <span className="font-bold" style={{ color: "#06111f" }}>EXAM NOTE: </span>{spec.note}
           </div>
         </div>
       </div>

@@ -1,8 +1,22 @@
+"use client"
+
+import { Suspense, useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { Check } from "lucide-react"
 
 import { PaystackPurchaseButton } from "@/components/paystack-purchase-button"
+import {
+  getCachedCurrentUser,
+  getCachedProfile,
+} from "@/src/lib/client-data-cache"
+import {
+  applyTrialDiscount,
+  formatCountdown,
+  getTrialDiscountEligibility,
+  type TrialDiscountEligibility,
+} from "@/src/lib/trial-discount"
 
 const subjectLabels = {
   meteorology: "Meteorology",
@@ -22,7 +36,7 @@ const plans = [
   {
     name: "Per Subject",
     description: "Ideal for focused study",
-    price: "R89",
+    priceCents: 8900,
     period: "/month",
     badge: "",
     disabled: false,
@@ -39,7 +53,7 @@ const plans = [
   {
     name: "PPL Pack",
     description: "Perfect for Private Pilot Licence students",
-    price: "R699",
+    priceCents: 69900,
     period: "/3 Months",
     badge: "MOST POPULAR",
     disabled: false,
@@ -56,7 +70,7 @@ const plans = [
   {
     name: "CPL Pack",
     description: "Commercial Pilot content currently being expanded",
-    price: "Coming Soon",
+    priceCents: null,
     period: "",
     badge: "COMING SOON",
     disabled: true,
@@ -72,23 +86,28 @@ const plans = [
   },
 ] as const
 
-type UpgradePageProps = {
-  searchParams: Promise<{
-    subject?: string | string[]
-  }>
-}
-
 function isSubjectSlug(value: string): value is SubjectSlug {
   return value in subjectLabels
 }
 
-export default async function UpgradePage({
-  searchParams,
-}: UpgradePageProps) {
-  const params = await searchParams
-  const requestedSubject = Array.isArray(params.subject)
-    ? params.subject[0]
-    : params.subject
+function formatRand(cents: number) {
+  const rand = cents / 100
+  return Number.isInteger(rand) ? `R${rand}` : `R${rand.toFixed(2)}`
+}
+
+const COUNTDOWN_TICK_MS = 60 * 1000
+
+export default function UpgradePage() {
+  return (
+    <Suspense fallback={null}>
+      <UpgradePageContent />
+    </Suspense>
+  )
+}
+
+function UpgradePageContent() {
+  const searchParams = useSearchParams()
+  const requestedSubject = searchParams.get("subject")
   const selectedSubject =
     requestedSubject && isSubjectSlug(requestedSubject)
       ? requestedSubject
@@ -96,6 +115,51 @@ export default async function UpgradePage({
   const selectedSubjectLabel = selectedSubject
     ? subjectLabels[selectedSubject]
     : null
+
+  const [discount, setDiscount] = useState<TrialDiscountEligibility>({
+    eligible: false,
+    msRemaining: null,
+  })
+
+  useEffect(() => {
+    let cancelled = false
+
+    const loadDiscountEligibility = async () => {
+      try {
+        const user = await getCachedCurrentUser()
+        if (!user) return
+
+        const profile = await getCachedProfile(user.id)
+        if (!cancelled) {
+          setDiscount(getTrialDiscountEligibility(profile.trial_ends_at))
+        }
+      } catch {
+        // Not logged in, or profile unavailable - just show standard pricing.
+      }
+    }
+
+    loadDiscountEligibility()
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!discount.eligible) return
+
+    const interval = window.setInterval(() => {
+      setDiscount((previous) => {
+        if (previous.msRemaining === null) return previous
+        const next = previous.msRemaining - COUNTDOWN_TICK_MS
+        return next > 0
+          ? { eligible: true, msRemaining: next }
+          : { eligible: false, msRemaining: null }
+      })
+    }, COUNTDOWN_TICK_MS)
+
+    return () => window.clearInterval(interval)
+  }, [discount.eligible])
 
   return (
     <main className="min-h-screen bg-[#eef3f8] text-slate-900">
@@ -169,97 +233,115 @@ export default async function UpgradePage({
               Selected subject: {selectedSubjectLabel}
             </p>
           )}
+
+          {discount.eligible && discount.msRemaining !== null && (
+            <div className="mx-auto mt-6 w-fit rounded-full border border-[#f0d488] bg-[#fdf3d9] px-5 py-2.5 text-sm font-bold text-[#8a6d1f]">
+              15% off ends in {formatCountdown(discount.msRemaining)} - upgrade now
+            </div>
+          )}
         </div>
 
         <div className="mt-10 grid gap-6 sm:mt-14 lg:grid-cols-3">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative rounded-3xl border bg-white p-6 shadow-sm sm:p-8 ${
-                plan.badge === "MOST POPULAR"
-                  ? "border-[#1f4e79] shadow-md"
-                  : "border-slate-200"
-              }`}
-            >
-              {plan.badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#1f4e79] px-4 py-1 text-[10px] font-bold text-white sm:-top-4 sm:px-5 sm:text-xs">
-                  {plan.badge}
-                </div>
-              )}
+          {plans.map((plan) => {
+            const discountedCents =
+              plan.priceCents !== null && discount.eligible
+                ? applyTrialDiscount(plan.priceCents)
+                : plan.priceCents
 
-              <div className="text-center">
-                <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
-                  {plan.productCode === "subject" && selectedSubjectLabel
-                    ? selectedSubjectLabel
-                    : plan.name}
-                </h2>
-
-                <p className="mt-3 min-h-0 text-sm leading-6 text-slate-600 sm:min-h-12">
-                  {plan.productCode === "subject" && selectedSubjectLabel
-                    ? `One month of full ${selectedSubjectLabel} access`
-                    : plan.description}
-                </p>
-
-                <div className="mt-5 sm:mt-6">
-                  {plan.disabled ? (
-                    <p className="text-2xl font-bold text-slate-500 sm:text-3xl">
-                      {plan.price}
-                    </p>
-                  ) : (
-                    <p>
-                      <span className="text-4xl font-bold text-slate-900 sm:text-5xl">
-                        {plan.price}
-                      </span>
-                      <span className="text-sm text-slate-500 sm:text-base">
-                        {" "}
-                        {plan.period}
-                      </span>
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              <div className="mt-7 space-y-3 sm:mt-8 sm:space-y-4">
-                {plan.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#d6e6f7]">
-                      <Check className="h-3.5 w-3.5 text-[#1f4e79]" />
-                    </span>
-                    <p className="text-sm text-slate-700">{feature}</p>
+            return (
+              <div
+                key={plan.name}
+                className={`relative rounded-3xl border bg-white p-6 shadow-sm sm:p-8 ${
+                  plan.badge === "MOST POPULAR"
+                    ? "border-[#1f4e79] shadow-md"
+                    : "border-slate-200"
+                }`}
+              >
+                {plan.badge && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#1f4e79] px-4 py-1 text-[10px] font-bold text-white sm:-top-4 sm:px-5 sm:text-xs">
+                    {plan.badge}
                   </div>
-                ))}
-              </div>
+                )}
 
-              {plan.disabled ? (
-                <button
-                  disabled
-                  className="mt-7 w-full rounded-xl bg-slate-100 px-5 py-3 text-sm font-bold text-slate-400 sm:mt-8"
-                >
-                  Coming Soon
-                </button>
-              ) : plan.productCode === "subject" && !selectedSubject ? (
-                <Link
-                  href="/practice"
-                  className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#1f4e79] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#183d60] sm:mt-8"
-                >
-                  Choose a Subject
-                </Link>
-              ) : (
-                <PaystackPurchaseButton
-                  productCode={plan.productCode}
-                  subject={
-                    plan.productCode === "subject"
-                      ? selectedSubject ?? undefined
-                      : undefined
-                  }
-                >
-                  {plan.productCode === "subject"
-                    ? `Purchase ${selectedSubjectLabel}`
-                    : "Purchase PPL Pack"}
-                </PaystackPurchaseButton>
-              )}
-            </div>
-          ))}
+                <div className="text-center">
+                  <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
+                    {plan.productCode === "subject" && selectedSubjectLabel
+                      ? selectedSubjectLabel
+                      : plan.name}
+                  </h2>
+
+                  <p className="mt-3 min-h-0 text-sm leading-6 text-slate-600 sm:min-h-12">
+                    {plan.productCode === "subject" && selectedSubjectLabel
+                      ? `One month of full ${selectedSubjectLabel} access`
+                      : plan.description}
+                  </p>
+
+                  <div className="mt-5 sm:mt-6">
+                    {plan.priceCents === null ? (
+                      <p className="text-2xl font-bold text-slate-500 sm:text-3xl">
+                        Coming Soon
+                      </p>
+                    ) : (
+                      <p>
+                        {discount.eligible && discountedCents !== null && (
+                          <span className="mr-2 text-lg text-slate-400 line-through sm:text-xl">
+                            {formatRand(plan.priceCents)}
+                          </span>
+                        )}
+                        <span className="text-4xl font-bold text-slate-900 sm:text-5xl">
+                          {formatRand(discountedCents ?? plan.priceCents)}
+                        </span>
+                        <span className="text-sm text-slate-500 sm:text-base">
+                          {" "}
+                          {plan.period}
+                        </span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-7 space-y-3 sm:mt-8 sm:space-y-4">
+                  {plan.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-3">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#d6e6f7]">
+                        <Check className="h-3.5 w-3.5 text-[#1f4e79]" />
+                      </span>
+                      <p className="text-sm text-slate-700">{feature}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {plan.disabled ? (
+                  <button
+                    disabled
+                    className="mt-7 w-full rounded-xl bg-slate-100 px-5 py-3 text-sm font-bold text-slate-400 sm:mt-8"
+                  >
+                    Coming Soon
+                  </button>
+                ) : plan.productCode === "subject" && !selectedSubject ? (
+                  <Link
+                    href="/practice"
+                    className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#1f4e79] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#183d60] sm:mt-8"
+                  >
+                    Choose a Subject
+                  </Link>
+                ) : (
+                  <PaystackPurchaseButton
+                    productCode={plan.productCode}
+                    subject={
+                      plan.productCode === "subject"
+                        ? selectedSubject ?? undefined
+                        : undefined
+                    }
+                  >
+                    {plan.productCode === "subject"
+                      ? `Purchase ${selectedSubjectLabel}`
+                      : "Purchase PPL Pack"}
+                  </PaystackPurchaseButton>
+                )}
+              </div>
+            )
+          })}
         </div>
 
         <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-5 text-center shadow-sm sm:mt-12 sm:p-8">

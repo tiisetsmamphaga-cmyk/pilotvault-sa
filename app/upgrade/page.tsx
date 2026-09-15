@@ -4,7 +4,17 @@ import { Suspense, useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Check } from "lucide-react"
+import {
+  Check,
+  Cloud,
+  Compass,
+  Cpu,
+  Gauge,
+  Map,
+  Plane,
+  Radio,
+  Scale,
+} from "lucide-react"
 
 import { PaystackPurchaseButton } from "@/components/paystack-purchase-button"
 import {
@@ -32,24 +42,24 @@ const subjectLabels = {
 
 type SubjectSlug = keyof typeof subjectLabels
 
-const plans = [
+const SUBJECT_PRICE_CENTS = 8900
+
+const subjects: { slug: SubjectSlug; name: string; icon: typeof Cloud }[] = [
+  { slug: "meteorology", name: "Meteorology", icon: Cloud },
+  { slug: "air-law", name: "Air Law", icon: Scale },
+  { slug: "navigation", name: "Navigation", icon: Compass },
+  { slug: "human-performance", name: "Human Performance", icon: Gauge },
+  { slug: "principles-of-flight", name: "Principles of Flight", icon: Plane },
   {
-    name: "Per Subject",
-    description: "Ideal for focused study",
-    priceCents: 8900,
-    period: "/month",
-    badge: "",
-    disabled: false,
-    productCode: "subject" as const,
-    features: [
-      "Single Subject Access",
-      "Mock Exams",
-      "Performance Tracking",
-      "Mobile Access",
-      "Question Explanations",
-      "Priority Support",
-    ],
+    slug: "aircraft-technical-and-general",
+    name: "Aircraft Technical and General",
+    icon: Cpu,
   },
+  { slug: "radio-telephony", name: "Radio Telephony", icon: Radio },
+  { slug: "flight-planning", name: "Flight Planning", icon: Map },
+]
+
+const plans = [
   {
     name: "PPL Pack",
     description: "Perfect for Private Pilot Licence students",
@@ -112,10 +122,6 @@ function UpgradePageContent() {
     requestedSubject && isSubjectSlug(requestedSubject)
       ? requestedSubject
       : null
-  const [pickedSubject, setPickedSubject] = useState<SubjectSlug | null>(
-    selectedSubject
-  )
-  const pickedSubjectLabel = pickedSubject ? subjectLabels[pickedSubject] : null
 
   const [discount, setDiscount] = useState<TrialDiscountEligibility>({
     eligible: false,
@@ -236,7 +242,7 @@ function UpgradePageContent() {
           )}
         </div>
 
-        <div className="mt-10 grid gap-6 sm:mt-14 lg:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:mt-14 md:grid-cols-2">
           {plans.map((plan) => {
             const discountedCents =
               plan.priceCents !== null && discount.eligible
@@ -260,15 +266,11 @@ function UpgradePageContent() {
 
                 <div className="text-center">
                   <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
-                    {plan.productCode === "subject" && pickedSubjectLabel
-                      ? pickedSubjectLabel
-                      : plan.name}
+                    {plan.name}
                   </h2>
 
                   <p className="mt-3 min-h-0 text-sm leading-6 text-slate-600 sm:min-h-12">
-                    {plan.productCode === "subject" && pickedSubjectLabel
-                      ? `One month of full ${pickedSubjectLabel} access`
-                      : plan.description}
+                    {plan.description}
                   </p>
 
                   <div className="mt-5 sm:mt-6">
@@ -306,36 +308,6 @@ function UpgradePageContent() {
                   ))}
                 </div>
 
-                {plan.productCode === "subject" && (
-                  <div className="mt-7 sm:mt-8">
-                    <p className="text-center text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                      Choose a subject
-                    </p>
-                    <div className="mt-3 grid grid-cols-2 gap-2">
-                      {Object.entries(subjectLabels).map(([slug, label]) => {
-                        const isPicked = pickedSubject === slug
-                        return (
-                          <button
-                            key={slug}
-                            type="button"
-                            onClick={() =>
-                              setPickedSubject(slug as SubjectSlug)
-                            }
-                            aria-pressed={isPicked}
-                            className={`rounded-lg border px-2.5 py-2 text-left text-xs font-semibold leading-snug transition ${
-                              isPicked
-                                ? "border-[#1f4e79] bg-[#1f4e79] text-white"
-                                : "border-slate-200 bg-white text-slate-700 hover:border-[#1f4e79]/50"
-                            }`}
-                          >
-                            {label}
-                          </button>
-                        )
-                      })}
-                    </div>
-                  </div>
-                )}
-
                 {plan.disabled ? (
                   <button
                     disabled
@@ -343,30 +315,82 @@ function UpgradePageContent() {
                   >
                     Coming Soon
                   </button>
-                ) : plan.productCode === "subject" && !pickedSubject ? (
-                  <button
-                    disabled
-                    className="mt-4 w-full rounded-xl bg-slate-100 px-5 py-3 text-sm font-bold text-slate-400"
-                  >
-                    Select a subject above
-                  </button>
                 ) : (
-                  <PaystackPurchaseButton
-                    productCode={plan.productCode}
-                    subject={
-                      plan.productCode === "subject"
-                        ? pickedSubject ?? undefined
-                        : undefined
-                    }
-                  >
-                    {plan.productCode === "subject"
-                      ? `Purchase ${pickedSubjectLabel}`
-                      : "Purchase PPL Pack"}
+                  <PaystackPurchaseButton productCode={plan.productCode}>
+                    Purchase PPL Pack
                   </PaystackPurchaseButton>
                 )}
               </div>
             )
           })}
+        </div>
+
+        <div className="mt-14 sm:mt-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+              Or unlock one subject at a time
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
+              Full question bank, mock exams and topic-based practice for a
+              single subject - pick a card to purchase it directly.
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {subjects.map((subject) => {
+              const Icon = subject.icon
+              const isDeepLinked = selectedSubject === subject.slug
+              const discountedCents = discount.eligible
+                ? applyTrialDiscount(SUBJECT_PRICE_CENTS)
+                : null
+
+              return (
+                <div
+                  key={subject.slug}
+                  className={`flex flex-col rounded-2xl border bg-white p-5 shadow-sm transition ${
+                    isDeepLinked
+                      ? "border-[#1f4e79] ring-2 ring-[#1f4e79]/25"
+                      : "border-slate-200"
+                  }`}
+                >
+                  {isDeepLinked && (
+                    <span className="mb-3 inline-flex w-fit items-center rounded-full bg-[#d6e6f7] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#1f4e79]">
+                      You were viewing this
+                    </span>
+                  )}
+
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+
+                  <h3 className="mt-4 text-base font-bold text-slate-900">
+                    {subject.name}
+                  </h3>
+
+                  <p className="mt-2">
+                    {discount.eligible && discountedCents !== null && (
+                      <span className="mr-1.5 text-sm text-slate-400 line-through">
+                        {formatRand(SUBJECT_PRICE_CENTS)}
+                      </span>
+                    )}
+                    <span className="text-2xl font-bold text-slate-900">
+                      {formatRand(discountedCents ?? SUBJECT_PRICE_CENTS)}
+                    </span>
+                    <span className="text-sm text-slate-500">/month</span>
+                  </p>
+
+                  <div className="mt-auto">
+                    <PaystackPurchaseButton
+                      productCode="subject"
+                      subject={subject.slug}
+                    >
+                      Purchase
+                    </PaystackPurchaseButton>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
 
         <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-5 text-center shadow-sm sm:mt-12 sm:p-8">

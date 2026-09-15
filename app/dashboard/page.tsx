@@ -291,21 +291,12 @@ export default function DashboardPage() {
             </div>
 
             {isTrialUser ? (
-              <div className="flex shrink-0 flex-col gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:min-w-[280px]">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#b8860a]">
-                    {licenceLabel} · Free Trial
+              <div className="flex shrink-0 items-center gap-3">
+                {trialDaysLeft !== null && (
+                  <span className="shrink-0 rounded-full bg-[#fdf3d9] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-[#b8860a]">
+                    {trialDaysLeft === 1 ? "1 day left" : `${trialDaysLeft} days left`}
                   </span>
-                  {trialDaysLeft !== null && (
-                    <span className="shrink-0 rounded-full bg-[#fdf3d9] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-[#b8860a]">
-                      {trialDaysLeft === 1 ? "1 day left" : `${trialDaysLeft} days left`}
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs leading-5 text-slate-500">
-                  All 8 subjects unlocked, mock exams only. Upgrade for topic-based
-                  practice and the full question bank.
-                </p>
+                )}
                 <Link
                   href="/upgrade"
                   className="inline-flex min-h-9 items-center justify-center gap-1 rounded-lg bg-[#1f4e79] px-3 text-xs font-bold text-white transition hover:bg-[#183d60]"

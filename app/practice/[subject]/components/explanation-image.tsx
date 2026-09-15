@@ -105,7 +105,7 @@ function PofExplanationImage({
 
   return (
     <figure className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="flex items-center justify-center bg-[#06111f] px-4 py-5 sm:px-6 sm:py-6">
+      <div className="flex items-center justify-center px-4 py-5 sm:px-6 sm:py-6" style={{ backgroundColor: "#06111f" }}>
         <img src="/images/pilotvault-banner-logo.png" alt="PilotVault SA" className="h-14 w-auto sm:h-16" />
       </div>
       <div className="h-1 bg-[#c9942f]" />
@@ -215,8 +215,8 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
       }
     >
       {status === "loaded" && usesNavigationTemplate && (
-        <div className="bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
-          <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">PILOTVAULT NAVIGATION</div>
+        <div className="px-4 py-3 text-center sm:px-6 sm:py-4" style={{ backgroundColor: "#06111f" }}>
+          <div className="text-[11px] font-extrabold tracking-[0.22em] sm:text-xs" style={{ color: "#f4b400" }}>PILOTVAULT NAVIGATION</div>
           <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">{diagramTitle}</div>
         </div>
       )}

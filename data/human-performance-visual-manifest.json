@@ -222,6 +222,214 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "All three questions concern TUC directly (its definition, the effect of activity, and its value at ~25000ft under rapid decompression); the table gives exact figures for each."
+    },
+    {
+      "visual_id": "hp-eye-structure-001",
+      "topic": "Vision & Visual Illusions",
+      "concept": "The eye works like a camera: the iris (aperture) controls how much light enters by changing pupil size, and the retina (film) is the light-sensitive screen at the back that senses it.",
+      "question_ids": [
+        2052,
+        2134,
+        2197
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 67,
+        "figure": "5.2",
+        "notes": "Figure 5.2, Structure of the Eye. Extracted directly from the embedded source raster (born-digital, no watermark); labels Iris, Lens and Retina against a camera analogy."
+      },
+      "brief": {
+        "student_must_understand": "The iris controls light entry (dilating in dim light); the retina is the light-sensitive layer at the back of the eye.",
+        "preserve": [
+          "Camera-vs-eye comparison",
+          "Iris/Lens/Retina labels"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-2/hp-eye-structure-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-2/hp-eye-structure-v1.webp"
+      },
+      "mapping_reason": "Q2052 and Q2134 ask what the iris does and how it behaves in dim light; Q2197 asks for the light-sensitive tissue at the back of the eye. The figure labels exactly the iris and retina, matching all three directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2052 and Q2134 ask what the iris does and how it behaves in dim light; Q2197 asks for the light-sensitive tissue at the back of the eye. The figure labels exactly the iris and retina, matching all three directly."
+    },
+    {
+      "visual_id": "hp-myopia-correction-001",
+      "topic": "Vision & Visual Illusions",
+      "concept": "Myopia (short-sightedness) is caused by an eyeball longer than normal, focusing distant objects in front of the retina; a concave lens corrects it by diverging light before it enters the eye.",
+      "question_ids": [
+        2071,
+        2193
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 73,
+        "figure": "5.8 / 5.9",
+        "notes": "Figures 5.8 (In myopia, the eyeball is longer than normal) and 5.9 (Myopia can be corrected with a concave lens) combined side-by-side. Both extracted directly from embedded source rasters."
+      },
+      "brief": {
+        "student_must_understand": "Myopia = elongated eyeball, image focuses short of the retina; corrected with a concave (diverging) lens.",
+        "preserve": [
+          "Ray-trace diagrams before and after correction",
+          "Concave lens shape"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen; composited side-by-side with labels (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "\"MYOPIA\" / \"CORRECTED\" labels"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-2/hp-myopia-correction-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-2/hp-myopia-correction-v1.webp"
+      },
+      "mapping_reason": "Q2071 asks which lens corrects myopia; Q2193 asks for the correct myopia description and its correction. The figure pair shows the elongated-eyeball cause and the concave-lens correction the source text states directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2071 asks which lens corrects myopia; Q2193 asks for the correct myopia description and its correction. The figure pair shows the elongated-eyeball cause and the concave-lens correction the source text states directly."
+    },
+    {
+      "visual_id": "hp-hypermetropia-correction-001",
+      "topic": "Vision & Visual Illusions",
+      "concept": "Hypermetropia (long-sightedness) is caused by an eyeball shorter than normal, focusing images behind the retina; a convex lens corrects it by converging light before it enters the eye.",
+      "question_ids": [
+        2059
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 73,
+        "figure": "5.10 / 5.11",
+        "notes": "Figures 5.10 (Hypermetropia) and 5.11 (A Convex Lens Will Correct Hypermetropia) combined side-by-side. Both extracted directly from embedded source rasters."
+      },
+      "brief": {
+        "student_must_understand": "Hypermetropia = shorter eyeball, image focuses behind the retina; corrected with a convex (converging) lens.",
+        "preserve": [
+          "Ray-trace diagrams before and after correction",
+          "Convex lens shape"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen; composited side-by-side with labels (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome",
+          "\"HYPERMETROPIA\" / \"CORRECTED\" labels"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-2/hp-hypermetropia-correction-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-2/hp-hypermetropia-correction-v1.webp"
+      },
+      "mapping_reason": "Q2059 asks which lens corrects hypermetropia; the figure pair shows the short-eyeball cause and the convex-lens correction the source text states directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2059 asks which lens corrects hypermetropia; the figure pair shows the short-eyeball cause and the convex-lens correction the source text states directly."
+    },
+    {
+      "visual_id": "hp-closing-speeds-001",
+      "topic": "Vision & Visual Illusions",
+      "concept": "For two aircraft approaching head-on, closing speed is the sum of both aircraft's individual speeds.",
+      "question_ids": [
+        2196
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 76,
+        "figure": "5.13",
+        "notes": "Figure 5.13, Closing Speeds. Extracted directly from the embedded source raster (born-digital, no watermark); shows two head-on aircraft pairs with individual and summed closing speeds."
+      },
+      "brief": {
+        "student_must_understand": "Closing speed for head-on traffic is the sum of both aircraft's speeds; this is why reaction time is critical at these combined speeds.",
+        "preserve": [
+          "Four-aircraft closing-speed example with summed values"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-2/hp-closing-speeds-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-2/hp-closing-speeds-v1.webp"
+      },
+      "mapping_reason": "Q2196 is a closing-speed/time-available calculation for head-on traffic; the figure is the source's own illustration of the closing-speed-as-sum-of-speeds concept underlying that calculation.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2196 is a closing-speed/time-available calculation for head-on traffic; the figure is the source's own illustration of the closing-speed-as-sum-of-speeds concept underlying that calculation."
     }
   ]
 }

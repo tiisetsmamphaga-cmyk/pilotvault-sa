@@ -75,12 +75,6 @@ function scoreClassName(score: number) {
   return "text-slate-900"
 }
 
-function scoreClassNameOnNavy(score: number) {
-  if (score >= 75) return "text-emerald-400"
-  if (score >= 65) return "text-amber-300"
-  return "text-[#b8c7d9]"
-}
-
 export default function DashboardPage() {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
@@ -293,22 +287,22 @@ export default function DashboardPage() {
           </div>
 
           {latestAttempt && latestSubjectUnlocked && LatestSubjectIcon && (
-            <div className="mt-6 rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 shadow-[0_18px_40px_rgba(8,15,28,0.28)] sm:p-6">
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-6">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex min-w-0 items-start gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
                     <LatestSubjectIcon className="h-6 w-6" />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#f4b400]">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#1f4e79]">
                       Continue studying
                     </p>
-                    <h2 className="mt-1 truncate text-xl font-bold text-white">
+                    <h2 className="mt-1 truncate text-xl font-bold text-slate-950">
                       {formatSubjectName(latestSubject!)}
                     </h2>
-                    <p className="mt-1 text-sm text-[#8fa7c2]">
+                    <p className="mt-1 text-sm text-slate-500">
                       Last mock{" "}
-                      <span className={`font-semibold ${scoreClassNameOnNavy(latestAttempt.scorePercentage)}`}>
+                      <span className={`font-semibold ${scoreClassName(latestAttempt.scorePercentage)}`}>
                         {latestAttempt.correctAnswers}/
                         {latestAttempt.totalQuestions} (
                         {latestAttempt.scorePercentage}%)
@@ -320,7 +314,7 @@ export default function DashboardPage() {
 
                 <Link
                   href={`/practice/${latestSubject}`}
-                  className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#f4b400] px-4 py-2.5 text-sm font-bold text-[#06111f] transition hover:bg-[#ffc62a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70"
+                  className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40"
                 >
                   Open subject
                   <ChevronRight className="h-4 w-4" />

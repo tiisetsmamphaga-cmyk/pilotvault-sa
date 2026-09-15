@@ -7698,6 +7698,61 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": "All three questions test the identical level-flight force-equilibrium relationship."
+    },
+    {
+      "visual_id": "pof-pressure-distribution-lift-001",
+      "topic": "Aerofoils & Lift",
+      "concept": "Lift is produced by a pressure distribution around the aerofoil: low pressure above (pulling) and high pressure below (pushing).",
+      "question_ids": [
+        1949,
+        2002
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 5,
+        "figure": "1-10",
+        "notes": "Figure 1-10, Air 'Pushes' and 'Pulls' on the wing to create Lift. Extracted and refined directly from the source raster; publisher watermark removed by flat-fill in the open whitespace it sat in."
+      },
+      "brief": {
+        "student_must_understand": "Lift comes from a pressure differential: low pressure pulling from above, high pressure pushing from below.",
+        "preserve": [
+          "Low pressure / High pressure labelled arrows",
+          "Aircraft silhouette",
+          "Streamlines"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Publisher watermark",
+          "Caption text"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-23/pof-pressure-distribution-lift-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-23/pof-pressure-distribution-lift-v1.webp"
+      },
+      "mapping_reason": "Both questions ask which pressure distribution produces lift; the figure explicitly labels low pressure above (pull) and high pressure below (push).",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Both questions test the identical pressure-distribution-produces-lift fact."
     }
   ]
 }

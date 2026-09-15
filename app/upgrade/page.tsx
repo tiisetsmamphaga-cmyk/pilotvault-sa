@@ -197,12 +197,6 @@ function UpgradePageContent() {
               Dashboard
             </Link>
             <Link
-              href="/practice"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white"
-            >
-              Practice
-            </Link>
-            <Link
               href="/upgrade"
               aria-current="page"
               className="rounded-lg bg-white/12 px-3 py-2 text-sm font-semibold text-white"

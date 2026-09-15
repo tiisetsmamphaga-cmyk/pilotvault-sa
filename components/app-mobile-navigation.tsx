@@ -2,16 +2,15 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { CreditCard, Gauge, GraduationCap, UserRound } from "lucide-react"
+import { CreditCard, Gauge, UserRound } from "lucide-react"
 
 const items = [
   { label: "Dashboard", href: "/dashboard", icon: Gauge },
-  { label: "Practice", href: "/practice", icon: GraduationCap },
   { label: "Plans", href: "/upgrade", icon: CreditCard },
   { label: "Profile", href: "/profile", icon: UserRound },
 ]
 
-const supportedRoutes = new Set(["/dashboard", "/practice", "/upgrade", "/profile"])
+const supportedRoutes = new Set(["/dashboard", "/upgrade", "/profile"])
 
 export function AppMobileNavigation() {
   const pathname = usePathname()
@@ -25,7 +24,7 @@ export function AppMobileNavigation() {
         aria-label="Student navigation"
         className="fixed inset-x-0 bottom-0 z-[70] border-t border-slate-200 bg-white/96 px-2 pb-[max(0.35rem,env(safe-area-inset-bottom))] pt-1.5 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur md:hidden"
       >
-        <div className="mx-auto grid max-w-md grid-cols-4">
+        <div className="mx-auto grid max-w-md grid-cols-3">
           {items.map((item) => {
             const Icon = item.icon
             const active = pathname === item.href

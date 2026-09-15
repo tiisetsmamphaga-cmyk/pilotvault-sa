@@ -6,6 +6,7 @@ import {
 } from "@/src/lib/billing-products"
 import type { PaystackTransaction } from "@/src/lib/paystack"
 import { supabaseAdmin } from "@/src/lib/supabase-admin"
+import { applyTrialDiscount } from "@/src/lib/trial-discount"
 
 type PaymentMetadata = {
   user_id?: string
@@ -67,8 +68,13 @@ export async function fulfilPaystackPayment(
     metadata.subject ?? undefined
   )
 
+  // Trial-expiry discount: the initialize route may have charged 15% off
+  // for a user within 24h of their trial ending, so accept either the full
+  // price or exactly that discounted price - never anything else.
+  const validAmounts = [product.amount, applyTrialDiscount(product.amount)]
+
   if (
-    transaction.amount !== product.amount ||
+    !validAmounts.includes(transaction.amount) ||
     transaction.currency !== product.currency
   ) {
     throw new Error("The payment amount or currency does not match.")

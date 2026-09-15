@@ -26,7 +26,7 @@ type InitialiseTransactionInput = {
   amount: number
   currency: "ZAR"
   callbackUrl: string
-  metadata: Record<string, string | null>
+  metadata: Record<string, string | number | boolean | null>
 }
 
 function getPaystackSecretKey() {

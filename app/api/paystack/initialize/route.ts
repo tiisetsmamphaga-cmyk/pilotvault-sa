@@ -6,6 +6,10 @@ import {
 } from "@/src/lib/billing-products"
 import { initialisePaystackTransaction } from "@/src/lib/paystack"
 import { supabaseAdmin } from "@/src/lib/supabase-admin"
+import {
+  applyTrialDiscount,
+  getTrialDiscountEligibility,
+} from "@/src/lib/trial-discount"
 
 export const runtime = "nodejs"
 
@@ -74,15 +78,28 @@ export async function POST(request: Request) {
       body.subject
     )
 
+    const { data: profile } = await supabaseAdmin
+      .from("Profiles")
+      .select("trial_ends_at")
+      .eq("id", user.id)
+      .maybeSingle()
+
+    const discount = getTrialDiscountEligibility(profile?.trial_ends_at)
+    const amount = discount.eligible
+      ? applyTrialDiscount(product.amount)
+      : product.amount
+
     const transaction = await initialisePaystackTransaction({
       email: user.email,
-      amount: product.amount,
+      amount,
       currency: product.currency,
       callbackUrl: `${getSiteUrl()}/api/paystack/callback`,
       metadata: {
         user_id: user.id,
         product_code: product.productCode,
         subject: product.subject,
+        discount_applied: discount.eligible,
+        original_amount: product.amount,
       },
     })
 

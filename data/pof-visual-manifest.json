@@ -7260,6 +7260,60 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": "Same-fact reuse across reworded/duplicate questions only."
+    },
+    {
+      "visual_id": "pof-keel-effect-001",
+      "topic": "Stability",
+      "concept": "Keel effect: more fuselage/fin side area aft of the CG than forward causes the aircraft to weathercock into the relative wind, providing directional stability.",
+      "question_ids": [
+        1173,
+        1193,
+        1341,
+        2006,
+        1177,
+        1196
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 22,
+        "figure": "1-29",
+        "notes": "Figure 1-29, Keel effect. Extracted and refined directly from the source raster."
+      },
+      "brief": {
+        "student_must_understand": "Directional stability comes from having more side (keel) area aft of the CG than forward -- mostly from the vertical fin -- which weathercocks the aircraft into the relative wind.",
+        "preserve": [
+          "Original diagram geometry and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-20/pof-keel-effect-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-20/pof-keel-effect-v1.webp"
+      },
+      "mapping_reason": "The figure directly depicts the keel-effect area split and the resulting yaw-correcting (weathercock) moment that all six questions ask about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "All six questions test the identical keel-effect/directional-stability relationship, just reworded or narrowed to the vertical fin specifically."
     }
   ]
 }

@@ -9,6 +9,7 @@ import {
   Cloud,
   Compass,
   Cpu,
+  CreditCard,
   Gauge,
   LockKeyhole,
   LogOut,
@@ -252,6 +253,15 @@ export default function DashboardPage() {
           </div>
 
           <div className="flex shrink-0 items-center gap-2">
+            <Link
+              href="/upgrade"
+              aria-label="View plans"
+              title="Plans"
+              className="flex h-11 min-w-11 items-center justify-center gap-2 rounded-lg border border-white/20 px-3 text-sm font-medium text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            >
+              <CreditCard className="h-[18px] w-[18px]" />
+              <span className="hidden md:inline">Plans</span>
+            </Link>
             <Link
               href="/profile"
               aria-label="Open profile"

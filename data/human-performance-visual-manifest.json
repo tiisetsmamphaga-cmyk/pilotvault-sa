@@ -1820,6 +1820,108 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2236 asks what an analogue display is generally better for showing (qualitative information such as trend and rate of change); the figure is the source's own captioned example of exactly this advantage."
+    },
+    {
+      "visual_id": "hp-principal-minerals-001",
+      "topic": "Fitness & Medical Considerations",
+      "concept": "Iron is required for the manufacture of haemoglobin; a pilot with gastroenteritis is unfit to fly.",
+      "question_ids": [
+        2202,
+        2203
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 104,
+        "figure": "7.5",
+        "notes": "Figure 7.5, Principal Minerals. Extracted directly from the embedded source raster; Calcium, Phosphorus and Iron individually labelled with their function."
+      },
+      "brief": {
+        "student_must_understand": "Iron's role in haemoglobin manufacture, and that gastroenteritis (discussed in the same section) makes a pilot unfit to fly.",
+        "preserve": [
+          "Labelled Calcium/Phosphorus/Iron diagram"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-9/hp-principal-minerals-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-9/hp-principal-minerals-v1.webp"
+      },
+      "mapping_reason": "Q2202 asks why iron is important in a pilot's diet (haemoglobin manufacture), directly labelled; Q2203 asks the fitness status of a pilot with gastroenteritis, discussed in the same source section immediately following this figure.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2202 asks why iron is important in a pilot's diet (haemoglobin manufacture), directly labelled; Q2203 asks the fitness status of a pilot with gastroenteritis, discussed in the same source section immediately following this figure."
+    },
+    {
+      "visual_id": "hp-bmi-formula-001",
+      "topic": "Fitness & Medical Considerations",
+      "concept": "Body Mass Index is weight in kilograms divided by height in metres squared.",
+      "question_ids": [
+        2201,
+        2206
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 100,
+        "figure": "n/a (BMI formula)",
+        "notes": "The Body Mass Index formula and normal-range text, rendered directly from the source page (native PDF text/formula, not a separate embedded raster)."
+      },
+      "brief": {
+        "student_must_understand": "How BMI is calculated, and that normal BMI is roughly 20-25 for men and 19-24 for women.",
+        "preserve": [
+          "BMI formula and normal-range bullet points"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-9/hp-bmi-formula-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-9/hp-bmi-formula-v1.webp"
+      },
+      "mapping_reason": "Q2201 asks how BMI is calculated, given directly by the source's own formula; Q2206 asks for a worked BMI calculation (2.0 m, 90 kg = 22.5), using the exact same formula shown.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2201 asks how BMI is calculated, given directly by the source's own formula; Q2206 asks for a worked BMI calculation (2.0 m, 90 kg = 22.5), using the exact same formula shown."
     }
   ]
 }

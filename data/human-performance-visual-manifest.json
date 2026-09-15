@@ -843,6 +843,212 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2089 asks what false sensation strong forward acceleration creates; the figure is the source's own worked illustration of exactly this somatogravic illusion."
+    },
+    {
+      "visual_id": "hp-information-processing-001",
+      "topic": "Information Processing & Behaviour",
+      "concept": "Information flows Stimuli -> Attention -> Perception -> Central Decision Maker (using long/short-term memory and motor programmes) -> Actions -> Feedback.",
+      "question_ids": [
+        2211,
+        2119,
+        2176,
+        2079,
+        2042,
+        2100,
+        2055
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 111,
+        "figure": "8.1",
+        "notes": "Figure 8.1, Basic Information Processing. Extracted directly from the embedded source raster; fully labelled flowchart with a dashed feedback loop from Actions back to Stimuli."
+      },
+      "brief": {
+        "student_must_understand": "The stages of information processing (detection, attention, perception, decision, action, feedback) and how long-term memory, short-term memory and motor programmes feed the central decision maker.",
+        "preserve": [
+          "Full labelled flowchart with feedback loop"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-4/hp-information-processing-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-4/hp-information-processing-v1.webp"
+      },
+      "mapping_reason": "Q2211/Q2079 ask about perception and attention, both labelled stages; Q2119/Q2176 ask about closed-loop control, shown by the model's own dashed feedback loop; Q2042/Q2100/Q2055 ask about motor programmes and rule-/knowledge-based behaviour, both routed through the labelled Long-Term Memory and Motor Programmes boxes feeding the Central Decision Maker.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2211/Q2079 ask about perception and attention, both labelled stages; Q2119/Q2176 ask about closed-loop control, shown by the model's own dashed feedback loop; Q2042/Q2100/Q2055 ask about motor programmes and rule-/knowledge-based behaviour, both routed through the labelled Long-Term Memory and Motor Programmes boxes feeding the Central Decision Maker."
+    },
+    {
+      "visual_id": "hp-performance-arousal-001",
+      "topic": "Information Processing & Behaviour",
+      "concept": "Performance rises with arousal up to an optimum, then falls under high arousal (mental overload).",
+      "question_ids": [
+        2221
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 137,
+        "figure": "8.13",
+        "notes": "Figure 8.13, Performance/Arousal Curve. Extracted directly from the embedded source raster; low/optimal/high arousal zones colour-coded against a performance curve."
+      },
+      "brief": {
+        "student_must_understand": "Performance peaks at optimal arousal and degrades under both low arousal (wandering attention) and high arousal (overload).",
+        "preserve": [
+          "Performance vs arousal curve with low/optimal/high zones"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-4/hp-performance-arousal-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-4/hp-performance-arousal-v1.webp"
+      },
+      "mapping_reason": "Q2221 asks the usual effect of mental overload on performance; the curve's own high-arousal zone shows performance falling directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2221 asks the usual effect of mental overload on performance; the curve's own high-arousal zone shows performance falling directly."
+    },
+    {
+      "visual_id": "hp-unconditioned-reflex-001",
+      "topic": "Information Processing & Behaviour",
+      "concept": "Unconditioned reflexes are instinctive, natural responses present without training, such as blinking.",
+      "question_ids": [
+        2210
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 129,
+        "figure": "8.3",
+        "notes": "Figure 8.3, Unconditioned Reflex. Extracted directly from the embedded source raster; photo of a person blinking as a fist approaches the eye."
+      },
+      "brief": {
+        "student_must_understand": "Unconditioned reflexes are instinctive and untrained, with the shortest reaction time of any reflex type.",
+        "preserve": [
+          "Blink-reflex photo"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-4/hp-unconditioned-reflex-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-4/hp-unconditioned-reflex-v1.webp"
+      },
+      "mapping_reason": "Q2210 asks what unconditioned reflexes are; the figure is the source's own illustration of exactly this (an untrained blink reflex).",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2210 asks what unconditioned reflexes are; the figure is the source's own illustration of exactly this (an untrained blink reflex)."
+    },
+    {
+      "visual_id": "hp-episodic-memory-001",
+      "topic": "Information Processing & Behaviour",
+      "concept": "Episodic memory stores personal events and experiences, though it is prone to distortion.",
+      "question_ids": [
+        2088
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 133,
+        "figure": "8.7",
+        "notes": "Figure 8.7, Episodic Memory. Extracted directly from the embedded source raster; a triptych of personally memorable life events (an extreme sport, an accident, a celebration)."
+      },
+      "brief": {
+        "student_must_understand": "Episodic memory stores personal events/episodes in your life, and is prone to change with retelling.",
+        "preserve": [
+          "Three-panel memorable-events photo composite"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-4/hp-episodic-memory-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-4/hp-episodic-memory-v1.webp"
+      },
+      "mapping_reason": "Q2088 asks which memory type stores personal events and experiences; the figure is the source's own captioned illustration of episodic memory.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2088 asks which memory type stores personal events and experiences; the figure is the source's own captioned illustration of episodic memory."
     }
   ]
 }

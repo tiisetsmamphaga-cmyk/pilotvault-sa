@@ -7493,7 +7493,8 @@
       "concept": "Moist air is less dense than dry air, so humid conditions reduce lift and increase take-off run/reduce rate of climb.",
       "question_ids": [
         1266,
-        1269
+        1269,
+        1345
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",

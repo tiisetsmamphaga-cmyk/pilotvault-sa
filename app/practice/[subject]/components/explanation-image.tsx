@@ -108,41 +108,40 @@ function PofExplanationImage({
 
   return (
     <figure className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="flex flex-col items-center gap-1.5 bg-[#06111f] px-4 py-3 text-center sm:px-6 sm:py-4">
-        <img src="/images/headerlogo.png" alt="PilotVault SA" className="h-7 w-auto sm:h-9" />
-        <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#c9942f] sm:text-xs">
-          PRINCIPLES OF FLIGHT
-        </div>
-        {title && (
-          <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">
-            {title}
-          </div>
-        )}
+      <div className="flex items-center justify-center bg-[#06111f] px-4 py-4 sm:px-6 sm:py-5">
+        <img src="/images/headerlogo.png" alt="PilotVault SA" className="h-8 w-auto sm:h-10" />
       </div>
       <div className="h-1 bg-[#c9942f]" />
 
       <div className="grid gap-4 bg-[#f6f8fa] p-4 sm:p-6 lg:grid-cols-[1.4fr_1fr]">
-        <div className="relative flex min-h-40 items-center justify-center overflow-hidden rounded-xl border border-[#e2e7ed] bg-white p-3">
-          {status === "loading" && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center px-4 text-center text-sm font-medium text-slate-500" aria-live="polite">
-              <span className="animate-pulse">Loading explanation diagram…</span>
+        <div className="flex flex-col gap-3">
+          {title && (
+            <div className="text-lg font-extrabold uppercase tracking-[0.02em] text-[#0b1f33] sm:text-xl">
+              {title}
             </div>
           )}
-          <img
-            src={src}
-            alt={alt}
-            loading={priority ? "eager" : "lazy"}
-            decoding="async"
-            fetchPriority={priority ? "high" : "auto"}
-            onLoad={() => setStatus("loaded")}
-            onError={() => setStatus("error")}
-            className={`block h-auto max-h-[28rem] w-auto max-w-full object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
-          />
-          {status === "error" && (
-            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 px-4 text-center text-sm font-medium text-slate-700" role="alert">
-              The explanation diagram could not be loaded.
-            </div>
-          )}
+          <div className="relative flex min-h-40 items-center justify-center overflow-hidden rounded-xl border border-[#e2e7ed] bg-white p-3">
+            {status === "loading" && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center px-4 text-center text-sm font-medium text-slate-500" aria-live="polite">
+                <span className="animate-pulse">Loading explanation diagram…</span>
+              </div>
+            )}
+            <img
+              src={src}
+              alt={alt}
+              loading={priority ? "eager" : "lazy"}
+              decoding="async"
+              fetchPriority={priority ? "high" : "auto"}
+              onLoad={() => setStatus("loaded")}
+              onError={() => setStatus("error")}
+              className={`block h-auto max-h-[28rem] w-auto max-w-full object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
+            />
+            {status === "error" && (
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 px-4 text-center text-sm font-medium text-slate-700" role="alert">
+                The explanation diagram could not be loaded.
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-col rounded-xl border border-[#e2e7ed] bg-white p-5">

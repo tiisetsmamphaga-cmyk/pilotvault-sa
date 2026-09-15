@@ -1922,6 +1922,56 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2201 asks how BMI is calculated, given directly by the source's own formula; Q2206 asks for a worked BMI calculation (2.0 m, 90 kg = 22.5), using the exact same formula shown."
+    },
+    {
+      "visual_id": "hp-scuba-pressure-depth-001",
+      "topic": "Pressure Effects & Decompression",
+      "concept": "A diver at 30 feet is exposed to 2 atmospheres of pressure; excess dissolved nitrogen after diving requires a minimum 24-hour wait before flying above 8,000 ft.",
+      "question_ids": [
+        2171
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 63,
+        "figure": "4.8",
+        "notes": "Figure 4.8, Illustration of Atmospheric Pressure at Depth. Extracted directly from the embedded source raster; shows a diver at 30 feet with 1 atmosphere from the air above plus 1 atmosphere from the water, totalling 2 atmospheres."
+      },
+      "brief": {
+        "student_must_understand": "Diving increases dissolved nitrogen in the body; flying too soon afterward risks decompression sickness as ambient pressure drops further, hence the 24-hour minimum wait.",
+        "preserve": [
+          "Diver depth/pressure diagram with atmosphere count"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-10/hp-scuba-pressure-depth-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-10/hp-scuba-pressure-depth-v1.webp"
+      },
+      "mapping_reason": "Q2171 asks the minimum wait before flying above 8,000 ft after any scuba dive (24 hours); the figure is the source's own illustration of the pressure-at-depth mechanism that makes this rule necessary.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2171 asks the minimum wait before flying above 8,000 ft after any scuba dive (24 hours); the figure is the source's own illustration of the pressure-at-depth mechanism that makes this rule necessary."
     }
   ]
 }

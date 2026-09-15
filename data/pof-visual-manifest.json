@@ -7217,14 +7217,13 @@
       "topic": "Climb Performance",
       "concept": "MAX EXCESS POWER = MAX RATE OF CLIMB — THE WIDEST GAP BETWEEN THE TWO CURVES",
       "question_ids": [
-        1215,
         1244
       ],
       "source": {
         "document": "ac_61-23c_phak_canada.pdf",
         "page": 31,
         "figure": "1-38",
-        "notes": "Extracted and refined directly from the source raster (Fig 1-38)."
+        "notes": "Extracted and refined directly from the source raster (Fig 1-38). Q1215 excluded: that question carries its own embedded reference chart (image_url) with a labeled 'point A' this generic card doesn't match."
       },
       "brief": {
         "student_must_understand": "MAX EXCESS POWER = MAX RATE OF CLIMB; THE WIDEST GAP BETWEEN THE TWO CURVES",

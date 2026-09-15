@@ -1,15 +1,15 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
-  Brain,
-  CheckCircle2,
   ChevronRight,
   Cloud,
   Compass,
+  Cpu,
+  Gauge,
   LockKeyhole,
   LogOut,
   Map,
@@ -17,7 +17,6 @@ import {
   Radio,
   Scale,
   UserRound,
-  Wrench,
 } from "lucide-react"
 import { PageSkeleton } from "@/components/page-skeleton"
 import {
@@ -38,12 +37,12 @@ const subjects = [
   { name: "Meteorology", slug: "meteorology", icon: Cloud },
   { name: "Air Law", slug: "air-law", icon: Scale },
   { name: "Navigation", slug: "navigation", icon: Compass },
-  { name: "Human Performance", slug: "human-performance", icon: Brain },
+  { name: "Human Performance", slug: "human-performance", icon: Gauge },
   { name: "Principles of Flight", slug: "principles-of-flight", icon: Plane },
   {
     name: "Aircraft Technical and General",
     slug: "aircraft-technical-and-general",
-    icon: Wrench,
+    icon: Cpu,
   },
   { name: "Radio Telephony", slug: "radio-telephony", icon: Radio },
   { name: "Flight Planning", slug: "flight-planning", icon: Map },
@@ -169,52 +168,7 @@ export default function DashboardPage() {
     return hasDirectSubjectAccess(slug)
   }
 
-  const dashboardStats = useMemo(() => {
-    const overallAverage = attempts.length
-      ? Math.round(
-          attempts.reduce((sum, attempt) => sum + attempt.scorePercentage, 0) /
-            attempts.length
-        )
-      : null
-
-    const practicedSubjects = new Set(attempts.map((attempt) => attempt.subject)).size
-
-    const perSubject = Object.fromEntries(
-      subjects.map((subject) => {
-        const subjectAttempts = attempts.filter(
-          (attempt) => attempt.subject === subject.slug
-        )
-        const average = subjectAttempts.length
-          ? Math.round(
-              subjectAttempts.reduce(
-                (sum, attempt) => sum + attempt.scorePercentage,
-                0
-              ) / subjectAttempts.length
-            )
-          : null
-
-        return [
-          subject.slug,
-          {
-            count: subjectAttempts.length,
-            average,
-          },
-        ]
-      })
-    ) as Record<string, { count: number; average: number | null }>
-
-    const strongestSubject = Object.entries(perSubject)
-      .filter(([, stats]) => stats.average !== null)
-      .sort((a, b) => (b[1].average ?? 0) - (a[1].average ?? 0))[0]
-
-    return {
-      overallAverage,
-      practicedSubjects,
-      perSubject,
-      strongestSubject,
-      latestAttempt: attempts[0] ?? null,
-    }
-  }, [attempts])
+  const latestAttempt = attempts[0] ?? null
 
   if (loading || (!profile && !loadError)) {
     return <PageSkeleton variant="dashboard" />
@@ -222,8 +176,8 @@ export default function DashboardPage() {
 
   if (loadError) {
     return (
-      <main className="min-h-screen bg-[#eef3f8] px-4 py-10 text-slate-900 sm:px-6">
-        <div className="mx-auto max-w-xl rounded-xl border border-red-200 bg-[#f8fafc] p-6 sm:p-8">
+      <main className="min-h-screen bg-[#f8fafc] px-4 py-10 text-slate-900 sm:px-6">
+        <div className="mx-auto max-w-xl rounded-xl border border-red-200 bg-white p-6 sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red-600">
             Dashboard error
           </p>
@@ -253,13 +207,20 @@ export default function DashboardPage() {
         ? profile.subscription_plan.toUpperCase()
         : "Student Access"
 
-  const latestSubject = dashboardStats.latestAttempt?.subject
+  const latestSubject = latestAttempt?.subject
   const latestSubjectUnlocked = latestSubject
     ? hasSubjectAccess(latestSubject)
     : false
+  const LatestSubjectIcon = subjects.find((s) => s.slug === latestSubject)?.icon
+
+  const sortedSubjects = [...subjects].sort((a, b) => {
+    const aRank = hasSubjectAccess(a.slug) ? 0 : 1
+    const bRank = hasSubjectAccess(b.slug) ? 0 : 1
+    return aRank - bRank
+  })
 
   return (
-    <main className="min-h-screen bg-[#eef3f8] text-slate-900">
+    <main className="min-h-screen bg-[#f8fafc] text-slate-900">
       <header className="border-b border-white/15 bg-[#1f4e79] text-white">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-3">
@@ -325,82 +286,58 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {dashboardStats.latestAttempt && latestSubjectUnlocked && (
-            <div className="mt-6 flex flex-col gap-4 rounded-xl border border-[#c9d8e6] bg-[#e4edf5] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
-              <div className="min-w-0">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1f4e79]">
-                  Continue studying
-                </p>
-                <div className="mt-1 flex min-w-0 flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <h2 className="truncate text-base font-semibold text-slate-950 sm:text-lg">
-                    {formatSubjectName(latestSubject)}
-                  </h2>
-                  <span className={`text-sm font-semibold ${scoreClassName(dashboardStats.latestAttempt.scorePercentage)}`}>
-                    Last mock {dashboardStats.latestAttempt.scorePercentage}%
+          {latestAttempt && latestSubjectUnlocked && LatestSubjectIcon && (
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-6">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex min-w-0 items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
+                    <LatestSubjectIcon className="h-6 w-6" />
                   </span>
+                  <div className="min-w-0">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#1f4e79]">
+                      Continue studying
+                    </p>
+                    <h2 className="mt-1 truncate text-xl font-bold text-slate-950">
+                      {formatSubjectName(latestSubject!)}
+                    </h2>
+                    <p className="mt-1 text-sm text-slate-500">
+                      Last mock{" "}
+                      <span className={`font-semibold ${scoreClassName(latestAttempt.scorePercentage)}`}>
+                        {latestAttempt.correctAnswers}/
+                        {latestAttempt.totalQuestions} (
+                        {latestAttempt.scorePercentage}%)
+                      </span>{" "}
+                      · {formatShortDate(latestAttempt.completedAt)}
+                    </p>
+                  </div>
                 </div>
+
+                <Link
+                  href={`/practice/${latestSubject}`}
+                  className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40"
+                >
+                  Open subject
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
               </div>
-              <Link
-                href={`/practice/${latestSubject}`}
-                className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1.5 rounded-lg bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40 sm:w-auto"
-              >
-                Open subject
-                <ChevronRight className="h-4 w-4" />
-              </Link>
             </div>
           )}
-
-          <dl className="mt-5 grid grid-cols-3 overflow-hidden rounded-xl border border-[#cfdae5] bg-[#f4f7fa]">
-            <div className="min-w-0 px-3 py-3.5 sm:px-5 sm:py-4">
-              <dt className="truncate text-[10px] font-medium uppercase tracking-[0.08em] text-slate-500 sm:text-[11px]">
-                Mock avg
-              </dt>
-              <dd className="mt-1 text-xl font-bold tabular-nums text-slate-950 sm:text-2xl">
-                {dashboardStats.overallAverage === null
-                  ? "—"
-                  : `${dashboardStats.overallAverage}%`}
-              </dd>
-            </div>
-            <div className="min-w-0 border-l border-[#cfdae5] px-3 py-3.5 sm:px-5 sm:py-4">
-              <dt className="truncate text-[10px] font-medium uppercase tracking-[0.08em] text-slate-500 sm:text-[11px]">
-                Mocks
-              </dt>
-              <dd className="mt-1 text-xl font-bold tabular-nums text-slate-950 sm:text-2xl">
-                {attempts.length}
-              </dd>
-            </div>
-            <div className="min-w-0 border-l border-[#cfdae5] px-3 py-3.5 sm:px-5 sm:py-4">
-              <dt className="truncate text-[10px] font-medium uppercase tracking-[0.08em] text-slate-500 sm:text-[11px]">
-                Subjects
-              </dt>
-              <dd className="mt-1 text-xl font-bold tabular-nums text-slate-950 sm:text-2xl">
-                {dashboardStats.practicedSubjects}/8
-              </dd>
-            </div>
-          </dl>
         </section>
 
-        <div className="mt-7 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
           <section aria-labelledby="subjects-heading">
-            <div className="mb-3 flex items-end justify-between gap-4">
-              <div>
-                <h2 id="subjects-heading" className="text-base font-semibold text-slate-950">
-                  Subjects
-                </h2>
-                <p className="mt-1 text-xs text-slate-500">Select a subject to start training.</p>
-              </div>
-              <div className="flex shrink-0 items-center gap-1.5 text-[11px] font-medium text-slate-500">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-                <span>Owned</span>
-              </div>
+            <div className="mb-3">
+              <h2 id="subjects-heading" className="text-base font-semibold text-slate-950">
+                Subjects
+              </h2>
+              <p className="mt-1 text-xs text-slate-500">Select a subject to start training.</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-              {subjects.map((subject) => {
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {sortedSubjects.map((subject) => {
                 const Icon = subject.icon
                 const unlocked = hasSubjectAccess(subject.slug)
                 const owned = ownsSubject(subject.slug)
-
                 return (
                   <Link
                     key={subject.slug}
@@ -409,21 +346,19 @@ export default function DashboardPage() {
                         ? `/practice/${subject.slug}`
                         : `/upgrade?subject=${subject.slug}`
                     }
-                    className={`group flex min-h-[76px] items-center gap-3 rounded-xl border px-3.5 py-3.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/35 sm:min-h-[82px] sm:px-4 ${
+                    className={`group flex min-h-[72px] items-center gap-3.5 rounded-2xl border bg-white p-4 transition ${
                       unlocked
-                        ? "border-[#d2dde7] bg-[#f8fafc] hover:border-[#9fb6ca] hover:bg-white"
-                        : "border-[#dbe3ea] bg-[#f1f4f7] opacity-65"
-                    }`}
+                        ? "border-slate-200 hover:-translate-y-0.5 hover:border-[#1f4e79]/40 hover:shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
+                        : "border-slate-200 opacity-70"
+                    } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/35`}
                   >
-                    <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg ${
+                    <Icon
+                      className={`h-5 w-5 shrink-0 transition-colors ${
                         unlocked
-                          ? "bg-[#d6e6f7] text-[#1f4e79]"
-                          : "bg-slate-200 text-slate-400"
+                          ? "text-[#1f4e79] group-hover:text-[#f4b400]"
+                          : "text-slate-300"
                       }`}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </div>
+                    />
 
                     <div className="min-w-0 flex-1">
                       <h3
@@ -436,17 +371,13 @@ export default function DashboardPage() {
                     </div>
 
                     {owned ? (
-                      <span
-                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700"
-                        aria-label="Owned subject"
-                        title="Owned"
-                      >
-                        <CheckCircle2 className="h-4 w-4" />
+                      <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.1em] text-[#b8860a]">
+                        Owned
                       </span>
                     ) : unlocked ? (
                       <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#1f4e79]" />
                     ) : (
-                      <LockKeyhole className="h-4 w-4 shrink-0 text-slate-400" />
+                      <LockKeyhole className="h-4 w-4 shrink-0 text-slate-300" />
                     )}
                   </Link>
                 )
@@ -454,75 +385,46 @@ export default function DashboardPage() {
             </div>
           </section>
 
-          <aside className="space-y-4 lg:sticky lg:top-5" aria-label="Dashboard summary">
-            <section className="rounded-xl border border-[#d2dde7] bg-[#f8fafc] p-4 sm:p-5">
-              <div className="flex items-center justify-between gap-3">
-                <h2 className="text-sm font-semibold text-slate-950">Recent mocks</h2>
-                <Link
-                  href="/profile"
-                  className="min-h-10 px-1 py-2 text-xs font-semibold text-[#1f4e79] hover:text-[#183d60]"
-                >
-                  View all
-                </Link>
-              </div>
+          <aside aria-label="Dashboard summary">
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-sm font-semibold text-slate-950">Recent mocks</h2>
+              <Link
+                href="/profile"
+                className="min-h-10 px-1 py-2 text-xs font-semibold text-[#1f4e79] hover:text-[#183d60]"
+              >
+                View all
+              </Link>
+            </div>
 
-              {attempts.length ? (
-                <div className="mt-2 divide-y divide-slate-200">
-                  {attempts.slice(0, 4).map((attempt) => (
-                    <div
-                      key={attempt.id}
-                      className="flex min-h-[52px] items-center justify-between gap-3 py-2.5"
-                    >
-                      <div className="min-w-0">
-                        <p className="truncate text-xs font-medium text-slate-800">
-                          {formatSubjectName(attempt.subject)}
-                        </p>
-                        <p className="mt-0.5 text-[10px] text-slate-500">
-                          {formatShortDate(attempt.completedAt)}
-                        </p>
-                      </div>
-                      <p className={`shrink-0 text-sm font-semibold tabular-nums ${scoreClassName(attempt.scorePercentage)}`}>
-                        {attempt.scorePercentage}%
+            {attempts.length ? (
+              <div className="mt-1 divide-y divide-slate-200 border-t border-slate-200">
+                {attempts.slice(0, 4).map((attempt) => (
+                  <div
+                    key={attempt.id}
+                    className="flex min-h-[52px] items-center justify-between gap-3 py-2.5"
+                  >
+                    <div className="min-w-0">
+                      <p className="truncate text-xs font-medium text-slate-800">
+                        {formatSubjectName(attempt.subject)}
+                      </p>
+                      <p className="mt-0.5 text-[10px] text-slate-500">
+                        {formatShortDate(attempt.completedAt)}
                       </p>
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="mt-3 text-xs leading-5 text-slate-500">
-                  Completed mock exams will appear here.
-                </p>
-              )}
-            </section>
-
-            <section className="rounded-xl border border-[#cbd8e4] bg-[#e4edf5] p-4 sm:p-5">
-              <h2 className="text-sm font-semibold text-slate-950">Performance summary</h2>
-              <dl className="mt-3 divide-y divide-[#cbd8e4] text-xs">
-                <div className="flex items-center justify-between gap-3 py-2 first:pt-0">
-                  <dt className="text-slate-500">Overall average</dt>
-                  <dd className="font-semibold tabular-nums text-slate-900">
-                    {dashboardStats.overallAverage === null
-                      ? "—"
-                      : `${dashboardStats.overallAverage}%`}
-                  </dd>
-                </div>
-                <div className="flex items-center justify-between gap-3 py-2">
-                  <dt className="text-slate-500">Strongest subject</dt>
-                  <dd className="max-w-[158px] truncate text-right font-semibold text-slate-900">
-                    {dashboardStats.strongestSubject
-                      ? formatSubjectName(dashboardStats.strongestSubject[0])
-                      : "—"}
-                  </dd>
-                </div>
-                <div className="flex items-center justify-between gap-3 py-2 last:pb-0">
-                  <dt className="text-slate-500">Latest mock</dt>
-                  <dd className="font-semibold tabular-nums text-slate-900">
-                    {dashboardStats.latestAttempt
-                      ? `${dashboardStats.latestAttempt.scorePercentage}%`
-                      : "—"}
-                  </dd>
-                </div>
-              </dl>
-            </section>
+                    <p className={`shrink-0 text-right text-xs font-semibold tabular-nums ${scoreClassName(attempt.scorePercentage)}`}>
+                      {attempt.correctAnswers}/{attempt.totalQuestions}
+                      <span className="block text-[10px] font-medium text-slate-400">
+                        {attempt.scorePercentage}%
+                      </span>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-3 text-xs leading-5 text-slate-500">
+                Completed mock exams will appear here.
+              </p>
+            )}
           </aside>
         </div>
       </div>

@@ -106,7 +106,7 @@ function PofExplanationImage({
   return (
     <figure className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div className="flex items-center justify-center bg-[#06111f] px-4 py-5 sm:px-6 sm:py-6">
-        <img src="/images/logo.png" alt="PilotVault SA" className="h-16 w-auto sm:h-20" />
+        <img src="/images/Header logo.png" alt="PilotVault SA" className="h-14 w-auto sm:h-16" />
       </div>
       <div className="h-1 bg-[#c9942f]" />
 

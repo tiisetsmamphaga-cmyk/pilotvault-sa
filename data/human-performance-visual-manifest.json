@@ -1619,6 +1619,207 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2183 asks the altitude up to which a healthy person can normally operate without hypoxia (10,000 ft), the figure's own first threshold band; Q2057 asks how hypoxia is best prevented, matching the figure's own altitude-vs-oxygen-source thresholds; Q2190 asks for the definition of hypoxia, the concept this whole threshold figure exists to address."
+    },
+    {
+      "visual_id": "hp-eye-datum-position-001",
+      "topic": "Airmanship & Cockpit Safety",
+      "concept": "Sitting too low hides part of the undershoot on approach; sitting too high improves the downward view but worsens the instrument and upward views.",
+      "question_ids": [
+        2231,
+        2235
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 187,
+        "figure": "12.5a-c",
+        "notes": "Figure 12.5a-c, Eye datum positions. Extracted directly from the embedded source rasters; three labelled panels (sitting too low / just right / too high) each showing the resulting view quality."
+      },
+      "brief": {
+        "student_must_understand": "Seat height trades off outside view against instrument view: too low hides the undershoot, too high blocks part of the instrument panel and upward view.",
+        "preserve": [
+          "All three labelled seating-position panels side by side"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-8/hp-eye-datum-position-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-8/hp-eye-datum-position-v1.webp"
+      },
+      "mapping_reason": "Q2231 asks the effect of sitting below the correct eye-reference position (part of the undershoot area hidden), matching the 'Sitting Too Low' panel's own 'Forward and Downward View Poor' label; Q2235 asks the three effects of sitting too high (improved downward view, poorer instrument view, restricted upward view), all three labelled directly on the 'Sitting Too High' panel.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2231 asks the effect of sitting below the correct eye-reference position (part of the undershoot area hidden), matching the 'Sitting Too Low' panel's own 'Forward and Downward View Poor' label; Q2235 asks the three effects of sitting too high (improved downward view, poorer instrument view, restricted upward view), all three labelled directly on the 'Sitting Too High' panel."
+    },
+    {
+      "visual_id": "hp-t-panel-001",
+      "topic": "Airmanship & Cockpit Safety",
+      "concept": "The standard 'T' instrument layout is formed by the Airspeed Indicator, Artificial Horizon, Altimeter and Direction Indicator.",
+      "question_ids": [
+        2237
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 189,
+        "figure": "12.12",
+        "notes": "Figure 12.12, The standard 'T' instrument panel. Extracted directly from the embedded source rasters (reassembled from the panel's six individual instrument tiles); the four 'T' instruments are highlighted with a red circle, the Turn Co-ordinator and Vertical Speed Indicator are not."
+      },
+      "brief": {
+        "student_must_understand": "The four main 'T' instruments (ASI, AH, Altimeter, DI) are highlighted; the Turn Co-ordinator, VSI, and the magnetic compass (not shown in this panel at all) are not part of the 'T'.",
+        "preserve": [
+          "All six instruments with the four 'T' instruments visibly circled"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-8/hp-t-panel-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-8/hp-t-panel-v1.webp"
+      },
+      "mapping_reason": "Q2237 asks which instrument is not one of the four main 'T' instruments (the magnetic compass); the figure's own red-circle highlighting shows exactly which four instruments make up the 'T', with the compass absent entirely.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2237 asks which instrument is not one of the four main 'T' instruments (the magnetic compass); the figure's own red-circle highlighting shows exactly which four instruments make up the 'T', with the compass absent entirely."
+    },
+    {
+      "visual_id": "hp-control-design-001",
+      "topic": "Airmanship & Cockpit Safety",
+      "concept": "Controls for different functions (throttle, propeller, mixture) should look and feel different from one another, not merely be standardised by shape and material.",
+      "question_ids": [
+        2233
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 192,
+        "figure": "12.18",
+        "notes": "Figure 12.18, Levers, switches and knobs which control different functions must look and feel different. Extracted directly from the embedded source raster; a real cockpit photo showing distinctly shaped/coloured throttle, propeller and mixture levers."
+      },
+      "brief": {
+        "student_must_understand": "Differently shaped and coloured control levers (as shown) reduce the risk of a pilot mistaking one control for another.",
+        "preserve": [
+          "Real cockpit photo of distinctly shaped and coloured control levers"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-8/hp-control-design-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-8/hp-control-design-v1.webp"
+      },
+      "mapping_reason": "Q2233 asks which is not a sound control-design principle ('controls need only be standardised by shape and material' -- the false statement); the figure shows the correct, opposite principle the source text states: distinct look and feel for different functions.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2233 asks which is not a sound control-design principle ('controls need only be standardised by shape and material' -- the false statement); the figure shows the correct, opposite principle the source text states: distinct look and feel for different functions."
+    },
+    {
+      "visual_id": "hp-analogue-heading-001",
+      "topic": "Airmanship & Cockpit Safety",
+      "concept": "Analogue displays suit qualitative information (trend, rate of change) best, such as heading or VOR/ADF needle position.",
+      "question_ids": [
+        2236
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 190,
+        "figure": "12.13",
+        "notes": "Figure 12.13, Analogue display of heading information is more intuitive than a digital readout. Extracted directly from the embedded source raster; a real analogue direction indicator instrument."
+      },
+      "brief": {
+        "student_must_understand": "Analogue displays give a more intuitive, at-a-glance sense of trend and rate of change than digital readouts, illustrated by this heading instrument.",
+        "preserve": [
+          "Analogue direction indicator photo"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-8/hp-analogue-heading-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-8/hp-analogue-heading-v1.webp"
+      },
+      "mapping_reason": "Q2236 asks what an analogue display is generally better for showing (qualitative information such as trend and rate of change); the figure is the source's own captioned example of exactly this advantage.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2236 asks what an analogue display is generally better for showing (qualitative information such as trend and rate of change); the figure is the source's own captioned example of exactly this advantage."
     }
   ]
 }

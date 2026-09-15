@@ -6,9 +6,10 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
-  ClipboardList,
   Download,
+  ListChecks,
   LockKeyhole,
+  Timer,
 } from "lucide-react"
 
 import {
@@ -167,7 +168,7 @@ export function TrainingModeMenu({
           >
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
-                <ClipboardList className="h-5 w-5" />
+                <Timer className="h-5 w-5" />
               </span>
 
               {isTrialAccount && (
@@ -258,7 +259,7 @@ export function TrainingModeMenu({
               className="group flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
-                <BookOpen className="h-5 w-5" />
+                <ListChecks className="h-5 w-5" />
               </span>
 
               <h3 className="mt-5 text-xl font-bold text-white sm:text-2xl">

@@ -353,8 +353,10 @@ export default function DashboardPage() {
                     } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/35`}
                   >
                     <Icon
-                      className={`h-5 w-5 shrink-0 ${
-                        unlocked ? "text-[#1f4e79]" : "text-slate-300"
+                      className={`h-5 w-5 shrink-0 transition-colors ${
+                        unlocked
+                          ? "text-[#1f4e79] group-hover:text-[#f4b400]"
+                          : "text-slate-300"
                       }`}
                     />
 
@@ -369,7 +371,7 @@ export default function DashboardPage() {
                     </div>
 
                     {owned ? (
-                      <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.1em] text-[#1f4e79]">
+                      <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.1em] text-[#b8860a]">
                         Owned
                       </span>
                     ) : unlocked ? (

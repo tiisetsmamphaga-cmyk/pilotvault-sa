@@ -62,6 +62,6 @@ export function getReadinessStatus(averageScore: number | null) {
 
   return {
     label: "Keep practising",
-    className: "text-orange-500",
+    className: "text-[#b8860a]",
   }
 }

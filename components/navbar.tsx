@@ -120,7 +120,7 @@ export function Navbar() {
     const loginStartedAt = authMode === "login" ? Date.now() : 0
     setLoading(true)
 
-    const { data, error } =
+    const { error } =
       authMode === "login"
         ? await supabase.auth.signInWithPassword({ email, password })
         : await supabase.auth.signUp({
@@ -140,28 +140,10 @@ export function Navbar() {
     }
 
     if (authMode === "signup") {
-      if (data.user) {
-        const trialEndsAt = new Date(
-          Date.now() + 3 * 24 * 60 * 60 * 1000
-        ).toISOString()
-
-        const { error: profileError } = await supabase.from("Profiles").insert({
-          id: data.user.id,
-          full_name: fullName,
-          email,
-          subscription_status: "trial",
-          subscription_plan: "trial",
-          payment_status: "unpaid",
-          trial_ends_at: trialEndsAt,
-        })
-
-        if (profileError) {
-          setLoading(false)
-          setAuthMessage(profileError.message)
-          return
-        }
-      }
-
+      // The Profiles row is created server-side by the on_auth_user_created
+      // trigger, not here: right after signUp() there is no session yet
+      // when email confirmation is required, so a client-side insert would
+      // fail the "auth.uid() = id" RLS policy.
       setLoading(false)
       setAuthMessage("Account created. Please verify your email, then log in.")
       setAuthMode("login")

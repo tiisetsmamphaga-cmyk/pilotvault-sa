@@ -1155,6 +1155,315 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2112 asks for typical environmental/physical stressors in an aircraft, directly labelled (noise, vibration, temperature/humidity); Q2230 asks for the definition of a stressor, illustrated by the figure's own set of labelled stress factors; Q2225 asks about stressors accumulating, the source's own stated characteristic of the same stress-factor list."
+    },
+    {
+      "visual_id": "hp-human-heart-001",
+      "topic": "Blood & Circulation",
+      "concept": "The heart's ventricles pump blood out; the left ventricle sends oxygen-rich blood around the body.",
+      "question_ids": [
+        2073,
+        2174
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 41,
+        "figure": "3.5",
+        "notes": "Figure 3.5, The Human Heart. Extracted directly from the embedded source raster; right/left auricle (atrium) and right/left ventricle labelled, with 'To lungs'/'To body' flow arrows and the aorta and coronary vessels."
+      },
+      "brief": {
+        "student_must_understand": "The ventricles are the heart's pumping-out chambers; the left ventricle specifically pumps oxygenated blood around the body.",
+        "preserve": [
+          "Fully labelled heart chambers and flow-direction arrows"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-6/hp-human-heart-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-6/hp-human-heart-v1.webp"
+      },
+      "mapping_reason": "Q2073 asks which chambers pump blood out (the ventricles, labelled); Q2174 asks which chamber pumps oxygen-rich blood around the body (the left ventricle, labelled with its 'To body' arrow).",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2073 asks which chambers pump blood out (the ventricles, labelled); Q2174 asks which chamber pumps oxygen-rich blood around the body (the left ventricle, labelled with its 'To body' arrow)."
+    },
+    {
+      "visual_id": "hp-circulatory-system-001",
+      "topic": "Blood & Circulation",
+      "concept": "The circulatory system maintains constant blood circulation; oxygenated blood is bright red, poorly oxygenated blood is bluish.",
+      "question_ids": [
+        2188,
+        2139,
+        2122
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 40,
+        "figure": "3.4",
+        "notes": "Figure 3.4, The Circulatory System. Extracted directly from the embedded source raster; colour-coded (red=oxygenated, blue=de-oxygenated) blood flow through the heart chambers, lungs and body organs."
+      },
+      "brief": {
+        "student_must_understand": "The circulatory system (heart + blood vessels) keeps blood constantly circulating; the diagram's own red/blue colour coding shows oxygenated blood as red and de-oxygenated blood as blue.",
+        "preserve": [
+          "Colour-coded oxygenated/de-oxygenated blood flow diagram"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-6/hp-circulatory-system-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-6/hp-circulatory-system-v1.webp"
+      },
+      "mapping_reason": "Q2188 asks for the name of the system maintaining blood circulation; Q2139 asks the colour of well-oxygenated arterial blood; Q2122 asks what colour poorly oxygenated blood gives the lips/nail beds. The figure's own red-vs-blue convention for oxygenated vs de-oxygenated blood supports both colour questions directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2188 asks for the name of the system maintaining blood circulation; Q2139 asks the colour of well-oxygenated arterial blood; Q2122 asks what colour poorly oxygenated blood gives the lips/nail beds. The figure's own red-vs-blue convention for oxygenated vs de-oxygenated blood supports both colour questions directly."
+    },
+    {
+      "visual_id": "hp-blood-pressure-001",
+      "topic": "Blood & Circulation",
+      "concept": "Systolic pressure is the higher reading from the heart's contraction; diastolic is the lower, permanent pressure between beats.",
+      "question_ids": [
+        2062,
+        2104,
+        2136,
+        2054,
+        2097
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 43,
+        "figure": "3.7",
+        "notes": "Figure 3.7, Blood Pressure Graph showing Systolic and Diastolic Pressure. Extracted directly from the embedded source raster; systolic (120 mmHg) and diastolic (80 mmHg) explicitly labelled and defined against a pulse-rate x-axis."
+      },
+      "brief": {
+        "student_must_understand": "Systolic pressure (higher, from heart contraction) and diastolic pressure (lower, permanent) together make up blood pressure, the force of blood against artery walls; hypertension is persistently high blood pressure; pulse rate is the graph's own x-axis.",
+        "preserve": [
+          "Systolic/diastolic pressure curve with labels and values"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-6/hp-blood-pressure-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-6/hp-blood-pressure-v1.webp"
+      },
+      "mapping_reason": "Q2062/Q2104 ask which reading is diastolic/systolic, both explicitly labelled; Q2136 asks the definition of blood pressure, given directly in the figure's own callout text; Q2054 asks what persistently high blood pressure is called (hypertension), the direct complement of the figure's labelled values; Q2097 asks what pulse rate measures, which is literally the figure's x-axis label.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2062/Q2104 ask which reading is diastolic/systolic, both explicitly labelled; Q2136 asks the definition of blood pressure, given directly in the figure's own callout text; Q2054 asks what persistently high blood pressure is called (hypertension), the direct complement of the figure's labelled values; Q2097 asks what pulse rate measures, which is literally the figure's x-axis label."
+    },
+    {
+      "visual_id": "hp-red-blood-cells-001",
+      "topic": "Blood & Circulation",
+      "concept": "Red blood cells contain haemoglobin and carry oxygen to the body's tissues; anaemia is a reduction in haemoglobin.",
+      "question_ids": [
+        2121,
+        2189,
+        2140
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 44,
+        "figure": "3.9",
+        "notes": "Figure 3.9, Red Blood Cells. Extracted directly from the embedded source raster; close-up microscopy image of red blood cells."
+      },
+      "brief": {
+        "student_must_understand": "Red blood cells carry oxygen via haemoglobin; a reduction in haemoglobin is anaemia.",
+        "preserve": [
+          "Red blood cell microscopy image"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-6/hp-red-blood-cells-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-6/hp-red-blood-cells-v1.webp"
+      },
+      "mapping_reason": "Q2121 asks the main purpose of haemoglobin; Q2189 asks the main function of red blood cells; Q2140 asks what a reduction in haemoglobin is called. All three concern red blood cells/haemoglobin directly, matching this figure's own caption and adjacent text.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2121 asks the main purpose of haemoglobin; Q2189 asks the main function of red blood cells; Q2140 asks what a reduction in haemoglobin is called. All three concern red blood cells/haemoglobin directly, matching this figure's own caption and adjacent text."
+    },
+    {
+      "visual_id": "hp-white-blood-cells-001",
+      "topic": "Blood & Circulation",
+      "concept": "White blood cells are the body's main defence against infection and disease.",
+      "question_ids": [
+        2047
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 44,
+        "figure": "3.10",
+        "notes": "Figure 3.10, White Blood Cells. Extracted directly from the embedded source raster; close-up microscopy image of white blood cells."
+      },
+      "brief": {
+        "student_must_understand": "White blood cells fight infection and disease by producing antibodies.",
+        "preserve": [
+          "White blood cell microscopy image"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-6/hp-white-blood-cells-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-6/hp-white-blood-cells-v1.webp"
+      },
+      "mapping_reason": "Q2047 asks the main protective function of white blood cells; the figure is the source's own captioned illustration of white blood cells, matching its adjacent text.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2047 asks the main protective function of white blood cells; the figure is the source's own captioned illustration of white blood cells, matching its adjacent text."
+    },
+    {
+      "visual_id": "hp-platelets-001",
+      "topic": "Blood & Circulation",
+      "concept": "Platelets are the smallest blood cells and are mainly responsible for clot formation.",
+      "question_ids": [
+        2087
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 45,
+        "figure": "3.11",
+        "notes": "Figure 3.11, Platelets. Extracted directly from the embedded source raster; close-up microscopy image of platelets."
+      },
+      "brief": {
+        "student_must_understand": "Platelets, the smallest blood cells, assist in blood clotting.",
+        "preserve": [
+          "Platelet microscopy image"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-6/hp-platelets-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-6/hp-platelets-v1.webp"
+      },
+      "mapping_reason": "Q2087 asks which blood component is mainly responsible for clot formation (platelets); the figure is the source's own captioned illustration of platelets, matching its adjacent text.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2087 asks which blood component is mainly responsible for clot formation (platelets); the figure is the source's own captioned illustration of platelets, matching its adjacent text."
     }
   ]
 }

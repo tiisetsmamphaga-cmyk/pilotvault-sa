@@ -290,17 +290,27 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-slate-600 sm:justify-end">
-              <span className="font-semibold text-slate-900">{licenceLabel}</span>
-              <span className="text-slate-400">•</span>
-              <span>{planLabel}</span>
-              {trialDaysLeft !== null && (
-                <>
-                  <span className="text-slate-400">•</span>
-                  <span className="font-semibold text-[#b8860a]">
+            <div className="flex flex-col items-start gap-1.5 sm:items-end">
+              <div className="flex items-center gap-2 text-xs text-slate-600">
+                <span className="font-semibold text-slate-900">{licenceLabel}</span>
+                <span className="text-slate-400">•</span>
+                <span className={isTrialUser ? "font-bold text-[#b8860a]" : ""}>{planLabel}</span>
+                {trialDaysLeft !== null && (
+                  <span className="rounded-full bg-[#fdf3d9] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#b8860a]">
                     {trialDaysLeft === 1 ? "1 day left" : `${trialDaysLeft} days left`}
                   </span>
-                </>
+                )}
+              </div>
+              {isTrialUser && (
+                <Link
+                  href="/upgrade"
+                  className="text-[11px] font-medium text-slate-500 transition hover:text-[#1f4e79]"
+                >
+                  All 8 subjects · mock exams only —{" "}
+                  <span className="font-semibold text-[#1f4e79] underline underline-offset-2">
+                    unlock full access →
+                  </span>
+                </Link>
               )}
             </div>
           </div>

@@ -151,7 +151,7 @@ export function TrainingModeMenu({
               <a
                 href={manual.href}
                 download={manual.downloadName}
-                className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-[#f4b400]/35 bg-[#f4b400]/10 px-4 text-sm font-bold text-[#f4b400] transition hover:border-[#f4b400] hover:bg-[#f4b400] hover:text-[#06111f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70"
+                className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#1f4e79] px-4 text-sm font-bold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/70"
               >
                 <Download className="h-4 w-4" />
                 Download

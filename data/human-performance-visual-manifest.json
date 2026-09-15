@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "subject": "human-performance",
+  "allowed_statuses": [
+    "REFINING",
+    "MAPPED",
+    "QA_FAILED",
+    "LIVE_VERIFIED"
+  ],
+  "visuals": [
+    {
+      "visual_id": "hp-gas-composition-001",
+      "topic": "Atmosphere, Respiration & Hypoxia",
+      "concept": "The atmosphere is 78% nitrogen, ~21% oxygen, and about 1% argon/carbon dioxide/trace gases; these proportions stay constant with altitude.",
+      "question_ids": [
+        2046,
+        2086,
+        2135,
+        2184,
+        2061
+      ],
+      "source": {
+        "document": "071-DOC045-2-JAA-PPL-Human-Performance-pdf.pdf",
+        "page": 13,
+        "figure": "2.2",
+        "notes": "Figure 2.2, Constituent Gases of the Atmosphere. Extracted directly from the embedded source raster (born-digital, no watermark)."
+      },
+      "brief": {
+        "student_must_understand": "The atmosphere's gas composition (78% N2, 21% O2, ~1% other) and that it stays constant with altitude.",
+        "preserve": [
+          "Pie chart proportions and labels"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-1/hp-gas-composition-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-1/hp-gas-composition-v1.webp"
+      },
+      "mapping_reason": "All five questions ask for the atmosphere's gas composition or its constancy with altitude; the figure and adjacent source text state both directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "All five questions ask for the atmosphere's gas composition or its constancy with altitude; the figure and adjacent source text state both directly."
+    },
+    {
+      "visual_id": "hp-pressure-altitude-fraction-001",
+      "topic": "Atmosphere, Respiration & Hypoxia",
+      "concept": "Atmospheric pressure falls to 3/4 of sea-level at 8000ft, 1/2 at 18000ft, and 1/4 at 36000ft.",
+      "question_ids": [
+        2182,
+        2185
+      ],
+      "source": {
+        "document": "071-DOC045-2-JAA-PPL-Human-Performance-pdf.pdf",
+        "page": 15,
+        "figure": "2.4",
+        "notes": "Figure 2.4, Pressure and Density against Height in the ICAO Standard Atmosphere. Extracted directly from the embedded source raster; the 1/4, 1/2, 3/4 markers are the source's own annotations."
+      },
+      "brief": {
+        "student_must_understand": "Pressure fraction of sea-level value at specific altitudes: 3/4 at 8000ft, 1/2 at 18000ft, 1/4 at 36000ft.",
+        "preserve": [
+          "Pressure curve",
+          "1/4, 1/2, 3/4 altitude markers"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-1/hp-pressure-altitude-fraction-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-1/hp-pressure-altitude-fraction-v1.webp"
+      },
+      "mapping_reason": "Both questions ask for the pressure fraction at 18000ft and 36000ft; the figure's own red annotations state these exactly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Both questions ask for the pressure fraction at 18000ft and 36000ft; the figure's own red annotations state these exactly."
+    },
+    {
+      "visual_id": "hp-partial-pressure-o2-altitude-001",
+      "topic": "Atmosphere, Respiration & Hypoxia",
+      "concept": "Oxygen's partial pressure falls with altitude even though its percentage of the air stays constant, reducing oxygen transfer into the blood.",
+      "question_ids": [
+        2117,
+        2137,
+        2138,
+        2177,
+        2178,
+        2101
+      ],
+      "source": {
+        "document": "071-DOC045-2-JAA-PPL-Human-Performance-pdf.pdf",
+        "page": 16,
+        "figure": "2.5 / 2.6",
+        "notes": "Figures 2.5 and 2.6 (Partial Pressure of Oxygen at Mean Sea Level and at 8000 feet) combined into one comparison image. Both extracted directly from embedded source rasters."
+      },
+      "brief": {
+        "student_must_understand": "Oxygen partial pressure decreases with altitude (160 mmHg at sea level to 120 mmHg at 8000ft), reducing the oxygen available to transfer into the blood.",
+        "preserve": [
+          "Manometer diagrams",
+          "760/570 mmHg total pressure",
+          "160/120 mmHg oxygen partial pressure"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-1/hp-partial-pressure-o2-altitude-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-1/hp-partial-pressure-o2-altitude-v1.webp"
+      },
+      "mapping_reason": "All six questions concern how oxygen partial pressure (and therefore oxygen transfer into blood) changes with altitude; the sea-level vs 8000ft comparison is the source's own worked example of exactly this.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "All six questions concern how oxygen partial pressure (and therefore oxygen transfer into blood) changes with altitude; the sea-level vs 8000ft comparison is the source's own worked example of exactly this."
+    },
+    {
+      "visual_id": "hp-tuc-table-001",
+      "topic": "Atmosphere, Respiration & Hypoxia",
+      "concept": "Time of Useful Consciousness (TUC) shortens sharply with altitude, with physical activity and rapid decompression shortening it further.",
+      "question_ids": [
+        2098,
+        2093,
+        2145
+      ],
+      "source": {
+        "document": "071-DOC045-2-JAA-PPL-Human-Performance-pdf.pdf",
+        "page": 43,
+        "figure": "4.6",
+        "notes": "Figure 4.6, Times of Useful Consciousness. Extracted directly from the source table (officially captioned as a Figure)."
+      },
+      "brief": {
+        "student_must_understand": "TUC is the time to recognise and act on hypoxia; it shortens with altitude, with activity, and with rapid vs progressive decompression.",
+        "preserve": [
+          "Full altitude/sitting/moderate-activity/rapid-decompression table"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-1/hp-tuc-table-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-1/hp-tuc-table-v1.webp"
+      },
+      "mapping_reason": "All three questions concern TUC directly (its definition, the effect of activity, and its value at ~25000ft under rapid decompression); the table gives exact figures for each.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "All three questions concern TUC directly (its definition, the effect of activity, and its value at ~25000ft under rapid decompression); the table gives exact figures for each."
+    }
+  ]
+}

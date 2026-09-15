@@ -79,7 +79,6 @@ export function ExplanationImage({
         src={src}
         alt={alt}
         title={title}
-        caption={caption}
         template={pofTemplate}
         priority={priority}
       />
@@ -93,14 +92,12 @@ function PofExplanationImage({
   src,
   alt,
   title,
-  caption,
   template,
   priority,
 }: {
   src: string
   alt: string
   title?: string
-  caption?: string
   template: PofVisualTemplate
   priority: boolean
 }) {
@@ -108,8 +105,8 @@ function PofExplanationImage({
 
   return (
     <figure className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="flex items-center justify-center bg-[#06111f] px-4 py-4 sm:px-6 sm:py-5">
-        <img src="/images/headerlogo.png" alt="PilotVault SA" className="h-8 w-auto sm:h-10" />
+      <div className="flex items-center justify-center bg-[#06111f] px-4 py-5 sm:px-6 sm:py-6">
+        <img src="/images/logo.png" alt="PilotVault SA" className="h-16 w-auto sm:h-20" />
       </div>
       <div className="h-1 bg-[#c9942f]" />
 
@@ -172,10 +169,6 @@ function PofExplanationImage({
         <div className="mx-4 mb-4 rounded-xl bg-[#0b1f33] px-4 py-3 text-center text-base font-extrabold text-white sm:mx-6 sm:mb-6">
           {template.formula}
         </div>
-      )}
-
-      {caption && (
-        <div className="border-t border-slate-200 bg-white px-4 py-3 text-sm text-[#5b6b7a] sm:px-6">{caption}</div>
       )}
     </figure>
   )

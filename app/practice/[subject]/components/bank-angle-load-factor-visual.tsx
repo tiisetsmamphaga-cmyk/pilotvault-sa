@@ -6,8 +6,8 @@ const CESSNA_172_LINE_DRAWING =
 export function BankAngleLoadFactorVisual() {
   return (
     <figure className="mt-5 overflow-hidden border border-slate-200 bg-white">
-      <div className="bg-[#06111f] px-5 py-4 text-center sm:px-8 sm:py-5">
-        <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#f4b400] sm:text-xs">
+      <div className="px-5 py-4 text-center sm:px-8 sm:py-5" style={{ backgroundColor: "#06111f" }}>
+        <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] sm:text-xs" style={{ color: "#f4b400" }}>
           PILOTVAULT HUMAN PERFORMANCE
         </p>
         <h3 className="mt-1 text-xl font-black uppercase tracking-[0.025em] text-white sm:text-3xl">
@@ -72,7 +72,7 @@ export function BankAngleLoadFactorVisual() {
           </svg>
 
           <div className="absolute right-[5%] top-[5%] z-10 text-right sm:right-[7%] sm:top-[7%]">
-            <p className="text-lg font-black text-[#06111f] sm:text-2xl">
+            <p className="text-lg font-black sm:text-2xl" style={{ color: "#06111f" }}>
               60° BANK ≈ <span className="text-[#d69d00]">2 G</span>
             </p>
           </div>
@@ -88,7 +88,7 @@ export function BankAngleLoadFactorVisual() {
           </div>
 
           <div className="absolute bottom-[6%] left-1/2 z-10 w-[66%] -translate-x-1/2 rounded-xl border border-slate-200 bg-white/95 px-4 py-3 shadow-sm sm:w-[58%] sm:px-5 sm:py-4">
-            <p className="text-center text-sm font-semibold text-[#06111f] sm:text-base">
+            <p className="text-center text-sm font-semibold sm:text-base" style={{ color: "#06111f" }}>
               In a balanced level turn, <span className="text-[#b77900]">load factor rises rapidly</span> as bank angle increases.
             </p>
           </div>

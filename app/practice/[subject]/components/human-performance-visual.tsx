@@ -764,8 +764,8 @@ export function HumanPerformanceVisual({ question }: { question: Question }) {
 
   return (
     <figure className="mt-5 overflow-hidden border border-slate-200 bg-white">
-      <div className="bg-[#06111f] px-4 py-4 text-center sm:px-6 sm:py-5">
-        <div className="text-[11px] font-extrabold tracking-[0.22em] text-[#f4b400] sm:text-xs">PILOTVAULT HUMAN PERFORMANCE</div>
+      <div className="px-4 py-4 text-center sm:px-6 sm:py-5" style={{ backgroundColor: "#06111f" }}>
+        <div className="text-[11px] font-extrabold tracking-[0.22em] sm:text-xs" style={{ color: "#f4b400" }}>PILOTVAULT HUMAN PERFORMANCE</div>
         <div className="mt-1 text-lg font-extrabold uppercase tracking-[0.035em] text-white sm:text-2xl">{spec.title}</div>
       </div>
 

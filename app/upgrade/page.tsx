@@ -112,9 +112,10 @@ function UpgradePageContent() {
     requestedSubject && isSubjectSlug(requestedSubject)
       ? requestedSubject
       : null
-  const selectedSubjectLabel = selectedSubject
-    ? subjectLabels[selectedSubject]
-    : null
+  const [pickedSubject, setPickedSubject] = useState<SubjectSlug | null>(
+    selectedSubject
+  )
+  const pickedSubjectLabel = pickedSubject ? subjectLabels[pickedSubject] : null
 
   const [discount, setDiscount] = useState<TrialDiscountEligibility>({
     eligible: false,
@@ -228,12 +229,6 @@ function UpgradePageContent() {
             exams, explanations, and progress tracking.
           </p>
 
-          {selectedSubjectLabel && (
-            <p className="mx-auto mt-5 w-fit rounded-full border border-[#1f4e79]/20 bg-[#d6e6f7] px-4 py-2 text-sm font-semibold text-[#1f4e79]">
-              Selected subject: {selectedSubjectLabel}
-            </p>
-          )}
-
           {discount.eligible && discount.msRemaining !== null && (
             <div className="mx-auto mt-6 w-fit rounded-full border border-[#f0d488] bg-[#fdf3d9] px-5 py-2.5 text-sm font-bold text-[#8a6d1f]">
               15% off ends in {formatCountdown(discount.msRemaining)} - upgrade now
@@ -265,14 +260,14 @@ function UpgradePageContent() {
 
                 <div className="text-center">
                   <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
-                    {plan.productCode === "subject" && selectedSubjectLabel
-                      ? selectedSubjectLabel
+                    {plan.productCode === "subject" && pickedSubjectLabel
+                      ? pickedSubjectLabel
                       : plan.name}
                   </h2>
 
                   <p className="mt-3 min-h-0 text-sm leading-6 text-slate-600 sm:min-h-12">
-                    {plan.productCode === "subject" && selectedSubjectLabel
-                      ? `One month of full ${selectedSubjectLabel} access`
+                    {plan.productCode === "subject" && pickedSubjectLabel
+                      ? `One month of full ${pickedSubjectLabel} access`
                       : plan.description}
                   </p>
 
@@ -311,6 +306,36 @@ function UpgradePageContent() {
                   ))}
                 </div>
 
+                {plan.productCode === "subject" && (
+                  <div className="mt-7 sm:mt-8">
+                    <p className="text-center text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+                      Choose a subject
+                    </p>
+                    <div className="mt-3 grid grid-cols-2 gap-2">
+                      {Object.entries(subjectLabels).map(([slug, label]) => {
+                        const isPicked = pickedSubject === slug
+                        return (
+                          <button
+                            key={slug}
+                            type="button"
+                            onClick={() =>
+                              setPickedSubject(slug as SubjectSlug)
+                            }
+                            aria-pressed={isPicked}
+                            className={`rounded-lg border px-2.5 py-2 text-left text-xs font-semibold leading-snug transition ${
+                              isPicked
+                                ? "border-[#1f4e79] bg-[#1f4e79] text-white"
+                                : "border-slate-200 bg-white text-slate-700 hover:border-[#1f4e79]/50"
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
+
                 {plan.disabled ? (
                   <button
                     disabled
@@ -318,24 +343,24 @@ function UpgradePageContent() {
                   >
                     Coming Soon
                   </button>
-                ) : plan.productCode === "subject" && !selectedSubject ? (
-                  <Link
-                    href="/practice"
-                    className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#1f4e79] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#183d60] sm:mt-8"
+                ) : plan.productCode === "subject" && !pickedSubject ? (
+                  <button
+                    disabled
+                    className="mt-4 w-full rounded-xl bg-slate-100 px-5 py-3 text-sm font-bold text-slate-400"
                   >
-                    Choose a Subject
-                  </Link>
+                    Select a subject above
+                  </button>
                 ) : (
                   <PaystackPurchaseButton
                     productCode={plan.productCode}
                     subject={
                       plan.productCode === "subject"
-                        ? selectedSubject ?? undefined
+                        ? pickedSubject ?? undefined
                         : undefined
                     }
                   >
                     {plan.productCode === "subject"
-                      ? `Purchase ${selectedSubjectLabel}`
+                      ? `Purchase ${pickedSubjectLabel}`
                       : "Purchase PPL Pack"}
                   </PaystackPurchaseButton>
                 )}

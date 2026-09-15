@@ -291,18 +291,18 @@ export default function DashboardPage() {
             </div>
 
             {isTrialUser ? (
-              <div className="flex shrink-0 flex-col gap-2.5 rounded-xl border border-[#f0d488] bg-gradient-to-br from-[#fdf6e3] to-[#fbecc0] px-4 py-3.5 sm:min-w-[280px]">
+              <div className="flex shrink-0 flex-col gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:min-w-[280px]">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#8a6d1f]">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#b8860a]">
                     {licenceLabel} · Free Trial
                   </span>
                   {trialDaysLeft !== null && (
-                    <span className="shrink-0 rounded-full bg-[#f4b400] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-[#06111f] shadow-sm">
+                    <span className="shrink-0 rounded-full bg-[#fdf3d9] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-[#b8860a]">
                       {trialDaysLeft === 1 ? "1 day left" : `${trialDaysLeft} days left`}
                     </span>
                   )}
                 </div>
-                <p className="text-xs leading-5 text-[#7a6224]">
+                <p className="text-xs leading-5 text-slate-500">
                   All 8 subjects unlocked, mock exams only. Upgrade for topic-based
                   practice and the full question bank.
                 </p>

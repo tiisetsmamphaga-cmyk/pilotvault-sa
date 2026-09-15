@@ -290,29 +290,37 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-start gap-1.5 sm:items-end">
+            {isTrialUser ? (
+              <div className="flex shrink-0 flex-col gap-2.5 rounded-xl border border-[#f0d488] bg-gradient-to-br from-[#fdf6e3] to-[#fbecc0] px-4 py-3.5 sm:min-w-[280px]">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#8a6d1f]">
+                    {licenceLabel} · Free Trial
+                  </span>
+                  {trialDaysLeft !== null && (
+                    <span className="shrink-0 rounded-full bg-[#f4b400] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-[#06111f] shadow-sm">
+                      {trialDaysLeft === 1 ? "1 day left" : `${trialDaysLeft} days left`}
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs leading-5 text-[#7a6224]">
+                  All 8 subjects unlocked, mock exams only. Upgrade for topic-based
+                  practice and the full question bank.
+                </p>
+                <Link
+                  href="/upgrade"
+                  className="inline-flex min-h-9 items-center justify-center gap-1 rounded-lg bg-[#1f4e79] px-3 text-xs font-bold text-white transition hover:bg-[#183d60]"
+                >
+                  Unlock full access
+                  <ChevronRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            ) : (
               <div className="flex items-center gap-2 text-xs text-slate-600">
                 <span className="font-semibold text-slate-900">{licenceLabel}</span>
                 <span className="text-slate-400">•</span>
-                <span className={isTrialUser ? "font-bold text-[#b8860a]" : ""}>{planLabel}</span>
-                {trialDaysLeft !== null && (
-                  <span className="rounded-full bg-[#fdf3d9] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#b8860a]">
-                    {trialDaysLeft === 1 ? "1 day left" : `${trialDaysLeft} days left`}
-                  </span>
-                )}
+                <span>{planLabel}</span>
               </div>
-              {isTrialUser && (
-                <Link
-                  href="/upgrade"
-                  className="text-[11px] font-medium text-slate-500 transition hover:text-[#1f4e79]"
-                >
-                  All 8 subjects · mock exams only —{" "}
-                  <span className="font-semibold text-[#1f4e79] underline underline-offset-2">
-                    unlock full access →
-                  </span>
-                </Link>
-              )}
-            </div>
+            )}
           </div>
 
           {latestAttempt && latestSubjectUnlocked && LatestSubjectIcon && (
@@ -402,6 +410,10 @@ export default function DashboardPage() {
                     {owned ? (
                       <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.1em] text-[#b8860a]">
                         Owned
+                      </span>
+                    ) : unlocked && isTrialUser ? (
+                      <span className="shrink-0 rounded-full bg-[#fdf3d9] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#b8860a]">
+                        Trial
                       </span>
                     ) : unlocked ? (
                       <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#1f4e79]" />

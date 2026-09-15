@@ -17,6 +17,7 @@ import {
   PASS_MARK,
   formatSubjectName,
   formatTime,
+  getReadinessStatus,
 } from "../practice-utils"
 
 type SubjectManual = {
@@ -57,41 +58,6 @@ type TrainingModeMenuProps = {
   onStartMock: () => void
   onContinueMock?: () => void
   onOpenTopics: () => void
-}
-
-function getReadinessStatus(averageScore: number | null) {
-  if (averageScore === null) {
-    return {
-      label: "No attempts yet",
-      className: "text-[#8fa7c2]",
-    }
-  }
-
-  if (averageScore >= 85) {
-    return {
-      label: "Highly ready",
-      className: "text-emerald-400",
-    }
-  }
-
-  if (averageScore >= PASS_MARK) {
-    return {
-      label: "Exam ready",
-      className: "text-emerald-400",
-    }
-  }
-
-  if (averageScore >= 60) {
-    return {
-      label: "Almost ready",
-      className: "text-[#f4b400]",
-    }
-  }
-
-  return {
-    label: "Keep practising",
-    className: "text-orange-400",
-  }
 }
 
 export function TrainingModeMenu({

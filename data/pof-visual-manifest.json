@@ -6403,6 +6403,306 @@
         "batch1_quality_reference": true
       },
       "reuse_justification": "Single-question card; not reused across multiple questions."
+    },
+    {
+      "visual_id": "pof-fowler-flap-v1-1201-001",
+      "topic": "Flaps & Glide",
+      "concept": "Fowler flaps slide aft as well as deflect down, increasing both wing area and camber -- unlike plain, split or slotted flaps which only deflect down.",
+      "question_ids": [
+        1201
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 36,
+        "figure": "2-1",
+        "notes": "Wing flaps: plain, split, Fowler, slotted cross-sections. Extracted and refined; Fowler panel highlighted, others dimmed."
+      },
+      "brief": {
+        "student_must_understand": "Fowler flaps slide aft as well as deflect down, increasing both wing area and camber -- unlike plain, split or slotted flaps which only deflect down.",
+        "preserve": [
+          "Original diagram/instrument face and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Gold marker/highlight at the specific verified point"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v1.webp"
+      },
+      "mapping_reason": "The Fowler panel is the only one of the four flap-type cross-sections that visibly extends aft, directly showing the area increase the question asks about.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse (1201/1358 identical fact reworded)."
+    },
+    {
+      "visual_id": "pof-fowler-flap-v1-1358-001",
+      "topic": "Flaps & Glide",
+      "concept": "Fowler flaps slide aft as well as deflect down, increasing both wing area and camber -- unlike plain, split or slotted flaps which only deflect down.",
+      "question_ids": [
+        1358
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 36,
+        "figure": "2-1",
+        "notes": "Wing flaps: plain, split, Fowler, slotted cross-sections. Extracted and refined; Fowler panel highlighted, others dimmed."
+      },
+      "brief": {
+        "student_must_understand": "Fowler flaps slide aft as well as deflect down, increasing both wing area and camber -- unlike plain, split or slotted flaps which only deflect down.",
+        "preserve": [
+          "Original diagram/instrument face and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Gold marker/highlight at the specific verified point"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v1.webp"
+      },
+      "mapping_reason": "Same fact as 1201, reworded.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Same-fact reuse (1201/1358 identical fact reworded)."
+    },
+    {
+      "visual_id": "pof-asi-vne-v1-1264-001",
+      "topic": "Airspeed Limitations",
+      "concept": "VNE is marked by the red radial line on the ASI -- the never-exceed speed.",
+      "question_ids": [
+        1264
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 63,
+        "figure": "3-4",
+        "notes": "Colour-coded airspeed indicator. Extracted and refined; gold marker on the red VNE line, calibrated via color-band pixel detection against the load-factor-free radial angle mapping."
+      },
+      "brief": {
+        "student_must_understand": "VNE is marked by the red radial line on the ASI -- the never-exceed speed.",
+        "preserve": [
+          "Original diagram/instrument face and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Gold marker/highlight at the specific verified point"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vne-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vne-v1.webp"
+      },
+      "mapping_reason": "Marker placed on the real red radial line, calibrated by direct color-band detection on the source raster.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Single-question card."
+    },
+    {
+      "visual_id": "pof-asi-vfe-v1-1270-001",
+      "topic": "Airspeed Limitations",
+      "concept": "VFE is marked by the upper end of the white arc on the ASI -- the maximum flap-extended speed.",
+      "question_ids": [
+        1270
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 63,
+        "figure": "3-4",
+        "notes": "Colour-coded airspeed indicator. Extracted and refined; gold marker on the white VFE arc, calibrated via color-band pixel detection."
+      },
+      "brief": {
+        "student_must_understand": "VFE is marked by the upper end of the white arc on the ASI -- the maximum flap-extended speed.",
+        "preserve": [
+          "Original diagram/instrument face and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Gold marker/highlight at the specific verified point"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vfe-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vfe-v1.webp"
+      },
+      "mapping_reason": "Marker placed on the real white arc, calibrated by direct color-band detection at its correct (inner) radius.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Single-question card."
+    },
+    {
+      "visual_id": "pof-asi-vno-v1-2022-001",
+      "topic": "Airspeed Limitations",
+      "concept": "VNO is marked by the boundary between the green and yellow arcs on the ASI -- the maximum structural cruising speed.",
+      "question_ids": [
+        2022
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 63,
+        "figure": "3-4",
+        "notes": "Colour-coded airspeed indicator. Extracted and refined; gold marker at the green/yellow VNO boundary, calibrated via color-band pixel detection."
+      },
+      "brief": {
+        "student_must_understand": "VNO is marked by the boundary between the green and yellow arcs on the ASI -- the maximum structural cruising speed.",
+        "preserve": [
+          "Original diagram/instrument face and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Gold marker/highlight at the specific verified point"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v1.webp"
+      },
+      "mapping_reason": "Marker placed at the real green/yellow transition, calibrated by direct color-band detection.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Single-question card."
+    },
+    {
+      "visual_id": "pof-asi-vfe-cruise-v1-2020-001",
+      "topic": "Airspeed Limitations",
+      "concept": "The white (flap) arc sits well below and is much narrower than the green (cruise) arc, because extended flaps are structurally weaker and must be limited to a lower speed.",
+      "question_ids": [
+        2020
+      ],
+      "source": {
+        "document": "ac_61-23c_phak_canada.pdf",
+        "page": 63,
+        "figure": "3-4",
+        "notes": "Colour-coded airspeed indicator. Extracted and refined; gold markers on both the white (flap) and green (cruise) arcs for size/position comparison."
+      },
+      "brief": {
+        "student_must_understand": "The white (flap) arc sits well below and is much narrower than the green (cruise) arc, because extended flaps are structurally weaker and must be limited to a lower speed.",
+        "preserve": [
+          "Original diagram/instrument face and labels"
+        ],
+        "refine": [
+          "Crop, upscale, sharpen",
+          "Gold marker/highlight at the specific verified point"
+        ],
+        "add": [
+          "PilotVault logo banner (real DOM, not baked)"
+        ],
+        "remove": []
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vfe-cruise-v1.png",
+        "web_asset": "public/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vfe-cruise-v1.webp"
+      },
+      "mapping_reason": "Shows both the white and green arcs together at their true relative sizes/positions on the real instrument face.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": false,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true,
+        "batch1_quality_reference": true
+      },
+      "reuse_justification": "Single-question card."
     }
   ]
 }

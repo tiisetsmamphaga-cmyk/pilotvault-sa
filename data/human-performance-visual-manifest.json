@@ -430,6 +430,419 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2196 is a closing-speed/time-available calculation for head-on traffic; the figure is the source's own illustration of the closing-speed-as-sum-of-speeds concept underlying that calculation."
+    },
+    {
+      "visual_id": "hp-ear-structure-002",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "The ear has three sections (outer, middle, inner); the inner ear holds the cochlea and auditory nerve.",
+      "question_ids": [
+        2198,
+        2070,
+        2099,
+        2130,
+        2150,
+        2151
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 67,
+        "figure": "6.1",
+        "notes": "Figure 6.1, Overall Construction of the Ear. Extracted directly from the embedded source raster; colour-coded outer/middle/inner ear regions with cochlea, ossicles, auditory nerve and eustachian tube labelled."
+      },
+      "brief": {
+        "student_must_understand": "The ear's three anatomical sections and the roles of the cochlea and auditory nerve within the inner ear.",
+        "preserve": [
+          "Full labelled cross-section with colour-coded outer/middle/inner ear regions"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-ear-structure-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-ear-structure-v1.webp"
+      },
+      "mapping_reason": "Q2198 asks for the three sections; Q2070/Q2099/Q2130 ask about the cochlea and auditory nerve (both inner-ear, labelled); Q2150/Q2151 ask which section noise-induced/conductive hearing loss involves, matching the labelled inner/middle/outer regions directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2198 asks for the three sections; Q2070/Q2099/Q2130 ask about the cochlea and auditory nerve (both inner-ear, labelled); Q2150/Q2151 ask which section noise-induced/conductive hearing loss involves, matching the labelled inner/middle/outer regions directly."
+    },
+    {
+      "visual_id": "hp-ossicles-002",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "The three ossicles (malleus, incus, stapes) transmit vibration across the middle ear; damage to them causes conductive hearing loss.",
+      "question_ids": [
+        2074,
+        2152
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 67,
+        "figure": "6.2",
+        "notes": "Figure 6.2, The Ossicles (The Middle Ear). Extracted directly from the embedded source raster; malleus, incus and stapes individually labelled."
+      },
+      "brief": {
+        "student_must_understand": "The ossicles transmit vibration from the ear-drum to the inner ear; damage to them causes conductive hearing loss.",
+        "preserve": [
+          "Labelled malleus, incus, stapes"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-ossicles-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-ossicles-v1.webp"
+      },
+      "mapping_reason": "Q2074 asks which structures transmit vibration (the ossicles, labelled); Q2152 asks what damage to the ossicles causes (conductive hearing loss), stated directly in the adjacent source text.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2074 asks which structures transmit vibration (the ossicles, labelled); Q2152 asks what damage to the ossicles causes (conductive hearing loss), stated directly in the adjacent source text."
+    },
+    {
+      "visual_id": "hp-eustachian-tube-002",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "The eustachian tube equalises pressure between the middle ear and the outside atmosphere.",
+      "question_ids": [
+        2063
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 68,
+        "figure": "6.3",
+        "notes": "Figure 6.3, The Eustachian Tube and the Inner Ear. Extracted directly from the embedded source raster; shows the ambient-pressure path through the eustachian tube alongside the labelled inner ear."
+      },
+      "brief": {
+        "student_must_understand": "The eustachian tube's role in equalising middle-ear pressure with the outside atmosphere.",
+        "preserve": [
+          "Eustachian tube path",
+          "Ambient pressure arrow",
+          "Labelled inner-ear structures"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-eustachian-tube-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-eustachian-tube-v1.webp"
+      },
+      "mapping_reason": "Q2063 asks for the purpose of the eustachian tube; the figure's own ambient-pressure arrow through the tube shows exactly this.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2063 asks for the purpose of the eustachian tube; the figure's own ambient-pressure arrow through the tube shows exactly this."
+    },
+    {
+      "visual_id": "hp-noise-levels-001",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "90 dB is the maximum recommended noise level for 8 hours of continuous exposure before permanent hearing damage risk rises.",
+      "question_ids": [
+        2200
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 71,
+        "figure": "6.4",
+        "notes": "Figure 6.4, Table showing typical noise levels. Rendered directly from the source page's own typeset table (native PDF text/table, not a separate embedded raster)."
+      },
+      "brief": {
+        "student_must_understand": "The dB scale of everyday and aviation noise sources, and that 90 dB is the maximum recommended for 8 hours' exposure.",
+        "preserve": [
+          "Full sound/noise-level (dB) table"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-noise-levels-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-noise-levels-v1.webp"
+      },
+      "mapping_reason": "Q2200 asks the noise level above which permanent damage risk rises; the table's own 'Maximum recommended for 8 hours exposure' row states 90 dB directly.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2200 asks the noise level above which permanent damage risk rises; the table's own 'Maximum recommended for 8 hours exposure' row states 90 dB directly."
+    },
+    {
+      "visual_id": "hp-vestibular-apparatus-002",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "The vestibular apparatus (semicircular canals + otolith organs) gives the sense of balance; vision remains the primary sense for orientation.",
+      "question_ids": [
+        2114,
+        2153,
+        2175,
+        2131
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 69,
+        "figure": "6.5",
+        "notes": "Figure 6.5, The Vestibular Apparatus. Extracted directly from the embedded source raster; semicircular canals, otolithic organs and cochlea individually labelled."
+      },
+      "brief": {
+        "student_must_understand": "The semicircular canals sense angular acceleration and the otolith organs sense linear acceleration/gravity; together they form the vestibular apparatus, though vision remains the primary orientation sense.",
+        "preserve": [
+          "Labelled semicircular canals, otolithic organs, cochlea"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-vestibular-apparatus-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-vestibular-apparatus-v1.webp"
+      },
+      "mapping_reason": "Q2114/Q2153/Q2175 ask about the semicircular canals, otolith organs and vestibular apparatus directly, all labelled in the figure; Q2131 asks which sense is most important for orientation (vision), the source's own stated qualification of what this same balance system can and cannot do.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2114/Q2153/Q2175 ask about the semicircular canals, otolith organs and vestibular apparatus directly, all labelled in the figure; Q2131 asks which sense is most important for orientation (vision), the source's own stated qualification of what this same balance system can and cannot do."
+    },
+    {
+      "visual_id": "hp-the-leans-001",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "A roll too gentle to move the semicircular canal fluid can go undetected, so the pilot may still feel straight and level while actually banked.",
+      "question_ids": [
+        2069
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 75,
+        "figure": "6.7",
+        "notes": "Figure 6.7, Disorientation During a Gentle Roll to Enter a Turn to the Left. Extracted directly from the embedded source raster; shows 'Reality' (banked) vs 'Illusion' (perceived level) side by side."
+      },
+      "brief": {
+        "student_must_understand": "The Leans: a false sensation of banking that arises when correcting from a gentle, undetected turn.",
+        "preserve": [
+          "Reality vs Illusion aircraft attitude comparison",
+          "Semicircular canal fluid/sensory-hair diagram"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-the-leans-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-the-leans-v1.webp"
+      },
+      "mapping_reason": "Q2069 asks what this illusion is called; the figure is the source's own worked illustration of exactly this scenario (Case One of the leans).",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2069 asks what this illusion is called; the figure is the source's own worked illustration of exactly this scenario (Case One of the leans)."
+    },
+    {
+      "visual_id": "hp-trust-instruments-001",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "A steady, balanced turn produces no fluid movement in the semicircular canals, so it can feel like level flight; disorientated pilots must trust their instruments.",
+      "question_ids": [
+        2118
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 76,
+        "figure": "6.9",
+        "notes": "Figure 6.9, Case Two: steady turn illustration. Extracted directly from the embedded source raster; shows 'Reality' (banked, steady turn) vs 'Illusion' (perceived level)."
+      },
+      "brief": {
+        "student_must_understand": "In a steady turn, the vestibular apparatus falsely signals level flight; the rule is to trust instruments when disorientated.",
+        "preserve": [
+          "Reality vs Illusion aircraft attitude comparison for a steady turn"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-trust-instruments-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-trust-instruments-v1.webp"
+      },
+      "mapping_reason": "Q2118 asks what a pilot should do immediately when spatially disorientated without reliable outside references; this figure's own case is followed directly by the source's stated rule to look at and trust the flight instruments.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2118 asks what a pilot should do immediately when spatially disorientated without reliable outside references; this figure's own case is followed directly by the source's stated rule to look at and trust the flight instruments."
+    },
+    {
+      "visual_id": "hp-somatogravic-illusion-001",
+      "topic": "Hearing, Balance & Spatial Orientation",
+      "concept": "Strong forward acceleration can create a false sensation of pitching up/tumbling backwards, because the otoliths cannot distinguish acceleration from tilt.",
+      "question_ids": [
+        2089
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 77,
+        "figure": "6.11",
+        "notes": "Figure 6.11, Somatogravic Illusion - Acceleration. Extracted directly from the embedded source raster; shows 'Reality' vs 'The Somatogravic Illusion' aircraft attitudes alongside an otolith hair-cell diagram bending under acceleration."
+      },
+      "brief": {
+        "student_must_understand": "Forward acceleration bends the otolith hairs in a way that mimics backward head tilt, producing a false nose-up/pitching-backwards sensation.",
+        "preserve": [
+          "Reality vs Illusion aircraft attitude comparison",
+          "Otolith hair-cell bending diagram"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-3/hp-somatogravic-illusion-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-3/hp-somatogravic-illusion-v1.webp"
+      },
+      "mapping_reason": "Q2089 asks what false sensation strong forward acceleration creates; the figure is the source's own worked illustration of exactly this somatogravic illusion.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2089 asks what false sensation strong forward acceleration creates; the figure is the source's own worked illustration of exactly this somatogravic illusion."
     }
   ]
 }

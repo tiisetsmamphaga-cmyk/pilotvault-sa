@@ -207,6 +207,17 @@ export default function DashboardPage() {
         ? profile.subscription_plan.toUpperCase()
         : "Student Access"
 
+  const trialDaysLeft =
+    isTrialUser && profile?.trial_ends_at
+      ? Math.max(
+          1,
+          Math.ceil(
+            (new Date(profile.trial_ends_at).getTime() - Date.now()) /
+              (1000 * 60 * 60 * 24)
+          )
+        )
+      : null
+
   const latestSubject = latestAttempt?.subject
   const latestSubjectUnlocked = latestSubject
     ? hasSubjectAccess(latestSubject)
@@ -283,6 +294,14 @@ export default function DashboardPage() {
               <span className="font-semibold text-slate-900">{licenceLabel}</span>
               <span className="text-slate-400">•</span>
               <span>{planLabel}</span>
+              {trialDaysLeft !== null && (
+                <>
+                  <span className="text-slate-400">•</span>
+                  <span className="font-semibold text-[#b8860a]">
+                    {trialDaysLeft === 1 ? "1 day left" : `${trialDaysLeft} days left`}
+                  </span>
+                </>
+              )}
             </div>
           </div>
 

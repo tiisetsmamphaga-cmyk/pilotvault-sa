@@ -1049,6 +1049,112 @@
         "actual_image_reviewed": true
       },
       "reuse_justification": "Q2088 asks which memory type stores personal events and experiences; the figure is the source's own captioned illustration of episodic memory."
+    },
+    {
+      "visual_id": "hp-arousal-states-001",
+      "topic": "Stress, Fatigue & Sleep",
+      "concept": "Performance peaks at moderate/optimal arousal; both low and high arousal degrade it, and individuals react differently to the same stressor.",
+      "question_ids": [
+        2223,
+        2226,
+        2227,
+        2228,
+        2224
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 174,
+        "figure": "11.4",
+        "notes": "Figure 11.4, Arousal States. Extracted directly from the embedded source raster; shows Pilots A (low arousal), B (optimal arousal) and C (high arousal) against a performance/arousal curve."
+      },
+      "brief": {
+        "student_must_understand": "Performance is best at moderate/optimal arousal; low arousal causes wandering attention and high arousal causes overload, and the same stress level affects different pilots differently.",
+        "preserve": [
+          "Performance/arousal curve with labelled low/optimal/high arousal pilots A, B, C"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-5/hp-arousal-states-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-5/hp-arousal-states-v1.webp"
+      },
+      "mapping_reason": "Q2223/Q2226 ask about the effect of moderate and of low/high arousal on performance, shown directly by the curve; Q2227 asks whether people react differently to the same stressor, illustrated by Pilots A/B/C at different arousal states from the same underlying scale; Q2228/Q2224 concern perceived-demand-vs-ability and reduced stress on repeat exposure, both discussed in the source text directly interpreting this same figure.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2223/Q2226 ask about the effect of moderate and of low/high arousal on performance, shown directly by the curve; Q2227 asks whether people react differently to the same stressor, illustrated by Pilots A/B/C at different arousal states from the same underlying scale; Q2228/Q2224 concern perceived-demand-vs-ability and reduced stress on repeat exposure, both discussed in the source text directly interpreting this same figure."
+    },
+    {
+      "visual_id": "hp-stress-factors-001",
+      "topic": "Stress, Fatigue & Sleep",
+      "concept": "A stressor is an event or condition that places a demand on a person; typical cockpit stressors include noise, vibration, temperature and humidity, and their effects accumulate.",
+      "question_ids": [
+        2112,
+        2230,
+        2225
+      ],
+      "source": {
+        "document": "484641488-335583371-DOC045-2-JAA-PPL-Human-Performance-pdf (1).pdf",
+        "page": 176,
+        "figure": "11.7",
+        "notes": "Figure 11.7, The most common stress factors. Extracted directly from the embedded source raster; a labelled mind-map of stressors (noise, vibration, heat, cold, low humidity, workload, health, etc.) feeding into 'STRESS'."
+      },
+      "brief": {
+        "student_must_understand": "Many distinct stressors (environmental, physical, psychological) can each contribute to a person's overall stress, and their effects accumulate.",
+        "preserve": [
+          "Full labelled stress-factor mind-map"
+        ],
+        "refine": [
+          "Crop, light upscale, sharpen (born-digital source, no scan artifacts)"
+        ],
+        "add": [
+          "PilotVault card chrome"
+        ],
+        "remove": [
+          "Surrounding page text/caption"
+        ]
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/human-performance/refined-batch-5/hp-stress-factors-v1.png",
+        "web_asset": "public/explanation-images/human-performance/refined-batch-5/hp-stress-factors-v1.webp"
+      },
+      "mapping_reason": "Q2112 asks for typical environmental/physical stressors in an aircraft, directly labelled (noise, vibration, temperature/humidity); Q2230 asks for the definition of a stressor, illustrated by the figure's own set of labelled stress factors; Q2225 asks about stressors accumulating, the source's own stated characteristic of the same stress-factor list.",
+      "status": "LIVE_VERIFIED",
+      "qa": {
+        "technical": true,
+        "teaching": true,
+        "visual": true,
+        "preview": true,
+        "live": true
+      },
+      "lock": {
+        "approved": true,
+        "replacement_reason": null
+      },
+      "visual_inspection": {
+        "actual_image_reviewed": true
+      },
+      "reuse_justification": "Q2112 asks for typical environmental/physical stressors in an aircraft, directly labelled (noise, vibration, temperature/humidity); Q2230 asks for the definition of a stressor, illustrated by the figure's own set of labelled stress factors; Q2225 asks about stressors accumulating, the source's own stated characteristic of the same stress-factor list."
     }
   ]
 }

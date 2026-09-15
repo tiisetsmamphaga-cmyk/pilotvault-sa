@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -32,7 +32,6 @@ import {
   fetchMockExamAttempts,
   type MockExamAttempt,
 } from "../profile/exam-attempt-service"
-import { getReadinessStatus } from "../practice/[subject]/practice-utils"
 
 const subjects = [
   { name: "Meteorology", slug: "meteorology", icon: Cloud },
@@ -75,9 +74,6 @@ function scoreClassName(score: number) {
   if (score >= 65) return "text-amber-700"
   return "text-slate-900"
 }
-
-const RING_RADIUS = 38
-const RING_CIRCUMFERENCE = 239
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -172,39 +168,7 @@ export default function DashboardPage() {
     return hasDirectSubjectAccess(slug)
   }
 
-  const dashboardStats = useMemo(() => {
-    const practicedSubjects = new Set(attempts.map((attempt) => attempt.subject)).size
-
-    const perSubject = Object.fromEntries(
-      subjects.map((subject) => {
-        const subjectAttempts = attempts.filter(
-          (attempt) => attempt.subject === subject.slug
-        )
-        const average = subjectAttempts.length
-          ? Math.round(
-              subjectAttempts.reduce(
-                (sum, attempt) => sum + attempt.scorePercentage,
-                0
-              ) / subjectAttempts.length
-            )
-          : null
-
-        return [
-          subject.slug,
-          {
-            count: subjectAttempts.length,
-            average,
-          },
-        ]
-      })
-    ) as Record<string, { count: number; average: number | null }>
-
-    return {
-      practicedSubjects,
-      perSubject,
-      latestAttempt: attempts[0] ?? null,
-    }
-  }, [attempts])
+  const latestAttempt = attempts[0] ?? null
 
   if (loading || (!profile && !loadError)) {
     return <PageSkeleton variant="dashboard" />
@@ -243,13 +207,10 @@ export default function DashboardPage() {
         ? profile.subscription_plan.toUpperCase()
         : "Student Access"
 
-  const latestSubject = dashboardStats.latestAttempt?.subject
+  const latestSubject = latestAttempt?.subject
   const latestSubjectUnlocked = latestSubject
     ? hasSubjectAccess(latestSubject)
     : false
-  const latestSubjectAverage = latestSubject
-    ? dashboardStats.perSubject[latestSubject]?.average ?? null
-    : null
   const LatestSubjectIcon = subjects.find((s) => s.slug === latestSubject)?.icon
 
   const sortedSubjects = [...subjects].sort((a, b) => {
@@ -257,11 +218,6 @@ export default function DashboardPage() {
     const bRank = hasSubjectAccess(b.slug) ? 0 : 1
     return aRank - bRank
   })
-
-  const subtitle =
-    attempts.length > 0
-      ? `${attempts.length} mock exam${attempts.length === 1 ? "" : "s"} completed across ${dashboardStats.practicedSubjects} of 8 subjects.`
-      : "Choose a subject, continue studying, or review your latest mock exam results."
 
   return (
     <main className="min-h-screen bg-[#f8fafc] text-slate-900">
@@ -318,7 +274,9 @@ export default function DashboardPage() {
               >
                 Practice centre
               </h1>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">{subtitle}</p>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                Choose a subject, continue studying, or review your latest mock exam results.
+              </p>
             </div>
 
             <div className="flex items-center gap-2 text-xs text-slate-600 sm:justify-end">
@@ -328,7 +286,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {dashboardStats.latestAttempt && latestSubjectUnlocked && LatestSubjectIcon && (
+          {latestAttempt && latestSubjectUnlocked && LatestSubjectIcon && (
             <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-6">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex min-w-0 items-start gap-4">
@@ -344,59 +302,23 @@ export default function DashboardPage() {
                     </h2>
                     <p className="mt-1 text-sm text-slate-500">
                       Last mock{" "}
-                      <span className={`font-semibold ${scoreClassName(dashboardStats.latestAttempt.scorePercentage)}`}>
-                        {dashboardStats.latestAttempt.correctAnswers}/
-                        {dashboardStats.latestAttempt.totalQuestions} (
-                        {dashboardStats.latestAttempt.scorePercentage}%)
+                      <span className={`font-semibold ${scoreClassName(latestAttempt.scorePercentage)}`}>
+                        {latestAttempt.correctAnswers}/
+                        {latestAttempt.totalQuestions} (
+                        {latestAttempt.scorePercentage}%)
                       </span>{" "}
-                      · {formatShortDate(dashboardStats.latestAttempt.completedAt)}
+                      · {formatShortDate(latestAttempt.completedAt)}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex shrink-0 items-center justify-between gap-5 sm:flex-col sm:items-end sm:gap-3">
-                  <div className="flex flex-col items-center">
-                    <div className="relative h-[76px] w-[76px]">
-                      <svg aria-hidden="true" className="h-full w-full -rotate-90" viewBox="0 0 88 88">
-                        <circle cx="44" cy="44" r={RING_RADIUS} fill="none" stroke="#dbe4ec" strokeWidth="6" />
-                        <circle
-                          cx="44"
-                          cy="44"
-                          r={RING_RADIUS}
-                          fill="none"
-                          stroke="#1f4e79"
-                          strokeDasharray={RING_CIRCUMFERENCE}
-                          strokeDashoffset={
-                            RING_CIRCUMFERENCE * (1 - (latestSubjectAverage ?? 0) / 100)
-                          }
-                          strokeLinecap="round"
-                          strokeWidth="6"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <span className="text-lg font-extrabold leading-none text-slate-950">
-                          {latestSubjectAverage === null ? "—" : `${latestSubjectAverage}%`}
-                        </span>
-                        <span className="mt-1 text-[9px] font-bold uppercase tracking-[0.14em] text-slate-400">
-                          Average
-                        </span>
-                      </div>
-                    </div>
-                    <span
-                      className={`mt-1.5 text-[10px] font-bold uppercase tracking-[0.1em] ${getReadinessStatus(latestSubjectAverage).className}`}
-                    >
-                      {getReadinessStatus(latestSubjectAverage).label}
-                    </span>
-                  </div>
-
-                  <Link
-                    href={`/practice/${latestSubject}`}
-                    className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40"
-                  >
-                    Open subject
-                    <ChevronRight className="h-4 w-4" />
-                  </Link>
-                </div>
+                <Link
+                  href={`/practice/${latestSubject}`}
+                  className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40"
+                >
+                  Open subject
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           )}
@@ -416,9 +338,6 @@ export default function DashboardPage() {
                 const Icon = subject.icon
                 const unlocked = hasSubjectAccess(subject.slug)
                 const owned = ownsSubject(subject.slug)
-                const stats = dashboardStats.perSubject[subject.slug]
-                const readiness = getReadinessStatus(stats?.average ?? null)
-
                 return (
                   <Link
                     key={subject.slug}
@@ -427,7 +346,7 @@ export default function DashboardPage() {
                         ? `/practice/${subject.slug}`
                         : `/upgrade?subject=${subject.slug}`
                     }
-                    className={`group flex min-h-[84px] items-center gap-3.5 rounded-2xl border bg-white p-4 transition ${
+                    className={`group flex min-h-[72px] items-center gap-3.5 rounded-2xl border bg-white p-4 transition ${
                       unlocked
                         ? "border-slate-200 hover:-translate-y-0.5 hover:border-[#1f4e79]/40 hover:shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
                         : "border-slate-200 opacity-70"
@@ -449,9 +368,6 @@ export default function DashboardPage() {
                       >
                         {subject.name}
                       </h3>
-                      <p className={`mt-0.5 text-xs font-medium ${unlocked ? readiness.className : "text-slate-400"}`}>
-                        {readiness.label}
-                      </p>
                     </div>
 
                     {owned ? (

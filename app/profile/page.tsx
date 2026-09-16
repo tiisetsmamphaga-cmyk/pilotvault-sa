@@ -315,7 +315,7 @@ export default function ProfilePage() {
     )
   }
 
-  const expiryLabel = isTrialUser ? "Trial expiry" : "Renewal date"
+  const expiryLabel = isTrialUser ? "Trial expiry" : "Expiry date"
   const expiryValue = isTrialUser
     ? profile.trial_ends_at
     : profile.subscription_expires_at

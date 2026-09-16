@@ -34,19 +34,46 @@ export async function GET(request: Request) {
     )
   }
 
-  try {
-    const transaction = await verifyPaystackTransaction(reference)
+  let transaction
 
+  try {
+    transaction = await verifyPaystackTransaction(reference)
+  } catch (error) {
+    console.error("Paystack verification failed", error)
+
+    return NextResponse.redirect(
+      new URL("/payment/failed?reason=verification-failed", siteUrl)
+    )
+  }
+
+  if (transaction.status !== "success") {
+    return NextResponse.redirect(
+      new URL("/payment/failed?reason=not-successful", siteUrl)
+    )
+  }
+
+  try {
     await fulfilPaystackPayment(transaction)
 
     return NextResponse.redirect(
       new URL("/payment/success", siteUrl)
     )
   } catch (error) {
-    console.error("Paystack callback failed", error)
+    // The charge succeeded on Paystack's side - this failed while granting
+    // access, so the customer was charged even though this redirects to
+    // the failure page. fulfilPaystackPayment already recorded the
+    // payment as "error" for reconciliation, and the webhook (which fires
+    // independently of this redirect) will usually retry and succeed.
+    console.error(
+      "Paystack fulfilment failed after a successful charge",
+      error
+    )
 
     return NextResponse.redirect(
-      new URL("/payment/failed", siteUrl)
+      new URL(
+        `/payment/failed?reason=fulfilment-error&reference=${encodeURIComponent(reference)}`,
+        siteUrl
+      )
     )
   }
 }

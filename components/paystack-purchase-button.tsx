@@ -119,25 +119,46 @@ export function PaystackPurchaseButton({
       // possible. Falls back to the full-page redirect if the popup script
       // can't load or doesn't behave as expected - payment must never be
       // blocked by this being unavailable.
-      if (accessCode) {
+      if (!accessCode) {
+        console.warn(
+          "[paystack] No accessCode returned by /api/paystack/initialize - using redirect."
+        )
+      } else {
         try {
+          console.info("[paystack] Loading inline checkout script...")
           await loadPaystackInlineScript()
+          console.info(
+            "[paystack] Script load resolved. window.PaystackPop:",
+            typeof window.PaystackPop
+          )
 
-          if (window.PaystackPop) {
-            const popup = new window.PaystackPop()
-
-            popup.resumeTransaction(accessCode, {
-              callback: () => goToCallback(),
-              onClose: () => {
-                setLoading(false)
-              },
-            })
-
-            return
+          if (!window.PaystackPop) {
+            throw new Error(
+              "window.PaystackPop is not defined after the script loaded."
+            )
           }
+
+          const popup = new window.PaystackPop()
+          console.info("[paystack] Calling resumeTransaction...")
+
+          popup.resumeTransaction(accessCode, {
+            callback: (response) => {
+              console.info("[paystack] resumeTransaction callback fired", response)
+              goToCallback()
+            },
+            onClose: () => {
+              console.info("[paystack] resumeTransaction onClose fired")
+              setLoading(false)
+            },
+          })
+
+          console.info(
+            "[paystack] resumeTransaction call completed without throwing."
+          )
+          return
         } catch (inlineError) {
           console.error(
-            "Paystack inline checkout unavailable, falling back to redirect",
+            "[paystack] Inline checkout failed, falling back to redirect:",
             inlineError
           )
         }

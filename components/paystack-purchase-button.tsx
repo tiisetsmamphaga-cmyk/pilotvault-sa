@@ -74,17 +74,10 @@ export function PaystackPurchaseButton({
 }: PaystackPurchaseButtonProps) {
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
-  const [debugLog, setDebugLog] = useState<string[]>([])
-
-  const log = (line: string) => {
-    console.info(`[paystack] ${line}`)
-    setDebugLog((previous) => [...previous, line])
-  }
 
   const startPayment = async () => {
     setLoading(true)
     setErrorMessage("")
-    setDebugLog([])
 
     try {
       const {
@@ -110,7 +103,6 @@ export function PaystackPurchaseButton({
 
       const result = (await response.json()) as {
         authorizationUrl?: string
-        accessCode?: string
         reference?: string
         amount?: number
         email?: string
@@ -125,10 +117,6 @@ export function PaystackPurchaseButton({
       const { authorizationUrl, reference, amount, email, currency } = result
       const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY
 
-      log(
-        `publicKey=${publicKey ? publicKey.slice(0, 12) + "..." : "MISSING"} amount=${amount} email=${email ? "present" : "MISSING"}`
-      )
-
       const goToCallback = () => {
         window.location.assign(
           `/api/paystack/callback?reference=${encodeURIComponent(reference)}`
@@ -139,13 +127,9 @@ export function PaystackPurchaseButton({
       // possible. Falls back to the full-page redirect if the popup script
       // can't load or doesn't behave as expected - payment must never be
       // blocked by this being unavailable.
-      if (!publicKey || !amount || !email) {
-        log("Missing public key/amount/email - using redirect.")
-      } else {
+      if (publicKey && amount && email) {
         try {
-          log("Loading inline checkout script...")
           await loadPaystackInlineScript()
-          log(`Script load resolved. window.PaystackPop: ${typeof window.PaystackPop}`)
 
           if (!window.PaystackPop) {
             throw new Error(
@@ -153,37 +137,26 @@ export function PaystackPurchaseButton({
             )
           }
 
-          log("Calling PaystackPop.setup...")
-
           const handler = window.PaystackPop.setup({
             key: publicKey,
             email,
             amount,
             currency,
             ref: reference,
-            callback: (popupResponse) => {
-              log(`setup callback fired: ${JSON.stringify(popupResponse)}`)
-              goToCallback()
-            },
-            onClose: () => {
-              log("setup onClose fired")
-              setLoading(false)
-            },
+            callback: () => goToCallback(),
+            onClose: () => setLoading(false),
           })
 
-          log("setup() returned, calling openIframe()...")
           handler.openIframe()
-          log("openIframe called without throwing.")
           return
         } catch (inlineError) {
-          log(
-            `Inline checkout failed: ${inlineError instanceof Error ? inlineError.message : String(inlineError)}`
+          console.error(
+            "Paystack inline checkout unavailable, falling back to redirect",
+            inlineError
           )
         }
       }
 
-      log("Falling back to redirect in 4s (pausing so this is readable)...")
-      await new Promise((resolve) => setTimeout(resolve, 4000))
       window.location.assign(authorizationUrl)
     } catch (error) {
       setErrorMessage(
@@ -210,19 +183,6 @@ export function PaystackPurchaseButton({
         <p className="mt-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-6 text-red-700">
           {errorMessage}
         </p>
-      )}
-
-      {debugLog.length > 0 && (
-        <div className="mt-3 space-y-1 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-5 text-amber-900">
-          <p className="font-bold uppercase tracking-wide">
-            Debug log (temporary)
-          </p>
-          {debugLog.map((line, index) => (
-            <p key={index} className="font-mono">
-              {line}
-            </p>
-          ))}
-        </div>
       )}
     </div>
   )

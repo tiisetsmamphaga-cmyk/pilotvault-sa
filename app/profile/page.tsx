@@ -434,6 +434,13 @@ export default function ProfilePage() {
                   <p className="mt-0.5 text-xs text-[#9ca9b9]">
                     {formatPlan(profile.subscription_plan)}
                   </p>
+                  {isTrialUser && activeSubjectAccess.length > 0 && (
+                    <p className="mt-1 text-[11px] font-semibold text-[#f4b400]">
+                      + {activeSubjectAccess.length} subject
+                      {activeSubjectAccess.length > 1 ? "s" : ""} purchased
+                      separately - stays active after your trial ends
+                    </p>
+                  )}
                 </div>
               </div>
 

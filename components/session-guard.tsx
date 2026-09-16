@@ -32,7 +32,10 @@ export function SessionGuard() {
 
       clearStoredSessionToken()
       clearClientDataCache()
-      await supabase.auth.signOut()
+      // scope: "local" only tears down this device's session. The
+      // default ("global") revokes every session for the user, which
+      // would also sign out the device that just logged in.
+      await supabase.auth.signOut({ scope: "local" })
       window.location.href = "/?session-ended=1"
     }
 

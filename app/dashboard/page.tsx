@@ -95,7 +95,7 @@ export default function DashboardPage() {
         const user = await getCachedCurrentUser()
 
         if (!user) {
-          router.replace("/")
+          router.replace("/?login-required=1")
           return
         }
 

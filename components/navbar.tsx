@@ -219,6 +219,12 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
+    const openLogin = () => openAuth("login")
+    window.addEventListener("open-login-modal", openLogin)
+    return () => window.removeEventListener("open-login-modal", openLogin)
+  }, [])
+
+  useEffect(() => {
     if (!authOpen) return
 
     const previousOverflow = document.body.style.overflow

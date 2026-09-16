@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { VaultLoadingScreen } from "@/components/vault-loading-screen"
 import { claimDeviceSession } from "@/src/lib/device-session"
 import { supabase } from "@/src/lib/supabase"
 
@@ -22,8 +21,6 @@ const navLinks = [
 ]
 
 type AuthMode = "login" | "signup" | "reset"
-
-const LOGIN_ANIMATION_MIN_MS = 1650
 
 export function Navbar() {
   const pathname = usePathname()
@@ -121,7 +118,6 @@ export function Navbar() {
       }
     }
 
-    const loginStartedAt = authMode === "login" ? Date.now() : 0
     setLoading(true)
 
     const { error } =
@@ -157,13 +153,6 @@ export function Navbar() {
     }
 
     await claimDeviceSession()
-
-    const elapsed = Date.now() - loginStartedAt
-    if (elapsed < LOGIN_ANIMATION_MIN_MS) {
-      await new Promise((resolve) =>
-        setTimeout(resolve, LOGIN_ANIMATION_MIN_MS - elapsed)
-      )
-    }
 
     window.location.href = "/dashboard"
   }
@@ -612,9 +601,6 @@ export function Navbar() {
         </div>
       )}
 
-      {loading && authMode === "login" && (
-        <VaultLoadingScreen message="Unlocking your dashboard..." />
-      )}
     </>
   )
 }

@@ -5,25 +5,13 @@ import { verifyPaystackTransaction } from "@/src/lib/paystack"
 
 export const runtime = "nodejs"
 
-function getSiteUrl() {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL
-
-  if (configuredUrl) {
-    return configuredUrl.replace(/\/$/, "")
-  }
-
-  const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-
-  if (productionUrl) {
-    return `https://${productionUrl.replace(/\/$/, "")}`
-  }
-
-  return "https://pilotvault.co.za"
-}
-
 export async function GET(request: Request) {
-  const siteUrl = getSiteUrl()
   const requestUrl = new URL(request.url)
+  // Redirect back to whatever host this request actually came in on
+  // (production, a preview deployment, or localhost) instead of a fixed
+  // site URL, so a purchase started on a preview deployment doesn't bounce
+  // the browser over to the production domain.
+  const siteUrl = requestUrl.origin
   const reference =
     requestUrl.searchParams.get("reference") ??
     requestUrl.searchParams.get("trxref")

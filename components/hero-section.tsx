@@ -4,13 +4,6 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
-const features = [
-  "SACAA Focused",
-  "Real Exam Experience",
-  "Up-to-date Questions",
-  "Detailed Explanations",
-]
-
 export function HeroSection() {
   const openSignupModal = () => {
     window.dispatchEvent(new Event("open-signup-modal"))
@@ -47,23 +40,6 @@ export function HeroSection() {
                 detailed explanations and progress tracking built for South
                 African student pilots.
               </p>
-            </div>
-
-            <div className="mx-auto grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2 lg:mx-0">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.15 + index * 0.08 }}
-                  className="flex items-center justify-center gap-2.5 rounded-xl border border-slate-200 bg-white/85 px-3 py-3 shadow-sm backdrop-blur-sm sm:justify-start"
-                >
-                  <span className="text-base font-bold leading-none text-[#b8860a]">
-                    &#8212;
-                  </span>
-                  <span className="text-sm font-medium text-slate-700">{feature}</span>
-                </motion.div>
-              ))}
             </div>
 
             <motion.div

@@ -2,15 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Download,
-  ListChecks,
-  LockKeyhole,
-  Timer,
-} from "lucide-react"
+import { ArrowLeft, ArrowRight, BookOpen, Download } from "lucide-react"
 
 import {
   MOCK_QUESTION_COUNT,
@@ -182,17 +174,11 @@ export function TrainingModeMenu({
             onClick={() => setShowMockInstructions(true)}
             className="group relative flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
           >
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
-                <Timer className="h-5 w-5" />
+            {isTrialAccount && (
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#b8860a]">
+                Trial
               </span>
-
-              {isTrialAccount && (
-                <span className="rounded-full bg-[#fdf3d9] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#b8860a]">
-                  Trial
-                </span>
-              )}
-            </div>
+            )}
 
             <div
               role="img"
@@ -261,7 +247,7 @@ export function TrainingModeMenu({
             </p>
 
             <div className="mt-auto flex justify-end pt-5">
-              <span className="inline-flex items-center gap-2 rounded-xl bg-[var(--pv-navy)] px-3 py-2 text-xs font-bold text-white transition group-hover:bg-[var(--pv-navy-soft)]">
+              <span className="inline-flex items-center gap-2 rounded-xl bg-[var(--pv-navy)] px-3 py-2 text-xs font-bold text-[#ffffff] transition group-hover:bg-[var(--pv-navy-soft)]">
                 Start exam
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </span>
@@ -274,11 +260,7 @@ export function TrainingModeMenu({
               onClick={onOpenTopics}
               className="group flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/20 text-[#f4b400]">
-                <ListChecks className="h-5 w-5" />
-              </span>
-
-              <h3 className="mt-5 text-xl font-bold text-white sm:text-2xl">
+              <h3 className="text-xl font-bold text-white sm:text-2xl">
                 Practice by topic
               </h3>
               <p className="mt-2 text-sm leading-6 text-[#b8c7d9]">
@@ -286,7 +268,7 @@ export function TrainingModeMenu({
               </p>
 
               <div className="mt-auto flex justify-end pt-5">
-                <span className="inline-flex items-center gap-2 rounded-xl bg-[var(--pv-navy)] px-3 py-2 text-xs font-bold text-white transition group-hover:bg-[var(--pv-navy-soft)]">
+                <span className="inline-flex items-center gap-2 rounded-xl bg-[var(--pv-navy)] px-3 py-2 text-xs font-bold text-[#ffffff] transition group-hover:bg-[var(--pv-navy-soft)]">
                   Choose topic
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
@@ -297,8 +279,8 @@ export function TrainingModeMenu({
               href={`/upgrade?subject=${subject}`}
               className="group flex min-h-[210px] flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f4b400]/10 text-[#f4b400]">
-                <LockKeyhole className="h-5 w-5" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#b8860a]">
+                Locked
               </span>
 
               <h3 className="mt-5 text-xl font-bold text-white sm:text-2xl">
@@ -309,7 +291,7 @@ export function TrainingModeMenu({
               </p>
 
               <div className="mt-auto flex justify-end pt-5">
-                <span className="inline-flex items-center gap-2 rounded-xl bg-[var(--pv-navy)] px-3 py-2 text-xs font-bold text-white transition group-hover:bg-[var(--pv-navy-soft)]">
+                <span className="inline-flex items-center gap-2 rounded-xl bg-[var(--pv-navy)] px-3 py-2 text-xs font-bold text-[#ffffff] transition group-hover:bg-[var(--pv-navy-soft)]">
                   Unlock now
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>

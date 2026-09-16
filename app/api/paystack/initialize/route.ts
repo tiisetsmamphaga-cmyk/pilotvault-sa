@@ -18,22 +18,6 @@ type InitialisePaymentBody = {
   subject?: string
 }
 
-function getSiteUrl() {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL
-
-  if (configuredUrl) {
-    return configuredUrl.replace(/\/$/, "")
-  }
-
-  const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-
-  if (productionUrl) {
-    return `https://${productionUrl.replace(/\/$/, "")}`
-  }
-
-  return "https://pilotvault.co.za"
-}
-
 function readBearerToken(request: Request) {
   const authorization = request.headers.get("authorization") ?? ""
   const match = authorization.match(/^Bearer\s+(.+)$/i)
@@ -89,11 +73,16 @@ export async function POST(request: Request) {
       ? applyTrialDiscount(product.amount)
       : product.amount
 
+    // Use the origin this request actually came in on (production, a
+    // preview deployment, or localhost) so Paystack redirects back to
+    // wherever the purchase was started, not always the production domain.
+    const siteUrl = new URL(request.url).origin
+
     const transaction = await initialisePaystackTransaction({
       email: user.email,
       amount,
       currency: product.currency,
-      callbackUrl: `${getSiteUrl()}/api/paystack/callback`,
+      callbackUrl: `${siteUrl}/api/paystack/callback`,
       metadata: {
         user_id: user.id,
         product_code: product.productCode,

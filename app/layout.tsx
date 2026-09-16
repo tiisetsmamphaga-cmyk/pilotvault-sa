@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { AppMobileNavigation } from '@/components/app-mobile-navigation'
+import { SessionGuard } from '@/components/session-guard'
 import './globals.css'
 import './brand-v2-bridge.css'
 import './brand-v2-profile.css'
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="en" className="bg-background">
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
+        <SessionGuard />
         <AppMobileNavigation />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

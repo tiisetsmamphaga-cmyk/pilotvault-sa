@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { VaultLoadingScreen } from "@/components/vault-loading-screen"
+import { claimDeviceSession } from "@/src/lib/device-session"
 import { supabase } from "@/src/lib/supabase"
 
 const navLinks = [
@@ -96,6 +97,7 @@ export function Navbar() {
         return
       }
 
+      await claimDeviceSession()
       window.location.href = "/dashboard"
       return
     }
@@ -151,6 +153,8 @@ export function Navbar() {
       setConfirmPassword("")
       return
     }
+
+    await claimDeviceSession()
 
     const elapsed = Date.now() - loginStartedAt
     if (elapsed < LOGIN_ANIMATION_MIN_MS) {

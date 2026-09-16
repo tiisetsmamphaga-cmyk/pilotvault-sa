@@ -234,7 +234,7 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-[#f8fafc] text-slate-900">
       <header className="border-b border-white/15 bg-[#1f4e79] text-white">
-        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-3">
             <Link href="/dashboard" className="shrink-0" aria-label="PilotVault dashboard">
               <Image
@@ -284,18 +284,18 @@ export default function DashboardPage() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-7xl px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:px-6 sm:pt-5 lg:px-8 lg:pt-6">
+      <div className="mx-auto max-w-7xl px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pt-9">
         <section aria-labelledby="dashboard-heading">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
-              <p className="text-xs font-medium text-slate-500 sm:text-sm">Welcome back, {firstName}</p>
+              <p className="text-sm font-medium text-slate-500">Welcome back, {firstName}</p>
               <h1
                 id="dashboard-heading"
-                className="mt-0.5 text-2xl font-bold leading-tight tracking-tight text-slate-950 sm:text-[28px]"
+                className="mt-1 text-[28px] font-bold leading-tight tracking-tight text-slate-950 sm:text-3xl"
               >
                 Practice centre
               </h1>
-              <p className="mt-1 max-w-2xl text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
                 Choose a subject, continue studying, or review your latest mock exam results.
               </p>
             </div>
@@ -325,20 +325,20 @@ export default function DashboardPage() {
           </div>
 
           {latestAttempt && latestSubjectUnlocked && LatestSubjectIcon && (
-            <div className="mt-3 rounded-2xl border border-slate-200 bg-white p-3.5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-4">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex min-w-0 items-start gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
-                    <LatestSubjectIcon className="h-5 w-5" />
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-6">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex min-w-0 items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d6e6f7] text-[#1f4e79]">
+                    <LatestSubjectIcon className="h-6 w-6" />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#1f4e79]">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#1f4e79]">
                       Continue studying
                     </p>
-                    <h2 className="mt-0.5 truncate text-base font-bold text-slate-950">
+                    <h2 className="mt-1 truncate text-xl font-bold text-slate-950">
                       {formatSubjectName(latestSubject!)}
                     </h2>
-                    <p className="mt-0.5 text-xs text-slate-500">
+                    <p className="mt-1 text-sm text-slate-500">
                       Last mock{" "}
                       <span className={`font-semibold ${scoreClassName(latestAttempt.scorePercentage)}`}>
                         {latestAttempt.correctAnswers}/
@@ -352,26 +352,26 @@ export default function DashboardPage() {
 
                 <Link
                   href={`/practice/${latestSubject}`}
-                  className="inline-flex min-h-9 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#1f4e79] px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40"
+                  className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#183d60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40"
                 >
                   Open subject
-                  <ChevronRight className="h-3.5 w-3.5" />
+                  <ChevronRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
           )}
         </section>
 
-        <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
           <section aria-labelledby="subjects-heading">
-            <div className="mb-2">
-              <h2 id="subjects-heading" className="text-sm font-semibold text-slate-950">
+            <div className="mb-3">
+              <h2 id="subjects-heading" className="text-base font-semibold text-slate-950">
                 Subjects
               </h2>
-              <p className="mt-0.5 text-[11px] text-slate-500">Select a subject to start training.</p>
+              <p className="mt-1 text-xs text-slate-500">Select a subject to start training.</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {sortedSubjects.map((subject) => {
                 const Icon = subject.icon
                 const unlocked = hasSubjectAccess(subject.slug)
@@ -384,7 +384,7 @@ export default function DashboardPage() {
                         ? `/practice/${subject.slug}`
                         : `/upgrade?subject=${subject.slug}`
                     }
-                    className={`group flex min-h-[56px] items-center gap-3 rounded-xl border bg-white px-3.5 py-2.5 transition ${
+                    className={`group flex min-h-[72px] items-center gap-3.5 rounded-2xl border bg-white p-4 transition ${
                       unlocked
                         ? "border-slate-200 hover:-translate-y-0.5 hover:border-[#1f4e79]/40 hover:shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
                         : "border-slate-200 opacity-70"
@@ -432,7 +432,7 @@ export default function DashboardPage() {
               <h2 className="text-sm font-semibold text-slate-950">Recent mocks</h2>
               <Link
                 href="/profile"
-                className="px-1 py-1 text-xs font-semibold text-[#1f4e79] hover:text-[#183d60]"
+                className="min-h-10 px-1 py-2 text-xs font-semibold text-[#1f4e79] hover:text-[#183d60]"
               >
                 View all
               </Link>
@@ -443,7 +443,7 @@ export default function DashboardPage() {
                 {attempts.slice(0, 4).map((attempt) => (
                   <div
                     key={attempt.id}
-                    className="flex min-h-[44px] items-center justify-between gap-3 py-2"
+                    className="flex min-h-[52px] items-center justify-between gap-3 py-2.5"
                   >
                     <div className="min-w-0">
                       <p className="truncate text-xs font-medium text-slate-800">

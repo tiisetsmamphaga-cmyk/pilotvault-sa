@@ -74,10 +74,17 @@ export function PaystackPurchaseButton({
 }: PaystackPurchaseButtonProps) {
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [debugLog, setDebugLog] = useState<string[]>([])
+
+  const log = (line: string) => {
+    console.info(`[paystack] ${line}`)
+    setDebugLog((previous) => [...previous, line])
+  }
 
   const startPayment = async () => {
     setLoading(true)
     setErrorMessage("")
+    setDebugLog([])
 
     try {
       const {
@@ -118,6 +125,10 @@ export function PaystackPurchaseButton({
       const { authorizationUrl, reference, amount, email, currency } = result
       const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY
 
+      log(
+        `publicKey=${publicKey ? publicKey.slice(0, 12) + "..." : "MISSING"} amount=${amount} email=${email ? "present" : "MISSING"}`
+      )
+
       const goToCallback = () => {
         window.location.assign(
           `/api/paystack/callback?reference=${encodeURIComponent(reference)}`
@@ -129,17 +140,12 @@ export function PaystackPurchaseButton({
       // can't load or doesn't behave as expected - payment must never be
       // blocked by this being unavailable.
       if (!publicKey || !amount || !email) {
-        console.warn(
-          "[paystack] Missing public key/amount/email - using redirect."
-        )
+        log("Missing public key/amount/email - using redirect.")
       } else {
         try {
-          console.info("[paystack] Loading inline checkout script...")
+          log("Loading inline checkout script...")
           await loadPaystackInlineScript()
-          console.info(
-            "[paystack] Script load resolved. window.PaystackPop:",
-            typeof window.PaystackPop
-          )
+          log(`Script load resolved. window.PaystackPop: ${typeof window.PaystackPop}`)
 
           if (!window.PaystackPop) {
             throw new Error(
@@ -147,7 +153,7 @@ export function PaystackPurchaseButton({
             )
           }
 
-          console.info("[paystack] Calling PaystackPop.setup...")
+          log("Calling PaystackPop.setup...")
 
           const handler = window.PaystackPop.setup({
             key: publicKey,
@@ -156,29 +162,28 @@ export function PaystackPurchaseButton({
             currency,
             ref: reference,
             callback: (popupResponse) => {
-              console.info(
-                "[paystack] setup callback fired",
-                popupResponse
-              )
+              log(`setup callback fired: ${JSON.stringify(popupResponse)}`)
               goToCallback()
             },
             onClose: () => {
-              console.info("[paystack] setup onClose fired")
+              log("setup onClose fired")
               setLoading(false)
             },
           })
 
+          log("setup() returned, calling openIframe()...")
           handler.openIframe()
-          console.info("[paystack] openIframe called without throwing.")
+          log("openIframe called without throwing.")
           return
         } catch (inlineError) {
-          console.error(
-            "[paystack] Inline checkout failed, falling back to redirect:",
-            inlineError
+          log(
+            `Inline checkout failed: ${inlineError instanceof Error ? inlineError.message : String(inlineError)}`
           )
         }
       }
 
+      log("Falling back to redirect in 4s (pausing so this is readable)...")
+      await new Promise((resolve) => setTimeout(resolve, 4000))
       window.location.assign(authorizationUrl)
     } catch (error) {
       setErrorMessage(
@@ -205,6 +210,19 @@ export function PaystackPurchaseButton({
         <p className="mt-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-6 text-red-700">
           {errorMessage}
         </p>
+      )}
+
+      {debugLog.length > 0 && (
+        <div className="mt-3 space-y-1 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-5 text-amber-900">
+          <p className="font-bold uppercase tracking-wide">
+            Debug log (temporary)
+          </p>
+          {debugLog.map((line, index) => (
+            <p key={index} className="font-mono">
+              {line}
+            </p>
+          ))}
+        </div>
       )}
     </div>
   )

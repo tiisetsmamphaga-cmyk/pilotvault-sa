@@ -20,6 +20,7 @@ import { PaystackPurchaseButton } from "@/components/paystack-purchase-button"
 import {
   getCachedCurrentUser,
   getCachedProfile,
+  getCachedSubjectAccess,
 } from "@/src/lib/client-data-cache"
 import {
   applyTrialDiscount,
@@ -127,25 +128,50 @@ function UpgradePageContent() {
     eligible: false,
     msRemaining: null,
   })
+  const [hasActivePpl, setHasActivePpl] = useState(false)
+  const [ownedSubjects, setOwnedSubjects] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     let cancelled = false
 
-    const loadDiscountEligibility = async () => {
+    const loadAccountState = async () => {
       try {
         const user = await getCachedCurrentUser()
         if (!user) return
 
-        const profile = await getCachedProfile(user.id)
-        if (!cancelled) {
-          setDiscount(getTrialDiscountEligibility(profile.trial_ends_at))
-        }
+        const [profile, subjectAccess] = await Promise.all([
+          getCachedProfile(user.id),
+          getCachedSubjectAccess(user.id).catch(() => []),
+        ])
+
+        if (cancelled) return
+
+        setDiscount(getTrialDiscountEligibility(profile.trial_ends_at))
+
+        setHasActivePpl(
+          profile.subscription_status === "active" &&
+            profile.subscription_plan === "ppl" &&
+            Boolean(profile.subscription_expires_at) &&
+            new Date(profile.subscription_expires_at as string) > new Date()
+        )
+
+        setOwnedSubjects(
+          new Set(
+            subjectAccess
+              .filter(
+                (access) =>
+                  access.access_status === "active" &&
+                  new Date(access.expires_at) > new Date()
+              )
+              .map((access) => access.subject)
+          )
+        )
       } catch {
         // Not logged in, or profile unavailable - just show standard pricing.
       }
     }
 
-    loadDiscountEligibility()
+    loadAccountState()
 
     return () => {
       cancelled = true
@@ -310,9 +336,19 @@ function UpgradePageContent() {
                     Coming Soon
                   </button>
                 ) : (
-                  <PaystackPurchaseButton productCode={plan.productCode}>
-                    Purchase PPL Pack
-                  </PaystackPurchaseButton>
+                  <>
+                    {plan.productCode === "ppl_pack" && hasActivePpl && (
+                      <p className="mb-2 text-xs font-medium text-[#1f4e79]">
+                        You already have an active PPL Pack - purchasing
+                        extends it from your current expiry date.
+                      </p>
+                    )}
+                    <PaystackPurchaseButton productCode={plan.productCode}>
+                      {plan.productCode === "ppl_pack" && hasActivePpl
+                        ? "Renew PPL Pack"
+                        : "Purchase PPL Pack"}
+                    </PaystackPurchaseButton>
+                  </>
                 )}
               </div>
             )
@@ -334,6 +370,7 @@ function UpgradePageContent() {
             {subjects.map((subject) => {
               const Icon = subject.icon
               const isDeepLinked = selectedSubject === subject.slug
+              const isOwned = ownedSubjects.has(subject.slug)
               const discountedCents = discount.eligible
                 ? applyTrialDiscount(SUBJECT_PRICE_CENTS)
                 : null
@@ -350,6 +387,12 @@ function UpgradePageContent() {
                   {isDeepLinked && (
                     <span className="mb-3 inline-flex w-fit items-center rounded-full bg-[#d6e6f7] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#1f4e79]">
                       You were viewing this
+                    </span>
+                  )}
+
+                  {isOwned && (
+                    <span className="mb-3 inline-flex w-fit items-center rounded-full bg-[#fdf3d9] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#b8860a]">
+                      Active
                     </span>
                   )}
 
@@ -378,7 +421,7 @@ function UpgradePageContent() {
                       productCode="subject"
                       subject={subject.slug}
                     >
-                      Purchase
+                      {isOwned ? "Renew" : "Purchase"}
                     </PaystackPurchaseButton>
                   </div>
                 </div>

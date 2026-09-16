@@ -26,7 +26,9 @@ import {
   clearClientDataCache,
   getCachedCurrentUser,
   getCachedProfile,
+  getCachedSubjectAccess,
   updateCachedProfile,
+  type CachedSubjectAccess,
 } from "@/src/lib/client-data-cache"
 import { supabase } from "@/src/lib/supabase"
 
@@ -113,6 +115,7 @@ export default function ProfilePage() {
   const [loadError, setLoadError] = useState("")
   const [authEmail, setAuthEmail] = useState("")
   const [profile, setProfile] = useState<ProfileRecord | null>(null)
+  const [subjectAccess, setSubjectAccess] = useState<CachedSubjectAccess[]>([])
   const [examAttempts, setExamAttempts] = useState<MockExamAttempt[]>([])
   const [attemptsLoadError, setAttemptsLoadError] = useState("")
 
@@ -142,22 +145,27 @@ export default function ProfilePage() {
           return
         }
 
-        const [loadedProfile, attemptsResult] = await Promise.all([
-          getCachedProfile(user.id),
-          fetchMockExamAttempts(user.id)
-            .then((attempts) => ({ attempts, error: "" }))
-            .catch((error) => ({
-              attempts: [] as MockExamAttempt[],
-              error:
-                error instanceof Error
-                  ? error.message
-                  : "Exam attempts could not be loaded.",
-            })),
-        ])
+        const [loadedProfile, loadedSubjectAccess, attemptsResult] =
+          await Promise.all([
+            getCachedProfile(user.id),
+            getCachedSubjectAccess(user.id).catch(
+              () => [] as CachedSubjectAccess[]
+            ),
+            fetchMockExamAttempts(user.id)
+              .then((attempts) => ({ attempts, error: "" }))
+              .catch((error) => ({
+                attempts: [] as MockExamAttempt[],
+                error:
+                  error instanceof Error
+                    ? error.message
+                    : "Exam attempts could not be loaded.",
+              })),
+          ])
 
         if (!cancelled) {
           setAuthEmail(user.email ?? loadedProfile.email ?? "")
           setProfile(loadedProfile)
+          setSubjectAccess(loadedSubjectAccess)
           setExamAttempts(attemptsResult.attempts)
           setAttemptsLoadError(attemptsResult.error)
           setFullNameDraft(loadedProfile.full_name)
@@ -315,10 +323,19 @@ export default function ProfilePage() {
     )
   }
 
+  const soonestSubjectExpiry = subjectAccess
+    .filter(
+      (access) =>
+        access.access_status === "active" &&
+        new Date(access.expires_at) > new Date()
+    )
+    .map((access) => access.expires_at)
+    .sort()[0]
+
   const expiryLabel = isTrialUser ? "Trial expiry" : "Expiry date"
   const expiryValue = isTrialUser
     ? profile.trial_ends_at
-    : profile.subscription_expires_at
+    : (profile.subscription_expires_at ?? soonestSubjectExpiry ?? null)
 
   const openProfileEditor = () => {
     setActionMessage("")

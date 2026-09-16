@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Check, BookOpen, BarChart3, ShieldCheck } from "lucide-react"
 import Image from "next/image"
 
 const features = [
@@ -12,11 +11,7 @@ const features = [
   "Detailed Explanations",
 ]
 
-const trustItems = [
-  { icon: ShieldCheck, label: "SACAA-focused" },
-  { icon: BookOpen, label: "Real explanations" },
-  { icon: BarChart3, label: "Progress tracking" },
-]
+const trustItems = ["SACAA-focused", "Real explanations", "Progress tracking"]
 
 export function HeroSection() {
   const openSignupModal = () => {
@@ -63,11 +58,11 @@ export function HeroSection() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.15 + index * 0.08 }}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white/85 px-3 py-3 shadow-sm backdrop-blur-sm sm:justify-start"
+                  className="flex items-center justify-center gap-2.5 rounded-xl border border-slate-200 bg-white/85 px-3 py-3 shadow-sm backdrop-blur-sm sm:justify-start"
                 >
-                  <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#d6e6f7]">
-                    <Check className="h-3 w-3 text-[#1f4e79]" />
-                  </div>
+                  <span className="text-base font-bold leading-none text-[#b8860a]">
+                    &#8212;
+                  </span>
                   <span className="text-sm font-medium text-slate-700">{feature}</span>
                 </motion.div>
               ))}
@@ -121,12 +116,16 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f1720]/25 via-transparent to-transparent" />
             </div>
 
-            <div className="relative -mt-5 mx-4 grid grid-cols-3 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl sm:mx-8">
-              {trustItems.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex flex-col items-center gap-2 border-r border-slate-200 px-2 py-4 text-center last:border-r-0 sm:px-4">
-                  <Icon className="h-5 w-5 text-[#1f4e79]" />
-                  <span className="text-[11px] font-semibold text-slate-700 sm:text-xs">{label}</span>
-                </div>
+            <div className="relative -mt-5 mx-4 flex items-center justify-center gap-x-2 divide-x divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white px-2 py-4 shadow-xl sm:mx-8 sm:gap-x-4">
+              {trustItems.map((label, index) => (
+                <span
+                  key={label}
+                  className={`px-2 text-center text-[11px] font-semibold uppercase tracking-wide text-[#1f4e79] sm:px-4 sm:text-xs ${
+                    index === 0 ? "pl-0" : ""
+                  }`}
+                >
+                  {label}
+                </span>
               ))}
             </div>
           </motion.div>

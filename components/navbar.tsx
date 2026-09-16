@@ -469,7 +469,7 @@ export function Navbar() {
 
             {authNotice && (
               <p
-                className="mt-4 rounded-xl border border-[#f4b400]/40 bg-[#fdf3d9] px-4 py-3 text-sm font-semibold text-[#b8860a]"
+                className="mt-4 rounded-xl border border-[#b8860a]/40 bg-[#fdf3d9] px-4 py-3 text-sm font-semibold text-[#b8860a]"
                 role="status"
               >
                 {authNotice}

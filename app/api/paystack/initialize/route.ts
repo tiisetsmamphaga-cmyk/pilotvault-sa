@@ -105,7 +105,11 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       authorizationUrl: transaction.authorization_url,
+      accessCode: transaction.access_code,
       reference: transaction.reference,
+      amount,
+      email: user.email,
+      currency: product.currency,
     })
   } catch (error) {
     console.error("Paystack initialisation failed", error)

@@ -136,7 +136,7 @@ export function TrainingModeMenu({
 
             {isTrialAccount && (
               <div className="sm:max-w-xs sm:text-right">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f4b400]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#b8860a]">
                   Trial conditions
                 </p>
                 <p className="mt-1.5 text-sm leading-6 text-[#b8c7d9]">
@@ -309,8 +309,8 @@ export function TrainingModeMenu({
               </p>
 
               <div className="mt-auto flex justify-end pt-5">
-                <span className="inline-flex items-center gap-2 rounded-xl border border-[#f4b400]/40 bg-[#f4b400]/10 px-3 py-2 text-xs font-bold text-[#f4b400] transition group-hover:bg-[#f4b400] group-hover:text-[#06111f]">
-                  View access
+                <span className="inline-flex items-center gap-2 rounded-xl bg-[#f4b400] px-3 py-2 text-xs font-bold text-[#06111f] transition group-hover:bg-[#ffc62a]">
+                  Start now
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </div>

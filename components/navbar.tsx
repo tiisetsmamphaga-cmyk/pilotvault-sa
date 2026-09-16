@@ -219,7 +219,13 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
-    const openLogin = () => openAuth("login")
+    const openLogin = (event: Event) => {
+      const message = (event as CustomEvent<{ message?: string }>).detail
+        ?.message
+
+      openAuth("login")
+      if (message) setAuthMessage(message)
+    }
     window.addEventListener("open-login-modal", openLogin)
     return () => window.removeEventListener("open-login-modal", openLogin)
   }, [])

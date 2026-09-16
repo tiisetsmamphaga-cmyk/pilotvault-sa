@@ -92,6 +92,17 @@ export async function getCachedCurrentUser(options?: {
       })
       .catch((error) => {
         userRequest = null
+
+        // Not being logged in is a normal state, not a failure: callers
+        // expect `null` here, not a thrown "Auth session missing!" error.
+        if (
+          error instanceof Error &&
+          (error.name === "AuthSessionMissingError" ||
+            error.message.includes("Auth session missing"))
+        ) {
+          return null
+        }
+
         throw error
       })
   }

@@ -101,8 +101,14 @@ function formatPlan(plan: string | null) {
   }
 }
 
-function formatStatus(status: string | null, isTrial: boolean) {
+function formatStatus(
+  status: string | null,
+  isTrial: boolean,
+  hasActiveSubjectAccess: boolean
+) {
   if (isTrial) return "Trial active"
+  if (status === "active") return "Active"
+  if (hasActiveSubjectAccess) return "Active"
   if (!status) return "Inactive"
 
   return status.charAt(0).toUpperCase() + status.slice(1)
@@ -323,12 +329,13 @@ export default function ProfilePage() {
     )
   }
 
-  const soonestSubjectExpiry = subjectAccess
-    .filter(
-      (access) =>
-        access.access_status === "active" &&
-        new Date(access.expires_at) > new Date()
-    )
+  const activeSubjectAccess = subjectAccess.filter(
+    (access) =>
+      access.access_status === "active" &&
+      new Date(access.expires_at) > new Date()
+  )
+  const hasActiveSubjectAccess = activeSubjectAccess.length > 0
+  const soonestSubjectExpiry = activeSubjectAccess
     .map((access) => access.expires_at)
     .sort()[0]
 
@@ -390,7 +397,7 @@ export default function ProfilePage() {
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-[#071426]">
                 <CheckCircle2 size={12} className="text-[#f4b400]" />
-                {formatStatus(profile.subscription_status, isTrialUser)}
+                {formatStatus(profile.subscription_status, isTrialUser, hasActiveSubjectAccess)}
               </span>
             </div>
           </div>
@@ -435,7 +442,7 @@ export default function ProfilePage() {
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium">Subscription status</p>
                   <p className="mt-0.5 text-xs text-[#9ca9b9]">
-                    {formatStatus(profile.subscription_status, isTrialUser)}
+                    {formatStatus(profile.subscription_status, isTrialUser, hasActiveSubjectAccess)}
                   </p>
                 </div>
               </div>

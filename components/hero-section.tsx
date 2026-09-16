@@ -11,8 +11,6 @@ const features = [
   "Detailed Explanations",
 ]
 
-const trustItems = ["SACAA-focused", "Real explanations", "Progress tracking"]
-
 export function HeroSection() {
   const openSignupModal = () => {
     window.dispatchEvent(new Event("open-signup-modal"))
@@ -114,19 +112,6 @@ export function HeroSection() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f1720]/25 via-transparent to-transparent" />
-            </div>
-
-            <div className="relative -mt-5 mx-4 flex items-center justify-center gap-x-2 divide-x divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white px-2 py-4 shadow-xl sm:mx-8 sm:gap-x-4">
-              {trustItems.map((label, index) => (
-                <span
-                  key={label}
-                  className={`px-2 text-center text-[11px] font-semibold uppercase tracking-wide text-[#1f4e79] sm:px-4 sm:text-xs ${
-                    index === 0 ? "pl-0" : ""
-                  }`}
-                >
-                  {label}
-                </span>
-              ))}
             </div>
           </motion.div>
         </div>

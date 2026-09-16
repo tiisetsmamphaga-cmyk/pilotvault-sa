@@ -38,6 +38,7 @@ export function Navbar() {
   const [loading, setLoading] = useState(false)
   const [resetRequestLoading, setResetRequestLoading] = useState(false)
   const [authMessage, setAuthMessage] = useState("")
+  const [authNotice, setAuthNotice] = useState("")
   const [signedIn, setSignedIn] = useState(false)
 
   const openAuth = (mode: "login" | "signup") => {
@@ -45,6 +46,7 @@ export function Navbar() {
     setAuthOpen(true)
     setIsOpen(false)
     setAuthMessage("")
+    setAuthNotice("")
   }
 
   const handlePasswordResetRequest = async () => {
@@ -224,7 +226,7 @@ export function Navbar() {
         ?.message
 
       openAuth("login")
-      if (message) setAuthMessage(message)
+      if (message) setAuthNotice(message)
     }
     window.addEventListener("open-login-modal", openLogin)
     return () => window.removeEventListener("open-login-modal", openLogin)
@@ -465,6 +467,15 @@ export function Navbar() {
                   : "Enter a new password for your PilotVault account."}
             </p>
 
+            {authNotice && (
+              <p
+                className="mt-4 rounded-xl border border-[#f4b400]/40 bg-[#fdf3d9] px-4 py-3 text-sm font-semibold text-[#b8860a]"
+                role="status"
+              >
+                {authNotice}
+              </p>
+            )}
+
             {authMode !== "reset" && (
               <div className="my-6 grid grid-cols-2 rounded-xl bg-[#f1f5f9] p-1">
                 <button
@@ -473,6 +484,7 @@ export function Navbar() {
                   onClick={() => {
                     setAuthMode("login")
                     setAuthMessage("")
+                    setAuthNotice("")
                   }}
                   className={`rounded-lg py-2 text-sm font-semibold transition ${
                     authMode === "login"
@@ -488,6 +500,7 @@ export function Navbar() {
                   onClick={() => {
                     setAuthMode("signup")
                     setAuthMessage("")
+                    setAuthNotice("")
                   }}
                   className={`rounded-lg py-2 text-sm font-semibold transition ${
                     authMode === "signup"

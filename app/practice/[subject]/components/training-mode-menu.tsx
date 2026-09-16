@@ -188,7 +188,7 @@ export function TrainingModeMenu({
               </span>
 
               {isTrialAccount && (
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#f4b400]">
+                <span className="rounded-full bg-[#fdf3d9] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#b8860a]">
                   Trial
                 </span>
               )}

@@ -10,6 +10,58 @@ type PaystackPurchaseButtonProps = {
   children: React.ReactNode
 }
 
+const PAYSTACK_INLINE_SRC = "https://js.paystack.co/v1/inline.js"
+
+type PaystackPopInstance = {
+  resumeTransaction: (
+    accessCode: string,
+    options: {
+      callback: (response: { reference: string }) => void
+      onClose: () => void
+    }
+  ) => void
+}
+
+type PaystackPopConstructor = new () => PaystackPopInstance
+
+declare global {
+  interface Window {
+    PaystackPop?: PaystackPopConstructor
+  }
+}
+
+let inlineScriptPromise: Promise<void> | null = null
+
+function loadPaystackInlineScript(): Promise<void> {
+  if (window.PaystackPop) return Promise.resolve()
+
+  if (!inlineScriptPromise) {
+    inlineScriptPromise = new Promise((resolve, reject) => {
+      const existing = document.querySelector<HTMLScriptElement>(
+        `script[src="${PAYSTACK_INLINE_SRC}"]`
+      )
+
+      if (existing) {
+        existing.addEventListener("load", () => resolve())
+        existing.addEventListener("error", () =>
+          reject(new Error("Failed to load Paystack checkout."))
+        )
+        return
+      }
+
+      const script = document.createElement("script")
+      script.src = PAYSTACK_INLINE_SRC
+      script.async = true
+      script.onload = () => resolve()
+      script.onerror = () =>
+        reject(new Error("Failed to load Paystack checkout."))
+      document.head.appendChild(script)
+    })
+  }
+
+  return inlineScriptPromise
+}
+
 export function PaystackPurchaseButton({
   productCode,
   subject,
@@ -46,14 +98,52 @@ export function PaystackPurchaseButton({
 
       const result = (await response.json()) as {
         authorizationUrl?: string
+        accessCode?: string
+        reference?: string
         error?: string
       }
 
-      if (!response.ok || !result.authorizationUrl) {
+      if (!response.ok || !result.authorizationUrl || !result.reference) {
         throw new Error(result.error || "Unable to open secure checkout.")
       }
 
-      window.location.assign(result.authorizationUrl)
+      const { authorizationUrl, accessCode, reference } = result
+
+      const goToCallback = () => {
+        window.location.assign(
+          `/api/paystack/callback?reference=${encodeURIComponent(reference)}`
+        )
+      }
+
+      // Keep checkout on pilotvault.co.za via Paystack's inline popup when
+      // possible. Falls back to the full-page redirect if the popup script
+      // can't load or doesn't behave as expected - payment must never be
+      // blocked by this being unavailable.
+      if (accessCode) {
+        try {
+          await loadPaystackInlineScript()
+
+          if (window.PaystackPop) {
+            const popup = new window.PaystackPop()
+
+            popup.resumeTransaction(accessCode, {
+              callback: () => goToCallback(),
+              onClose: () => {
+                setLoading(false)
+              },
+            })
+
+            return
+          }
+        } catch (inlineError) {
+          console.error(
+            "Paystack inline checkout unavailable, falling back to redirect",
+            inlineError
+          )
+        }
+      }
+
+      window.location.assign(authorizationUrl)
     } catch (error) {
       setErrorMessage(
         error instanceof Error

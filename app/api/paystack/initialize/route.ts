@@ -105,6 +105,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       authorizationUrl: transaction.authorization_url,
+      accessCode: transaction.access_code,
       reference: transaction.reference,
     })
   } catch (error) {

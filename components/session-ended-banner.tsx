@@ -3,35 +3,34 @@
 import { Suspense, useEffect } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 
+const MESSAGES = {
+  "session-ended":
+    "You were signed out because your PilotVault account was logged in on another device. Log in again to continue.",
+  "login-required": "Please log in to continue.",
+} as const
+
 function SessionEndedBannerContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  const sessionEnded = searchParams.get("session-ended") === "1"
-  const loginRequired = searchParams.get("login-required") === "1"
+  const reason = searchParams.get("session-ended") === "1"
+    ? "session-ended"
+    : searchParams.get("login-required") === "1"
+      ? "login-required"
+      : null
 
   useEffect(() => {
-    if (sessionEnded || loginRequired) {
-      window.dispatchEvent(new Event("open-login-modal"))
-    }
-  }, [sessionEnded, loginRequired])
+    if (!reason) return
 
-  if (!sessionEnded && !loginRequired) return null
+    window.dispatchEvent(
+      new CustomEvent("open-login-modal", {
+        detail: { message: MESSAGES[reason] },
+      })
+    )
+    router.replace("/")
+  }, [reason, router])
 
-  return (
-    <div className="fixed inset-x-0 top-20 z-40 border-b border-[#f4b400]/40 bg-[#fdf3d9] px-4 py-3 text-center text-sm font-medium text-[#183d60]">
-      {sessionEnded
-        ? "You were signed out because your PilotVault account was logged in on another device."
-        : "Please log in to continue."}{" "}
-      <button
-        type="button"
-        onClick={() => router.replace("/")}
-        className="font-bold underline underline-offset-2"
-      >
-        Dismiss
-      </button>
-    </div>
-  )
+  return null
 }
 
 export function SessionEndedBanner() {

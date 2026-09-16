@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#eef3f8] text-slate-900">
       <HomeAuthRedirect />
-      <SessionEndedBanner />
       <Navbar />
+      <SessionEndedBanner />
       <HeroSection />
       <PricingSection />
       <CtaSection />

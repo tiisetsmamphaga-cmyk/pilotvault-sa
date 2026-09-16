@@ -12,21 +12,26 @@ type PaystackPurchaseButtonProps = {
 
 const PAYSTACK_INLINE_SRC = "https://js.paystack.co/v1/inline.js"
 
-type PaystackPopInstance = {
-  resumeTransaction: (
-    accessCode: string,
-    options: {
-      callback: (response: { reference: string }) => void
-      onClose: () => void
-    }
-  ) => void
+type PaystackPopHandler = {
+  openIframe: () => void
 }
 
-type PaystackPopConstructor = new () => PaystackPopInstance
+type PaystackPopStatic = {
+  setup: (options: {
+    key: string
+    email: string
+    amount: number
+    currency?: string
+    ref: string
+    metadata?: unknown
+    callback: (response: { reference: string }) => void
+    onClose: () => void
+  }) => PaystackPopHandler
+}
 
 declare global {
   interface Window {
-    PaystackPop?: PaystackPopConstructor
+    PaystackPop?: PaystackPopStatic
   }
 }
 
@@ -100,6 +105,9 @@ export function PaystackPurchaseButton({
         authorizationUrl?: string
         accessCode?: string
         reference?: string
+        amount?: number
+        email?: string
+        currency?: string
         error?: string
       }
 
@@ -107,7 +115,8 @@ export function PaystackPurchaseButton({
         throw new Error(result.error || "Unable to open secure checkout.")
       }
 
-      const { authorizationUrl, accessCode, reference } = result
+      const { authorizationUrl, reference, amount, email, currency } = result
+      const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY
 
       const goToCallback = () => {
         window.location.assign(
@@ -119,9 +128,9 @@ export function PaystackPurchaseButton({
       // possible. Falls back to the full-page redirect if the popup script
       // can't load or doesn't behave as expected - payment must never be
       // blocked by this being unavailable.
-      if (!accessCode) {
+      if (!publicKey || !amount || !email) {
         console.warn(
-          "[paystack] No accessCode returned by /api/paystack/initialize - using redirect."
+          "[paystack] Missing public key/amount/email - using redirect."
         )
       } else {
         try {
@@ -138,23 +147,29 @@ export function PaystackPurchaseButton({
             )
           }
 
-          const popup = new window.PaystackPop()
-          console.info("[paystack] Calling resumeTransaction...")
+          console.info("[paystack] Calling PaystackPop.setup...")
 
-          popup.resumeTransaction(accessCode, {
-            callback: (response) => {
-              console.info("[paystack] resumeTransaction callback fired", response)
+          const handler = window.PaystackPop.setup({
+            key: publicKey,
+            email,
+            amount,
+            currency,
+            ref: reference,
+            callback: (popupResponse) => {
+              console.info(
+                "[paystack] setup callback fired",
+                popupResponse
+              )
               goToCallback()
             },
             onClose: () => {
-              console.info("[paystack] resumeTransaction onClose fired")
+              console.info("[paystack] setup onClose fired")
               setLoading(false)
             },
           })
 
-          console.info(
-            "[paystack] resumeTransaction call completed without throwing."
-          )
+          handler.openIframe()
+          console.info("[paystack] openIframe called without throwing.")
           return
         } catch (inlineError) {
           console.error(

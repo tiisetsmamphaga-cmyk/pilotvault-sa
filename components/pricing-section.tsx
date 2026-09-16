@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
 
 const plans = [
   {
@@ -95,8 +94,8 @@ export function PricingSection() {
               }`}
             >
               {plan.popular && (
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1f4e79] px-4 py-1 text-xs font-bold text-white shadow-sm">
-                  MOST POPULAR
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--pv-gold)] px-4 py-1 text-xs font-bold uppercase tracking-wide text-slate-900 shadow-sm">
+                  Most students choose this
                 </div>
               )}
 
@@ -117,12 +116,12 @@ export function PricingSection() {
                 </div>
               </div>
 
-              <ul className="mb-8 space-y-4">
+              <ul className="mb-8 space-y-3.5">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#d6e6f7]">
-                      <Check className="h-3 w-3 text-[#1f4e79]" />
-                    </div>
+                  <li key={feature} className="flex items-baseline gap-2.5">
+                    <span className="text-sm font-bold leading-none text-[#b8860a]">
+                      &#10003;
+                    </span>
                     <span className="text-sm text-slate-700">{feature}</span>
                   </li>
                 ))}

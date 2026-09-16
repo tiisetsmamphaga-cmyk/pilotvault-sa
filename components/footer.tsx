@@ -2,8 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Instagram, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Instagram } from "lucide-react"
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -27,7 +26,6 @@ const quickLinks = [
 
 const resources = [
   { name: "FAQ", href: "/faq" },
-  { name: "Support", href: "mailto:contact@pilotvault.co.za" },
   {
     name: "Contact",
     href: "mailto:contact@pilotvault.co.za",
@@ -44,7 +42,7 @@ export function Footer() {
   return (
     <footer id="contact" className="border-t border-slate-800 bg-[#0f1720]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 lg:gap-12">
           <div>
             <Link href="/" className="mb-4 flex">
               <Image
@@ -109,32 +107,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 font-semibold text-white">Newsletter</h3>
-            <p className="mb-4 text-sm text-slate-400">Get study tips and PilotVault updates.</p>
-
-            <div className="relative mb-3">
-              <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 py-3 pl-10 pr-4 text-sm text-white placeholder:text-slate-500 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#1f4e79]/25"
-              />
-            </div>
-
-            <Button className="w-full bg-[#1f4e79] font-semibold text-white hover:bg-[#183d60]">
-              Subscribe
-            </Button>
-
-            <a
-              href="mailto:contact@pilotvault.co.za"
-              className="mt-5 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-white"
-            >
-              <Mail className="h-4 w-4 text-blue-300" aria-hidden="true" />
-              contact@pilotvault.co.za
-            </a>
           </div>
         </div>
 

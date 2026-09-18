@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { supabase } from "@/src/lib/supabase"
 
@@ -74,6 +74,16 @@ export function PaystackPurchaseButton({
 }: PaystackPurchaseButtonProps) {
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+
+  // Start fetching Paystack's inline script as soon as the page with this
+  // button is visible, not when it's clicked - shared across every button
+  // instance via the module-level cached promise, so it only loads once.
+  useEffect(() => {
+    loadPaystackInlineScript().catch(() => {
+      // Ignored here: startPayment() falls back to a redirect if the
+      // script still isn't available by the time the button is clicked.
+    })
+  }, [])
 
   const startPayment = async () => {
     setLoading(true)

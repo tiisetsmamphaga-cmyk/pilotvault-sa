@@ -111,11 +111,6 @@ function PofExplanationImage({
 
   return (
     <figure className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="flex items-center justify-center px-4 py-5 sm:px-6 sm:py-6" style={{ backgroundColor: "#06111f" }}>
-        <img src="/images/pilotvault-banner-logo.png" alt="PilotVault SA" className="h-14 w-auto sm:h-16" />
-      </div>
-      <div className="h-1 bg-[#c9942f]" />
-
       <div className="grid gap-4 bg-[#f6f8fa] p-4 sm:p-6 lg:grid-cols-[1.4fr_1fr]">
         <div className="flex flex-col gap-3">
           {title && (

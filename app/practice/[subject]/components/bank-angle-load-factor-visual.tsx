@@ -6,16 +6,10 @@ const CESSNA_172_LINE_DRAWING =
 export function BankAngleLoadFactorVisual() {
   return (
     <figure className="mt-5 overflow-hidden border border-slate-200 bg-white">
-      <div className="px-5 py-4 text-center sm:px-8 sm:py-5" style={{ backgroundColor: "#06111f" }}>
-        <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] sm:text-xs" style={{ color: "#f4b400" }}>
-          PILOTVAULT HUMAN PERFORMANCE
-        </p>
-        <h3 className="mt-1 text-xl font-black uppercase tracking-[0.025em] text-white sm:text-3xl">
+      <div className="relative overflow-hidden bg-[#f8fafc] px-3 pb-4 pt-5 sm:px-6 sm:pb-6 sm:pt-7">
+        <h3 className="mb-4 text-center text-lg font-extrabold uppercase tracking-[0.02em] text-[#0b1f33] sm:text-xl">
           Bank Angle and Load Factor
         </h3>
-      </div>
-
-      <div className="relative overflow-hidden bg-[#f8fafc] px-3 pb-4 pt-5 sm:px-6 sm:pb-6 sm:pt-7">
         <div className="relative mx-auto aspect-[16/9] w-full max-w-4xl overflow-hidden rounded-2xl border-2 border-slate-200 bg-white">
           <svg
             viewBox="0 0 1000 560"

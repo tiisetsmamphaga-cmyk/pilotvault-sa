@@ -214,6 +214,38 @@ export async function fulfilPaystackPayment(
       if (error) {
         throw new Error(`Could not activate subject access: ${error.message}`)
       }
+
+      // Buying a subject ends blanket trial access to every other subject
+      // immediately - trial_ends_at itself is left untouched, so the
+      // discount window it was promised (computed from that same field)
+      // stays exactly as originally offered.
+      const { data: buyerProfile, error: buyerProfileError } =
+        await supabaseAdmin
+          .from("Profiles")
+          .select("subscription_plan")
+          .eq("id", metadata.user_id)
+          .maybeSingle()
+
+      if (buyerProfileError) {
+        throw new Error(
+          `Could not read the buyer's profile: ${buyerProfileError.message}`
+        )
+      }
+
+      if (buyerProfile?.subscription_plan === "trial") {
+        const { error: endTrialError } = await supabaseAdmin
+          .from("Profiles")
+          .update({
+            subscription_plan: null,
+            subscription_status: "inactive",
+            updated_at: now,
+          })
+          .eq("id", metadata.user_id)
+
+        if (endTrialError) {
+          throw new Error(`Could not end the trial: ${endTrialError.message}`)
+        }
+      }
     }
 
     const { error: fulfilledError } = await supabaseAdmin

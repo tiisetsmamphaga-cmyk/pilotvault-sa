@@ -119,8 +119,8 @@
         "notes": "Single-line crop of the FAJS METAR entry, tight to text bounds."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fajs-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fajs-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fajs-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fajs-v2.webp"
       },
       "mapping_reason": "Question 679 asks the student to decode the FAJS METAR's wind variation group (350V070).",
       "status": "LIVE_VERIFIED"
@@ -139,8 +139,8 @@
         "notes": "Single-line crop, tight to text bounds."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fagg-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fagg-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fagg-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fagg-v2.webp"
       },
       "mapping_reason": "Question 697 asks the student to read the dew point (15\u00b0) from the FAGG METAR's temperature/dew point group.",
       "status": "LIVE_VERIFIED"
@@ -159,8 +159,8 @@
         "notes": "Single-line crop, tight to text bounds."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-faup-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-faup-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-faup-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-faup-v2.webp"
       },
       "mapping_reason": "Question 738 asks what the FAUP METAR's CAVOK group implies about cloud below 5,000 ft.",
       "status": "LIVE_VERIFIED"
@@ -179,8 +179,8 @@
         "notes": "Two-line crop of the wrapped FADN TAF entry, tight to text bounds."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fadn-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fadn-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fadn-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fadn-v2.webp"
       },
       "mapping_reason": "Question 690 asks for the forecast surface wind at FADN during a BECMG window inside this TAF.",
       "status": "LIVE_VERIFIED"
@@ -199,8 +199,8 @@
         "notes": "Three-line crop of the wrapped FAPE TAF entry, tight to text bounds."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fape-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fape-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fape-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fape-v2.webp"
       },
       "mapping_reason": "Question 700 asks for the expected cloud cover/height at FAPE within a TEMPO group in this TAF.",
       "status": "LIVE_VERIFIED"
@@ -219,8 +219,8 @@
         "notes": "Two-line crop of the wrapped FAGG TAF entry, tight to text bounds."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fagg-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fagg-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fagg-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fagg-v2.webp"
       },
       "mapping_reason": "Question 732 asks for the expected weather at FAGG, including the TEMPO heavy-rain group in this TAF.",
       "status": "LIVE_VERIFIED"
@@ -240,8 +240,8 @@
         "notes": "Crop spans both adjacent grid boxes since both questions read the same row; verified numerically (733's 221/11 at 4,000 ft = midpoint interpolation between the 3,000 ft and 5,000 ft rows; 736's ISA+7\u00b0C = chart's +12\u00b0C at 5,000 ft vs ISA 5\u00b0C)."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-25s-30s-15e-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-25s-30s-15e-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-25s-30s-15e-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-25s-30s-15e-v2.webp"
       },
       "mapping_reason": "Both questions require reading raw wind/temperature values off this chart at S25\u00b0E015\u00b0/S30\u00b0E015\u00b0, one image serves both since they're on the same chart row.",
       "status": "LIVE_VERIFIED"
@@ -260,8 +260,8 @@
         "notes": "Verified numerically: 5,000 ft row reads 115/5/21, matching the DB's correct answer of 115\u00b0(T)."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-natal-north-coast-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-natal-north-coast-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-natal-north-coast-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-natal-north-coast-v2.webp"
       },
       "mapping_reason": "Question 716 asks for the wind direction at 5,000 ft on the Natal North Coast, a named column on this chart.",
       "status": "LIVE_VERIFIED"
@@ -280,8 +280,8 @@
         "notes": "Crop spans the PE and CT station labels plus the intervening front, cloud boxes and present-weather symbols; verified against the DB's answer (drizzle near PE becoming rain approaching CT)."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/sigwx-chart3-pe-ct-v1.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/sigwx-chart3-pe-ct-v1.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/sigwx-chart3-pe-ct-v2.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/sigwx-chart3-pe-ct-v2.webp"
       },
       "mapping_reason": "Question 714 asks what weather an aircraft flying PE to CT along the coast would encounter, requiring the actual chart symbols between those two points.",
       "status": "LIVE_VERIFIED"

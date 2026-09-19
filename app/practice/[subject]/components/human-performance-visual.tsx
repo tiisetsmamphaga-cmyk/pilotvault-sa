@@ -42,7 +42,7 @@ function has(question: Question, ...terms: string[]) {
   return terms.some((term) => text.includes(term.toLowerCase()))
 }
 
-function getVisualSpec(question: Question): VisualSpec {
+function getVisualSpec(question: Question): VisualSpec | null {
   const answer = question.correctAnswer || "Key concept"
 
   if (has(question, "alveoli")) {
@@ -400,14 +400,10 @@ function getVisualSpec(question: Question): VisualSpec {
     }
   }
 
-  return {
-    title: "HUMAN PERFORMANCE KEY CONCEPT",
-    kind: "flow",
-    left: "Recognise the condition",
-    center: "Apply the principle",
-    right: "Choose the safest action",
-    note: `Key exam point: ${answer}`,
-  }
+  // No keyword rule matched this question's text closely enough to justify a
+  // diagram. Showing nothing is better than a generic, unrelated placeholder
+  // (see PILOTVAULT_EXPLANATION_IMAGE_MASTER_PROMPT.md: never force-fit).
+  return null
 }
 
 function TechnicalArrow() {
@@ -768,6 +764,8 @@ function renderDiagram(spec: VisualSpec) {
 
 export function HumanPerformanceVisual({ question }: { question: Question }) {
   const spec = getVisualSpec(question)
+
+  if (!spec) return null
 
   return (
     <figure className="mt-5 overflow-hidden border border-slate-200 bg-white">

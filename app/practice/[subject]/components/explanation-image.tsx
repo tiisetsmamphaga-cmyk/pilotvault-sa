@@ -71,11 +71,23 @@ export function ExplanationImage({
     /\/explanation-images\/human-performance\/refined-batch-(?:1|2|3|4|5|6|7|8|9|10)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
-  // POF and HP are fail-closed. Only individually QA-approved refined raster
-  // batches may render. Legacy, bulk-generated, unmanifested and vector assets
-  // stay blocked even when they exist on an old branch or deployment.
+  // Meteorology explanation diagrams live in the same refined-batch-N tree as
+  // the question-reference crops (question-reference-image.tsx), but that
+  // component only ever approves batch 1 (source-manual reference material).
+  // Explanation diagrams start at batch 2 so the two asset classes never
+  // collide under the same batch number.
+  const isMetVisual = src.includes("/explanation-images/meteorology/refined-batch-")
+  const isApprovedMetRaster =
+    /\/explanation-images\/meteorology\/refined-batch-(?:2)\//.test(src) &&
+    /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
+
+  // POF, HP and Meteorology are fail-closed. Only individually QA-approved
+  // refined raster batches may render. Legacy, bulk-generated, unmanifested
+  // and vector assets stay blocked even when they exist on an old branch or
+  // deployment.
   if (isPofVisual && !isApprovedPofRaster) return null
   if (isHpVisual && !isApprovedHpRaster) return null
+  if (isMetVisual && !isApprovedMetRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
 
   const cardTemplate = isPofVisual || isHpVisual ? parsePofTemplate(template) : null

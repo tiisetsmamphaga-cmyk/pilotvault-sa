@@ -90,7 +90,7 @@ export function ExplanationImage({
   if (isMetVisual && !isApprovedMetRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
 
-  const cardTemplate = isPofVisual || isHpVisual ? parsePofTemplate(template) : null
+  const cardTemplate = isPofVisual || isHpVisual || isMetVisual ? parsePofTemplate(template) : null
   if (cardTemplate) {
     return (
       <PofExplanationImage

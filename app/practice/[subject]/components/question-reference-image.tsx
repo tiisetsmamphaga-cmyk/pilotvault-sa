@@ -61,13 +61,8 @@ export function QuestionReferenceImage({
         fetchPriority="high"
         onLoad={() => setStatus("loaded")}
         onError={() => setStatus("error")}
-        className={
-          status === "loaded"
-            ? bare
-              ? "block max-w-[280px]"
-              : "block"
-            : "hidden"
-        }
+        style={bare ? { maxWidth: 220, width: "100%", height: "auto" } : undefined}
+        className={status === "loaded" ? "block" : "hidden"}
       />
 
       {status === "error" && (

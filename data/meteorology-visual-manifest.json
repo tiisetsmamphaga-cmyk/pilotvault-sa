@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "subject": "meteorology",
+  "allowed_statuses": ["LIVE_VERIFIED"],
+  "visuals": [
+    {
+      "visual_id": "met-station-2-001",
+      "topic": "Meteorological Reports",
+      "concept": "Synoptic station model plot for Station 2 (barometric tendency).",
+      "question_ids": [713],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 6,
+        "figure": "Synoptic Weather Station Models - 1, Station 2",
+        "notes": "Vector-rendered crop of Station 2's plotted symbol, cropped to content bounds only (grid border excluded per style brief)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-2-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-2-v1.webp"
+      },
+      "mapping_reason": "Question 713 asks to read the barometric tendency directly off Station 2's plot; the question is unanswerable without this image.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-station-4-001",
+      "topic": "Meteorological Reports",
+      "concept": "Synoptic station model plot for Station 4 (medium cloud type).",
+      "question_ids": [721],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 6,
+        "figure": "Synoptic Weather Station Models - 1, Station 4",
+        "notes": "Vector-rendered crop, content bounds only."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-4-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-4-v1.webp"
+      },
+      "mapping_reason": "Question 721 asks which medium cloud symbol Station 4 shows.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-station-5-001",
+      "topic": "Meteorological Reports",
+      "concept": "Synoptic station model plot for Station 5 (pressure change).",
+      "question_ids": [715],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 6,
+        "figure": "Synoptic Weather Station Models - 1, Station 5",
+        "notes": "Vector-rendered crop, content bounds only."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-5-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-5-v1.webp"
+      },
+      "mapping_reason": "Question 715 asks for the 3-hour pressure change plotted on Station 5.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-station-6-001",
+      "topic": "Meteorological Reports",
+      "concept": "Synoptic station model plot for Station 6 (present weather).",
+      "question_ids": [717],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 6,
+        "figure": "Synoptic Weather Station Models - 1, Station 6",
+        "notes": "Vector-rendered crop, content bounds only."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-6-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-6-v1.webp"
+      },
+      "mapping_reason": "Question 717 asks for the present-weather symbol plotted on Station 6.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-station-14-001",
+      "topic": "Meteorological Reports",
+      "concept": "Synoptic station model plot for Station 14 (visibility/weather in haze).",
+      "question_ids": [724],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 7,
+        "figure": "Synoptic Weather Station Models - 2, Station 14",
+        "notes": "Vector-rendered crop, content bounds only."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-14-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-14-v1.webp"
+      },
+      "mapping_reason": "Question 724 asks what Station 14's plot shows.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-metar-fajs-001",
+      "topic": "Meteorological Reports",
+      "concept": "METAR line for FAJS (Johannesburg).",
+      "question_ids": [679],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 9,
+        "figure": "METAR (Aerodrome Actuals), Gauteng / FAJS row",
+        "notes": "Single-line crop of the FAJS METAR entry, tight to text bounds."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fajs-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fajs-v1.webp"
+      },
+      "mapping_reason": "Question 679 asks the student to decode the FAJS METAR's wind variation group (350V070).",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-metar-fagg-001",
+      "topic": "Humidity",
+      "concept": "METAR line for FAGG (George).",
+      "question_ids": [697],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 9,
+        "figure": "METAR (Aerodrome Actuals), Western Cape / FAGG row",
+        "notes": "Single-line crop, tight to text bounds."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fagg-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-fagg-v1.webp"
+      },
+      "mapping_reason": "Question 697 asks the student to read the dew point (15°) from the FAGG METAR's temperature/dew point group.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-metar-faup-001",
+      "topic": "Meteorological Reports",
+      "concept": "METAR line for FAUP (Upington).",
+      "question_ids": [738],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 9,
+        "figure": "METAR (Aerodrome Actuals), Northern Cape / FAUP row",
+        "notes": "Single-line crop, tight to text bounds."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/metar-faup-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/metar-faup-v1.webp"
+      },
+      "mapping_reason": "Question 738 asks what the FAUP METAR's CAVOK group implies about cloud below 5,000 ft.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-taf-fadn-001",
+      "topic": "Meteorological Reports",
+      "concept": "TAF line for FADN (Durban).",
+      "question_ids": [690],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 8,
+        "figure": "TAF (Aerodrome Forecasts), KwaZulu-Natal / FADN row",
+        "notes": "Two-line crop of the wrapped FADN TAF entry, tight to text bounds."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fadn-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fadn-v1.webp"
+      },
+      "mapping_reason": "Question 690 asks for the forecast surface wind at FADN during a BECMG window inside this TAF.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-taf-fape-001",
+      "topic": "Meteorological Reports",
+      "concept": "TAF line for FAPE (Port Elizabeth).",
+      "question_ids": [700],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 8,
+        "figure": "TAF (Aerodrome Forecasts), Eastern Cape / FAPE row",
+        "notes": "Three-line crop of the wrapped FAPE TAF entry, tight to text bounds."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fape-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fape-v1.webp"
+      },
+      "mapping_reason": "Question 700 asks for the expected cloud cover/height at FAPE within a TEMPO group in this TAF.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-taf-fagg-001",
+      "topic": "Meteorological Reports",
+      "concept": "TAF line for FAGG (George).",
+      "question_ids": [732],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 8,
+        "figure": "TAF (Aerodrome Forecasts), Western Cape / FAGG row",
+        "notes": "Two-line crop of the wrapped FAGG TAF entry, tight to text bounds."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fagg-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/taf-fagg-v1.webp"
+      },
+      "mapping_reason": "Question 732 asks for the expected weather at FAGG, including the TEMPO heavy-rain group in this TAF.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-upper-winds-15e-001",
+      "topic": "Temperature",
+      "concept": "Upper winds/temperatures grid boxes at 15°E for the 25°S and 30°S rows.",
+      "question_ids": [733, 736],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 16,
+        "figure": "Upper Winds and Temperatures chart, 15E column / 25S and 30S rows",
+        "notes": "Crop spans both adjacent grid boxes since both questions read the same row; verified numerically (733's 221/11 at 4,000 ft = midpoint interpolation between the 3,000 ft and 5,000 ft rows; 736's ISA+7°C = chart's +12°C at 5,000 ft vs ISA 5°C)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-25s-30s-15e-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-25s-30s-15e-v1.webp"
+      },
+      "mapping_reason": "Both questions require reading raw wind/temperature values off this chart at S25°E015°/S30°E015°, one image serves both since they're on the same chart row.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-upper-winds-natal-001",
+      "topic": "Temperature",
+      "concept": "Upper winds/temperatures 'Natal N. Coast' labeled column.",
+      "question_ids": [716],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 16,
+        "figure": "Upper Winds and Temperatures chart, NATAL N.COAST column",
+        "notes": "Verified numerically: 5,000 ft row reads 115/5/21, matching the DB's correct answer of 115°(T)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-natal-north-coast-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/upper-winds-natal-north-coast-v1.webp"
+      },
+      "mapping_reason": "Question 716 asks for the wind direction at 5,000 ft on the Natal North Coast, a named column on this chart.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-sigwx-chart3-pe-ct-001",
+      "topic": "Clouds & Precipitation",
+      "concept": "Significant Weather Chart 3, coastal segment between Port Elizabeth and Cape Town.",
+      "question_ids": [714],
+      "source": {
+        "document": "PPL-MET_5.pdf (Meteorology Manual)",
+        "page": 15,
+        "figure": "Significant Weather - Chart 3, PE/CT coastal region",
+        "notes": "Crop spans the PE and CT station labels plus the intervening front, cloud boxes and present-weather symbols; verified against the DB's answer (drizzle near PE becoming rain approaching CT)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/sigwx-chart3-pe-ct-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/sigwx-chart3-pe-ct-v1.webp"
+      },
+      "mapping_reason": "Question 714 asks what weather an aircraft flying PE to CT along the coast would encounter, requiring the actual chart symbols between those two points.",
+      "status": "LIVE_VERIFIED"
+    }
+  ]
+}

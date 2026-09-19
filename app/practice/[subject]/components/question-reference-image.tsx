@@ -7,6 +7,13 @@ type QuestionReferenceImageProps = {
   alt?: string
 }
 
+const isMetVisual = (src: string) =>
+  src.includes("/explanation-images/meteorology/refined-batch-")
+
+const isApprovedMetRaster = (src: string) =>
+  /\/explanation-images\/meteorology\/refined-batch-(?:1)\//.test(src) &&
+  /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
+
 export function QuestionReferenceImage({
   src,
   alt = "Question reference",
@@ -15,6 +22,11 @@ export function QuestionReferenceImage({
     "loading"
   )
   const [attempt, setAttempt] = useState(0)
+
+  // Fail-closed for the meteorology extraction pipeline: only individually
+  // QA-approved refined-batch crops may render. Anything else under that
+  // path (unmanifested, superseded) stays blocked even if it exists.
+  if (isMetVisual(src) && !isApprovedMetRaster(src)) return null
 
   return (
     <figure className="mx-auto mt-6 w-full max-w-2xl border border-slate-300 bg-slate-50 p-2">

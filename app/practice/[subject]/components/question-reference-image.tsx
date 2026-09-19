@@ -14,6 +14,11 @@ const isApprovedMetRaster = (src: string) =>
   /\/explanation-images\/meteorology\/refined-batch-(?:1)\//.test(src) &&
   /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
+// Station-model crops are small standalone symbols, not a full-width report
+// page, so they skip the grey report-card chrome and stay compact.
+const isStationVisual = (src: string) =>
+  /\/explanation-images\/meteorology\/refined-batch-\d+\/station-\d+-/.test(src)
+
 export function QuestionReferenceImage({
   src,
   alt = "Question reference",
@@ -28,8 +33,16 @@ export function QuestionReferenceImage({
   // path (unmanifested, superseded) stays blocked even if it exists.
   if (isMetVisual(src) && !isApprovedMetRaster(src)) return null
 
+  const bare = isStationVisual(src)
+
   return (
-    <figure className="mx-auto mt-6 w-full max-w-2xl border border-slate-300 bg-slate-50 p-2">
+    <figure
+      className={
+        bare
+          ? "mx-auto mt-6 w-fit max-w-full"
+          : "mx-auto mt-6 w-full max-w-2xl border border-slate-300 bg-slate-50 p-2"
+      }
+    >
       {status === "loading" && (
         <div
           className="flex min-h-36 items-center justify-center px-4 text-center text-sm font-medium text-slate-600"
@@ -48,7 +61,13 @@ export function QuestionReferenceImage({
         fetchPriority="high"
         onLoad={() => setStatus("loaded")}
         onError={() => setStatus("error")}
-        className={status === "loaded" ? "block" : "hidden"}
+        className={
+          status === "loaded"
+            ? bare
+              ? "block max-w-[280px]"
+              : "block"
+            : "hidden"
+        }
       />
 
       {status === "error" && (

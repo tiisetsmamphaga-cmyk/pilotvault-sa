@@ -14,3 +14,6 @@ node_modules
 .next/
 .DS_Store
 *.tsbuildinfo
+
+# Personal Claude Code overrides, not shared with the team
+.claude/settings.local.json

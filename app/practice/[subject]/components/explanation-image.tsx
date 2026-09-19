@@ -121,6 +121,37 @@ function PofExplanationImage({
 }) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [isLandscape, setIsLandscape] = useState(false)
+  const [attempt, setAttempt] = useState(0)
+  const imageRef = useRef<HTMLImageElement>(null)
+
+  const resolvedSrc = useMemo(() => {
+    if (attempt === 0) return src
+    const separator = src.includes("?") ? "&" : "?"
+    return `${src}${separator}pv_retry=${attempt}`
+  }, [attempt, src])
+
+  // A new src can arrive while the previous image's request is still in
+  // flight (e.g. moving between questions). Reset state so a stale
+  // load/error event from the old image can never freeze the new one.
+  useEffect(() => {
+    setStatus("loading")
+    setIsLandscape(false)
+    setAttempt(0)
+  }, [src])
+
+  // An eager image can finish downloading from the server-rendered markup
+  // before React hydrates and attaches onLoad. Reconcile the native image
+  // state after hydration so an already-decoded image never stays stuck.
+  useEffect(() => {
+    const image = imageRef.current
+    if (!image || !image.complete) return
+    if (image.naturalWidth > 0) {
+      setStatus("loaded")
+      setIsLandscape(image.naturalWidth / image.naturalHeight > 1.15)
+    } else {
+      setStatus("error")
+    }
+  }, [resolvedSrc])
 
   return (
     <figure className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
@@ -138,7 +169,9 @@ function PofExplanationImage({
               </div>
             )}
             <img
-              src={src}
+              ref={imageRef}
+              key={`${src}-${attempt}`}
+              src={resolvedSrc}
               alt={alt}
               loading={priority ? "eager" : "lazy"}
               decoding="async"
@@ -154,8 +187,18 @@ function PofExplanationImage({
               className={`block h-auto max-h-[28rem] w-auto max-w-full object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
             />
             {status === "error" && (
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 px-4 text-center text-sm font-medium text-slate-700" role="alert">
-                The explanation diagram could not be loaded.
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-4 text-center text-sm font-medium text-slate-700" role="alert">
+                <span>The explanation diagram could not be loaded.</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setStatus("loading")
+                    setAttempt((currentAttempt) => currentAttempt + 1)
+                  }}
+                  className="border border-[#1f4e79] bg-white px-4 py-2 text-sm font-semibold text-[#1f4e79] hover:bg-blue-50"
+                >
+                  Retry diagram
+                </button>
               </div>
             )}
           </div>

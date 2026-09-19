@@ -120,10 +120,11 @@ function PofExplanationImage({
   priority: boolean
 }) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
+  const [isLandscape, setIsLandscape] = useState(false)
 
   return (
     <figure className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="grid gap-4 bg-[#f6f8fa] p-4 sm:p-6 lg:grid-cols-[1.4fr_1fr]">
+      <div className={`grid gap-4 bg-[#f6f8fa] p-4 sm:p-6 ${isLandscape ? "grid-cols-1" : "lg:grid-cols-[1.4fr_1fr]"}`}>
         <div className="flex flex-col gap-3">
           {title && (
             <div className="text-lg font-extrabold uppercase tracking-[0.02em] text-[#0b1f33] sm:text-xl">
@@ -142,7 +143,13 @@ function PofExplanationImage({
               loading={priority ? "eager" : "lazy"}
               decoding="async"
               fetchPriority={priority ? "high" : "auto"}
-              onLoad={() => setStatus("loaded")}
+              onLoad={(event) => {
+                setStatus("loaded")
+                const image = event.currentTarget
+                if (image.naturalWidth && image.naturalHeight) {
+                  setIsLandscape(image.naturalWidth / image.naturalHeight > 1.15)
+                }
+              }}
               onError={() => setStatus("error")}
               className={`block h-auto max-h-[28rem] w-auto max-w-full object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
             />

@@ -16,11 +16,11 @@
         "document": "PPL-MET_5.pdf (Meteorology Manual)",
         "page": 6,
         "figure": "Synoptic Weather Station Models - 1, Station 2",
-        "notes": "Vector-rendered crop of Station 2's plotted symbol, cropped to content bounds only (grid border excluded per style brief). Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols."
+        "notes": "Vector-rendered crop of Station 2's plotted symbol, cropped to content bounds only (grid border excluded per style brief). Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols. Re-cropped again (v3) to drop the baked-in STATION N title, since the question text already names the station; this shrank the source image itself rather than only its CSS display size."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-2-v2.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-2-v2.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-2-v3.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-2-v3.webp"
       },
       "mapping_reason": "Question 713 asks to read the barometric tendency directly off Station 2's plot; the question is unanswerable without this image.",
       "status": "LIVE_VERIFIED"
@@ -36,11 +36,11 @@
         "document": "PPL-MET_5.pdf (Meteorology Manual)",
         "page": 6,
         "figure": "Synoptic Weather Station Models - 1, Station 4",
-        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols."
+        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols. Re-cropped again (v3) to drop the baked-in STATION N title, since the question text already names the station; this shrank the source image itself rather than only its CSS display size."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-4-v2.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-4-v2.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-4-v3.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-4-v3.webp"
       },
       "mapping_reason": "Question 721 asks which medium cloud symbol Station 4 shows.",
       "status": "LIVE_VERIFIED"
@@ -56,11 +56,11 @@
         "document": "PPL-MET_5.pdf (Meteorology Manual)",
         "page": 6,
         "figure": "Synoptic Weather Station Models - 1, Station 5",
-        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols."
+        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols. Re-cropped again (v3) to drop the baked-in STATION N title, since the question text already names the station; this shrank the source image itself rather than only its CSS display size."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-5-v2.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-5-v2.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-5-v3.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-5-v3.webp"
       },
       "mapping_reason": "Question 715 asks for the 3-hour pressure change plotted on Station 5.",
       "status": "LIVE_VERIFIED"
@@ -76,11 +76,11 @@
         "document": "PPL-MET_5.pdf (Meteorology Manual)",
         "page": 6,
         "figure": "Synoptic Weather Station Models - 1, Station 6",
-        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols."
+        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols. Re-cropped again (v3) to drop the baked-in STATION N title, since the question text already names the station; this shrank the source image itself rather than only its CSS display size."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-6-v2.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-6-v2.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-6-v3.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-6-v3.webp"
       },
       "mapping_reason": "Question 717 asks for the present-weather symbol plotted on Station 6.",
       "status": "LIVE_VERIFIED"
@@ -96,11 +96,11 @@
         "document": "PPL-MET_5.pdf (Meteorology Manual)",
         "page": 7,
         "figure": "Synoptic Weather Station Models - 2, Station 14",
-        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols."
+        "notes": "Vector-rendered crop, content bounds only. Re-cropped smaller (v2) and rendered without card chrome per house style for station symbols. Re-cropped again (v3) to drop the baked-in STATION N title, since the question text already names the station; this shrank the source image itself rather than only its CSS display size."
       },
       "assets": {
-        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-14-v2.png",
-        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-14-v2.webp"
+        "master_asset": "public/explanation-images/meteorology/refined-batch-1/station-14-v3.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-1/station-14-v3.webp"
       },
       "mapping_reason": "Question 724 asks what Station 14's plot shows.",
       "status": "LIVE_VERIFIED"

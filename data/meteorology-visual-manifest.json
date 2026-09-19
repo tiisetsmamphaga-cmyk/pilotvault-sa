@@ -555,6 +555,72 @@
       },
       "mapping_reason": "Directly illustrates warm moist air being chilled as it moves over a colder surface, the defining mechanism these questions ask about.",
       "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-sea-breeze-001",
+      "topic": "Wind",
+      "concept": "Daytime sea breeze circulation: land heats faster than the sea, producing a surface low over land and surface high over water, with air flowing inland at the surface and offshore aloft.",
+      "question_ids": [
+        44,
+        644,
+        653,
+        746
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 98,
+        "figure": "Figure 4.60, Sea Breeze",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (858x662)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/sea-breeze-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/sea-breeze-v1.webp"
+      },
+      "mapping_reason": "All four questions ask when/where a sea breeze develops; the figure explicitly labels the sun, daytime heating, and the resulting L-over-land/H-over-water circulation.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-land-breeze-001",
+      "topic": "Wind",
+      "concept": "Nighttime land breeze circulation: land cools faster than the sea, producing a surface high over land and surface low over water, with air flowing offshore at the surface.",
+      "question_ids": [
+        45,
+        656,
+        658
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 99,
+        "figure": "Figure 4.61, Land Breeze",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1253x972)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/land-breeze-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/land-breeze-v1.webp"
+      },
+      "mapping_reason": "All three questions ask when/where a land breeze develops; the figure explicitly labels the moon, nighttime cooling, and the resulting H-over-land/L-over-water circulation.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-fohn-effect-001",
+      "topic": "Wind",
+      "concept": "The Foehn effect: moist air forced up the windward slope cools, condenses and rains out, then descends the lee slope as dry air that warms at the (faster) dry adiabatic lapse rate, producing a warm, dry downslope wind.",
+      "question_ids": [
+        744,
+        1512
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 96,
+        "figure": "Figure 4.58, The Foehn Effect",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1784x1192)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/fohn-effect-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/fohn-effect-v1.webp"
+      },
+      "mapping_reason": "Both questions ask for the identity/description of a warm, dry downslope wind; the figure directly labels the rain-shadow mechanism and the resulting warm dry air on the lee side.",
+      "status": "LIVE_VERIFIED"
     }
   ]
 }

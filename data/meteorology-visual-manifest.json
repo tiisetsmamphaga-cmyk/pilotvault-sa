@@ -344,7 +344,8 @@
         646,
         676,
         1475,
-        1495
+        1495,
+        1472
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -356,7 +357,7 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/lapse-rate-stability-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/lapse-rate-stability-v1.webp"
       },
-      "mapping_reason": "The chart explicitly labels DALR = 3\u00b0C/1000ft (33, 646), the ELR>DALR absolutely-unstable region (676, 1495), and the DALR<ELR>SALR conditionally-unstable region defined by dry-vs-saturated air (1475). Questions about visibility/cloud characteristics of stable/unstable air (52, 55, 624) were left unmapped since this chart shows lapse-rate regions, not visibility outcomes; their old AI-generated placeholder image was removed rather than force-fit to a weak match.",
+      "mapping_reason": "The chart explicitly labels DALR = 3\u00b0C/1000ft (33, 646), the ELR>DALR absolutely-unstable region (676, 1495), and the DALR<ELR>SALR conditionally-unstable region defined by dry-vs-saturated air (1475). Questions about visibility/cloud characteristics of stable/unstable air (52, 55, 624) were left unmapped since this chart shows lapse-rate regions, not visibility outcomes; their old AI-generated placeholder image was removed rather than force-fit to a weak match. Question 1472 (DALR per 100m) reuses the same chart, since 3.0C/1000ft (labelled) is the same DALR value as 1C/100m.",
       "status": "LIVE_VERIFIED"
     },
     {
@@ -415,7 +416,8 @@
       "concept": "Real sea-level synoptic chart with HIGH, LOW, RIDGE, TROUGH and COL labelled on actual isobar patterns.",
       "question_ids": [
         51,
-        1517
+        1517,
+        668
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -427,7 +429,7 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/pressure-systems-chart-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/pressure-systems-chart-v1.webp"
       },
-      "mapping_reason": "Shows what a trough (wedge of low pressure with converging isobars) actually looks like on a real chart, directly supporting the trough-definition questions.",
+      "mapping_reason": "Shows what a trough (wedge of low pressure with converging isobars) actually looks like on a real chart, directly supporting the trough-definition questions. Question 668 (what a trough is) reuses the same chart and definition.",
       "status": "LIVE_VERIFIED"
     },
     {
@@ -449,7 +451,8 @@
         1489,
         1490,
         1498,
-        1540
+        1540,
+        1467
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -461,7 +464,7 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/cloud-types-chart-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/cloud-types-chart-v1.webp"
       },
-      "mapping_reason": "Directly labels every cloud genus by altitude band and shows Ns spanning low/middle levels and the vertically-developed Cu/Cb column, covering the bulk of the topic's cloud-identification questions in one chart. Questions needing behaviour not shown here (Cb turbulence severity, Ac castellanus, squall lines) were left unmapped.",
+      "mapping_reason": "Directly labels every cloud genus by altitude band and shows Ns spanning low/middle levels and the vertically-developed Cu/Cb column, covering the bulk of the topic's cloud-identification questions in one chart. Questions needing behaviour not shown here (Cb turbulence severity, Ac castellanus, squall lines) were left unmapped. Question 1467 (showers occur mainly from convective clouds) reuses the same chart, which distinguishes cumuliform (convective) from stratiform cloud.",
       "status": "LIVE_VERIFIED"
     },
     {
@@ -471,7 +474,9 @@
       "question_ids": [
         54,
         704,
-        1525
+        1525,
+        698,
+        1466
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -483,7 +488,7 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/thunderstorm-lifecycle-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/thunderstorm-lifecycle-v1.webp"
       },
-      "mapping_reason": "The mature-stage panel explicitly shows simultaneous updrafts and downdrafts, directly answering 704 and 1525; the whole figure identifies the cumulonimbus that dominates the other two questions.",
+      "mapping_reason": "The mature-stage panel explicitly shows simultaneous updrafts and downdrafts, directly answering 704 and 1525; the whole figure identifies the cumulonimbus that dominates the other two questions. Question 698 (cumulonimbus associated with severe turbulence) and 1466 (large hail associated with severe thunderstorms) reuse the same figure, since both are produced specifically in the mature stage it depicts.",
       "status": "LIVE_VERIFIED"
     },
     {
@@ -629,7 +634,8 @@
       "question_ids": [
         67,
         718,
-        728
+        728,
+        723
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -641,7 +647,7 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/coriolis-deflection-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/coriolis-deflection-v1.webp"
       },
-      "mapping_reason": "All three questions ask which way the Coriolis force deflects moving air in the Southern Hemisphere; the figure explicitly shows and labels the leftward curve of the air parcel's path. Questions about the cause of the Coriolis force itself (66, 670 - Earth's rotation) were left unmapped since this figure shows the effect, not the causal mechanism.",
+      "mapping_reason": "All three questions ask which way the Coriolis force deflects moving air in the Southern Hemisphere; the figure explicitly shows and labels the leftward curve of the air parcel's path. Questions about the cause of the Coriolis force itself (66, 670 - Earth's rotation) were left unmapped since this figure shows the effect, not the causal mechanism. Question 723 (left drift indicates flying toward low pressure) reuses the same figure.",
       "status": "LIVE_VERIFIED"
     },
     {
@@ -649,7 +655,8 @@
       "topic": "Wind",
       "concept": "Buys Ballot's Law: with the geostrophic wind blowing left across a low-over-high pressure gradient, an observer with their back to the wind has low pressure on their right in the Southern Hemisphere.",
       "question_ids": [
-        667
+        667,
+        65
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -661,7 +668,7 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/geostrophic-wind-creation-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/geostrophic-wind-creation-v1.webp"
       },
-      "mapping_reason": "With low pressure north and high pressure south and the geostrophic wind blowing west (left), an observer facing downwind (west) has north - and therefore the low - on their right, matching the question's answer exactly.",
+      "mapping_reason": "With low pressure north and high pressure south and the geostrophic wind blowing west (left), an observer facing downwind (west) has north - and therefore the low - on their right, matching the question's answer exactly. Question 65 reuses the same figure directly.",
       "status": "LIVE_VERIFIED"
     },
     {
@@ -709,7 +716,8 @@
       "topic": "Wind",
       "concept": "Mountain (lee) waves forming on the downwind side of a mountain range in a series of standing wave crests.",
       "question_ids": [
-        1533
+        1533,
+        703
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -721,7 +729,7 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/mountain-wave-wavelength-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/mountain-wave-wavelength-v1.webp"
       },
-      "mapping_reason": "Shows the standing wave train forming on the downwind (lee) side of the mountain, directly matching the question's answer.",
+      "mapping_reason": "Shows the standing wave train forming on the downwind (lee) side of the mountain, directly matching the question's answer. Question 703 (mountain wave turbulence with strong wind over a ridge in stable conditions) reuses the same figure, since it depicts exactly that scenario.",
       "status": "LIVE_VERIFIED"
     },
     {
@@ -776,7 +784,8 @@
       "question_ids": [
         71,
         72,
-        745
+        745,
+        1494
       ],
       "source": {
         "document": "PPL4 - Metreolology (1)_compressed.pdf",
@@ -788,7 +797,509 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/sa-airmasses-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/sa-airmasses-v1.webp"
       },
-      "mapping_reason": "Question 71 asks how an air mass approaching from Antarctica is classified; the figure shows the mP arrow arriving into South Africa from the Southern Ocean. Questions 72 and 745 ask what a continental air mass is; the figure labels cT directly over the African interior landmass, the book's own depiction of a continental source region. Questions about polar maritime air's properties at its cold source (70, 687 - cold, moist, stable) were left unmapped since this map shows only classification and origin, not those properties.",
+      "mapping_reason": "Question 71 asks how an air mass approaching from Antarctica is classified; the figure shows the mP arrow arriving into South Africa from the Southern Ocean. Questions 72 and 745 ask what a continental air mass is; the figure labels cT directly over the African interior landmass, the book's own depiction of a continental source region. Questions about polar maritime air's properties at its cold source (70, 687 - cold, moist, stable) were left unmapped since this map shows only classification and origin, not those properties. Question 1494 (definition of an air mass as a large body with uniform temperature/moisture) reuses the same map, since each labelled region (mP, cT, mTw, mTk) is a concrete depiction of exactly that concept.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-carb-icing-chart-001",
+      "topic": "Aircraft Performance",
+      "concept": "Carburettor icing probability chart plotting temperature against dewpoint, with serious/moderate/light icing risk bands, in air free of cloud, fog or precipitation.",
+      "question_ids": [
+        69
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 125,
+        "figure": "Figure 4.77, Carburettor Icing - Temperature Ranges",
+        "notes": "Embedded born-digital raster (JPX) extracted directly from the page at native resolution (1468x1425)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/carb-icing-chart-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/carb-icing-chart-v1.webp"
+      },
+      "mapping_reason": "Question 69 asks the highest OAT at which carburettor icing may occur; the chart shows the light-icing band extending to roughly +38-40C along its diagonal boundary. Question 68 (rough running/RPM symptom) was left unmapped since this chart shows risk conditions, not symptoms.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-frontal-symbols-001",
+      "topic": "Fronts",
+      "concept": "Chart of the standard surface-front symbols used on weather charts: warm (red), cold (blue), stationary (alternating red/blue) and occluded (purple).",
+      "question_ids": [
+        1469
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 105,
+        "figure": "Figure 4.64, Frontal Symbols",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1683x954)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/frontal-symbols-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/frontal-symbols-v1.webp"
+      },
+      "mapping_reason": "Question 1469 asks what a stationary front is; the chart directly shows its symbol alternating warm/cold segments, distinguishing it from a front that is actively advancing. Questions 712 (pressure trend after cold front passage), 1464 (relative front speed), and 730/1514 (frontal fog location) were left unmapped since none of those are shown in this symbol chart or any other figure found in the book.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-gases-in-atmosphere-001",
+      "topic": "Atmosphere",
+      "concept": "Pie chart of atmospheric composition by volume: Nitrogen 78%, Oxygen 21%, remaining 1% split among carbon dioxide, argon and other gases.",
+      "question_ids": [
+        12,
+        13,
+        623,
+        630
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 4,
+        "figure": "Figure 4.1, Gases in the Atmosphere",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1473x1102)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/gases-in-atmosphere-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/gases-in-atmosphere-v1.webp"
+      },
+      "mapping_reason": "All four questions ask the percentage of oxygen or nitrogen in the atmosphere; the pie chart shows both proportions directly.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-tropopause-heights-001",
+      "topic": "Atmosphere",
+      "concept": "Diagram showing the tropopause height varying between about 8 km (polar regions, winter, lowest) and 18 km (equatorial regions, summer, highest).",
+      "question_ids": [
+        9,
+        637
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 7,
+        "figure": "Figure 4.3, Heights of the Tropopause",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1270x1268)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/tropopause-heights-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/tropopause-heights-v1.webp"
+      },
+      "mapping_reason": "Both questions ask where/when the troposphere is at its greatest height; this figure explicitly labels the equatorial-summer maximum and polar-winter minimum, unlike the generic single-profile atmosphere-structure figure.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-isa-summary-001",
+      "topic": "Atmosphere",
+      "concept": "Full ISA temperature/pressure-vs-altitude profile from sea level through the tropopause (36,090 ft) to the stratopause (104,987 ft), with the -56.5C tropopause temperature and -44.5C stratopause temperature labelled.",
+      "question_ids": [
+        627,
+        639,
+        28,
+        29,
+        30,
+        31,
+        638
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 9,
+        "figure": "Figure 4.4, The International Standard Atmosphere",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1603x2174)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/isa-summary-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/isa-summary-v1.webp"
+      },
+      "mapping_reason": "Question 627 asks for the ISA MSL temperature and lapse rate up to 36,090 ft; this figure is the book's own labelled ISA profile showing exactly those values. Question 639 (ISA temperature lapse rate) reuses the same figure, since 1.98C/1000ft is labelled directly on this ISA profile. Questions 28-31 and 638 (ISA lapse rate, sea-level temperature and lapse-rate term) all reuse the same labelled ISA profile.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-pressure-vs-temp-column-001",
+      "topic": "Air Density",
+      "concept": "Two equal-mass air columns (cold, 15C and warm, 30C) both reaching the same 700 hPa level at the top with the same surface pressure, showing the warm column is taller because the same mass occupies more volume when warm.",
+      "question_ids": [
+        16,
+        621
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 10,
+        "figure": "Figure 4.5, Atmospheric Pressure vs Temperature",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1863x1166)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/pressure-vs-temp-column-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/pressure-vs-temp-column-v1.webp"
+      },
+      "mapping_reason": "Questions 16 and 621 both ask the effect on density of increasing temperature at constant pressure; the figure directly shows equal-mass columns occupying different volumes at the same pressure, the mechanism behind that relationship. Questions 14/632/640 (humidity vs density), 15/629 (pressure vs density at constant temperature), 19 (density altitude definition) and 32/649 (ISA sea-level density value) were left unmapped since no genuine figure for those specific relationships or values exists in this textbook.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-adiabatic-heating-cooling-001",
+      "topic": "Stability & Lapse Rates",
+      "concept": "Balloons rising and expanding as air pressure decreases with altitude, with thermometers showing cooler readings aloft, illustrating adiabatic cooling on ascent (and by implication, warming on descent).",
+      "question_ids": [
+        648,
+        39,
+        1509
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 32,
+        "figure": "Figure 4.23, Adiabatic Heating and Cooling",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1795x1256)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/adiabatic-heating-cooling-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/adiabatic-heating-cooling-v1.webp"
+      },
+      "mapping_reason": "Question 648 asks what an adiabatic process is; the figure directly shows a parcel of air expanding and cooling at altitude with no heat added or removed, the defining mechanism. Question 39 (adiabatic cooling definition) reuses the same figure. Question 1509 (sinking air warms by compression, hence cloudless) reuses the same figure.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-convergence-divergence-001",
+      "topic": "Stability & Lapse Rates",
+      "concept": "Diagram of surface convergence feeding uplift beneath a low, and surface divergence fed by subsidence beneath a high, with the reversed pattern aloft near the tropopause.",
+      "question_ids": [
+        739,
+        740,
+        743,
+        726,
+        1513,
+        48,
+        674
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 90,
+        "figure": "Figure 4.55, Areas of Convergence and Divergence",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1725x1288)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/convergence-divergence-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/convergence-divergence-v1.webp"
+      },
+      "mapping_reason": "Questions 739 (air forced to rise by convergence), 740 (what convergence is associated with) and 743 (what divergence is associated with) are all directly answered by this figure, which labels convergence/uplift/low pressure and divergence/subsidence/high pressure explicitly. Questions 726/1513 (ridge/subsidence) and 48/674 (air flows high to low) reuse the same figure.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-dalr-salr-transition-001",
+      "topic": "Humidity",
+      "concept": "Temperature-vs-height chart of a rising parcel cooling at the DALR until it reaches its dew point/condensation level, then more slowly at the SALR as latent heat is released; also plots the dew point lapse rate (DPLR) of the surrounding air.",
+      "question_ids": [
+        37,
+        642,
+        643,
+        1479,
+        1486,
+        1499
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 35,
+        "figure": "Figure 4.25, Temperature Changes Due to Adiabatic Cooling",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1773x1363)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/dalr-salr-transition-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/dalr-salr-transition-v1.webp"
+      },
+      "mapping_reason": "Questions 37/642/643/1479 (what dew point means) are answered by the labelled condensation level, where the rising parcel becomes saturated. 1499 (saturated = 100% RH) is the same point. 1486 (which change of state releases latent heat) is answered by the explicit SALR annotation. Questions 38/666 (temperature/dewpoint spread narrowing indicating fog) and 17 (humid air is less dense) and 1462 (supercooled droplet definition) were left unmapped since no genuine figure for those specific points exists in this textbook.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-mountain-wave-lenticular-001",
+      "topic": "Wind",
+      "concept": "Cross-section of mountain wave airflow showing cap cloud on the peak, lenticular clouds at each downwind standing-wave crest, and rotor clouds marking severe low-level turbulence.",
+      "question_ids": [
+        1508,
+        57,
+        706,
+        707,
+        58
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 139,
+        "figure": "Figure 4.82 (unlabelled in running text as such, referenced near Figure 4.82/4.84)",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1318x893)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/mountain-wave-lenticular-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/mountain-wave-lenticular-v1.webp"
+      },
+      "mapping_reason": "Question 1508 asks which cloud type may indicate severe turbulence near mountains; this figure explicitly labels lenticular cloud at the wave crests and rotor cloud (severe low-level turbulence) beneath them, a more direct match than the simpler wavelength-only chart used for questions 703/1533. Questions 57/706/707 (lenticular cloud identification and turbulence expectation) and 58 (rotor cloud severe turbulence) reuse the same labelled figure.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-surface-inversion-001",
+      "topic": "Temperature",
+      "concept": "Temperature-vs-altitude profile showing a shallow surface layer where temperature rises with height (an inversion) over a cooled surface, before resuming the normal decrease with altitude above it.",
+      "question_ids": [
+        40,
+        41,
+        647,
+        655,
+        711,
+        1473,
+        1476
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 37,
+        "figure": "Figure 4.26, Surface Inversion",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1653x1477)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/surface-inversion-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/surface-inversion-v1.webp"
+      },
+      "mapping_reason": "All seven questions ask what an inversion is or what causes a surface inversion; the figure directly plots temperature rising with altitude near the surface, labelled \"air over cold surface\" and \"warmer air above\".",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-latitude-insolation-001",
+      "topic": "Temperature",
+      "concept": "Diagram of the sun's rays arriving direct and concentrated at the equator versus oblique and diffuse near the poles, with the equator receiving about 2.5 times more energy annually than the poles.",
+      "question_ids": [
+        34,
+        661
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 29,
+        "figure": "Figure 4.20, Effect of Latitude on Incoming Insolation",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1625x1051)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/latitude-insolation-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/latitude-insolation-v1.webp"
+      },
+      "mapping_reason": "Both questions ask what insolation means; the figure is the book's own diagram of incoming solar radiation heating the surface, directly illustrating the term.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-sa-summer-weather-001",
+      "topic": "South African Weather",
+      "concept": "Satellite image of Africa with the ITCZ traced south of the equator during summer, plus the surrounding Atlantic and Indian Ocean subtropical highs and an associated low over the eastern interior.",
+      "question_ids": [
+        677,
+        1541,
+        1535,
+        696,
+        78
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 148,
+        "figure": "Figure 4.86, South African Summer Weather",
+        "notes": "Embedded born-digital raster (EUMETSAT satellite image with overlay) extracted directly from the page at native resolution (1840x1840)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/sa-summer-weather-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/sa-summer-weather-v1.webp"
+      },
+      "mapping_reason": "Questions 677 and 1541 (ITCZ displacement/definition) are answered directly by the labelled ITCZ line south of the equator. 1535 (weather within the ITCZ) is shown by the dense convective cloud along that line. 696 and 78 (SA summer circulation) are shown by the labelled Atlantic/Indian Ocean highs driving the surrounding flow.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-cape-doctor-001",
+      "topic": "South African Weather",
+      "concept": "Satellite image with anti-cyclonic flow arrows around a South Atlantic high, labelled as the cause of the Cape Doctor / South Easter wind over the Western Cape.",
+      "question_ids": [
+        76,
+        1503
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 152,
+        "figure": "Unnumbered figure accompanying the Cape Doctor section",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1860x1167)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/cape-doctor-map-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/cape-doctor-map-v1.webp"
+      },
+      "mapping_reason": "Question 76 (what the Cape Doctor is) is answered directly by the labelled anticyclonic flow producing the south-easterly wind. Question 1503 (trade wind direction in the Southern Hemisphere) reuses it since the text identifies this South Easter as \"basically a trade wind\".",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-black-south-easter-001",
+      "topic": "South African Weather",
+      "concept": "Satellite image with a deep low over the interior and an intense South Atlantic high, labelled as producing the rain-bearing Black South Easter.",
+      "question_ids": [
+        77,
+        747
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 154,
+        "figure": "Unnumbered figure accompanying the Black South Easter section",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1840x1149)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/black-south-easter-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/black-south-easter-v1.webp"
+      },
+      "mapping_reason": "Questions 77 and 747 both ask what causes the Black South Easter; the figure is the books own labelled explanation of the deep-low-plus-intense-high combination.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-bergwind-mechanism-001",
+      "topic": "South African Weather",
+      "concept": "Satellite image showing warm moist Indian Ocean air rising and drying over the escarpment, then descending as hot dry offshore bergwind, with Buys Ballots Law annotated.",
+      "question_ids": [
+        73,
+        74,
+        75,
+        754
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 156,
+        "figure": "Unnumbered figure accompanying the Berg Wind section",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1845x1156)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/bergwind-coastal-low-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/bergwind-coastal-low-v1.webp"
+      },
+      "mapping_reason": "Questions 73/74/75/754 all ask what a Berg Wind is or what causes it; the figure directly labels the hot, dry offshore flow and its high-pressure source.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-coastal-low-formation-001",
+      "topic": "South African Weather",
+      "concept": "Cross-section showing a hot, dry bergwind flowing offshore aloft while cool, moist air is drawn onshore at the surface to fill the resulting coastal low.",
+      "question_ids": [
+        734,
+        699,
+        750
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 157,
+        "figure": "Unnumbered cross-section accompanying the Coastal Low section",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1837x957)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/coastal-low-formation-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/coastal-low-formation-v1.webp"
+      },
+      "mapping_reason": "Question 734 (what initiates coastal lows) is answered directly by the offshore bergwind aloft. Question 699 (coastal low weather) reuses it since the cool, moist onshore surface flow it shows is described in the surrounding text as bringing overcast conditions, drizzle and fog. Question 750 (south-westerly buster) reuses it since that wind is the high ridging in behind this same coastal low. Questions 682/751/753 (specific frontal-passage wind/pressure behaviour) and 741/742 (polar maritime air mass properties) and 1502/1516 (tropical cyclone specifics) were left unmapped since no genuine figure for those exists in this textbook.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-upslope-fog-001",
+      "topic": "Clouds & Precipitation",
+      "concept": "Warm air forced up the face of a mountain, cooling adiabatically until it condenses into cloud sitting directly on the high ground (upslope/hill fog).",
+      "question_ids": [
+        1488
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 82,
+        "figure": "Figure 4.47, Upslope Fog",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (750x410)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/upslope-fog-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/upslope-fog-v1.webp"
+      },
+      "mapping_reason": "Question 1488 asks when hill fog is most likely; this figure directly shows humid air forced up a slope cooling adiabatically to condensation, the same mechanism the book calls upslope fog.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-qne-setting-001",
+      "topic": "Pressure",
+      "concept": "Cross-section of an aircraft with QNE (1013 hPa) set, showing it flies at a flight level above the floating 1013 hPa datum rather than above true sea level.",
+      "question_ids": [
+        20,
+        620,
+        631
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 20,
+        "figure": "Unnumbered figure accompanying the QNE section",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1863x1236)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/qne-setting-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/qne-setting-v1.webp"
+      },
+      "mapping_reason": "All three questions ask what QNE is/reads; the figure shows 1013 hPa set and the resulting pressure-altitude reading directly.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-qfe-setting-001",
+      "topic": "Pressure",
+      "concept": "Cross-section of an aircraft with QFE (airfield-level pressure) set, showing zero on the ground and height above the airfield in flight, plus the QFE-from-QNH calculation.",
+      "question_ids": [
+        23,
+        24,
+        625,
+        626,
+        755,
+        1470
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 21,
+        "figure": "Unnumbered figure accompanying the QFE section",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1850x1034)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/qfe-setting-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/qfe-setting-v1.webp"
+      },
+      "mapping_reason": "All six questions ask what QFE reads on the ground/in flight or how to calculate it; the figure shows both directly, including the worked QFE-from-QNH calculation using airfield elevation.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-qnh-setting-001",
+      "topic": "Pressure",
+      "concept": "Cross-section of an aircraft with QNH set showing altitude above mean sea level, with the 1013 hPa QNE datum sitting above true sea level when QNH is below 1013.",
+      "question_ids": [
+        21,
+        25,
+        633,
+        635
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 23,
+        "figure": "Figure 4.15, QNH LESS than 1013 hPa",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1863x1044)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/qnh-less-1013-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/qnh-less-1013-v1.webp"
+      },
+      "mapping_reason": "All four questions ask what QNH reads; the figure shows the altimeter reading altitude above mean sea level directly.",
+      "status": "LIVE_VERIFIED"
+    },
+    {
+      "visual_id": "met-altimeter-pressure-error-001",
+      "topic": "Pressure",
+      "concept": "Cross-section of an aircraft flying with an altimeter setting that no longer matches actual pressure, showing indicated altitude 4,000 ft against actual altitude 3,700 ft (a 300 ft over-read from a 10 hPa high setting).",
+      "question_ids": [
+        49,
+        710,
+        50,
+        26,
+        27,
+        619,
+        641
+      ],
+      "source": {
+        "document": "PPL4 - Metreolology (1)_compressed.pdf",
+        "page": 25,
+        "figure": "Figure 4.17, Typical Altimeter Error Made By Pilots",
+        "notes": "Embedded born-digital raster extracted directly from the page at native resolution (1823x954)."
+      },
+      "assets": {
+        "master_asset": "public/explanation-images/meteorology/refined-batch-2/altimeter-error-v1.png",
+        "web_asset": "public/explanation-images/meteorology/refined-batch-2/altimeter-error-v1.webp"
+      },
+      "mapping_reason": "Questions 49/710 (over-read flying high to low pressure) and 50 (under-read flying low to high) are the general form of exactly the scenario this figure works numerically. Questions 26/27/619/641 (overnight pressure change inferred from a changed altimeter reading) are the same mechanism applied over time rather than over a flight path.",
       "status": "LIVE_VERIFIED"
     }
   ]

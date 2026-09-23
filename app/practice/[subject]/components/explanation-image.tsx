@@ -81,16 +81,31 @@ export function ExplanationImage({
     /\/explanation-images\/meteorology\/refined-batch-(?:2)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
-  // POF, HP and Meteorology are fail-closed. Only individually QA-approved
-  // refined raster batches may render. Legacy, bulk-generated, unmanifested
-  // and vector assets stay blocked even when they exist on an old branch or
-  // deployment.
+  const isRtVisual = src.includes("/explanation-images/radio-telephony/refined-batch-")
+  const isApprovedRtRaster =
+    /\/explanation-images\/radio-telephony\/refined-batch-(?:1)\//.test(src) &&
+    /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
+
+  const isAirLawVisual = src.includes("/explanation-images/air-law/refined-batch-")
+  const isApprovedAirLawRaster =
+    /\/explanation-images\/air-law\/refined-batch-(?:1)\//.test(src) &&
+    /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
+
+  // POF, HP, Meteorology, Radio Telephony and Air Law are fail-closed. Only
+  // individually QA-approved refined raster batches may render. Legacy,
+  // bulk-generated, unmanifested and vector assets stay blocked even when
+  // they exist on an old branch or deployment.
   if (isPofVisual && !isApprovedPofRaster) return null
   if (isHpVisual && !isApprovedHpRaster) return null
   if (isMetVisual && !isApprovedMetRaster) return null
+  if (isRtVisual && !isApprovedRtRaster) return null
+  if (isAirLawVisual && !isApprovedAirLawRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
 
-  const cardTemplate = isPofVisual || isHpVisual || isMetVisual ? parsePofTemplate(template) : null
+  const cardTemplate =
+    isPofVisual || isHpVisual || isMetVisual || isRtVisual || isAirLawVisual
+      ? parsePofTemplate(template)
+      : null
   if (cardTemplate) {
     return (
       <PofExplanationImage

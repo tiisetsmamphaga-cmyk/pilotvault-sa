@@ -91,6 +91,13 @@ export function ExplanationImage({
     /\/explanation-images\/air-law\/refined-batch-(?:1)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
+  // Navigation refined batches are gated the same way; legacy navigation
+  // SVGs outside refined-batch folders keep the standard renderer.
+  const isNavVisual = src.includes("/explanation-images/navigation/refined-batch-")
+  const isApprovedNavRaster =
+    /\/explanation-images\/navigation\/refined-batch-(?:1)\//.test(src) &&
+    /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
+
   // POF, HP, Meteorology, Radio Telephony and Air Law are fail-closed. Only
   // individually QA-approved refined raster batches may render. Legacy,
   // bulk-generated, unmanifested and vector assets stay blocked even when
@@ -100,10 +107,11 @@ export function ExplanationImage({
   if (isMetVisual && !isApprovedMetRaster) return null
   if (isRtVisual && !isApprovedRtRaster) return null
   if (isAirLawVisual && !isApprovedAirLawRaster) return null
+  if (isNavVisual && !isApprovedNavRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
 
   const cardTemplate =
-    isPofVisual || isHpVisual || isMetVisual || isRtVisual || isAirLawVisual
+    isPofVisual || isHpVisual || isMetVisual || isRtVisual || isAirLawVisual || isNavVisual
       ? parsePofTemplate(template)
       : null
   if (cardTemplate) {

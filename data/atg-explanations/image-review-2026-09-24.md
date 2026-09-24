@@ -214,3 +214,114 @@ The removed mappings (URL, title, caption) are backed up in `removed-images-2026
 - `q2418-shimmy-damper`
 - `q2441-torque-links`
 - `q2444-shimmy-worn-torque-links`
+
+## Round 2 (same day)
+
+The remaining drawn infographic-style diagrams were judged too simplistic and removed, together with textbook scans too poor to read.
+101 images were removed and unlinked from 127 questions. The mappings are backed up in `removed-images-2026-09-24-round2.json`.
+
+ATG images still in use: 9 questions with clear textbook figures (braced monoplane, cooling fins, gear pump and relief valve, cowl flaps, baffles, hydraulic brakes, oil pressure gauge) and 64 FAA handbook (PHAK) instrument diagrams, all in `clean-v1/`.
+
+| Image | Questions | Reason |
+|---|---|---|
+| `carburettor-icing-v1` | 2478, 2485, 2492, 2515 | drawn infographic diagram: too simplistic |
+| `q2418-shimmy-damper` | 2418 | drawn infographic diagram: too simplistic |
+| `q2420-tyre-size-section-width` | 2420 | drawn infographic diagram: too simplistic |
+| `q2421-semi-monocoque-fuselage` | 2421, 2456 | drawn infographic diagram: too simplistic |
+| `q2424-torsion-load` | 2424 | drawn infographic diagram: too simplistic |
+| `q2425-split-flap` | 2425 | drawn infographic diagram: too simplistic |
+| `q2427-adjustable-trim-tab` | 2427 | drawn infographic diagram: too simplistic |
+| `q2429-truss-longerons` | 2429, 2454 | drawn infographic diagram: too simplistic |
+| `q2430-wing-rear-spar` | 2430 | drawn infographic diagram: too simplistic |
+| `q2431-under-inflated-tyre-wear` | 2431 | drawn infographic diagram: too simplistic |
+| `q2432-cg-too-far-aft` | 2432, 2449 | drawn infographic diagram: too simplistic |
+| `q2435-propeller-helical-twist` | 2435 | drawn infographic diagram: too simplistic |
+| `q2436-stall-warning-vane` | 2436 | drawn infographic diagram: too simplistic |
+| `q2437-tyre-creep` | 2437, 2438, 2455 | drawn infographic diagram: too simplistic |
+| `q2439-centre-of-pressure-movement` | 2439 | drawn infographic diagram: too simplistic |
+| `q2440-wing-main-spar` | 2440, 2458 | drawn infographic diagram: too simplistic |
+| `q2441-torque-links` | 2441, 2766 | drawn infographic diagram: too simplistic |
+| `q2442-tyre-size-bead-diameter` | 2442 | drawn infographic diagram: too simplistic |
+| `q2443-slotted-flap` | 2443 | drawn infographic diagram: too simplistic |
+| `q2444-shimmy-worn-torque-links` | 2444 | drawn infographic diagram: too simplistic |
+| `q2445-oleo-under-extension` | 2445 | drawn infographic diagram: too simplistic |
+| `q2446-fowler-flap` | 2446, 2466 | drawn infographic diagram: too simplistic |
+| `q2448-oleo-leg-operation` | 2448 | drawn infographic diagram: too simplistic |
+| `q2451-plain-flap` | 2451 | drawn infographic diagram: too simplistic |
+| `q2453-oleo-over-extension` | 2453 | drawn infographic diagram: too simplistic |
+| `q2457-monocoque-structure` | 2457 | drawn infographic diagram: too simplistic |
+| `q2459-tyre-size-outside-diameter` | 2459 | drawn infographic diagram: too simplistic |
+| `q2460-over-inflated-tyre-wear` | 2460 | drawn infographic diagram: too simplistic |
+| `q2461-wing-ribs` | 2461 | drawn infographic diagram: too simplistic |
+| `q2464-tailplane-up-or-down-force` | 2464 | drawn infographic diagram: too simplistic |
+| `q2468-float-type-carburettor-v2` | 2468 | drawn infographic diagram: too simplistic |
+| `q2469-fuel-tank-baffles-v2` | 2469 | drawn infographic diagram: too simplistic |
+| `q2470-mixture-rich` | 2470, 2480, 2495 | drawn infographic diagram: too simplistic |
+| `q2472-mixture-lean` | 2472, 2479, 2490, 2509 | drawn infographic diagram: too simplistic |
+| `q2474-valve-lead` | 2474 | textbook labels too small to read |
+| `q2475-fine-pitch-take-off` | 2475 | drawn infographic diagram: too simplistic |
+| `q2482-engine-primer` | 2482, 2501 | drawn infographic diagram: too simplistic |
+| `q2484-power-increase-sequence` | 2484, 2737 | drawn infographic diagram: too simplistic |
+| `q2488-fuel-outlet-above-sump` | 2488 | drawn infographic diagram: too simplistic |
+| `q2497-coarse-pitch-cruise` | 2497 | drawn infographic diagram: too simplistic |
+| `q2499-smooth-throttle-handling` | 2499 | drawn infographic diagram: too simplistic |
+| `q2500-carburettor-icing-symptoms` | 2500 | drawn infographic diagram: too simplistic |
+| `q2502-fuel-pressure-gauge-v2` | 2502 | drawn infographic diagram: too simplistic |
+| `q2504-avgas-100ll-blue` | 2504 | drawn infographic diagram: too simplistic |
+| `q2505-fuel-tank-venting` | 2483, 2750 | drawn infographic diagram: too simplistic |
+| `q2507-warm-fuel-absorbs-water` | 2507 | drawn infographic diagram: too simplistic |
+| `q2510-full-tanks-condensation` | 2510 | drawn infographic diagram: too simplistic |
+| `q2511-accelerator-pump` | 2511, 2516 | drawn infographic diagram: too simplistic |
+| `q2514-fixed-pitch-dive-rpm` | 2514 | drawn infographic diagram: too simplistic |
+| `q2518-high-temp-low-pressure` | 2518 | drawn infographic diagram: too simplistic |
+| `q2523-hydraulic-fluid-phosphate-purple` | 2523 | drawn infographic diagram: too simplistic |
+| `q2528-spark-plug-normal` | 2528 | drawn infographic diagram: too simplistic |
+| `q2529-oil-pressure-gauge-position` | 2529 | drawn infographic diagram: too simplistic |
+| `q2530-dry-sump-scavenge-pump` | 2530 | textbook labels too small to read |
+| `q2531-oil-cooler-position` | 2531 | drawn infographic diagram: too simplistic |
+| `q2533-oil-cooler-ram-air` | 2533 | dark, blurry photo |
+| `q2534-oil-temperature-position` | 2534 | drawn infographic diagram: too simplistic |
+| `q2537-hydraulic-fluid-vegetable-blue` | 2537 | drawn infographic diagram: too simplistic |
+| `q2538-hydraulic-fluid-mineral-red` | 2538 | drawn infographic diagram: too simplistic |
+| `q2543-wet-sump-system` | 2543 | drawn infographic diagram: too simplistic |
+| `q2545-hydraulic-fluids-never-mix` | 2545 | drawn infographic diagram: too simplistic |
+| `q2549-crankshaft-bearing-lubrication` | 2549 | small, low-resolution photo |
+| `q2554-ignition-timing-fixed` | 2554 | drawn infographic diagram: too simplistic |
+| `q2556-ignition-timing-btdc` | 2556 | drawn infographic diagram: too simplistic |
+| `q2557-spark-plug-rich-mixture` | 2557 | drawn infographic diagram: too simplistic |
+| `q2560-valve-overlap` | 2560 | textbook labels too small to read |
+| `q2577-left-zero-ammeter` | 2577 | drawn infographic diagram: too simplistic |
+| `q2579-centre-zero-ammeter` | 2579 | drawn infographic diagram: too simplistic |
+| `q2582-ammeter-voltmeter` | 2582 | drawn infographic diagram: too simplistic |
+| `q2585-alternator-stator` | 2585 | drawn infographic diagram: too simplistic |
+| `q2589-alternator-vs-generator-low-rpm` | 2580, 2589 | drawn infographic diagram: too simplistic |
+| `q2590-capacitor` | 2590 | drawn infographic diagram: too simplistic |
+| `q2596-low-tension-transformer` | 2596 | drawn infographic diagram: too simplistic |
+| `q2604-resistor` | 2604 | drawn infographic diagram: too simplistic |
+| `q2607-inverter` | 2607, 2734 | drawn infographic diagram: too simplistic |
+| `q2609-battery-electrolyte` | 2586, 2609 | drawn infographic diagram: too simplistic |
+| `q2610-alternator-rectifier` | 2573, 2597, 2610 | drawn infographic diagram: too simplistic |
+| `q2611-voltmeter` | 2611 | drawn infographic diagram: too simplistic |
+| `q2612-battery-24v-cells` | 2612 | drawn infographic diagram: too simplistic |
+| `q2614-alternator-purpose` | 2614 | drawn infographic diagram: too simplistic |
+| `q2616-ivsi-no-lag` | 2616 | drawn infographic diagram: too simplistic |
+| `q2663-gyro-rigidity-factors` | 2663, 2732 | drawn infographic diagram: too simplistic |
+| `q2673-load-factor-level-turn` | 2673 | drawn infographic diagram: too simplistic |
+| `q2674-deviation-card` | 2674 | drawn infographic diagram: too simplistic |
+| `q2692-afm-supplements` | 2692 | drawn infographic diagram: too simplistic |
+| `q2725-constant-speed-drive` | 2725 | drawn infographic diagram: too simplistic |
+| `q2729-over-leaning` | 2729 | drawn infographic diagram: too simplistic |
+| `q2730-otto-cycle` | 2730 | drawn infographic diagram: too simplistic |
+| `q2733-dynamic-pressure` | 2733 | drawn infographic diagram: too simplistic |
+| `q2741-wastegate-stuck-closed` | 2741 | drawn infographic diagram: too simplistic |
+| `q2742-power-torque-angular-speed` | 2742 | drawn infographic diagram: too simplistic |
+| `q2743-trim-tab-purpose` | 2743 | drawn infographic diagram: too simplistic |
+| `q2744-carburettor-fuel-strainer` | 2744 | drawn infographic diagram: too simplistic |
+| `q2747-mixture-richens-with-altitude` | 2747 | drawn infographic diagram: too simplistic |
+| `q2757-tubeless-tyre` | 2757 | drawn infographic diagram: too simplistic |
+| `q2759-t-tail` | 2759 | drawn infographic diagram: too simplistic |
+| `q2762-mass-balance-flutter` | 2762 | grainy, low-resolution photo |
+| `q2763-adverse-aileron-yaw` | 2763 | drawn infographic diagram: too simplistic |
+| `q2764-frise-aileron` | 2764 | drawn infographic diagram: too simplistic |
+| `q2771-asi-calibration` | 2771 | drawn infographic diagram: too simplistic |
+| `q2772-spark-plug-oil-fouling` | 2772 | drawn infographic diagram: too simplistic |

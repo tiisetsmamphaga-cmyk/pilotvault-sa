@@ -1,0 +1,764 @@
+[
+ {
+  "id": 2418,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2418-shimmy-damper.webp",
+  "explanation_image_title": "SHIMMY DAMPER",
+  "explanation_image_caption": "Nose-wheel shimmy is controlled by a shimmy damper."
+ },
+ {
+  "id": 2420,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2420-tyre-size-section-width.webp",
+  "explanation_image_title": "TYRE SIZE: 28 x 12.00-10",
+  "explanation_image_caption": "The middle figure, 12.00, is the tyre's section width in inches."
+ },
+ {
+  "id": 2421,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2421-semi-monocoque-fuselage.webp",
+  "explanation_image_title": "SEMI-MONOCOQUE FUSELAGE",
+  "explanation_image_caption": "Formers and stringers keep the shape while the stressed skin shares the flight and ground loads."
+ },
+ {
+  "id": 2424,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2424-torsion-load.webp",
+  "explanation_image_title": "TORSION: A TWISTING LOAD",
+  "explanation_image_caption": "Torsion is a twisting load about a member's long axis that the airframe must resist without permanent deformation."
+ },
+ {
+  "id": 2425,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2425-split-flap.webp",
+  "explanation_image_title": "SPLIT FLAP VS OTHER FLAP TYPES",
+  "explanation_image_caption": "A split flap deflects only the lower rear surface; the upper surface stays fixed."
+ },
+ {
+  "id": 2427,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2427-adjustable-trim-tab.webp",
+  "explanation_image_title": "ADJUSTABLE TRIM TAB",
+  "explanation_image_caption": "An adjustable trim tab keeps its pilot-selected angle relative to the elevator as the elevator moves."
+ },
+ {
+  "id": 2429,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2429-truss-longerons.webp",
+  "explanation_image_title": "TRUSS FUSELAGE: LONGERONS",
+  "explanation_image_caption": "In a truss (girder) fuselage the longerons are the main longitudinal load-carrying members."
+ },
+ {
+  "id": 2430,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2430-wing-rear-spar.webp",
+  "explanation_image_title": "WING STRUCTURE: REAR SPAR",
+  "explanation_image_caption": "Ailerons and flaps are usually attached to the rear (auxiliary) spar."
+ },
+ {
+  "id": 2431,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2431-under-inflated-tyre-wear.webp",
+  "explanation_image_title": "UNDER-INFLATED TYRE WEAR",
+  "explanation_image_caption": "Under-inflation concentrates wear on the outer edges (shoulders) of the tread."
+ },
+ {
+  "id": 2432,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2432-cg-too-far-aft.webp",
+  "explanation_image_title": "CG TOO FAR AFT",
+  "explanation_image_caption": "An aft CG reduces longitudinal stability and makes the aeroplane difficult to control in pitch."
+ },
+ {
+  "id": 2435,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2435-propeller-helical-twist.webp",
+  "explanation_image_title": "PROPELLER HELICAL TWIST",
+  "explanation_image_caption": "Helical twist: the blade angle decreases from root to tip to keep thrust even along the blade."
+ },
+ {
+  "id": 2436,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2436-stall-warning-vane.webp",
+  "explanation_image_title": "STALL WARNING DEVICE",
+  "explanation_image_caption": "The stall warning is adjusted to activate just before the stall."
+ },
+ {
+  "id": 2437,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2437-tyre-creep.webp",
+  "explanation_image_title": "TYRE CREEP AND CREEP MARKS",
+  "explanation_image_caption": "Tyre creep can drag the inner-tube valve until it breaks away from the tube."
+ },
+ {
+  "id": 2438,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2437-tyre-creep.webp",
+  "explanation_image_title": "TYRE CREEP AND CREEP MARKS",
+  "explanation_image_caption": "Tyre creep is most likely to result from heavy braking on landing."
+ },
+ {
+  "id": 2439,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2439-centre-of-pressure-movement.webp",
+  "explanation_image_title": "CENTRE OF PRESSURE MOVEMENT",
+  "explanation_image_caption": "As angle of attack increases (below the stall), the centre of pressure moves forward."
+ },
+ {
+  "id": 2440,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2440-wing-main-spar.webp",
+  "explanation_image_title": "WING STRUCTURE: MAIN SPAR",
+  "explanation_image_caption": "The main spar is the primary load-carrying member of the wing."
+ },
+ {
+  "id": 2441,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2441-torque-links.webp",
+  "explanation_image_title": "TORQUE (SCISSOR) LINKS",
+  "explanation_image_caption": "Torque links stop the shock-strut piston and nose wheel rotating within the cylinder."
+ },
+ {
+  "id": 2442,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2442-tyre-size-bead-diameter.webp",
+  "explanation_image_title": "TYRE SIZE: 28 x 12.00-10",
+  "explanation_image_caption": "The last figure, 10, is the bead (rim) diameter in inches."
+ },
+ {
+  "id": 2443,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2443-slotted-flap.webp",
+  "explanation_image_title": "SLOTTED FLAP VS OTHER FLAP TYPES",
+  "explanation_image_caption": "A slotted flap leaves a gap so air flows from under the wing over the flap's upper surface."
+ },
+ {
+  "id": 2444,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2444-shimmy-worn-torque-links.webp",
+  "explanation_image_title": "SHIMMY: WORN TORQUE LINKS",
+  "explanation_image_caption": "Nose-wheel shimmy whilst taxying indicates the torque links are worn or have failed."
+ },
+ {
+  "id": 2445,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2445-oleo-under-extension.webp",
+  "explanation_image_title": "OLEO UNDER-EXTENSION",
+  "explanation_image_caption": "The most likely cause of an under-extended oleo leg is low air pressure."
+ },
+ {
+  "id": 2446,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2446-fowler-flap.webp",
+  "explanation_image_title": "FOWLER FLAP VS OTHER FLAP TYPES",
+  "explanation_image_caption": "A Fowler flap moves aft and down, increasing wing area as well as camber."
+ },
+ {
+  "id": 2448,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2448-oleo-leg-operation.webp",
+  "explanation_image_title": "OLEO LEG: HOW IT WORKS",
+  "explanation_image_caption": "An oleo leg has hydraulic fluid below and compressed air or nitrogen above."
+ },
+ {
+  "id": 2449,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2432-cg-too-far-aft.webp",
+  "explanation_image_title": "CG TOO FAR AFT",
+  "explanation_image_caption": "An aft CG reduces longitudinal stability and makes the aeroplane difficult to control in pitch."
+ },
+ {
+  "id": 2451,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2451-plain-flap.webp",
+  "explanation_image_title": "PLAIN FLAP VS OTHER FLAP TYPES",
+  "explanation_image_caption": "A plain flap is the whole rear section of the wing hinging down as one piece."
+ },
+ {
+  "id": 2453,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2453-oleo-over-extension.webp",
+  "explanation_image_title": "OLEO OVER-EXTENSION",
+  "explanation_image_caption": "The most likely cause of an over-extended oleo leg is high air pressure."
+ },
+ {
+  "id": 2454,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2429-truss-longerons.webp",
+  "explanation_image_title": "TRUSS FUSELAGE: LONGERONS",
+  "explanation_image_caption": "In a truss (girder) fuselage the longerons are the main longitudinal load-carrying members."
+ },
+ {
+  "id": 2455,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2437-tyre-creep.webp",
+  "explanation_image_title": "TYRE CREEP AND CREEP MARKS",
+  "explanation_image_caption": "Misaligned creep marks warn that the valve may be torn off, causing a blow-out."
+ },
+ {
+  "id": 2456,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2421-semi-monocoque-fuselage.webp",
+  "explanation_image_title": "SEMI-MONOCOQUE FUSELAGE",
+  "explanation_image_caption": "Formers and stringers keep the shape while the stressed skin shares the flight and ground loads."
+ },
+ {
+  "id": 2457,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2457-monocoque-structure.webp",
+  "explanation_image_title": "MONOCOQUE STRUCTURE",
+  "explanation_image_caption": "In a monocoque structure the outer skin carries all the flight loads; formers only hold the shape."
+ },
+ {
+  "id": 2458,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2440-wing-main-spar.webp",
+  "explanation_image_title": "WING STRUCTURE: MAIN SPAR",
+  "explanation_image_caption": "The main spar is the primary load-carrying member of the wing."
+ },
+ {
+  "id": 2459,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2459-tyre-size-outside-diameter.webp",
+  "explanation_image_title": "TYRE SIZE: 28 x 12.00-10",
+  "explanation_image_caption": "The first figure, 28, is the tyre's overall outside diameter in inches."
+ },
+ {
+  "id": 2460,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2460-over-inflated-tyre-wear.webp",
+  "explanation_image_title": "OVER-INFLATED TYRE WEAR",
+  "explanation_image_caption": "Over-inflation concentrates wear in the centre of the tread."
+ },
+ {
+  "id": 2461,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2461-wing-ribs.webp",
+  "explanation_image_title": "WING STRUCTURE: RIBS",
+  "explanation_image_caption": "Ribs give the wing both its aerofoil shape and strength, passing loads to the spars."
+ },
+ {
+  "id": 2464,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2464-tailplane-up-or-down-force.webp",
+  "explanation_image_title": "HORIZONTAL STABILISER (TAILPLANE)",
+  "explanation_image_caption": "The horizontal stabiliser gives longitudinal stability, generating an up or down force as required."
+ },
+ {
+  "id": 2466,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2446-fowler-flap.webp",
+  "explanation_image_title": "FOWLER FLAP VS OTHER FLAP TYPES",
+  "explanation_image_caption": "A Fowler flap moves aft and down, increasing wing area as well as camber."
+ },
+ {
+  "id": 2468,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2468-float-type-carburettor-v2.webp",
+  "explanation_image_title": "FLOAT-TYPE CARBURETTOR",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2469,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2469-fuel-tank-baffles-v2.webp",
+  "explanation_image_title": "FUEL TANK BAFFLES",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2470,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2470-mixture-rich.webp",
+  "explanation_image_title": "MIXTURE CONTROL: RICH",
+  "explanation_image_caption": "Full rich increases the amount of fuel entering the inlet manifold."
+ },
+ {
+  "id": 2472,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2472-mixture-lean.webp",
+  "explanation_image_title": "MIXTURE CONTROL: LEAN",
+  "explanation_image_caption": "Moving the mixture to lean reduces the fuel entering the diffuser."
+ },
+ {
+  "id": 2474,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2474-valve-lead.webp",
+  "explanation_image_title": "VALVE LEAD",
+  "explanation_image_caption": "Valve lead: the inlet valve opens before the piston reaches TDC."
+ },
+ {
+  "id": 2475,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2475-fine-pitch-take-off.webp",
+  "explanation_image_title": "FINE PITCH FOR TAKE-OFF",
+  "explanation_image_caption": "For take-off a constant-speed propeller should be in fine pitch: a small blade angle."
+ },
+ {
+  "id": 2478,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/carburettor-icing-v1.webp",
+  "explanation_image_title": "CARBURETTOR ICING",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2479,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2472-mixture-lean.webp",
+  "explanation_image_title": "MIXTURE CONTROL: LEAN",
+  "explanation_image_caption": "When leaning, the ratio of fuel to air reduces."
+ },
+ {
+  "id": 2480,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2470-mixture-rich.webp",
+  "explanation_image_title": "MIXTURE CONTROL: RICH",
+  "explanation_image_caption": "Moving the mixture to rich increases the fuel entering the diffuser."
+ },
+ {
+  "id": 2482,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2482-engine-primer.webp",
+  "explanation_image_title": "ENGINE PRIMER",
+  "explanation_image_caption": "The primer supplies fuel into the induction system close to the inlet valves."
+ },
+ {
+  "id": 2483,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2505-fuel-tank-venting.webp",
+  "explanation_image_title": "FUEL TANK VENTING",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2484,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2484-power-increase-sequence.webp",
+  "explanation_image_title": "CHANGING POWER WITH A CONSTANT-SPEED PROPELLER",
+  "explanation_image_caption": "To increase power: richen the mixture, increase RPM, then increase manifold pressure."
+ },
+ {
+  "id": 2485,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/carburettor-icing-v1.webp",
+  "explanation_image_title": "CARBURETTOR ICING",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2488,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2488-fuel-outlet-above-sump.webp",
+  "explanation_image_title": "FUEL TANK OUTLET AND SUMP",
+  "explanation_image_caption": "The fuel outlet is above the sump so water and impurities settle below it and can be drained."
+ },
+ {
+  "id": 2490,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2472-mixture-lean.webp",
+  "explanation_image_title": "MIXTURE CONTROL: LEAN",
+  "explanation_image_caption": "Full lean decreases the amount of fuel entering the inlet manifold."
+ },
+ {
+  "id": 2492,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/carburettor-icing-v1.webp",
+  "explanation_image_title": "CARBURETTOR ICING",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2495,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2470-mixture-rich.webp",
+  "explanation_image_title": "MIXTURE CONTROL: RICH",
+  "explanation_image_caption": "A rich mixture is one where the fuel-to-air ratio is increased."
+ },
+ {
+  "id": 2497,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2497-coarse-pitch-cruise.webp",
+  "explanation_image_title": "COARSE PITCH FOR CRUISE",
+  "explanation_image_caption": "A coarse-pitch fixed propeller gives better cruise performance than a fine-pitch one."
+ },
+ {
+  "id": 2499,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2499-smooth-throttle-handling.webp",
+  "explanation_image_title": "SMOOTH THROTTLE HANDLING",
+  "explanation_image_caption": "Open and close the throttle smoothly to avoid overstressing the crankshaft."
+ },
+ {
+  "id": 2500,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2500-carburettor-icing-symptoms.webp",
+  "explanation_image_title": "CARBURETTOR ICING",
+  "explanation_image_caption": "Rough running followed by a slow loss of power suggests carburettor icing."
+ },
+ {
+  "id": 2501,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2482-engine-primer.webp",
+  "explanation_image_title": "ENGINE PRIMER",
+  "explanation_image_caption": "The primer delivers fuel directly into the induction system near the inlet valves."
+ },
+ {
+  "id": 2502,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2502-fuel-pressure-gauge-v2.webp",
+  "explanation_image_title": "FUEL PRESSURE GAUGE",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2504,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2504-avgas-100ll-blue.webp",
+  "explanation_image_title": "AVGAS 100LL IS BLUE",
+  "explanation_image_caption": "100LL AVGAS can be identified by its blue colour."
+ },
+ {
+  "id": 2507,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2507-warm-fuel-absorbs-water.webp",
+  "explanation_image_title": "WARM FUEL ABSORBS MORE WATER",
+  "explanation_image_caption": "Warm fuel absorbs more water; as it cools, the water comes out of suspension as free droplets."
+ },
+ {
+  "id": 2509,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2472-mixture-lean.webp",
+  "explanation_image_title": "MIXTURE CONTROL: LEAN",
+  "explanation_image_caption": "When leaning, the ratio of air to fuel increases."
+ },
+ {
+  "id": 2510,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2510-full-tanks-condensation.webp",
+  "explanation_image_title": "FILL THE TANKS AFTER FLIGHT",
+  "explanation_image_caption": "Refuelling to full after flight minimises condensation forming in the tanks overnight."
+ },
+ {
+  "id": 2511,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2511-accelerator-pump.webp",
+  "explanation_image_title": "ACCELERATOR PUMP",
+  "explanation_image_caption": "Extra fuel for rapid throttle opening is provided by the accelerator pump."
+ },
+ {
+  "id": 2514,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2514-fixed-pitch-dive-rpm.webp",
+  "explanation_image_title": "FIXED-PITCH PROPELLER IN A DIVE",
+  "explanation_image_caption": "With a fixed-pitch propeller, a dive at constant power makes the RPM increase."
+ },
+ {
+  "id": 2515,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/carburettor-icing-v1.webp",
+  "explanation_image_title": "CARBURETTOR ICING",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2516,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2511-accelerator-pump.webp",
+  "explanation_image_title": "ACCELERATOR PUMP",
+  "explanation_image_caption": "When the throttle is opened quickly the accelerator pump discharges extra fuel into the venturi."
+ },
+ {
+  "id": 2518,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2518-high-temp-low-pressure.webp",
+  "explanation_image_title": "HIGH OIL TEMPERATURE + LOW OIL PRESSURE",
+  "explanation_image_caption": "High oil temperature together with low oil pressure indicates a low oil supply."
+ },
+ {
+  "id": 2523,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2523-hydraulic-fluid-phosphate-purple.webp",
+  "explanation_image_title": "HYDRAULIC FLUID IDENTIFICATION",
+  "explanation_image_caption": "Phosphate-ester hydraulic fluid is coloured purple."
+ },
+ {
+  "id": 2528,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2528-spark-plug-normal.webp",
+  "explanation_image_title": "SPARK PLUG: NORMAL CONDITION",
+  "explanation_image_caption": "A light grey coating on the firing end indicates normal engine operation."
+ },
+ {
+  "id": 2529,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2529-oil-pressure-gauge-position.webp",
+  "explanation_image_title": "WHERE OIL PRESSURE IS MEASURED",
+  "explanation_image_caption": "The oil pressure gauge is connected before the oil enters the engine components."
+ },
+ {
+  "id": 2530,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2530-dry-sump-scavenge-pump.webp",
+  "explanation_image_title": "DRY SUMP: SCAVENGE PUMP",
+  "explanation_image_caption": "In a dry-sump system the scavenge pump pumps oil from the sump back to the oil tank."
+ },
+ {
+  "id": 2531,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2531-oil-cooler-position.webp",
+  "explanation_image_title": "OIL COOLER POSITION",
+  "explanation_image_caption": "The oil passes through the oil cooler before being fed to the engine components."
+ },
+ {
+  "id": 2533,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2533-oil-cooler-ram-air.webp",
+  "explanation_image_title": "OIL COOLING: RAM AIR",
+  "explanation_image_caption": "The primary method of cooling the oil is ram air through an oil cooler."
+ },
+ {
+  "id": 2534,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2534-oil-temperature-position.webp",
+  "explanation_image_title": "WHERE OIL TEMPERATURE IS MEASURED",
+  "explanation_image_caption": "Oil temperature is usually measured after the oil leaves the oil cooler."
+ },
+ {
+  "id": 2537,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2537-hydraulic-fluid-vegetable-blue.webp",
+  "explanation_image_title": "HYDRAULIC FLUID IDENTIFICATION",
+  "explanation_image_caption": "Vegetable-based hydraulic fluid is coloured blue."
+ },
+ {
+  "id": 2538,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2538-hydraulic-fluid-mineral-red.webp",
+  "explanation_image_title": "HYDRAULIC FLUID IDENTIFICATION",
+  "explanation_image_caption": "Mineral-based hydraulic fluid is coloured red."
+ },
+ {
+  "id": 2543,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2543-wet-sump-system.webp",
+  "explanation_image_title": "WET-SUMP LUBRICATION",
+  "explanation_image_caption": "In a wet-sump system oil is stored in the sump and distributed by a pressure pump."
+ },
+ {
+  "id": 2545,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2545-hydraulic-fluids-never-mix.webp",
+  "explanation_image_title": "HYDRAULIC FLUID IDENTIFICATION",
+  "explanation_image_caption": "Vegetable-based and mineral-based hydraulic fluids must never be mixed."
+ },
+ {
+  "id": 2549,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2549-crankshaft-bearing-lubrication.webp",
+  "explanation_image_title": "CRANKSHAFT AND BEARING LUBRICATION",
+  "explanation_image_caption": "The main bearings and crankshaft are lubricated by high-pressure oil from the pump."
+ },
+ {
+  "id": 2554,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2554-ignition-timing-fixed.webp",
+  "explanation_image_title": "IGNITION TIMING IS FIXED",
+  "explanation_image_caption": "If engine RPM is increased, the ignition timing remains the same."
+ },
+ {
+  "id": 2556,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2556-ignition-timing-btdc.webp",
+  "explanation_image_title": "IGNITION TIMING",
+  "explanation_image_caption": "Ignition is timed for about 20 to 25 degrees before TDC on the compression stroke."
+ },
+ {
+  "id": 2557,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2557-spark-plug-rich-mixture.webp",
+  "explanation_image_title": "SPARK PLUG: RICH MIXTURE",
+  "explanation_image_caption": "Dry, black, powdery carbon on the firing end indicates an excessively rich mixture."
+ },
+ {
+  "id": 2560,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2560-valve-overlap.webp",
+  "explanation_image_title": "VALVE OVERLAP",
+  "explanation_image_caption": "Valve overlap: the short period around TDC when both inlet and exhaust valves are open."
+ },
+ {
+  "id": 2573,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2610-alternator-rectifier.webp",
+  "explanation_image_title": "ALTERNATOR RECTIFIER",
+  "explanation_image_caption": "Diodes in an alternator convert the AC output to DC."
+ },
+ {
+  "id": 2577,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2577-left-zero-ammeter.webp",
+  "explanation_image_title": "LEFT-ZERO AMMETER (LOADMETER)",
+  "explanation_image_caption": "A left-zero ammeter shows alternator or generator output current only."
+ },
+ {
+  "id": 2579,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2579-centre-zero-ammeter.webp",
+  "explanation_image_title": "CENTRE-ZERO AMMETER",
+  "explanation_image_caption": "On a centre-zero ammeter, positive indications are right of centre."
+ },
+ {
+  "id": 2580,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2589-alternator-vs-generator-low-rpm.webp",
+  "explanation_image_title": "ALTERNATOR VS GENERATOR AT LOW RPM",
+  "explanation_image_caption": "An alternator still produces electrical power at low RPM."
+ },
+ {
+  "id": 2582,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2582-ammeter-voltmeter.webp",
+  "explanation_image_title": "AMMETER: CURRENT FLOW",
+  "explanation_image_caption": "An ammeter measures electrical current flow."
+ },
+ {
+  "id": 2585,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2585-alternator-stator.webp",
+  "explanation_image_title": "ALTERNATOR STATOR AND ROTOR",
+  "explanation_image_caption": "In an alternator the stator remains stationary."
+ },
+ {
+  "id": 2586,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2609-battery-electrolyte.webp",
+  "explanation_image_title": "LEAD-ACID BATTERY ELECTROLYTE",
+  "explanation_image_caption": "Maintain the electrolyte level by adding distilled water."
+ },
+ {
+  "id": 2589,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2589-alternator-vs-generator-low-rpm.webp",
+  "explanation_image_title": "ALTERNATOR VS GENERATOR AT LOW RPM",
+  "explanation_image_caption": "An alternator gives more output at low RPM than a generator."
+ },
+ {
+  "id": 2590,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2590-capacitor.webp",
+  "explanation_image_title": "CAPACITOR",
+  "explanation_image_caption": "A capacitor stores an electrical charge."
+ },
+ {
+  "id": 2596,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2596-low-tension-transformer.webp",
+  "explanation_image_title": "LOW-TENSION IGNITION: TRANSFORMER",
+  "explanation_image_caption": "The transformer steps the low voltage up to a high voltage before it reaches the plug."
+ },
+ {
+  "id": 2597,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2610-alternator-rectifier.webp",
+  "explanation_image_title": "ALTERNATOR RECTIFIER",
+  "explanation_image_caption": "The rectifier converts the alternator's AC output into DC."
+ },
+ {
+  "id": 2604,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2604-resistor.webp",
+  "explanation_image_title": "RESISTOR",
+  "explanation_image_caption": "Resistors are used to vary (drop) the voltage in a circuit."
+ },
+ {
+  "id": 2607,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2607-inverter.webp",
+  "explanation_image_title": "INVERTER: DC TO AC",
+  "explanation_image_caption": "An inverter converts direct current to alternating current."
+ },
+ {
+  "id": 2609,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2609-battery-electrolyte.webp",
+  "explanation_image_title": "LEAD-ACID BATTERY ELECTROLYTE",
+  "explanation_image_caption": "The electrolyte is sulphuric acid and pure water."
+ },
+ {
+  "id": 2610,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2610-alternator-rectifier.webp",
+  "explanation_image_title": "ALTERNATOR RECTIFIER",
+  "explanation_image_caption": "The AC output from an alternator is converted to DC by a rectifier."
+ },
+ {
+  "id": 2611,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2611-voltmeter.webp",
+  "explanation_image_title": "VOLTMETER: SYSTEM VOLTAGE",
+  "explanation_image_caption": "A voltmeter indicates the electrical system voltage."
+ },
+ {
+  "id": 2612,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2612-battery-24v-cells.webp",
+  "explanation_image_title": "LEAD-ACID BATTERY CELLS",
+  "explanation_image_caption": "A 24-volt lead-acid battery has twelve cells."
+ },
+ {
+  "id": 2614,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2614-alternator-purpose.webp",
+  "explanation_image_title": "PURPOSE OF THE ALTERNATOR",
+  "explanation_image_caption": "The alternator supplies the electrical system and recharges the battery."
+ },
+ {
+  "id": 2616,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2616-ivsi-no-lag.webp",
+  "explanation_image_title": "INSTANTANEOUS VSI: NO LAG",
+  "explanation_image_caption": "The IVSI's accelerometer overcomes the time lag of the conventional VSI."
+ },
+ {
+  "id": 2663,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2663-gyro-rigidity-factors.webp",
+  "explanation_image_title": "WHAT INCREASES GYRO RIGIDITY",
+  "explanation_image_caption": "Gyro rigidity is proportional to the rotor's moment of inertia and angular speed."
+ },
+ {
+  "id": 2673,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2673-load-factor-level-turn.webp",
+  "explanation_image_title": "LOAD FACTOR IN A LEVEL TURN",
+  "explanation_image_caption": "In a level coordinated turn the extra load on the wings is a function of the angle of bank."
+ },
+ {
+  "id": 2674,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2674-deviation-card.webp",
+  "explanation_image_title": "DEVIATION VARIES WITH HEADING",
+  "explanation_image_caption": "Compass deviation in a particular aircraft varies with each heading."
+ },
+ {
+  "id": 2692,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2692-afm-supplements.webp",
+  "explanation_image_title": "FLIGHT MANUAL SUPPLEMENTS",
+  "explanation_image_caption": "The Supplements section covers optional equipment not installed in a standard aircraft."
+ },
+ {
+  "id": 2725,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2725-constant-speed-drive.webp",
+  "explanation_image_title": "CONSTANT-SPEED DRIVE (CSD)",
+  "explanation_image_caption": "A constant-speed drive turns the AC generator at approximately constant speed."
+ },
+ {
+  "id": 2729,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2729-over-leaning.webp",
+  "explanation_image_title": "LEANING TOO FAR",
+  "explanation_image_caption": "Excessive leaning: rough running, power loss and generally falling temperatures."
+ },
+ {
+  "id": 2730,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2730-otto-cycle.webp",
+  "explanation_image_title": "IDEAL OTTO CYCLE",
+  "explanation_image_caption": "Two adiabatic and two constant-volume processes enclose the work area."
+ },
+ {
+  "id": 2732,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2663-gyro-rigidity-factors.webp",
+  "explanation_image_title": "WHAT INCREASES GYRO RIGIDITY",
+  "explanation_image_caption": "Gyro rigidity is proportional to the rotor's moment of inertia and angular speed."
+ },
+ {
+  "id": 2733,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2733-dynamic-pressure.webp",
+  "explanation_image_title": "DYNAMIC PRESSURE",
+  "explanation_image_caption": "Dynamic pressure depends on air density and the square of airflow speed (q = ½ρV²)."
+ },
+ {
+  "id": 2734,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2607-inverter.webp",
+  "explanation_image_title": "INVERTER: DC TO AC",
+  "explanation_image_caption": "An inverter converts direct current into alternating current."
+ },
+ {
+  "id": 2737,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2484-power-increase-sequence.webp",
+  "explanation_image_title": "CHANGING POWER WITH A CONSTANT-SPEED PROPELLER",
+  "explanation_image_caption": "When increasing power, increase RPM before increasing manifold pressure."
+ },
+ {
+  "id": 2741,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2741-wastegate-stuck-closed.webp",
+  "explanation_image_title": "TURBOCHARGER WASTEGATE STUCK CLOSED",
+  "explanation_image_caption": "With the wastegate stuck closed, manifold pressure may exceed the maximum permitted value."
+ },
+ {
+  "id": 2742,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2742-power-torque-angular-speed.webp",
+  "explanation_image_title": "ENGINE POWER = TORQUE x ANGULAR SPEED",
+  "explanation_image_caption": "Mechanical power is torque multiplied by angular speed."
+ },
+ {
+  "id": 2743,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2743-trim-tab-purpose.webp",
+  "explanation_image_title": "PURPOSE OF A TRIM TAB",
+  "explanation_image_caption": "A trim tab's primary purpose is to reduce or cancel sustained pilot control forces."
+ },
+ {
+  "id": 2744,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2744-carburettor-fuel-strainer.webp",
+  "explanation_image_title": "CARBURETTOR FUEL STRAINER",
+  "explanation_image_caption": "The fuel strainer is fitted upstream of the carburettor needle valve."
+ },
+ {
+  "id": 2747,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2747-mixture-richens-with-altitude.webp",
+  "explanation_image_title": "WHY THE MIXTURE RICHENS WITH ALTITUDE",
+  "explanation_image_caption": "Air density decreases with altitude while about the same fuel is supplied."
+ },
+ {
+  "id": 2750,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2505-fuel-tank-venting.webp",
+  "explanation_image_title": "FUEL TANK VENTING",
+  "explanation_image_caption": null
+ },
+ {
+  "id": 2757,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2757-tubeless-tyre.webp",
+  "explanation_image_title": "TUBELESS TYRE",
+  "explanation_image_caption": "Statements 1, 3 and 4 are correct: a tubeless tyre seals against an airtight rim."
+ },
+ {
+  "id": 2759,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2759-t-tail.webp",
+  "explanation_image_title": "T-TAIL: TAILPLANE CLEAR OF THE WAKE",
+  "explanation_image_caption": "A T-tail can place the tailplane outside the wing's normal wake and turbulence."
+ },
+ {
+  "id": 2762,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2762-mass-balance-flutter.webp",
+  "explanation_image_title": "MASS BALANCE PREVENTS FLUTTER",
+  "explanation_image_caption": "Correct mass distribution (mass balancing) within the control surface helps prevent flutter."
+ },
+ {
+  "id": 2763,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2763-adverse-aileron-yaw.webp",
+  "explanation_image_title": "ADVERSE AILERON YAW",
+  "explanation_image_caption": "Rolling left without rudder, adverse aileron yaw initially swings the nose right."
+ },
+ {
+  "id": 2764,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2764-frise-aileron.webp",
+  "explanation_image_title": "FRISE AILERON",
+  "explanation_image_caption": "A Frise aileron's raised nose projects below the wing, creating drag that opposes adverse yaw."
+ },
+ {
+  "id": 2766,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2441-torque-links.webp",
+  "explanation_image_title": "TORQUE (SCISSOR) LINKS",
+  "explanation_image_caption": "Torque links keep the nose wheel aligned by preventing rotation between the strut members."
+ },
+ {
+  "id": 2771,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2771-asi-calibration.webp",
+  "explanation_image_title": "ASI CALIBRATION",
+  "explanation_image_caption": "A simple ASI is calibrated for standard (ISA) sea-level air density."
+ },
+ {
+  "id": 2772,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2772-spark-plug-oil-fouling.webp",
+  "explanation_image_title": "SPARK PLUG: OIL FOULING",
+  "explanation_image_caption": "Black, oily deposits indicate engine oil entering the combustion chamber and burning."
+ }
+]

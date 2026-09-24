@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="ADVERSE AILERON YAW">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">ADVERSE AILERON YAW</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="60.0" y="174.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#101827">PILOT ROLLS LEFT (VIEW FROM ABOVE)</text>
+<path d="M 188.0,355.4 L 602.0,355.4 L 602.0,402.4 L 188.0,402.4 Z" fill="#dfe5ec" stroke="#101827" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 319.1,534.8 L 470.9,534.8 L 470.9,562.4 L 319.1,562.4 Z" fill="#dfe5ec" stroke="#101827" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 395.0 245.0 C 422.6 250.6 422.6 316.8 417.1 399.6 L 403.3 565.2 L 386.7 565.2 L 372.9 399.6 C 367.4 316.8 367.4 250.6 395.0 245.0 Z" fill="#dfe5ec" stroke="#101827" stroke-width="3"/>
+<line x1="350.8" y1="240.9" x2="439.2" y2="240.9" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<path d="M 188.0,385.8 L 263.9,385.8 L 263.9,402.4 L 188.0,402.4 Z" fill="#cbd5e1" stroke="#101827" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M 526.1,385.8 L 602.0,385.8 L 602.0,402.4 L 526.1,402.4 Z" fill="#f4b400" stroke="#101827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="226.6" y="444.1" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">AILERON UP</text>
+<text x="226.6" y="462.1" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#334155">less lift, less drag</text>
+<text x="563.4" y="444.1" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#b7860b">AILERON DOWN</text>
+<text x="563.4" y="462.1" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">more lift, MORE DRAG</text>
+<line x1="226.6" y1="336.1" x2="226.6" y2="360.1" stroke="#dc2626" stroke-width="4" stroke-linecap="round" marker-end="url(#aRedS)"/>
+<line x1="563.4" y1="306.1" x2="563.4" y2="360.1" stroke="#dc2626" stroke-width="7" stroke-linecap="round" marker-end="url(#aRed)"/>
+<text x="577.4" y="318.1" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#dc2626">DRAG</text>
+<path d="M 355.0 233.0 Q 395.0 201.0 439.0 231.0" fill="none" stroke="#b7860b" stroke-width="5" marker-end="url(#aDark)"/>
+<text x="455.0" y="219.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#b7860b">NOSE YAWS RIGHT</text>
+<text x="335.0" y="219.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#101827">ROLL LEFT</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">DOWN-GOING AILERON</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Raises lift on that wing,</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">and with it induced drag.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">NOSE YAWS OPPOSITE</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">The extra drag swings the</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">nose away from the roll:</text>
+<text x="796.0" y="412.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">roll left, yaw right.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">CORRECTION</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Co-ordinated rudder; designs</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">use differential or Frise</text>
+<text x="796.0" y="562.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">ailerons to reduce it.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">Rolling left without rudder, adverse aileron yaw initially swings the nose right.</text>
+</svg>

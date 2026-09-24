@@ -79,7 +79,11 @@ export function FormattedExplanation({ text }: { text: string }) {
   const sections = parseSections(text)
 
   if (!sections) {
-    return <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">{text}</p>
+    return (
+      <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-5">
+        <p className="whitespace-pre-line leading-relaxed text-slate-700">{text}</p>
+      </div>
+    )
   }
 
   if (isWhizWheel(sections)) {

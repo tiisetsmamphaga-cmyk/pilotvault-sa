@@ -360,3 +360,29 @@ These were looked at and rejected because none of them shows what the question a
 KEY FACT panels for the 10 questions that had none (2450, 2452, 2465, 2467, 2634, 2659, 2701, 2704, 2707, 2726)
 were added to `scripts/atg_explanations/keyfacts.py`. The aggregate hash is now 8020ad482451eabe091cc266d8b71cd8,
 and it matches the database. ATG now has 99 questions with an image.
+
+## Round 4: PHAK-style diagrams removed
+
+All 64 `q-<id>-atg-phak-refined-v2` diagrams were removed from the database and from `clean-v1/`. They were drawn
+infographics, not scans from the handbook, and several had overlapping or overflowing labels (2603, 2628, 2646). Their
+rows, including captions, are backed up in `removed-images-2026-09-24-round3.json`. Captions were cleared along with
+the images.
+
+29 of those questions now show a diagram already approved and in use in another subject:
+
+| Image | Questions |
+|---|---|
+| `navigation/refined-batch-1/nav-pitot-static-system-v1` | 2566, 2584, 2593, 2603, 2605, 2606, 2615 |
+| `principles-of-flight/refined-batch-18/pof-asi-vno-v2` (full ASI face with arcs) | 2629, 2647, 2722, 2739, 2745 |
+| `principles-of-flight/refined-batch-18/pof-asi-vfe-v2` (full ASI face with arcs) | 2649, 2724, 2740 |
+| `principles-of-flight/refined-batch-13/pof-turn-coordinator-slip-left-v2` (right turn, ball inside) | 2691, 2731, 2768 |
+| `principles-of-flight/refined-batch-13/pof-turn-coordinator-skid-right-v2` (right turn, ball outside) | 2693, 2710, 2719 |
+| `principles-of-flight/refined-batch-13/pof-turn-coordinator-balanced-v2` | 2675, 2705, 2746 |
+| `meteorology/refined-batch-2/qfe-setting-v1` | 2748 |
+| `meteorology/refined-batch-2/qne-setting-v1` | 2651, 2652, 2653 |
+| `meteorology/refined-batch-2/altimeter-error-v1` | 2754 |
+
+The other 35 have no image: blockages, vacuum and gyro systems, altimeter capsule and lag, the attitude indicator and
+the DI. 2679 (left taxi turn) was left out because the only taxi-turn image shows a right turn. The KEY FACT
+templates were not changed. ATG now has 64 questions with an image: 55 reused from other subjects and 9 textbook
+extracts.

@@ -22,6 +22,22 @@ const SECTION_LABEL_COLOR: Record<string, string> = {
   ANSWER: "text-green-700",
 }
 
+const SECTION_CARD_STYLES: Record<string, { chip: string; border: string; bg: string }> = {
+  GIVEN: { chip: "bg-slate-600 text-white", border: "border-slate-300", bg: "bg-slate-50" },
+  CONCEPT: { chip: "bg-indigo-600 text-white", border: "border-indigo-200", bg: "bg-indigo-50" },
+  FORMULA: { chip: "bg-purple-600 text-white", border: "border-purple-200", bg: "bg-purple-50" },
+  METHOD: { chip: "bg-[#1f4e79] text-white", border: "border-blue-200", bg: "bg-blue-50" },
+  WORKING: { chip: "bg-[#1f4e79] text-white", border: "border-blue-200", bg: "bg-blue-50" },
+  SOLVE: { chip: "bg-amber-600 text-white", border: "border-amber-200", bg: "bg-amber-50" },
+  REASONING: { chip: "bg-teal-600 text-white", border: "border-teal-200", bg: "bg-teal-50" },
+  ANSWER: { chip: "bg-green-700 text-white", border: "border-green-300", bg: "bg-green-50" },
+}
+
+// Whiz-wheel (CRP-5 flight computer) explanations keep the older card layout; everything else flows as plain labeled text.
+function isWhizWheel(sections: Section[]) {
+  return sections.some((s) => s.suffix && /crp-5|flight computer/i.test(s.suffix))
+}
+
 function parseSections(text: string): Section[] | null {
   const lines = text.split("\n")
   const sections: Section[] = []
@@ -64,6 +80,35 @@ export function FormattedExplanation({ text }: { text: string }) {
 
   if (!sections) {
     return <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">{text}</p>
+  }
+
+  if (isWhizWheel(sections)) {
+    return (
+      <div className="mt-3 space-y-3">
+        {sections.map((section, i) => {
+          const style = SECTION_CARD_STYLES[section.label] ?? SECTION_CARD_STYLES.GIVEN
+          return (
+            <div key={i} className={`rounded-md border ${style.border} ${style.bg} p-4`}>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className={`rounded px-2 py-0.5 text-xs font-bold tracking-wide ${style.chip}`}>
+                  {section.label}
+                </span>
+                {section.suffix && <span className="text-xs font-medium text-slate-500">{section.suffix}</span>}
+              </div>
+              <p
+                className={
+                  section.label === "ANSWER"
+                    ? "mt-2 whitespace-pre-line text-lg font-bold leading-relaxed text-green-900"
+                    : "mt-2 whitespace-pre-line leading-relaxed text-slate-700"
+                }
+              >
+                {renderBody(section.body)}
+              </p>
+            </div>
+          )
+        })}
+      </div>
+    )
   }
 
   return (

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="HORIZONTAL STABILISER (TAILPLANE)">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">HORIZONTAL STABILISER (TAILPLANE)</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="218" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<text x="60.0" y="174.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">CG AHEAD OF THE CENTRE OF PRESSURE</text>
+<g transform="translate(300.0,266.0) rotate(0.00) scale(1.4)">
+<path d="M 70,-12 L 90,-46 L 107,-46 L 108,-8 Z" fill="#dfe5ec" stroke="#101827" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path d="M -100,0 C -100,-17 -82,-24 -52,-24 L 40,-16 L 106,-9 L 108,3 L 40,9 L -52,15 C -86,15 -100,10 -100,0 Z" fill="#dfe5ec" stroke="#101827" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path d="M -58,-23 Q -34,-40 2,-21 Z" fill="#bfdbfe" stroke="#101827" stroke-width="2" vector-effect="non-scaling-stroke"/>
+<ellipse cx="-14" cy="-27" rx="34" ry="5" fill="#94a3b8" stroke="#101827" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+<ellipse cx="94" cy="-5" rx="18" ry="3.2" fill="#94a3b8" stroke="#101827" stroke-width="2" vector-effect="non-scaling-stroke"/>
+<line x1="-40" y1="-26" x2="-30" y2="8" stroke="#101827" stroke-width="2" vector-effect="non-scaling-stroke"/>
+<ellipse cx="-104" cy="0" rx="3.5" ry="27" fill="#64748b" stroke="#101827" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+<line x1="-58" y1="14" x2="-60" y2="26" stroke="#101827" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+<line x1="-22" y1="12" x2="-18" y2="25" stroke="#101827" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+<circle cx="-60" cy="29" r="5" fill="#101827"/>
+<circle cx="-17" cy="28" r="5" fill="#101827"/>
+</g>
+<circle cx="263.6" cy="260.4" r="9" fill="#ffffff" stroke="#101827" stroke-width="2.5"/>
+<path d="M 263.6 251.4 A 9 9 0 0 1 272.6 260.4 L 263.6 260.4 Z" fill="#101827"/>
+<path d="M 263.6 269.4 A 9 9 0 0 1 254.6 260.4 L 263.6 260.4 Z" fill="#101827"/>
+<line x1="263.6" y1="271.4" x2="263.6" y2="306.4" stroke="#dc2626" stroke-width="5" stroke-linecap="round" marker-end="url(#aRed)"/>
+<text x="263.6" y="324.4" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">WEIGHT</text>
+<line x1="294.4" y1="220.0" x2="294.4" y2="180.0" stroke="#dc2626" stroke-width="5" stroke-linecap="round" marker-end="url(#aRed)"/>
+<text x="304.4" y="200.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">LIFT (CP)</text>
+<line x1="431.6" y1="264.0" x2="431.6" y2="307.0" stroke="#b7860b" stroke-width="5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="445.6" y="303.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#b7860b">DOWN</text>
+<text x="538.0" y="244.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">LIFT BEHIND THE CG:</text>
+<text x="538.0" y="264.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#334155">NOSE-DOWN MOMENT</text>
+<text x="538.0" y="296.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" fill="#b7860b">TAILPLANE FORCE: DOWN</text>
+<rect x="40" y="368" width="710" height="218" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<text x="60.0" y="400.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">CG BEHIND THE CENTRE OF PRESSURE</text>
+<g transform="translate(300.0,492.0) rotate(0.00) scale(1.4)">
+<path d="M 70,-12 L 90,-46 L 107,-46 L 108,-8 Z" fill="#dfe5ec" stroke="#101827" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path d="M -100,0 C -100,-17 -82,-24 -52,-24 L 40,-16 L 106,-9 L 108,3 L 40,9 L -52,15 C -86,15 -100,10 -100,0 Z" fill="#dfe5ec" stroke="#101827" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<path d="M -58,-23 Q -34,-40 2,-21 Z" fill="#bfdbfe" stroke="#101827" stroke-width="2" vector-effect="non-scaling-stroke"/>
+<ellipse cx="-14" cy="-27" rx="34" ry="5" fill="#94a3b8" stroke="#101827" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+<ellipse cx="94" cy="-5" rx="18" ry="3.2" fill="#94a3b8" stroke="#101827" stroke-width="2" vector-effect="non-scaling-stroke"/>
+<line x1="-40" y1="-26" x2="-30" y2="8" stroke="#101827" stroke-width="2" vector-effect="non-scaling-stroke"/>
+<ellipse cx="-104" cy="0" rx="3.5" ry="27" fill="#64748b" stroke="#101827" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+<line x1="-58" y1="14" x2="-60" y2="26" stroke="#101827" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+<line x1="-22" y1="12" x2="-18" y2="25" stroke="#101827" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+<circle cx="-60" cy="29" r="5" fill="#101827"/>
+<circle cx="-17" cy="28" r="5" fill="#101827"/>
+</g>
+<circle cx="305.6" cy="486.4" r="9" fill="#ffffff" stroke="#101827" stroke-width="2.5"/>
+<path d="M 305.6 477.4 A 9 9 0 0 1 314.6 486.4 L 305.6 486.4 Z" fill="#101827"/>
+<path d="M 305.6 495.4 A 9 9 0 0 1 296.6 486.4 L 305.6 486.4 Z" fill="#101827"/>
+<line x1="305.6" y1="497.4" x2="305.6" y2="532.4" stroke="#dc2626" stroke-width="5" stroke-linecap="round" marker-end="url(#aRed)"/>
+<text x="305.6" y="550.4" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">WEIGHT</text>
+<line x1="269.2" y1="446.0" x2="269.2" y2="406.0" stroke="#dc2626" stroke-width="5" stroke-linecap="round" marker-end="url(#aRed)"/>
+<text x="279.2" y="426.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">LIFT (CP)</text>
+<line x1="431.6" y1="535.0" x2="431.6" y2="492.0" stroke="#b7860b" stroke-width="5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="445.6" y="529.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#b7860b">UP</text>
+<text x="538.0" y="470.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">LIFT AHEAD OF THE CG:</text>
+<text x="538.0" y="490.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#334155">NOSE-UP MOMENT</text>
+<text x="538.0" y="522.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" fill="#b7860b">TAILPLANE FORCE: UP</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">LONGITUDINAL STABILITY</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">The tailplane keeps the</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">aircraft balanced and stable</text>
+<text x="796.0" y="262.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">in pitch.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">UP OR DOWN FORCE</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">It generates an upward or a</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">downward force, whichever</text>
+<text x="796.0" y="412.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">is required.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">NOT DIRECTIONAL</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Directional (yaw) stability</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">comes from the fin.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">The horizontal stabiliser gives longitudinal stability, generating an up or down force as required.</text>
+</svg>

@@ -11,15 +11,15 @@ const SECTION_HEADERS = ["GIVEN", "CONCEPT", "FORMULA", "METHOD", "WORKING", "SO
 // Matches a header line like "METHOD" or "METHOD (CRP-5 Flight Computer)" on its own line.
 const HEADER_LINE = new RegExp(`^(${SECTION_HEADERS.join("|")})(\\s*\\(([^)]+)\\))?\\s*$`)
 
-const SECTION_STYLES: Record<string, { chip: string; border: string; bg: string }> = {
-  GIVEN: { chip: "bg-slate-600 text-white", border: "border-slate-300", bg: "bg-slate-50" },
-  CONCEPT: { chip: "bg-indigo-600 text-white", border: "border-indigo-200", bg: "bg-indigo-50" },
-  FORMULA: { chip: "bg-purple-600 text-white", border: "border-purple-200", bg: "bg-purple-50" },
-  METHOD: { chip: "bg-[#1f4e79] text-white", border: "border-blue-200", bg: "bg-blue-50" },
-  WORKING: { chip: "bg-[#1f4e79] text-white", border: "border-blue-200", bg: "bg-blue-50" },
-  SOLVE: { chip: "bg-amber-600 text-white", border: "border-amber-200", bg: "bg-amber-50" },
-  REASONING: { chip: "bg-teal-600 text-white", border: "border-teal-200", bg: "bg-teal-50" },
-  ANSWER: { chip: "bg-green-700 text-white", border: "border-green-300", bg: "bg-green-50" },
+const SECTION_LABEL_COLOR: Record<string, string> = {
+  GIVEN: "text-slate-500",
+  CONCEPT: "text-indigo-600",
+  FORMULA: "text-purple-600",
+  METHOD: "text-[#1f4e79]",
+  WORKING: "text-[#1f4e79]",
+  SOLVE: "text-amber-700",
+  REASONING: "text-teal-700",
+  ANSWER: "text-green-700",
 }
 
 function parseSections(text: string): Section[] | null {
@@ -67,22 +67,20 @@ export function FormattedExplanation({ text }: { text: string }) {
   }
 
   return (
-    <div className="mt-3 space-y-3">
+    <div className="mt-3 space-y-4">
       {sections.map((section, i) => {
-        const style = SECTION_STYLES[section.label] ?? SECTION_STYLES.GIVEN
+        const labelColor = SECTION_LABEL_COLOR[section.label] ?? SECTION_LABEL_COLOR.GIVEN
         return (
-          <div key={i} className={`rounded-md border ${style.border} ${style.bg} p-4`}>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className={`rounded px-2 py-0.5 text-xs font-bold tracking-wide ${style.chip}`}>
-                {section.label}
-              </span>
-              {section.suffix && <span className="text-xs font-medium text-slate-500">{section.suffix}</span>}
+          <div key={i}>
+            <div className="flex flex-wrap items-baseline gap-2">
+              <span className={`text-xs font-bold tracking-wide ${labelColor}`}>{section.label}</span>
+              {section.suffix && <span className="text-xs font-medium text-slate-400">{section.suffix}</span>}
             </div>
             <p
               className={
                 section.label === "ANSWER"
-                  ? "mt-2 whitespace-pre-line text-lg font-bold leading-relaxed text-green-900"
-                  : "mt-2 whitespace-pre-line leading-relaxed text-slate-700"
+                  ? "mt-1 whitespace-pre-line text-lg font-bold leading-relaxed text-green-800"
+                  : "mt-1 whitespace-pre-line leading-relaxed text-slate-700"
               }
             >
               {renderBody(section.body)}

@@ -60,10 +60,13 @@ R = {
         "e": "In a wet-sump system, used in most light non-aerobatic aircraft, the oil is stored in the sump at the bottom of the engine. A gear-type pressure pump draws it from the sump and pushes it through the filter and galleries to the bearings, and the oil then drains back into the sump. An external tank is the dry-sump system, splash alone is not enough for the heavily loaded bearings, and oil mixed with the fuel is a two-stroke arrangement.",
     },
     2549: {
+        "answer_change": "Changed from 'both high-pressure oil and splash lubrication' to pressure lubrication, as the textbook describes (pressure oil to the main and big-end bearings; splash for the cylinder walls, pistons and small ends).",
         "a": "By splash lubrication only",
+        "b": "By high-pressure oil from the pressure pump",
+        "ans": "By high-pressure oil from the pressure pump",
         "c": "By oil mixed with the fuel",
         "d": "By grease packed into the bearings during servicing",
-        "e": "The main bearings and the crankshaft's big-end bearings are fed with high-pressure oil from the pump through the galleries and drillings in the crankshaft, because these heavily loaded bearings need a positive supply. The oil squeezed out of them is flung around by the spinning crankshaft as a mist that splash-lubricates the cylinder walls, pistons, small ends and gears, so the crank assembly relies on both. Splash alone would starve the bearings.",
+        "e": "The main bearings and the big-end bearings on the crankshaft carry the heaviest loads, so they are fed with high-pressure oil: the pump forces oil through the oil galleries to the main bearings and on through drillings in the crankshaft to the big ends. The oil mist flung off the spinning crankshaft splash-lubricates the cylinder walls, pistons, small ends and gears, but splash alone could never give these bearings the positive supply they need. Grease and fuel-oil mixtures are not used.",
     },
     2552: {
         "b": "Prevent the oil from overheating at high engine power",

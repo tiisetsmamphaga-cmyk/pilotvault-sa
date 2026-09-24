@@ -66,11 +66,11 @@ ITEMS = {
             FIGS / "p91-1.png",
             "CRANKSHAFT AND BEARING LUBRICATION",
             "Pressure oil is fed through drillings to the main and big-end bearings; splash oils the rest.",
-            "The main bearings and crankshaft are lubricated by both high-pressure oil and splash.",
+            "The main bearings and crankshaft are lubricated by high-pressure oil from the pump.",
             notes=[
                 ("MAIN BEARINGS FED\nWITH PRESSURE OIL", (205, 250), (80, 300), "middle"),
                 ("OIL DRILLINGS IN\nTHE CRANKSHAFT", (1010, 470), (560, 505), "middle"),
-                ("PLUS SPLASH FROM\nROTATING PARTS", (1010, 250), (None, None), "middle"),
+                ("SPLASH OILS THE CYLINDER\nWALLS AND PISTONS", (1010, 250), (None, None), "middle"),
             ],
         ),
         "q2533-oil-cooler-ram-air": lambda: frame(

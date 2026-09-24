@@ -3,7 +3,8 @@
 Each module in rewrites/ defines R = {question_id: {"e": explanation, "a".."d": replacement option, "q": stem}}.
 Option keys are present only where a filler distractor is replaced, and "q" only where the stem itself
 needs rewording. The correct answer is never changed, except that "ans" may fix a typo in its text:
-it must then also be given in the answer's own slot, and both are updated together.
+it must then also be given in the answer's own slot, and both are updated together. A deliberate change of
+answer needs "answer_change": "<reason>" as well, which lifts the typo-only check.
 
     python3 apply.py                 validate every module
     python3 apply.py airframes ...   validate and write one combined .sql for those modules to $ATG_WORK/sql
@@ -61,11 +62,13 @@ def check(qid, change):
     new = {s: change.get(k, row[s]) for k, s in SLOTS.items()}
     answer = change.get("ans", row["correct_answer"])
     for k in change:
-        if k not in ("e", "q", "ans", *SLOTS):
+        if k not in ("e", "q", "ans", "answer_change", *SLOTS):
             errs.append(f"{qid}: unknown key {k}")
         elif k in SLOTS and row[SLOTS[k]] == row["correct_answer"] and change[k] != change.get("ans"):
             errs.append(f"{qid}: tried to replace the correct answer in slot {k}")
-    if "ans" in change:
+    if "answer_change" in change and "ans" not in change:
+        errs.append(f"{qid}: answer_change without a new 'ans'")
+    if "ans" in change and "answer_change" not in change:
         import difflib
         if difflib.SequenceMatcher(None, change["ans"].lower(), row["correct_answer"].lower()).ratio() < 0.9:
             errs.append(f"{qid}: 'ans' is more than a typo fix")

@@ -112,7 +112,7 @@ export function FormattedExplanation({ text }: { text: string }) {
   }
 
   return (
-    <div className="mt-3 space-y-4">
+    <div className="mt-3 space-y-4 rounded-lg border border-slate-200 bg-slate-50 p-5">
       {sections.map((section, i) => {
         const labelColor = SECTION_LABEL_COLOR[section.label] ?? SECTION_LABEL_COLOR.GIVEN
         return (

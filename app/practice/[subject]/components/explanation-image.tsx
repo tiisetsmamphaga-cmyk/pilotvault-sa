@@ -110,8 +110,6 @@ export function ExplanationImage({
   if (isNavVisual && !isApprovedNavRaster) return null
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
 
-  // ATG images carry their own heading, so their card shows the KEY FACT
-  // panel without repeating the title above the image.
   const isAtgVisual = src.includes("/explanation-images/aircraft-technical-and-general/")
 
   const cardTemplate =
@@ -123,7 +121,7 @@ export function ExplanationImage({
       <PofExplanationImage
         src={src}
         alt={alt}
-        title={isAtgVisual ? undefined : title}
+        title={title}
         template={cardTemplate}
         priority={priority}
       />

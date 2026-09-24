@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="OLEO UNDER-EXTENSION">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">OLEO UNDER-EXTENSION</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="370" height="444" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="60.0" y="172.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#101827">CROSS-SECTION</text>
+<rect x="148" y="182" width="40" height="18" fill="#64748b" stroke="#101827" stroke-width="2"/>
+<rect x="118" y="200" width="100" height="260" rx="6" fill="#94a3b8" stroke="#101827" stroke-width="3"/>
+<rect x="126" y="206" width="84" height="96" fill="#bfdbfe"/>
+<rect x="126" y="302" width="84" height="152" fill="#f59e0b" fill-opacity="0.75"/>
+<rect x="134" y="352" width="68" height="180" fill="#e2e8f0" stroke="#101827" stroke-width="3"/>
+<rect x="140" y="366" width="56" height="120" fill="#f59e0b" fill-opacity="0.75"/>
+<rect x="134" y="352" width="27.0" height="14" fill="#475569"/>
+<rect x="175.0" y="352" width="27.0" height="14" fill="#475569"/>
+<line x1="168.0" y1="206.0" x2="168.0" y2="380.0" stroke="#334155" stroke-width="5" stroke-linecap="round"/>
+<line x1="138.0" y1="344.0" x2="138.0" y2="318.0" stroke="#b45309" stroke-width="3" stroke-linecap="round" marker-end="url(#aDark)"/>
+<line x1="198.0" y1="344.0" x2="198.0" y2="318.0" stroke="#b45309" stroke-width="3" stroke-linecap="round" marker-end="url(#aDark)"/>
+<line x1="174.0" y1="400.0" x2="174.0" y2="372.0" stroke="#b45309" stroke-width="3" stroke-linecap="round" marker-end="url(#aDark)"/>
+<circle cx="168.0" cy="548" r="34" fill="#334155" stroke="#101827" stroke-width="3"/>
+<circle cx="168.0" cy="548" r="11" fill="#cbd5e1"/>
+<text x="234.0" y="238.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#1d4ed8">AIR / NITROGEN</text>
+<text x="234.0" y="256.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">(SPRING)</text>
+<text x="234.0" y="300.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#b45309">HYDRAULIC FLUID</text>
+<text x="234.0" y="318.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#b45309">(DAMPING)</text>
+<text x="234.0" y="366.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">ORIFICE</text>
+<line x1="230.0" y1="362.0" x2="180.0" y2="358.0" stroke="#101827" stroke-width="2" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="234.0" y="432.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">PISTON</text>
+<text x="234.0" y="450.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#64748b">(SLIDING TUBE)</text>
+<rect x="420" y="142" width="330" height="444" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="440.0" y="172.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#101827">EXTENSION ON THE GROUND</text>
+<rect x="462" y="206" width="36" height="110" rx="4" fill="#94a3b8" stroke="#101827" stroke-width="2.5"/>
+<rect x="469" y="316" width="22" height="58" fill="#e2e8f0" stroke="#101827" stroke-width="2.5"/>
+<circle cx="480" cy="396" r="24" fill="#334155" stroke="#101827" stroke-width="2.5"/>
+<circle cx="480" cy="396" r="8" fill="#cbd5e1"/>
+<line x1="510.0" y1="318.0" x2="510.0" y2="372.0" stroke="#101827" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="504.0" y1="316.0" x2="516.0" y2="316.0" stroke="#101827" stroke-width="2" stroke-linecap="round"/>
+<line x1="504.0" y1="374.0" x2="516.0" y2="374.0" stroke="#101827" stroke-width="2" stroke-linecap="round"/>
+<text x="480.0" y="520.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">NORMAL</text>
+<text x="480.0" y="540.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#64748b">correct</text>
+<text x="480.0" y="558.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#64748b">extension</text>
+<rect x="538" y="190" width="92" height="388" rx="10" fill="#fff8e1" stroke="#f4b400" stroke-width="3"/>
+<rect x="566" y="206" width="36" height="110" rx="4" fill="#94a3b8" stroke="#101827" stroke-width="2.5"/>
+<rect x="573" y="316" width="22" height="22" fill="#e2e8f0" stroke="#101827" stroke-width="2.5"/>
+<circle cx="584" cy="360" r="24" fill="#334155" stroke="#101827" stroke-width="2.5"/>
+<circle cx="584" cy="360" r="8" fill="#cbd5e1"/>
+<line x1="614.0" y1="318.0" x2="614.0" y2="336.0" stroke="#b7860b" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="608.0" y1="316.0" x2="620.0" y2="316.0" stroke="#b7860b" stroke-width="2" stroke-linecap="round"/>
+<line x1="608.0" y1="338.0" x2="620.0" y2="338.0" stroke="#b7860b" stroke-width="2" stroke-linecap="round"/>
+<text x="584.0" y="520.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#b7860b">LOW AIR</text>
+<text x="584.0" y="540.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#64748b">under-</text>
+<text x="584.0" y="558.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#64748b">extension</text>
+<rect x="670" y="206" width="36" height="110" rx="4" fill="#94a3b8" stroke="#101827" stroke-width="2.5"/>
+<rect x="677" y="316" width="22" height="96" fill="#e2e8f0" stroke="#101827" stroke-width="2.5"/>
+<circle cx="688" cy="434" r="24" fill="#334155" stroke="#101827" stroke-width="2.5"/>
+<circle cx="688" cy="434" r="8" fill="#cbd5e1"/>
+<line x1="718.0" y1="318.0" x2="718.0" y2="410.0" stroke="#101827" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="712.0" y1="316.0" x2="724.0" y2="316.0" stroke="#101827" stroke-width="2" stroke-linecap="round"/>
+<line x1="712.0" y1="412.0" x2="724.0" y2="412.0" stroke="#101827" stroke-width="2" stroke-linecap="round"/>
+<text x="688.0" y="520.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">HIGH AIR</text>
+<text x="688.0" y="540.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#64748b">over-</text>
+<text x="688.0" y="558.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#64748b">extension</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">LOW GAS PRESSURE</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Too little air or nitrogen</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">to hold the leg out: it sits</text>
+<text x="796.0" y="262.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">lower than normal.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">LESS TRAVEL</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Less stroke is left to</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">absorb landing shocks.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">FIX</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Recharge to the specified</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">pressure (and check fluid</text>
+<text x="796.0" y="562.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">level).</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">The most likely cause of an under-extended oleo leg is low air pressure.</text>
+</svg>

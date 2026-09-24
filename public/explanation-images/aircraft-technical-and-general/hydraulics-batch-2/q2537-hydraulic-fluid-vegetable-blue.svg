@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="HYDRAULIC FLUID IDENTIFICATION">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">HYDRAULIC FLUID IDENTIFICATION</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="48" y="142" width="356" height="300" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="226.0" y="180.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">MINERAL BASED</text>
+<path d="M 182,212 L 270,212 L 270,226 L 286,244 L 286,352 Q 286,368 270,368 L 182,368 Q 166,368 166,352 L 166,244 L 182,226 Z" fill="#ffffff" stroke="#101827" stroke-width="3"/>
+<rect x="170" y="270" width="112" height="94" rx="10" fill="#dc2626"/>
+<text x="226.0" y="326.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="800" fill="#ffffff">RED</text>
+<rect x="420" y="142" width="356" height="300" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<text x="598.0" y="180.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">VEGETABLE BASED</text>
+<rect x="552" y="398" width="92" height="28" rx="14" fill="#f4b400"/>
+<text x="598.0" y="417.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#06111f">ANSWER</text>
+<path d="M 554,212 L 642,212 L 642,226 L 658,244 L 658,352 Q 658,368 642,368 L 554,368 Q 538,368 538,352 L 538,244 L 554,226 Z" fill="#ffffff" stroke="#101827" stroke-width="3"/>
+<rect x="542" y="270" width="112" height="94" rx="10" fill="#2563eb"/>
+<text x="598.0" y="326.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="800" fill="#ffffff">BLUE</text>
+<rect x="792" y="142" width="356" height="300" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="970.0" y="180.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">PHOSPHATE ESTER</text>
+<path d="M 926,212 L 1014,212 L 1014,226 L 1030,244 L 1030,352 Q 1030,368 1014,368 L 926,368 Q 910,368 910,352 L 910,244 L 926,226 Z" fill="#ffffff" stroke="#101827" stroke-width="3"/>
+<rect x="914" y="270" width="112" height="94" rx="10" fill="#7c3aed"/>
+<text x="970.0" y="326.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="800" fill="#ffffff">PURPLE</text>
+<rect x="48" y="458" width="1100" height="128" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+<text x="78.0" y="502.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" fill="#dc2626">NEVER MIX FLUID TYPES</text>
+<text x="78.0" y="536.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Incompatible fluids attack seals, change viscosity and form deposits.</text>
+<text x="78.0" y="562.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Always use the fluid type specified for the aircraft.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">Vegetable-based hydraulic fluid is coloured blue.</text>
+</svg>

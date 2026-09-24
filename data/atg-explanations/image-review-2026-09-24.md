@@ -386,3 +386,10 @@ The other 35 have no image: blockages, vacuum and gyro systems, altimeter capsul
 the DI. 2679 (left taxi turn) was left out because the only taxi-turn image shows a right turn. The KEY FACT
 templates were not changed. ATG now has 64 questions with an image: 55 reused from other subjects and 9 textbook
 extracts.
+
+## Round 5: 16 drawn diagrams restored at the owner's request
+
+The owner picked these as good from the removed-image gallery. Their files are back in `clean-v1/` from e930333,
+and each row's URL, title and caption match the round-2 backup again: 2418, 2421, 2425, 2427, 2429, 2430, 2435,
+2439, 2440, 2441, 2443, 2444, 2445, 2446, 2448, 2451. Six of them (2425, 2427, 2439, 2443, 2446, 2451) had been given
+a POF diagram in round 3. The original drawings replace those diagrams again.

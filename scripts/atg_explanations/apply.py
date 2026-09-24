@@ -2,7 +2,8 @@
 
 Each module in rewrites/ defines R = {question_id: {"e": explanation, "a".."d": replacement option, "q": stem}}.
 Option keys are present only where a filler distractor is replaced, and "q" only where the stem itself
-needs rewording; the correct answer is never changed here.
+needs rewording. The correct answer is never changed, except that "ans" may fix a typo in its text:
+it must then also be given in the answer's own slot, and both are updated together.
 
     python3 apply.py                 validate every module
     python3 apply.py airframes ...   validate and write <module>.sql next to this script's output dir
@@ -46,26 +47,34 @@ def check(qid, change):
     row = ORIGINAL.get(qid)
     if row is None:
         return [f"{qid}: not an ATG question"], []
+    if change == {"keep": True}:
+        return [], []
     e = change.get("e", "")
-    if not 180 <= len(e) <= 800:
+    worked = "\nANSWER\n" in e
+    if not (180 <= len(e) <= 800 or (worked and len(e) <= 800)):
         errs.append(f"{qid}: explanation length {len(e)}")
-    if "  " in e or e != e.strip() or not e.endswith((".", ".\"", ")")):
+    if "  " in e or e != e.strip() or not (worked or e.endswith((".", ".\"", ")"))):
         errs.append(f"{qid}: explanation spacing/ending")
     if re.search(r"\b(claude|opus|sonnet|anthropic)\b", e, re.I):
         errs.append(f"{qid}: model name in text")
     new = {s: change.get(k, row[s]) for k, s in SLOTS.items()}
+    answer = change.get("ans", row["correct_answer"])
     for k in change:
-        if k not in ("e", "q", *SLOTS):
+        if k not in ("e", "q", "ans", *SLOTS):
             errs.append(f"{qid}: unknown key {k}")
-        elif k in SLOTS and row[SLOTS[k]] == row["correct_answer"]:
+        elif k in SLOTS and row[SLOTS[k]] == row["correct_answer"] and change[k] != change.get("ans"):
             errs.append(f"{qid}: tried to replace the correct answer in slot {k}")
+    if "ans" in change:
+        import difflib
+        if difflib.SequenceMatcher(None, change["ans"].lower(), row["correct_answer"].lower()).ratio() < 0.9:
+            errs.append(f"{qid}: 'ans' is more than a typo fix")
     vals = list(new.values())
-    if vals.count(row["correct_answer"]) != 1:
+    if vals.count(answer) != 1:
         errs.append(f"{qid}: correct answer not present exactly once")
     if len({v.strip().lower() for v in vals}) != 4:
         errs.append(f"{qid}: duplicate options")
     lens = sorted(len(v) for v in vals)
-    if len(row["correct_answer"]) == lens[-1] and lens[-1] > 1.6 * lens[-2] and lens[-1] > 30:
+    if len(answer) == lens[-1] and lens[-1] > 1.6 * lens[-2] and lens[-1] > 30:
         warns.append(f"{qid}: correct answer is by far the longest option")
     return errs, warns
 
@@ -83,17 +92,21 @@ def sql_for(changes):
     an md5 of its original stem, options, answer and explanation, so it only applies to an unchanged row."""
     rows = []
     for qid, change in sorted(changes.items()):
+        if change == {"keep": True}:
+            continue
         row = ORIGINAL[qid]
         vals = [q(change["e"])]
         vals.append(q(change["q"]) if change.get("q", row["question"]) != row["question"] else "null")
         for k, slot in SLOTS.items():
             vals.append(q(change[k]) if change.get(k, row[slot]) != row[slot] else "null")
+        vals.append(q(change["ans"]) if "ans" in change else "null")
         rows.append(f"({qid},{','.join(vals)},'{row_md5(row)}')")
     return (
         "update questions t set explanation=v.e, question=coalesce(v.nq, t.question),\n"
         "  option_a=coalesce(v.na, t.option_a), option_b=coalesce(v.nb, t.option_b),\n"
-        "  option_c=coalesce(v.nc, t.option_c), option_d=coalesce(v.nd, t.option_d)\n"
-        "from (values\n" + ",\n".join(rows) + "\n) as v(id,e,nq,na,nb,nc,nd,guard)\n"
+        "  option_c=coalesce(v.nc, t.option_c), option_d=coalesce(v.nd, t.option_d),\n"
+        "  correct_answer=coalesce(v.nans, t.correct_answer)\n"
+        "from (values\n" + ",\n".join(rows) + "\n) as v(id,e,nq,na,nb,nc,nd,nans,guard)\n"
         f"where t.id=v.id and {GUARD}=v.guard\n"
         "returning t.id;\n"
     )
@@ -115,7 +128,8 @@ def main(names):
             errs += e
             warns += w
         replaced = sum(1 for ch in R.values() for k in ch if k in SLOTS)
-        print(f"{name}: {len(R)} questions, {replaced} options replaced, {len(errs)} errors, {len(warns)} warnings")
+        kept = sum(1 for ch in R.values() if ch == {"keep": True})
+        print(f"{name}: {len(R)} questions ({kept} kept as is), {replaced} options replaced, {len(errs)} errors, {len(warns)} warnings")
         for m in errs + warns:
             print("   ", m)
         bad += len(errs)
@@ -124,7 +138,7 @@ def main(names):
         WORK.mkdir(parents=True, exist_ok=True)
         out = WORK / f"{'+'.join(names)}.sql"
         out.write_text(sql_for(combined))
-        print(f"wrote {out} ({len(combined)} rows)")
+        print(f"wrote {out} ({sum(1 for c in combined.values() if c != {'keep': True})} rows)")
     if not names:
         missing = sorted(set(ORIGINAL) - set(seen))
         print(f"covered {len(seen)}/{len(ORIGINAL)}; missing: {missing[:20]}{' ...' if len(missing) > 20 else ''}")

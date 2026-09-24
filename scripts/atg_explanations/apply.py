@@ -6,7 +6,8 @@ needs rewording. The correct answer is never changed, except that "ans" may fix 
 it must then also be given in the answer's own slot, and both are updated together.
 
     python3 apply.py                 validate every module
-    python3 apply.py airframes ...   validate and write <module>.sql next to this script's output dir
+    python3 apply.py airframes ...   validate and write one combined .sql for those modules to $ATG_WORK/sql
+    python3 apply.py --verify        print the aggregate hash the database should match
 
 The UPDATE is guarded on the row's original correct answer, options and explanation (from
 data/atg-explanations/original.json), so it only applies to a row that has not changed since the snapshot.
@@ -145,5 +146,49 @@ def main(names):
     sys.exit(1 if bad else 0)
 
 
+def final_state():
+    """Every row as it should be once all rewrites are applied."""
+    final = {qid: dict(row) for qid, row in ORIGINAL.items()}
+    for name in sorted(p.stem for p in (HERE / "rewrites").glob("*.py")):
+        for qid, ch in load(name).items():
+            if ch == {"keep": True}:
+                continue
+            row = final[qid]
+            row["explanation"] = ch["e"]
+            row["question"] = ch.get("q", row["question"])
+            for k, slot in SLOTS.items():
+                row[slot] = ch.get(k, row[slot])
+            row["correct_answer"] = ch.get("ans", row["correct_answer"])
+    return final
+
+
+def patch(baseline_file, ids):
+    """SQL for rows edited after they were applied: guarded on the previously applied state."""
+    baseline = {int(k): v for k, v in json.loads(Path(baseline_file).read_text()).items()}
+    final = final_state()
+    rows = []
+    for qid in ids:
+        old, new = baseline[qid], final[qid]
+        sets = [f"{f}={q(new[f])}" for f in FIELDS if new[f] != old[f]]
+        rows.append(f"update questions t set {', '.join(sets)} where t.id={qid} and {GUARD}='{row_md5(old)}' returning t.id;")
+    return "\n".join(rows) + "\n"
+
+
+def verify():
+    """Print the aggregate hash the database should have once every rewrite is applied."""
+    final = final_state()
+    agg = ",".join(f"{qid}:{row_md5(final[qid])}" for qid in sorted(final))
+    print("expected aggregate:", md5(agg))
+    print("check with: select md5(string_agg(id::text || ':' || " + GUARD.replace("t.", "") +
+          ", ',' order by id)) from questions where subject = 'aircraft-technical-and-general';")
+
+
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    if sys.argv[1:] == ["--verify"]:
+        verify()
+    elif sys.argv[1:2] == ["--snapshot"]:
+        Path(sys.argv[2]).write_text(json.dumps(final_state(), ensure_ascii=False))
+    elif sys.argv[1:2] == ["--patch"]:
+        print(patch(sys.argv[2], [int(a) for a in sys.argv[3:]]), end="")
+    else:
+        main(sys.argv[1:])

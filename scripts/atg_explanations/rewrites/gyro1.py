@@ -60,6 +60,7 @@ R = {
         "e": "A direction indicator's gyro stays fixed in space, but the earth rotates beneath it at 15 degrees per hour. To a pilot on the rotating earth the gyro's axis therefore appears to drift: apparent wander, which varies with latitude from zero at the equator to 15 degrees per hour at the poles. Friction in the bearings and gimbals, turbulence and an unbalanced rotor cause real wander, where the gyro actually moves in space.",
     },
     2671: {
+        "c": "The gyro precesses to follow the aircraft's new attitude",
         "d": "The gyro tilts with the aircraft, so the display does not change",
         "e": "The attitude indicator's gyro is erected to the earth's vertical and, through rigidity, stays there as the aircraft manoeuvres. The instrument case and the aircraft pitch and roll around the gyro, so the horizon bar, attached to the gyro, stays level with the real horizon while the miniature aircraft moves with the aircraft. If the gyro moved with the aircraft there would be nothing to measure against.",
     },

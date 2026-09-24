@@ -1,0 +1,42 @@
+[
+ {
+  "id": 2464,
+  "question": "The horizontal stabilizer on the tail boom:",
+  "option_a": "Helps generate aerodynamic lift to prevent tail boom from dipping",
+  "option_b": "The centre of gravity is located forward of centre of pressure",
+  "option_c": "Allow the aeroplane to fly at a higher angle of attack and lower airspeed",
+  "option_d": "A servo tab is connected directly to the pilot controls",
+  "correct_answer": "Helps generate aerodynamic lift to prevent tail boom from dipping",
+  "explanation": "A helicopter's horizontal stabilizer develops an aerodynamic force that helps control tail-boom pitch as speed and power change. This improves longitudinal stability and prevents excessive tail movement."
+ },
+ {
+  "id": 2507,
+  "question": "The absorption of water into aviation fuel is:",
+  "option_a": "A blocked fuel vent",
+  "option_b": "More likely with cold fuel",
+  "option_c": "Fuel-tank baffles",
+  "option_d": "A fuel-tank vent",
+  "correct_answer": "More likely with cold fuel",
+  "explanation": "Cooling can cause moisture to condense in the tank and dissolved water to separate from the fuel. Cold-soaked fuel is therefore more likely to contain visible free water that must be drained before flight."
+ },
+ {
+  "id": 2592,
+  "question": "In low-tension magneto systems, a battery is used to:",
+  "option_a": "Produce a low voltage to the transformer when you turn magneto's switch on start position",
+  "option_b": "The engine will continue to run with the magneto switch in the off position",
+  "option_c": "It is self-excited and does not require battery power to come online",
+  "option_d": "Supply the aircraft electrical system and recharge the battery",
+  "correct_answer": "Produce a low voltage to the transformer when you turn magneto's switch on start position",
+  "explanation": "During starting, the battery supplies a reliable low-voltage current to the low-tension ignition circuit. A transformer near the plug then raises that voltage enough to produce the spark."
+ },
+ {
+  "id": 2616,
+  "question": "An operational problem of the conventional VSI which does not occur in the Instantaneous VSI is:",
+  "option_a": "Decrease more slowly",
+  "option_b": "Manoeuvre-induced error",
+  "option_c": "Increase more slowly",
+  "option_d": "The instrument case",
+  "correct_answer": "Manoeuvre-induced error",
+  "explanation": "A conventional VSI responds slowly and can be disturbed by rapid manoeuvre-related static-pressure changes. An IVSI uses accelerometers to provide an immediate correction and greatly reduce that transient error."
+ }
+]

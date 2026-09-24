@@ -35,6 +35,7 @@ R = {
         "e": "The mixture control moves a needle in the passage between the float chamber and the diffuser (main jet), varying how much fuel can flow for a given airflow; this is how the pilot leans the mixture as air density falls. The throttle butterfly controls the volume of mixture entering the engine, the float and needle valve keep the float-chamber level constant, and the accelerator pump adds fuel when the throttle is opened quickly.",
     },
     2478: {
+        "d": "Will increase the engine power available for take-off",
         "e": "Carburettor heat replaces the normal intake air with air heated around the exhaust. Warm air is less dense, so a smaller mass of air passes through the venturi while the carburettor meters much the same amount of fuel: the mixture becomes richer and the power falls, usually seen as a drop in RPM. Because the air is warmer, not cooler, it richens rather than leans the mixture.",
     },
     2479: {

@@ -34,8 +34,9 @@ R = {
         "e": "A pressure switch in the system monitors hydraulic pressure and illuminates a warning light, usually red, when the pressure falls below a safe value. Red is reserved for warnings that need immediate attention, while green normally indicates a safe condition such as gear down and locked. The fluid's colour identifies its type, not its pressure, and a pressure loss usually means fluid is being lost, not gained.",
     },
     2555: {
+        "c": "Filter the fluid as it returns to the reservoir",
         "d": "Keep the fluid at a constant temperature",
-        "e": "As the pump draws fluid from the reservoir, the space above the fluid would fall below atmospheric pressure if air could not get in. The vent admits air so the reservoir stays at atmospheric pressure, preventing a vacuum that would restrict the flow to the pump and cause cavitation; it also lets air out as fluid returns. The vent does not store pressure or control temperature.",
+        "e": "As the pump draws fluid from the reservoir, the space above the fluid would fall below atmospheric pressure if air could not get in. The vent admits air so the reservoir stays at atmospheric pressure, preventing a vacuum that would restrict the flow to the pump and cause cavitation; it also lets air out as fluid returns. The vent does not store pressure, filter the fluid or control its temperature.",
     },
     2559: {
         "e": "Hydraulics work on Pascal's law: pressure applied to a confined fluid is transmitted equally and undiminished in all directions. Because hydraulic fluid is practically incompressible, pushing a small master-cylinder piston produces the same pressure on a larger piston elsewhere, and since force = pressure × area the force is multiplied. A fluid that compressed easily would make the system spongy and useless.",

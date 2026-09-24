@@ -6,7 +6,7 @@ type Section = {
   body: string
 }
 
-const SECTION_HEADERS = ["GIVEN", "CONCEPT", "FORMULA", "METHOD", "SOLVE", "ANSWER"]
+const SECTION_HEADERS = ["GIVEN", "CONCEPT", "FORMULA", "METHOD", "SOLVE", "REASONING", "ANSWER"]
 
 // Matches a header line like "METHOD" or "METHOD (CRP-5 Flight Computer)" on its own line.
 const HEADER_LINE = new RegExp(`^(${SECTION_HEADERS.join("|")})(\\s*\\(([^)]+)\\))?\\s*$`)
@@ -17,6 +17,7 @@ const SECTION_STYLES: Record<string, { chip: string; border: string; bg: string 
   FORMULA: { chip: "bg-purple-600 text-white", border: "border-purple-200", bg: "bg-purple-50" },
   METHOD: { chip: "bg-[#1f4e79] text-white", border: "border-blue-200", bg: "bg-blue-50" },
   SOLVE: { chip: "bg-amber-600 text-white", border: "border-amber-200", bg: "bg-amber-50" },
+  REASONING: { chip: "bg-teal-600 text-white", border: "border-teal-200", bg: "bg-teal-50" },
   ANSWER: { chip: "bg-green-700 text-white", border: "border-green-300", bg: "bg-green-50" },
 }
 

@@ -4,6 +4,7 @@ import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
 import { ExplanationImage } from "./explanation-image"
+import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
 import { QuestionReferenceImage } from "./question-reference-image"
@@ -206,7 +207,7 @@ export function ExamSimulator({
                 <p className="text-sm font-semibold text-[#1f4e79]">Correct Answer</p>
                 <p className="mt-2 font-semibold text-slate-900">{currentQuestion.correctAnswer}</p>
                 <p className="mt-4 text-sm font-semibold text-[#1f4e79]">Explanation</p>
-                <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">{currentQuestion.explanation}</p>
+                <FormattedExplanation text={currentQuestion.explanation} />
 
                 {isHumanPerformance && !usesApprovedBankVisual && !currentQuestion.explanation_image_url ? (
                   <HumanPerformanceVisual key={`hp-${currentQuestion.id}`} question={currentQuestion} />

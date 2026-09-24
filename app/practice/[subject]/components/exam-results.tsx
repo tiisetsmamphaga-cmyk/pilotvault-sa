@@ -4,6 +4,7 @@ import { formatSubjectName } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
 import { ExplanationImage } from "./explanation-image"
+import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
 
@@ -102,7 +103,7 @@ export function ExamResults({
                     <p className="mt-2 text-green-700">
                       Correct answer: <span className="font-semibold">{question.correctAnswer}</span>
                     </p>
-                    <p className="mt-3 whitespace-pre-line leading-relaxed text-slate-700">{question.explanation}</p>
+                    <FormattedExplanation text={question.explanation} />
 
                     {isHumanPerformance && !usesApprovedBankVisual && !question.explanation_image_url ? (
                       <HumanPerformanceVisual question={question} />

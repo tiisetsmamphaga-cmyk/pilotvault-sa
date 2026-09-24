@@ -124,21 +124,22 @@ export async function getCachedProfile(
     profileUserId = userId
     profileCachedAt = Date.now()
 
-    profileRequest = supabase
-      .from("Profiles")
-      .select(
-        "full_name, email, licence_level, subscription_status, subscription_plan, payment_status, trial_ends_at, subscription_expires_at"
-      )
-      .eq("id", userId)
-      .single()
-      .then(({ data, error }) => {
+    profileRequest = (async () => {
+      try {
+        const { data, error } = await supabase
+          .from("Profiles")
+          .select(
+            "full_name, email, licence_level, subscription_status, subscription_plan, payment_status, trial_ends_at, subscription_expires_at"
+          )
+          .eq("id", userId)
+          .single()
         if (error) throw error
         return data as CachedProfile
-      })
-      .catch((error) => {
+      } catch (error) {
         resetProfileCache()
         throw error
-      })
+      }
+    })()
   }
 
   return profileRequest!
@@ -158,18 +159,19 @@ export async function getCachedSubjectAccess(
     accessUserId = userId
     accessCachedAt = Date.now()
 
-    accessRequest = supabase
-      .from("SubjectAccess")
-      .select("subject, access_status, expires_at")
-      .eq("user_id", userId)
-      .then(({ data, error }) => {
+    accessRequest = (async () => {
+      try {
+        const { data, error } = await supabase
+          .from("SubjectAccess")
+          .select("subject, access_status, expires_at")
+          .eq("user_id", userId)
         if (error) throw error
         return (data ?? []) as CachedSubjectAccess[]
-      })
-      .catch((error) => {
+      } catch (error) {
         resetAccessCache()
         throw error
-      })
+      }
+    })()
   }
 
   return accessRequest!

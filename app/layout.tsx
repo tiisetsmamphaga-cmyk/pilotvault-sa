@@ -17,10 +17,38 @@ const inter = Inter({
   variable: '--font-inter'
 })
 
+const SITE_URL = 'https://pilotvault.co.za'
+const SITE_TITLE = 'PilotVault SA | Pass Your SACAA Exams with Confidence'
+const SITE_DESCRIPTION =
+  'The most trusted exam preparation platform for student pilots in South Africa. 5000+ questions, 8 subjects, and a 98% pass rate.'
+
 export const metadata: Metadata = {
-  title: 'PilotVault SA | Pass Your SACAA Exams with Confidence',
-  description: 'The most trusted exam preparation platform for student pilots in South Africa. 5000+ questions, 8 subjects, and a 98% pass rate.',
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   keywords: ['SACAA', 'pilot exam', 'aviation', 'South Africa', 'PPL', 'CPL', 'flight training'],
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: 'PilotVault SA',
+    images: [
+      {
+        url: '/images/hero-cockpit.jpg',
+        width: 1600,
+        height: 1200,
+        alt: 'PilotVault SA',
+      },
+    ],
+    locale: 'en_ZA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/images/hero-cockpit.jpg'],
+  },
   icons: {
     icon: [
       {

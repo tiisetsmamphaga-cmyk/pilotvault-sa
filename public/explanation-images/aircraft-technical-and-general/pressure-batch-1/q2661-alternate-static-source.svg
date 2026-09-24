@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="ALTERNATE STATIC SOURCE">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">ALTERNATE STATIC SOURCE</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<path d="M 70,300 Q 90,230 200,220 L 600,230 Q 700,240 720,300 Q 700,380 600,390 L 200,400 Q 90,390 70,300 Z" fill="#e2e8f0" stroke="#101827" stroke-width="3"/>
+<text x="400.0" y="212.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#64748b">FUSELAGE (SIDE VIEW)</text>
+<circle cx="560" cy="386" r="8" fill="#dc2626" stroke="#101827" stroke-width="2"/>
+<path d="M 552,378 l 16,16 M 568,378 l -16,16" stroke="#ffffff" stroke-width="3"/>
+<text x="600.0" y="420.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#dc2626">STATIC VENT BLOCKED</text>
+<rect x="260" y="270" width="220" height="80" rx="10" fill="#ffffff" stroke="#101827" stroke-width="2.5"/>
+<text x="370.0" y="296.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#101827">COCKPIT</text>
+<text x="370.0" y="316.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#334155">slightly lower pressure</text>
+<text x="370.0" y="334.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#334155">(suction from the airflow)</text>
+<rect x="300" y="352" width="44" height="22" rx="4" fill="#f4b400" stroke="#101827" stroke-width="2"/>
+<text x="322.0" y="424.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#b7860b">ALTERNATE STATIC</text>
+<text x="322.0" y="438.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" fill="#b7860b">(INSIDE THE COCKPIT)</text>
+<text x="90.0" y="460.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">WITH THE ALTERNATE SOURCE SELECTED:</text>
+<rect x="90" y="476" width="200" height="80" rx="10" fill="#fde68a" stroke="#f4b400" stroke-width="4"/>
+<text x="190.0" y="506.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#101827">ASI</text>
+<text x="190.0" y="532.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#dc2626">OVER-READS</text>
+<rect x="305" y="476" width="200" height="80" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="405.0" y="506.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#101827">ALTIMETER</text>
+<text x="405.0" y="532.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#dc2626">OVER-READS</text>
+<rect x="520" y="476" width="200" height="80" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="620.0" y="506.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#101827">VSI</text>
+<text x="620.0" y="532.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#334155">brief climb indication</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">WHERE</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">In many light aircraft the</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">alternate static draws air</text>
+<text x="796.0" y="262.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">from within the cockpit.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">WHY THE ERROR</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Cockpit pressure is usually</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">slightly below true static</text>
+<text x="796.0" y="412.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">pressure.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">EFFECT</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Lower static pressure: the</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">ASI and altimeter over-read.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">The alternate static source draws air from the cockpit; the ASI then over-reads.</text>
+</svg>

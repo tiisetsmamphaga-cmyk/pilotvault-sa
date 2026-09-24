@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="CAPACITOR">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">CAPACITOR</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<path d="M 90.0,360.0 L 360.0,360.0" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 400.0,360.0 L 680.0,360.0" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="354" y="270" width="12" height="180" fill="#475569"/>
+<rect x="394" y="270" width="12" height="180" fill="#475569"/>
+<text x="344.0" y="290.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#dc2626">+</text>
+<text x="416.0" y="292.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#1e88e5">−</text>
+<text x="344.0" y="320.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#dc2626">+</text>
+<text x="416.0" y="322.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#1e88e5">−</text>
+<text x="344.0" y="350.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#dc2626">+</text>
+<text x="416.0" y="352.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#1e88e5">−</text>
+<text x="344.0" y="380.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#dc2626">+</text>
+<text x="416.0" y="382.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#1e88e5">−</text>
+<text x="344.0" y="410.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#dc2626">+</text>
+<text x="416.0" y="412.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#1e88e5">−</text>
+<text x="344.0" y="440.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#dc2626">+</text>
+<text x="416.0" y="442.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#1e88e5">−</text>
+<text x="380.0" y="250.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" fill="#b7860b">STORED CHARGE</text>
+<text x="380.0" y="486.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#64748b">DIELECTRIC (INSULATOR)</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">TWO PLATES</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Conductors separated by an</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">insulator (dielectric).</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">STORES CHARGE</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Charge builds on the plates</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">when a voltage is applied.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">RELEASES IT</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Can give the charge back</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">quickly, e.g. to smooth or</text>
+<text x="796.0" y="562.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">suppress surges.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">A capacitor stores an electrical charge.</text>
+</svg>

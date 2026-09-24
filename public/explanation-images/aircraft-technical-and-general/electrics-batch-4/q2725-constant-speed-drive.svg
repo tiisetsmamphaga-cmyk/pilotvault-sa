@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="CONSTANT-SPEED DRIVE (CSD)">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">CONSTANT-SPEED DRIVE (CSD)</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<rect x="80" y="300" width="140" height="120" rx="12" fill="#cbd5e1" stroke="#101827" stroke-width="3"/>
+<text x="150.0" y="366.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#101827">ENGINE</text>
+<text x="150.0" y="450.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">VARIABLE RPM</text>
+<line x1="220.0" y1="360.0" x2="280.0" y2="360.0" stroke="#64748b" stroke-width="10" stroke-linecap="round"/>
+<rect x="280" y="300" width="170" height="120" rx="12" fill="#fde68a" stroke="#f4b400" stroke-width="4"/>
+<text x="365.0" y="366.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="800" fill="#101827">CSD</text>
+<line x1="450.0" y1="360.0" x2="510.0" y2="360.0" stroke="#64748b" stroke-width="10" stroke-linecap="round"/>
+<circle cx="580" cy="360" r="70" fill="#e2e8f0" stroke="#101827" stroke-width="3"/>
+<text x="580.0" y="366.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#101827">AC GEN</text>
+<text x="580.0" y="460.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#15803d">CONSTANT SPEED</text>
+<text x="580.0" y="478.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#15803d">CONSTANT FREQUENCY</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">VARIABLE ENGINE SPEED IN</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Engine RPM changes with</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">power setting.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">CONSTANT SPEED OUT</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">The generator is driven at a</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">near-constant speed.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">CONSTANT FREQUENCY</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">So the AC frequency (e.g.</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">400 Hz) stays constant.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">A constant-speed drive turns the AC generator at an almost constant speed.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="ALTERNATOR VS GENERATOR AT LOW RPM">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">ALTERNATOR VS GENERATOR AT LOW RPM</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<line x1="110.0" y1="520.0" x2="670.0" y2="520.0" stroke="#101827" stroke-width="2.5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<line x1="110.0" y1="520.0" x2="110.0" y2="220.0" stroke="#101827" stroke-width="2.5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="670.0" y="548.0" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#101827">ENGINE RPM</text>
+<text x="88" y="370.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#101827" transform="rotate(-90 88 370.0)">ELECTRICAL OUTPUT</text>
+<line x1="233.2" y1="520.0" x2="233.2" y2="220.0" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 5"/>
+<text x="233.2" y="548.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#64748b">IDLE / TAXI</text>
+<path d="M 110.0,520.0 L 121.2,490.0 L 132.4,463.6 L 143.6,440.3 L 154.8,419.7 L 166.0,401.5 L 177.2,385.5 L 188.4,371.3 L 199.6,358.8 L 210.8,347.8 L 222.0,338.1 L 233.2,329.5 L 244.4,321.9 L 255.6,315.2 L 266.8,309.3 L 278.0,304.1 L 289.2,299.5 L 300.4,295.5 L 311.6,291.9 L 322.8,288.7 L 334.0,285.9 L 345.2,283.5 L 356.4,281.3 L 367.6,279.4 L 378.8,277.7 L 390.0,276.2 L 401.2,274.9 L 412.4,273.7 L 423.6,272.7 L 434.8,271.8 L 446.0,271.0 L 457.2,270.3 L 468.4,269.7 L 479.6,269.1 L 490.8,268.6 L 502.0,268.2 L 513.2,267.8 L 524.4,267.5 L 535.6,267.2 L 546.8,266.9 L 558.0,266.7 L 569.2,266.5 L 580.4,266.3 L 591.6,266.2 L 602.8,266.0 L 614.0,265.9 L 625.2,265.8 L 636.4,265.7 L 647.6,265.6 L 658.8,265.6 L 670.0,265.5" fill="none" stroke="#15803d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 110.0,520.0 L 121.2,520.0 L 132.4,520.0 L 143.6,520.0 L 154.8,520.0 L 166.0,520.0 L 177.2,520.0 L 188.4,520.0 L 199.6,520.0 L 210.8,520.0 L 222.0,520.0 L 233.2,520.0 L 244.4,520.0 L 255.6,520.0 L 266.8,520.0 L 278.0,497.2 L 289.2,476.5 L 300.4,457.8 L 311.6,440.9 L 322.8,425.6 L 334.0,411.7 L 345.2,399.2 L 356.4,387.8 L 367.6,377.6 L 378.8,368.3 L 390.0,359.9 L 401.2,352.3 L 412.4,345.4 L 423.6,339.2 L 434.8,333.6 L 446.0,328.5 L 457.2,323.8 L 468.4,319.7 L 479.6,315.9 L 490.8,312.5 L 502.0,309.4 L 513.2,306.6 L 524.4,304.1 L 535.6,301.8 L 546.8,299.7 L 558.0,297.8 L 569.2,296.1 L 580.4,294.6 L 591.6,293.2 L 602.8,291.9 L 614.0,290.8 L 625.2,289.8 L 636.4,288.9 L 647.6,288.0 L 658.8,287.2 L 670.0,286.6" fill="none" stroke="#dc2626" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="390.0" y="244.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" fill="#15803d">ALTERNATOR</text>
+<text x="457.2" y="406.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" fill="#dc2626">DC GENERATOR</text>
+<text x="243.2" y="385.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#15803d">Alternator already</text>
+<text x="243.2" y="401.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#15803d">charging at idle</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">ALTERNATOR</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Produces useful power even</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">at low RPM, e.g. taxiing.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">DC GENERATOR</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Output is low until the</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">engine RPM is higher.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">ALSO</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Lighter for its output and</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">no heavy commutator.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">An alternator gives more output at low RPM than a generator and still charges at idle.</text>
+</svg>

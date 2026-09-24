@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="DC GENERATOR: SELF-EXCITED">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">DC GENERATOR: SELF-EXCITED</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<text x="60.0" y="172.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#b7860b">SELF-EXCITED: NO BATTERY</text>
+<text x="60.0" y="190.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#b7860b">NEEDED TO COME ON LINE</text>
+<rect x="70" y="280" width="36" height="180" rx="6" fill="#ef4444" stroke="#101827" stroke-width="2.5"/>
+<rect x="254" y="280" width="36" height="180" rx="6" fill="#3b82f6" stroke="#101827" stroke-width="2.5"/>
+<text x="88.0" y="376.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#ffffff">N</text>
+<text x="272.0" y="376.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#ffffff">S</text>
+<ellipse cx="88" cy="300" rx="24" ry="5" fill="none" stroke="#b7860b" stroke-width="3"/>
+<ellipse cx="88" cy="328" rx="24" ry="5" fill="none" stroke="#b7860b" stroke-width="3"/>
+<ellipse cx="88" cy="356" rx="24" ry="5" fill="none" stroke="#b7860b" stroke-width="3"/>
+<ellipse cx="88" cy="384" rx="24" ry="5" fill="none" stroke="#b7860b" stroke-width="3"/>
+<ellipse cx="88" cy="412" rx="24" ry="5" fill="none" stroke="#b7860b" stroke-width="3"/>
+<ellipse cx="88" cy="440" rx="24" ry="5" fill="none" stroke="#b7860b" stroke-width="3"/>
+<text x="88.0" y="266.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" fill="#b7860b">FIELD WINDING</text>
+<rect x="140" y="320" width="80" height="100" rx="10" fill="none" stroke="#b45309" stroke-width="4"/>
+<text x="180.0" y="375.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" fill="#101827">ARMATURE</text>
+<path d="M 160,306 A 30 30 0 0 1 204,310" fill="none" stroke="#101827" stroke-width="3" marker-end="url(#aDark)"/>
+<path d="M 154,498 A 26 26 0 0 1 206,498 L 202,498 A 22 22 0 0 0 158,498 Z" fill="#d97706" stroke="#101827" stroke-width="2"/>
+<path d="M 154,502 A 26 26 0 0 0 206,502 L 202,502 A 22 22 0 0 1 158,502 Z" fill="#d97706" stroke="#101827" stroke-width="2"/>
+<line x1="180.0" y1="420.0" x2="180.0" y2="472.0" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+<rect x="132" y="492" width="18" height="16" fill="#1f2937"/>
+<rect x="210" y="492" width="18" height="16" fill="#1f2937"/>
+<text x="180.0" y="548.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" fill="#101827">COMMUTATOR + BRUSHES</text>
+<path d="M 228.0,500.0 L 340.0,500.0 L 340.0,300.0" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="300" y="240" width="90" height="60" rx="8" fill="#ffffff" stroke="#101827" stroke-width="2.5"/>
+<text x="345.0" y="266.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" fill="#101827">VOLTAGE</text>
+<text x="345.0" y="282.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" fill="#101827">REGULATOR</text>
+<path d="M 300.0,270.0 L 88.0,270.0 L 88.0,280.0" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<text x="236.0" y="262.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="800" fill="#64748b">FIELD CONTROL</text>
+<path d="M 390.0,270.0 L 440.0,270.0" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="440" y="240" width="80" height="60" rx="8" fill="#ffffff" stroke="#101827" stroke-width="2.5"/>
+<line x1="456.0" y1="282.0" x2="500.0" y2="282.0" stroke="#101827" stroke-width="4" stroke-linecap="round"/>
+<text x="480.0" y="316.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="800" fill="#101827">CUT-OUT</text>
+<path d="M 520.0,270.0 L 580.0,270.0 L 580.0,220.0" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="540.0" y1="220.0" x2="660.0" y2="220.0" stroke="#101827" stroke-width="8" stroke-linecap="round"/>
+<text x="666.0" y="225.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#101827">BUS BAR</text>
+<path d="M 620.0,220.0 L 620.0,400.0" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="602.0" y1="412.0" x2="602.0" y2="448.0" stroke="#101827" stroke-width="4" stroke-linecap="round"/>
+<line x1="609.0" y1="421.0" x2="609.0" y2="439.0" stroke="#101827" stroke-width="4" stroke-linecap="round"/>
+<line x1="616.0" y1="412.0" x2="616.0" y2="448.0" stroke="#101827" stroke-width="4" stroke-linecap="round"/>
+<line x1="623.0" y1="421.0" x2="623.0" y2="439.0" stroke="#101827" stroke-width="4" stroke-linecap="round"/>
+<line x1="630.0" y1="412.0" x2="630.0" y2="448.0" stroke="#101827" stroke-width="4" stroke-linecap="round"/>
+<line x1="637.0" y1="421.0" x2="637.0" y2="439.0" stroke="#101827" stroke-width="4" stroke-linecap="round"/>
+<text x="624.0" y="474.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#101827">BATTERY</text>
+<text x="180.0" y="242.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#b7860b">RESIDUAL MAGNETISM</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">RESIDUAL MAGNETISM</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">The field poles keep a little</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">magnetism when stopped.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">BUILDS UP ITSELF</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">As it turns, its own output</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">feeds the field and output</text>
+<text x="796.0" y="412.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">rises.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">NO BATTERY NEEDED</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">It can come on line without</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">battery power (unlike an</text>
+<text x="796.0" y="562.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">alternator).</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">A DC generator is self-excited and does not need battery power to come on line.</text>
+</svg>

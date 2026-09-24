@@ -6,7 +6,7 @@ type Section = {
   body: string
 }
 
-const SECTION_HEADERS = ["GIVEN", "CONCEPT", "FORMULA", "METHOD", "WORKING", "SOLVE", "REASONING", "ANSWER"]
+const SECTION_HEADERS = ["GIVEN", "CONCEPT", "RULE", "FORMULA", "METHOD", "WORKING", "SOLVE", "REASONING", "ANSWER"]
 
 // Matches a header line like "METHOD" or "METHOD (CRP-5 Flight Computer)" on its own line.
 const HEADER_LINE = new RegExp(`^(${SECTION_HEADERS.join("|")})(\\s*\\(([^)]+)\\))?\\s*$`)
@@ -14,6 +14,7 @@ const HEADER_LINE = new RegExp(`^(${SECTION_HEADERS.join("|")})(\\s*\\(([^)]+)\\
 const SECTION_LABEL_COLOR: Record<string, string> = {
   GIVEN: "text-slate-500",
   CONCEPT: "text-indigo-600",
+  RULE: "text-indigo-600",
   FORMULA: "text-purple-600",
   METHOD: "text-[#1f4e79]",
   WORKING: "text-[#1f4e79]",
@@ -25,6 +26,7 @@ const SECTION_LABEL_COLOR: Record<string, string> = {
 const SECTION_CARD_STYLES: Record<string, { chip: string; border: string; bg: string }> = {
   GIVEN: { chip: "bg-slate-600 text-white", border: "border-slate-300", bg: "bg-slate-50" },
   CONCEPT: { chip: "bg-indigo-600 text-white", border: "border-indigo-200", bg: "bg-indigo-50" },
+  RULE: { chip: "bg-indigo-600 text-white", border: "border-indigo-200", bg: "bg-indigo-50" },
   FORMULA: { chip: "bg-purple-600 text-white", border: "border-purple-200", bg: "bg-purple-50" },
   METHOD: { chip: "bg-[#1f4e79] text-white", border: "border-blue-200", bg: "bg-blue-50" },
   WORKING: { chip: "bg-[#1f4e79] text-white", border: "border-blue-200", bg: "bg-blue-50" },

@@ -19,7 +19,7 @@ from PIL import Image, ImageDraw
 PDF = str(REPO / "091e41264c1bdb10.pdf")
 HERE = Path(__file__).parent
 OUT = WORK / "figs"
-OUT.mkdir(exist_ok=True)
+OUT.mkdir(parents=True, exist_ok=True)
 DPI = 200
 
 

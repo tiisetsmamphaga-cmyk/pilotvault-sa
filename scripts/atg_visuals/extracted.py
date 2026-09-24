@@ -96,6 +96,70 @@ ITEMS = {
             ],
         ),
     },
+    "hydraulics-batch-1": {
+        "q2559-pascals-law-hydraulic-brakes": lambda: frame(
+            FIGS / "p48-1.png",
+            "PASCAL'S LAW: HYDRAULIC BRAKES",
+            "Pressure applied to a confined fluid is transmitted equally throughout the fluid.",
+            "A hydraulic system works because pressure applied to a confined fluid is transmitted by it.",
+            notes=[
+                ("PEDAL FORCE PRESSURISES\nTHE CONFINED FLUID", (1000, 470), (390, 350), "middle"),
+                ("THE SAME PRESSURE ACTS\nON THE SLAVE CYLINDER", (205, 470), (235, 350), "middle"),
+            ],
+        ),
+    },
+    "piston-batch-1": {
+        "q2474-valve-lead": lambda: frame(
+            FIGS / "p55-1.png",
+            "VALVE LEAD",
+            "Valve timing diagram: the inlet valve opens before the piston reaches top dead centre.",
+            "Valve lead: the inlet valve opens before the piston reaches TDC on the exhaust stroke.",
+            notes=[
+                ("INLET VALVE OPENS\nBEFORE TDC", (215, 250), (250, 120), "middle"),
+                ("VALVE LEAD\n(20\u00b0 IN THIS ENGINE)", (985, 250), (305, 76), "middle"),
+            ],
+        ),
+        "q2560-valve-overlap": lambda: frame(
+            FIGS / "p55-1.png",
+            "VALVE OVERLAP",
+            "Valve timing diagram: the inlet opens before TDC and the exhaust closes after TDC.",
+            "Valve overlap: the short period around TDC when both inlet and exhaust valves are open.",
+            notes=[
+                ("INLET OPENS\nBEFORE TDC", (215, 250), (250, 120), "middle"),
+                ("EXHAUST CLOSES\nAFTER TDC", (985, 230), (520, 108), "middle"),
+                ("BOTH OPEN AROUND\nTDC: OVERLAP", (985, 440), (395, 92), "middle"),
+            ],
+        ),
+        "q2525-cylinder-cooling-fins": lambda: frame(
+            FIGS / "p82-1.png",
+            "CYLINDER COOLING FINS",
+            "Fins greatly increase the surface area from which the cylinder can lose heat to the airflow.",
+            "Cylinders and barrels are finned to improve engine cooling.",
+            notes=[
+                ("COOLING FINS", (1000, 300), (560, 330), "middle"),
+                ("MORE SURFACE AREA\n= MORE HEAT LOST", (205, 300), (None, None), "middle"),
+            ],
+        ),
+        "q2564-engine-baffles": lambda: frame(
+            FIGS / "p83-1.png",
+            "ENGINE BAFFLES",
+            "Baffles guide the incoming cooling air closely around the cylinders before it leaves the cowling.",
+            "Baffles direct the airflow over the engine cylinders for better cooling.",
+            notes=[
+                ("INTER-CYLINDER\nBAFFLES", (170, 250), (410, 360), "middle"),
+                ("COOLING AIR\nENTERS HERE", (1035, 470), (1120, 230), "middle"),
+            ],
+        ),
+        "q2553-cowl-flaps": lambda: frame(
+            FIGS / "p83-1.png",
+            "COWL FLAPS",
+            "Open cowl flaps for high power at low airspeed (climb); close them in cruise and descent.",
+            "Cowl flaps control the airflow over the cylinders to keep the correct operating temperature.",
+            notes=[
+                ("COWL FLAP\nCONTROLS THE\nCOOLING AIRFLOW", (165, 450), (200, 700), "middle"),
+            ],
+        ),
+    },
 }
 
 if __name__ == "__main__":

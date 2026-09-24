@@ -198,7 +198,7 @@ def plug(cx, top, deposit, wet=False):
 
 
 def spark_plugs(answer):
-    title = "SPARK PLUG: NORMAL CONDITION" if answer == "normal" else "SPARK PLUG: RICH MIXTURE"
+    title = {"normal": "SPARK PLUG: NORMAL CONDITION", "rich": "SPARK PLUG: RICH MIXTURE", "oil": "SPARK PLUG: OIL FOULING"}[answer]
     s = header(title)
     cols = [("normal", "NORMAL", "#d6cbb8", False, "Light grey / tan", "coating"),
             ("rich", "RICH MIXTURE", "#1f2937", False, "Dry, black, powdery", "carbon (soot)"),
@@ -217,8 +217,9 @@ def spark_plugs(answer):
         s += t(px + 178, 522, l2, 17, 800, GOLD_DARK if ans else INK)
         cause = {"normal": "Correct mixture and temperature", "rich": "Incomplete combustion", "oil": "Worn rings or guides"}[key]
         s += t(px + 178, 556, cause, 14, 400, BODY)
-    foot = ("A light grey coating on the firing end indicates normal engine operation."
-            if answer == "normal" else "Dry, black, powdery carbon on the firing end indicates an excessively rich mixture.")
+    foot = {"normal": "A light grey coating on the firing end indicates normal engine operation.",
+            "rich": "Dry, black, powdery carbon on the firing end indicates an excessively rich mixture.",
+            "oil": "Black, oily deposits on the firing end indicate oil entering the combustion chamber and burning."}[answer]
     s += footer(foot)
     return s
 

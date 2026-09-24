@@ -1,0 +1,161 @@
+{
+ "note": "ATG questions given a diagram already approved and in use in another subject. Before this change every row had explanation_image_url and explanation_image_title null.",
+ "rows": [
+  {
+   "id": 2425,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+   "explanation_image_title": "TRAILING-EDGE FLAP TYPES",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SPLIT FLAP: ONLY THE LOWER SURFACE DEFLECTS\", \"subline\": \"THE UPPER SURFACE STAYS IN PLACE\", \"blocks\": [{\"label\": \"Lift\", \"value\": \"Moderate increase\"}, {\"label\": \"Drag\", \"value\": \"Large increase: steeper approach\"}, {\"label\": \"Compare\", \"value\": \"Plain hinges the whole trailing edge; slotted opens a gap; Fowler slides aft\"}]}"
+  },
+  {
+   "id": 2427,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v2.webp",
+   "explanation_image_title": "ELEVATOR TRIM TAB",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN ADJUSTABLE TRIM TAB KEEPS ITS SET ANGLE\", \"subline\": \"ONLY THE TRIM WHEEL MOVES IT, NOT THE CONTROL COLUMN\", \"blocks\": [{\"label\": \"Elevator moved\", \"value\": \"Tab moves with it as a fixed part of the surface\"}, {\"label\": \"New angle\", \"value\": \"Only when the pilot re-trims\"}, {\"label\": \"Moves automatically\", \"value\": \"That is a balance or anti-balance tab\"}]}"
+  },
+  {
+   "id": 2432,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+   "explanation_image_title": "LONGITUDINAL STABILITY AND CG POSITION",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFT CG REDUCES LONGITUDINAL STABILITY\", \"subline\": \"THE TAILPLANE'S MOMENT ARM IS SHORTER, SO THE RESTORING MOMENT IS WEAKER\", \"blocks\": [{\"label\": \"Stability\", \"value\": \"Reduced\"}, {\"label\": \"Elevator feel\", \"value\": \"Lighter; easy to over-control\"}, {\"label\": \"Stall speed\", \"value\": \"Slightly lower (less tail download)\"}]}"
+  },
+  {
+   "id": 2439,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-pressure-v2.webp",
+   "explanation_image_title": "CENTRE OF PRESSURE",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE ANGLE OF ATTACK: CP MOVES FORWARD\", \"subline\": \"UP TO THE STALL; BEYOND IT THE CP MOVES AFT AGAIN\", \"blocks\": [{\"label\": \"AoA increased\", \"value\": \"CP forward\"}, {\"label\": \"AoA reduced\", \"value\": \"CP aft\"}, {\"label\": \"At the stall\", \"value\": \"CP moves aft: the nose drops\"}]}"
+  },
+  {
+   "id": 2443,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+   "explanation_image_title": "TRAILING-EDGE FLAP TYPES",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SLOTTED FLAP: A GAP BETWEEN WING AND FLAP\", \"subline\": \"HIGH-ENERGY AIR FLOWS THROUGH THE SLOT AND OVER THE FLAP\", \"blocks\": [{\"label\": \"Effect\", \"value\": \"Flow stays attached at large deflections\"}, {\"label\": \"Lift\", \"value\": \"More than a plain or split flap\"}, {\"label\": \"Fowler\", \"value\": \"Also slides aft to add wing area\"}]}"
+  },
+  {
+   "id": 2446,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+   "explanation_image_title": "TRAILING-EDGE FLAP TYPES",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FOWLER FLAP: SLIDES AFT, THEN DOWN\", \"subline\": \"IT ADDS WING AREA AS WELL AS CAMBER\", \"blocks\": [{\"label\": \"Aft movement\", \"value\": \"Increases wing area\"}, {\"label\": \"Down movement\", \"value\": \"Increases camber\"}, {\"label\": \"Lift\", \"value\": \"Largest increase of the common flap types\"}]}"
+  },
+  {
+   "id": 2449,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+   "explanation_image_title": "LONGITUDINAL STABILITY AND CG POSITION",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CG TOO FAR AFT: HARD TO CONTROL IN PITCH\", \"subline\": \"SHORT TAIL MOMENT ARM: LITTLE PITCH STABILITY\", \"blocks\": [{\"label\": \"Elevator\", \"value\": \"Light; easy to over-control\"}, {\"label\": \"Stall recovery\", \"value\": \"May lack nose-down authority\"}, {\"label\": \"Spin recovery\", \"value\": \"May be impossible\"}]}"
+  },
+  {
+   "id": 2450,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-left-turning-tendency-v2.webp",
+   "explanation_image_title": "TORQUE REACTION",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE REACTION ACTS OPPOSITE TO PROPELLER ROTATION\", \"subline\": \"NEWTON'S THIRD LAW: THE ENGINE TURNS THE PROPELLER, THE PROPELLER TURNS THE AIRCRAFT BACK\", \"blocks\": [{\"label\": \"In the air\", \"value\": \"Tends to roll the aircraft\"}, {\"label\": \"On the ground\", \"value\": \"Loads one main wheel more: the aircraft swings\"}, {\"label\": \"Not torque\", \"value\": \"Centrifugal force, P-factor, gyroscopic precession\"}]}"
+  },
+  {
+   "id": 2451,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+   "explanation_image_title": "TRAILING-EDGE FLAP TYPES",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PLAIN FLAP: THE REAR OF THE WING HINGES DOWN\", \"subline\": \"MORE CAMBER GIVES MORE LIFT AND MORE DRAG\", \"blocks\": [{\"label\": \"Slot\", \"value\": \"None\"}, {\"label\": \"Aft movement\", \"value\": \"None\"}, {\"label\": \"Effectiveness\", \"value\": \"Least of the common types\"}]}"
+  },
+  {
+   "id": 2452,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-left-turning-tendency-v2.webp",
+   "explanation_image_title": "LEFT-TURNING TENDENCIES",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLOCKWISE PROPELLER: THE AEROPLANE YAWS LEFT\", \"subline\": \"RIGHT RUDDER KEEPS IT STRAIGHT ON THE TAKE-OFF RUN\", \"blocks\": [{\"label\": \"Slipstream\", \"value\": \"Spirals onto the left of the fin\"}, {\"label\": \"Torque reaction\", \"value\": \"Presses the left wheel down\"}, {\"label\": \"P-factor\", \"value\": \"Down-going right blade gives more thrust\"}, {\"label\": \"Gyroscopic\", \"value\": \"Small: a tricycle's tail is not raised\"}]}"
+  },
+  {
+   "id": 2464,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+   "explanation_image_title": "TAIL FORCE AND LONGITUDINAL STABILITY",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TAILPLANE PUSHES UP OR DOWN AS REQUIRED\", \"subline\": \"IT GIVES LONGITUDINAL (PITCH) STABILITY\", \"blocks\": [{\"label\": \"Force\", \"value\": \"Up or down, depending on CG and flight condition\"}, {\"label\": \"Directional stability\", \"value\": \"Comes from the fin\"}, {\"label\": \"Lateral stability\", \"value\": \"Mainly from wing dihedral\"}]}"
+  },
+  {
+   "id": 2465,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-22/pof-four-forces-level-v2.webp",
+   "explanation_image_title": "FORCES IN BALANCE: LEVEL FLIGHT",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FIRST LAW: FORCES IN BALANCE MEAN EQUILIBRIUM\", \"subline\": \"NO NET FORCE: NO CHANGE IN SPEED OR DIRECTION\", \"blocks\": [{\"label\": \"Level flight\", \"value\": \"Lift = weight, thrust = drag\"}, {\"label\": \"Second law\", \"value\": \"Acceleration (F = ma)\"}, {\"label\": \"Third law\", \"value\": \"Action and reaction\"}]}"
+  },
+  {
+   "id": 2466,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+   "explanation_image_title": "TRAILING-EDGE FLAP TYPES",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE FOWLER FLAP INCREASES WING AREA\", \"subline\": \"IT RUNS AFT ON TRACKS BEFORE IT MOVES DOWN\", \"blocks\": [{\"label\": \"Early travel\", \"value\": \"Mostly area: lift with little drag\"}, {\"label\": \"Full travel\", \"value\": \"Area and camber: the largest lift increase\"}, {\"label\": \"Others\", \"value\": \"Plain, split, slotted add no significant area\"}]}"
+  },
+  {
+   "id": 2467,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+   "explanation_image_title": "CG AHEAD OF LIFT: THE TAIL BALANCES IT",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CG AHEAD OF CP: LIFT AND WEIGHT PITCH THE NOSE DOWN\", \"subline\": \"THE TAIL DOWN-FORCE AND POWER NORMALLY BALANCE IT\", \"blocks\": [{\"label\": \"Less power\", \"value\": \"Less slipstream over the tail: less down-force\"}, {\"label\": \"Result\", \"value\": \"The nose drops\"}, {\"label\": \"Why designed so\", \"value\": \"The aircraft keeps its airspeed if power is lost\"}]}"
+  },
+  {
+   "id": 2500,
+   "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/carb-icing-chart-v1.webp",
+   "explanation_image_title": "CARBURETTOR ICING: TEMPERATURE AND DEW POINT",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ROUGH, THEN A SLOW LOSS OF POWER: CARB ICE\", \"subline\": \"ICE BUILDS GRADUALLY AROUND THE VENTURI AND BUTTERFLY\", \"blocks\": [{\"label\": \"Magneto failure\", \"value\": \"Immediate drop and roughness\"}, {\"label\": \"Fuel starvation\", \"value\": \"Surging, then stopping\"}, {\"label\": \"Action\", \"value\": \"Full carb heat at the first signs\"}]}"
+  },
+  {
+   "id": 2634,
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-tas-increase-with-altitude-v1.webp",
+   "explanation_image_title": "TAS INCREASES WITH ALTITUDE AT CONSTANT IAS",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS = CAS CORRECTED FOR DENSITY\", \"subline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Thinner air: ASI reads less than TAS\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS about 2% above CAS per 1,000 ft\"}, {\"label\": \"IAS to CAS\", \"value\": \"Instrument and position error\"}]}"
+  },
+  {
+   "id": 2659,
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-tas-increase-with-altitude-v1.webp",
+   "explanation_image_title": "TAS INCREASES WITH ALTITUDE AT CONSTANT IAS",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CORRECT CAS FOR ALTITUDE AND TEMPERATURE TO GET TAS\", \"subline\": \"TOGETHER THEY SET THE AIR DENSITY\", \"blocks\": [{\"label\": \"Same IAS, higher\", \"value\": \"TAS rises\"}, {\"label\": \"Flight computer\", \"value\": \"Pressure altitude and OAT against CAS\"}, {\"label\": \"Wind\", \"value\": \"Gives groundspeed, not TAS\"}]}"
+  },
+  {
+   "id": 2673,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v2.webp",
+   "explanation_image_title": "BANK ANGLE AND LOAD FACTOR",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOAD FACTOR DEPENDS ONLY ON BANK ANGLE\", \"subline\": \"IN A LEVEL, COORDINATED TURN\", \"blocks\": [{\"label\": \"30 degrees\", \"value\": \"1.15 g\"}, {\"label\": \"45 degrees\", \"value\": \"1.41 g\"}, {\"label\": \"60 degrees\", \"value\": \"2 g\"}], \"formula\": \"n = 1 / cos(BANK)\"}"
+  },
+  {
+   "id": 2674,
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-nil-deviation-v1.webp",
+   "explanation_image_title": "WHY DEVIATION CHANGES WITH HEADING",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION VARIES WITH HEADING\", \"subline\": \"CAUSED BY THE AIRCRAFT'S OWN MAGNETIC FIELDS\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Steel parts, engine, radios, wiring\"}, {\"label\": \"Measured\", \"value\": \"By a compass swing\"}, {\"label\": \"Recorded\", \"value\": \"On the deviation card for each heading\"}]}"
+  },
+  {
+   "id": 2701,
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp",
+   "explanation_image_title": "COMPASS DEVIATION",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION COMES FROM THE AIRCRAFT'S OWN MAGNETIC FIELDS\", \"subline\": \"IT CHANGES WITH HEADING\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Steel parts, engine, radios, wiring, loose items\"}, {\"label\": \"Reduced by\", \"value\": \"Compass swing and compensating magnets\"}, {\"label\": \"Remainder\", \"value\": \"Shown on the deviation card\"}]}"
+  },
+  {
+   "id": 2704,
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp",
+   "explanation_image_title": "COMPASS DEVIATION",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAGNETIC TO COMPASS: DEVIATION\", \"subline\": \"TRUE TO MAGNETIC IS VARIATION\", \"blocks\": [{\"label\": \"Deviation\", \"value\": \"Aircraft's own magnetic fields\"}, {\"label\": \"Variation\", \"value\": \"Earth's magnetic field; changes with place\"}, {\"label\": \"Order\", \"value\": \"True, Variation, Magnetic, Deviation, Compass\"}]}"
+  },
+  {
+   "id": 2707,
+   "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-summary-v1.webp",
+   "explanation_image_title": "THE INTERNATIONAL STANDARD ATMOSPHERE",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA: +15 C AT SEA LEVEL, FALLING 1.98 C PER 1,000 FT\", \"subline\": \"UP TO THE TROPOPAUSE AT 36,090 FT, THEN CONSTANT AT -56.5 C\", \"blocks\": [{\"label\": \"Sea-level pressure\", \"value\": \"1013.25 hPa\"}, {\"label\": \"Sea-level density\", \"value\": \"1.225 kg/m3\"}, {\"label\": \"3 C per 1,000 ft\", \"value\": \"Dry adiabatic rate, not ISA\"}]}"
+  },
+  {
+   "id": 2726,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-humidity-density-v2.webp",
+   "explanation_image_title": "AIR DENSITY AND PERFORMANCE",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST POWER IN COLD, DRY, HIGH-PRESSURE AIR\", \"subline\": \"THE DENSEST AIR PUTS THE MOST OXYGEN IN EACH CYLINDER\", \"blocks\": [{\"label\": \"Cold\", \"value\": \"Denser than warm air\"}, {\"label\": \"High pressure\", \"value\": \"Denser air\"}, {\"label\": \"Dry\", \"value\": \"Water vapour is lighter than the air it displaces\"}]}"
+  },
+  {
+   "id": 2733,
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-pitot-static-system-v1.webp",
+   "explanation_image_title": "ASI: PITOT AND STATIC PRESSURE",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DYNAMIC PRESSURE: DENSITY AND SPEED SQUARED\", \"subline\": \"DOUBLE THE SPEED: FOUR TIMES THE DYNAMIC PRESSURE\", \"blocks\": [{\"label\": \"rho\", \"value\": \"Air density\"}, {\"label\": \"V\", \"value\": \"Airspeed\"}, {\"label\": \"ASI\", \"value\": \"Measures dynamic pressure\"}], \"formula\": \"q = 1/2 x RHO x V SQUARED\"}"
+  },
+  {
+   "id": 2743,
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v2.webp",
+   "explanation_image_title": "ELEVATOR TRIM TAB",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A TRIM TAB REMOVES SUSTAINED CONTROL FORCES\", \"subline\": \"ITS AIR LOAD HOLDS THE SURFACE WHERE IT IS NEEDED\", \"blocks\": [{\"label\": \"Pilot\", \"value\": \"No longer holds steady pressure\"}, {\"label\": \"Does not\", \"value\": \"Increase control travel or limiting speeds\"}, {\"label\": \"Technique\", \"value\": \"Fly the attitude first, then trim\"}]}"
+  },
+  {
+   "id": 2771,
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-pitot-static-system-v1.webp",
+   "explanation_image_title": "ASI: PITOT AND STATIC PRESSURE",
+   "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"subline\": \"1.225 kg/m3: ONLY THERE DOES IAS EQUAL TAS\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Lower density: ASI reads below TAS\"}, {\"label\": \"TAS\", \"value\": \"Worked out from CAS, altitude and temperature\"}, {\"label\": \"Stall speeds\", \"value\": \"Stay much the same in IAS\"}]}"
+  }
+ ]
+}

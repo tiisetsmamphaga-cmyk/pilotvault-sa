@@ -325,3 +325,38 @@ ATG images still in use: 9 questions with clear textbook figures (braced monopla
 | `q2764-frise-aileron` | 2764 | drawn infographic diagram: too simplistic |
 | `q2771-asi-calibration` | 2771 | drawn infographic diagram: too simplistic |
 | `q2772-spark-plug-oil-fouling` | 2772 | drawn infographic diagram: too simplistic |
+
+## Round 3: diagrams reused from other subjects
+
+26 ATG questions with no image now show a diagram that is already approved and in use in POF, Navigation or
+Meteorology. The files are not copied. Each row points at the other subject's `refined-batch` URL, which passes that
+subject's fail-closed gate and renders in the card with the ATG question's own KEY FACT panel. The full rows are in
+`reused-images-2026-09-24.json`. Before this change, every one of these rows had a null image URL and title.
+
+| Image | Questions |
+|---|---|
+| `principles-of-flight/refined-batch-18/pof-fowler-flap-v2` (plain, split, Fowler, slotted) | 2425, 2443, 2446, 2451, 2466 |
+| `principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3` | 2432, 2449, 2464, 2467 |
+| `principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v2` | 2427, 2743 |
+| `principles-of-flight/refined-batch-19/pof-left-turning-tendency-v2` | 2450, 2452 |
+| `principles-of-flight/refined-batch-21/pof-center-of-pressure-v2` | 2439 |
+| `principles-of-flight/refined-batch-1/pof-bank-load-factor-v2` | 2673 |
+| `principles-of-flight/refined-batch-21/pof-humidity-density-v2` | 2726 |
+| `principles-of-flight/refined-batch-22/pof-four-forces-level-v2` | 2465 |
+| `navigation/refined-batch-1/nav-compass-deviation-v1` | 2701, 2704 |
+| `navigation/refined-batch-1/nav-compass-nil-deviation-v1` | 2674 |
+| `navigation/refined-batch-1/nav-pitot-static-system-v1` | 2733, 2771 |
+| `navigation/refined-batch-1/nav-tas-increase-with-altitude-v1` | 2634, 2659 |
+| `meteorology/refined-batch-2/isa-summary-v1` | 2707 |
+| `meteorology/refined-batch-2/carb-icing-chart-v1` | 2500 |
+
+These were looked at and rejected because none of them shows what the question asks:
+- `pof-aileron-further-effects-v2` for adverse yaw (it shows no yaw)
+- `pof-venturi-effect-v2` for the carburettor questions
+- `pof-critical-aoa-v2` and `pof-critical-aoa-stall-v6` for the stall warner and slats (both are drag curves)
+- `pof-turn-coordinator-balanced-v2` for the canted rate gyro (it shows the instrument face only)
+- `aneroid-barometer-v1` for the VSI capsule
+
+KEY FACT panels for the 10 questions that had none (2450, 2452, 2465, 2467, 2634, 2659, 2701, 2704, 2707, 2726)
+were added to `scripts/atg_explanations/keyfacts.py`. The aggregate hash is now 8020ad482451eabe091cc266d8b71cd8,
+and it matches the database. ATG now has 99 questions with an image.

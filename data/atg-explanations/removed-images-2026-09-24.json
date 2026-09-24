@@ -1,0 +1,1094 @@
+[
+ {
+  "id": 2419,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/propellers-batch-1/q2419-propeller-blade-angle.webp",
+  "explanation_image_title": "PROPELLER BLADE ANGLE",
+  "explanation_image_caption": "Blade angle is the angle between the chord line and the plane of rotation.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2422,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/propellers-batch-1/q2422-propeller-torque-bending.webp",
+  "explanation_image_title": "TORQUE BENDING OF THE BLADES",
+  "explanation_image_caption": "Propeller torque bends the blades in the direction opposite to rotation.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2423,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/textbook-batch-1/q2423-propeller-blade-twist-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2426,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-1/q2426-balance-tab.webp",
+  "explanation_image_title": "BALANCE TAB OPERATION",
+  "explanation_image_caption": "A balance tab moves opposite to its control surface, and its air load helps move the surface.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2433,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-4/q2433-newton-second-law.webp",
+  "explanation_image_title": "NEWTON'S SECOND LAW",
+  "explanation_image_caption": "A net force causes acceleration or deceleration (F = m x a).",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2434,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-5/q2434-leading-edge-slats.webp",
+  "explanation_image_title": "LEADING-EDGE SLATS",
+  "explanation_image_caption": "Slats delay the stall, allowing a higher angle of attack and a lower airspeed.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2447,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-4/q2447-newton-third-law.webp",
+  "explanation_image_title": "NEWTON'S THIRD LAW",
+  "explanation_image_caption": "Every action has an equal and opposite reaction.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2450,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/propellers-batch-1/q2450-propeller-torque-reaction.webp",
+  "explanation_image_title": "PROPELLER TORQUE REACTION",
+  "explanation_image_caption": "A rotating propeller produces a reaction force opposite to its rotation: torque.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2452,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/propellers-batch-2/q2452-take-off-swing-clockwise-propeller.webp",
+  "explanation_image_title": "TAKE-OFF SWING: CLOCKWISE PROPELLER",
+  "explanation_image_caption": "With a clockwise propeller (from the cockpit) the aeroplane tends to yaw left on take-off.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2462,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-3/q2462-servo-tab.webp",
+  "explanation_image_title": "SERVO TAB",
+  "explanation_image_caption": "A servo tab is connected directly to the pilot's controls and drives the surface aerodynamically.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2463,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-3/q2463-anti-balance-tab.webp",
+  "explanation_image_title": "ANTI-BALANCE (ANTI-SERVO) TAB",
+  "explanation_image_caption": "An anti-balance tab moves in the same direction as the stabilator, adding feel and preventing over-control.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2465,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-4/q2465-newton-first-law.webp",
+  "explanation_image_title": "NEWTON'S FIRST LAW",
+  "explanation_image_caption": "With no net force an object stays at rest or at constant velocity: equilibrium.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2467,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/airframes-batch-4/q2467-power-reduction-nose-drop.webp",
+  "explanation_image_title": "WHY THE NOSE DROPS WITH LESS POWER",
+  "explanation_image_caption": "With the CG ahead of the centre of pressure, reducing power lets the nose drop.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2471,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2473,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2476,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2477,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/float-type-carburettor-v3.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2481,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/fuel-systems-batch-1/q2481-blocked-fuel-tank-vent-v2.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2486,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/textbook-batch-1/q2486-carburettor-icing-location-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2487,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/float-type-carburettor-v3.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2489,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2491,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-5/q2491-flooded-engine-start.webp",
+  "explanation_image_title": "STARTING A FLOODED ENGINE",
+  "explanation_image_caption": "Keep the mixture full lean until the engine fires, then richen slowly.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2493,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/float-type-carburettor-v3.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2494,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/fuel-batch-2/q2494-refuelling-bonding.webp",
+  "explanation_image_title": "BONDING WHEN REFUELLING",
+  "explanation_image_caption": "Earth leads between ground, fuel truck, nozzle and aircraft remove the risk of a static spark.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2496,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2498,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2503,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-5/q2503-alternate-air.webp",
+  "explanation_image_title": "ALTERNATE AIR (FUEL INJECTION)",
+  "explanation_image_caption": "Alternate air feeds air from within the engine cowling to the induction system.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2505,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/fuel-systems-batch-1/q2505-fuel-tank-venting-v2.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2506,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/float-type-carburettor-v3.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2508,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/propellers-batch-2/q2508-csu-constant-rpm.webp",
+  "explanation_image_title": "CONSTANT-SPEED UNIT: RPM STAYS THE SAME",
+  "explanation_image_caption": "With a CSU, increasing power coarsens the blades and the selected RPM remains the same.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2512,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/float-type-carburettor-v3.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2513,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/propellers-batch-1/q2513-propeller-helix-angle.webp",
+  "explanation_image_title": "PROPELLER HELIX ANGLE",
+  "explanation_image_caption": "Helix angle is the angle between the relative airflow and the plane of rotation.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2517,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/fuel-batch-2/q2517-wet-wing.webp",
+  "explanation_image_title": "WET WING",
+  "explanation_image_caption": "A wet wing: the sealed wing structure itself forms an integral fuel tank.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2519,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-3/q2519-pre-ignition.webp",
+  "explanation_image_title": "PRE-IGNITION",
+  "explanation_image_caption": "Deal with pre-ignition by increasing engine cooling and enriching the mixture.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2521,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/lubrication-batch-3/q2521-engine-breather.webp",
+  "explanation_image_title": "ENGINE BREATHER",
+  "explanation_image_caption": "The breather pipe relieves excess pressure in the sump (crankcase).",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2522,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/reciprocating-engine-basic-parts-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2524,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-4/q2524-unapproved-mogas.webp",
+  "explanation_image_title": "UNAPPROVED MOGAS",
+  "explanation_image_caption": "Unapproved MOGAS may cause detonation, reduced power and lead fouling of the spark plugs.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2526,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-3/q2526-blue-exhaust-smoke.webp",
+  "explanation_image_title": "BLUE EXHAUST SMOKE",
+  "explanation_image_caption": "Blue exhaust smoke from a running engine indicates it is burning oil.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2527,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/normal-combustion-vs-detonation-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2532,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/hydraulics-batch-1/q2532-hydraulic-accumulator.webp",
+  "explanation_image_title": "HYDRAULIC ACCUMULATOR",
+  "explanation_image_caption": "The accumulator stores hydraulic fluid under pressure.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2535,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2536,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/normal-combustion-vs-detonation-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2539,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2540,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/hydraulics-batch-1/q2532-hydraulic-accumulator.webp",
+  "explanation_image_title": "HYDRAULIC ACCUMULATOR",
+  "explanation_image_caption": "An accumulator stores hydraulic fluid under pressure for peak demand or emergency use.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2541,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/hydraulics-batch-1/q2555-hydraulic-reservoir-vent.webp",
+  "explanation_image_title": "HYDRAULIC RESERVOIR VENT",
+  "explanation_image_caption": "The vent lets the fluid level rise and fall as fluid is used and returned.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2544,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/reciprocating-engine-basic-parts-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2546,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-3/q2519-pre-ignition.webp",
+  "explanation_image_title": "PRE-IGNITION",
+  "explanation_image_caption": "An excessively lean mixture can cause pre-ignition, even in a single cylinder.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2547,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-3/q2547-black-exhaust-smoke.webp",
+  "explanation_image_title": "BLACK EXHAUST SMOKE",
+  "explanation_image_caption": "Black smoke after start indicates the mixture is too rich.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2548,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-6/q2548-crankshaft-counterweights.webp",
+  "explanation_image_title": "CRANKSHAFT COUNTERWEIGHTS",
+  "explanation_image_caption": "Counterweights are attached to the crankshaft to prevent damage from vibration.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2550,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-4/q2550-higher-octane-fuel.webp",
+  "explanation_image_title": "HIGHER-OCTANE FUEL THAN RECOMMENDED",
+  "explanation_image_caption": "Using a higher-octane fuel than recommended may cause lead fouling of the spark plugs.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2551,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/hydraulics-batch-1/q2551-hydraulic-pressure-warning.webp",
+  "explanation_image_title": "LOW HYDRAULIC PRESSURE WARNING",
+  "explanation_image_caption": "Loss of hydraulic pressure is indicated by a warning light, usually red.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2555,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/hydraulics-batch-1/q2555-hydraulic-reservoir-vent.webp",
+  "explanation_image_title": "HYDRAULIC RESERVOIR VENT",
+  "explanation_image_caption": "The reservoir vent lets air in as fluid is drawn off, so no vacuum can form.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2558,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-4/q2558-starter-solenoid.webp",
+  "explanation_image_title": "STARTER SOLENOID",
+  "explanation_image_caption": "Starter power is controlled by a solenoid located near the starter motor.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2561,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-4/q2561-cht-hottest-cylinder.webp",
+  "explanation_image_title": "CYLINDER HEAD TEMPERATURE GAUGE",
+  "explanation_image_caption": "The CHT gauge usually reads from the cylinder that tests show runs hottest.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2562,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-3/q2519-pre-ignition.webp",
+  "explanation_image_title": "PRE-IGNITION",
+  "explanation_image_caption": "Pre-ignition is likely where there are hot spots in one or more cylinders.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2563,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/textbook-batch-1/q2563-detonation-low-octane-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2565,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/hydraulics-batch-1/q2565-hydraulic-lp-filter.webp",
+  "explanation_image_title": "LOW-PRESSURE FILTER",
+  "explanation_image_caption": "A low-pressure filter is usually fitted between the reservoir and the pump.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2567,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/textbook-batch-1/q2567-centre-zero-ammeter-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2568,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-2/q2568-reverse-current-cut-out.webp",
+  "explanation_image_title": "REVERSE-CURRENT CUT-OUT",
+  "explanation_image_caption": "The reverse-current cut-out prevents current flowing from the battery to the generator.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2569,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2569-magneto-rotating-magnet.webp",
+  "explanation_image_title": "MAGNETO: ROTATING MAGNET",
+  "explanation_image_caption": "A magneto depends on its rotating magnet to generate electrical power.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2570,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2569-magneto-rotating-magnet.webp",
+  "explanation_image_title": "MAGNETO: ROTATING MAGNET",
+  "explanation_image_caption": "The current produced by a magneto is created by the rotating magnet.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2571,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-3/q2571-blown-fuse.webp",
+  "explanation_image_title": "BLOWN FUSE",
+  "explanation_image_caption": "A blown fuse may be replaced only once, with a fuse of the same value.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2572,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-2/q2594-voltage-regulator.webp",
+  "explanation_image_title": "VOLTAGE REGULATOR",
+  "explanation_image_caption": "The output voltage of a DC generator is controlled by a voltage regulator.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2574,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/textbook-batch-1/q2574-circuit-breaker-protection-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2575,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2575-magneto-distributor.webp",
+  "explanation_image_title": "MAGNETO DISTRIBUTOR",
+  "explanation_image_caption": "The distributor routes high voltage to each spark plug in the correct firing order.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2576,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2576-magneto-broken-earth-wire.webp",
+  "explanation_image_title": "BROKEN MAGNETO EARTH WIRE",
+  "explanation_image_caption": "A broken magneto earth wire makes it impossible to stop the engine with the ignition switch.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2578,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-2/q2578-generator-commutator.webp",
+  "explanation_image_title": "DC GENERATOR COMMUTATOR",
+  "explanation_image_caption": "In a DC generator the AC output is converted to DC by a commutator.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2581,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-3/q2602-battery-40-ah.webp",
+  "explanation_image_title": "BATTERY CAPACITY: AMPERE-HOURS",
+  "explanation_image_caption": "Battery storage capacity is expressed in ampere-hours.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2583,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2576-magneto-broken-earth-wire.webp",
+  "explanation_image_title": "BROKEN MAGNETO EARTH WIRE",
+  "explanation_image_caption": "With the earth wire broken, the engine keeps running with the magneto switch OFF.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2587,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-3/q2571-blown-fuse.webp",
+  "explanation_image_title": "BLOWN FUSE",
+  "explanation_image_caption": "Electrical fuses are rated in amperes.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2588,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2661-alternate-static-source.webp",
+  "explanation_image_title": "ALTERNATE STATIC SOURCE",
+  "explanation_image_caption": "The alternate static source draws air from the cockpit; the ASI then over-reads.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2591,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2591-magneto-condenser.webp",
+  "explanation_image_title": "MAGNETO CONDENSER (CAPACITOR)",
+  "explanation_image_caption": "The condenser prevents arcing across the contact-breaker points.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2592,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-5/q2592-low-tension-booster-coil.webp",
+  "explanation_image_title": "LOW-TENSION BOOSTER COIL",
+  "explanation_image_caption": "The low-tension booster coil feeds the magneto's primary coil with a low voltage during the start.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2594,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-2/q2594-voltage-regulator.webp",
+  "explanation_image_title": "VOLTAGE REGULATOR",
+  "explanation_image_caption": "The voltage regulator controls the voltage output from a DC generator.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2595,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2595-magneto-impulse-coupling.webp",
+  "explanation_image_title": "IMPULSE COUPLING",
+  "explanation_image_caption": "The impulse coupling produces a strong, retarded spark at the low RPM of engine start.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2598,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2656-two-static-vents.webp",
+  "explanation_image_title": "TWO INTERCONNECTED STATIC VENTS",
+  "explanation_image_caption": "Two interconnected static vents, one each side of the fuselage, reduce position error.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2599,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-2/q2599-generator-self-excited.webp",
+  "explanation_image_title": "DC GENERATOR: SELF-EXCITED",
+  "explanation_image_caption": "A DC generator is self-excited and does not need battery power to come on line.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2600,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-2/q2600-alternator-reverse-current.webp",
+  "explanation_image_title": "ALTERNATOR: NO REVERSE CURRENT",
+  "explanation_image_caption": "Reverse current from the battery to the alternator is prevented by the rectifier diodes.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2602,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-3/q2602-battery-40-ah.webp",
+  "explanation_image_title": "BATTERY CAPACITY: AMPERE-HOURS",
+  "explanation_image_caption": "A 40 Ah battery can theoretically provide 4 amperes for 10 hours.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2608,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-3/q2608-tripped-circuit-breaker.webp",
+  "explanation_image_title": "TRIPPED CIRCUIT BREAKER",
+  "explanation_image_caption": "Reset a tripped circuit breaker only once, after a cooling-off period.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2613,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-3/q2613-battery-20-ah.webp",
+  "explanation_image_title": "BATTERY CAPACITY: AMPERE-HOURS",
+  "explanation_image_caption": "A 20 Ah rating means the battery can provide 20 amps for 1 hour.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2618,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2622,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/gyro-batch-1/q2622-gyro-rigidity-precession.webp",
+  "explanation_image_title": "GYROSCOPIC RIGIDITY AND PRECESSION",
+  "explanation_image_caption": "Rigidity: a spinning gyro's reluctance to move from its spin axis. It also has precession.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2626,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/pitot-static-system-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2634,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2634-true-airspeed.webp",
+  "explanation_image_title": "TRUE AIRSPEED",
+  "explanation_image_caption": "True airspeed is CAS/RAS corrected for density: temperature and altitude.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2636,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2636-manoeuvre-induced-error.webp",
+  "explanation_image_title": "MANOEUVRE-INDUCED ERROR",
+  "explanation_image_caption": "Manoeuvre-induced error: static-pressure fluctuations during rapid changes cause false readings.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2637,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2639,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2642,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2643,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2644,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2650,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2656,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2656-two-static-vents.webp",
+  "explanation_image_title": "TWO INTERCONNECTED STATIC VENTS",
+  "explanation_image_caption": "Two interconnected static vents, one each side of the fuselage, reduce position error.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2657,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2657-calibrated-airspeed.webp",
+  "explanation_image_title": "CALIBRATED (RECTIFIED) AIRSPEED",
+  "explanation_image_caption": "Calibrated (rectified) airspeed is IAS corrected for instrument and position error.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2658,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/vertical-speed-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2659,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2634-true-airspeed.webp",
+  "explanation_image_title": "TRUE AIRSPEED",
+  "explanation_image_caption": "True airspeed is CAS/RAS corrected for density: temperature and altitude.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2660,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2661-alternate-static-source.webp",
+  "explanation_image_title": "ALTERNATE STATIC SOURCE",
+  "explanation_image_caption": "The alternate static source draws air from the cockpit; the ASI then over-reads.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2661,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-1/q2661-alternate-static-source.webp",
+  "explanation_image_title": "ALTERNATE STATIC SOURCE",
+  "explanation_image_caption": "The alternate static source draws air from the cockpit; the ASI then over-reads.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2662,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/gyro-batch-1/q2622-gyro-rigidity-precession.webp",
+  "explanation_image_title": "GYROSCOPIC RIGIDITY AND PRECESSION",
+  "explanation_image_caption": "Rigidity: a spinning gyro's reluctance to move from its spin axis. It also has precession.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2666,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/legal-batch-1/q2666-mpi.webp",
+  "explanation_image_title": "MANDATORY PERIODIC INSPECTION",
+  "explanation_image_caption": "An MPI is required once a year or every 100 hours of flight time, whichever comes first.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2669,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/heading-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2670,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2672,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/turn-coordinator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2676,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/heading-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2677,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2678,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/turn-coordinator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2681,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/compass-batch-1/q2681-acceleration-error-southern.webp",
+  "explanation_image_title": "ACCELERATION ERROR: SOUTHERN HEMISPHERE",
+  "explanation_image_caption": "Southern Hemisphere, E/W headings: accelerating shows a turn south, decelerating a turn north.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2682,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/magnetic-compass-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2683,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/compass-batch-1/q2683-variation.webp",
+  "explanation_image_title": "MAGNETIC VARIATION",
+  "explanation_image_caption": "The difference between true and magnetic bearings is caused by variation.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2684,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/attitude-indicator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2685,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/attitude-indicator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2686,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/heading-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2688,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/turn-coordinator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2689,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/turn-coordinator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2690,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2694,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/legal-batch-1/q2694-logbook-48-hours.webp",
+  "explanation_image_title": "MAINTENANCE LOGBOOK ENTRIES: 48 HOURS",
+  "explanation_image_caption": "Maintenance must be entered in the logbooks within 48 hours (or 48 hours after return to base).",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2696,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/attitude-indicator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2697,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/legal-batch-1/q2697-certificate-of-release-to-service.webp",
+  "explanation_image_title": "CERTIFICATE OF RELEASE TO SERVICE",
+  "explanation_image_caption": "A CRS issued after an MPI is valid for 12 months or 100 flight hours, whichever comes first.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2698,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2699,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/attitude-indicator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2701,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/magnetic-compass-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2702,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-2/q2702-isa-sea-level-density.webp",
+  "explanation_image_title": "INTERNATIONAL STANDARD ATMOSPHERE",
+  "explanation_image_caption": "In the ISA, sea-level air density is 1.225 kg/m³.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2703,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/turn-coordinator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2704,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/compass-batch-1/q2704-deviation.webp",
+  "explanation_image_title": "COMPASS DEVIATION",
+  "explanation_image_caption": "The difference between magnetic and compass bearings is caused by deviation.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2706,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/magnetic-compass-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2707,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-2/q2707-isa-temperature-lapse-rate.webp",
+  "explanation_image_title": "INTERNATIONAL STANDARD ATMOSPHERE",
+  "explanation_image_caption": "ISA: 15 °C at sea level, lapse rate 1.98 °C per 1,000 ft up to 36,090 ft.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2708,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2709,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/turn-coordinator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2711,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/heading-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2712,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/legal-batch-1/q2712-documents-to-carry.webp",
+  "explanation_image_title": "DOCUMENTS TO CARRY: DOMESTIC FLIGHT",
+  "explanation_image_caption": "Carry the registration, airworthiness and release-to-service certificates plus interception signals.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2713,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2714,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/gyro-batch-1/q2714-gyro-real-wander.webp",
+  "explanation_image_title": "REAL WANDER OF A GYRO",
+  "explanation_image_caption": "Bearing and gimbal wear and air turbulence cause real wander of the gyro.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2715,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2716,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/attitude-indicator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2717,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2718,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/legal-batch-1/q2694-logbook-48-hours.webp",
+  "explanation_image_title": "MAINTENANCE LOGBOOK ENTRIES: 48 HOURS",
+  "explanation_image_caption": "Maintenance must be entered in the logbooks within 48 hours (or 48 hours after return to base).",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2720,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/heading-indicator-v2.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2721,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/earth-magnetic-field-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2723,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-4/q2723-starter-series-winding.webp",
+  "explanation_image_title": "STARTER MOTOR: SERIES WINDING",
+  "explanation_image_caption": "DC starter motors commonly use a series-wound field.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2726,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-6/q2726-maximum-power-conditions.webp",
+  "explanation_image_title": "CONDITIONS FOR MAXIMUM ENGINE POWER",
+  "explanation_image_caption": "Greatest power: cold, dry air at high pressure.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2727,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/compass-batch-1/q2753-compass-turning-error.webp",
+  "explanation_image_title": "COMPASS TURNING ERROR",
+  "explanation_image_caption": "Compass turning error is caused mainly by magnetic dip and acceleration forces in the turn.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2728,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/compass-batch-1/q2728-deceleration-error-northern.webp",
+  "explanation_image_title": "DECELERATION ERROR: NORTHERN HEMISPHERE",
+  "explanation_image_caption": "Northern Hemisphere, decelerating on 270°: apparent turn south, compass reads about 240°.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2736,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/attitude-indicator-v1.svg",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2738,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-4/q2738-force-on-conductor.webp",
+  "explanation_image_title": "FORCE ON A CURRENT-CARRYING CONDUCTOR",
+  "explanation_image_caption": "A current through a conductor at right angles to a magnetic field produces a force on it.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2749,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/piston-batch-3/q2749-run-on-glowing-carbon.webp",
+  "explanation_image_title": "RUN-ON AFTER SHUTDOWN",
+  "explanation_image_caption": "Run-on with the magnetos grounded is caused by glowing carbon deposits in a combustion chamber.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2751,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/electrics-batch-1/q2751-magneto-high-voltage.webp",
+  "explanation_image_title": "HOW A MAGNETO MAKES HIGH VOLTAGE",
+  "explanation_image_caption": "Opening the primary circuit rapidly changes the flux, inducing high voltage in the secondary.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2752,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/reciprocating-engine-basic-parts-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2753,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/compass-batch-1/q2753-compass-turning-error.webp",
+  "explanation_image_title": "COMPASS TURNING ERROR",
+  "explanation_image_caption": "Compass turning error is caused mainly by magnetic dip and acceleration forces in the turn.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2755,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/reciprocating-engine-basic-parts-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2756,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/reciprocating-engine-basic-parts-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2758,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pressure-batch-2/q2758-vr-rotation-speed.webp",
+  "explanation_image_title": "VR: ROTATION SPEED",
+  "explanation_image_caption": "VR is the speed at which the pilot begins to raise the nose wheel during take-off.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2760,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/four-stroke-cycle-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2761,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/reciprocating-engine-basic-parts-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2767,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/fuel-batch-2/q2517-wet-wing.webp",
+  "explanation_image_title": "WET WING",
+  "explanation_image_caption": "A wet wing: the sealed wing structure itself forms an integral fuel tank.",
+  "explanation_visual_status": "needs_fix"
+ },
+ {
+  "id": 2769,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/legal-batch-1/q2769-part-43-pilot-maintenance.webp",
+  "explanation_image_title": "PILOT MAINTENANCE UNDER PART 43",
+  "explanation_image_caption": "A pilot may do SA-CATS 43 maintenance with a type rating, as owner/operator, non-commercially.",
+  "explanation_visual_status": null
+ },
+ {
+  "id": 2770,
+  "explanation_image_url": "/explanation-images/aircraft-technical-and-general/pdf-rebuild/reciprocating-engine-basic-parts-v1.webp",
+  "explanation_image_title": null,
+  "explanation_image_caption": null,
+  "explanation_visual_status": null
+ }
+]

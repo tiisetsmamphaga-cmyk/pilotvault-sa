@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="CONSTANT-SPEED UNIT: RPM STAYS THE SAME">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">CONSTANT-SPEED UNIT: RPM STAYS THE SAME</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<circle cx="80.0" cy="184.0" r="15" fill="#06111f"/>
+<text x="80.0" y="190.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#ffffff">1</text>
+<text x="108.0" y="190.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#101827">PILOT ADDS POWER</text>
+<text x="108.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#334155">Throttle opened slowly</text>
+<circle cx="80.0" cy="256.0" r="15" fill="#06111f"/>
+<text x="80.0" y="262.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#ffffff">2</text>
+<text x="108.0" y="262.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#101827">RPM STARTS TO RISE</text>
+<text x="108.0" y="284.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#334155">Governor senses the change</text>
+<circle cx="80.0" cy="328.0" r="15" fill="#06111f"/>
+<text x="80.0" y="334.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#ffffff">3</text>
+<text x="108.0" y="334.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#101827">BLADES COARSEN</text>
+<text x="108.0" y="356.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#334155">Blade angle increases</text>
+<circle cx="80.0" cy="400.0" r="15" fill="#06111f"/>
+<text x="80.0" y="406.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#ffffff">4</text>
+<text x="108.0" y="406.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#101827">RPM BACK TO SELECTED</text>
+<text x="108.0" y="428.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#334155">Extra power becomes thrust</text>
+<circle cx="560" cy="250" r="58" fill="#1f2937" stroke="#101827" stroke-width="3"/>
+<line x1="528.9" y1="281.1" x2="521.8" y2="288.2" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="516.0" y1="250.0" x2="506.0" y2="250.0" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="528.9" y1="218.9" x2="521.8" y2="211.8" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="560.0" y1="206.0" x2="560.0" y2="196.0" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="591.1" y1="218.9" x2="598.2" y2="211.8" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="604.0" y1="250.0" x2="614.0" y2="250.0" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="591.1" y1="281.1" x2="598.2" y2="288.2" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="560.0" y1="250.0" x2="570.3" y2="207.2" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
+<circle cx="560" cy="250" r="6" fill="#f8fafc"/>
+<text x="560.0" y="284.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#e2e8f0">RPM</text>
+<text x="560.0" y="334.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">BEFORE: 2400 RPM</text>
+<circle cx="560" cy="440" r="58" fill="#1f2937" stroke="#101827" stroke-width="3"/>
+<line x1="528.9" y1="471.1" x2="521.8" y2="478.2" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="516.0" y1="440.0" x2="506.0" y2="440.0" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="528.9" y1="408.9" x2="521.8" y2="401.8" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="560.0" y1="396.0" x2="560.0" y2="386.0" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="591.1" y1="408.9" x2="598.2" y2="401.8" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="604.0" y1="440.0" x2="614.0" y2="440.0" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="591.1" y1="471.1" x2="598.2" y2="478.2" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+<line x1="560.0" y1="440.0" x2="570.3" y2="397.2" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
+<circle cx="560" cy="440" r="6" fill="#f8fafc"/>
+<text x="560.0" y="474.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" fill="#e2e8f0">RPM</text>
+<text x="560.0" y="524.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">AFTER: 2400 RPM</text>
+<line x1="560.0" y1="330.0" x2="560.0" y2="368.0" stroke="#b7860b" stroke-width="4" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="572.0" y="356.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#b7860b">MORE POWER</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">GOVERNOR</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Senses RPM and changes the</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">blade angle to hold the</text>
+<text x="796.0" y="262.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">selected RPM.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">MORE POWER</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Blade angle coarsens: the</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">blades take bigger bites.</text>
+<text x="796.0" y="412.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">RPM unchanged.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">LESS POWER</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Blade angle fines off to</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">stop the RPM falling.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">With a CSU, increasing power coarsens the blades and the selected RPM remains the same.</text>
+</svg>

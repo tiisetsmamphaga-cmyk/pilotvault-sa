@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="TRUSS FUSELAGE: LONGERONS">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">TRUSS FUSELAGE: LONGERONS</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<path d="M 176.0,175.0 L 546.0,175.0 L 1056.0,230.0" fill="none" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 176.0,365.0 L 546.0,365.0 L 1056.0,280.0" fill="none" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="150.0" y1="195.0" x2="176.0" y2="175.0" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="260.0" y1="195.0" x2="286.0" y2="175.0" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="370.0" y1="195.0" x2="396.0" y2="175.0" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="480.0" y1="195.0" x2="506.0" y2="175.0" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="590.0" y1="202.5" x2="616.0" y2="182.5" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="700.0" y1="214.4" x2="726.0" y2="194.4" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="810.0" y1="226.3" x2="836.0" y2="206.3" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="920.0" y1="238.1" x2="946.0" y2="218.1" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="1030.0" y1="250.0" x2="1056.0" y2="230.0" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+<line x1="150.0" y1="195.0" x2="150.0" y2="385.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="150.0" y1="195.0" x2="260.0" y2="385.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="260.0" y1="195.0" x2="260.0" y2="385.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="260.0" y1="385.0" x2="370.0" y2="195.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="370.0" y1="195.0" x2="370.0" y2="385.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="370.0" y1="195.0" x2="480.0" y2="385.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="480.0" y1="195.0" x2="480.0" y2="385.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="480.0" y1="385.0" x2="590.0" y2="202.5" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="590.0" y1="202.5" x2="590.0" y2="373.3" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="590.0" y1="202.5" x2="700.0" y2="355.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="700.0" y1="214.4" x2="700.0" y2="355.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="700.0" y1="355.0" x2="810.0" y2="226.3" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="810.0" y1="226.3" x2="810.0" y2="336.7" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="810.0" y1="226.3" x2="920.0" y2="318.3" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="920.0" y1="238.1" x2="920.0" y2="318.3" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="920.0" y1="318.3" x2="1030.0" y2="250.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<line x1="1030.0" y1="250.0" x2="1030.0" y2="300.0" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+<path d="M 150.0,195.0 L 520.0,195.0 L 1030.0,250.0" fill="none" stroke="#101827" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 150.0,195.0 L 520.0,195.0 L 1030.0,250.0" fill="none" stroke="#f4b400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 150.0,385.0 L 520.0,385.0 L 1030.0,300.0" fill="none" stroke="#101827" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 150.0,385.0 L 520.0,385.0 L 1030.0,300.0" fill="none" stroke="#f4b400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="150" cy="195.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="150" cy="385.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="260" cy="195.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="260" cy="385.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="370" cy="195.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="370" cy="385.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="480" cy="195.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="480" cy="385.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="590" cy="202.5" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="590" cy="373.3" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="700" cy="214.4" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="700" cy="355.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="810" cy="226.3" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="810" cy="336.7" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="920" cy="238.1" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="920" cy="318.3" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="1030" cy="250.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<circle cx="1030" cy="300.0" r="5" fill="#ffffff" stroke="#101827" stroke-width="2"/>
+<text x="335.0" y="165.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#b7860b">UPPER LONGERON</text>
+<line x1="335.0" y1="173.0" x2="335.0" y2="186.0" stroke="#b7860b" stroke-width="2.5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="335.0" y="430.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#b7860b">LOWER LONGERON</text>
+<line x1="335.0" y1="407.0" x2="335.0" y2="395.0" stroke="#b7860b" stroke-width="2.5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="700.0" y="172.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#101827">VERTICAL MEMBER</text>
+<line x1="700.0" y1="180.0" x2="700.0" y2="207.0" stroke="#101827" stroke-width="2.5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="755.0" y="430.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#101827">DIAGONAL (WEB) MEMBER</text>
+<line x1="752.0" y1="408.0" x2="756.0" y2="291.6" stroke="#101827" stroke-width="2.5" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="1060.0" y="172.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#64748b">FAR-SIDE</text>
+<text x="1060.0" y="190.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#64748b">LONGERONS</text>
+<rect x="60" y="452" width="340" height="136" rx="12" fill="#fff8e1" stroke="#f4b400" stroke-width="4"/>
+<rect x="296" y="466" width="90" height="28" rx="14" fill="#f4b400"/>
+<text x="341.0" y="485.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#06111f">ANSWER</text>
+<text x="80.0" y="486.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">LONGERONS</text>
+<text x="80.0" y="518.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Main longitudinal members</text>
+<text x="80.0" y="543.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">along the fuselage length;</text>
+<text x="80.0" y="568.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">they carry the main loads.</text>
+<rect x="430" y="452" width="340" height="136" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="450.0" y="486.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">VERTICALS &amp; DIAGONALS</text>
+<text x="450.0" y="518.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Tie the longerons into</text>
+<text x="450.0" y="543.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">rigid triangles that</text>
+<text x="450.0" y="568.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">resist bending and shear.</text>
+<rect x="800" y="452" width="340" height="136" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="820.0" y="486.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">COVERING</text>
+<text x="820.0" y="518.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Fabric or light panels give</text>
+<text x="820.0" y="543.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">the streamlined shape but</text>
+<text x="820.0" y="568.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">carry little structural load.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">In a truss (girder) fuselage the longerons are the main longitudinal load-carrying members.</text>
+</svg>

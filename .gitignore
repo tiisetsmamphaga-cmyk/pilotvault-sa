@@ -17,3 +17,6 @@ node_modules
 
 # Personal Claude Code overrides, not shared with the team
 .claude/settings.local.json
+# python bytecode
+__pycache__/
+*.pyc

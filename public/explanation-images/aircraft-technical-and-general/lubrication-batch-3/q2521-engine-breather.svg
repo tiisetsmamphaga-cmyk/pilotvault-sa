@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" role="img" aria-label="ENGINE BREATHER">
+<defs>
+  <marker id="aDark" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,1 L15,8 L0,15 z" fill="#101827"/></marker>
+  <marker id="aBlue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 z" fill="#1e88e5"/></marker>
+  <marker id="aRed" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="17" refY="10" orient="auto"><path d="M0,1 L19,10 L0,19 z" fill="#dc2626"/></marker>
+  <marker id="aRedS" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0.5 L11,6 L0,11.5 z" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="680" fill="#ffffff"/>
+<rect width="1200" height="112" fill="#06111f"/>
+<text x="600" y="34" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="3.2" fill="#f4b400">PILOTVAULT AIRCRAFT TECHNICAL &amp; GENERAL</text>
+<text x="600" y="79" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#ffffff">ENGINE BREATHER</text>
+<rect x="0" y="108" width="1200" height="4" fill="#f4b400"/>
+<rect x="28" y="130" width="1144" height="470" rx="10" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+<rect x="40" y="142" width="710" height="444" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="150" y="190" width="120" height="170" rx="6" fill="#cbd5e1" stroke="#101827" stroke-width="3"/>
+<rect x="164" y="250" width="92" height="64" rx="6" fill="#64748b" stroke="#101827" stroke-width="2.5"/>
+<line x1="164.0" y1="260.0" x2="256.0" y2="260.0" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+<line x1="164.0" y1="272.0" x2="256.0" y2="272.0" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+<line x1="210.0" y1="314.0" x2="240.0" y2="400.0" stroke="#475569" stroke-width="12" stroke-linecap="round"/>
+<path d="M 90,360 L 370,360 L 370,500 Q 230,560 90,500 Z" fill="#e2e8f0" stroke="#101827" stroke-width="3"/>
+<path d="M 100,470 L 360,470 L 360,496 Q 230,548 100,496 Z" fill="#d97706" fill-opacity="0.85"/>
+<circle cx="240" cy="410" r="30" fill="none" stroke="#475569" stroke-width="6"/>
+<text x="230.0" y="466.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#101827">CRANKCASE / SUMP</text>
+<line x1="158.0" y1="268.0" x2="158.0" y2="350.0" stroke="#dc2626" stroke-width="3.5" stroke-linecap="round" marker-end="url(#aRedS)"/>
+<line x1="262.0" y1="268.0" x2="262.0" y2="350.0" stroke="#dc2626" stroke-width="3.5" stroke-linecap="round" marker-end="url(#aRedS)"/>
+<text x="284.0" y="226.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">BLOW-BY GASES</text>
+<text x="284.0" y="243.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" fill="#dc2626">PAST THE RINGS</text>
+<line x1="282.0" y1="250.0" x2="266.0" y2="290.0" stroke="#dc2626" stroke-width="2" stroke-linecap="round" marker-end="url(#aRedS)"/>
+<path d="M 350.0,380.0 L 440.0,380.0 L 440.0,300.0 L 600.0,300.0 L 600.0,480.0" fill="none" stroke="#101827" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 350.0,380.0 L 440.0,380.0 L 440.0,300.0 L 600.0,300.0 L 600.0,480.0" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="600.0" y1="488.0" x2="600.0" y2="540.0" stroke="#64748b" stroke-width="4" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="612.0" y="540.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" fill="#101827">VENTED OVERBOARD</text>
+<text x="520.0" y="274.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#b7860b">BREATHER PIPE</text>
+<line x1="372.0" y1="368.0" x2="420.0" y2="368.0" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#aDark)"/>
+<line x1="470.0" y1="288.0" x2="530.0" y2="288.0" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#aDark)"/>
+<text x="395.0" y="420.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#334155">Keeps crankcase pressure</text>
+<text x="395.0" y="440.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#334155">close to atmospheric</text>
+<rect x="770" y="146" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="146" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="180.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">RELIEVES SUMP PRESSURE</text>
+<text x="796.0" y="212.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Blow-by gases that leak past</text>
+<text x="796.0" y="237.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">the piston rings are vented</text>
+<text x="796.0" y="262.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">away.</text>
+<rect x="770" y="296" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="296" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="330.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">PROTECTS THE SEALS</text>
+<text x="796.0" y="362.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">Without it, pressure would</text>
+<text x="796.0" y="387.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">force oil out past seals and</text>
+<text x="796.0" y="412.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">gaskets.</text>
+<rect x="770" y="446" width="378" height="138" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="770" y="446" width="8" height="138" rx="4" fill="#f4b400"/>
+<text x="796.0" y="480.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#101827">CHECK</text>
+<text x="796.0" y="512.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">A blocked breather (e.g. by</text>
+<text x="796.0" y="537.0" text-anchor="start" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#334155">ice) can cause oil loss.</text>
+<text x="600" y="642" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#101827">The breather pipe relieves excess pressure in the sump (crankcase).</text>
+</svg>

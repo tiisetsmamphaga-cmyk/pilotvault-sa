@@ -81,7 +81,7 @@ const plans = [
   },
   {
     name: "CPL Pack",
-    description: "We're building the CPL question bank now",
+    description: "Launching 1 January 2027",
     priceCents: null,
     period: "",
     badge: "COMING SOON",
@@ -333,7 +333,7 @@ function UpgradePageContent() {
                     disabled
                     className="mt-7 w-full rounded-xl bg-slate-100 px-5 py-3 text-sm font-bold text-slate-400 sm:mt-8"
                   >
-                    Coming Soon
+                    Available 1 Jan 2027
                   </button>
                 ) : (
                   <>

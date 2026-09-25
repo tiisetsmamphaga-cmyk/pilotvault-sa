@@ -42,7 +42,7 @@ const plans = [
     name: "CPL Pack",
     price: "Coming Soon",
     period: "",
-    description: "We're building the CPL question bank now",
+    description: "Launching 1 January 2027",
     features: [
       "CPL question bank",
       "Timed mock exams",
@@ -141,7 +141,7 @@ export function PricingSection() {
                       : "border border-[#1f4e79] bg-white text-[#1f4e79] hover:bg-[#f1f5f9]"
                 }`}
               >
-                {plan.comingSoon ? "Coming Soon" : "Start Free Trial"}
+                {plan.comingSoon ? "Available 1 Jan 2027" : "Start Free Trial"}
               </Button>
             </motion.div>
           ))}

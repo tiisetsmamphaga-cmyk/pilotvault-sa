@@ -1,6 +1,15 @@
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Privacy Policy",
+  description:
+    "How PilotVault SA collects, uses and protects your personal information.",
+  path: "/privacy",
+})
+
 const sections = [
   {
     title: "Information We Collect",

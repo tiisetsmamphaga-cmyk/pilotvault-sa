@@ -15,6 +15,15 @@ import {
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "SACAA Mock Exams & Practice Features",
+  description:
+    "Timed SACAA-style mock exams, topic-based practice, detailed answer explanations and mock exam score tracking for PPL student pilots.",
+  path: "/features",
+})
+
 const features = [
   {
     number: "01",

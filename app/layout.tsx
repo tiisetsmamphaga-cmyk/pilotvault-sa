@@ -3,6 +3,14 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { AppMobileNavigation } from '@/components/app-mobile-navigation'
 import { SessionGuard } from '@/components/session-guard'
+import {
+  CONTACT_EMAIL,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  openGraphDefaults,
+} from '@/lib/seo'
 import './globals.css'
 import './brand-v2-bridge.css'
 import './brand-v2-profile.css'
@@ -17,31 +25,19 @@ const inter = Inter({
   variable: '--font-inter'
 })
 
-const SITE_URL = 'https://pilotvault.co.za'
-const SITE_TITLE = 'PilotVault SA | Pass Your SACAA Exams with Confidence'
-const SITE_DESCRIPTION =
-  'SACAA exam preparation for student pilots in South Africa. 5000+ practice questions, timed mock exams and detailed explanations. Try it free for 3 days.'
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: SITE_TITLE,
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
   description: SITE_DESCRIPTION,
   keywords: ['SACAA', 'pilot exam', 'aviation', 'South Africa', 'PPL', 'CPL', 'flight training'],
   openGraph: {
+    ...openGraphDefaults,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    siteName: 'PilotVault SA',
-    images: [
-      {
-        url: '/images/hero-cockpit.jpg',
-        width: 1600,
-        height: 1200,
-        alt: 'PilotVault SA',
-      },
-    ],
-    locale: 'en_ZA',
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
@@ -67,6 +63,31 @@ export const metadata: Metadata = {
   },
 }
 
+// Tells search engines who runs the site and what it is, for richer search listings.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'EducationalOrganization',
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/images/logo.png`,
+      email: CONTACT_EMAIL,
+      areaServed: { '@type': 'Country', name: 'South Africa' },
+      description: SITE_DESCRIPTION,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      inLanguage: 'en-ZA',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,6 +96,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+          }}
+        />
         {children}
         <SessionGuard />
         <AppMobileNavigation />

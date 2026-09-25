@@ -12,6 +12,15 @@ import {
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "About Us",
+  description:
+    "PilotVault SA helps South African student pilots prepare for their SACAA theory exams with realistic practice questions, mock exams and clear explanations.",
+  path: "/about",
+})
+
 const coreValues = [
   {
     number: "01",

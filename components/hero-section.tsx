@@ -21,10 +21,6 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="space-y-7 text-center lg:text-left"
           >
-            <div className="inline-flex items-center rounded-full border border-[#c7d7e6] bg-white/75 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#1f4e79] shadow-sm backdrop-blur-sm">
-              Built by pilots. For pilots.
-            </div>
-
             <div className="space-y-4">
               <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-[1.03] tracking-tight text-slate-900 sm:text-5xl lg:mx-0 lg:text-6xl">
                 PASS YOUR SACAA EXAMS WITH{" "}

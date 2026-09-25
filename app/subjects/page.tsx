@@ -79,8 +79,8 @@ export default function SubjectsPage() {
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-600">
             PilotVault SA provides preparation material across the core SACAA
-            Private Pilot Licence subjects, with CPL content launching on
-            1 January 2027.
+            Private Pilot Licence subjects. CPL content is being expanded, with
+            the full CPL Pack launching on 1 January 2027.
           </p>
         </div>
 

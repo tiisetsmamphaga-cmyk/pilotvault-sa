@@ -42,7 +42,7 @@ const plans = [
     name: "CPL Pack",
     price: "Coming Soon",
     period: "",
-    description: "Launching 1 January 2027",
+    description: "CPL content is being expanded. Full pack launches 1 January 2027",
     features: [
       "CPL question bank",
       "Timed mock exams",

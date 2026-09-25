@@ -81,7 +81,7 @@ const plans = [
   },
   {
     name: "CPL Pack",
-    description: "Launching 1 January 2027",
+    description: "CPL content is being expanded. Full pack launches 1 January 2027",
     priceCents: null,
     period: "",
     badge: "COMING SOON",

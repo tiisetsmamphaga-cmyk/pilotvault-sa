@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo"
 import { PPL_SUBJECTS } from "@/lib/subjects"
 
 export const metadata = pageMetadata({
-  title: "SACAA PPL Exam Subjects & Practice Questions",
+  title: "SACAA PPL Exam Question Database: All 8 Subjects",
   description:
     "Practise all 8 SACAA PPL subjects: Air Law, Meteorology, Navigation, Human Performance, Principles of Flight, Aircraft General, Radio Telephony and Flight Planning.",
   path: "/subjects",

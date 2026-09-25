@@ -37,6 +37,11 @@ const faqGroups = [
           "No. PilotVault SA is an independent educational platform and is not affiliated with, endorsed by, or operated by the South African Civil Aviation Authority (SACAA).",
       },
       {
+        question: "Is PilotVault SA a SACAA exam database?",
+        answer:
+          "PilotVault SA is a database of 5000+ SACAA-style practice questions across all 8 PPL subjects, organised by topic, with timed mock exams and detailed explanations. The questions are written to match the SACAA syllabus and exam style; they are not official SACAA exam papers.",
+      },
+      {
         question: "What subjects are available?",
         answer:
           "Current subjects include Air Law, Meteorology, Navigation, Human Performance, Principles of Flight, Aircraft Technical and General, Radio Telephony, and Flight Planning.",

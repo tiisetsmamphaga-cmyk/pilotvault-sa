@@ -72,7 +72,6 @@ function formatShortDate(value: string) {
 
 function scoreClassName(score: number) {
   if (score >= 75) return "text-emerald-700"
-  if (score >= 65) return "text-amber-700"
   return "text-slate-900"
 }
 

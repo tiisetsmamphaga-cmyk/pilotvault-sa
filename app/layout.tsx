@@ -20,7 +20,7 @@ const inter = Inter({
 const SITE_URL = 'https://pilotvault.co.za'
 const SITE_TITLE = 'PilotVault SA | Pass Your SACAA Exams with Confidence'
 const SITE_DESCRIPTION =
-  'The most trusted exam preparation platform for student pilots in South Africa. 5000+ questions, 8 subjects, and a 98% pass rate.'
+  'SACAA exam preparation for student pilots in South Africa. 5000+ practice questions, timed mock exams and detailed explanations. Try it free for 3 days.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

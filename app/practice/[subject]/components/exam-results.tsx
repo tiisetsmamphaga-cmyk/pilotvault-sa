@@ -44,7 +44,7 @@ export function ExamResults({
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <header className="flex min-h-16 items-center justify-between border-b border-slate-300 bg-[#1f4e79] px-4 py-4 text-white sm:px-6">
+      <header className="flex h-16 items-center justify-between border-b border-slate-300 bg-[#1f4e79] px-4 text-white sm:h-20 sm:px-6">
         <div>
           <h1 className="text-base font-bold">PilotVault SA Exam Results</h1>
           <p className="text-xs uppercase tracking-wider text-blue-100">

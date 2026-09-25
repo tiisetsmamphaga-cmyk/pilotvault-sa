@@ -422,7 +422,7 @@ export function Navbar() {
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             onMouseDown={(event) => event.stopPropagation()}
-            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-3xl border border-slate-200 bg-white p-6 text-slate-900 shadow-2xl"
+            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6 text-slate-900 shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="auth-title"

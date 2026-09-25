@@ -300,3 +300,12 @@ main[class~="bg-[#06111f]"] > section [class~="text-white"] {
     animation: none;
   }
 }
+
+/* Hide scrollbars site-wide; pages and panels still scroll with wheel, touch and keyboard. */
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

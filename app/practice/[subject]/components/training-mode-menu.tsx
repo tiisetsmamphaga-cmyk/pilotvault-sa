@@ -93,7 +93,7 @@ export function TrainingModeMenu({
   return (
     <main className="min-h-screen bg-[#071522] text-white">
       <header className="border-b border-[#29476d] bg-[#081726]/95">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
           <div className="min-w-0">
             <p className="text-[10px] uppercase tracking-[0.22em] text-[#f4b400] sm:text-xs sm:tracking-[0.25em]">
               PilotVault SA

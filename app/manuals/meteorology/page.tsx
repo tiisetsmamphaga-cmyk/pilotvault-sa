@@ -6,7 +6,7 @@ export default function MeteorologyManualPage() {
   return (
     <main className="min-h-screen bg-[#eef3f8] text-slate-900">
       <header className="border-b border-white/15 bg-[#1f4e79] text-white">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-3">
             <Link href="/dashboard" className="shrink-0" aria-label="PilotVault dashboard">
               <Image

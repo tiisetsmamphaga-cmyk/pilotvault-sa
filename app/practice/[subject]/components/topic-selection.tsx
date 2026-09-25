@@ -24,7 +24,7 @@ export function TopicSelection({
   return (
     <main className="min-h-screen bg-[#f8fafc] text-slate-900">
       <header className="border-b border-white/15 bg-[#1f4e79] text-white shadow-sm">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[72px] sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
           <div className="min-w-0">
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#d6e6f7] sm:text-xs sm:tracking-[0.25em]">
               PilotVault SA

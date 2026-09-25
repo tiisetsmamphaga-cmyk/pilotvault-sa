@@ -98,7 +98,7 @@ main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section {
 }
 
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child {
-  min-height: 72px;
+  min-height: 80px;
   background: #1f4e79;
   box-shadow: 0 0 0 100vmax #1f4e79;
   clip-path: inset(0 -100vmax);

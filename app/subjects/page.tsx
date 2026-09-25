@@ -1,19 +1,10 @@
 import Link from "next/link"
-import {
-  Cloud,
-  Scale,
-  Compass,
-  Brain,
-  Plane,
-  Wrench,
-  Radio,
-  Map,
-} from "lucide-react"
 
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
 import { pageMetadata } from "@/lib/seo"
+import { PPL_SUBJECTS } from "@/lib/subjects"
 
 export const metadata = pageMetadata({
   title: "SACAA PPL Exam Subjects & Practice Questions",
@@ -21,57 +12,6 @@ export const metadata = pageMetadata({
     "Practise all 8 SACAA PPL subjects: Air Law, Meteorology, Navigation, Human Performance, Principles of Flight, Aircraft General, Radio Telephony and Flight Planning.",
   path: "/subjects",
 })
-
-const subjects = [
-  {
-    name: "Air Law",
-    icon: Scale,
-    description:
-      "Rules, regulations, airspace classifications, licensing requirements, and operational procedures.",
-  },
-  {
-    name: "Meteorology",
-    icon: Cloud,
-    description:
-      "Weather systems, forecasts, METARs, TAFs, clouds, wind, and aviation weather interpretation.",
-  },
-  {
-    name: "Navigation",
-    icon: Compass,
-    description:
-      "Maps, charts, headings, tracks, magnetic variation, flight calculations, and navigation principles.",
-  },
-  {
-    name: "Human Performance",
-    icon: Brain,
-    description:
-      "Aviation physiology, fatigue, hypoxia, vision, decision-making, and human factors.",
-  },
-  {
-    name: "Principles of Flight",
-    icon: Plane,
-    description:
-      "Aerodynamics, lift, drag, stability, stalls, controls, and aircraft performance.",
-  },
-  {
-    name: "Aircraft Technical & General",
-    icon: Wrench,
-    description:
-      "Aircraft systems, engines, instruments, electrics, hydraulics, and maintenance knowledge.",
-  },
-  {
-    name: "Radio Telephony",
-    icon: Radio,
-    description:
-      "Standard phraseology, radio procedures, emergencies, and communication techniques.",
-  },
-  {
-    name: "Flight Planning",
-    icon: Map,
-    description:
-      "Mass and balance, fuel planning, performance calculations, and flight preparation.",
-  },
-]
 
 export default function SubjectsPage() {
   return (
@@ -94,9 +34,10 @@ export default function SubjectsPage() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {subjects.map((subject) => (
-            <div
-              key={subject.name}
+          {PPL_SUBJECTS.map((subject) => (
+            <Link
+              key={subject.slug}
+              href={`/subjects/${subject.slug}`}
               className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-6 transition hover:border-[#1f4e79]/40 hover:bg-white"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#d6e6f7]">
@@ -106,9 +47,12 @@ export default function SubjectsPage() {
                 {subject.name}
               </h2>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                {subject.description}
+                {subject.summary}
               </p>
-            </div>
+              <p className="mt-4 text-sm font-semibold text-[#1f4e79]">
+                View topics &rarr;
+              </p>
+            </Link>
           ))}
         </div>
 

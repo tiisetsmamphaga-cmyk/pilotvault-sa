@@ -1,8 +1,19 @@
 import type { MetadataRoute } from "next"
 
+import { PPL_SUBJECTS } from "@/lib/subjects"
+
 const SITE_URL = "https://pilotvault.co.za"
 
-const PUBLIC_ROUTES = ["", "/features", "/subjects", "/about", "/faq", "/terms", "/privacy"]
+const PUBLIC_ROUTES = [
+  "",
+  "/features",
+  "/subjects",
+  ...PPL_SUBJECTS.map((subject) => `/subjects/${subject.slug}`),
+  "/about",
+  "/faq",
+  "/terms",
+  "/privacy",
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()

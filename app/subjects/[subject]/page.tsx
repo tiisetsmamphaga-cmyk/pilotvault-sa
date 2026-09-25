@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (!subject) return {}
 
   return pageMetadata({
-    title: `SACAA PPL ${subject.name} Practice Questions`,
+    title: `SACAA PPL ${subject.name} Exam Questions & Practice Database`,
     description: `Prepare for the SACAA PPL ${subject.name} exam with practice questions on ${subject.searchFocus}. Timed mock exams and detailed explanations. Try it free for 3 days.`,
     path: `/subjects/${subject.slug}`,
   })

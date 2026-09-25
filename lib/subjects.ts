@@ -33,7 +33,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Rules, regulations, airspace classifications, licensing requirements, and operational procedures.",
     intro:
-      "The SACAA PPL Air Law exam tests the South African Civil Aviation Regulations that apply to private pilots: licensing and ratings, the rules of the air, airspace and VFR minima, signals and interception, and what to do after an accident or incident. Our Air Law question bank is organised by these topics, so you can practise the rules you will actually be examined on.",
+      "The SACAA PPL Air Law exam tests the South African Civil Aviation Regulations that apply to private pilots: licensing and ratings, the rules of the air, airspace and VFR minima, signals and interception, and what to do after an accident or incident. Our Air Law question database is organised by these topics, so you can practise the rules you will actually be examined on.",
     searchFocus: "licensing, rules of the air, airspace, VFR minima and accident reporting",
     topics: [
       "Accidents, Incidents & SAR",
@@ -58,7 +58,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Weather systems, forecasts, METARs, TAFs, clouds, wind, and aviation weather interpretation.",
     intro:
-      "Meteorology covers how the atmosphere behaves and how weather affects your flight: pressure, temperature and humidity, wind, clouds and precipitation, air masses and fronts, stability, and reading aviation weather reports. It includes South African weather patterns, so you prepare for the conditions you will actually fly in.",
+      "Meteorology covers how the atmosphere behaves and how weather affects your flight: pressure, temperature and humidity, wind, clouds and precipitation, air masses and fronts, stability, and reading aviation weather reports. It includes South African weather patterns, so you prepare for the conditions you will actually fly in. Our Meteorology question database is organised by these topics, so you can focus on one area at a time.",
     searchFocus: "clouds, pressure, wind, fronts, weather reports and South African weather",
     topics: [
       "Clouds & Precipitation",
@@ -82,7 +82,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Maps, charts, headings, tracks, magnetic variation, flight calculations, and navigation principles.",
     intro:
-      "Navigation tests the technique and calculations of getting from A to B: the earth and coordinates, chart projections and scale, magnetism and the compass, the wind triangle and flight computer, groundspeed and fuel, radio navigation and position fixing, and diversions. Practise the calculations until they become routine.",
+      "Navigation tests the technique and calculations of getting from A to B: the earth and coordinates, chart projections and scale, magnetism and the compass, the wind triangle and flight computer, groundspeed and fuel, radio navigation and position fixing, and diversions. Practise the calculations until they become routine. Our Navigation question database is organised by these topics, so you can focus on one area at a time.",
     searchFocus: "charts, the compass, the wind triangle, flight computer calculations and radio navigation",
     topics: [
       "Flight Planning, Groundspeed & Fuel",
@@ -105,7 +105,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Aviation physiology, fatigue, hypoxia, vision, decision-making, and human factors.",
     intro:
-      "Human Performance and Limitations covers how flying affects your body and mind: the atmosphere and hypoxia, vision and visual illusions, hearing and spatial disorientation, stress and fatigue, information processing and decision-making, and fitness to fly.",
+      "Human Performance and Limitations covers how flying affects your body and mind: the atmosphere and hypoxia, vision and visual illusions, hearing and spatial disorientation, stress and fatigue, information processing and decision-making, and fitness to fly. Our Human Performance question database is organised by these topics, so you can focus on one area at a time.",
     searchFocus: "hypoxia, vision and illusions, disorientation, fatigue and decision-making",
     topics: [
       "Information Processing & Behaviour",
@@ -130,7 +130,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Aerodynamics, lift, drag, stability, stalls, controls, and aircraft performance.",
     intro:
-      "Principles of Flight explains why an aircraft flies and how it behaves: aerofoils and lift, drag, the four forces, stability, flight controls and trim, turns and load factor, stalls and spins, and flap, glide and climb performance.",
+      "Principles of Flight explains why an aircraft flies and how it behaves: aerofoils and lift, drag, the four forces, stability, flight controls and trim, turns and load factor, stalls and spins, and flap, glide and climb performance. Our Principles of Flight question database is organised by these topics, so you can focus on one area at a time.",
     searchFocus: "lift, drag, stability, stalls, turns and load factor",
     topics: [
       "Stability",
@@ -159,7 +159,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Aircraft systems, engines, instruments, electrics, hydraulics, and maintenance knowledge.",
     intro:
-      "Aircraft Technical and General covers how a light aircraft works: piston engines, lubrication and fuel systems, propellers, electrics, hydraulics, airframes and undercarriage, and the pressure, gyroscopic and compass instruments you rely on in the cockpit.",
+      "Aircraft Technical and General covers how a light aircraft works: piston engines, lubrication and fuel systems, propellers, electrics, hydraulics, airframes and undercarriage, and the pressure, gyroscopic and compass instruments you rely on in the cockpit. Our Aircraft Technical & General question database is organised by these topics, so you can focus on one area at a time.",
     searchFocus: "piston engines, flight instruments, electrics, fuel systems and airframes",
     topics: [
       "Piston Engines",
@@ -182,7 +182,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Standard phraseology, radio procedures, emergencies, and communication techniques.",
     intro:
-      "Radio Telephony covers how you communicate with air traffic control: standard phraseology and radio procedures, South African airspace, flight plans and flight rules, altimeter setting procedures, the semi-circular rule and runway condition reports.",
+      "Radio Telephony covers how you communicate with air traffic control: standard phraseology and radio procedures, South African airspace, flight plans and flight rules, altimeter setting procedures, the semi-circular rule and runway condition reports. Our Radio Telephony question database is organised by these topics, so you can focus on one area at a time.",
     searchFocus: "radio procedures, phraseology, airspace and altimeter setting procedures",
     topics: [
       "Radio Procedures",
@@ -203,7 +203,7 @@ export const PPL_SUBJECTS: PplSubject[] = [
     summary:
       "Mass and balance, fuel planning, performance calculations, and flight preparation.",
     intro:
-      "Flight Planning and Performance covers preparing a flight safely: mass and balance, take-off, climb, cruise and landing performance, runway distances and slope, fuel planning, range and endurance, V-speeds, and the effects of the atmosphere, wind shear and wake turbulence.",
+      "Flight Planning and Performance covers preparing a flight safely: mass and balance, take-off, climb, cruise and landing performance, runway distances and slope, fuel planning, range and endurance, V-speeds, and the effects of the atmosphere, wind shear and wake turbulence. Our Flight Planning question database is organised by these topics, so you can focus on one area at a time.",
     searchFocus: "mass and balance, take-off and landing performance and fuel planning",
     topics: [
       "Mass & Balance",

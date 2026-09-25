@@ -4,7 +4,7 @@ export const SITE_URL = "https://pilotvault.co.za"
 export const SITE_NAME = "PilotVault SA"
 export const SITE_TITLE = "PilotVault SA | Pass Your SACAA Exams with Confidence"
 export const SITE_DESCRIPTION =
-  "SACAA exam preparation for student pilots in South Africa. 5000+ practice questions, timed mock exams and detailed explanations. Try it free for 3 days."
+  "SACAA exam preparation for student pilots in South Africa. A database of 5000+ SACAA-style practice questions, timed mock exams and detailed explanations. Try it free for 3 days."
 export const CONTACT_EMAIL = "contact@pilotvault.co.za"
 
 const SHARE_IMAGE = {

@@ -70,7 +70,7 @@ const plans = [
     disabled: false,
     productCode: "ppl_pack" as const,
     features: [
-      "All 8 PPL subjects, 5,000+ questions",
+      "All 8 PPL subjects, full question banks",
       "Timed mock exams for every subject",
       "Topic-based practice",
       "Detailed answer explanations",

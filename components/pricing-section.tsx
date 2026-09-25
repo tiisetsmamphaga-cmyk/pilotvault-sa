@@ -27,7 +27,7 @@ const plans = [
     period: "/3 months",
     description: "Everything you need for all 8 PPL exams",
     features: [
-      "All 8 PPL subjects, 5,000+ questions",
+      "All 8 PPL subjects, full question banks",
       "Timed mock exams for every subject",
       "Topic-based practice",
       "Detailed answer explanations",

@@ -13,6 +13,15 @@ import {
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "SACAA PPL Exam Subjects & Practice Questions",
+  description:
+    "Practise all 8 SACAA PPL subjects: Air Law, Meteorology, Navigation, Human Performance, Principles of Flight, Aircraft General, Radio Telephony and Flight Planning.",
+  path: "/subjects",
+})
+
 const subjects = [
   {
     name: "Air Law",

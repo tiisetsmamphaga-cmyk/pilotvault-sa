@@ -1,6 +1,15 @@
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "Terms & Conditions",
+  description:
+    "The terms and conditions for using PilotVault SA, including free trials, subscriptions, payments and refunds.",
+  path: "/terms",
+})
+
 const sections = [
   {
     title: "Acceptance of Terms",

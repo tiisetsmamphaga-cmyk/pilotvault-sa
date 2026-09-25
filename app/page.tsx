@@ -6,6 +6,12 @@ import { Footer } from "@/components/footer"
 import { HomeAuthRedirect } from "@/components/home-auth-redirect"
 import { SessionEndedBanner } from "@/components/session-ended-banner"
 
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#eef3f8] text-slate-900">

@@ -11,6 +11,15 @@ import {
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  title: "SACAA Exam Prep FAQ",
+  description:
+    "Answers to common questions about PilotVault SA: the subjects covered, the 3-day free trial, mock exams, subscriptions and support.",
+  path: "/faq",
+})
+
 const faqGroups = [
   {
     number: "01",

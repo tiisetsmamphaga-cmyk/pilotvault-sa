@@ -44,6 +44,11 @@ main:not([class~="bg-white"]) > header[class~="bg-[#081726]/95"] {
   background: var(--pv-navy) !important;
 }
 
+/* The mock exam and results screens sit on white pages; match the dashboard navy. */
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"] {
+  background: var(--pv-navy) !important;
+}
+
 /* Profile uses a legacy in-page toolbar instead of a semantic header. */
 main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child {
   background: var(--pv-navy) !important;

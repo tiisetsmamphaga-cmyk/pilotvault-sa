@@ -8,14 +8,15 @@ const plans = [
     name: "Per Subject",
     price: "R89",
     period: "/month",
-    description: "Ideal for focused study",
+    description: "Focus on the one exam you're writing next",
     features: [
-      "Single Subject Access",
-      "Mock Exams",
-      "Performance Tracking",
-      "Mobile Access",
-      "Question Explanations",
-      "Priority Support",
+      "Full question bank for one subject",
+      "Timed mock exams",
+      "Topic-based practice",
+      "Detailed answer explanations",
+      "Track your mock exam scores",
+      "Study on phone, tablet or laptop",
+      "Email support",
     ],
     popular: false,
     comingSoon: false,
@@ -23,14 +24,16 @@ const plans = [
   {
     name: "PPL Pack",
     price: "R699",
-    period: "/3 Months",
-    description: "Perfect for Private Pilot License students",
+    period: "/3 months",
+    description: "Everything you need for all 8 PPL exams",
     features: [
-      "PPL Subject Questions",
-      "Mock Exams",
-      "Performance Tracking",
-      "Mobile Access",
-      "Email Support",
+      "All 8 PPL subjects, full question banks",
+      "Timed mock exams for every subject",
+      "Topic-based practice",
+      "Detailed answer explanations",
+      "Track your mock exam scores",
+      "Study on phone, tablet or laptop",
+      "Email support",
     ],
     popular: true,
     comingSoon: false,
@@ -39,14 +42,13 @@ const plans = [
     name: "CPL Pack",
     price: "Coming Soon",
     period: "",
-    description: "Commercial Pilot content currently being expanded",
+    description: "CPL content is being expanded. Full pack launches 1 January 2027",
     features: [
-      "CPL Question Bank",
-      "Mock Exams",
-      "Advanced Analytics",
-      "Mobile Access",
-      "Priority Support",
-      "New Content Updates",
+      "CPL question bank",
+      "Timed mock exams",
+      "Topic-based practice",
+      "Detailed answer explanations",
+      "Study on phone, tablet or laptop",
     ],
     popular: false,
     comingSoon: true,
@@ -139,7 +141,7 @@ export function PricingSection() {
                       : "border border-[#1f4e79] bg-white text-[#1f4e79] hover:bg-[#f1f5f9]"
                 }`}
               >
-                {plan.comingSoon ? "Coming Soon" : "Start Free Trial"}
+                {plan.comingSoon ? "Available 1 Jan 2027" : "Start Free Trial"}
               </Button>
             </motion.div>
           ))}

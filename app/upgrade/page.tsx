@@ -63,36 +63,36 @@ const subjects: { slug: SubjectSlug; name: string; icon: typeof Cloud }[] = [
 const plans = [
   {
     name: "PPL Pack",
-    description: "Perfect for Private Pilot Licence students",
+    description: "Everything you need for all 8 PPL exams",
     priceCents: 69900,
-    period: "/3 Months",
+    period: "/3 months",
     badge: "MOST POPULAR",
     disabled: false,
     productCode: "ppl_pack" as const,
     features: [
-      "All 8 PPL Subjects",
-      "Mock Exams",
-      "Topic-Based Practice",
-      "Performance Tracking",
-      "Mobile Access",
-      "Email Support",
+      "All 8 PPL subjects, full question banks",
+      "Timed mock exams for every subject",
+      "Topic-based practice",
+      "Detailed answer explanations",
+      "Track your mock exam scores",
+      "Study on phone, tablet or laptop",
+      "Email support",
     ],
   },
   {
     name: "CPL Pack",
-    description: "Commercial Pilot content currently being expanded",
+    description: "CPL content is being expanded. Full pack launches 1 January 2027",
     priceCents: null,
     period: "",
     badge: "COMING SOON",
     disabled: true,
     productCode: null,
     features: [
-      "CPL Question Bank",
-      "Mock Exams",
-      "Advanced Analytics",
-      "Mobile Access",
-      "Priority Support",
-      "New Content Updates",
+      "CPL question bank",
+      "Timed mock exams",
+      "Topic-based practice",
+      "Detailed answer explanations",
+      "Study on phone, tablet or laptop",
     ],
   },
 ] as const
@@ -333,7 +333,7 @@ function UpgradePageContent() {
                     disabled
                     className="mt-7 w-full rounded-xl bg-slate-100 px-5 py-3 text-sm font-bold text-slate-400 sm:mt-8"
                   >
-                    Coming Soon
+                    Available 1 Jan 2027
                   </button>
                 ) : (
                   <>

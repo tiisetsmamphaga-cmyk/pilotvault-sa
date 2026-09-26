@@ -302,6 +302,55 @@ FIXES = {
     )},
     1954: {"q": "The ambient air pressure acting on an object immersed in the atmosphere:"},
 
+    # ---------------- Round 2: the six items flagged for the owner ----------------
+    875: {"ans": "10 hours", "e": (
+        "Under SA-CATS 61, the holder of a helicopter licence, or an equivalent licence for a weight-shift "
+        "controlled microlight, gyroplane or glider, who applies for a PPL(A) may be credited with a maximum "
+        "of 10 hours. The larger 25-hour credit applies only to time on conventionally (three-axis) "
+        "controlled microlights."
+    )},
+    958: {"d": "Class 2, Class 3 and Class 4", "ans": "Class 2, Class 3 and Class 4", "e": (
+        "A Class 1 certificate is issued to the highest medical standard, so while it is valid the holder is "
+        "also deemed to hold Class 2, Class 3 and Class 4 certificates - a CPL or ATPL holder can exercise "
+        "PPL privileges on a Class 1. A Class 2 or Class 3 certificate only covers the classes below it."
+    )},
+    927: {"ans": "True", "e": (
+        "True. Part 91 (91.01.9) prohibits portable electronic devices on board unless permitted, but it "
+        "specifically exempts portable voice recorders, hearing aids, heart pacemakers, electric shavers and "
+        "any other device the operator (or, on a non-commercial flight, the PIC) has determined will not "
+        "interfere with the aircraft's systems. These devices are therefore not restricted by the rule, "
+        "although the PIC can still stop the use of anything that is causing interference."
+    )},
+    1058: {"b": "12 months", "c": "18 months", "d": "36 months", "ans": "36 months", "e": (
+        "The skills test must be completed within 36 months of passing the last theoretical knowledge "
+        "examination (the examinations themselves must all be passed within 18 months of the first). "
+        "Separately, the skills test must be taken within 30 days of the last dual instruction flight."
+    )},
+    1438: {
+        "q": ("Under the Protected Areas Act, no aircraft may fly over a national park, special nature reserve "
+              "or world heritage site lower than what height above its highest point, unless authorised?"),
+        "a": "500 ft", "b": "1 500 ft", "c": "2 000 ft", "d": "2 500 ft", "ans": "2 500 ft",
+        "e": (
+            "Section 47 of the National Environmental Management: Protected Areas Act makes the airspace above "
+            "a special nature reserve, national park or world heritage site, up to 2 500 ft above its highest "
+            "point, part of the protected area. Aircraft may not fly below that level except where specifically "
+            "allowed, for example in an emergency or when landing at an approved airstrip. Some areas have "
+            "their own published limits, so always check the chart and the AIP."
+        ),
+    },
+    532: {
+        "c": "Remain in uncontrolled airspace, broadcast blind, squawk 7600, and land at an uncontrolled airfield",
+        "ans": "Remain in uncontrolled airspace, broadcast blind, squawk 7600, and land at an uncontrolled airfield",
+        "e": (
+            "A General Flying Area is uncontrolled airspace. The Pilot's Radio Handbook (AIP ENR 1.5, SA-CATS "
+            "91.06.16) says a VFR pilot whose radio fails in uncontrolled airspace must remain in uncontrolled "
+            "airspace, squawk 7600, switch on the landing light and continue to an uncontrolled airfield, "
+            "joining normally and prefixing calls with \"transmitting blind\". Returning to the departure field "
+            "or heading for the nearest airfield could mean entering controlled airspace without a clearance. "
+            "If a flight plan was filed or you were in contact with an ATSU, telephone the nearest ATSU after landing."
+        ),
+    },
+
     # ---------------- Aircraft Technical & General ----------------
     2518: {"c": "A low oil supply", "ans": "A low oil supply"},
     2566: {"a": "The capsule", "ans": "The capsule"},

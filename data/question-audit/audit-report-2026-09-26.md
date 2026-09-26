@@ -7,7 +7,7 @@ Handbook (24th ed.), the AGK, PPL Meteorology and Oxford Human Performance texts
 
 - Backup of every question before the changes: `questions-before-audit-2026-09-26.json`
 - Fixes, validated against the backup: `scripts/question_audit/fixes.py` and `met_distractors.py`
-- 126 questions changed. After applying: each answer key matches one of its options, and no question has duplicate options.
+- 126 questions changed in the first pass and 6 in the second pass (132 in total). After applying: each answer key matches one of its options, and no question has duplicate options.
 
 ## Fixes applied
 
@@ -47,14 +47,14 @@ Handbook (24th ed.), the AGK, PPL Meteorology and Oxford Human Performance texts
   - 1954: stem wording
 - **ATG:** 2518, 2566, 2634, 2683, 2709, 2716 (typos and stem wording)
 
-## Flagged for the owner — could not be verified from the sources on hand
-| ID | Subject | Question |
-|---|---|---|
-| 843 vs 875 | CPL Air Law | Weight-shift microlight credit given as 10 h in one and 25 h in the other |
-| 958 | CPL Air Law | Says a Class 1 medical deems Class 3/4 only; confirm against Part 67 |
-| 927 | Air Law | Keyed False; probably True |
-| 1058 vs 893 | Air Law | 6 months in one and 36 months in the other for the same requirement |
-| 1438 | Air Law | Minimum height over a game reserve keyed as 500 m; confirm against the current AIP/CAR |
-| 532 | Radio Telephony | Radio failure in the GFA keyed "return to departure field"; the Handbook says land at an uncontrolled aerodrome |
+## Flagged items — resolved in a second pass
+| ID | Subject | Decision | Basis |
+|---|---|---|---|
+| 875 | CPL Air Law | Weight-shift microlight credit toward PPL(A) is **10 h** (was 25 h); now agrees with 843 | SA-CATS 61 (Gazette 35398, 2012) |
+| 958 | CPL Air Law | A valid Class 1 is deemed to be **Class 2, 3 and 4** (was 3 and 4 only) | Class 1 is the highest standard; agrees with 954. Part 67 text could not be fetched here |
+| 927 | Air Law | Keyed **True** (was False) | The listed devices are exempt from the 91.01.9 prohibition; agrees with 929 and 1409 |
+| 1058 | Air Law | Skills test within **36 months** of the last theory exam (was 6 months); now agrees with 893 | SACAA examinations guidance |
+| 1438 | Air Law | Rewritten to the verifiable rule: **2 500 ft** above the highest point of a national park, special nature reserve or world heritage site (was "500 m over a game reserve") | NEM: Protected Areas Act s47 |
+| 532 | Radio Telephony | Key: **remain in uncontrolled airspace, squawk 7600 and land at an uncontrolled airfield** (was "return to departure field") | Pilot's Radio Handbook 10.2.1 |
 
 No wrong keys were found in Navigation (405), Principles of Flight (365) or ATG (356). All navigation calculations agree with the keys.

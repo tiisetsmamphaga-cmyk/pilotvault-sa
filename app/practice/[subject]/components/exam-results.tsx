@@ -43,7 +43,7 @@ export function ExamResults({
   const isPrinciplesOfFlight = subject === "principles-of-flight"
 
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="pv-exam-results min-h-screen bg-white text-slate-900">
       <header className="flex h-16 items-center justify-between border-b border-slate-300 bg-[#1f4e79] px-4 text-white sm:h-20 sm:px-6">
         <div>
           <h1 className="text-base font-bold">PilotVault SA Exam Results</h1>

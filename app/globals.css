@@ -309,3 +309,15 @@ main[class~="bg-[#06111f]"] > section [class~="text-white"] {
 *::-webkit-scrollbar {
   display: none;
 }
+
+/* Exam results reviews a long list of incorrect answers; keep the page
+   scrollbar visible there so there's a visual sense of how much is left. */
+html:has(.pv-exam-results),
+body:has(.pv-exam-results) {
+  scrollbar-width: auto;
+}
+
+html:has(.pv-exam-results)::-webkit-scrollbar,
+body:has(.pv-exam-results)::-webkit-scrollbar {
+  display: block;
+}

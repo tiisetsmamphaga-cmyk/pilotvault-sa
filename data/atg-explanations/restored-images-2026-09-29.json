@@ -1,0 +1,151 @@
+{
+ "note": "ATG diagrams the owner picked on 2026-09-29 from the removed-image gallery (pages A-C) and restored. 'replaced' lists the reused diagram each question showed before; all others had no image.",
+ "replaced": {
+  "2673": {
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v2.webp",
+   "explanation_image_title": "BANK ANGLE AND LOAD FACTOR"
+  },
+  "2674": {
+   "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-nil-deviation-v1.webp",
+   "explanation_image_title": "WHY DEVIATION CHANGES WITH HEADING"
+  },
+  "2743": {
+   "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v2.webp",
+   "explanation_image_title": "ELEVATOR TRIM TAB"
+  }
+ },
+ "restored": [
+  {
+   "id": 2453,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2453-oleo-over-extension.webp",
+   "explanation_image_title": "OLEO OVER-EXTENSION",
+   "explanation_image_caption": "The most likely cause of an over-extended oleo leg is high air pressure."
+  },
+  {
+   "id": 2456,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2421-semi-monocoque-fuselage.webp",
+   "explanation_image_title": "SEMI-MONOCOQUE FUSELAGE",
+   "explanation_image_caption": "Formers and stringers keep the shape while the stressed skin shares the flight and ground loads."
+  },
+  {
+   "id": 2454,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2429-truss-longerons.webp",
+   "explanation_image_title": "TRUSS FUSELAGE: LONGERONS",
+   "explanation_image_caption": "In a truss (girder) fuselage the longerons are the main longitudinal load-carrying members."
+  },
+  {
+   "id": 2457,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2457-monocoque-structure.webp",
+   "explanation_image_title": "MONOCOQUE STRUCTURE",
+   "explanation_image_caption": "In a monocoque structure the outer skin carries all the flight loads; formers only hold the shape."
+  },
+  {
+   "id": 2461,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2461-wing-ribs.webp",
+   "explanation_image_title": "WING STRUCTURE: RIBS",
+   "explanation_image_caption": "Ribs give the wing both its aerofoil shape and strength, passing loads to the spars."
+  },
+  {
+   "id": 2469,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2469-fuel-tank-baffles-v2.webp",
+   "explanation_image_title": "FUEL TANK BAFFLES",
+   "explanation_image_caption": "Baffles stop the fuel surging about in the tank during flight."
+  },
+  {
+   "id": 2474,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2474-valve-lead.webp",
+   "explanation_image_title": "VALVE LEAD",
+   "explanation_image_caption": "Valve lead: the inlet valve opens before the piston reaches TDC."
+  },
+  {
+   "id": 2484,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2484-power-increase-sequence.webp",
+   "explanation_image_title": "CHANGING POWER WITH A CONSTANT-SPEED PROPELLER",
+   "explanation_image_caption": "To increase power: richen the mixture, increase RPM, then increase manifold pressure."
+  },
+  {
+   "id": 2499,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2499-smooth-throttle-handling.webp",
+   "explanation_image_title": "SMOOTH THROTTLE HANDLING",
+   "explanation_image_caption": "Open and close the throttle smoothly to avoid overstressing the crankshaft."
+  },
+  {
+   "id": 2504,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2504-avgas-100ll-blue.webp",
+   "explanation_image_title": "AVGAS 100LL IS BLUE",
+   "explanation_image_caption": "100LL AVGAS can be identified by its blue colour."
+  },
+  {
+   "id": 2523,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2523-hydraulic-fluid-phosphate-purple.webp",
+   "explanation_image_title": "HYDRAULIC FLUID IDENTIFICATION",
+   "explanation_image_caption": "Phosphate-ester hydraulic fluid is coloured purple."
+  },
+  {
+   "id": 2530,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2530-dry-sump-scavenge-pump.webp",
+   "explanation_image_title": "DRY SUMP: SCAVENGE PUMP",
+   "explanation_image_caption": "In a dry-sump system the scavenge pump pumps oil from the sump back to the oil tank."
+  },
+  {
+   "id": 2533,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2533-oil-cooler-ram-air.webp",
+   "explanation_image_title": "OIL COOLING: RAM AIR",
+   "explanation_image_caption": "The primary method of cooling the oil is ram air through an oil cooler."
+  },
+  {
+   "id": 2549,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2549-crankshaft-bearing-lubrication.webp",
+   "explanation_image_title": "CRANKSHAFT AND BEARING LUBRICATION",
+   "explanation_image_caption": "The main bearings and crankshaft are lubricated by high-pressure oil from the pump."
+  },
+  {
+   "id": 2580,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2589-alternator-vs-generator-low-rpm.webp",
+   "explanation_image_title": "ALTERNATOR VS GENERATOR AT LOW RPM",
+   "explanation_image_caption": "An alternator still produces electrical power at low RPM."
+  },
+  {
+   "id": 2586,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2609-battery-electrolyte.webp",
+   "explanation_image_title": "LEAD-ACID BATTERY ELECTROLYTE",
+   "explanation_image_caption": "Maintain the electrolyte level by adding distilled water."
+  },
+  {
+   "id": 2674,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2674-deviation-card.webp",
+   "explanation_image_title": "DEVIATION VARIES WITH HEADING",
+   "explanation_image_caption": "Compass deviation in a particular aircraft varies with each heading."
+  },
+  {
+   "id": 2729,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2729-over-leaning.webp",
+   "explanation_image_title": "LEANING TOO FAR",
+   "explanation_image_caption": "Excessive leaning: rough running, power loss and generally falling temperatures."
+  },
+  {
+   "id": 2730,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2730-otto-cycle.webp",
+   "explanation_image_title": "IDEAL OTTO CYCLE",
+   "explanation_image_caption": "Two adiabatic and two constant-volume processes enclose the work area."
+  },
+  {
+   "id": 2734,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2607-inverter.webp",
+   "explanation_image_title": "INVERTER: DC TO AC",
+   "explanation_image_caption": "An inverter converts direct current into alternating current."
+  },
+  {
+   "id": 2743,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2743-trim-tab-purpose.webp",
+   "explanation_image_title": "PURPOSE OF A TRIM TAB",
+   "explanation_image_caption": "A trim tab's primary purpose is to reduce or cancel sustained pilot control forces."
+  },
+  {
+   "id": 2673,
+   "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2673-load-factor-level-turn.webp",
+   "explanation_image_title": "LOAD FACTOR IN A LEVEL TURN",
+   "explanation_image_caption": "In a level coordinated turn the extra load on the wings is a function of the angle of bank."
+  }
+ ]
+}

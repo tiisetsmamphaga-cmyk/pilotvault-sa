@@ -311,13 +311,34 @@ main[class~="bg-[#06111f]"] > section [class~="text-white"] {
 }
 
 /* Exam results reviews a long list of incorrect answers; keep the page
-   scrollbar visible there so there's a visual sense of how much is left. */
+   scrollbar visible there so there's a visual sense of how much is left.
+   Styled explicitly rather than left to the browser default, which on
+   Windows Chrome renders as a thin floating overlay pill. */
 html:has(.pv-exam-results),
 body:has(.pv-exam-results) {
   scrollbar-width: auto;
+  scrollbar-color: #94a3b8 #e2e8f0;
 }
 
 html:has(.pv-exam-results)::-webkit-scrollbar,
 body:has(.pv-exam-results)::-webkit-scrollbar {
   display: block;
+  width: 12px;
+}
+
+html:has(.pv-exam-results)::-webkit-scrollbar-track,
+body:has(.pv-exam-results)::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+html:has(.pv-exam-results)::-webkit-scrollbar-thumb,
+body:has(.pv-exam-results)::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 6px;
+  border: 2px solid #e2e8f0;
+}
+
+html:has(.pv-exam-results)::-webkit-scrollbar-thumb:hover,
+body:has(.pv-exam-results)::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
 }

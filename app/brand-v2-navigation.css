@@ -46,7 +46,7 @@ main:not([class~="bg-white"]) > header[class~="bg-[#081726]/95"] {
 
 /* The exam results screen sits on a white page; match the dashboard navy.
    The exam simulator header (min-h-20) keeps its lighter blue. */
-main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="min-h-16"] {
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="h-16"] {
   background: var(--pv-navy) !important;
 }
 

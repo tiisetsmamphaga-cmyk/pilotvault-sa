@@ -50,14 +50,14 @@ main > header[class~="bg-[#081726]/95"]:not([class~="min-h-20"]) > div > div:fir
 
 /* Exam results use h1 for the brand and p for context.
    The active exam simulator intentionally keeps its original SACAA-style UI. */
-main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="min-h-16"] > div:first-child {
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="h-16"] > div:first-child {
   display: flex !important;
   min-width: 0;
   align-items: center !important;
   gap: 12px !important;
 }
 
-main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="min-h-16"] > div:first-child > h1:first-child {
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="h-16"] > div:first-child > h1:first-child {
   display: block !important;
   flex: 0 0 auto;
   width: 148px !important;
@@ -74,7 +74,7 @@ main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="min-h-16"] > div
   user-select: none;
 }
 
-main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="min-h-16"] > div:first-child > h1:first-child + p {
+main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="h-16"] > div:first-child > h1:first-child + p {
   min-width: 0;
   margin: 0 !important;
   border-left: 1px solid rgba(255, 255, 255, 0.24);
@@ -156,14 +156,14 @@ main[class~="bg-[#06111f]"][class~="text-[#071426]"] > section > div:first-child
      divider/title when horizontal space is tight. */
   main > header[class~="bg-[#1f4e79]"]:not([class~="min-h-20"]) > div > div:first-child > p:first-child,
   main > header[class~="bg-[#081726]/95"]:not([class~="min-h-20"]) > div > div:first-child > p:first-child,
-  main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="min-h-16"] > div:first-child > h1:first-child {
+  main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="h-16"] > div:first-child > h1:first-child {
     width: 128px !important;
     height: 38px !important;
   }
 
   main > header[class~="bg-[#1f4e79]"]:not([class~="min-h-20"]) > div > div:first-child > p:first-child + h1,
   main > header[class~="bg-[#081726]/95"]:not([class~="min-h-20"]) > div > div:first-child > p:first-child + h1,
-  main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="min-h-16"] > div:first-child > h1:first-child + p {
+  main[class~="bg-white"] > header[class~="bg-[#1f4e79]"][class~="h-16"] > div:first-child > h1:first-child + p {
     display: none !important;
   }
 

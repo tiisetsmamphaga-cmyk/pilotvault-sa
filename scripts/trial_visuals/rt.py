@@ -58,7 +58,7 @@ def clock(cx, cy, r, hh, mm, label, color=NAVY):
 
 # ------------------------------------------------------------------ flight planning
 
-@HOLD.add(484, "rt-trial-flight-plan-30min", "Filing a Flight Plan — 30 Minutes",
+@R.add(484, "rt-trial-flight-plan-30min", "Filing a Flight Plan — 30 Minutes",
        template("FILE AT LEAST 30 MINUTES BEFORE DEPARTURE",
                 "60 MINUTES FOR AN INTERNATIONAL FLIGHT",
                 [("WHY", "The ATSU needs time to process the plan and pass it to other units"),
@@ -110,7 +110,7 @@ def _():
     return s
 
 
-@HOLD.add(567, "rt-trial-sar-phases", "The Three Emergency (SAR) Phases",
+@R.add(567, "rt-trial-sar-phases", "The Three Emergency (SAR) Phases",
        template("UNCERTAINTY → ALERT → DISTRESS",
                 "INCERFA → ALERFA → DETRESFA: THE RESPONSE GROWS AS CONCERN GROWS",
                 [("INCERFA", "Uncertainty: doubt about the aircraft's safety"),
@@ -132,7 +132,7 @@ def _():
     return s
 
 
-@HOLD.add(570, "rt-trial-ground-signal-v", "Ground-to-Air Signal — V",
+@R.add(570, "rt-trial-ground-signal-v", "Ground-to-Air Signal — V",
        template("V = REQUIRE ASSISTANCE",
                 "LAY OUT LARGE, HIGH-CONTRAST STRIPS SO A SEARCH AIRCRAFT CAN READ THEM",
                 [("V", "Require assistance"),
@@ -153,7 +153,7 @@ def _():
 
 # ------------------------------------------------------------------ navigation & flight rules
 
-@HOLD.add(410, "rt-trial-qdr", "Q-Codes — QDR and QDM",
+@R.add(410, "rt-trial-qdr", "Q-Codes — QDR and QDM",
        template("QDR = MAGNETIC BEARING FROM THE STATION",
                 "QDM IS THE MAGNETIC BEARING TO THE STATION (QDR ± 180°)",
                 [("QDR", "Magnetic bearing FROM the station"),
@@ -186,7 +186,7 @@ def _():
     return s
 
 
-@HOLD.add(428, "rt-trial-svfr-ceiling", "Special VFR — Minimum Ceiling",
+@R.add(428, "rt-trial-svfr-ceiling", "Special VFR — Minimum Ceiling",
        template("SPECIAL VFR (AEROPLANE): CEILING AT LEAST 600 FT AGL",
                 "ATC SEPARATES SVFR TRAFFIC, SO THE CEILING CAN BE LOWER THAN FOR NORMAL VFR",
                 [("SVFR", "Ceiling ≥ 600 ft; stay clear of cloud with the surface in sight"),
@@ -207,7 +207,7 @@ def _():
     return s
 
 
-@HOLD.add(414, "rt-trial-ifr-vfr-imc-vmc", "Flight Rules vs Weather Conditions",
+@R.add(414, "rt-trial-ifr-vfr-imc-vmc", "Flight Rules vs Weather Conditions",
        template("IFR CAN BE FLOWN IN VMC OR IMC — VFR ONLY IN VMC",
                 "VFR/IFR ARE THE RULES YOU FLY BY; VMC/IMC ARE THE WEATHER CONDITIONS",
                 [("VFR", "Needs VMC: the pilot sees and avoids"),
@@ -227,11 +227,11 @@ def _():
     return s
 
 
-@HOLD.add(2814, "rt-trial-runway-contaminated", "Contaminated Runway",
+@R.add(2814, "rt-trial-runway-contaminated", "Contaminated Runway",
        template("CONTAMINATED: MORE THAN 25% OF THE RUNWAY COVERED",
                 "BY STANDING WATER DEEPER THAN 3 MM, SLUSH, SNOW OR ICE",
                 [("AREA", "More than 25% of the required runway length and width"),
-                 ("DEPTH", "Water or slush deeper than 3 mm"),
+                 ("WHAT COUNTS", "Standing water deeper than 3 mm, or slush, snow or ice"),
                  ("WHY IT MATTERS", "Braking and aquaplaning change enough to need separate performance data")]), h=480)
 def _():
     x, y, w, h = 80, 140, 1040, 150

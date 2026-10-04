@@ -1,9 +1,33 @@
 {
+ "410": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-qdr.webp",
+  "title": "Q-Codes — QDR and QDM",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"QDR = MAGNETIC BEARING FROM THE STATION\", \"subline\": \"QDM IS THE MAGNETIC BEARING TO THE STATION (QDR ± 180°)\", \"blocks\": [{\"label\": \"QDR\", \"value\": \"Magnetic bearing FROM the station\"}, {\"label\": \"QDM\", \"value\": \"Magnetic heading/bearing TO the station (zero wind)\"}, {\"label\": \"QTE / QUJ\", \"value\": \"True bearing from / to the station\"}]}"
+ },
+ "414": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-ifr-vfr-imc-vmc.webp",
+  "title": "Flight Rules vs Weather Conditions",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"IFR CAN BE FLOWN IN VMC OR IMC — VFR ONLY IN VMC\", \"subline\": \"VFR/IFR ARE THE RULES YOU FLY BY; VMC/IMC ARE THE WEATHER CONDITIONS\", \"blocks\": [{\"label\": \"VFR\", \"value\": \"Needs VMC: the pilot sees and avoids\"}, {\"label\": \"IFR\", \"value\": \"Legal in VMC and in IMC (instrument navigation, ATC separation)\"}]}"
+ },
+ "428": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-svfr-ceiling.webp",
+  "title": "Special VFR — Minimum Ceiling",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SPECIAL VFR (AEROPLANE): CEILING AT LEAST 600 FT AGL\", \"subline\": \"ATC SEPARATES SVFR TRAFFIC, SO THE CEILING CAN BE LOWER THAN FOR NORMAL VFR\", \"blocks\": [{\"label\": \"SVFR\", \"value\": \"Ceiling ≥ 600 ft; stay clear of cloud with the surface in sight\"}, {\"label\": \"NORMAL VFR IN A CTR\", \"value\": \"Ceiling ≥ 1500 ft\"}, {\"label\": \"CLEARANCE\", \"value\": \"SVFR is only flown with an ATC clearance inside a control zone\"}]}"
+ },
  "460": {
   "subject": "radio-telephony",
   "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-local-to-utc.webp",
   "title": "South African Time to UTC",
   "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UTC = SOUTH AFRICAN LOCAL TIME − 2 HOURS\", \"subline\": \"SOUTH AFRICAN STANDARD TIME IS UTC+2 ALL YEAR (NO DAYLIGHT SAVING)\", \"blocks\": [{\"label\": \"LOCAL → UTC\", \"value\": \"Subtract 2 hours: 17:00 SAST = 15:00 UTC\"}, {\"label\": \"UTC → LOCAL\", \"value\": \"Add 2 hours: 06:30 UTC = 08:30 SAST\"}]}"
+ },
+ "484": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-flight-plan-30min.webp",
+  "title": "Filing a Flight Plan — 30 Minutes",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FILE AT LEAST 30 MINUTES BEFORE DEPARTURE\", \"subline\": \"60 MINUTES FOR AN INTERNATIONAL FLIGHT\", \"blocks\": [{\"label\": \"WHY\", \"value\": \"The ATSU needs time to process the plan and pass it to other units\"}, {\"label\": \"EARLIEST\", \"value\": \"A flight plan may be filed up to 5 days in advance\"}]}"
  },
  "485": {
   "subject": "radio-telephony",
@@ -22,6 +46,18 @@
   "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-line-up-and-wait.webp",
   "title": "Line Up and Wait",
   "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LINE UP AND WAIT: ENTER THE RUNWAY, LINE UP, DO NOT TAKE OFF\", \"subline\": \"IT IS NOT A TAKE-OFF CLEARANCE\", \"blocks\": [{\"label\": \"DO\", \"value\": \"Taxi onto the runway and line up on the centreline\"}, {\"label\": \"DON'T\", \"value\": \"Start the take-off roll until cleared for take-off\"}, {\"label\": \"READ BACK\", \"value\": \"'Lining up and waiting, runway 03'\"}]}"
+ },
+ "567": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-sar-phases.webp",
+  "title": "The Three Emergency (SAR) Phases",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UNCERTAINTY → ALERT → DISTRESS\", \"subline\": \"INCERFA → ALERFA → DETRESFA: THE RESPONSE GROWS AS CONCERN GROWS\", \"blocks\": [{\"label\": \"INCERFA\", \"value\": \"Uncertainty: doubt about the aircraft's safety\"}, {\"label\": \"ALERFA\", \"value\": \"Alert: apprehension about the aircraft and occupants\"}, {\"label\": \"DETRESFA\", \"value\": \"Distress: reasonable certainty of grave and imminent danger\"}]}"
+ },
+ "570": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-ground-signal-v.webp",
+  "title": "Ground-to-Air Signal — V",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"LAY OUT LARGE, HIGH-CONTRAST STRIPS SO A SEARCH AIRCRAFT CAN READ THEM\", \"blocks\": [{\"label\": \"V\", \"value\": \"Require assistance\"}, {\"label\": \"X\", \"value\": \"Require medical assistance\"}, {\"label\": \"N / Y\", \"value\": \"No (negative) / Yes (affirmative)\"}]}"
  },
  "2239": {
   "subject": "flight-planning",
@@ -172,5 +208,11 @@
   "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-24-landing-distance.webp",
   "title": "Figure 1-24 — Landing Distance in Two Steps",
   "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONVERT TO PRESSURE ALTITUDE, THEN INTERPOLATE ALTITUDE AND TEMPERATURE\", \"subline\": \"PA = 2650 + (1013 − 1018) × 30 = 2500 FT\", \"blocks\": [{\"label\": \"PA 2500 FT\", \"value\": \"Halfway row: 1367.5 ft at +20°C and 1402.5 ft at +30°C\"}, {\"label\": \"+24°C\", \"value\": \"0.4 of the way from +20°C to +30°C\"}, {\"label\": \"RESULT\", \"value\": \"1367.5 + 0.4 × 35 = 1381.5 ≈ 1382 ft\"}], \"formula\": \"1367.5 + 0.4 × 35 ≈ 1382 ft\"}"
+ },
+ "2814": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-runway-contaminated.webp",
+  "title": "Contaminated Runway",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONTAMINATED: MORE THAN 25% OF THE RUNWAY COVERED\", \"subline\": \"BY STANDING WATER DEEPER THAN 3 MM, SLUSH, SNOW OR ICE\", \"blocks\": [{\"label\": \"AREA\", \"value\": \"More than 25% of the required runway length and width\"}, {\"label\": \"WHAT COUNTS\", \"value\": \"Standing water deeper than 3 mm, or slush, snow or ice\"}, {\"label\": \"WHY IT MATTERS\", \"value\": \"Braking and aquaplaning change enough to need separate performance data\"}]}"
  }
 }

@@ -1,0 +1,152 @@
+{
+ "2239": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-15-descent-fuel.webp",
+  "title": "Figure 1-15 — Fuel to Descend Is a Difference",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"READ THE CRUISE CONDITION AND THE DESTINATION CONDITION, THEN SUBTRACT\", \"subline\": \"THE DESCENT CHART IS CUMULATIVE FROM SEA LEVEL\", \"blocks\": [{\"label\": \"CRUISE\", \"value\": \"9000 ft at +16°C → about 4 USG\"}, {\"label\": \"DESTINATION\", \"value\": \"4000 ft at ISA (15 − 8 = +7°C) → about 2 USG\"}, {\"label\": \"FUEL TO DESCEND\", \"value\": \"4 − 2 = 2 USG\"}], \"formula\": \"Descent fuel = cruise reading − destination reading\"}"
+ },
+ "2240": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-density-altitude-climb.webp",
+  "title": "High Density Altitude Reduces Climb Performance",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HIGHER DENSITY ALTITUDE = THINNER AIR = POORER CLIMB\", \"subline\": \"HOT, HIGH AND LOW-PRESSURE DAYS ALL RAISE DENSITY ALTITUDE\", \"blocks\": [{\"label\": \"ENGINE\", \"value\": \"Less air mass per stroke, so less power\"}, {\"label\": \"PROPELLER\", \"value\": \"Less thrust from the thinner air\"}, {\"label\": \"WING\", \"value\": \"Higher TAS needed for the same lift; longer take-off and landing runs\"}]}"
+ },
+ "2244": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-max-ramp-weight.webp",
+  "title": "Maximum Ramp Weight",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAXIMUM RAMP WEIGHT = MTOW + TAXI FUEL\", \"subline\": \"THE TAXI FUEL IS BURNED BEFORE THE TAKE-OFF ROLL STARTS\", \"blocks\": [{\"label\": \"ON THE RAMP\", \"value\": \"May exceed MTOW by the taxi fuel\"}, {\"label\": \"AT BRAKE RELEASE\", \"value\": \"Must be at or below MTOW\"}]}"
+ },
+ "2247": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-22-takeoff-distance.webp",
+  "title": "Figure 1-22 — Distance to Clear 50 ft",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"+15°C IS HALFWAY BETWEEN THE +10°C AND +20°C COLUMNS\", \"subline\": \"PA 4000 FT, TOTAL TO CLEAR 50 FT: 2185 FT AT +10°C AND 2345 FT AT +20°C\", \"blocks\": [{\"label\": \"ROW\", \"value\": \"Pressure altitude 4000 ft\"}, {\"label\": \"COLUMN\", \"value\": \"TOTAL TO CLEAR 50 FT (not ground roll)\"}, {\"label\": \"CORRECTIONS\", \"value\": \"No wind or grass correction is given, so none applies\"}], \"formula\": \"(2185 + 2345) ÷ 2 = 2265 ft\"}"
+ },
+ "2250": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-16-glide-range.webp",
+  "title": "Figure 1-16 — Glide Range From Height Above Terrain",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ENTER WITH THE HEIGHT AVAILABLE, NOT THE CRUISING ALTITUDE\", \"subline\": \"10 500 FT − 1500 FT TERRAIN = 9000 FT OF HEIGHT → ABOUT 19 NM\", \"blocks\": [{\"label\": \"HEIGHT AVAILABLE\", \"value\": \"Cruising pressure altitude − terrain pressure altitude\"}, {\"label\": \"READ\", \"value\": \"Across from 9000 ft to the glide line, then down to the NM scale\"}, {\"label\": \"CONDITIONS\", \"value\": \"Power off, flaps 0°, 75 KIAS, 2500 lb, zero wind\"}]}"
+ },
+ "2252": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-23-endurance.webp",
+  "title": "Figure 1-23 — Endurance Between Two Altitudes",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PA 9000 FT IS HALFWAY BETWEEN THE 8000 FT AND 10 000 FT BLOCKS\", \"subline\": \"2400 RPM ENDURANCE: 6.8 H AT 8000 FT AND 7.6 H AT 10 000 FT\", \"blocks\": [{\"label\": \"READ\", \"value\": \"The 2400 RPM line in each altitude block, ENDURANCE column\"}, {\"label\": \"INTERPOLATE\", \"value\": \"(6.8 + 7.6) ÷ 2 = 7.2 hours\"}, {\"label\": \"NOTE\", \"value\": \"Based on 48 USG usable fuel, no reserve\"}], \"formula\": \"(6.8 + 7.6) ÷ 2 = 7.2 h\"}"
+ },
+ "2254": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-asi-vfe-white-arc.webp",
+  "title": "VFE — Top of the White Arc",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE = MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"IT IS THE UPPER END OF THE WHITE ARC ON THE AIRSPEED INDICATOR\", \"blocks\": [{\"label\": \"WHITE ARC\", \"value\": \"Flap operating range: VS0 (bottom) to VFE (top)\"}, {\"label\": \"GREEN ARC\", \"value\": \"Normal operating range: VS1 to VNO\"}, {\"label\": \"YELLOW ARC / RED LINE\", \"value\": \"Caution range VNO to VNE; never exceed VNE\"}]}"
+ },
+ "2255": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-runway-slope.webp",
+  "title": "Runway Slope",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SLOPE % = HEIGHT DIFFERENCE ÷ RUNWAY LENGTH × 100\", \"subline\": \"RUNWAY 18 RUNS FROM 5180 FT DOWN TO 5125 FT: 1.45% DOWN\", \"blocks\": [{\"label\": \"DIFFERENCE\", \"value\": \"5180 − 5125 = 55 ft\"}, {\"label\": \"SLOPE\", \"value\": \"55 ÷ 3800 × 100 = 1.45%\"}, {\"label\": \"DIRECTION\", \"value\": \"Runway 18 starts at the high end, so it slopes down\"}], \"formula\": \"55 ÷ 3800 × 100 = 1.45% down\"}"
+ },
+ "2263": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-cg-late-passenger.webp",
+  "title": "New CG After Adding Load",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NEW CG = TOTAL MOMENT ÷ TOTAL WEIGHT\", \"subline\": \"220 420 LB·IN ÷ 2405 LB = 91.65 IN\", \"blocks\": [{\"label\": \"MOMENTS\", \"value\": \"Weight × arm for each item, then add\"}, {\"label\": \"TOTAL WEIGHT\", \"value\": \"2200 + 175 + 30 = 2405 lb (within MAUW 2500 lb)\"}, {\"label\": \"CG MOVES AFT\", \"value\": \"Both new items sit well behind the old CG\"}], \"formula\": \"CG = 220 420 ÷ 2405 = 91.65 in\"}"
+ },
+ "2264": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-windshear-headwind-increase.webp",
+  "title": "Wind Shear on Final — Sudden Headwind Increase",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SUDDEN HEADWIND INCREASE MAKES THE AIRCRAFT OVERSHOOT\", \"subline\": \"IAS AND LIFT JUMP, SO THE AIRCRAFT BALLOONS ABOVE THE GLIDE PATH\", \"blocks\": [{\"label\": \"HEADWIND ↑ (OR TAILWIND ↓)\", \"value\": \"IAS ↑ → lift ↑ → above the path → overshoot\"}, {\"label\": \"HEADWIND ↓ (OR TAILWIND ↑)\", \"value\": \"IAS ↓ → lift ↓ → below the path → undershoot\"}, {\"label\": \"RECOVERY\", \"value\": \"Smooth, positive corrections — don't chase the airspeed\"}]}"
+ },
+ "2265": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fuel-volume-to-mass.webp",
+  "title": "Fuel Volume to Mass",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONVERT TO LITRES FIRST, THEN MULTIPLY BY THE SPECIFIC GRAVITY\", \"subline\": \"42 USG × 3.785 = 159 L; 159 L × 0.72 = 114 KG\", \"blocks\": [{\"label\": \"USG → LITRES\", \"value\": \"× 3.785\"}, {\"label\": \"LITRES → KG\", \"value\": \"× SG (kg per litre)\"}, {\"label\": \"CHECK\", \"value\": \"Fuel is lighter than water, so kg < litres\"}], \"formula\": \"kg = USG × 3.785 × SG\"}"
+ },
+ "2267": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-lda-displaced-threshold.webp",
+  "title": "Landing Distance Available",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA STARTS AT THE DISPLACED THRESHOLD AND ENDS AT THE RUNWAY END\", \"subline\": \"1150 − 25 = 1125 M — THE STOPWAY IS NEVER PART OF THE LDA\", \"blocks\": [{\"label\": \"DISPLACED THRESHOLD\", \"value\": \"Usable for take-off, not for landing\"}, {\"label\": \"STOPWAY\", \"value\": \"Counts towards ASDA only (decelerating after a rejected take-off)\"}, {\"label\": \"LDA\", \"value\": \"Runway length − displaced portion\"}], \"formula\": \"LDA = 1150 − 25 = 1125 m\"}"
+ },
+ "2290": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-21-stall-speeds.webp",
+  "title": "Figure 1-21 — Interpolating Between Weights",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"2300 LB IS HALFWAY BETWEEN THE 2400 LB AND 2200 LB ROWS\", \"subline\": \"FLAPS 40°, 60° BANK: 60 KIAS AT 2400 LB AND 54 KIAS AT 2200 LB\", \"blocks\": [{\"label\": \"READ\", \"value\": \"KIAS column under 60° bank, on both flaps-40° rows\"}, {\"label\": \"INTERPOLATE\", \"value\": \"(60 + 54) ÷ 2 = 57 KIAS\"}, {\"label\": \"REMEMBER\", \"value\": \"Stall speed rises with weight and with angle of bank\"}], \"formula\": \"Stall speed = (60 + 54) ÷ 2 = 57 KIAS\"}"
+ },
+ "2291": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-19-airspeed-calibration.webp",
+  "title": "Figure 1-19 — Interpolating the Calibration Table",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"77 KIAS LIES 7/10 OF THE WAY FROM 70 TO 80 — SO DOES THE KCAS\", \"subline\": \"FLAPS 40° ROW: 70 KIAS = 71 KCAS, 80 KIAS = 81 KCAS\", \"blocks\": [{\"label\": \"FRACTION\", \"value\": \"(77 − 70) ÷ (80 − 70) = 0.7\"}, {\"label\": \"APPLY\", \"value\": \"71 + 0.7 × (81 − 71) = 71 + 7 = 78 KCAS\"}], \"formula\": \"KCAS = 71 + 0.7 × 10 = 78 KCAS\"}"
+ },
+ "2300": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-aquaplaning.webp",
+  "title": "Aquaplaning and Groundspeed",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AQUAPLANING IS MORE LIKELY AT HIGH GROUNDSPEED\", \"subline\": \"THE TYRE CAN'T PUSH THE WATER AWAY FAST ENOUGH AND RIDES ON A FILM\", \"blocks\": [{\"label\": \"RISK UP WITH\", \"value\": \"Speed, standing water, worn tread, low tyre pressure\"}, {\"label\": \"EFFECT\", \"value\": \"Braking and steering are lost while the tyre is off the surface\"}, {\"label\": \"RULE OF THUMB\", \"value\": \"Aquaplaning speed (kt) ≈ 9 × √tyre pressure (psi)\"}]}"
+ },
+ "2305": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-7-climb-rate.webp",
+  "title": "Figure 1-7 — Reading the Rate of Climb",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ENTER AT THE TEMPERATURE, UP TO THE ALTITUDE, ACROSS, THEN DOWN\", \"subline\": \"OAT +10°C AT PRESSURE ALTITUDE 4000 FT GIVES ABOUT 540 FT/MIN\", \"blocks\": [{\"label\": \"STEP 1\", \"value\": \"Enter the OAT scale at +10°C and go up to the 4000 ft pressure-altitude line\"}, {\"label\": \"STEP 2\", \"value\": \"Go straight across to the rate-of-climb line\"}, {\"label\": \"STEP 3\", \"value\": \"Drop down to the RATE OF CLIMB scale: about 540 ft/min\"}]}"
+ },
+ "2312": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-8-climb-distance.webp",
+  "title": "Figure 1-8 — Distance to Climb Is a Difference",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE CHART IS CUMULATIVE FROM SEA LEVEL: READ TWICE AND SUBTRACT\", \"subline\": \"TOP-OF-CLIMB READING MINUS THE DEPARTURE READING\", \"blocks\": [{\"label\": \"DEPARTURE\", \"value\": \"PA = 1380 + (1013 − 1009) × 30 = 1500 ft at +12°C → about 4 NM\"}, {\"label\": \"CRUISE\", \"value\": \"PA 7500 ft, ISA+12 = 0 + 12 = +12°C → about 24 NM\"}, {\"label\": \"CLIMB DISTANCE\", \"value\": \"24 − 4 ≈ 20 NM\"}], \"formula\": \"Climb distance = cruise reading − departure reading\"}"
+ },
+ "2320": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-22-ground-roll-tailwind.webp",
+  "title": "Figure 1-22 — Ground Roll With a Tailwind",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"INTERPOLATE FIRST, THEN APPLY THE WIND NOTE\", \"subline\": \"TAILWIND: +10% FOR EACH 2 KT, SO 4 KT ADDS 20%\", \"blocks\": [{\"label\": \"ROW\", \"value\": \"PA 3500 ft is halfway between 3000 ft and 4000 ft\"}, {\"label\": \"GROUND ROLL AT +20°C\", \"value\": \"(1190 + 1310) ÷ 2 = 1250 ft\"}, {\"label\": \"TAILWIND 4 KT\", \"value\": \"1250 × 1.20 = 1500 ft\"}], \"formula\": \"1250 × 1.20 = 1500 ft\"}"
+ },
+ "2332": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fuel-required-stack.webp",
+  "title": "Total Fuel Required — Build It Up",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOTAL FUEL = TAXI/TAKE-OFF/CLIMB + CRUISE + RESERVE\", \"subline\": \"3 + 8.37 + 8 = 19.4 USG\", \"blocks\": [{\"label\": \"TIME\", \"value\": \"107 NM ÷ 92 kt = 1.163 h (69.8 min)\"}, {\"label\": \"CRUISE FUEL\", \"value\": \"1.163 h × 7.2 USG/h = 8.37 USG\"}, {\"label\": \"ADD\", \"value\": \"3 USG taxi/take-off/climb + 8 USG reserve\"}], \"formula\": \"3 + 8.37 + 8 = 19.4 USG\"}"
+ },
+ "2337": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-23-ktas.webp",
+  "title": "Figure 1-23 — True Airspeed Between Two Altitudes",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PA 7000 FT IS HALFWAY BETWEEN THE 6000 FT AND 8000 FT BLOCKS\", \"subline\": \"2600 RPM: 123 KTAS AT 6000 FT AND 119 KTAS AT 8000 FT\", \"blocks\": [{\"label\": \"READ\", \"value\": \"The 2600 RPM line in each altitude block, KTAS column\"}, {\"label\": \"INTERPOLATE\", \"value\": \"(123 + 119) ÷ 2 = 121 KTAS\"}], \"formula\": \"(123 + 119) ÷ 2 = 121 KTAS\"}"
+ },
+ "2342": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-vx-vs-vy.webp",
+  "title": "VX vs VY",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VX = BEST ANGLE OF CLIMB; VY = BEST RATE OF CLIMB\", \"subline\": \"VX GIVES THE MOST HEIGHT PER DISTANCE; VY THE MOST HEIGHT PER MINUTE\", \"blocks\": [{\"label\": \"VX\", \"value\": \"Use to clear an obstacle close to the runway\"}, {\"label\": \"VY\", \"value\": \"Use for the normal climb to cruising altitude\"}, {\"label\": \"SPEEDS\", \"value\": \"VX is lower than VY\"}]}"
+ },
+ "2355": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-moment-weight-arm.webp",
+  "title": "Moment = Weight × Arm",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOMENT = WEIGHT × ARM\", \"subline\": \"THE TURNING EFFECT OF A WEIGHT ABOUT THE DATUM\", \"blocks\": [{\"label\": \"ARM\", \"value\": \"Distance from the datum to the item's CG (inches)\"}, {\"label\": \"MOMENT\", \"value\": \"Weight × arm (lb·in)\"}, {\"label\": \"CG\", \"value\": \"Total moment ÷ total weight\"}], \"formula\": \"CG = Σ moments ÷ Σ weights\"}"
+ },
+ "2363": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-wake-landing-behind-heavy.webp",
+  "title": "Landing Behind a Heavy Aircraft",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOUCH DOWN BEYOND THE HEAVY AIRCRAFT'S TOUCHDOWN POINT\", \"subline\": \"WAKE VORTICES STOP ONCE THE HEAVY AIRCRAFT'S WEIGHT IS ON THE RUNWAY\", \"blocks\": [{\"label\": \"APPROACH\", \"value\": \"Stay at or above the heavy aircraft's flight path\"}, {\"label\": \"TOUCHDOWN\", \"value\": \"Land beyond the point where it touched down\"}, {\"label\": \"VORTICES\", \"value\": \"Sink below the path and drift with the wind\"}]}"
+ },
+ "2374": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-density-altitude-ladder.webp",
+  "title": "Density Altitude — Worked Example",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE ≈ 4560 FT\", \"subline\": \"THE AEROPLANE PERFORMS AS IF IT WERE 1350 FT HIGHER THAN THE AERODROME\", \"blocks\": [{\"label\": \"PRESSURE ALTITUDE\", \"value\": \"3210 + (1013 − 1020) × 30 = 3000 ft\"}, {\"label\": \"ISA DEVIATION\", \"value\": \"ISA at 3000 ft = 15 − 6 = +9°C, so 22 − 9 = +13°C\"}, {\"label\": \"DENSITY ALTITUDE\", \"value\": \"3000 + 120 × 13 = 4560 ft\"}], \"formula\": \"DA = PA + 120 × (OAT − ISA temp)\"}"
+ },
+ "2389": {
+  "subject": "flight-planning",
+  "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-24-landing-distance.webp",
+  "title": "Figure 1-24 — Landing Distance in Two Steps",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONVERT TO PRESSURE ALTITUDE, THEN INTERPOLATE ALTITUDE AND TEMPERATURE\", \"subline\": \"PA = 2650 + (1013 − 1018) × 30 = 2500 FT\", \"blocks\": [{\"label\": \"PA 2500 FT\", \"value\": \"Halfway row: 1367.5 ft at +20°C and 1402.5 ft at +30°C\"}, {\"label\": \"+24°C\", \"value\": \"0.4 of the way from +20°C to +30°C\"}, {\"label\": \"RESULT\", \"value\": \"1367.5 + 0.4 × 35 = 1381.5 ≈ 1382 ft\"}], \"formula\": \"1367.5 + 0.4 × 35 ≈ 1382 ft\"}"
+ }
+}

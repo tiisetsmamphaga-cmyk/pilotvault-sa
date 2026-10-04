@@ -111,9 +111,10 @@ export function ExplanationImage({
   if (usesBankAngleVisual) return <BankAngleLoadFactorVisual />
 
   const isAtgVisual = src.includes("/explanation-images/aircraft-technical-and-general/")
+  const isFpVisual = src.includes("/explanation-images/flight-planning/")
 
   const cardTemplate =
-    isPofVisual || isHpVisual || isMetVisual || isRtVisual || isAirLawVisual || isNavVisual || isAtgVisual
+    isPofVisual || isHpVisual || isMetVisual || isRtVisual || isAirLawVisual || isNavVisual || isAtgVisual || isFpVisual
       ? parsePofTemplate(template)
       : null
   if (cardTemplate) {

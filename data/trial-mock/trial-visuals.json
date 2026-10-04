@@ -59,6 +59,120 @@
   "title": "Ground-to-Air Signal — V",
   "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"LAY OUT LARGE, HIGH-CONTRAST STRIPS SO A SEARCH AIRCRAFT CAN READ THEM\", \"blocks\": [{\"label\": \"V\", \"value\": \"Require assistance\"}, {\"label\": \"X\", \"value\": \"Require medical assistance\"}, {\"label\": \"N / Y\", \"value\": \"No (negative) / Yes (affirmative)\"}]}"
  },
+ "764": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-accident-notify-24h.webp",
+  "title": "Accident Notification — Time Limit",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NOTIFY AS SOON AS POSSIBLE — AND NEVER LATER THAN 24 HOURS\", \"subline\": \"A GENERAL DUTY WITH A HARD BACKSTOP\", \"blocks\": [{\"label\": \"AS SOON AS POSSIBLE\", \"value\": \"Injured people, SAR and evidence are all time-critical\"}, {\"label\": \"LATEST\", \"value\": \"24 hours after the accident\"}, {\"label\": \"WHO\", \"value\": \"The PIC (or the operator if the PIC cannot)\"}]}"
+ },
+ "893": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-ppl-exam-validity.webp",
+  "title": "PPL Theory — Two Separate Clocks",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SKILLS TEST WITHIN 36 MONTHS OF THE FINAL THEORY PASS\", \"subline\": \"AND ALL THEORY EXAMS WITHIN 18 MONTHS OF THE FIRST CREDIT\", \"blocks\": [{\"label\": \"CLOCK 1\", \"value\": \"18 months to pass the whole exam series\"}, {\"label\": \"CLOCK 2\", \"value\": \"36 months from the final pass to the skills test\"}]}"
+ },
+ "898": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-ppl-dual-hours.webp",
+  "title": "PPL(A) — Minimum Flight Time",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AT LEAST 25 OF THE 45 HOURS MUST BE DUAL INSTRUCTION\", \"subline\": \"45 HOURS IS THE MINIMUM TOTAL FLIGHT TIME FOR THE PPL(A)\", \"blocks\": [{\"label\": \"DUAL\", \"value\": \"At least 25 h with a flight instructor\"}, {\"label\": \"THE REST\", \"value\": \"Includes the required solo and solo cross-country flying\"}, {\"label\": \"TOTAL\", \"value\": \"At least 45 h\"}]}"
+ },
+ "910": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-ppl-long-nav.webp",
+  "title": "PPL(A) Long Navigation Flight",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"150 NM, ONE POINT ≥ 50 NM FROM BASE, TWO FULL-STOP LANDINGS AWAY\", \"subline\": \"THE TWO LANDINGS ARE AT DIFFERENT AERODROMES, NOT AT BASE\", \"blocks\": [{\"label\": \"DISTANCE\", \"value\": \"At least 150 NM in total\"}, {\"label\": \"REACH\", \"value\": \"At least one point 50 NM or more from base\"}, {\"label\": \"LANDINGS\", \"value\": \"Two full-stop landings at two different aerodromes away from base\"}]}"
+ },
+ "1019": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-night-definition.webp",
+  "title": "Definition of Night",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NIGHT = 15 MIN AFTER SUNSET TO 15 MIN BEFORE SUNRISE\", \"subline\": \"THE MIRROR IMAGE OF THE DEFINITION OF DAY\", \"blocks\": [{\"label\": \"STARTS\", \"value\": \"Sunset + 15 minutes\"}, {\"label\": \"ENDS\", \"value\": \"Sunrise − 15 minutes\"}, {\"label\": \"WHY IT MATTERS\", \"value\": \"Flying in this window needs a night rating\"}]}"
+ },
+ "1028": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-head-on-turn-right.webp",
+  "title": "Head-On Approach — Both Turn Right",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HEAD-ON: BOTH AIRCRAFT ALTER HEADING TO THE RIGHT\", \"subline\": \"THEY PASS LEFT SIDE TO LEFT SIDE\", \"blocks\": [{\"label\": \"WHY RIGHT\", \"value\": \"One predictable response, so pilots never turn into each other\"}, {\"label\": \"CONVERGING\", \"value\": \"The aircraft with the other on its right gives way\"}, {\"label\": \"OVERTAKING\", \"value\": \"Overtake by altering heading to the right\"}]}"
+ },
+ "1034": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-documents-domestic.webp",
+  "title": "Documents Carried on a Domestic Flight",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RELEASE TO SERVICE, CERTIFICATE OF REGISTRATION, PILOT'S LICENCE\", \"subline\": \"ORIGINALS OR CERTIFIED COPIES — DOMESTIC FLIGHTS INCLUDED\", \"blocks\": [{\"label\": \"RELEASE TO SERVICE\", \"value\": \"Proves the aircraft is airworthy after maintenance\"}, {\"label\": \"REGISTRATION\", \"value\": \"Proves who the aircraft is\"}, {\"label\": \"LICENCE\", \"value\": \"Proves the pilot is qualified\"}]}"
+ },
+ "1049": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-vfr-minima-low.webp",
+  "title": "VFR Minima — Low Level, Uncontrolled Airspace",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"5 KM VISIBILITY, CLEAR OF CLOUD, SURFACE IN SIGHT\", \"subline\": \"CLASS F/G AT OR BELOW 3000 FT AMSL OR 1000 FT ABOVE TERRAIN, BY DAY\", \"blocks\": [{\"label\": \"VISIBILITY\", \"value\": \"5 km flight visibility (aeroplanes)\"}, {\"label\": \"CLOUD\", \"value\": \"Clear of cloud\"}, {\"label\": \"SURFACE\", \"value\": \"Ground or water in sight\"}]}"
+ },
+ "1061": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-flight-plan-30min.webp",
+  "title": "Filing a Flight Plan — Lead Time",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FILE AT LEAST 30 MINUTES BEFORE DEPARTURE\", \"subline\": \"FOR A DEPARTURE INTO CONTROLLED OR ADVISORY AIRSPACE, UNLESS THE ATSU AGREES OTHERWISE\", \"blocks\": [{\"label\": \"DOMESTIC\", \"value\": \"At least 30 min before departure\"}, {\"label\": \"INTERNATIONAL\", \"value\": \"At least 60 min before departure\"}]}"
+ },
+ "1062": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-vfr-minima-mid.webp",
+  "title": "VFR Minima — 3000 ft AMSL / 1000 ft AGL to 10 000 ft",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"5 KM VISIBILITY, 1.5 KM HORIZONTALLY AND 1000 FT VERTICALLY FROM CLOUD\", \"subline\": \"ABOVE 3000 FT AMSL OR 1000 FT ABOVE TERRAIN (HIGHER OF THE TWO), BELOW 10 000 FT AMSL\", \"blocks\": [{\"label\": \"VISIBILITY\", \"value\": \"5 km flight visibility\"}, {\"label\": \"HORIZONTAL\", \"value\": \"1.5 km from cloud\"}, {\"label\": \"VERTICAL\", \"value\": \"1000 ft from cloud\"}]}"
+ },
+ "1080": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-semicircular-rule.webp",
+  "title": "Semi-Circular Rule",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SEMI-CIRCULAR RULE APPLIES AT AND ABOVE 1500 FT AGL\", \"subline\": \"CRUISING LEVEL CHOSEN BY MAGNETIC TRACK, UNLESS ATC DIRECTS OTHERWISE\", \"blocks\": [{\"label\": \"000° – 179°\", \"value\": \"Odd thousands; VFR adds 500 ft (3500, 5500, 7500 …)\"}, {\"label\": \"180° – 359°\", \"value\": \"Even thousands; VFR adds 500 ft (4500, 6500, 8500 …)\"}, {\"label\": \"BELOW 1500 FT AGL\", \"value\": \"The rule does not apply\"}]}"
+ },
+ "1086": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-scuba-24h.webp",
+  "title": "Scuba Diving and Flying",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO FLIGHT CREW DUTIES WITHIN 24 HOURS OF SCUBA DIVING\", \"subline\": \"DISSOLVED NITROGEN CAN FORM BUBBLES AT LOWER CABIN PRESSURE\", \"blocks\": [{\"label\": \"RISK\", \"value\": \"Decompression sickness ('the bends') at altitude\"}, {\"label\": \"RULE\", \"value\": \"Wait at least 24 hours after diving before acting as crew\"}]}"
+ },
+ "1093": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-built-up-areas.webp",
+  "title": "Minimum Height Over Built-Up Areas",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"1000 FT ABOVE THE HIGHEST OBSTACLE WITHIN 2000 FT OF THE AIRCRAFT\", \"subline\": \"EXCEPT FOR TAKE-OFF, LANDING OR WITH WRITTEN APPROVAL\", \"blocks\": [{\"label\": \"VERTICAL\", \"value\": \"At least 1000 ft above the highest obstacle\"}, {\"label\": \"RADIUS\", \"value\": \"Obstacles within 2000 ft of the aircraft count\"}, {\"label\": \"WHY\", \"value\": \"Room to glide clear of the town if the engine fails\"}]}"
+ },
+ "1383": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-empty-mass.webp",
+  "title": "What Empty Mass Includes",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"EMPTY MASS = AIRFRAME + FIXED EQUIPMENT + UNUSABLE FUEL + ALL OIL, COOLANT, HYDRAULIC FLUID\", \"subline\": \"EVERYTHING THAT STAYS IN THE AIRCRAFT; PAYLOAD AND USABLE FUEL ARE ADDED PER FLIGHT\", \"blocks\": [{\"label\": \"INCLUDED\", \"value\": \"Coolant, unusable fuel, total oil, total hydraulic fluid, fixed ballast, fixed equipment\"}, {\"label\": \"NOT INCLUDED\", \"value\": \"Usable fuel, crew, passengers, baggage\"}]}"
+ },
+ "1400": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-flight-time.webp",
+  "title": "Flight Time (Aeroplane)",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FLIGHT TIME RUNS FROM FIRST MOVEMENT FOR TAKE-OFF TO COMING TO REST\", \"subline\": \"IT INCLUDES TAXI TIME — IT IS NOT JUST THE AIRBORNE TIME\", \"blocks\": [{\"label\": \"STARTS\", \"value\": \"When the aeroplane first moves under its own power for take-off\"}, {\"label\": \"ENDS\", \"value\": \"When it finally comes to rest at the end of the flight\"}, {\"label\": \"NOT\", \"value\": \"Engine start to shutdown, or lift-off to touchdown\"}]}"
+ },
+ "1401": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-child-passenger.webp",
+  "title": "Passenger Age Categories",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CHILD = FROM THE 2ND BIRTHDAY UP TO 12 YEARS\", \"subline\": \"UNDER 2 IS AN INFANT; FROM 12 THE PASSENGER IS TREATED AS AN ADULT\", \"blocks\": [{\"label\": \"INFANT\", \"value\": \"Under 2 years\"}, {\"label\": \"CHILD\", \"value\": \"2 to 12 years\"}, {\"label\": \"ADULT\", \"value\": \"12 years and older\"}]}"
+ },
+ "1402": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-accident-notify-order.webp",
+  "title": "Accident Notification — Order of Priority",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DIRECTOR → ATSU → NEAREST POLICE STATION\", \"subline\": \"THE AUTHORITY THAT DIRECTS THE INVESTIGATION IS TOLD FIRST\", \"blocks\": [{\"label\": \"1 DIRECTOR\", \"value\": \"Director of Civil Aviation (SACAA): starts the investigation\"}, {\"label\": \"2 ATSU\", \"value\": \"Air traffic services: manages the airspace and alerts SAR\"}, {\"label\": \"3 POLICE\", \"value\": \"Nearest police station: secures and guards the site\"}]}"
+ },
+ "1407": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-over-water-rafts.webp",
+  "title": "Over-Water Flight — Life Rafts",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BEYOND 30 MIN AT CRUISE OR 50 NM FROM LAND — WHICHEVER IS LESS — CARRY LIFE RAFTS\", \"subline\": \"A FORCED LANDING THAT FAR OUT MEANS DITCHING AND WAITING FOR RESCUE\", \"blocks\": [{\"label\": \"TRIGGER\", \"value\": \"30 minutes at normal cruising speed or 50 NM, whichever is less\"}, {\"label\": \"EQUIPMENT\", \"value\": \"Life rafts and survival equipment for everyone on board\"}]}"
+ },
+ "1429": {
+  "subject": "air-law",
+  "url": "/explanation-images/air-law/refined-batch-1/al-trial-logbook-48h.webp",
+  "title": "Logbook Entries — Away From Base",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AWAY FROM BASE: UPDATE THE LOGBOOK WITHIN 48 HOURS OF RETURNING\", \"subline\": \"ROUTINE ENTRIES OTHERWISE HAVE A 7-DAY WINDOW\", \"blocks\": [{\"label\": \"AWAY FROM BASE\", \"value\": \"Within 48 h after returning to base\"}, {\"label\": \"ROUTINE\", \"value\": \"Within 7 days\"}]}"
+ },
  "2239": {
   "subject": "flight-planning",
   "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-15-descent-fuel.webp",

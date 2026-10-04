@@ -1,4 +1,28 @@
 {
+ "460": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-local-to-utc.webp",
+  "title": "South African Time to UTC",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UTC = SOUTH AFRICAN LOCAL TIME − 2 HOURS\", \"subline\": \"SOUTH AFRICAN STANDARD TIME IS UTC+2 ALL YEAR (NO DAYLIGHT SAVING)\", \"blocks\": [{\"label\": \"LOCAL → UTC\", \"value\": \"Subtract 2 hours: 17:00 SAST = 15:00 UTC\"}, {\"label\": \"UTC → LOCAL\", \"value\": \"Add 2 hours: 06:30 UTC = 08:30 SAST\"}]}"
+ },
+ "485": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-item10-s.webp",
+  "title": "Flight Plan Item 10 — Equipment Code S",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"S = V + O + L: VHF RADIO, VOR AND ILS\", \"subline\": \"THE STANDARD COM/NAV/APPROACH FIT, NO MORE AND NO LESS\", \"blocks\": [{\"label\": \"V\", \"value\": \"VHF radiotelephony\"}, {\"label\": \"O\", \"value\": \"VOR\"}, {\"label\": \"L\", \"value\": \"ILS\"}, {\"label\": \"ANYTHING ELSE\", \"value\": \"Add its own letter, e.g. D for DME, F for ADF\"}]}"
+ },
+ "506": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-backtrack.webp",
+  "title": "Backtrack the Runway",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway — follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}]}"
+ },
+ "518": {
+  "subject": "radio-telephony",
+  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-line-up-and-wait.webp",
+  "title": "Line Up and Wait",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LINE UP AND WAIT: ENTER THE RUNWAY, LINE UP, DO NOT TAKE OFF\", \"subline\": \"IT IS NOT A TAKE-OFF CLEARANCE\", \"blocks\": [{\"label\": \"DO\", \"value\": \"Taxi onto the runway and line up on the centreline\"}, {\"label\": \"DON'T\", \"value\": \"Start the take-off roll until cleared for take-off\"}, {\"label\": \"READ BACK\", \"value\": \"'Lining up and waiting, runway 03'\"}]}"
+ },
  "2239": {
   "subject": "flight-planning",
   "url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-15-descent-fuel.webp",

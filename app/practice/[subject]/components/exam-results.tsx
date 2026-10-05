@@ -7,6 +7,7 @@ import { ExplanationImage } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
+import { ReportQuestionButton } from "./report-question-button"
 
 type ExamResultsProps = {
   subject: string
@@ -95,7 +96,13 @@ export function ExamResults({
 
                 return (
                   <div key={question.id} className="border-b border-slate-300 pb-6">
-                    <p className="text-sm font-semibold text-slate-500">Question {originalIndex + 1}</p>
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold text-slate-500">Question {originalIndex + 1}</p>
+                      <ReportQuestionButton
+                        questionId={question.id}
+                        className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+                      />
+                    </div>
                     <h4 className="mt-2 text-lg font-semibold text-slate-900">{question.question}</h4>
                     <p className="mt-4 text-red-700">
                       Your answer: <span className="font-semibold">{answers[originalIndex] || "Not answered"}</span>

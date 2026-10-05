@@ -15,6 +15,7 @@ import {
   type FunnelCounts,
   type SeriesData,
 } from "./insights"
+import { QuestionReports } from "./reports"
 
 const SUBJECTS = [
   { slug: "air-law", name: "Air Law" },
@@ -443,6 +444,12 @@ export default function AdminPage() {
               </div>
             ))}
           </section>
+        )}
+
+        {overview && (
+          <div className="mt-6">
+            <QuestionReports authorisedFetch={authorisedFetch} subjectName={subjectName} />
+          </div>
         )}
 
         {overview && (

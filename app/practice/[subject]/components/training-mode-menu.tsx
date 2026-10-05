@@ -1,8 +1,22 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, BookOpen, Download } from "lucide-react"
+import {
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  Check,
+  Download,
+  Eye,
+  EyeOff,
+  Infinity as InfinityIcon,
+  ListOrdered,
+  Lock,
+  RotateCcw,
+  Timer,
+  X,
+} from "lucide-react"
 
 import {
   MOCK_QUESTION_COUNT,
@@ -327,231 +341,332 @@ export function TrainingModeMenu({
       </section>
 
       {showMockInstructions && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6 sm:px-6"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="mock-exam-title"
-          onClick={() => setShowMockInstructions(false)}
-        >
-          <div
-            className="max-h-[calc(100dvh-3rem)] w-full max-w-lg overflow-y-auto bg-white text-slate-900 shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="bg-[#1f4e79] px-6 py-5 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-100">
-                PilotVault SA Exam Practice
-              </p>
-              <h2 id="mock-exam-title" className="mt-1 text-2xl font-bold">
-                Ready to start?
-              </h2>
-            </div>
-
-            <div className="p-6">
-              <div className="space-y-5">
-                <OptionGroup
-                  label="Number of questions"
-                  note={
-                    isTrialAccount
-                      ? "Trial mock exams are fixed at 25 questions."
-                      : undefined
-                  }
-                  options={countOptions.map((count) => ({
-                    value: String(count),
-                    label: String(count),
-                  }))}
-                  value={String(selectedCount)}
-                  disabled={isTrialAccount}
-                  onChange={(value) =>
-                    setDraftSettings((settings) => ({
-                      ...settings,
-                      questionCount: Number(value),
-                    }))
-                  }
-                />
-
-                <OptionGroup
-                  label="Timer"
-                  note={
-                    draftSettings.timed
-                      ? "One minute per question."
-                      : "No time limit. Your time spent is still shown."
-                  }
-                  options={[
-                    { value: "timed", label: `Timed · ${timedMinutes} min` },
-                    { value: "untimed", label: "Untimed" },
-                  ]}
-                  value={draftSettings.timed ? "timed" : "untimed"}
-                  onChange={(value) =>
-                    setDraftSettings((settings) => ({
-                      ...settings,
-                      timed: value === "timed",
-                    }))
-                  }
-                />
-
-                <OptionGroup
-                  label="Show Answer button"
-                  note={
-                    draftSettings.showAnswerButton
-                      ? "You can check the answer and explanation during the exam."
-                      : "Exam conditions: answers only appear in your results."
-                  }
-                  options={[
-                    { value: "on", label: "On" },
-                    { value: "off", label: "Off" },
-                  ]}
-                  value={draftSettings.showAnswerButton ? "on" : "off"}
-                  onChange={(value) =>
-                    setDraftSettings((settings) => ({
-                      ...settings,
-                      showAnswerButton: value === "on",
-                    }))
-                  }
-                />
-              </div>
-
-              <div className="mt-6 grid grid-cols-3 gap-2">
-                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
-                  <p className="text-xl font-bold text-[#1f4e79]">
-                    {selectedCount}
-                  </p>
-                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                    Questions
-                  </p>
-                </div>
-                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
-                  <p className="text-xl font-bold text-[#1f4e79]">
-                    {draftSettings.timed ? timedMinutes : "—"}
-                  </p>
-                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                    {draftSettings.timed ? "Minutes" : "Untimed"}
-                  </p>
-                </div>
-                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
-                  <p className="text-xl font-bold text-[#1f4e79]">
-                    {PASS_MARK}%
-                  </p>
-                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                    Pass mark
-                  </p>
-                </div>
-              </div>
-
-              <h3 className="mt-6 font-bold text-slate-900">
-                Before you begin
-              </h3>
-              <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
-                {draftSettings.timed && (
-                  <li className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                    The timer starts as soon as you enter the simulator.
-                  </li>
-                )}
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                  You can move between questions and pin any question for
-                  review.
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                  {draftSettings.timed
-                    ? "Unanswered questions count as incorrect, and the exam submits automatically when time expires."
-                    : "Unanswered questions count as incorrect. Select Finish when you are done."}
-                </li>
-              </ul>
-
-              {savedMockAttempt && onContinueMock && (
-                <div className="mt-6 border border-[#1f4e79]/25 bg-blue-50 px-4 py-3">
-                  <p className="text-sm font-bold text-[#1f4e79]">
-                    Unfinished attempt available
-                  </p>
-                  <p className="mt-1 text-sm text-slate-600">
-                    {savedMockAttempt.answeredCount} of{" "}
-                    {savedMockAttempt.totalQuestions} answered ·{" "}
-                    {savedMockAttempt.timeLeft === null
-                      ? "untimed"
-                      : `${formatTime(savedMockAttempt.timeLeft)} remaining`}
-                  </p>
-                </div>
-              )}
-
-              <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap sm:justify-end">
-                <button
-                  type="button"
-                  onClick={() => setShowMockInstructions(false)}
-                  className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 sm:py-2.5"
-                >
-                  Cancel
-                </button>
-
-                {savedMockAttempt && onContinueMock && (
-                  <button
-                    type="button"
-                    onClick={continueMockExam}
-                    className="rounded-md border border-[#1f4e79] bg-white px-5 py-3 text-sm font-semibold text-[#1f4e79] transition hover:bg-blue-50 sm:py-2.5"
-                  >
-                    Continue last attempt
-                  </button>
-                )}
-
-                <button
-                  type="button"
-                  onClick={beginMockExam}
-                  className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#183d60] sm:py-2.5"
-                >
-                  {savedMockAttempt ? "Start new exam" : "Start mock exam"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <MockSetupDialog
+          subjectName={subjectName}
+          isTrialAccount={isTrialAccount}
+          countOptions={countOptions}
+          selectedCount={selectedCount}
+          timedMinutes={timedMinutes}
+          settings={draftSettings}
+          savedMockAttempt={onContinueMock ? savedMockAttempt : null}
+          onChange={setDraftSettings}
+          onClose={() => setShowMockInstructions(false)}
+          onStart={beginMockExam}
+          onContinue={continueMockExam}
+        />
       )}
     </main>
   )
 }
 
-function OptionGroup({
-  label,
-  note,
-  options,
-  value,
-  disabled = false,
-  onChange,
-}: {
-  label: string
-  note?: string
-  options: { value: string; label: string }[]
-  value: string
-  disabled?: boolean
-  onChange: (value: string) => void
-}) {
-  return (
-    <fieldset disabled={disabled}>
-      <legend className="text-sm font-bold text-slate-900">{label}</legend>
-      <div className="mt-2 flex flex-wrap gap-2" role="radiogroup" aria-label={label}>
-        {options.map((option) => {
-          const selected = option.value === value
+type MockSetupDialogProps = {
+  subjectName: string
+  isTrialAccount: boolean
+  countOptions: number[]
+  selectedCount: number
+  timedMinutes: number
+  settings: MockSettings
+  savedMockAttempt: TrainingModeMenuProps["savedMockAttempt"]
+  onChange: (update: (settings: MockSettings) => MockSettings) => void
+  onClose: () => void
+  onStart: () => void
+  onContinue: () => void
+}
 
-          return (
-            <button
-              key={option.value}
-              type="button"
-              role="radio"
-              aria-checked={selected}
-              onClick={() => onChange(option.value)}
-              className={`min-h-10 min-w-12 rounded-md border px-4 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40 disabled:cursor-not-allowed ${
-                selected
-                  ? "border-[#1f4e79] bg-[#1f4e79] text-white"
-                  : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+// The mock exam set-up sheet: a bottom sheet on phones, a centred dialog on
+// larger screens. The Start button stays pinned at the bottom.
+function MockSetupDialog({
+  subjectName,
+  isTrialAccount,
+  countOptions,
+  selectedCount,
+  timedMinutes,
+  settings,
+  savedMockAttempt,
+  onChange,
+  onClose,
+  onStart,
+  onContinue,
+}: MockSetupDialogProps) {
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const onCloseRef = useRef(onClose)
+
+  useEffect(() => {
+    onCloseRef.current = onClose
+  }, [onClose])
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onCloseRef.current()
+    }
+
+    window.addEventListener("keydown", onKeyDown)
+    dialogRef.current?.focus()
+
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [])
+
+  const summary = [
+    `${selectedCount} questions`,
+    settings.timed ? `${timedMinutes} min` : "untimed",
+  ].join(" · ")
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/60 backdrop-blur-[2px] sm:items-center sm:p-6"
+      role="presentation"
+      onClick={onClose}
+    >
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mock-exam-title"
+        tabIndex={-1}
+        onClick={(event) => event.stopPropagation()}
+        className="flex max-h-[92dvh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl bg-white text-slate-900 shadow-2xl outline-none sm:rounded-3xl"
+      >
+        <div className="flex items-start justify-between gap-4 border-b border-slate-100 px-5 pb-4 pt-5 sm:px-6">
+          <div className="min-w-0">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
+              Mock exam · {subjectName}
+            </p>
+            <h2
+              id="mock-exam-title"
+              className="mt-1 text-xl font-bold tracking-tight text-slate-950"
+            >
+              Set up your exam
+            </h2>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="-mr-1 rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <div className="flex-1 space-y-6 overflow-y-auto px-5 py-5 sm:px-6">
+          {savedMockAttempt && (
+            <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3.5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[var(--pv-navy)] shadow-sm">
+                <RotateCcw className="h-[18px] w-[18px]" aria-hidden="true" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-bold text-slate-900">
+                  Unfinished attempt
+                </p>
+                <p className="text-xs text-slate-500">
+                  {savedMockAttempt.answeredCount} of{" "}
+                  {savedMockAttempt.totalQuestions} answered ·{" "}
+                  {savedMockAttempt.timeLeft === null
+                    ? "untimed"
+                    : `${formatTime(savedMockAttempt.timeLeft)} left`}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={onContinue}
+                className="shrink-0 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-sm font-semibold text-slate-800 transition hover:border-slate-400"
+              >
+                Continue
+              </button>
+            </div>
+          )}
+
+          <SettingSection
+            icon={<ListOrdered className="h-4 w-4" aria-hidden="true" />}
+            label="Questions"
+            note={
+              isTrialAccount ? (
+                <span className="inline-flex items-center gap-1.5">
+                  <Lock className="h-3.5 w-3.5" aria-hidden="true" />
+                  Trial mock exams are fixed at 25 questions.
+                </span>
+              ) : undefined
+            }
+          >
+            <div
+              role="radiogroup"
+              aria-label="Number of questions"
+              className={`grid gap-1 rounded-2xl bg-slate-100 p-1 ${
+                countOptions.length > 1 ? "grid-cols-5" : "grid-cols-1"
               }`}
             >
-              {option.label}
-            </button>
-          )
-        })}
+              {countOptions.map((count) => {
+                const selected = count === selectedCount
+
+                return (
+                  <button
+                    key={count}
+                    type="button"
+                    role="radio"
+                    aria-checked={selected}
+                    disabled={isTrialAccount}
+                    onClick={() =>
+                      onChange((current) => ({ ...current, questionCount: count }))
+                    }
+                    className={`h-11 rounded-xl text-base font-bold tabular-nums transition ${
+                      selected
+                        ? "bg-white text-slate-950 shadow-[0_1px_3px_rgba(15,23,42,0.18)]"
+                        : "text-slate-500 hover:text-slate-900"
+                    } disabled:cursor-default`}
+                  >
+                    {count}
+                  </button>
+                )
+              })}
+            </div>
+          </SettingSection>
+
+          <SettingSection
+            icon={<Timer className="h-4 w-4" aria-hidden="true" />}
+            label="Timer"
+          >
+            <div role="radiogroup" aria-label="Timer" className="grid grid-cols-2 gap-2.5">
+              <ChoiceCard
+                selected={settings.timed}
+                icon={<Timer className="h-5 w-5" aria-hidden="true" />}
+                title="Timed"
+                detail={`${timedMinutes} min · 1 per question`}
+                onSelect={() => onChange((current) => ({ ...current, timed: true }))}
+              />
+              <ChoiceCard
+                selected={!settings.timed}
+                icon={<InfinityIcon className="h-5 w-5" aria-hidden="true" />}
+                title="Untimed"
+                detail="No time limit"
+                onSelect={() => onChange((current) => ({ ...current, timed: false }))}
+              />
+            </div>
+          </SettingSection>
+
+          <SettingSection
+            icon={<Eye className="h-4 w-4" aria-hidden="true" />}
+            label="Show Answer button"
+          >
+            <div
+              role="radiogroup"
+              aria-label="Show Answer button"
+              className="grid grid-cols-2 gap-2.5"
+            >
+              <ChoiceCard
+                selected={settings.showAnswerButton}
+                icon={<Eye className="h-5 w-5" aria-hidden="true" />}
+                title="On"
+                detail="Check as you go"
+                onSelect={() =>
+                  onChange((current) => ({ ...current, showAnswerButton: true }))
+                }
+              />
+              <ChoiceCard
+                selected={!settings.showAnswerButton}
+                icon={<EyeOff className="h-5 w-5" aria-hidden="true" />}
+                title="Off"
+                detail="Answers in your results"
+                onSelect={() =>
+                  onChange((current) => ({ ...current, showAnswerButton: false }))
+                }
+              />
+            </div>
+          </SettingSection>
+
+          <ul className="space-y-1.5 rounded-2xl bg-slate-50 px-4 py-3.5 text-[13px] leading-5 text-slate-600">
+            <li className="flex gap-2">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+              Pass mark is {PASS_MARK}%. Unanswered questions count as wrong.
+            </li>
+            <li className="flex gap-2">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+              Move freely between questions and pin any to review.
+            </li>
+            <li className="flex gap-2">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+              {settings.timed
+                ? "The exam submits itself when the time runs out."
+                : "Select Finish when you are done."}
+            </li>
+          </ul>
+        </div>
+
+        <div className="border-t border-slate-100 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:px-6 sm:pb-5">
+          <button
+            type="button"
+            onClick={onStart}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--pv-navy)] px-5 py-3.5 text-base font-bold text-white transition hover:bg-[var(--pv-navy-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+          >
+            {savedMockAttempt ? "Start new exam" : "Start exam"}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </button>
+          <p className="mt-2 text-center text-xs font-medium text-slate-500">
+            {summary}
+          </p>
+        </div>
       </div>
-      {note && <p className="mt-1.5 text-xs text-slate-500">{note}</p>}
-    </fieldset>
+    </div>
+  )
+}
+
+function SettingSection({
+  icon,
+  label,
+  note,
+  children,
+}: {
+  icon: ReactNode
+  label: string
+  note?: ReactNode
+  children: ReactNode
+}) {
+  return (
+    <section>
+      <h3 className="mb-2.5 flex items-center gap-2 text-sm font-bold text-slate-900">
+        <span className="text-slate-400">{icon}</span>
+        {label}
+      </h3>
+      {children}
+      {note && <p className="mt-2 text-xs text-slate-500">{note}</p>}
+    </section>
+  )
+}
+
+function ChoiceCard({
+  selected,
+  icon,
+  title,
+  detail,
+  onSelect,
+}: {
+  selected: boolean
+  icon: ReactNode
+  title: string
+  detail: string
+  onSelect: () => void
+}) {
+  return (
+    <button
+      type="button"
+      role="radio"
+      aria-checked={selected}
+      onClick={onSelect}
+      className={`relative flex flex-col items-start rounded-2xl border-2 p-3.5 text-left transition ${
+        selected
+          ? "border-[var(--pv-navy)] bg-slate-50"
+          : "border-slate-200 bg-white hover:border-slate-300"
+      }`}
+    >
+      <span className={selected ? "text-[var(--pv-navy)]" : "text-slate-400"}>
+        {icon}
+      </span>
+      <span className="mt-2 text-sm font-bold text-slate-950">{title}</span>
+      <span className="mt-0.5 text-xs leading-4 text-slate-500">{detail}</span>
+      {selected && (
+        <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--pv-navy)] text-white">
+          <Check className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
+        </span>
+      )}
+    </button>
   )
 }

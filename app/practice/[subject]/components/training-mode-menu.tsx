@@ -2,21 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import Link from "next/link"
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Check,
-  Download,
-  Eye,
-  EyeOff,
-  Infinity as InfinityIcon,
-  ListOrdered,
-  Lock,
-  RotateCcw,
-  Timer,
-  X,
-} from "lucide-react"
+import { ArrowLeft, ArrowRight, BookOpen, Download, X } from "lucide-react"
 
 import {
   MOCK_QUESTION_COUNT,
@@ -406,11 +392,6 @@ function MockSetupDialog({
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [])
 
-  const summary = [
-    `${selectedCount} questions`,
-    settings.timed ? `${timedMinutes} min` : "untimed",
-  ].join(" · ")
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/60 backdrop-blur-[2px] sm:items-center sm:p-6"
@@ -429,13 +410,13 @@ function MockSetupDialog({
         <div className="flex items-start justify-between gap-4 border-b border-slate-100 px-5 pb-4 pt-5 sm:px-6">
           <div className="min-w-0">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
-              Mock exam · {subjectName}
+              {subjectName}
             </p>
             <h2
               id="mock-exam-title"
               className="mt-1 text-xl font-bold tracking-tight text-slate-950"
             >
-              Set up your exam
+              Mock exam
             </h2>
           </div>
           <button
@@ -448,22 +429,18 @@ function MockSetupDialog({
           </button>
         </div>
 
-        <div className="flex-1 space-y-6 overflow-y-auto px-5 py-5 sm:px-6">
+        <div className="flex-1 space-y-5 overflow-y-auto px-5 py-5 sm:px-6">
           {savedMockAttempt && (
             <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3.5">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[var(--pv-navy)] shadow-sm">
-                <RotateCcw className="h-[18px] w-[18px]" aria-hidden="true" />
-              </span>
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-bold text-slate-900">
                   Unfinished attempt
                 </p>
                 <p className="text-xs text-slate-500">
                   {savedMockAttempt.answeredCount} of{" "}
-                  {savedMockAttempt.totalQuestions} answered ·{" "}
-                  {savedMockAttempt.timeLeft === null
-                    ? "untimed"
-                    : `${formatTime(savedMockAttempt.timeLeft)} left`}
+                  {savedMockAttempt.totalQuestions} answered
+                  {savedMockAttempt.timeLeft !== null &&
+                    ` · ${formatTime(savedMockAttempt.timeLeft)} left`}
                 </p>
               </div>
               <button
@@ -477,132 +454,67 @@ function MockSetupDialog({
           )}
 
           <SettingSection
-            icon={<ListOrdered className="h-4 w-4" aria-hidden="true" />}
             label="Questions"
-            note={
-              isTrialAccount ? (
-                <span className="inline-flex items-center gap-1.5">
-                  <Lock className="h-3.5 w-3.5" aria-hidden="true" />
-                  Trial mock exams are fixed at 25 questions.
-                </span>
-              ) : undefined
-            }
+            note={isTrialAccount ? "Fixed at 25 on the trial." : undefined}
           >
-            <div
-              role="radiogroup"
-              aria-label="Number of questions"
-              className={`grid gap-1 rounded-2xl bg-slate-100 p-1 ${
-                countOptions.length > 1 ? "grid-cols-5" : "grid-cols-1"
-              }`}
-            >
-              {countOptions.map((count) => {
-                const selected = count === selectedCount
-
-                return (
-                  <button
-                    key={count}
-                    type="button"
-                    role="radio"
-                    aria-checked={selected}
-                    disabled={isTrialAccount}
-                    onClick={() =>
-                      onChange((current) => ({ ...current, questionCount: count }))
-                    }
-                    className={`h-11 rounded-xl text-base font-bold tabular-nums transition ${
-                      selected
-                        ? "bg-white text-slate-950 shadow-[0_1px_3px_rgba(15,23,42,0.18)]"
-                        : "text-slate-500 hover:text-slate-900"
-                    } disabled:cursor-default`}
-                  >
-                    {count}
-                  </button>
-                )
-              })}
-            </div>
+            <Segmented
+              label="Number of questions"
+              disabled={isTrialAccount}
+              options={countOptions.map((count) => ({
+                value: String(count),
+                label: String(count),
+              }))}
+              value={String(selectedCount)}
+              onChange={(value) =>
+                onChange((current) => ({ ...current, questionCount: Number(value) }))
+              }
+            />
           </SettingSection>
 
-          <SettingSection
-            icon={<Timer className="h-4 w-4" aria-hidden="true" />}
-            label="Timer"
-          >
-            <div role="radiogroup" aria-label="Timer" className="grid grid-cols-2 gap-2.5">
-              <ChoiceCard
-                selected={settings.timed}
-                icon={<Timer className="h-5 w-5" aria-hidden="true" />}
-                title="Timed"
-                detail={`${timedMinutes} min · 1 per question`}
-                onSelect={() => onChange((current) => ({ ...current, timed: true }))}
-              />
-              <ChoiceCard
-                selected={!settings.timed}
-                icon={<InfinityIcon className="h-5 w-5" aria-hidden="true" />}
-                title="Untimed"
-                detail="No time limit"
-                onSelect={() => onChange((current) => ({ ...current, timed: false }))}
-              />
-            </div>
+          <SettingSection label="Timer">
+            <Segmented
+              label="Timer"
+              options={[
+                { value: "timed", label: `${timedMinutes} min` },
+                { value: "untimed", label: "Untimed" },
+              ]}
+              value={settings.timed ? "timed" : "untimed"}
+              onChange={(value) =>
+                onChange((current) => ({ ...current, timed: value === "timed" }))
+              }
+            />
           </SettingSection>
 
-          <SettingSection
-            icon={<Eye className="h-4 w-4" aria-hidden="true" />}
-            label="Show Answer button"
-          >
-            <div
-              role="radiogroup"
-              aria-label="Show Answer button"
-              className="grid grid-cols-2 gap-2.5"
-            >
-              <ChoiceCard
-                selected={settings.showAnswerButton}
-                icon={<Eye className="h-5 w-5" aria-hidden="true" />}
-                title="On"
-                detail="Check as you go"
-                onSelect={() =>
-                  onChange((current) => ({ ...current, showAnswerButton: true }))
-                }
-              />
-              <ChoiceCard
-                selected={!settings.showAnswerButton}
-                icon={<EyeOff className="h-5 w-5" aria-hidden="true" />}
-                title="Off"
-                detail="Answers in your results"
-                onSelect={() =>
-                  onChange((current) => ({ ...current, showAnswerButton: false }))
-                }
-              />
-            </div>
+          <SettingSection label="Show answers">
+            <Segmented
+              label="Show answers"
+              options={[
+                { value: "on", label: "On" },
+                { value: "off", label: "Off" },
+              ]}
+              value={settings.showAnswerButton ? "on" : "off"}
+              onChange={(value) =>
+                onChange((current) => ({
+                  ...current,
+                  showAnswerButton: value === "on",
+                }))
+              }
+            />
           </SettingSection>
 
-          <ul className="space-y-1.5 rounded-2xl bg-slate-50 px-4 py-3.5 text-[13px] leading-5 text-slate-600">
-            <li className="flex gap-2">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
-              Pass mark is {PASS_MARK}%. Unanswered questions count as wrong.
-            </li>
-            <li className="flex gap-2">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
-              Move freely between questions and pin any to review.
-            </li>
-            <li className="flex gap-2">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
-              {settings.timed
-                ? "The exam submits itself when the time runs out."
-                : "Select Finish when you are done."}
-            </li>
-          </ul>
+          <p className="text-xs leading-5 text-slate-500">
+            Pass mark {PASS_MARK}%. Unanswered questions count as wrong.
+          </p>
         </div>
 
         <div className="border-t border-slate-100 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:px-6 sm:pb-5">
           <button
             type="button"
             onClick={onStart}
-            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--pv-navy)] px-5 py-3.5 text-base font-bold text-white transition hover:bg-[var(--pv-navy-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+            className="w-full rounded-2xl bg-[var(--pv-navy)] px-5 py-3.5 text-base font-bold text-white transition hover:bg-[var(--pv-navy-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
           >
             {savedMockAttempt ? "Start new exam" : "Start exam"}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </button>
-          <p className="mt-2 text-center text-xs font-medium text-slate-500">
-            {summary}
-          </p>
         </div>
       </div>
     </div>
@@ -610,63 +522,64 @@ function MockSetupDialog({
 }
 
 function SettingSection({
-  icon,
   label,
   note,
   children,
 }: {
-  icon: ReactNode
   label: string
-  note?: ReactNode
+  note?: string
   children: ReactNode
 }) {
   return (
     <section>
-      <h3 className="mb-2.5 flex items-center gap-2 text-sm font-bold text-slate-900">
-        <span className="text-slate-400">{icon}</span>
-        {label}
-      </h3>
+      <h3 className="mb-2 text-sm font-bold text-slate-900">{label}</h3>
       {children}
-      {note && <p className="mt-2 text-xs text-slate-500">{note}</p>}
+      {note && <p className="mt-1.5 text-xs text-slate-500">{note}</p>}
     </section>
   )
 }
 
-function ChoiceCard({
-  selected,
-  icon,
-  title,
-  detail,
-  onSelect,
+function Segmented({
+  label,
+  options,
+  value,
+  disabled = false,
+  onChange,
 }: {
-  selected: boolean
-  icon: ReactNode
-  title: string
-  detail: string
-  onSelect: () => void
+  label: string
+  options: { value: string; label: string }[]
+  value: string
+  disabled?: boolean
+  onChange: (value: string) => void
 }) {
   return (
-    <button
-      type="button"
-      role="radio"
-      aria-checked={selected}
-      onClick={onSelect}
-      className={`relative flex flex-col items-start rounded-2xl border-2 p-3.5 text-left transition ${
-        selected
-          ? "border-[var(--pv-navy)] bg-slate-50"
-          : "border-slate-200 bg-white hover:border-slate-300"
-      }`}
+    <div
+      role="radiogroup"
+      aria-label={label}
+      className="grid gap-1 rounded-2xl bg-slate-100 p-1"
+      style={{ gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` }}
     >
-      <span className={selected ? "text-[var(--pv-navy)]" : "text-slate-400"}>
-        {icon}
-      </span>
-      <span className="mt-2 text-sm font-bold text-slate-950">{title}</span>
-      <span className="mt-0.5 text-xs leading-4 text-slate-500">{detail}</span>
-      {selected && (
-        <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--pv-navy)] text-white">
-          <Check className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
-        </span>
-      )}
-    </button>
+      {options.map((option) => {
+        const selected = option.value === value
+
+        return (
+          <button
+            key={option.value}
+            type="button"
+            role="radio"
+            aria-checked={selected}
+            disabled={disabled}
+            onClick={() => onChange(option.value)}
+            className={`h-11 rounded-xl text-[15px] font-bold tabular-nums transition disabled:cursor-default ${
+              selected
+                ? "bg-white text-slate-950 shadow-[0_1px_3px_rgba(15,23,42,0.18)]"
+                : "text-slate-500 hover:text-slate-900"
+            }`}
+          >
+            {option.label}
+          </button>
+        )
+      })}
+    </div>
   )
 }

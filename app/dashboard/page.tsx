@@ -17,6 +17,7 @@ import {
   Plane,
   Radio,
   Scale,
+  ShieldCheck,
   UserRound,
 } from "lucide-react"
 import { PageSkeleton } from "@/components/page-skeleton"
@@ -82,6 +83,7 @@ export default function DashboardPage() {
   const [profile, setProfile] = useState<CachedProfile | null>(null)
   const [subjectAccess, setSubjectAccess] = useState<CachedSubjectAccess[]>([])
   const [attempts, setAttempts] = useState<MockExamAttempt[]>([])
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -98,16 +100,23 @@ export default function DashboardPage() {
           return
         }
 
-        const [profileData, accessData, attemptData] = await Promise.all([
+        const [profileData, accessData, attemptData, adminRow] = await Promise.all([
           getCachedProfile(user.id),
           getCachedSubjectAccess(user.id),
           fetchMockExamAttempts(user.id).catch(() => []),
+          supabase
+            .from("Admins")
+            .select("user_id")
+            .eq("user_id", user.id)
+            .maybeSingle()
+            .then(({ data }) => Boolean(data)),
         ])
 
         if (!cancelled) {
           setProfile(profileData)
           setSubjectAccess(accessData)
           setAttempts(attemptData)
+          setIsAdmin(adminRow)
         }
       } catch (error) {
         if (!cancelled) {
@@ -199,13 +208,15 @@ export default function DashboardPage() {
 
   const firstName = getFirstName(profile?.full_name)
   const licenceLabel = profile?.licence_level?.toUpperCase() ?? "STUDENT"
-  const planLabel = isTrialUser
-    ? "Free Trial"
-    : isPplUser
-      ? "PPL Pack"
-      : profile?.subscription_plan
-        ? profile.subscription_plan.toUpperCase()
-        : "Student Access"
+  const planLabel = isAdmin
+    ? "Admin"
+    : isTrialUser
+      ? "Free Trial"
+      : isPplUser
+        ? "PPL Pack"
+        : profile?.subscription_plan
+          ? profile.subscription_plan.toUpperCase()
+          : "Student Access"
 
   const trialDaysLeft =
     isTrialUser && profile?.trial_ends_at
@@ -252,6 +263,17 @@ export default function DashboardPage() {
           </div>
 
           <div className="flex shrink-0 items-center gap-2">
+            {isAdmin && (
+              <Link
+                href="/admin"
+                aria-label="Open admin"
+                title="Admin"
+                className="flex h-11 min-w-11 items-center justify-center gap-2 rounded-lg border border-white/20 px-3 text-sm font-medium text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              >
+                <ShieldCheck className="h-[18px] w-[18px]" />
+                <span className="hidden md:inline">Admin</span>
+              </Link>
+            )}
             <Link
               href="/upgrade"
               aria-label="View plans"

@@ -166,7 +166,7 @@ function ColumnChart({
   const [hover, setHover] = useState<number | null>(null)
   const width = 640
   const height = 200
-  const left = 48
+  const left = 64
   const right = 8
   const top = 12
   const bottom = 28

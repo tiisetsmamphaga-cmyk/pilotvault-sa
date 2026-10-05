@@ -22,20 +22,32 @@ import {
 import type { MockExamStats } from "./exam-attempt-service"
 import {
   MOCK_QUESTION_COUNT,
+  MOCK_QUESTION_COUNT_OPTIONS,
   MOCK_TIME_SECONDS,
   PASS_MARK,
   formatSubjectName,
+  getMockTimeLimitSeconds,
   shuffleArray,
 } from "./practice-utils"
 import { fetchSubjectQuestions } from "./question-service"
-import type { ExamAnswers, ExamMode, Question } from "./types"
+import type { ExamAnswers, ExamMode, MockSettings, Question } from "./types"
 
 const EMPTY_MOCK_EXAM_STATS: MockExamStats = {
   averageScore: null,
   attemptCount: 0,
 }
 
-const SAVED_MOCK_ATTEMPT_VERSION = 1
+const SAVED_MOCK_ATTEMPT_VERSION = 2
+const MAX_MOCK_TIME_SECONDS = getMockTimeLimitSeconds(
+  Math.max(...MOCK_QUESTION_COUNT_OPTIONS)
+)
+const MOCK_SETTINGS_KEY = "pilotvault:mock-settings"
+
+const DEFAULT_MOCK_SETTINGS: MockSettings = {
+  questionCount: MOCK_QUESTION_COUNT,
+  timed: true,
+  showAnswerButton: true,
+}
 
 type SavedMockAttempt = {
   version: number
@@ -45,13 +57,54 @@ type SavedMockAttempt = {
   answers: ExamAnswers
   pinnedQuestions: number[]
   shownAnswers: number[]
+  // Seconds left on a timed exam. Unused when timeLimit is null (untimed).
   timeLeft: number
+  // Total seconds allowed, or null for an untimed exam.
+  timeLimit: number | null
+  elapsedSeconds: number
+  showAnswerButton: boolean
 }
 
 type SavedMockAttemptSummary = {
   answeredCount: number
   totalQuestions: number
-  timeLeft: number
+  // null for an untimed exam.
+  timeLeft: number | null
+}
+
+function readMockSettings(): MockSettings {
+  try {
+    const raw = window.localStorage.getItem(MOCK_SETTINGS_KEY)
+    if (!raw) return DEFAULT_MOCK_SETTINGS
+
+    const parsed = JSON.parse(raw) as Partial<MockSettings>
+
+    return {
+      questionCount: MOCK_QUESTION_COUNT_OPTIONS.includes(
+        Number(parsed.questionCount)
+      )
+        ? Number(parsed.questionCount)
+        : DEFAULT_MOCK_SETTINGS.questionCount,
+      timed:
+        typeof parsed.timed === "boolean"
+          ? parsed.timed
+          : DEFAULT_MOCK_SETTINGS.timed,
+      showAnswerButton:
+        typeof parsed.showAnswerButton === "boolean"
+          ? parsed.showAnswerButton
+          : DEFAULT_MOCK_SETTINGS.showAnswerButton,
+    }
+  } catch {
+    return DEFAULT_MOCK_SETTINGS
+  }
+}
+
+function writeMockSettings(settings: MockSettings) {
+  try {
+    window.localStorage.setItem(MOCK_SETTINGS_KEY, JSON.stringify(settings))
+  } catch {
+    // Remembering the choice is a convenience only.
+  }
 }
 
 function getSavedMockAttemptKey(subject: string) {
@@ -79,6 +132,27 @@ function readSavedMockAttempt(subject: string): SavedMockAttempt | null {
     const parsedAttempt = JSON.parse(rawAttempt) as Partial<SavedMockAttempt>
     const answers = parsedAttempt.answers
 
+    // Attempts saved before the mock settings existed were always timed at
+    // 25 minutes with the Show Answer button.
+    if (parsedAttempt.version === 1) {
+      parsedAttempt.version = SAVED_MOCK_ATTEMPT_VERSION
+      parsedAttempt.timeLimit = MOCK_TIME_SECONDS
+      parsedAttempt.elapsedSeconds =
+        MOCK_TIME_SECONDS - Number(parsedAttempt.timeLeft ?? 0)
+      parsedAttempt.showAnswerButton = true
+    }
+
+    const timeLimit = parsedAttempt.timeLimit
+    const timeIsValid =
+      timeLimit === null
+        ? true
+        : typeof timeLimit === "number" &&
+          timeLimit > 0 &&
+          timeLimit <= MAX_MOCK_TIME_SECONDS &&
+          typeof parsedAttempt.timeLeft === "number" &&
+          parsedAttempt.timeLeft > 0 &&
+          parsedAttempt.timeLeft <= timeLimit
+
     const isValid =
       parsedAttempt.version === SAVED_MOCK_ATTEMPT_VERSION &&
       parsedAttempt.subject === subject &&
@@ -97,8 +171,10 @@ function readSavedMockAttempt(subject: string): SavedMockAttempt | null {
       Array.isArray(parsedAttempt.shownAnswers) &&
       parsedAttempt.shownAnswers.every((index) => Number.isInteger(index)) &&
       typeof parsedAttempt.timeLeft === "number" &&
-      parsedAttempt.timeLeft > 0 &&
-      parsedAttempt.timeLeft <= MOCK_TIME_SECONDS
+      typeof parsedAttempt.elapsedSeconds === "number" &&
+      parsedAttempt.elapsedSeconds >= 0 &&
+      typeof parsedAttempt.showAnswerButton === "boolean" &&
+      timeIsValid
 
     if (!isValid) {
       removeSavedMockAttempt(subject)
@@ -119,7 +195,7 @@ function getSavedMockAttemptSummary(
   return {
     answeredCount: Object.keys(attempt.answers).length,
     totalQuestions: attempt.questionIds.length,
-    timeLeft: attempt.timeLeft,
+    timeLeft: attempt.timeLimit === null ? null : attempt.timeLeft,
   }
 }
 
@@ -146,6 +222,13 @@ export default function SubjectPracticePage() {
   const [showMobileQuestionNav, setShowMobileQuestionNav] = useState(false)
 
   const [timeLeft, setTimeLeft] = useState(MOCK_TIME_SECONDS)
+  // Seconds allowed for the current mock, or null when it is untimed.
+  const [timeLimit, setTimeLimit] = useState<number | null>(MOCK_TIME_SECONDS)
+  const [elapsedSeconds, setElapsedSeconds] = useState(0)
+  const [showAnswerButton, setShowAnswerButton] = useState(true)
+  const [mockSettings, setMockSettings] = useState<MockSettings>(
+    DEFAULT_MOCK_SETTINGS
+  )
 
   const [canAccessTopics, setCanAccessTopics] = useState(false)
   const [isTrialAccount, setIsTrialAccount] = useState(false)
@@ -274,6 +357,7 @@ export default function SubjectPracticePage() {
     setSavedMockAttemptSummary(
       savedAttempt ? getSavedMockAttemptSummary(savedAttempt) : null
     )
+    setMockSettings(readMockSettings())
     setIsMockAttemptStorageReady(true)
   }, [subject])
 
@@ -325,6 +409,9 @@ export default function SubjectPracticePage() {
       pinnedQuestions,
       shownAnswers,
       timeLeft,
+      timeLimit,
+      elapsedSeconds,
+      showAnswerButton,
     }
 
     try {
@@ -347,6 +434,9 @@ export default function SubjectPracticePage() {
     shownAnswers,
     subject,
     timeLeft,
+    timeLimit,
+    elapsedSeconds,
+    showAnswerButton,
   ])
 
   useEffect(() => {
@@ -358,7 +448,19 @@ export default function SubjectPracticePage() {
       return
     }
 
+    if (timeLimit === null) {
+      // Untimed: count up so the student can see how long they have spent.
+      const stopwatch = window.setInterval(() => {
+        setElapsedSeconds((previousSeconds) => previousSeconds + 1)
+      }, 1000)
+
+      return () => {
+        window.clearInterval(stopwatch)
+      }
+    }
+
     const timer = window.setInterval(() => {
+      setElapsedSeconds((previousSeconds) => previousSeconds + 1)
       setTimeLeft((previousTime) => {
         if (previousTime <= 1) {
           window.clearInterval(timer)
@@ -373,7 +475,7 @@ export default function SubjectPracticePage() {
     return () => {
       window.clearInterval(timer)
     }
-  }, [examMode, isSubmitted, examQuestions.length])
+  }, [examMode, isSubmitted, examQuestions.length, timeLimit])
 
   const topicQuestionCounts = useMemo(() => {
     return subjectQuestions.reduce<Record<string, number>>(
@@ -408,19 +510,31 @@ export default function SubjectPracticePage() {
     setShowMobileQuestionNav(false)
   }
 
-  const startMockExam = () => {
+  const startMockExam = (settings: MockSettings = mockSettings) => {
     removeSavedMockAttempt(subject)
     setSavedMockAttemptSummary(null)
     resetExamState()
 
+    // Trial accounts always get the fixed 25-question trial set.
+    const questionCount = isTrialAccount
+      ? MOCK_QUESTION_COUNT
+      : settings.questionCount
     const selectedQuestions = isTrialAccount
-      ? subjectQuestions.slice(0, MOCK_QUESTION_COUNT)
-      : shuffleArray(subjectQuestions).slice(0, MOCK_QUESTION_COUNT)
+      ? subjectQuestions.slice(0, questionCount)
+      : shuffleArray(subjectQuestions).slice(0, questionCount)
+    const limit = settings.timed
+      ? getMockTimeLimitSeconds(selectedQuestions.length)
+      : null
 
+    setMockSettings(settings)
+    writeMockSettings(settings)
     setExamQuestions(selectedQuestions)
     setExamMode("mock")
     setActiveTopic("")
-    setTimeLeft(MOCK_TIME_SECONDS)
+    setTimeLimit(limit)
+    setTimeLeft(limit ?? 0)
+    setElapsedSeconds(0)
+    setShowAnswerButton(settings.showAnswerButton)
     mockStartedAtRef.current = Date.now()
   }
 
@@ -447,10 +561,15 @@ export default function SubjectPracticePage() {
       return
     }
 
-    const restoredTime = Math.max(
-      1,
-      Math.min(MOCK_TIME_SECONDS, savedAttempt.timeLeft)
-    )
+    const restoredLimit = savedAttempt.timeLimit
+    const restoredTime =
+      restoredLimit === null
+        ? 0
+        : Math.max(1, Math.min(restoredLimit, savedAttempt.timeLeft))
+    const restoredElapsed =
+      restoredLimit === null
+        ? savedAttempt.elapsedSeconds
+        : restoredLimit - restoredTime
     const restoredIndex = Math.min(
       savedAttempt.currentQuestionIndex,
       restoredQuestions.length - 1
@@ -464,9 +583,11 @@ export default function SubjectPracticePage() {
     setShownAnswers(savedAttempt.shownAnswers)
     setExamMode("mock")
     setActiveTopic("")
+    setTimeLimit(restoredLimit)
     setTimeLeft(restoredTime)
-    mockStartedAtRef.current =
-      Date.now() - (MOCK_TIME_SECONDS - restoredTime) * 1000
+    setElapsedSeconds(restoredElapsed)
+    setShowAnswerButton(savedAttempt.showAnswerButton)
+    mockStartedAtRef.current = Date.now() - restoredElapsed * 1000
   }
 
   const startTopicPractice = (topic: string) => {
@@ -480,6 +601,7 @@ export default function SubjectPracticePage() {
     setActiveTopic(topic)
     setExamMode("topic")
     setTimeLeft(MOCK_TIME_SECONDS)
+    setShowAnswerButton(true)
   }
 
   const returnToMenu = () => {
@@ -573,16 +695,15 @@ export default function SubjectPracticePage() {
     }
 
     attemptSavedRef.current = true
-    const durationSeconds =
+    const measuredSeconds =
       mockStartedAtRef.current === null
-        ? Math.max(0, MOCK_TIME_SECONDS - timeLeft)
-        : Math.min(
-            MOCK_TIME_SECONDS,
-            Math.max(
-              0,
-              Math.round((Date.now() - mockStartedAtRef.current) / 1000)
-            )
+        ? elapsedSeconds
+        : Math.max(
+            0,
+            Math.round((Date.now() - mockStartedAtRef.current) / 1000)
           )
+    const durationSeconds =
+      timeLimit === null ? measuredSeconds : Math.min(timeLimit, measuredSeconds)
 
     void saveMockExamAttempt({
       subject,
@@ -672,6 +793,7 @@ export default function SubjectPracticePage() {
         mockAverageScore={mockExamStats.averageScore}
         mockAttemptCount={mockExamStats.attemptCount}
         savedMockAttempt={savedMockAttemptSummary}
+        mockSettings={mockSettings}
         onStartMock={startMockExam}
         onContinueMock={resumeMockExam}
         onOpenTopics={() => setExamMode("topics")}
@@ -706,7 +828,7 @@ export default function SubjectPracticePage() {
         answers={answers}
         onReturnToMenu={returnToMenu}
         onReturnToTopics={returnToTopics}
-        onRestartMock={startMockExam}
+        onRestartMock={() => startMockExam()}
       />
     )
   }
@@ -733,6 +855,9 @@ export default function SubjectPracticePage() {
       examLabel={examLabel}
       examMode={examMode}
       timeLeft={timeLeft}
+      timeLimit={timeLimit}
+      elapsedSeconds={elapsedSeconds}
+      showAnswerButton={showAnswerButton}
       currentQuestion={currentQuestion}
       currentQuestionIndex={currentQuestionIndex}
       examQuestions={examQuestions}

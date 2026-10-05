@@ -6,12 +6,14 @@ import { ArrowLeft, ArrowRight, BookOpen, Download } from "lucide-react"
 
 import {
   MOCK_QUESTION_COUNT,
-  MOCK_TIME_SECONDS,
+  MOCK_QUESTION_COUNT_OPTIONS,
   PASS_MARK,
   formatSubjectName,
   formatTime,
+  getMockTimeLimitSeconds,
   getReadinessStatus,
 } from "../practice-utils"
+import type { MockSettings } from "../types"
 
 type SubjectManual = {
   title: string
@@ -46,9 +48,11 @@ type TrainingModeMenuProps = {
   savedMockAttempt?: {
     answeredCount: number
     totalQuestions: number
-    timeLeft: number
+    // null for an untimed exam.
+    timeLeft: number | null
   } | null
-  onStartMock: () => void
+  mockSettings: MockSettings
+  onStartMock: (settings: MockSettings) => void
   onContinueMock?: () => void
   onOpenTopics: () => void
 }
@@ -61,24 +65,45 @@ export function TrainingModeMenu({
   mockAverageScore,
   mockAttemptCount,
   savedMockAttempt = null,
+  mockSettings,
   onStartMock,
   onContinueMock,
   onOpenTopics,
 }: TrainingModeMenuProps) {
   const manual = SUBJECT_MANUALS[subject]
-  const mockQuestionCount = Math.min(MOCK_QUESTION_COUNT, questionCount)
   const subjectName = formatSubjectName(subject)
-  const mockDurationMinutes = Math.ceil(MOCK_TIME_SECONDS / 60)
   const readinessStatus = getReadinessStatus(mockAverageScore)
   const averageProgress = mockAverageScore ?? 0
   const progressCircumference = 239
   const progressOffset =
     progressCircumference * (1 - averageProgress / 100)
   const [showMockInstructions, setShowMockInstructions] = useState(false)
+  const [draftSettings, setDraftSettings] = useState<MockSettings>(mockSettings)
+
+  // Trial accounts always sit the fixed 25-question trial set.
+  const countOptions = isTrialAccount
+    ? [Math.min(MOCK_QUESTION_COUNT, questionCount)]
+    : (() => {
+        const available = MOCK_QUESTION_COUNT_OPTIONS.filter(
+          (count) => count <= questionCount
+        )
+        return available.length ? available : [questionCount]
+      })()
+  const selectedCount = countOptions.includes(draftSettings.questionCount)
+    ? draftSettings.questionCount
+    : countOptions.includes(MOCK_QUESTION_COUNT)
+      ? MOCK_QUESTION_COUNT
+      : countOptions[countOptions.length - 1]
+  const timedMinutes = Math.ceil(getMockTimeLimitSeconds(selectedCount) / 60)
+
+  const openMockInstructions = () => {
+    setDraftSettings(mockSettings)
+    setShowMockInstructions(true)
+  }
 
   const beginMockExam = () => {
     setShowMockInstructions(false)
-    onStartMock()
+    onStartMock({ ...draftSettings, questionCount: selectedCount })
   }
 
   const continueMockExam = () => {
@@ -171,7 +196,7 @@ export function TrainingModeMenu({
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <button
             type="button"
-            onClick={() => setShowMockInstructions(true)}
+            onClick={openMockInstructions}
             className="group relative flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
           >
             {isTrialAccount && (
@@ -310,7 +335,7 @@ export function TrainingModeMenu({
           onClick={() => setShowMockInstructions(false)}
         >
           <div
-            className="w-full max-w-lg overflow-hidden bg-white text-slate-900 shadow-2xl"
+            className="max-h-[calc(100dvh-3rem)] w-full max-w-lg overflow-y-auto bg-white text-slate-900 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="bg-[#1f4e79] px-6 py-5 text-white">
@@ -323,10 +348,73 @@ export function TrainingModeMenu({
             </div>
 
             <div className="p-6">
-              <div className="grid grid-cols-3 gap-2">
+              <div className="space-y-5">
+                <OptionGroup
+                  label="Number of questions"
+                  note={
+                    isTrialAccount
+                      ? "Trial mock exams are fixed at 25 questions."
+                      : undefined
+                  }
+                  options={countOptions.map((count) => ({
+                    value: String(count),
+                    label: String(count),
+                  }))}
+                  value={String(selectedCount)}
+                  disabled={isTrialAccount}
+                  onChange={(value) =>
+                    setDraftSettings((settings) => ({
+                      ...settings,
+                      questionCount: Number(value),
+                    }))
+                  }
+                />
+
+                <OptionGroup
+                  label="Timer"
+                  note={
+                    draftSettings.timed
+                      ? "One minute per question."
+                      : "No time limit. Your time spent is still shown."
+                  }
+                  options={[
+                    { value: "timed", label: `Timed · ${timedMinutes} min` },
+                    { value: "untimed", label: "Untimed" },
+                  ]}
+                  value={draftSettings.timed ? "timed" : "untimed"}
+                  onChange={(value) =>
+                    setDraftSettings((settings) => ({
+                      ...settings,
+                      timed: value === "timed",
+                    }))
+                  }
+                />
+
+                <OptionGroup
+                  label="Show Answer button"
+                  note={
+                    draftSettings.showAnswerButton
+                      ? "You can check the answer and explanation during the exam."
+                      : "Exam conditions: answers only appear in your results."
+                  }
+                  options={[
+                    { value: "on", label: "On" },
+                    { value: "off", label: "Off" },
+                  ]}
+                  value={draftSettings.showAnswerButton ? "on" : "off"}
+                  onChange={(value) =>
+                    setDraftSettings((settings) => ({
+                      ...settings,
+                      showAnswerButton: value === "on",
+                    }))
+                  }
+                />
+              </div>
+
+              <div className="mt-6 grid grid-cols-3 gap-2">
                 <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
                   <p className="text-xl font-bold text-[#1f4e79]">
-                    {mockQuestionCount}
+                    {selectedCount}
                   </p>
                   <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
                     Questions
@@ -334,10 +422,10 @@ export function TrainingModeMenu({
                 </div>
                 <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
                   <p className="text-xl font-bold text-[#1f4e79]">
-                    {mockDurationMinutes}
+                    {draftSettings.timed ? timedMinutes : "—"}
                   </p>
                   <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                    Minutes
+                    {draftSettings.timed ? "Minutes" : "Untimed"}
                   </p>
                 </div>
                 <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
@@ -354,10 +442,12 @@ export function TrainingModeMenu({
                 Before you begin
               </h3>
               <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                  The timer starts as soon as you enter the simulator.
-                </li>
+                {draftSettings.timed && (
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
+                    The timer starts as soon as you enter the simulator.
+                  </li>
+                )}
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
                   You can move between questions and pin any question for
@@ -365,8 +455,9 @@ export function TrainingModeMenu({
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                  Unanswered questions count as incorrect, and the exam submits
-                  automatically when time expires.
+                  {draftSettings.timed
+                    ? "Unanswered questions count as incorrect, and the exam submits automatically when time expires."
+                    : "Unanswered questions count as incorrect. Select Finish when you are done."}
                 </li>
               </ul>
 
@@ -378,7 +469,9 @@ export function TrainingModeMenu({
                   <p className="mt-1 text-sm text-slate-600">
                     {savedMockAttempt.answeredCount} of{" "}
                     {savedMockAttempt.totalQuestions} answered ·{" "}
-                    {formatTime(savedMockAttempt.timeLeft)} remaining
+                    {savedMockAttempt.timeLeft === null
+                      ? "untimed"
+                      : `${formatTime(savedMockAttempt.timeLeft)} remaining`}
                   </p>
                 </div>
               )}
@@ -415,5 +508,50 @@ export function TrainingModeMenu({
         </div>
       )}
     </main>
+  )
+}
+
+function OptionGroup({
+  label,
+  note,
+  options,
+  value,
+  disabled = false,
+  onChange,
+}: {
+  label: string
+  note?: string
+  options: { value: string; label: string }[]
+  value: string
+  disabled?: boolean
+  onChange: (value: string) => void
+}) {
+  return (
+    <fieldset disabled={disabled}>
+      <legend className="text-sm font-bold text-slate-900">{label}</legend>
+      <div className="mt-2 flex flex-wrap gap-2" role="radiogroup" aria-label={label}>
+        {options.map((option) => {
+          const selected = option.value === value
+
+          return (
+            <button
+              key={option.value}
+              type="button"
+              role="radio"
+              aria-checked={selected}
+              onClick={() => onChange(option.value)}
+              className={`min-h-10 min-w-12 rounded-md border px-4 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f4e79]/40 disabled:cursor-not-allowed ${
+                selected
+                  ? "border-[#1f4e79] bg-[#1f4e79] text-white"
+                  : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+              }`}
+            >
+              {option.label}
+            </button>
+          )
+        })}
+      </div>
+      {note && <p className="mt-1.5 text-xs text-slate-500">{note}</p>}
+    </fieldset>
   )
 }

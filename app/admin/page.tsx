@@ -8,6 +8,13 @@ import { Eye, LayoutDashboard, LogOut, RefreshCw, Search, ShieldCheck } from "lu
 import { PageSkeleton } from "@/components/page-skeleton"
 import { clearClientDataCache } from "@/src/lib/client-data-cache"
 import { supabase } from "@/src/lib/supabase"
+import {
+  ConversionFunnel,
+  OverTimeCharts,
+  TrialsEndingSoon,
+  type FunnelCounts,
+  type SeriesData,
+} from "./insights"
 
 const SUBJECTS = [
   { slug: "air-law", name: "Air Law" },
@@ -28,6 +35,7 @@ type AdminUser = {
   lastSignInAt: string | null
   emailConfirmed: boolean
   isAdmin: boolean
+  isTestAccount: boolean
   licenceLevel: string | null
   subscriptionStatus: string | null
   subscriptionPlan: string | null
@@ -44,6 +52,7 @@ type AdminUser = {
 type Overview = {
   summary: {
     totalAccounts: number
+    testAccounts: number
     signUps24h: number
     signUps7d: number
     signUps30d: number
@@ -51,10 +60,13 @@ type Overview = {
     activePplPacks: number
     fulfilledRevenueCents: number
   }
+  funnel: FunnelCounts
+  series: SeriesData
   users: AdminUser[]
   recentPayments: {
     reference: string
     email: string | null
+    isTestOrAdmin: boolean
     productCode: string | null
     subject: string | null
     amountCents: number | null
@@ -107,6 +119,10 @@ type AccessRequest =
   | { action: "extend_trial"; days: number }
   | { action: "grant_ppl"; days: number }
   | { action: "grant_subject"; days: number; subject: string }
+  | { action: "end_trial" }
+  | { action: "revoke_ppl" }
+  | { action: "revoke_subject"; subject: string }
+  | { action: "set_test_account"; value: boolean }
 
 function subjectName(slug: string) {
   return SUBJECTS.find((subject) => subject.slug === slug)?.name ?? slug
@@ -173,6 +189,7 @@ export default function AdminPage() {
   const [overview, setOverview] = useState<Overview | null>(null)
   const [query, setQuery] = useState("")
   const [showAdmins, setShowAdmins] = useState(false)
+  const [showTest, setShowTest] = useState(false)
   const [busyUserId, setBusyUserId] = useState<string | null>(null)
   const [notice, setNotice] = useState("")
   const [myUserId, setMyUserId] = useState<string | null>(null)
@@ -240,7 +257,9 @@ export default function AdminPage() {
   }
 
   const runAction = async (user: AdminUser, request: AccessRequest, description: string) => {
-    if (!window.confirm(`${description} for ${user.email ?? "this account"}?`)) return
+    if (request.action !== "set_test_account" && !window.confirm(`${description} for ${user.email ?? "this account"}?`)) {
+      return
+    }
 
     setBusyUserId(user.id)
     setNotice("")
@@ -257,8 +276,8 @@ export default function AdminPage() {
 
       if (!response.ok) throw new Error(body.error ?? "The change could not be saved.")
 
-      setNotice(`${description} for ${user.email ?? "the account"}: done.`)
       await loadOverview()
+      setNotice(`${description} for ${user.email ?? "the account"}: done.`)
     } catch (actionError) {
       setNotice(actionError instanceof Error ? actionError.message : "The change could not be saved.")
     } finally {
@@ -285,10 +304,10 @@ export default function AdminPage() {
       // The dashboard and practice pages cache the profile; drop it so they
       // pick up the new access straight away.
       clearClientDataCache()
+      await loadOverview()
       setPreviewNotice(
         `Your account now has ${PREVIEW_MODES.find((item) => item.mode === mode)?.label ?? mode} access. Open the dashboard to try it.`
       )
-      await loadOverview()
     } catch (previewError) {
       setPreviewNotice(previewError instanceof Error ? previewError.message : "Could not switch the preview.")
     } finally {
@@ -301,11 +320,20 @@ export default function AdminPage() {
 
     return (overview?.users ?? []).filter((user) => {
       if (!showAdmins && user.isAdmin) return false
+      if (!showTest && user.isTestAccount && !user.isAdmin) return false
       if (!needle) return true
 
       return [user.email, user.fullName].some((value) => value?.toLowerCase().includes(needle))
     })
-  }, [overview, query, showAdmins])
+  }, [overview, query, showAdmins, showTest])
+
+  const trialUsers = useMemo(
+    () =>
+      (overview?.users ?? []).filter(
+        (user) => !user.isAdmin && (showTest || !user.isTestAccount) && user.subscriptionPlan === "trial"
+      ),
+    [overview, showTest]
+  )
 
   if (loading) return <PageSkeleton variant="dashboard" />
 
@@ -376,7 +404,10 @@ export default function AdminPage() {
             <h1 className="text-[28px] font-bold leading-tight tracking-tight text-slate-950 sm:text-3xl">
               Admin
             </h1>
-            <p className="mt-1 text-sm text-slate-600">Sign-ups, access and payments. Admin accounts are left out of the numbers.</p>
+            <p className="mt-1 text-sm text-slate-600">
+              Sign-ups, access and payments. Numbers count real students only: admin and test accounts are left out
+              {summary ? ` (${summary.testAccounts} test account${summary.testAccounts === 1 ? "" : "s"} hidden)` : ""}.
+            </p>
           </div>
           <button
             type="button"
@@ -412,6 +443,18 @@ export default function AdminPage() {
               </div>
             ))}
           </section>
+        )}
+
+        {overview && (
+          <>
+            <div className="mt-6 grid gap-4 lg:grid-cols-2">
+              <ConversionFunnel funnel={overview.funnel} />
+              <TrialsEndingSoon users={trialUsers} subjectName={subjectName} />
+            </div>
+            <div className="mt-4">
+              <OverTimeCharts series={overview.series} />
+            </div>
+          </>
         )}
 
         <section
@@ -518,6 +561,15 @@ export default function AdminPage() {
                 />
                 Show admin accounts
               </label>
+              <label className="flex items-center gap-2 text-sm text-slate-600">
+                <input
+                  type="checkbox"
+                  checked={showTest}
+                  onChange={(event) => setShowTest(event.target.checked)}
+                  className="h-4 w-4 accent-[#1f4e79]"
+                />
+                Show test accounts
+              </label>
             </div>
           </div>
 
@@ -561,7 +613,14 @@ export default function AdminPage() {
                     {overview.recentPayments.map((payment) => (
                       <tr key={payment.reference}>
                         <td className="px-4 py-3 text-slate-600">{formatDate(payment.paidAt ?? payment.createdAt, true)}</td>
-                        <td className="px-4 py-3">{payment.email ?? "—"}</td>
+                        <td className="px-4 py-3">
+                          {payment.email ?? "—"}
+                          {payment.isTestOrAdmin && (
+                            <span className="ml-2 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-slate-500">
+                              test
+                            </span>
+                          )}
+                        </td>
                         <td className="px-4 py-3">
                           {payment.productCode === "ppl_pack"
                             ? "PPL Pack"
@@ -603,6 +662,8 @@ function AccountCard({
   )
   const buttonClass =
     "inline-flex min-h-9 items-center justify-center rounded-lg border border-slate-300 bg-white px-3 text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+  const dangerClass =
+    "inline-flex min-h-9 items-center justify-center rounded-lg border border-red-200 bg-white px-3 text-xs font-semibold text-red-700 hover:bg-red-50 disabled:opacity-50"
 
   return (
     <article className="rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
@@ -611,9 +672,14 @@ function AccountCard({
           <h3 className="truncate text-sm font-semibold text-slate-950">{user.fullName?.trim() || "—"}</h3>
           <p className="truncate text-sm text-slate-600">{user.email ?? "—"}</p>
         </div>
-        <span className={`w-fit shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${badge.className}`}>
-          {badge.label}
-        </span>
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
+          {user.isTestAccount && !user.isAdmin && (
+            <span className="rounded-full bg-slate-800 px-2.5 py-1 text-xs font-semibold text-white">Test account</span>
+          )}
+          <span className={`w-fit rounded-full px-2.5 py-1 text-xs font-semibold ${badge.className}`}>
+            {badge.label}
+          </span>
+        </div>
       </div>
 
       <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:grid-cols-4">
@@ -639,12 +705,33 @@ function AccountCard({
       </dl>
 
       {activeSubjects.length > 0 && (
-        <p className="mt-2 text-xs text-slate-600">
-          <span className="text-slate-500">Subjects owned: </span>
-          {activeSubjects
-            .map((access) => `${subjectName(access.subject)} (until ${formatDate(access.expiresAt)})`)
-            .join(", ")}
-        </p>
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
+          <span className="text-slate-500">Subjects owned:</span>
+          {activeSubjects.map((access) => (
+            <span
+              key={access.subject}
+              className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 py-0.5 pl-2.5 pr-1 text-slate-700"
+            >
+              {subjectName(access.subject)} · until {formatDate(access.expiresAt)}
+              {!user.isAdmin && (
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() =>
+                    onAction(
+                      { action: "revoke_subject", subject: access.subject },
+                      `Revoke ${subjectName(access.subject)}`
+                    )
+                  }
+                  className="rounded-full px-1.5 py-0.5 font-semibold text-red-700 hover:bg-red-50 disabled:opacity-50"
+                  aria-label={`Revoke ${subjectName(access.subject)}`}
+                >
+                  Revoke
+                </button>
+              )}
+            </span>
+          ))}
+        </div>
       )}
 
       {!user.isAdmin && (
@@ -712,6 +799,44 @@ function AccountCard({
             }
           >
             Grant subject
+          </button>
+        </div>
+      )}
+
+      {!user.isAdmin && (
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          {user.subscriptionPlan === "trial" && isFuture(user.trialEndsAt) && (
+            <button
+              type="button"
+              disabled={busy}
+              className={dangerClass}
+              onClick={() => onAction({ action: "end_trial" }, "End the trial now")}
+            >
+              End trial
+            </button>
+          )}
+          {user.subscriptionPlan === "ppl" && user.subscriptionStatus === "active" && (
+            <button
+              type="button"
+              disabled={busy}
+              className={dangerClass}
+              onClick={() => onAction({ action: "revoke_ppl" }, "Revoke the PPL Pack")}
+            >
+              Revoke PPL Pack
+            </button>
+          )}
+          <button
+            type="button"
+            disabled={busy}
+            className="ml-auto inline-flex min-h-9 items-center justify-center rounded-lg px-3 text-xs font-semibold text-slate-500 hover:bg-slate-50 hover:text-slate-800 disabled:opacity-50"
+            onClick={() =>
+              onAction(
+                { action: "set_test_account", value: !user.isTestAccount },
+                user.isTestAccount ? "Mark as a real student" : "Mark as a test account"
+              )
+            }
+          >
+            {user.isTestAccount ? "Mark as real student" : "Mark as test account"}
           </button>
         </div>
       )}

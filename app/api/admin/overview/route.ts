@@ -16,6 +16,7 @@ type ProfileRow = {
   payment_status: string | null
   trial_ends_at: string | null
   subscription_expires_at: string | null
+  is_test_account: boolean | null
 }
 
 type AccessRow = {
@@ -74,7 +75,7 @@ export async function GET(request: Request) {
         supabaseAdmin
           .from("Profiles")
           .select(
-            "id, full_name, email, licence_level, subscription_status, subscription_plan, payment_status, trial_ends_at, subscription_expires_at"
+            "id, full_name, email, licence_level, subscription_status, subscription_plan, payment_status, trial_ends_at, subscription_expires_at, is_test_account"
           ),
         supabaseAdmin
           .from("SubjectAccess")
@@ -139,6 +140,7 @@ export async function GET(request: Request) {
           lastSignInAt: authUser.last_sign_in_at ?? null,
           emailConfirmed: Boolean(authUser.email_confirmed_at),
           isAdmin: adminIds.has(authUser.id),
+          isTestAccount: Boolean(profile?.is_test_account),
           licenceLevel: profile?.licence_level ?? null,
           subscriptionStatus: profile?.subscription_status ?? null,
           subscriptionPlan: profile?.subscription_plan ?? null,
@@ -160,12 +162,18 @@ export async function GET(request: Request) {
 
     const now = Date.now()
     const day = 24 * 60 * 60 * 1000
-    const students = users.filter((user) => !user.isAdmin)
+    // Real students only: admin and test accounts never count towards totals.
+    const students = users.filter((user) => !user.isAdmin && !user.isTestAccount)
+    const studentIds = new Set(students.map((user) => user.id))
     const signedUpWithin = (ms: number) =>
       students.filter((user) => now - new Date(user.createdAt).getTime() < ms).length
+    const studentPayments = paymentRows.filter(
+      (row) => row.status === "fulfilled" && studentIds.has(row.user_id)
+    )
 
     const summary = {
       totalAccounts: students.length,
+      testAccounts: users.filter((user) => !user.isAdmin && user.isTestAccount).length,
       signUps24h: signedUpWithin(day),
       signUps7d: signedUpWithin(7 * day),
       signUps30d: signedUpWithin(30 * day),
@@ -182,15 +190,30 @@ export async function GET(request: Request) {
           user.subscriptionExpiresAt !== null &&
           new Date(user.subscriptionExpiresAt).getTime() > now
       ).length,
-      fulfilledRevenueCents: paymentRows
-        .filter((row) => row.status === "fulfilled" && !adminIds.has(row.user_id))
-        .reduce((sum, row) => sum + (row.amount ?? 0), 0),
+      fulfilledRevenueCents: studentPayments.reduce((sum, row) => sum + (row.amount ?? 0), 0),
+    }
+
+    const funnel = {
+      signedUp: students.length,
+      tookMock: students.filter((user) => user.attemptCount > 0).length,
+      paid: students.filter((user) => user.fulfilledPayments > 0).length,
+    }
+
+    // Raw points for the over-time charts; the page buckets them by week or month.
+    const series = {
+      signUps: students.map((user) => user.createdAt),
+      payments: studentPayments.map((row) => ({
+        at: row.paid_at ?? row.created_at,
+        product: row.product_code === "ppl_pack" ? "ppl_pack" : "subject",
+        amountCents: row.amount ?? 0,
+      })),
     }
 
     const emailById = new Map(users.map((user) => [user.id, user.email]))
     const recentPayments = paymentRows.slice(0, 50).map((row) => ({
       reference: row.reference,
       email: emailById.get(row.user_id) ?? null,
+      isTestOrAdmin: !studentIds.has(row.user_id),
       productCode: row.product_code,
       subject: row.subject,
       amountCents: row.amount,
@@ -200,7 +223,7 @@ export async function GET(request: Request) {
       createdAt: row.created_at,
     }))
 
-    return NextResponse.json({ summary, users, recentPayments })
+    return NextResponse.json({ summary, funnel, series, users, recentPayments })
   } catch (error) {
     return NextResponse.json(
       {

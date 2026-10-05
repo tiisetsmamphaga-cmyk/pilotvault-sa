@@ -135,10 +135,12 @@ function buildBuckets(granularity: Granularity, count: number): Bucket[] {
   return buckets
 }
 
+// Rounds the axis top up to a clean, evenly halvable number (2, 4, 10, 20, 50 ...).
 function niceMax(value: number) {
-  if (value <= 4) return Math.max(value, 1)
+  if (value <= 2) return 2
+  if (value <= 4) return 4
   const magnitude = 10 ** Math.floor(Math.log10(value))
-  const steps = [1, 2, 2.5, 5, 10]
+  const steps = [1, 2, 4, 10]
   for (const step of steps) {
     if (step * magnitude >= value) return step * magnitude
   }
@@ -152,11 +154,14 @@ function ColumnChart({
   data,
   formatValue,
   legend,
+  minAxisMax = 0,
 }: {
   title: string
   data: ColumnDatum[]
   formatValue: (value: number) => string
   legend?: { name: string; color: string }[]
+  // Keeps the axis readable when every value is zero or tiny.
+  minAxisMax?: number
 }) {
   const [hover, setHover] = useState<number | null>(null)
   const width = 640
@@ -168,7 +173,7 @@ function ColumnChart({
   const plotW = width - left - right
   const plotH = height - top - bottom
   const totals = data.map((d) => d.parts.reduce((sum, p) => sum + p.value, 0))
-  const yMax = niceMax(Math.max(...totals, 0))
+  const yMax = niceMax(Math.max(...totals, minAxisMax))
   const ticks = [0, yMax / 2, yMax]
   const band = plotW / data.length
   const barW = Math.min(24, band * 0.6)
@@ -251,8 +256,13 @@ function ColumnChart({
         </svg>
         {hover !== null && (
           <div
-            className="pointer-events-none absolute top-0 z-10 -translate-x-1/2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs shadow-md"
-            style={{ left: `${((left + band * hover + band / 2) / width) * 100}%` }}
+            className="pointer-events-none absolute top-0 z-10 whitespace-nowrap rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs shadow-md"
+            style={{
+              left: `${((left + band * hover + band / 2) / width) * 100}%`,
+              // Keep the tooltip inside the chart near either edge.
+              transform:
+                hover >= data.length - 3 ? "translateX(-100%)" : hover <= 1 ? "translateX(0)" : "translateX(-50%)",
+            }}
           >
             <p className="font-semibold text-slate-900">{data[hover].label}</p>
             {data[hover].parts.map((part) => (
@@ -335,6 +345,7 @@ export function OverTimeCharts({ series }: { series: SeriesData }) {
             parts: [{ name: "Sign-ups", value: row.signUps, color: SERIES_BLUE }],
           }))}
           formatValue={(value) => String(Math.round(value))}
+          minAxisMax={4}
         />
         <ColumnChart
           title="Revenue"
@@ -350,6 +361,7 @@ export function OverTimeCharts({ series }: { series: SeriesData }) {
             ],
           }))}
           formatValue={rand}
+          minAxisMax={100000}
         />
       </div>
 
@@ -466,7 +478,8 @@ export function TrialsEndingSoon({
                         </p>
                       </div>
                       <p className="shrink-0 text-xs font-semibold text-slate-700">
-                        Trial ends {formatWhen(user.trialEndsAt)}
+                        {new Date(user.trialEndsAt ?? 0).getTime() > now ? "Trial ends" : "Trial ended"}{" "}
+                        {formatWhen(user.trialEndsAt)}
                       </p>
                     </li>
                   ))}

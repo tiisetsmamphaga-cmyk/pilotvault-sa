@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { LayoutDashboard, LogOut, RefreshCw, Search, ShieldCheck } from "lucide-react"
+import { Eye, LayoutDashboard, LogOut, RefreshCw, Search, ShieldCheck } from "lucide-react"
 import { PageSkeleton } from "@/components/page-skeleton"
 import { clearClientDataCache } from "@/src/lib/client-data-cache"
 import { supabase } from "@/src/lib/supabase"
@@ -63,6 +63,44 @@ type Overview = {
     paidAt: string | null
     createdAt: string
   }[]
+}
+
+type PreviewMode = "admin" | "ppl" | "trial" | "trial_expired" | "subject"
+
+const PREVIEW_MODES: { mode: PreviewMode; label: string; detail: string }[] = [
+  { mode: "admin", label: "Admin", detail: "Everything unlocked, no expiry" },
+  { mode: "ppl", label: "Full PPL Pack", detail: "As a paying PPL Pack customer (3 months)" },
+  { mode: "trial", label: "Trial", detail: "Fresh 3-day trial with trial mock questions" },
+  { mode: "trial_expired", label: "Trial expired", detail: "Trial ended 1 hour ago: locked subjects, discount offer" },
+  { mode: "subject", label: "Per subject", detail: "Only the ticked subjects (1 month each)" },
+]
+
+function currentPreviewMode(user: AdminUser | undefined): { mode: PreviewMode | null; label: string } {
+  if (!user) return { mode: null, label: "Unknown" }
+  if (user.paymentStatus === "admin") return { mode: "admin", label: "Admin" }
+
+  if (user.subscriptionStatus === "active" && user.subscriptionPlan === "ppl") {
+    return { mode: "ppl", label: "Full PPL Pack" }
+  }
+
+  if (user.subscriptionPlan === "trial") {
+    return isFuture(user.trialEndsAt)
+      ? { mode: "trial", label: "Trial" }
+      : { mode: "trial_expired", label: "Trial expired" }
+  }
+
+  const owned = user.subjectAccess.filter(
+    (access) => access.accessStatus === "active" && isFuture(access.expiresAt)
+  )
+
+  if (owned.length) {
+    return {
+      mode: "subject",
+      label: `Per subject: ${owned.map((access) => subjectName(access.subject)).join(", ")}`,
+    }
+  }
+
+  return { mode: null, label: "No access" }
 }
 
 type AccessRequest =
@@ -137,6 +175,10 @@ export default function AdminPage() {
   const [showAdmins, setShowAdmins] = useState(false)
   const [busyUserId, setBusyUserId] = useState<string | null>(null)
   const [notice, setNotice] = useState("")
+  const [myUserId, setMyUserId] = useState<string | null>(null)
+  const [previewSubjects, setPreviewSubjects] = useState<string[]>(["air-law", "meteorology"])
+  const [previewBusy, setPreviewBusy] = useState(false)
+  const [previewNotice, setPreviewNotice] = useState("")
 
   const authorisedFetch = useCallback(
     async (input: string, init?: RequestInit) => {
@@ -147,6 +189,8 @@ export default function AdminPage() {
         router.replace("/?login-required=1")
         return null
       }
+
+      setMyUserId(data.session?.user.id ?? null)
 
       return fetch(input, {
         ...init,
@@ -219,6 +263,36 @@ export default function AdminPage() {
       setNotice(actionError instanceof Error ? actionError.message : "The change could not be saved.")
     } finally {
       setBusyUserId(null)
+    }
+  }
+
+  const switchPreview = async (mode: PreviewMode) => {
+    setPreviewBusy(true)
+    setPreviewNotice("")
+
+    try {
+      const response = await authorisedFetch("/api/admin/preview", {
+        method: "POST",
+        body: JSON.stringify({ mode, subjects: previewSubjects }),
+      })
+
+      if (!response) return
+
+      const body = await response.json()
+
+      if (!response.ok) throw new Error(body.error ?? "Could not switch the preview.")
+
+      // The dashboard and practice pages cache the profile; drop it so they
+      // pick up the new access straight away.
+      clearClientDataCache()
+      setPreviewNotice(
+        `Your account now has ${PREVIEW_MODES.find((item) => item.mode === mode)?.label ?? mode} access. Open the dashboard to try it.`
+      )
+      await loadOverview()
+    } catch (previewError) {
+      setPreviewNotice(previewError instanceof Error ? previewError.message : "Could not switch the preview.")
+    } finally {
+      setPreviewBusy(false)
     }
   }
 
@@ -339,6 +413,85 @@ export default function AdminPage() {
             ))}
           </section>
         )}
+
+        <section
+          id="preview"
+          aria-labelledby="preview-heading"
+          className="mt-8 rounded-xl border border-slate-200 bg-white p-4 sm:p-5"
+        >
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+            <h2 id="preview-heading" className="flex items-center gap-2 text-base font-semibold text-slate-950">
+              <Eye className="h-4 w-4 text-[#1f4e79]" />
+              Preview access
+            </h2>
+            <p className="text-sm text-slate-600">
+              Your account now:{" "}
+              <span className="font-semibold text-slate-950">
+                {currentPreviewMode(overview?.users.find((user) => user.id === myUserId)).label}
+              </span>
+            </p>
+          </div>
+          <p className="mt-1 text-sm text-slate-600">
+            Switch your own account to see the site exactly as each type of student does. Only your
+            account changes. Switch back to Admin when you are done.
+          </p>
+
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+            {PREVIEW_MODES.map((item) => {
+              const active =
+                currentPreviewMode(overview?.users.find((user) => user.id === myUserId)).mode === item.mode
+
+              return (
+                <button
+                  key={item.mode}
+                  type="button"
+                  disabled={previewBusy || (item.mode === "subject" && !previewSubjects.length)}
+                  onClick={() => void switchPreview(item.mode)}
+                  className={`rounded-lg border p-3 text-left transition disabled:opacity-50 ${
+                    active
+                      ? "border-[#f4b400] bg-[#fdf3d9]"
+                      : "border-slate-200 bg-white hover:border-[#1f4e79]/40 hover:bg-slate-50"
+                  }`}
+                >
+                  <span className="block text-sm font-semibold text-slate-950">{item.label}</span>
+                  <span className="mt-0.5 block text-xs leading-5 text-slate-600">{item.detail}</span>
+                </button>
+              )
+            })}
+          </div>
+
+          <fieldset className="mt-3">
+            <legend className="text-xs font-semibold text-slate-500">Subjects for the Per subject view</legend>
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
+              {SUBJECTS.map((option) => (
+                <label key={option.slug} className="flex items-center gap-2 text-sm text-slate-700">
+                  <input
+                    type="checkbox"
+                    checked={previewSubjects.includes(option.slug)}
+                    onChange={(event) =>
+                      setPreviewSubjects((current) =>
+                        event.target.checked
+                          ? [...current, option.slug]
+                          : current.filter((slug) => slug !== option.slug)
+                      )
+                    }
+                    className="h-4 w-4 accent-[#1f4e79]"
+                  />
+                  {option.name}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          {previewNotice && (
+            <p className="mt-3 flex flex-wrap items-center gap-3 text-sm text-slate-700" role="status">
+              {previewNotice}
+              <Link href="/dashboard" className="font-semibold text-[#1f4e79] underline">
+                Open dashboard
+              </Link>
+            </p>
+          )}
+        </section>
 
         <section aria-labelledby="accounts-heading" className="mt-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

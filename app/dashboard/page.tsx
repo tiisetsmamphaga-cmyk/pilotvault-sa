@@ -208,7 +208,10 @@ export default function DashboardPage() {
 
   const firstName = getFirstName(profile?.full_name)
   const licenceLabel = profile?.licence_level?.toUpperCase() ?? "STUDENT"
-  const planLabel = isAdmin
+  // Admins can preview other access types from /admin; "admin" marks the
+  // account's normal, unrestricted state.
+  const isAdminPreview = isAdmin && profile?.payment_status !== "admin"
+  const planLabel = isAdmin && !isAdminPreview
     ? "Admin"
     : isTrialUser
       ? "Free Trial"
@@ -306,6 +309,18 @@ export default function DashboardPage() {
       </header>
 
       <div className="mx-auto max-w-7xl px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pt-9">
+        {isAdminPreview && (
+          <div className="mb-5 flex flex-col gap-2 rounded-xl border border-[#f4b400]/60 bg-[#fdf3d9] px-4 py-3 text-sm text-[#5c4306] sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              <span className="font-semibold">Admin preview:</span> you are seeing PilotVault as a
+              student with this account&apos;s current access.
+            </p>
+            <Link href="/admin#preview" className="shrink-0 font-semibold text-[#1f4e79] underline">
+              Switch view
+            </Link>
+          </div>
+        )}
+
         <section aria-labelledby="dashboard-heading">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">

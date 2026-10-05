@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 
 import { PageSkeleton } from "@/components/page-skeleton"
+import { PasswordInput } from "@/components/password-input"
 import {
   clearClientDataCache,
   getCachedCurrentUser,
@@ -806,11 +807,12 @@ export default function ProfilePage() {
                 <span className="text-sm font-medium text-[#4f5660]">
                   New password
                 </span>
-                <input
-                  type="password"
+                <PasswordInput
+                  autoComplete="new-password"
                   value={newPassword}
                   onChange={(event) => setNewPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:shadow-[0_0_0_3px_rgba(244,180,0,0.12)]"
+                  wrapperClassName="mt-2"
+                  className="w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:shadow-[0_0_0_3px_rgba(244,180,0,0.12)]"
                 />
               </label>
 
@@ -818,11 +820,12 @@ export default function ProfilePage() {
                 <span className="text-sm font-medium text-[#4f5660]">
                   Confirm new password
                 </span>
-                <input
-                  type="password"
+                <PasswordInput
+                  autoComplete="new-password"
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:shadow-[0_0_0_3px_rgba(244,180,0,0.12)]"
+                  wrapperClassName="mt-2"
+                  className="w-full rounded-xl border border-[#d9dee5] bg-[#f5f6f8] px-4 py-3 text-base text-[#071426] outline-none transition focus:border-[#f4b400] focus:bg-white focus:shadow-[0_0_0_3px_rgba(244,180,0,0.12)]"
                 />
               </label>
             </div>

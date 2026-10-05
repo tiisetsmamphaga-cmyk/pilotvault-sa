@@ -6,6 +6,8 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { PasswordInput } from "@/components/password-input"
+import { Turnstile, TURNSTILE_SITE_KEY, type TurnstileHandle } from "@/components/turnstile"
 import { Button } from "@/components/ui/button"
 import { claimDeviceSession } from "@/src/lib/device-session"
 import { supabase } from "@/src/lib/supabase"
@@ -25,6 +27,7 @@ type AuthMode = "login" | "signup" | "reset"
 export function Navbar() {
   const pathname = usePathname()
   const authDialogRef = useRef<HTMLDivElement>(null)
+  const turnstileRef = useRef<TurnstileHandle>(null)
   const [isOpen, setIsOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
   const [authMode, setAuthMode] = useState<AuthMode>("signup")
@@ -37,6 +40,9 @@ export function Navbar() {
   const [authMessage, setAuthMessage] = useState("")
   const [authNotice, setAuthNotice] = useState("")
   const [signedIn, setSignedIn] = useState(false)
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  const captchaRequired = Boolean(TURNSTILE_SITE_KEY) && authMode !== "reset"
+  const captchaMissing = captchaRequired && !captchaToken
 
   const openAuth = (mode: "login" | "signup") => {
     setAuthMode(mode)
@@ -54,14 +60,21 @@ export function Navbar() {
       return
     }
 
+    if (captchaMissing) {
+      setAuthMessage("Please complete the robot check first, then select Forgot password.")
+      return
+    }
+
     setAuthMessage("")
     setResetRequestLoading(true)
 
     const { error } = await supabase.auth.resetPasswordForEmail(normalizedEmail, {
       redirectTo: `${window.location.origin}/`,
+      captchaToken: captchaToken ?? undefined,
     })
 
     setResetRequestLoading(false)
+    turnstileRef.current?.reset()
 
     if (error) {
       setAuthMessage(error.message)
@@ -118,20 +131,30 @@ export function Navbar() {
       }
     }
 
+    if (captchaMissing) {
+      setAuthMessage("Please complete the robot check.")
+      return
+    }
+
     setLoading(true)
 
+    const token = captchaToken ?? undefined
     const { error } =
       authMode === "login"
-        ? await supabase.auth.signInWithPassword({ email, password })
+        ? await supabase.auth.signInWithPassword({ email, password, options: { captchaToken: token } })
         : await supabase.auth.signUp({
             email,
             password,
             options: {
+              captchaToken: token,
               data: {
                 full_name: fullName,
               },
             },
           })
+
+    // A Turnstile token works once, so get a fresh one for the next try.
+    turnstileRef.current?.reset()
 
     if (error) {
       setLoading(false)
@@ -533,8 +556,7 @@ export function Navbar() {
                 />
               )}
 
-              <input
-                type="password"
+              <PasswordInput
                 autoComplete={authMode === "login" ? "current-password" : "new-password"}
                 aria-label={authMode === "reset" ? "New password" : "Password"}
                 placeholder={authMode === "reset" ? "New password" : "Password"}
@@ -559,8 +581,7 @@ export function Navbar() {
               )}
 
               {(authMode === "signup" || authMode === "reset") && (
-                <input
-                  type="password"
+                <PasswordInput
                   autoComplete="new-password"
                   aria-label={
                     authMode === "reset" ? "Confirm new password" : "Confirm password"
@@ -571,6 +592,14 @@ export function Navbar() {
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#d6e6f7]"
+                />
+              )}
+
+              {authMode !== "reset" && (
+                <Turnstile
+                  ref={turnstileRef}
+                  onToken={setCaptchaToken}
+                  onError={setAuthMessage}
                 />
               )}
 
@@ -585,7 +614,7 @@ export function Navbar() {
 
               <Button
                 type="submit"
-                disabled={loading || resetRequestLoading}
+                disabled={loading || resetRequestLoading || captchaMissing}
                 className="w-full bg-[#1f4e79] py-6 font-bold text-white hover:bg-[#183d60] disabled:opacity-60"
               >
                 {loading

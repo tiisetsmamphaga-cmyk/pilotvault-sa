@@ -1,16 +1,16 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Flag, X } from "lucide-react"
+import { X } from "lucide-react"
 
 import { supabase } from "@/src/lib/supabase"
 
 const REASONS = [
-  { value: "wrong_answer", label: "The marked answer is wrong" },
-  { value: "question_error", label: "Mistake in the question or options" },
-  { value: "explanation", label: "Explanation is wrong or unclear" },
-  { value: "diagram", label: "Problem with a diagram or image" },
-  { value: "other", label: "Something else" },
+  { value: "wrong_answer", label: "Wrong answer" },
+  { value: "question_error", label: "Error in question or options" },
+  { value: "explanation", label: "Explanation" },
+  { value: "diagram", label: "Diagram or image" },
+  { value: "other", label: "Other" },
 ] as const
 
 type Reason = (typeof REASONS)[number]["value"]
@@ -59,7 +59,7 @@ export function ReportQuestionButton({
     event.preventDefault()
 
     if (!reason) {
-      setStatus({ kind: "error", text: "Choose what is wrong with this question." })
+      setStatus({ kind: "error", text: "Choose what is wrong." })
       return
     }
 
@@ -87,13 +87,13 @@ export function ReportQuestionButton({
           kind: error.code === "23505" ? "done" : "error",
           text:
             error.code === "23505"
-              ? "You have already reported this question. We are looking into it."
-              : "Your report could not be sent. Please try again.",
+              ? "You already reported this question."
+              : "Could not send. Please try again.",
         })
         return
       }
 
-      setStatus({ kind: "done", text: "Thank you. We will review this question." })
+      setStatus({ kind: "done", text: "Thanks. We'll review it." })
     } finally {
       setSubmitting(false)
     }
@@ -109,13 +109,12 @@ export function ReportQuestionButton({
           "inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
         }
       >
-        <Flag className="h-4 w-4" aria-hidden="true" />
         Report
       </button>
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/50 p-4 sm:items-center"
+          className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/60 backdrop-blur-[2px] sm:items-center sm:p-6"
           role="presentation"
           onClick={close}
         >
@@ -126,45 +125,47 @@ export function ReportQuestionButton({
             aria-labelledby="report-question-title"
             tabIndex={-1}
             onClick={(event) => event.stopPropagation()}
-            className="w-full max-w-md rounded-xl bg-white p-5 text-slate-900 shadow-xl outline-none sm:p-6"
+            className="max-h-[92dvh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 text-slate-900 shadow-2xl outline-none sm:rounded-3xl sm:px-6 sm:pb-6"
           >
-            <div className="flex items-start justify-between gap-3">
-              <h2 id="report-question-title" className="text-lg font-semibold">
-                Report this question
+            <div className="flex items-start justify-between gap-4">
+              <h2 id="report-question-title" className="text-xl font-bold tracking-tight text-slate-950">
+                Report question
               </h2>
               <button
                 type="button"
                 onClick={close}
                 aria-label="Close"
-                className="rounded-md p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+                className="-mr-1 -mt-1 rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
             {status?.kind === "done" ? (
-              <div className="mt-4">
-                <p className="text-sm text-slate-700" role="status">
+              <div className="mt-3">
+                <p className="text-sm text-slate-600" role="status">
                   {status.text}
                 </p>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="mt-5 w-full rounded-md bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#183d60]"
+                  className="mt-5 w-full rounded-2xl bg-[var(--pv-navy)] px-5 py-3.5 text-base font-bold text-white transition hover:bg-[var(--pv-navy-soft)]"
                 >
-                  Back to the question
+                  Done
                 </button>
               </div>
             ) : (
-              <form onSubmit={submit} className="mt-3">
+              <form onSubmit={submit} className="mt-4">
                 <fieldset>
-                  <legend className="text-sm text-slate-600">What is wrong?</legend>
-                  <div className="mt-2 space-y-2">
+                  <legend className="mb-2 text-sm font-bold text-slate-900">What is wrong?</legend>
+                  <div className="space-y-1.5">
                     {REASONS.map((option) => (
                       <label
                         key={option.value}
-                        className={`flex cursor-pointer items-center gap-3 rounded-md border px-3 py-2.5 text-sm ${
-                          reason === option.value ? "border-[#1f4e79] bg-blue-50" : "border-slate-200 hover:bg-slate-50"
+                        className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border px-3.5 text-[15px] font-semibold transition ${
+                          reason === option.value
+                            ? "border-[var(--pv-navy)] bg-slate-50 text-slate-950"
+                            : "border-slate-200 text-slate-700 hover:border-slate-300"
                         }`}
                       >
                         <input
@@ -172,8 +173,11 @@ export function ReportQuestionButton({
                           name="report-reason"
                           value={option.value}
                           checked={reason === option.value}
-                          onChange={() => setReason(option.value)}
-                          className="h-4 w-4 accent-[#1f4e79]"
+                          onChange={() => {
+                            setReason(option.value)
+                            setStatus(null)
+                          }}
+                          className="h-4 w-4 accent-[var(--pv-navy)]"
                         />
                         {option.label}
                       </label>
@@ -181,16 +185,14 @@ export function ReportQuestionButton({
                   </div>
                 </fieldset>
 
-                <label className="mt-4 block text-sm text-slate-600">
-                  Details (optional)
-                  <textarea
-                    value={message}
-                    onChange={(event) => setMessage(event.target.value.slice(0, 1000))}
-                    rows={3}
-                    placeholder="For example: the answer should be C because..."
-                    className="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none focus:border-[#1f4e79]"
-                  />
-                </label>
+                <textarea
+                  aria-label="Details (optional)"
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value.slice(0, 1000))}
+                  rows={3}
+                  placeholder="Details (optional)"
+                  className="mt-4 w-full rounded-xl border border-slate-300 px-3.5 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-[var(--pv-navy)]"
+                />
 
                 {status?.kind === "error" && (
                   <p className="mt-2 text-sm text-red-700" role="alert">
@@ -201,7 +203,7 @@ export function ReportQuestionButton({
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="mt-4 w-full rounded-md bg-[#1f4e79] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#183d60] disabled:opacity-60"
+                  className="mt-4 w-full rounded-2xl bg-[var(--pv-navy)] px-5 py-3.5 text-base font-bold text-white transition hover:bg-[var(--pv-navy-soft)] disabled:opacity-60"
                 >
                   {submitting ? "Sending..." : "Send report"}
                 </button>

@@ -318,42 +318,21 @@ export function ExamSimulator({
       )}
 
       {showFinishPrompt && (
-        <div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/60 backdrop-blur-[2px] sm:items-center sm:p-6"
-          role="presentation"
-          onClick={onCloseFinishPrompt}
-        >
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="finish-exam-title"
-            onClick={(event) => event.stopPropagation()}
-            className="w-full max-w-md rounded-t-3xl bg-white px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 text-slate-900 shadow-2xl sm:rounded-3xl sm:px-6 sm:pb-6"
-          >
-            <h2 id="finish-exam-title" className="text-xl font-bold tracking-tight text-slate-950">
-              Finish exam?
-            </h2>
-            {unansweredCount > 0 ? (
-              <p className="mt-2 text-sm font-semibold text-red-700">
-                {unansweredCount} unanswered. They count as wrong.
-              </p>
-            ) : (
-              <p className="mt-2 text-sm text-slate-500">
-                Answers can&apos;t be changed after submitting.
-              </p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 sm:px-6">
+          <div className="w-full max-w-md rounded-md bg-white p-6 shadow-xl">
+            <h2 className="text-xl font-bold text-slate-900">Finish Examination</h2>
+            <p className="mt-4 text-slate-700">You are about to submit your examination. Once submitted, your answers cannot be changed.</p>
+            {unansweredCount > 0 && (
+              <p className="mt-4 font-semibold text-red-700">You have {unansweredCount} unanswered question{unansweredCount === 1 ? "" : "s"}.</p>
             )}
-            <button
-              onClick={onSubmit}
-              className="mt-5 w-full rounded-2xl bg-[var(--pv-navy)] px-5 py-3.5 text-base font-bold text-white transition hover:bg-[var(--pv-navy-soft)]"
-            >
-              Submit
-            </button>
-            <button
-              onClick={onCloseFinishPrompt}
-              className="mt-2 w-full rounded-2xl px-5 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100"
-            >
-              Back to exam
-            </button>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
+              <button onClick={onCloseFinishPrompt} className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 sm:py-2">
+                Return to Exam
+              </button>
+              <button onClick={onSubmit} className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white hover:bg-[#183d60] sm:py-2">
+                Submit Examination
+              </button>
+            </div>
           </div>
         </div>
       )}

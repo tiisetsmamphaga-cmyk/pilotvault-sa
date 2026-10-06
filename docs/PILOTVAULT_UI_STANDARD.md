@@ -4,6 +4,10 @@ The reference design is the mock exam set-up pop-up
 (`MockSetupDialog` in `app/practice/[subject]/components/training-mode-menu.tsx`).
 New and reworked screens, dialogs and panels should follow it.
 
+**Do not restyle the exam simulator** (`exam-simulator.tsx`: the question
+screen, its Finish prompt and question navigator) or the results screen
+unless explicitly asked. They keep their own exam-style look on purpose.
+
 ## Principles
 
 - **Only what the student needs to decide or act.** Every word and icon must

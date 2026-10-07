@@ -5,7 +5,7 @@ idea; the KEY FACT card on each question carries its own numbers.
 """
 from common import Registry
 from kit import template
-from scene import (BLUE, flow, town_above, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
+from scene import (BLUE, flow, runway_above, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
                    angle_arc, compass_xy, defs, ground_above, head, label, north_line, path, stack, stack_height)
 
 R = Registry("navigation", "/explanation-images/navigation/refined-batch-2")
@@ -78,7 +78,7 @@ def wind_panel(corrected):
         start = (470, 440)
         if corrected:
             end = (470, 95)
-            s += town_above(470, 75, 110, seed=3)
+            s += runway_above(470, 85, 150)
             hdg = -12
         else:
             end = compass_xy(*start, 360, 14)
@@ -122,7 +122,7 @@ def sixty_panel(closing):
     def draw(w, h):
         s = ground_above(w, h, seed=21 if closing else 17)
         a, b = (450, 455), (450, 70)
-        s += town_above(*a, 100, seed=5) + town_above(*b, 100, seed=6)
+        s += runway_above(*a, 120, 70) + runway_above(*b, 120, 70)
         s += path(f"M {a[0]},{a[1]} L {b[0]},{b[1]}", "none", "#ffffff", 14, ' stroke-opacity="0.8"')
         s += path(f"M {a[0]},{a[1]} L {b[0]},{b[1]}", "none", INK, 7, ' stroke-dasharray="20 14"')
         err = 16

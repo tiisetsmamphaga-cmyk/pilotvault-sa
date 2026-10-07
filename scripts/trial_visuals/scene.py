@@ -441,21 +441,28 @@ def ground_above(w, h, seed=1, river=True, road=True):
     return s
 
 
-def town_above(x, y, size=90, seed=2):
-    """Small town seen from above: a cross of streets with roofs around it, centred on (x, y)."""
-    rnd = random.Random(seed)
-    s = f'<circle cx="{x}" cy="{y}" r="{size * 0.6:.0f}" fill="#d9d2c2" fill-opacity="0.9" stroke="#b8ad95" stroke-width="2"/>'
-    s += path(f"M {x - size * 0.5:.0f},{y} L {x + size * 0.5:.0f},{y} M {x},{y - size * 0.5:.0f} L {x},{y + size * 0.5:.0f}",
-              "none", "#ece6d8", size * 0.05)
-    for _ in range(int(size / 2.5)):
-        a, r = rnd.uniform(0, 2 * math.pi), rnd.uniform(size * 0.12, size * 0.55)
-        bx, by = x + r * math.cos(a), y + r * math.sin(a)
-        if abs(bx - x) < size * 0.07 or abs(by - y) < size * 0.07:
-            continue
-        bw = rnd.uniform(size * 0.07, size * 0.13)
-        s += (f'<rect x="{bx - bw / 2:.0f}" y="{by - bw / 2:.0f}" width="{bw:.0f}" height="{bw * 0.8:.0f}" rx="2" '
-              f'fill="{rnd.choice(("#b5543c", "#a14a36", "#8a8f99", "#c46a4a"))}" stroke="#5b4636" stroke-width="1"/>')
-    return s
+def runway_above(x, y, length=200, heading=0):
+    """Airfield seen from above, centred on (x, y), runway pointing along `heading` (0 = up, clockwise).
+    Measured from radio-telephony/refined-batch-1/rt-trial-runway-contaminated.webp: slate surface, length
+    about 6.9 x width, white centreline dashes about 4.8% of the length with 4% gaps. Threshold bars added."""
+    wd = length / 6.9
+    L2, W2 = length / 2, wd / 2
+    s = f'<g transform="translate({x:.1f},{y:.1f}) rotate({heading})">'
+    # taxiway and apron on the right-hand side
+    s += f'<rect x="{W2 - 2:.1f}" y="{-wd * 0.25:.1f}" width="{wd * 0.9:.1f}" height="{wd * 0.5:.1f}" fill="#7b8696"/>'
+    s += f'<rect x="{W2 + wd * 0.75:.1f}" y="{-wd * 0.9:.1f}" width="{wd * 0.8:.1f}" height="{wd * 1.8:.1f}" rx="3" fill="#8a94a3"/>'
+    s += f'<rect x="{-W2:.1f}" y="{-L2:.1f}" width="{wd:.1f}" height="{length:.1f}" rx="2" fill="#465569" stroke="#2f3a49" stroke-width="2"/>'
+    dash, gap = length * 0.048, length * 0.04
+    yy = -L2 + wd * 0.9
+    while yy + dash < L2 - wd * 0.9:
+        s += f'<rect x="{-wd * 0.04:.1f}" y="{yy:.1f}" width="{wd * 0.08:.1f}" height="{dash:.1f}" fill="#ffffff"/>'
+        yy += dash + gap
+    for end in (-1, 1):
+        for k in range(4):
+            bx = -W2 + wd * (0.12 + k * 0.22)
+            by = end * (L2 - wd * 0.15) - (wd * 0.45 if end > 0 else 0)
+            s += f'<rect x="{bx:.1f}" y="{by:.1f}" width="{wd * 0.1:.1f}" height="{wd * 0.45:.1f}" fill="#ffffff"/>'
+    return s + "</g>"
 
 
 def compass_xy(cx, cy, r, deg):

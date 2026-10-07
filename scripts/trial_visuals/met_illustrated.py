@@ -3,6 +3,7 @@ shaded sky and terrain, metallic instruments, plain labels on the picture rather
 """
 import math
 
+from aircraft import aircraft, aircraft_defs
 from common import Registry
 from kit import INK, MUTED, circle, line, path, t, template
 
@@ -189,26 +190,6 @@ def molecules(ox, rnd, n, box, avoid=(), r=4.5, color="#ffffff", stroke="#3b82f6
     return s
 
 
-def plane(x, y, s=1.0, pitch=0, rime=False):
-    """Light low-wing aircraft, side view, nose right, white with a blue stripe."""
-    body = ("M -70,0 C -70,-8 -50,-12 -20,-13 L 40,-13 C 58,-13 70,-8 76,0 C 70,6 58,8 40,8 L -50,6 "
-            "C -62,5 -70,3 -70,0 Z")
-    return (f'<g transform="translate({x:.1f},{y:.1f}) rotate({-pitch}) scale({s})">'
-            f'<path d="M -58,-6 L -76,-36 L -62,-37 L -40,-10 Z" fill="url(#hull)" stroke="#475569" stroke-width="2"/>'
-            f'<path d="{body}" fill="url(#hull)" stroke="#475569" stroke-width="2"/>'
-            f'<path d="M -66,-1 L 70,-1 L 72,3 L -64,3 Z" fill="#1d6fd6"/>'
-            f'<path d="M 8,-12 L 34,-12 L 46,-3 L 8,-3 Z" fill="#9cc9ee" stroke="#475569" stroke-width="1.5"/>'
-            f'<ellipse cx="2" cy="6" rx="42" ry="5" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>'
-            f'<line x1="79" y1="-15" x2="79" y2="15" stroke="#1f2937" stroke-width="3"/>'
-            + (RIME if rime else "") + '</g>')
-
-
-RIME = ("".join(f'<path d="M {74 + 2 * abs(k)},{k * 4 - 2} l 7,2 l -7,2 z" fill="#ffffff" stroke="#60a5fa" stroke-width="0.8"/>'
-                for k in range(-3, 3))
-        + "".join(f'<path d="M {-60 - k * 3.2:.1f},{-8 - k * 5.4:.1f} l -1,-6 l 6,1 z" fill="#ffffff" stroke="#60a5fa" '
-                  f'stroke-width="0.8"/>' for k in range(5)))
-
-
 COMMON = (
     lg("sky_day", [(0, "#5fb4ea"), (1, "#e6f5fd")]),
     lg("sky_hot", [(0, "#f2a85c"), (0.55, "#fbd9a6"), (1, "#fff3dd")]),
@@ -227,6 +208,7 @@ COMMON = (
     arrowhead_marker("head_red", RED), arrowhead_marker("head_blue", BLUE), arrowhead_marker("head_ice", ICE),
     arrowhead_marker("head_gold", "#e08a00"),
     '<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>',
+    aircraft_defs(),
 )
 
 
@@ -351,11 +333,11 @@ def airfield_panel(ox, hot):
     if hot:
         pts = [(ox + 90, 458), (ox + 250, 440), (ox + 420, 395), (ox + 560, 345)]
         s += flow(pts, RED, "head_red", 4, 0.55)
-        s += plane(ox + 360, 405, 1.0, 12)
+        s += aircraft(ox + 350, 400, 190, 9)
     else:
         pts = [(ox + 90, 458), (ox + 200, 410), (ox + 330, 300), (ox + 470, 170)]
         s += flow(pts, BLUE, "head_blue", 4, 0.55)
-        s += plane(ox + 300, 318, 1.0, 30)
+        s += aircraft(ox + 290, 318, 190, 26)
     s += label(ox + 520, 510, "Airfield 5,000 ft", 21, 700, "#1f2937", "end", halo=False)
     if hot:
         s += label(ox + 30, 60, "Hot day 30°C", 26, 700, RED, "start")
@@ -517,9 +499,7 @@ def _():
         s += "".join(f'<path d="M {x},{386 + j * 11} l -10,5 l 10,5 z" fill="#ffffff" stroke="#60a5fa" stroke-width="1"/>'
                      for j in range(6))
     s += line(560, 398, 820, 398, "#5b4a38", 4) + line(560, 430, 820, 430, "#5b4a38", 4)
-    s += plane(1030, 452, 1.5, 0, rime=True)
-    s += line(942, 466, 942, 490, "#1f2937", 3) + line(1060, 466, 1060, 490, "#1f2937", 3)
-    s += circle(942, 494, 7, "#1f2937", "none", 0) + circle(1060, 494, 7, "#1f2937", "none", 0)
+    s += aircraft(1030, 440, 300, 0, rime=True)
     s += f'<rect x="10" y="470" width="{W}" height="90" fill="#ffffff" opacity="0.25" filter="url(#soft)"/>'
     # magnifier showing liquid droplets
     mx, my, mr = 270, 230, 140

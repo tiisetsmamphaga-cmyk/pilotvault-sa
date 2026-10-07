@@ -519,26 +519,8 @@ def _():
 
 # ------------------------------------------------------------------ what changes air density
 
-def air_cube(x, y, a, rnd, n_air, n_vapour=0, d=34):
-    """Translucent 1 m³ cube (front face top-left at x, y + d) filled with air molecules and optional vapour."""
-    s = (f'<path d="M {x},{y + d} L {x + d},{y} L {x + a + d},{y} L {x + a + d},{y + a} L {x + a},{y + a + d} '
-         f'L {x},{y + a + d} Z" fill="url(#cube)" stroke="#1d4ed8" stroke-width="3"/>')
-    s += path(f"M {x},{y + d} L {x + a},{y + d} L {x + a + d},{y} M {x + a},{y + d} L {x + a},{y + a + d}", "none",
-              "#1d4ed8", 3)
-    pts = []
-    while len(pts) < n_air + n_vapour:
-        p = (x + rnd.uniform(12, a - 12), y + d + rnd.uniform(12, a - 12))
-        if all((p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2 > 15 ** 2 for q in pts):
-            pts.append(p)
-    for i, (px, py) in enumerate(pts):
-        if i < n_air:
-            s += circle(px, py, 6, "#ffffff", "#1d4ed8", 2.5)
-        else:
-            s += circle(px, py, 4, "#67e8f9", "#0891b2", 2)
-    return s
-
-
 def density_panel(ox, dense):
+    """Cold high-pressure day packed with air molecules, or a hot humid low-pressure day with fewer of them."""
     import random
     rnd = random.Random(31 if dense else 8)
     s = panel_open(ox, "sky_day" if dense else "sky_hot")
@@ -555,11 +537,28 @@ def density_panel(ox, dense):
         for x, y, rx, ry in ((150, 200, 220, 40), (430, 250, 220, 40)):  # humid haze
             s += f'<ellipse cx="{ox + x}" cy="{y}" rx="{rx}" ry="{ry}" fill="#ffffff" opacity="0.45" filter="url(#soft)"/>'
     s += f'<rect x="{ox}" y="470" width="600" height="90" fill="url(#grass)"/>'
-    s += air_cube(ox + 200, 282, 170, rnd, 52 if dense else 18, 0 if dense else 12)
+    # molecules spread evenly through the sky on a jittered grid, clear of the labels and sun
+    avoid = [(0, 28, 350, 135)] + ([] if dense else [(440, 30, 590, 140)])
+
+    def grid(step, jitter):
+        out = []
+        for row, y in enumerate(range(28, 460, step)):
+            for x in range(24 + (step // 2 if row % 2 else 0), 586, step):
+                xx, yy = x + rnd.uniform(-jitter, jitter), y + rnd.uniform(-jitter, jitter)
+                if not any(a <= xx <= c and b <= yy <= d for a, b, c, d in avoid):
+                    out.append((xx, yy))
+        return out
     if dense:
+        for x, y in grid(40, 9):
+            s += circle(ox + x, y, 6, "#ffffff", "#1d4ed8", 2.5)
         s += label(ox + 30, 60, "High pressure, cold, dry", 26, 700, "#1e40af", "start")
-        s += label(ox + 30, 95, "More air packed into\neach cubic metre", 21, 700, "#1e3a8a", "start")
+        s += label(ox + 30, 95, "More air packed into\nthe same space", 21, 700, "#1e3a8a", "start")
     else:
+        for i, (x, y) in enumerate(grid(64, 14)):
+            if i % 3 == 2:
+                s += circle(ox + x, y, 4, "#67e8f9", "#0891b2", 2)
+            else:
+                s += circle(ox + x, y, 6, "#ffffff", "#1d4ed8", 2.5)
         s += label(ox + 30, 60, "Low pressure, hot, humid", 26, 700, RED, "start")
         s += label(ox + 30, 95, "Fewer molecules, and light\nwater vapour replaces air", 21, 700, "#7c2d12", "start")
         s += circle(ox + 152, 525, 6, "#ffffff", "#1d4ed8", 2.5)
@@ -578,59 +577,12 @@ DENSITY_CARD = template("DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE 
 
 
 def _density():
-    s = defs(*COMMON, lg("cube", [(0, "#dbeafe", 0.75), (1, "#93c5fd", 0.6)], 0, 0, 1, 1))
+    s = defs(*COMMON)
     s += density_panel(10, True) + density_panel(630, False)
     s += caption(310, "DENSE AIR — high pressure, cold, dry", "#1e40af")
     s += caption(930, "THIN AIR — low pressure, hot, humid", RED)
     return s
 
 
-R.add(14, "air-density-factors-v2", "What Changes Air Density", DENSITY_CARD, h=650, w=1240)(_density)
-R.add(15, "air-density-factors-v2", "What Changes Air Density", DENSITY_CARD, h=650, w=1240)(_density)
-
-
-def density_panel_open_sky(ox, dense):
-    """Same scenes as density_panel, with the molecules spread through the whole sky instead of a cube."""
-    import random
-    rnd = random.Random(31 if dense else 8)
-    s = density_panel(ox, dense)
-    s = s[:s.index('<path d="M ' + f"{ox + 200},")]  # keep the scenery, drop the cube and labels
-    avoid = [(0, 28, 350, 135)] + ([] if dense else [(440, 30, 590, 140)])
-
-    def grid(step, jitter):
-        out = []
-        for row, y in enumerate(range(28, 460, step)):
-            for x in range(24 + (step // 2 if row % 2 else 0), 586, step):
-                xx, yy = x + rnd.uniform(-jitter, jitter), y + rnd.uniform(-jitter, jitter)
-                if not any(a <= xx <= c and b <= yy <= d for a, b, c, d in avoid):
-                    out.append((xx, yy))
-        return out
-    if dense:
-        for x, y in grid(40, 9):
-            s += circle(ox + x, y, 6, "#ffffff", "#1d4ed8", 2.5)
-    else:
-        for i, (x, y) in enumerate(grid(64, 14)):
-            if i % 3 == 2:
-                s += circle(ox + x, y, 4, "#67e8f9", "#0891b2", 2)
-            else:
-                s += circle(ox + x, y, 6, "#ffffff", "#1d4ed8", 2.5)
-    if dense:
-        s += label(ox + 30, 60, "High pressure, cold, dry", 26, 700, "#1e40af", "start")
-        s += label(ox + 30, 95, "More air packed into\nthe same space", 21, 700, "#1e3a8a", "start")
-    else:
-        s += label(ox + 30, 60, "Low pressure, hot, humid", 26, 700, RED, "start")
-        s += label(ox + 30, 95, "Fewer molecules, and light\nwater vapour replaces air", 21, 700, "#7c2d12", "start")
-        s += circle(ox + 152, 525, 6, "#ffffff", "#1d4ed8", 2.5)
-        s += label(ox + 166, 532, "air (N₂, O₂)", 19, 700, "#1f2937", "start")
-        s += circle(ox + 302, 525, 4, "#67e8f9", "#0891b2", 2)
-        s += label(ox + 314, 532, "water vapour (lighter)", 19, 700, "#1f2937", "start")
-    return s + panel_close(ox)
-
-
-@R.add(14, "air-density-factors-v3", "What Changes Air Density", DENSITY_CARD, h=650, w=1240)
-def _():
-    s = defs(*COMMON, lg("cube", [(0, "#dbeafe", 0.75), (1, "#93c5fd", 0.6)], 0, 0, 1, 1))
-    s += density_panel_open_sky(10, True) + density_panel_open_sky(630, False)
-    s += caption(310, "DENSE AIR — high pressure, cold, dry", "#1e40af")
-    s += caption(930, "THIN AIR — low pressure, hot, humid", RED)
-    return s
+for _qid in (14, 15):
+    R.add(_qid, "air-density-factors-v3", "What Changes Air Density", DENSITY_CARD, h=650, w=1240)(_density)

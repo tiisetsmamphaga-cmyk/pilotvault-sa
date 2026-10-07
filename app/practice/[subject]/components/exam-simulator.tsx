@@ -224,7 +224,6 @@ export function ExamSimulator({
                 <p className="text-sm font-semibold text-[#1f4e79]">Correct Answer</p>
                 <p className="mt-2 font-semibold text-slate-900">{currentQuestion.correctAnswer}</p>
                 <p className="mt-4 text-sm font-semibold text-[#1f4e79]">Explanation</p>
-                {showsCardOnly && <KeyFactCard template={currentQuestion.explanation_visual_template} />}
                 <FormattedExplanation text={currentQuestion.explanation} />
 
                 {isHumanPerformance && !usesApprovedBankVisual && !currentQuestion.explanation_image_url ? (
@@ -241,6 +240,8 @@ export function ExamSimulator({
                     template={currentQuestion.explanation_visual_template}
                     priority
                   />
+                ) : showsCardOnly ? (
+                  <KeyFactCard template={currentQuestion.explanation_visual_template} />
                 ) : null}
               </div>
             )}

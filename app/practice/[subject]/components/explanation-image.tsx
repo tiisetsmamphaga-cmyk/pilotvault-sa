@@ -279,7 +279,7 @@ export function KeyFactCard({ template }: { template?: string }) {
   const card = parsePofTemplate(template)
   if (!card) return null
   return (
-    <div className="mt-3 flex flex-col gap-3">
+    <div className="mt-5 flex flex-col gap-3">
       <KeyFactBody template={card} />
       {card.formula && (
         <div className="rounded-xl bg-[#0b1f33] px-4 py-3 text-center text-base font-extrabold text-white">{card.formula}</div>

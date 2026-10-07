@@ -111,9 +111,6 @@ export function ExamResults({
                     <p className="mt-2 text-green-700">
                       Correct answer: <span className="font-semibold">{question.correctAnswer}</span>
                     </p>
-                    {isMeteorology && !question.explanation_image_url && (
-                      <KeyFactCard template={question.explanation_visual_template} />
-                    )}
                     <FormattedExplanation text={question.explanation} />
 
                     {isHumanPerformance && !usesApprovedBankVisual && !question.explanation_image_url ? (
@@ -128,6 +125,8 @@ export function ExamResults({
                         caption={question.explanation_image_caption}
                         template={question.explanation_visual_template}
                       />
+                    ) : isMeteorology ? (
+                      <KeyFactCard template={question.explanation_visual_template} />
                     ) : null}
                   </div>
                 )

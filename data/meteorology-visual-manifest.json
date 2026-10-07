@@ -747,8 +747,8 @@
         "master_asset": "public/explanation-images/meteorology/refined-batch-2/aneroid-barometer-v1.png",
         "web_asset": "public/explanation-images/meteorology/refined-batch-2/aneroid-barometer-v1.webp"
       },
-      "mapping_reason": "Question 1536 asks which instrument measures atmospheric pressure; the figure is a clearly labelled barometer dial, the book's own illustration of the instrument. No genuine figure exists in this textbook for the other instrument questions in this topic (hygrometer 1504, anemometer 1532, radiosonde 1542), which were left unmapped. Retired 2026-10-07: the figure is a decorative household barometer with a maker's name; question 1536 now uses met-aneroid-barometer-002.",
-      "status": "LIVE_VERIFIED"
+      "mapping_reason": "Question 1536 asks which instrument measures atmospheric pressure; the figure is a clearly labelled barometer dial, the book's own illustration of the instrument. No genuine figure exists in this textbook for the other instrument questions in this topic (hygrometer 1504, anemometer 1532, radiosonde 1542), which were left unmapped. Retired 2026-10-07: the figure is a decorative household barometer with a maker's name; question 1536 now uses met-aneroid-barometer-002. Files removed 2026-10-07 (unused).",
+      "status": "RETIRED"
     },
     {
       "visual_id": "met-relative-humidity-temperature-001",

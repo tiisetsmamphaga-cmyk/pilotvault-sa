@@ -506,6 +506,38 @@ def ndb_symbol(x, y, r=40):
     return s
 
 
+def heading_dial(cx, cy, r, heading, aircraft_mark=True):
+    """Compass card in a square bezel, reading `heading` at the top index. Measured from the heading indicator in
+    human-performance/refined-batch-8/hp-analogue-heading-v1.webp: ticks to 0.94R, long every 10 deg (0.11R),
+    short every 5 deg (0.06R), numbers every 30 deg at 0.71R turning with the card, orange index marks every 45
+    deg and an orange aircraft outline."""
+    s = f'<rect x="{cx - r * 1.12:.0f}" y="{cy - r * 1.12:.0f}" width="{r * 2.24:.0f}" height="{r * 2.24:.0f}" rx="{r * 0.28:.0f}" fill="#2f3337" stroke="#1b1e21" stroke-width="3"/>'
+    s += f'<circle cx="{cx}" cy="{cy}" r="{r:.0f}" fill="#202326" stroke="#4b5056" stroke-width="5"/>'
+    s += f'<g transform="rotate({-heading} {cx} {cy})">'
+    for k in range(72):
+        long = k % 2 == 0
+        x0, y0 = compass_xy(cx, cy, r * 0.94, k * 5)
+        x1, y1 = compass_xy(cx, cy, r * (0.83 if long else 0.88), k * 5)
+        s += f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" stroke="#f4f4f4" stroke-width="{4 if long else 3}"/>'
+    names = {0: "N", 90: "E", 180: "S", 270: "W"}
+    for k in range(12):
+        deg = k * 30
+        tx, ty = compass_xy(cx, cy, r * 0.66, deg)
+        txt = names.get(deg, str(deg // 10))
+        s += (f'<g transform="rotate({deg} {tx:.1f} {ty:.1f})">'
+              + label(tx, ty + MIN_TXT * 0.36, txt, MIN_TXT, "#f4f4f4", "middle", halo=None) + '</g>')
+    s += "</g>"
+    for k in range(8):
+        x0, y0 = compass_xy(cx, cy, r * 1.0, k * 45)
+        s += f'<g transform="rotate({k * 45} {x0:.1f} {y0:.1f})"><path d="M {x0:.1f},{y0 + 2:.1f} l -9,-16 l 18,0 z" fill="#f28a1e"/></g>'
+    if aircraft_mark:
+        k = r / 470
+        s += (f'<path transform="translate({cx},{cy}) scale({k:.3f})" d="M 0,-260 C 12,-260 14,-240 14,-200 L 14,-60 '
+              f'L 140,10 L 140,40 L 14,10 L 14,150 L 50,190 L 50,210 L 0,195 L -50,210 L -50,190 L -14,150 L -14,10 '
+              f'L -140,40 L -140,10 L -14,-60 L -14,-200 C -14,-240 -12,-260 0,-260 Z" fill="none" stroke="#f28a1e" stroke-width="{3 / k:.1f}"/>')
+    return s
+
+
 def compass_xy(cx, cy, r, deg):
     """Point at compass bearing `deg` (0 = up, clockwise) and distance r from (cx, cy)."""
     a = math.radians(deg)

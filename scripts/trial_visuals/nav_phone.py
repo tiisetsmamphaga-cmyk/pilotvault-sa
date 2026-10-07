@@ -7,7 +7,7 @@ from common import Registry
 from kit import template
 import math
 
-from scene import (BLUE, flow, runway_above, aircraft, beacon_side, ndb_symbol, terrain, vor_rose, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
+from scene import (BLUE, dial, flow, heading_dial, runway_above, sun, aircraft, beacon_side, ndb_symbol, terrain, vor_rose, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
                    angle_arc, compass_xy, defs, ground_above, head, label, north_line, path, stack, stack_height)
 
 R = Registry("navigation", "/explanation-images/navigation/refined-batch-2")
@@ -394,3 +394,205 @@ def ndb_panel(night):
        h=stack_height([NDB_H, NDB_H]), w=W)
 def _():
     return picture([ndb_panel(False), ndb_panel(True)])
+
+
+# ------------------------------------------------------------------ compass acceleration errors (Southern Hemisphere)
+
+ACC_H = 480
+
+
+def acc_panel(faster):
+    def draw(w, h):
+        s = ground_above(w, h, seed=61 if faster else 63, road=False)
+        ac = (620, 250)
+        # speed streaks behind the aircraft: long when accelerating, short when slowing
+        for dy in (-60, -20, 20, 60):
+            ln = 230 if faster else 90
+            s += path(f"M {ac[0] - 90},{ac[1] + dy} L {ac[0] - 90 - ln},{ac[1] + dy}", "none", "#ffffff", 5,
+                      ' stroke-opacity="0.75"')
+        s += aircraft_top(*ac, 170, heading=90)
+        s += heading_dial(225, 245, 190, 105 if faster else 75)
+        s += label(860, 420, "Flying 090°", TXT_L, INK, "end")
+        s += label(860, 70, "Compass " + ("105°" if faster else "075°"), TXT_L, RED if faster else NAVY_BLUE, "end")
+        return s
+    return dict(h=ACC_H, sky="aerial", draw=draw,
+                caption="ACCELERATE: APPARENT TURN SOUTH" if faster else "SLOW DOWN: APPARENT TURN NORTH",
+                color=RED if faster else NAVY_BLUE)
+
+
+@R.add(1604, "compass-acceleration-v1", "Compass Errors (Southern Hemisphere)",
+       template("IN THE SOUTHERN HEMISPHERE, ACCELERATING ON EAST OR WEST SHOWS A TURN SOUTH",
+                "SLOWING DOWN SHOWS A TURN NORTH; ON NORTH OR SOUTH THERE IS NO ERROR",
+                [("Acceleration error", "Largest on east and west headings; none on north or south"),
+                 ("Turning error", "Largest turning through north or south; none on east or west"),
+                 ("Southern Hemisphere roll-out", "Overshoot north, undershoot south (the reverse of UNOS)")]),
+       h=stack_height([ACC_H, ACC_H]), w=W)
+def _():
+    return picture([acc_panel(True), acc_panel(False)])
+
+
+# ------------------------------------------------------------------ runway wind components
+
+XW_H = 500
+
+
+def xw_panel(behind):
+    def draw(w, h):
+        s = ground_above(w, h, seed=71 if behind else 73, river=False, road=False)
+        c = (450, 260)
+        s += runway_above(*c, 420, 0)
+        s += aircraft_top(450, 420, 110, heading=0)
+        wind_from = 150 if behind else 330
+        blow = (wind_from + 180) % 360
+        a = compass_xy(*c, 230, wind_from)                     # upwind start of the wind arrow
+        s += flow([a, compass_xy(*c, 30, wind_from)], BLUE, "nh_blue", LINE_W + 2)
+        # components: along the runway and across it, drawn from the upwind point
+        along = (a[0], c[1] - 30 * (1 if behind else -1))
+        s += line(a, along, RED if behind else NAVY_BLUE, "nh_red" if behind else "nh_navy", LINE_W, "12 8")
+        s += line(along, compass_xy(*c, 30, wind_from) if False else (c[0] - 30 if a[0] < c[0] else c[0] + 30, along[1]),
+                  GOLD, "head_comp", LINE_W, "12 8")
+        if behind:
+            s += label(a[0] + 20, 150, "Tailwind", TXT_L, RED)
+            s += label(560, 330, "Crosswind", TXT_L, "#9a5b00")
+        else:
+            s += label(a[0] - 20, 150, "Headwind", TXT_L, NAVY_BLUE, "end")
+            s += label(40, 330, "Crosswind", TXT_L, "#9a5b00")
+        return s
+    return dict(h=XW_H, sky="aerial", draw=draw,
+                caption="WIND BEHIND: TAILWIND + CROSSWIND" if behind else "WIND AHEAD: HEADWIND + CROSSWIND",
+                color=RED if behind else NAVY_BLUE)
+
+
+@R.add(1671, "runway-wind-components-v1", "Runway Wind Components",
+       template("SPLIT THE WIND INTO A PART ALONG THE RUNWAY AND A PART ACROSS IT",
+                "ALONG = WIND × COS(ANGLE); ACROSS = WIND × SIN(ANGLE)",
+                [("Angle", "Between the wind direction and the runway direction"),
+                 ("30°", "Crosswind half the wind; headwind about 0.9 of it"),
+                 ("Wind from behind", "More than 90° off the runway: a tailwind component")]),
+       h=stack_height([XW_H, XW_H]), w=W)
+def _():
+    return picture([xw_panel(False), xw_panel(True)])
+
+
+# ------------------------------------------------------------------ groundspeed and fuel
+
+GS_H = 480
+
+
+def gs_panel():
+    def draw(w, h):
+        s = ground_above(w, h, seed=81, river=False, road=False)
+        # two line features crossing the track at right angles: a river and a road
+        s += path("M -10,400 C 300,385 600,415 910,398", "none", "#5f86a8", 22, ' stroke-opacity="0.55"')
+        s += path("M -10,400 C 300,385 600,415 910,398", "none", "#8fb6d6", 12)
+        s += path("M -10,105 L 910,112", "none", "#d6d0bf", 12) + path("M -10,105 L 910,112", "none", "#9a937f", 2, ' stroke-dasharray="14 12"')
+        s += line((450, 470), (450, 40), RED, "nh_red")
+        s += aircraft_top(450, 110, 150, heading=0)
+        s += path("M 560,108 L 560,398 M 545,108 L 575,108 M 545,398 L 575,398", "none", "#ffffff", 9, ' stroke-opacity="0.85"')
+        s += path("M 560,108 L 560,398 M 545,108 L 575,108 M 545,398 L 575,398", "none", INK, 4)
+        s += label(590, 270, "Distance\nflown", TXT_L, INK)
+        return s
+    return dict(h=GS_H, sky="aerial", draw=draw, caption="GROUNDSPEED = DISTANCE ÷ TIME", color=RED)
+
+
+def fuel_panel():
+    def draw(w, h):
+        s = dial(260, 250, 170, 12, lo=0, hi=40, numbers=(0, 20, 40), unit="USG")
+        s += label(500, 200, "Fuel used =", TXT_L, INK)
+        s += label(500, 290, "flow × time", TXT_L, NAVY_BLUE)
+        return s
+    return dict(h=GS_H, sky="sky_day", draw=draw, caption="FUEL USED = FLOW × TIME", color=NAVY_BLUE)
+
+
+@R.add(1775, "groundspeed-fuel-v1", "Groundspeed, Time and Fuel",
+       template("GROUNDSPEED = DISTANCE ÷ TIME; FUEL = FUEL FLOW × TIME",
+                "TIME IN HOURS: MINUTES ÷ 60",
+                [("Groundspeed", "Distance between two fixes ÷ time between them"),
+                 ("Wind", "TAS = GS + headwind, or GS − tailwind"),
+                 ("Fuel", "Trip fuel = time × flow; add taxi, climb and reserve fuel")]),
+       h=stack_height([GS_H, GS_H]), w=W)
+def _():
+    return picture([gs_panel(), fuel_panel()])
+
+
+# ------------------------------------------------------------------ climb and descent
+
+CD_H = 460
+
+
+def cd_panel(descent):
+    def draw(w, h):
+        ground = lambda x: 400
+        s = terrain(ground, w, h, "url(#ground_day)")
+        if descent:
+            tod, fld = (300, 110), (820, 392)
+            s += path(f"M 0,110 L {tod[0]},{tod[1]}", "none", INK, 4, ' stroke-dasharray="12 9"')
+            s += line(tod, toward(tod, fld, 40), RED, "nh_red")
+            s += f'<rect x="760" y="396" width="140" height="8" fill="#465569"/>'
+            s += aircraft(150, 105, 140, 0, nose_right=True)
+            s += path("M 860,110 L 860,388", "none", "#ffffff", 9, ' stroke-opacity="0.8"')
+            s += path("M 860,110 L 860,388 M 845,110 L 875,110 M 845,388 L 875,388", "none", INK, 4)
+            s += label(300, 70, "Top of descent", TXT_L, RED)
+            s += label(840, 260, "Height\nto lose", TXT_M, INK, "end")
+        else:
+            toc = (620, 110)
+            s += f'<rect x="0" y="396" width="160" height="8" fill="#465569"/>'
+            s += line((120, 392), toc, NAVY_BLUE, "nh_navy")
+            s += path(f"M {toc[0]},110 L 900,110", "none", INK, 4, ' stroke-dasharray="12 9"')
+            s += aircraft(760, 105, 140, 0, nose_right=True)
+            s += path("M 120,412 L 620,412 M 120,402 L 120,422 M 620,402 L 620,422", "none", INK, 4)
+            s += label(370, 225, "Climb", TXT_L, NAVY_BLUE, "end")
+            s += label(370, 440, "Distance = GS × time", TXT_M, INK, "middle", halo="#cfe0b8")
+        return s
+    return dict(h=CD_H, sky="sky_day", draw=draw,
+                caption="DESCENT TIME = HEIGHT ÷ RATE" if descent else "CLIMB TIME = HEIGHT ÷ RATE",
+                color=RED if descent else NAVY_BLUE)
+
+
+@R.add(1824, "climb-descent-v1", "Climb and Descent Planning",
+       template("TIME = HEIGHT TO CHANGE ÷ RATE; DISTANCE = GROUNDSPEED × TIME",
+                "WORK OUT THE TIME FIRST, THEN THE DISTANCE",
+                [("Rate needed", "Height to change ÷ time available"),
+                 ("Time available", "Distance ÷ groundspeed × 60 (minutes)"),
+                 ("Top of descent", "Descent distance back from the destination")]),
+       h=stack_height([CD_H, CD_H]), w=W)
+def _():
+    return picture([cd_panel(True), cd_panel(False)])
+
+
+# ------------------------------------------------------------------ pressure altitude
+
+PA_H = 480
+
+
+def land(x):
+    return 330 if x < 300 else (200 if x > 520 else 330 - 130 * (1 - math.cos(math.pi * (x - 300) / 220)) / 2)
+
+
+def pa_panel(low_qnh):
+    def draw(w, h):
+        s = terrain(land, w, h, "url(#ground_day)")
+        s += f'<rect x="0" y="330" width="300" height="{h - 330}" fill="url(#sea)"/>'
+        s += beacon_side(720, 200, 60)
+        datum = 400 if low_qnh else 270
+        s += path(f"M 0,{datum} L {w},{datum}", "none", RED, 4, ' stroke-dasharray="14 10"')
+        s += path(f"M 820,200 L 820,{datum}", "none", "#ffffff", 10, ' stroke-opacity="0.85"')
+        s += path(f"M 820,200 L 820,{datum} M 805,200 L 835,200 M 805,{datum} L 835,{datum}", "none", RED, 5)
+        s += label(24, datum - 14, "1013 hPa level", TXT_M, RED)
+        s += label(36, 300, "Sea level (QNH)", TXT_M, "#ffffff", halo="#0d4f8b") if low_qnh else \
+            label(36, 380, "Sea level (QNH)", TXT_M, "#ffffff", halo="#0d4f8b")
+        return s
+    return dict(h=PA_H, sky="sky_day", draw=draw,
+                caption="QNH BELOW 1013: PA IS HIGHER" if low_qnh else "QNH ABOVE 1013: PA IS LOWER",
+                color=RED if low_qnh else NAVY_BLUE)
+
+
+@R.add(1651, "pressure-altitude-v1", "Pressure Altitude",
+       template("PRESSURE ALTITUDE = ELEVATION + (1013 − QNH) × 30 FT",
+                "IT IS THE HEIGHT ABOVE THE 1013 hPa LEVEL",
+                [("QNH below 1013", "Pressure altitude is higher than the elevation"),
+                 ("QNH above 1013", "Pressure altitude is lower than the elevation"),
+                 ("Density altitude", "Pressure altitude + 120 ft per °C above ISA")]),
+       h=stack_height([PA_H, PA_H]), w=W)
+def _():
+    return picture([pa_panel(True), pa_panel(False)])

@@ -235,28 +235,7 @@ function PofExplanationImage({
           </div>
         </div>
 
-        <div className="flex flex-col rounded-xl border border-[#e2e7ed] bg-white p-5">
-          <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#c9942f]">
-            {template.kicker ?? "KEY RELATIONSHIP"}
-          </div>
-          <div className="mt-2 text-2xl font-extrabold text-[#0b1f33]">{template.headline}</div>
-          {template.subline && (
-            <div className="mt-1 text-base font-bold leading-snug text-[#c9942f]">{template.subline}</div>
-          )}
-
-          {template.blocks && template.blocks.length > 0 && (
-            <div className="mt-4 border-t border-[#e2e7ed] pt-4">
-              <dl className="flex flex-col gap-3">
-                {template.blocks.map((block) => (
-                  <div key={block.label}>
-                    <dt className="text-xs font-bold uppercase tracking-[0.08em] text-[#5b6b7a]">{block.label}</dt>
-                    <dd className="mt-0.5 text-base font-bold text-[#0b1f33]">{block.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          )}
-        </div>
+        <KeyFactBody template={template} />
       </div>
 
       {template.formula && (
@@ -265,6 +244,47 @@ function PofExplanationImage({
         </div>
       )}
     </figure>
+  )
+}
+
+function KeyFactBody({ template }: { template: PofVisualTemplate }) {
+  return (
+    <div className="flex flex-col rounded-xl border border-[#e2e7ed] bg-white p-5">
+      <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#c9942f]">
+        {template.kicker ?? "KEY RELATIONSHIP"}
+      </div>
+      <div className="mt-2 text-2xl font-extrabold text-[#0b1f33]">{template.headline}</div>
+      {template.subline && (
+        <div className="mt-1 text-base font-bold leading-snug text-[#c9942f]">{template.subline}</div>
+      )}
+
+      {template.blocks && template.blocks.length > 0 && (
+        <div className="mt-4 border-t border-[#e2e7ed] pt-4">
+          <dl className="flex flex-col gap-3">
+            {template.blocks.map((block) => (
+              <div key={block.label}>
+                <dt className="text-xs font-bold uppercase tracking-[0.08em] text-[#5b6b7a]">{block.label}</dt>
+                <dd className="mt-0.5 text-base font-bold text-[#0b1f33]">{block.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// KEY FACT card on its own, for questions that have a card but no picture.
+export function KeyFactCard({ template }: { template?: string }) {
+  const card = parsePofTemplate(template)
+  if (!card) return null
+  return (
+    <div className="mt-3 flex flex-col gap-3">
+      <KeyFactBody template={card} />
+      {card.formula && (
+        <div className="rounded-xl bg-[#0b1f33] px-4 py-3 text-center text-base font-extrabold text-white">{card.formula}</div>
+      )}
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@
 import { formatSubjectName } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage } from "./explanation-image"
+import { ExplanationImage, KeyFactCard } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
@@ -42,6 +42,7 @@ export function ExamResults({
 }: ExamResultsProps) {
   const isHumanPerformance = subject === "human-performance"
   const isPrinciplesOfFlight = subject === "principles-of-flight"
+  const isMeteorology = subject === "meteorology"
 
   return (
     <main className="pv-exam-results min-h-screen bg-white text-slate-900">
@@ -110,6 +111,9 @@ export function ExamResults({
                     <p className="mt-2 text-green-700">
                       Correct answer: <span className="font-semibold">{question.correctAnswer}</span>
                     </p>
+                    {isMeteorology && !question.explanation_image_url && (
+                      <KeyFactCard template={question.explanation_visual_template} />
+                    )}
                     <FormattedExplanation text={question.explanation} />
 
                     {isHumanPerformance && !usesApprovedBankVisual && !question.explanation_image_url ? (

@@ -3,7 +3,7 @@
 import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage } from "./explanation-image"
+import { ExplanationImage, KeyFactCard } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
@@ -93,6 +93,8 @@ export function ExamSimulator({
   const questionIsPinned = pinnedQuestions.includes(currentQuestionIndex)
   const isHumanPerformance = subject === "human-performance"
   const isPrinciplesOfFlight = subject === "principles-of-flight"
+  // Meteorology questions without a picture show their KEY FACT card on its own.
+  const showsCardOnly = subject === "meteorology" && !currentQuestion.explanation_image_url
   const usesApprovedBankVisual = isHumanPerformance && currentQuestion.id === 2207
 
   return (
@@ -222,6 +224,7 @@ export function ExamSimulator({
                 <p className="text-sm font-semibold text-[#1f4e79]">Correct Answer</p>
                 <p className="mt-2 font-semibold text-slate-900">{currentQuestion.correctAnswer}</p>
                 <p className="mt-4 text-sm font-semibold text-[#1f4e79]">Explanation</p>
+                {showsCardOnly && <KeyFactCard template={currentQuestion.explanation_visual_template} />}
                 <FormattedExplanation text={currentQuestion.explanation} />
 
                 {isHumanPerformance && !usesApprovedBankVisual && !currentQuestion.explanation_image_url ? (

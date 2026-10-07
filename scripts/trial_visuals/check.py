@@ -37,14 +37,15 @@ const fs = require("fs"), path = require("path")
   const results = {}
   for (const name of names) {
     const svgText = fs.readFileSync(path.join(dir, name + ".svg"), "utf8")
-    const page = await browser.newPage({ viewport: { width: 1400, height: 1000 } })
+    const page = await browser.newPage({ viewport: { width: 1400, height: 1000 }, deviceScaleFactor: 2 })
     await page.setContent(`<html><body style="margin:0">${svgText}</body></html>`)
     results[name] = await page.evaluate(() => {
       const svg = document.querySelector("svg")
       const vb = svg.viewBox.baseVal
       const groups = {}
       for (const t of svg.querySelectorAll("text:not([data-halo])")) {
-        const key = t.getAttribute("data-label") ? "L" + t.getAttribute("data-label") :
+        const panelId = t.closest("[data-panel]") ? t.closest("[data-panel]").getAttribute("data-panel") + ":" : "x:"
+        const key = t.getAttribute("data-label") ? "L" + panelId + t.getAttribute("data-label") :
           t.getAttribute("data-caption") ? "C" + t.getAttribute("data-caption") : "T" + Math.random()
         const r = t.getBoundingClientRect(), s = svg.getBoundingClientRect()
         const k = vb.width / s.width

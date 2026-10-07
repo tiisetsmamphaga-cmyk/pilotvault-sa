@@ -89,6 +89,8 @@ COMMON_DEFS = (
     lg("bezel", [(0, "#f3f4f6"), (0.5, "#9ca3af"), (1, "#4b5563")], 0, 0, 1, 1),
     rg("face", [(0, "#ffffff"), (0.85, "#f7f4ea"), (1, "#e7e1cf")]),
     rg("hub", [(0, "#9ca3af"), (1, "#111827")], 0.35, 0.35, 0.7),
+    rg("drop", [(0, "#ffffff"), (0.35, "#bfe0ff"), (1, "#2f8be6")], 0.35, 0.3, 0.75),
+    rg("lens", [(0, "#f8fbff"), (1, "#dbe8f5")]),
     rg("lobe_shade", [(0, "#ffffff", 0), (0.62, "#ffffff", 0), (1, "#5b6b80", 0.42)], 0.38, 0.32, 0.62),
     head("head_red", RED), head("head_blue", BLUE), head("head_ice", ICE), head("head_gold", GOLD),
     head("head_white", "#ffffff"), head("head_ink", INK),
@@ -109,7 +111,7 @@ def label(x, y, s, size=TXT_L, fill=INK, anchor="start", halo="#ffffff", weight=
         if halo:
             out += (f'<text {common} fill="none" stroke="{halo}" stroke-width="{size * 0.22:.1f}" '
                     f'stroke-linejoin="round" stroke-opacity="0.9" data-halo="1">{ln}</text>')
-        out += f'<text {common} fill="{fill}" data-{role}="{abs(hash(s)) % 100000}">{ln}</text>\n'
+        out += f'<text {common} fill="{fill}" data-{role}="{abs(hash((s, round(x), round(y)))) % 1000000}">{ln}</text>\n'
     return out
 
 
@@ -320,6 +322,92 @@ def lightning(pts):
 
 def fog_bank(x, y, rx, ry, opacity=0.6):
     return f'<ellipse cx="{x:.1f}" cy="{y:.1f}" rx="{rx:.1f}" ry="{ry:.1f}" fill="#ffffff" opacity="{opacity}" filter="url(#soft)"/>'
+
+
+# ------------------------------------------------------------------ instruments and objects
+
+def capsule(cx, cy, w, h, folds=5):
+    """Corrugated aneroid capsule seen side-on (as in the barometer and altimeter)."""
+    step = w / folds
+    d = f"M {cx - w / 2:.1f},{cy - h / 2:.1f} "
+    for i in range(folds):
+        x0 = cx - w / 2 + i * step
+        d += f"Q {x0 + step / 2:.1f},{cy - h / 2 - h * 0.28:.1f} {x0 + step:.1f},{cy - h / 2:.1f} "
+    d += f"L {cx + w / 2:.1f},{cy + h / 2:.1f} "
+    for i in range(folds):
+        x0 = cx + w / 2 - i * step
+        d += f"Q {x0 - step / 2:.1f},{cy + h / 2 + h * 0.28:.1f} {x0 - step:.1f},{cy + h / 2:.1f} "
+    s = path(d + "Z", "url(#metal)", "#4b5563", 3)
+    for i in range(1, folds):
+        x = cx - w / 2 + i * step
+        s += f'<line x1="{x:.1f}" y1="{cy - h / 2 + 5:.1f}" x2="{x:.1f}" y2="{cy + h / 2 - 5:.1f}" stroke="#6b7280" stroke-width="2"/>'
+    return s
+
+
+def dial(cx, cy, r, value, lo=960, hi=1040, numbers=(960, 1000, 1040), unit="hPa", sweep=240):
+    """Round instrument dial with a needle at `value`; only the given numbers are printed (phone-size text)."""
+    ang = lambda v: math.radians(-sweep / 2 + (v - lo) * sweep / (hi - lo))  # noqa: E731
+    s = circle(cx, cy, r, "url(#bezel)", "#374151", 3) + circle(cx, cy, r - 16, "url(#face)", "#6b7280", 2)
+    step = (hi - lo) / 40
+    for k in range(41):
+        v = lo + k * step
+        a, major = ang(v), k % 5 == 0
+        r1, r2 = r - 24, r - (46 if major else 36)
+        s += (f'<line x1="{cx + r1 * math.sin(a):.1f}" y1="{cy - r1 * math.cos(a):.1f}" x2="{cx + r2 * math.sin(a):.1f}" '
+              f'y2="{cy - r2 * math.cos(a):.1f}" stroke="#111827" stroke-width="{4 if major else 2}"/>')
+    for v in numbers:
+        a = ang(v)
+        s += (f'<text x="{cx + (r - 78) * math.sin(a):.1f}" y="{cy - (r - 78) * math.cos(a) + 11:.1f}" text-anchor="middle" '
+              f'font-family="{FONT}" font-size="{MIN_TXT}" font-weight="700" fill="#111827">{v}</text>')
+    if unit:
+        s += (f'<text x="{cx}" y="{cy + r * 0.8:.1f}" text-anchor="middle" font-family="{FONT}" font-size="{MIN_TXT}" '
+              f'font-weight="700" fill="#64748b">{unit}</text>')
+    a = ang(value)
+    dx, dy = math.sin(a), -math.cos(a)
+    L = r - 34
+    s += (f'<path d="M {cx - dx * 26 + dy * 8:.1f},{cy - dy * 26 - dx * 8:.1f} L {cx + dx * L:.1f},{cy + dy * L:.1f} '
+          f'L {cx - dx * 26 - dy * 8:.1f},{cy - dy * 26 + dx * 8:.1f} Z" fill="#0f172a"/>')
+    s += (f'<path d="M {cx + dx * (L - 34) + dy * 4:.1f},{cy + dy * (L - 34) - dx * 4:.1f} L {cx + dx * L:.1f},{cy + dy * L:.1f} '
+          f'L {cx + dx * (L - 34) - dy * 4:.1f},{cy + dy * (L - 34) + dx * 4:.1f} Z" fill="{RED}"/>')
+    return s + circle(cx, cy, 14, "url(#hub)", "#111827", 2)
+
+
+def droplet(x, y, r):
+    """Liquid water droplet: blue with a highlight."""
+    return circle(x, y, r, "url(#drop)", "#1d6fd6", 2)
+
+
+def magnifier(cx, cy, r, inner):
+    """Magnifying glass; `inner` is drawn clipped to the lens."""
+    _cloud_n[0] += 1
+    n = _cloud_n[0]
+    s = f'<line x1="{cx + r * 0.7:.1f}" y1="{cy + r * 0.7:.1f}" x2="{cx + r * 1.12:.1f}" y2="{cy + r * 1.12:.1f}" stroke="#334155" stroke-width="22" stroke-linecap="round"/>'
+    s += defs(f'<clipPath id="mg{n}"><circle cx="{cx}" cy="{cy}" r="{r}"/></clipPath>')
+    s += circle(cx, cy, r, "url(#lens)") + f'<g clip-path="url(#mg{n})">{inner}</g>'
+    return s + circle(cx, cy, r, "none", "#334155", 12)
+
+
+def rime_teeth(x, y0, y1, side=-1, size=11):
+    """White rime ice growing out of a surface into the wind (side=-1: to the left)."""
+    s, y = "", y0
+    while y < y1:
+        s += (f'<path d="M {x:.1f},{y:.1f} l {side * size:.1f},{size * 0.45:.1f} l {-side * size:.1f},{size * 0.45:.1f} z" '
+              f'fill="#ffffff" stroke="#60a5fa" stroke-width="1.5"/>')
+        y += size * 0.9
+    return s
+
+
+def fence(x0, x1, ground, height=110, posts=5, rime=False):
+    s = ""
+    for k in range(posts):
+        x = x0 + k * (x1 - x0) / (posts - 1)
+        s += f'<rect x="{x - 8:.1f}" y="{ground - height:.1f}" width="16" height="{height}" rx="3" fill="#5b4a38"/>'
+        if rime:
+            s += rime_teeth(x - 8, ground - height + 6, ground - 10)
+    for f in (0.25, 0.65):
+        y = ground - height * (1 - f)
+        s += f'<line x1="{x0:.1f}" y1="{y:.1f}" x2="{x1:.1f}" y2="{y:.1f}" stroke="#5b4a38" stroke-width="6"/>'
+    return s
 
 
 def svg_doc(body, w, h):

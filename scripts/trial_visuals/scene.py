@@ -85,6 +85,9 @@ COMMON_DEFS = (
     lg("grass", [(0, "#8fb35e"), (1, "#4f7a3a")]),
     lg("sea", [(0, "#2b8fd6"), (1, "#0d4f8b")]),
     lg("aerial", [(0, "#9db57d"), (1, "#86a468")]),
+    rg("ocean", [(0, "#7cc0f0"), (0.7, "#2f7fc4"), (1, "#16528f")], 0.38, 0.35, 0.75),
+    lg("chart_paper", [(0, "#fbf8ef"), (1, "#f1ead6")]),
+    lg("sky_dawn", [(0, "#3b4a7a"), (0.55, "#e7907a"), (1, "#fcd59a")]),
     lg("sand", [(0, "#f1dfb5"), (1, "#d9bf86")]),
     lg("frost", [(0, "#e8eef5"), (1, "#c3cfdc")]),
     lg("metal", [(0, "#eef1f5"), (0.5, "#b8c0cc"), (1, "#7c8796")]),
@@ -535,6 +538,38 @@ def heading_dial(cx, cy, r, heading, aircraft_mark=True):
         s += (f'<path transform="translate({cx},{cy}) scale({k:.3f})" d="M 0,-260 C 12,-260 14,-240 14,-200 L 14,-60 '
               f'L 140,10 L 140,40 L 14,10 L 14,150 L 50,190 L 50,210 L 0,195 L -50,210 L -50,190 L -14,150 L -14,10 '
               f'L -140,40 L -140,10 L -14,-60 L -14,-200 C -14,-240 -12,-260 0,-260 Z" fill="none" stroke="#f28a1e" stroke-width="{3 / k:.1f}"/>')
+    return s
+
+
+def globe_xy(cx, cy, r, lat, lon, tilt=-25, lon0=25):
+    """Orthographic projection: (x, y, visible) for a point on a globe seen from latitude `tilt`, longitude lon0."""
+    p0, la, dl = math.radians(tilt), math.radians(lat), math.radians(lon - lon0)
+    x = r * math.cos(la) * math.sin(dl)
+    y = -r * (math.cos(p0) * math.sin(la) - math.sin(p0) * math.cos(la) * math.cos(dl))
+    vis = math.sin(p0) * math.sin(la) + math.cos(p0) * math.cos(la) * math.cos(dl) > 0
+    return cx + x, cy + y, vis
+
+
+def globe_line(cx, cy, r, pts, color, w, extra="", tilt=-25, lon0=25):
+    """Polyline of (lat, lon) points on the globe; hidden parts are left out."""
+    d, pen = "", False
+    for lat, lon in pts:
+        x, y, vis = globe_xy(cx, cy, r, lat, lon, tilt, lon0)
+        if vis:
+            d += f"{'L' if pen else 'M'} {x:.1f},{y:.1f} "
+            pen = True
+        else:
+            pen = False
+    return path(d, "none", color, w, extra) if d else ""
+
+
+def globe(cx, cy, r, tilt=-25, lon0=25, grid=30):
+    """Shaded Earth with meridians and parallels every `grid` degrees (no coastlines)."""
+    s = f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="url(#ocean)" stroke="#1e3a5f" stroke-width="3"/>'
+    for lon in range(-180, 180, grid):
+        s += globe_line(cx, cy, r, [(lat, lon) for lat in range(-90, 91, 3)], "#ffffff", 2, ' stroke-opacity="0.55"', tilt, lon0)
+    for lat in range(-90 + grid, 90, grid):
+        s += globe_line(cx, cy, r, [(lat, lon) for lon in range(-180, 181, 3)], "#ffffff", 2, ' stroke-opacity="0.55"', tilt, lon0)
     return s
 
 

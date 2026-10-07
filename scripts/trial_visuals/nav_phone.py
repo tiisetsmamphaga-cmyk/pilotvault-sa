@@ -7,7 +7,9 @@ from common import Registry
 from kit import template
 import math
 
-from scene import (BLUE, dial, flow, heading_dial, runway_above, sun, aircraft, beacon_side, ndb_symbol, terrain, vor_rose, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
+import random
+
+from scene import (BLUE, globe, globe_line, globe_xy, stars, dial, flow, heading_dial, runway_above, sun, aircraft, beacon_side, ndb_symbol, terrain, vor_rose, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
                    angle_arc, compass_xy, defs, ground_above, head, label, north_line, path, stack, stack_height)
 
 R = Registry("navigation", "/explanation-images/navigation/refined-batch-2")
@@ -596,3 +598,379 @@ def pa_panel(low_qnh):
        h=stack_height([PA_H, PA_H]), w=W)
 def _():
     return picture([pa_panel(True), pa_panel(False)])
+
+
+# ------------------------------------------------------------------ official day and night
+
+DN_H = 460
+HORIZON = 330
+
+
+def hills(x):
+    return HORIZON + 14 * math.sin(x / 95) + 8 * math.sin(x / 37)
+
+
+def dn_panel(rise):
+    def draw(w, h):
+        r = 55
+        cy = hills(450) + r - (22 if rise else 12)   # only the top edge of the sun shows
+        s = sun(450, cy, r)
+        s += terrain(hills, w, h, "url(#ground_day)")
+        y0, y1 = (cy - r - 20, cy - r - 95) if rise else (cy - r - 95, cy - r - 20)
+        s += path(f"M 560,{y0:.0f} L 560,{y1:.0f}", "none", "#7c2d12", LINE_W, ' marker-end="url(#head_comp)"')
+        if rise:
+            s += label(450, 230, "Sunrise", TXT_L, "#7c2d12", "middle", halo="#fde7c2")
+            s += label(36, 70, "Day starts\n15 min before", TXT_L, "#ffffff", halo="#2a3560")
+        else:
+            s += label(450, 230, "Sunset", TXT_L, "#7c2d12", "middle", halo="#fde7c2")
+            s += label(36, 70, "Night starts\n15 min after", TXT_L, "#ffffff", halo="#2a3560")
+        return s
+    return dict(h=DN_H, sky="sky_dawn", draw=draw,
+                caption="OFFICIAL DAY: 15 MIN BEFORE SUNRISE" if rise else "OFFICIAL NIGHT: 15 MIN AFTER SUNSET",
+                color="#b45309" if rise else NAVY_BLUE)
+
+
+@R.add(1625, "official-day-night-v1", "Official Day and Night",
+       template("OFFICIAL DAY RUNS FROM 15 MIN BEFORE SUNRISE TO 15 MIN AFTER SUNSET",
+                "SUNRISE: THE FIRST EDGE OF THE SUN APPEARS; SUNSET: THE LAST EDGE DISAPPEARS",
+                [("Day starts", "Sunrise − 15 min"),
+                 ("Night starts", "Sunset + 15 min"),
+                 ("UTC to SAST", "Add 2 hours")]),
+       h=stack_height([DN_H, DN_H]), w=W)
+def _():
+    return picture([dn_panel(True), dn_panel(False)])
+
+
+# ------------------------------------------------------------------ longitude and time
+
+LT_H = 480
+
+
+def lt_panel(sun_side):
+    def draw(w, h):
+        rnd = random.Random(7)
+        s = stars(rnd, (0, 0, w, h), 40)
+        cx, cy, r = (430, 250, 200)
+        s += globe(cx, cy, r, tilt=-15, lon0=20)
+        if not sun_side:
+            for lon, col in ((20, RED), (35, RED)):
+                s += globe_line(cx, cy, r, [(lat, lon) for lat in range(-90, 91, 3)], col, 5, "", -15, 20)
+            eq = [globe_xy(cx, cy, r + 26, 0, lon, -15, 20)[:2] for lon in range(-40, 81, 10)]
+            s += flow(eq, GOLD, "head_comp", LINE_W)
+            s += label(620, 420, "West to east", TXT_L, "#fbbf24", halo="#0f1d3d")
+            s += label(40, 70, "15° = 1 hour", TXT_L, "#ffffff", halo="#0f1d3d")
+        else:
+            s += f'<path d="M {cx},{cy - r} A {r},{r} 0 0 0 {cx},{cy + r} Z" fill="#0b1430" fill-opacity="0.55"/>'
+            s += sun(820, 250, 45)
+            for lon, col in ((0, "#ffffff"), (45, GOLD)):
+                x, y, _ = globe_xy(cx, cy, r, -28, lon, -15, 20)
+                s += f'<circle cx="{x:.0f}" cy="{y:.0f}" r="11" fill="{col}" stroke="#111827" stroke-width="3"/>'
+            s += label(40, 70, "East sees the\nsun first", TXT_L, "#fbbf24", halo="#0f1d3d")
+            s += label(40, 440, "4 min per degree", TXT_L, "#ffffff", halo="#0f1d3d")
+        return s
+    return dict(h=LT_H, sky="sky_night", draw=draw,
+                caption="EAST IS AHEAD IN LOCAL TIME" if sun_side else "THE EARTH TURNS 15° AN HOUR",
+                color=NAVY_BLUE)
+
+
+@R.add(1788, "longitude-time-v1", "Longitude and Time",
+       template("THE EARTH TURNS 360° IN 24 HOURS: 15° AN HOUR, 4 MINUTES PER DEGREE",
+                "PLACES FURTHER EAST HAVE A LATER LOCAL MEAN TIME",
+                [("Time from longitude", "Degrees × 4 min + minutes of arc × 4 s"),
+                 ("UTC", "LMT − longitude time when east of Greenwich"),
+                 ("South Africa", "SAST = UTC + 2 all year")]),
+       h=stack_height([LT_H, LT_H]), w=W)
+def _():
+    return picture([lt_panel(False), lt_panel(True)])
+
+
+# ------------------------------------------------------------------ chart scale
+
+SC_H = 480
+
+
+def scale_panel(km):
+    def draw(w, h):
+        s = ground_above(w, h, seed=91 if km == 10 else 93, road=False)
+        s += '<rect x="40" y="26" width="820" height="170" rx="6" fill="url(#chart_paper)" stroke="#b8ad95" stroke-width="3"/>'
+        for x in range(100, 860, 120):
+            s += f'<line x1="{x}" y1="26" x2="{x}" y2="196" stroke="#c9bfa6" stroke-width="2"/>'
+        # ruler with centimetre marks; one centimetre drawn 70 units long
+        s += '<rect x="80" y="120" width="740" height="60" rx="4" fill="#f6d77a" stroke="#a37b12" stroke-width="3"/>'
+        for k in range(11):
+            x = 100 + k * 70
+            s += f'<line x1="{x}" y1="120" x2="{x}" y2="{150 if k % 5 else 162}" stroke="#5b4300" stroke-width="3"/>'
+        s += '<rect x="380" y="112" width="70" height="76" fill="none" stroke="#b91c1c" stroke-width="6"/>'
+        gw = 300 if km == 10 else 150
+        x0 = 450 - gw / 2 + 35 - 35
+        s += path(f"M 380,188 L {450 - gw / 2:.0f},400 M 450,188 L {450 + gw / 2:.0f},400", "none", "#b91c1c", 3, ' stroke-dasharray="10 8"')
+        s += path(f"M {450 - gw / 2:.0f},400 L {450 + gw / 2:.0f},400", "none", "#ffffff", 13, ' stroke-opacity="0.85"')
+        s += path(f"M {450 - gw / 2:.0f},400 L {450 + gw / 2:.0f},400 M {450 - gw / 2:.0f},385 L {450 - gw / 2:.0f},415 "
+                  f"M {450 + gw / 2:.0f},385 L {450 + gw / 2:.0f},415", "none", "#b91c1c", 6)
+        s += label(470, 90, "1 cm", TXT_L, "#b91c1c")
+        s += label(450, 455, f"{km} km", TXT_L, "#b91c1c", "middle")
+        return s
+    return dict(h=SC_H, sky="aerial", draw=draw,
+                caption="1 : 1 000 000 — 1 CM = 10 KM" if km == 10 else "1 : 500 000 — 1 CM = 5 KM",
+                color="#b91c1c" if km == 10 else NAVY_BLUE)
+
+
+@R.add(1771, "chart-scale-v1", "Chart Scale",
+       template("A SCALE OF 1 : 1 000 000 MEANS 1 CM ON THE CHART IS 1 000 000 CM (10 KM) ON THE GROUND",
+                "GROUND DISTANCE = CHART DISTANCE × SCALE DENOMINATOR",
+                [("1 : 1 000 000", "1 cm = 10 km"),
+                 ("1 : 500 000", "1 cm = 5 km"),
+                 ("Kilometres to NM", "Divide by 1.852")]),
+       h=stack_height([SC_H, SC_H]), w=W)
+def _():
+    return picture([scale_panel(10), scale_panel(5)])
+
+
+# ------------------------------------------------------------------ Lambert conformal conic
+
+LC_H = 500
+
+
+def lc_panel(flat):
+    def draw(w, h):
+        if not flat:
+            rnd = random.Random(9)
+            s = stars(rnd, (0, 0, w, h), 30)
+            cx, cy, r = 450, 230, 180
+            s += globe(cx, cy, r, tilt=-35, lon0=25)
+            # secant cone through the 15°S and 45°S parallels, apex beyond the South Pole
+            a, b = -15, -45
+            pa = [globe_xy(cx, cy, r, a, lon, -35, 25) for lon in (-65, 115)]
+            pb = [globe_xy(cx, cy, r, b, lon, -35, 25) for lon in (-65, 115)]
+            apex = (cx, cy + r * 1.75)
+            top_l = (pa[0][0] - (apex[0] - pa[0][0]) * 0.35, pa[0][1] - (apex[1] - pa[0][1]) * 0.35)
+            top_r = (pa[1][0] + (pa[1][0] - apex[0]) * 0.35, pa[1][1] - (apex[1] - pa[1][1]) * 0.35)
+            s += (f'<path d="M {top_l[0]:.0f},{top_l[1]:.0f} L {apex[0]:.0f},{apex[1]:.0f} L {top_r[0]:.0f},{top_r[1]:.0f} Z" '
+                  f'fill="#fbbf24" fill-opacity="0.22" stroke="#f59e0b" stroke-width="4"/>')
+            for lat in (a, b):
+                s += globe_line(cx, cy, r, [(lat, lon) for lon in range(-180, 181, 3)], GOLD, 6, "", -35, 25)
+            s += label(40, 70, "Cone", TXT_L, "#fbbf24", halo="#0f1d3d")
+            s += label(860, 300, "Standard\nparallels", TXT_L, "#fbbf24", "end", halo="#0f1d3d")
+            return s
+        s = '<rect x="0" y="0" width="900" height="500" fill="url(#chart_paper)"/>'
+        apex = (450, 1500)
+        for k in range(-4, 5):
+            x, y = compass_xy(*apex, 1600, k * 6)
+            s += path(f"M {apex[0]},{apex[1]} L {x:.0f},{y:.0f}", "none", "#94a3b8", 3)
+        for rr in (1150, 1300, 1450):
+            s += path(f"M {compass_xy(*apex, rr, -30)[0]:.0f},{compass_xy(*apex, rr, -30)[1]:.0f} A {rr},{rr} 0 0 1 "
+                      f"{compass_xy(*apex, rr, 30)[0]:.0f},{compass_xy(*apex, rr, 30)[1]:.0f}", "none", "#94a3b8", 3)
+        s += line((150, 330), (760, 150), RED, "nh_red")
+        s += label(40, 470, "Meridians meet towards the pole", TXT_M, INK)
+        s += label(450, 120, "Straight line ≈ great circle", TXT_M, RED, "middle")
+        return s
+    return dict(h=LC_H, sky="sky_night" if not flat else "aerial", draw=draw,
+                caption="A CONE CUTS THE EARTH AT 2 PARALLELS" if not flat else "LAMBERT: SCALE TRUE ON THE 2 PARALLELS",
+                color="#b45309" if not flat else NAVY_BLUE)
+
+
+@R.add(1579, "lambert-conic-v1", "Lambert Conformal Conic Chart",
+       template("A LAMBERT CHART IS PROJECTED ONTO A CONE THAT CUTS THE EARTH AT TWO STANDARD PARALLELS",
+                "IT IS CONFORMAL (ORTHOMORPHIC): ANGLES ARE TRUE AND MERIDIANS CROSS PARALLELS AT 90°",
+                [("Scale", "Correct only on the two standard parallels"),
+                 ("Meridians", "Straight lines converging towards the nearer pole"),
+                 ("Straight line", "Close to a great circle; measure its track at the mid-meridian")]),
+       h=stack_height([LC_H, LC_H]), w=W)
+def _():
+    return picture([lc_panel(False), lc_panel(True)])
+
+
+# ------------------------------------------------------------------ great circle and rhumb line
+
+def _vec(lat, lon):
+    la, lo = math.radians(lat), math.radians(lon)
+    return (math.cos(la) * math.cos(lo), math.cos(la) * math.sin(lo), math.sin(la))
+
+
+def great_circle(a, b, n=60):
+    va, vb = _vec(*a), _vec(*b)
+    om = math.acos(sum(p * q for p, q in zip(va, vb)))
+    out = []
+    for k in range(n + 1):
+        t = k / n
+        f1, f2 = math.sin((1 - t) * om) / math.sin(om), math.sin(t * om) / math.sin(om)
+        x, y, z = (f1 * p + f2 * q for p, q in zip(va, vb))
+        out.append((math.degrees(math.asin(z)), math.degrees(math.atan2(y, x))))
+    return out
+
+
+def merc_y(lat):
+    return math.log(math.tan(math.pi / 4 + math.radians(lat) / 2))
+
+
+def rhumb(a, b, n=60):
+    ya, yb = merc_y(a[0]), merc_y(b[0])
+    return [(math.degrees(2 * math.atan(math.exp(ya + (yb - ya) * k / n)) - math.pi / 2), a[1] + (b[1] - a[1]) * k / n)
+            for k in range(n + 1)]
+
+
+GR_H = 500
+GA, GB = (-40, -35), (-40, 90)
+
+
+def gr_panel(chart):
+    def draw(w, h):
+        if not chart:
+            rnd = random.Random(13)
+            s = stars(rnd, (0, 0, w, h), 30)
+            cx, cy, r = 450, 250, 215
+            s += globe(cx, cy, r, tilt=-40, lon0=28)
+            s += globe_line(cx, cy, r, rhumb(GA, GB), BLUE, LINE_W + 1, ' stroke-dasharray="14 9"', -40, 28)
+            s += globe_line(cx, cy, r, great_circle(GA, GB), RED, LINE_W + 1, "", -40, 28)
+            for p in (GA, GB):
+                x, y, _ = globe_xy(cx, cy, r, *p, -40, 28)
+                s += f'<circle cx="{x:.0f}" cy="{y:.0f}" r="10" fill="#ffffff" stroke="#111827" stroke-width="3"/>'
+            rx, ry, _ = globe_xy(cx, cy, r, *rhumb(GA, GB)[30], -40, 28)
+            gx, gy, _ = globe_xy(cx, cy, r, *great_circle(GA, GB)[30], -40, 28)
+            s += label(rx, ry - 22, "Rhumb line", TXT_L, "#bfdbfe", "middle", halo="#0f1d3d")
+            s += label(gx, gy + 52, "Great circle", TXT_L, "#fecaca", "middle", halo="#0f1d3d")
+            return s
+        s = '<rect x="0" y="0" width="900" height="500" fill="url(#chart_paper)"/>'
+        X = lambda lon: 450 + (lon - 27.5) * 5.6   # noqa: E731
+        Y = lambda lat: 120 - (merc_y(lat) - merc_y(-40)) * 330   # noqa: E731
+        for lon in range(-30, 91, 15):
+            s += path(f"M {X(lon):.0f},0 L {X(lon):.0f},500", "none", "#94a3b8", 3)
+        for lat in (-20, -35, -50, -60):
+            s += path(f"M 0,{Y(lat):.0f} L 900,{Y(lat):.0f}", "none", "#94a3b8", 3)
+        s += path("M " + " L ".join(f"{X(lo):.0f},{Y(la):.0f}" for la, lo in rhumb(GA, GB)), "none", BLUE, LINE_W + 1, ' stroke-dasharray="14 9"')
+        s += path("M " + " L ".join(f"{X(lo):.0f},{Y(la):.0f}" for la, lo in great_circle(GA, GB)), "none", RED, LINE_W + 1)
+        s += label(450, 90, "Rhumb line: straight", TXT_M, NAVY_BLUE, "middle")
+        s += label(450, 470, "Great circle: curves to the pole", TXT_M, RED, "middle")
+        return s
+    return dict(h=GR_H, sky="sky_night" if not chart else "aerial", draw=draw,
+                caption="GREAT CIRCLE: THE SHORTEST WAY" if not chart else "MERCATOR: RHUMB LINES ARE STRAIGHT",
+                color=RED if not chart else NAVY_BLUE)
+
+
+@R.add(1782, "great-circle-rhumb-v1", "Great Circles and Rhumb Lines",
+       template("A GREAT CIRCLE IS THE SHORTEST ROUTE; A RHUMB LINE KEEPS A CONSTANT TRACK",
+                "A RHUMB LINE CUTS EVERY MERIDIAN AT THE SAME ANGLE",
+                [("Great circle", "Its plane passes through the Earth's centre; the track keeps changing"),
+                 ("Both", "The equator and every meridian"),
+                 ("Parallels", "Rhumb lines, but small circles (except the equator)")]),
+       h=stack_height([GR_H, GR_H]), w=W)
+def _():
+    return picture([gr_panel(False), gr_panel(True)])
+
+
+# ------------------------------------------------------------------ latitude and longitude
+
+LL_H = 480
+
+
+def ll_panel(distance):
+    def draw(w, h):
+        rnd = random.Random(17 if distance else 19)
+        s = stars(rnd, (0, 0, w, h), 30)
+        cx, cy, r, t, l0 = 450, 245, 210, -20, 25
+        s += globe(cx, cy, r, t, l0)
+        if not distance:
+            s += globe_line(cx, cy, r, [(0, lon) for lon in range(-180, 181, 3)], GOLD, 7, "", t, l0)
+            s += globe_line(cx, cy, r, [(lat, 0) for lat in range(-90, 91, 3)], RED, 7, "", t, l0)
+            s += label(860, 320, "Equator", TXT_L, "#fbbf24", "end", halo="#0f1d3d")
+            s += label(40, 70, "Greenwich\nmeridian", TXT_L, "#fca5a5", halo="#0f1d3d")
+        else:
+            s += globe_line(cx, cy, r, [(lat, 25) for lat in range(-30, -9, 1)], GOLD, 9, "", t, l0)
+            s += globe_line(cx, cy, r, [(-62, lon) for lon in range(5, 46, 1)], "#93c5fd", 9, "", t, l0)
+            s += label(860, 200, "Along a meridian:\n1° = 60 NM", TXT_L, "#fbbf24", "end", halo="#0f1d3d")
+            s += label(40, 460, "Shorter near the poles", TXT_M, "#93c5fd", halo="#0f1d3d")
+        return s
+    return dict(h=LL_H, sky="sky_night", draw=draw,
+                caption="LATITUDE N/S, LONGITUDE E/W" if not distance else "1 MINUTE OF LATITUDE = 1 NM",
+                color=NAVY_BLUE)
+
+
+@R.add(1565, "latitude-longitude-v1", "Latitude and Longitude",
+       template("LATITUDE IS MEASURED FROM THE EQUATOR; LONGITUDE FROM THE GREENWICH MERIDIAN",
+                "1 MINUTE OF LATITUDE = 1 NM, SO 1° OF LATITUDE = 60 NM",
+                [("Latitude", "0° to 90° north or south"),
+                 ("Longitude", "0° to 180° east or west"),
+                 ("1° of longitude", "60 NM only on the equator; less towards the poles")]),
+       h=stack_height([LL_H, LL_H]), w=W)
+def _():
+    return picture([ll_panel(False), ll_panel(True)])
+
+
+# ------------------------------------------------------------------ cardinal and quadrantal points
+
+CR_H = 480
+
+
+def cr_panel(quad):
+    def draw(w, h):
+        s = ground_above(w, h, seed=101 if quad else 103, river=False, road=False)
+        c = (450, 240)
+        s += f'<circle cx="{c[0]}" cy="{c[1]}" r="165" fill="#ffffff" fill-opacity="0.8" stroke="#111827" stroke-width="3"/>'
+        for k in range(36):
+            x0, y0 = compass_xy(*c, 165, k * 10)
+            x1, y1 = compass_xy(*c, 165 - (22 if k % 9 == 0 else 12), k * 10)
+            s += f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" stroke="#111827" stroke-width="3"/>'
+        pts = ((45, "NE 045"), (135, "SE 135"), (225, "SW 225"), (315, "NW 315")) if quad else \
+              ((0, "N 360"), (90, "E 090"), (180, "S 180"), (270, "W 270"))
+        col = NAVY_BLUE if quad else RED
+        for deg, txt in pts:
+            s += line(c, compass_xy(*c, 130, deg), col, "nh_navy" if quad else "nh_red")
+            tx, ty = compass_xy(*c, 280 if deg % 180 else 200, deg)
+            s += label(tx, ty + 14, txt, TXT_M, col, "middle")
+        return s
+    return dict(h=CR_H, sky="aerial", draw=draw,
+                caption="QUADRANTAL: HALFWAY BETWEEN" if quad else "CARDINAL: N, E, S, W",
+                color=NAVY_BLUE if quad else RED)
+
+
+@R.add(1557, "compass-points-v1", "Cardinal and Quadrantal Points",
+       template("CARDINAL POINTS: 360° 090° 180° 270°; QUADRANTAL: 045° 135° 225° 315°",
+                "DIRECTIONS ARE MEASURED CLOCKWISE FROM NORTH",
+                [("Cardinal", "North, east, south, west"),
+                 ("Quadrantal", "North-east, south-east, south-west, north-west"),
+                 ("Each step", "90° between cardinals; quadrantals 45° from each")]),
+       h=stack_height([CR_H, CR_H]), w=W)
+def _():
+    return picture([cr_panel(False), cr_panel(True)])
+
+
+# ------------------------------------------------------------------ measuring a track on the chart
+
+MT_H = 520
+
+
+def mt_panel():
+    def draw(w, h):
+        s = '<rect x="0" y="0" width="900" height="520" fill="url(#chart_paper)"/>'
+        for x in (150, 450, 750):
+            s += path(f"M {x},0 L {x + (x - 450) * 0.04:.0f},520", "none", "#94a3b8", 3)
+        for y in (130, 390):
+            s += path(f"M 0,{y} L 900,{y}", "none", "#94a3b8", 3)
+        a, b = (140, 430), (760, 110)
+        for p in (a, b):
+            s += f'<circle cx="{p[0]}" cy="{p[1]}" r="16" fill="#ffffff" stroke="#111827" stroke-width="4"/>'
+        s += line(a, toward(a, b, 18), RED, "nh_red")
+        m = (450, a[1] + (b[1] - a[1]) * (450 - a[0]) / (b[0] - a[0]))
+        # square protractor centred on the mid meridian
+        s += (f'<rect x="{m[0] - 120:.0f}" y="{m[1] - 120:.0f}" width="240" height="240" rx="8" fill="#e0f2fe" '
+              f'fill-opacity="0.55" stroke="#0369a1" stroke-width="3"/>')
+        for k in range(36):
+            x0, y0 = compass_xy(*m, 110, k * 10)
+            x1, y1 = compass_xy(*m, 110 - (16 if k % 9 == 0 else 8), k * 10)
+            s += f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" stroke="#0369a1" stroke-width="2"/>'
+        s += angle_arc(*m, 80, 0, bearing(a, b), RED, ARC_W)
+        s += label(470, 60, "Mid meridian", TXT_L, INK)
+        s += label(620, 330, "True track", TXT_L, RED)
+        return s
+    return dict(h=MT_H, sky="aerial", draw=draw, caption="MEASURE FROM THE NEAREST MERIDIAN", color=RED)
+
+
+@R.add(1816, "measure-track-v1", "Measuring a Track on the Chart",
+       template("MEASURE A TRUE TRACK FROM A MERIDIAN, NEAR THE MIDDLE OF THE ROUTE",
+                "MERIDIANS POINT TO TRUE NORTH; ON A LAMBERT CHART THEY CONVERGE",
+                [("Protractor", "Line it up with the meridian nearest the middle of the track"),
+                 ("Magnetic track", "True track + west variation (− east)"),
+                 ("Distance", "Measure with the chart scale or the latitude scale (1′ = 1 NM)")]),
+       h=stack_height([MT_H]), w=W)
+def _():
+    return picture([mt_panel()])

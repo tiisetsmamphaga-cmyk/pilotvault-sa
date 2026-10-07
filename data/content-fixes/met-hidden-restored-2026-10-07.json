@@ -1,0 +1,565 @@
+{
+ "date": "2026-10-07",
+ "subject": "meteorology",
+ "change": "Restored every Meteorology question hidden as a duplicate. None was a word-for-word duplicate; questions asked a different way stay in the bank.",
+ "rows": [
+  {
+   "id": 17,
+   "change": "picture and card from #14",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp",
+    "explanation_image_title": "What Changes Air Density",
+    "explanation_visual_key": "met-air-density-factors-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE AND HUMIDITY\", \"subline\": \"DENSE AIR GIVES BETTER ENGINE, PROPELLER AND WING PERFORMANCE\", \"blocks\": [{\"label\": \"Pressure up\", \"value\": \"Density up: more air is packed into the same volume\"}, {\"label\": \"Temperature up\", \"value\": \"Density down: the air expands\"}, {\"label\": \"Humidity up\", \"value\": \"Density down: water vapour (mass 18) replaces heavier nitrogen (28) and oxygen (32)\"}]}"
+   }
+  },
+  {
+   "id": 640,
+   "change": "picture and card from #14",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp",
+    "explanation_image_title": "What Changes Air Density",
+    "explanation_visual_key": "met-air-density-factors-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE AND HUMIDITY\", \"subline\": \"DENSE AIR GIVES BETTER ENGINE, PROPELLER AND WING PERFORMANCE\", \"blocks\": [{\"label\": \"Pressure up\", \"value\": \"Density up: more air is packed into the same volume\"}, {\"label\": \"Temperature up\", \"value\": \"Density down: the air expands\"}, {\"label\": \"Humidity up\", \"value\": \"Density down: water vapour (mass 18) replaces heavier nitrogen (28) and oxygen (32)\"}]}"
+   }
+  },
+  {
+   "id": 632,
+   "change": "picture and card from #14",
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/density-altitude-performance-display.png",
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp",
+    "explanation_image_title": "What Changes Air Density",
+    "explanation_visual_key": "met-air-density-factors-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE AND HUMIDITY\", \"subline\": \"DENSE AIR GIVES BETTER ENGINE, PROPELLER AND WING PERFORMANCE\", \"blocks\": [{\"label\": \"Pressure up\", \"value\": \"Density up: more air is packed into the same volume\"}, {\"label\": \"Temperature up\", \"value\": \"Density down: the air expands\"}, {\"label\": \"Humidity up\", \"value\": \"Density down: water vapour (mass 18) replaces heavier nitrogen (28) and oxygen (32)\"}]}"
+   }
+  },
+  {
+   "id": 629,
+   "change": "picture and card from #15",
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/density-altitude-performance-display.png",
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp",
+    "explanation_image_title": "What Changes Air Density",
+    "explanation_visual_key": "met-air-density-factors-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE AND HUMIDITY\", \"subline\": \"DENSE AIR GIVES BETTER ENGINE, PROPELLER AND WING PERFORMANCE\", \"blocks\": [{\"label\": \"Pressure up\", \"value\": \"Density up: more air is packed into the same volume\"}, {\"label\": \"Temperature up\", \"value\": \"Density down: the air expands\"}, {\"label\": \"Humidity up\", \"value\": \"Density down: water vapour (mass 18) replaces heavier nitrogen (28) and oxygen (32)\"}]}"
+   }
+  },
+  {
+   "id": 634,
+   "change": "picture and card from #19",
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/density-altitude-performance-display.png",
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/density-altitude-v3.webp",
+    "explanation_image_title": "Density Altitude",
+    "explanation_visual_key": "met-density-altitude-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE IS PRESSURE ALTITUDE CORRECTED FOR TEMPERATURE\", \"subline\": \"HOT AIR IS LESS DENSE, SO THE AIRCRAFT PERFORMS AS IF IT WERE HIGHER\", \"blocks\": [{\"label\": \"Start with\", \"value\": \"Pressure altitude (1013 hPa set on the altimeter)\"}, {\"label\": \"Correct for\", \"value\": \"How far the temperature is above or below ISA\"}, {\"label\": \"Rule of thumb\", \"value\": \"About 120 ft for every 1°C above ISA\"}, {\"label\": \"Example\", \"value\": \"5,000 ft at 30°C: ISA is 5°C, so +25°C ≈ +3,000 ft, giving about 8,000 ft\"}], \"formula\": \"Density altitude ≈ pressure altitude + 120 × (OAT − ISA temperature)\"}"
+   }
+  },
+  {
+   "id": 649,
+   "change": "picture and card from #32",
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/density-altitude-performance-display.png",
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-sea-level-v3.webp",
+    "explanation_image_title": "ISA Sea-Level Values",
+    "explanation_visual_key": "met-isa-sea-level-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA SEA-LEVEL DENSITY IS 1.225 kg/m³ (1225 g/m³)\", \"subline\": \"THE STANDARD ATMOSPHERE FIXES PRESSURE, TEMPERATURE AND DENSITY AT MEAN SEA LEVEL\", \"blocks\": [{\"label\": \"Pressure\", \"value\": \"1013.25 hPa\"}, {\"label\": \"Temperature\", \"value\": \"+15°C\"}, {\"label\": \"Density\", \"value\": \"1.225 kg/m³ = 1225 g/m³\"}, {\"label\": \"Lapse rate\", \"value\": \"1.98°C per 1,000 ft up to the tropopause at 36,090 ft (11 km)\"}]}"
+   }
+  },
+  {
+   "id": 652,
+   "change": "picture and card from #46",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/anabatic-katabatic-v3.webp",
+    "explanation_image_title": "Anabatic and Katabatic Winds",
+    "explanation_visual_key": "met-anabatic-katabatic-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN ANABATIC WIND BLOWS UP A SLOPE BY DAY\", \"subline\": \"A KATABATIC WIND BLOWS DOWN THE SLOPE AT NIGHT\", \"blocks\": [{\"label\": \"Anabatic\", \"value\": \"Sun heats the slope, the air in contact warms, becomes less dense and rises\"}, {\"label\": \"Katabatic\", \"value\": \"The slope cools by radiation at night; cold, dense air drains downhill\"}, {\"label\": \"Memory aid\", \"value\": \"ANA = UP (like ascend), KATA = DOWN\"}]}"
+   }
+  },
+  {
+   "id": 1526,
+   "change": "picture and card from #53",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/thunderstorm-ingredients-v3.webp",
+    "explanation_image_title": "What a Thunderstorm Needs",
+    "explanation_visual_key": "met-thunderstorm-ingredients-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A THUNDERSTORM NEEDS MOIST AIR, INSTABILITY AND A LIFTING ACTION\", \"subline\": \"TAKE AWAY ANY ONE OF THE THREE AND NO CUMULONIMBUS FORMS\", \"blocks\": [{\"label\": \"Moisture\", \"value\": \"Enough water vapour to build deep cloud and release latent heat\"}, {\"label\": \"Instability\", \"value\": \"Rising air stays warmer than its surroundings, so it keeps rising\"}, {\"label\": \"Lifting action\", \"value\": \"Surface heating, a front, high ground or convergence starts the air rising\"}]}"
+   }
+  },
+  {
+   "id": 742,
+   "change": "picture and card from #71",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/sa-airmasses-v1.webp",
+    "explanation_image_title": "Airmasses Affecting Southern Africa",
+    "explanation_visual_key": "met-sa-airmasses-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"SOUTH AFRICA IS AFFECTED BY AIR MASSES FROM FOUR SOURCE REGIONS\",\"subline\":\"CLASSIFIED BY SOURCE (MARITIME OR CONTINENTAL) AND TEMPERATURE (POLAR OR TROPICAL)\",\"blocks\":[{\"label\":\"mP — maritime polar\",\"value\":\"Cold, moist air arriving from the Southern Ocean/Antarctica\"},{\"label\":\"cT — continental tropical\",\"value\":\"Hot, dry air forming over the African interior landmass\"},{\"label\":\"mTw — maritime tropical, warm\",\"value\":\"Warm, moist air from the Indian Ocean (east coast)\"},{\"label\":\"mTk — maritime tropical, cool\",\"value\":\"Cooler, moist air from the Atlantic Ocean (west coast)\"}]}"
+   }
+  },
+  {
+   "id": 624,
+   "change": "picture and card from #28",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-summary-v1.webp",
+    "explanation_image_title": "The International Standard Atmosphere",
+    "explanation_visual_key": "met-isa-summary-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"ISA: 15°C AT MSL, FALLING AT 1.98°C PER 1,000 FT TO THE TROPOPAUSE\",\"subline\":\"THE TROPOPAUSE SITS AT 36,090 FT, WHERE TEMPERATURE LEVELS OFF AT -56.5°C\",\"blocks\":[{\"label\":\"Sea level\",\"value\":\"15°C, 1013.25 hPa\"},{\"label\":\"Lapse rate\",\"value\":\"1.98°C per 1,000 ft (about 6.5°C per km)\"},{\"label\":\"Tropopause\",\"value\":\"36,090 ft (11 km); temperature constant at -56.5°C through the stratosphere\"},{\"label\":\"Stratopause\",\"value\":\"104,987 ft (32 km); temperature rises to about -44.5°C\"}]}"
+   }
+  },
+  {
+   "id": 654,
+   "change": "card from #35",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"ISA\", \"value\": \"+15°C at sea level, falling about 2°C per 1,000 ft\"}, {\"label\": \"ISA at 8,500 ft\", \"value\": \"15 − (8.5 × 2) ≈ −2°C\"}, {\"label\": \"Add +7\", \"value\": \"−2 + 7 = +5°C\"}], \"kicker\": \"KEY FACT\", \"subline\": \"WORK OUT ISA FOR THE LEVEL, THEN ADD THE DEVIATION\", \"headline\": \"FL085 AT ISA +7°C: OAT ABOUT +5°C\"}"
+   }
+  },
+  {
+   "id": 666,
+   "change": "card from #38",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Small spread\", \"value\": \"High relative humidity\"}, {\"label\": \"Watch\", \"value\": \"A spread closing in the evening, as the air cools overnight\"}], \"kicker\": \"KEY FACT\", \"subline\": \"THE AIR IS CLOSE TO SATURATION\", \"headline\": \"TEMPERATURE AND DEW POINT CLOSING TOGETHER MEANS LOW CLOUD OR FOG\"}"
+   }
+  },
+  {
+   "id": 670,
+   "change": "card from #66",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Southern Hemisphere\", \"value\": \"Deflects to the left\"}, {\"label\": \"Starts the wind\", \"value\": \"The pressure gradient force\"}, {\"label\": \"Strength\", \"value\": \"Zero at the equator, greatest at the poles\"}], \"kicker\": \"KEY FACT\", \"subline\": \"IT DEFLECTS MOVING AIR; IT DOESN'T START THE MOVEMENT\", \"headline\": \"THE CORIOLIS FORCE IS CAUSED BY THE EARTH'S ROTATION\"}"
+   }
+  },
+  {
+   "id": 683,
+   "change": "card from #81",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Visibility\", \"value\": \"10 km or more\"}, {\"label\": \"Cloud\", \"value\": \"None below 5,000 ft (or the minimum sector altitude if higher), and no CB or TCU\"}, {\"label\": \"Weather\", \"value\": \"Nothing significant to aviation\"}], \"kicker\": \"KEY FACT\", \"subline\": \"ALL CONDITIONS MUST BE MET AT ONCE\", \"headline\": \"CAVOK NEEDS 10 KM VISIBILITY, NO SIGNIFICANT WEATHER AND NO SIGNIFICANT CLOUD\"}"
+   }
+  },
+  {
+   "id": 687,
+   "change": "card from #70",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Polar\", \"value\": \"Cold, from high latitudes\"}, {\"label\": \"Maritime\", \"value\": \"Moist, from a long track over the sea\"}, {\"label\": \"Changes when\", \"value\": \"It crosses a warmer surface: heated from below, it becomes unstable\"}], \"kicker\": \"KEY FACT\", \"subline\": \"THE COLD SEA COOLS IT FROM BELOW, WHICH KEEPS IT STABLE\", \"headline\": \"POLAR MARITIME AIR IS COLD, MOIST AND STABLE AT ITS SOURCE\"}"
+   }
+  },
+  {
+   "id": 688,
+   "change": "card from #82",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"The scale\", \"value\": \"FEW 1–2 · SCT 3–4 · BKN 5–7 · OVC 8 oktas\"}, {\"label\": \"Ceiling\", \"value\": \"The lowest BKN or OVC layer; FEW and SCT never count\"}], \"kicker\": \"KEY FACT\", \"subline\": \"1 OR 2 EIGHTHS OF THE SKY COVERED\", \"headline\": \"FEW MEANS 1 TO 2 OKTAS\"}"
+   }
+  },
+  {
+   "id": 691,
+   "change": "card from #83",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"The scale\", \"value\": \"FEW 1–2 · SCT 3–4 · BKN 5–7 · OVC 8 oktas\"}, {\"label\": \"Ceiling\", \"value\": \"The lowest BKN or OVC layer; FEW and SCT never count\"}], \"kicker\": \"KEY FACT\", \"subline\": \"SCATTERED: 3 OR 4 EIGHTHS OF THE SKY COVERED\", \"headline\": \"SCT MEANS 3 TO 4 OKTAS\"}"
+   }
+  },
+  {
+   "id": 701,
+   "change": "card from #86",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Also\", \"value\": \"Weather, cloud, temperature and dew point\"}, {\"label\": \"Why\", \"value\": \"Keeps the frequency free for live calls\"}, {\"label\": \"On first contact\", \"value\": \"Report the ATIS letter you have received\"}], \"kicker\": \"KEY FACT\", \"subline\": \"A RECORDED BROADCAST OF THE CURRENT AERODROME INFORMATION\", \"headline\": \"ATIS GIVES SURFACE WIND, QNH, VISIBILITY AND THE RUNWAY IN USE\"}"
+   }
+  },
+  {
+   "id": 705,
+   "change": "card from #80",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Covers\", \"value\": \"Up to 30 hours\"}, {\"label\": \"Contains\", \"value\": \"Wind, visibility, weather and cloud\"}, {\"label\": \"METAR instead\", \"value\": \"The actual weather now\"}], \"kicker\": \"KEY FACT\", \"subline\": \"WHAT TO EXPECT AT ONE AERODROME OVER A SET PERIOD\", \"headline\": \"A TAF IS AN AERODROME FORECAST\"}"
+   }
+  },
+  {
+   "id": 708,
+   "change": "card from #79",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Contains\", \"value\": \"Wind, visibility, weather, cloud, temperature/dew point, QNH\"}, {\"label\": \"TAF instead\", \"value\": \"A forecast for an aerodrome\"}], \"kicker\": \"KEY FACT\", \"subline\": \"WHAT WAS OBSERVED AT A STATED TIME, NOT A FORECAST\", \"headline\": \"A METAR IS THE ACTUAL WEATHER AT AN AERODROME\"}"
+   }
+  },
+  {
+   "id": 725,
+   "change": "card from #62",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Why it matters\", \"value\": \"The evaporation cools the air, which can cause strong downdraughts and turbulence below the cloud\"}, {\"label\": \"Don't confuse it with\", \"value\": \"A shower: that rain reaches the ground\"}, {\"label\": \"Remember\", \"value\": \"Virga is “rain that never lands”\"}], \"kicker\": \"KEY FACT\", \"subline\": \"YOU SEE GREY STREAKS HANGING BELOW THE CLOUD BASE\", \"headline\": \"VIRGA IS RAIN OR SNOW THAT EVAPORATES BEFORE IT REACHES THE GROUND\"}"
+   }
+  },
+  {
+   "id": 737,
+   "change": "card from #68",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Cause\", \"value\": \"Ice narrows the venturi and upsets the fuel/air mixture\"}, {\"label\": \"Action\", \"value\": \"Full carb heat at once\"}, {\"label\": \"Possible\", \"value\": \"Even at warm temperatures when the air is humid\"}], \"kicker\": \"KEY FACT\", \"subline\": \"ON A CONSTANT-SPEED PROPELLER, MANIFOLD PRESSURE FALLS INSTEAD\", \"headline\": \"CARBURETTOR ICE SHOWS AS ROUGH RUNNING AND FALLING RPM\"}"
+   }
+  },
+  {
+   "id": 1497,
+   "change": "card from #664",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Fog\", \"value\": \"Visibility below 1,000 m\"}, {\"label\": \"Mist\", \"value\": \"Visibility 1,000 m or more\"}, {\"label\": \"In a METAR\", \"value\": \"FG = fog, BR = mist\"}], \"kicker\": \"KEY FACT\", \"subline\": \"AT 1,000 M OR MORE THE SAME OBSCURATION IS MIST\", \"headline\": \"FOG IS REPORTED WHEN VISIBILITY IS BELOW 1,000 M\"}"
+   }
+  },
+  {
+   "id": 1500,
+   "change": "card from #62",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"Why it matters\", \"value\": \"The evaporation cools the air, which can cause strong downdraughts and turbulence below the cloud\"}, {\"label\": \"Don't confuse it with\", \"value\": \"A shower: that rain reaches the ground\"}, {\"label\": \"Remember\", \"value\": \"Virga is “rain that never lands”\"}], \"kicker\": \"KEY FACT\", \"subline\": \"YOU SEE GREY STREAKS HANGING BELOW THE CLOUD BASE\", \"headline\": \"VIRGA IS RAIN OR SNOW THAT EVAPORATES BEFORE IT REACHES THE GROUND\"}"
+   }
+  },
+  {
+   "id": 1514,
+   "change": "card from #730",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"How\", \"value\": \"The extra moisture saturates the cold surface air\"}, {\"label\": \"Where\", \"value\": \"In the rain area ahead of the warm front\"}], \"kicker\": \"KEY FACT\", \"subline\": \"RAIN FROM THE WARM AIR ABOVE EVAPORATES INTO THE COLD AIR BELOW\", \"headline\": \"FRONTAL FOG FORMS AHEAD OF A WARM FRONT\"}"
+   }
+  },
+  {
+   "id": 1521,
+   "change": "card from #84",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"blocks\": [{\"label\": \"The scale\", \"value\": \"FEW 1–2 · SCT 3–4 · BKN 5–7 · OVC 8 oktas\"}, {\"label\": \"Ceiling\", \"value\": \"The lowest BKN or OVC layer; FEW and SCT never count\"}], \"kicker\": \"KEY FACT\", \"subline\": \"BROKEN: 5 TO 7 EIGHTHS OF THE SKY COVERED\", \"headline\": \"BKN MEANS 5 TO 7 OKTAS\"}"
+   }
+  },
+  {
+   "id": 60,
+   "change": "card from #1510",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"APPROACHING A WARM FRONT: CIRRUS, CIRROSTRATUS, ALTOSTRATUS, THEN NIMBOSTRATUS\", \"subline\": \"THE CLOUD LOWERS AND THICKENS AS THE SHALLOW FRONTAL SURFACE COMES DOWN TO MEET YOU\", \"blocks\": [{\"label\": \"First\", \"value\": \"Cirrus, often several hundred kilometres ahead of the front\"}, {\"label\": \"Then\", \"value\": \"Cirrostratus (a halo round the sun), then altostratus\"}, {\"label\": \"Near the front\", \"value\": \"Nimbostratus with steady rain and a lowering cloud base\"}, {\"label\": \"Cold front (contrast)\", \"value\": \"Steep slope: cumulus and cumulonimbus, short heavy showers\"}]}"
+   }
+  },
+  {
+   "id": 693,
+   "change": "card from #1510",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"COLD FRONTS ARE STEEP AND FAST; WARM FRONTS ARE SHALLOW AND SLOW\",\"subline\":\"FRONTAL SLOPE DETERMINES THE CLOUD TYPE AND RAIN CHARACTER AT EACH\",\"blocks\":[{\"label\":\"Cold front\",\"value\":\"Steep slope, cumuliform cloud, heavy but short-duration rain\"},{\"label\":\"Warm front\",\"value\":\"Shallow slope, stratiform cloud, steady and longer-duration rain\"},{\"label\":\"Cold front mechanism\",\"value\":\"Cold air undercuts and lifts the warm air ahead of it\"},{\"label\":\"Warm front mechanism\",\"value\":\"Warm air rises gradually over the retreating cold air ahead of it\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"APPROACHING A WARM FRONT: CIRRUS, CIRROSTRATUS, ALTOSTRATUS, THEN NIMBOSTRATUS\", \"subline\": \"THE CLOUD LOWERS AND THICKENS AS THE SHALLOW FRONTAL SURFACE COMES DOWN TO MEET YOU\", \"blocks\": [{\"label\": \"First\", \"value\": \"Cirrus, often several hundred kilometres ahead of the front\"}, {\"label\": \"Then\", \"value\": \"Cirrostratus (a halo round the sun), then altostratus\"}, {\"label\": \"Near the front\", \"value\": \"Nimbostratus with steady rain and a lowering cloud base\"}, {\"label\": \"Cold front (contrast)\", \"value\": \"Steep slope: cumulus and cumulonimbus, short heavy showers\"}]}"
+   }
+  },
+  {
+   "id": 669,
+   "change": "card from #59",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"COLD FRONTS ARE STEEP AND FAST; WARM FRONTS ARE SHALLOW AND SLOW\",\"subline\":\"FRONTAL SLOPE DETERMINES THE CLOUD TYPE AND RAIN CHARACTER AT EACH\",\"blocks\":[{\"label\":\"Cold front\",\"value\":\"Steep slope, cumuliform cloud, heavy but short-duration rain\"},{\"label\":\"Warm front\",\"value\":\"Shallow slope, stratiform cloud, steady and longer-duration rain\"},{\"label\":\"Cold front mechanism\",\"value\":\"Cold air undercuts and lifts the warm air ahead of it\"},{\"label\":\"Warm front mechanism\",\"value\":\"Warm air rises gradually over the retreating cold air ahead of it\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NIMBOSTRATUS IS TYPICAL OF A WARM FRONT\", \"subline\": \"WARM AIR SLIDES GENTLY UP OVER THE COLD AIR, FORMING THICK LAYER CLOUD AND STEADY RAIN\", \"blocks\": [{\"label\": \"Warm front cloud\", \"value\": \"Cirrus, cirrostratus, altostratus, then nimbostratus near the front\"}, {\"label\": \"Nimbostratus\", \"value\": \"Thick, dark layer cloud with continuous rain or snow\"}, {\"label\": \"Cold front (contrast)\", \"value\": \"Cumulus and cumulonimbus, with showers and thunderstorms\"}]}"
+   }
+  },
+  {
+   "id": 727,
+   "change": "card from #56",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIZZLE COMES FROM STRATUS OR STRATOCUMULUS\", \"subline\": \"THIN, LOW LAYER CLOUD HAS TINY DROPLETS AND WEAK UPCURRENTS, SO IT DRIZZLES RATHER THAN RAINS\", \"blocks\": [{\"label\": \"Drizzle\", \"value\": \"Very small drops (under 0.5 mm) falling close together\"}, {\"label\": \"Stratus and stratocumulus\", \"value\": \"Low layer cloud: drizzle, poor visibility and low cloud bases\"}, {\"label\": \"Nimbostratus\", \"value\": \"Deep layer cloud: steady, continuous rain\"}, {\"label\": \"Cumulonimbus\", \"value\": \"Heavy showers, hail and thunderstorms\"}]}"
+   }
+  },
+  {
+   "id": 1485,
+   "change": "card from #56",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIZZLE COMES FROM STRATUS OR STRATOCUMULUS\", \"subline\": \"THIN, LOW LAYER CLOUD HAS TINY DROPLETS AND WEAK UPCURRENTS, SO IT DRIZZLES RATHER THAN RAINS\", \"blocks\": [{\"label\": \"Drizzle\", \"value\": \"Very small drops (under 0.5 mm) falling close together\"}, {\"label\": \"Stratus and stratocumulus\", \"value\": \"Low layer cloud: drizzle, poor visibility and low cloud bases\"}, {\"label\": \"Nimbostratus\", \"value\": \"Deep layer cloud: steady, continuous rain\"}, {\"label\": \"Cumulonimbus\", \"value\": \"Heavy showers, hail and thunderstorms\"}]}"
+   }
+  },
+  {
+   "id": 63,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"COLD FRONTS ARE STEEP AND FAST; WARM FRONTS ARE SHALLOW AND SLOW\",\"subline\":\"FRONTAL SLOPE DETERMINES THE CLOUD TYPE AND RAIN CHARACTER AT EACH\",\"blocks\":[{\"label\":\"Cold front\",\"value\":\"Steep slope, cumuliform cloud, heavy but short-duration rain\"},{\"label\":\"Warm front\",\"value\":\"Shallow slope, stratiform cloud, steady and longer-duration rain\"},{\"label\":\"Cold front mechanism\",\"value\":\"Cold air undercuts and lifts the warm air ahead of it\"},{\"label\":\"Warm front mechanism\",\"value\":\"Warm air rises gradually over the retreating cold air ahead of it\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COLD AIR CUTTING UNDER WARM AIR IS A COLD FRONT\", \"subline\": \"THE DENSE COLD AIR WEDGES UNDER THE WARM AIR AND LIFTS IT STEEPLY\", \"blocks\": [{\"label\": \"Cold front\", \"value\": \"Cold air undercuts the warm air: steep slope, cumuliform cloud, heavy but short showers\"}, {\"label\": \"Warm front\", \"value\": \"Warm air slides up over the cold air: shallow slope, layered cloud, steady rain\"}, {\"label\": \"Occlusion\", \"value\": \"A cold front catches up with a warm front\"}]}"
+   }
+  },
+  {
+   "id": 1478,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"COLD FRONTS ARE STEEP AND FAST; WARM FRONTS ARE SHALLOW AND SLOW\",\"subline\":\"FRONTAL SLOPE DETERMINES THE CLOUD TYPE AND RAIN CHARACTER AT EACH\",\"blocks\":[{\"label\":\"Cold front\",\"value\":\"Steep slope, cumuliform cloud, heavy but short-duration rain\"},{\"label\":\"Warm front\",\"value\":\"Shallow slope, stratiform cloud, steady and longer-duration rain\"},{\"label\":\"Cold front mechanism\",\"value\":\"Cold air undercuts and lifts the warm air ahead of it\"},{\"label\":\"Warm front mechanism\",\"value\":\"Warm air rises gradually over the retreating cold air ahead of it\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COLD AIR CUTTING UNDER WARM AIR IS A COLD FRONT\", \"subline\": \"THE DENSE COLD AIR WEDGES UNDER THE WARM AIR AND LIFTS IT STEEPLY\", \"blocks\": [{\"label\": \"Cold front\", \"value\": \"Cold air undercuts the warm air: steep slope, cumuliform cloud, heavy but short showers\"}, {\"label\": \"Warm front\", \"value\": \"Warm air slides up over the cold air: shallow slope, layered cloud, steady rain\"}, {\"label\": \"Occlusion\", \"value\": \"A cold front catches up with a warm front\"}]}"
+   }
+  },
+  {
+   "id": 61,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CIRRUS IS HIGH, THIN, WISPY CLOUD MADE OF ICE CRYSTALS\", \"subline\": \"THE HIGHEST CLOUD FAMILY, ABOVE THE MIDDLE-LEVEL CLOUDS\", \"blocks\": [{\"label\": \"Looks like\", \"value\": \"Thin white streaks or “mares' tails”\"}, {\"label\": \"Made of\", \"value\": \"Ice crystals\"}, {\"label\": \"Watch\", \"value\": \"Spreading cirrus can be the first sign of an approaching warm front\"}]}"
+   }
+  },
+  {
+   "id": 673,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CIRRUS IS HIGH, THIN, WISPY CLOUD MADE OF ICE CRYSTALS\", \"subline\": \"THE HIGHEST CLOUD FAMILY, ABOVE THE MIDDLE-LEVEL CLOUDS\", \"blocks\": [{\"label\": \"Looks like\", \"value\": \"Thin white streaks or “mares' tails”\"}, {\"label\": \"Made of\", \"value\": \"Ice crystals\"}, {\"label\": \"Watch\", \"value\": \"Spreading cirrus can be the first sign of an approaching warm front\"}]}"
+   }
+  },
+  {
+   "id": 41,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"IN AN INVERSION, TEMPERATURE RISES WITH ALTITUDE INSTEAD OF FALLING\",\"subline\":\"A SURFACE INVERSION FORMS WHEN THE GROUND COOLS FASTER THAN THE AIR ABOVE IT ON A CLEAR, CALM NIGHT\",\"blocks\":[{\"label\":\"Normal lapse rate\",\"value\":\"Temperature decreases with altitude\"},{\"label\":\"Inversion\",\"value\":\"Temperature increases with altitude through the inverted layer, then resumes cooling above it\"},{\"label\":\"Cause of a surface inversion\",\"value\":\"Terrestrial radiation cools the ground (and the air resting on it) on a clear night with little or no wind\"},{\"label\":\"Effect\",\"value\":\"Cold, dense air sits trapped beneath warmer air, often with poor visibility, mist or fog\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SURFACE INVERSIONS FORM BY TERRESTRIAL RADIATION ON CLEAR, CALM NIGHTS\", \"subline\": \"THE GROUND LOSES HEAT AND COOLS THE AIR NEXT TO IT, LEAVING WARMER AIR ABOVE\", \"blocks\": [{\"label\": \"Clear sky\", \"value\": \"Heat radiates away from the ground freely\"}, {\"label\": \"Light or no wind\", \"value\": \"Little mixing, so the coldest air stays at the surface\"}, {\"label\": \"Inversion\", \"value\": \"Temperature rises with height instead of falling\"}, {\"label\": \"Effects\", \"value\": \"Poor visibility, fog, smooth air, wind shear at the top\"}]}"
+   }
+  },
+  {
+   "id": 647,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"IN AN INVERSION, TEMPERATURE RISES WITH ALTITUDE INSTEAD OF FALLING\",\"subline\":\"A SURFACE INVERSION FORMS WHEN THE GROUND COOLS FASTER THAN THE AIR ABOVE IT ON A CLEAR, CALM NIGHT\",\"blocks\":[{\"label\":\"Normal lapse rate\",\"value\":\"Temperature decreases with altitude\"},{\"label\":\"Inversion\",\"value\":\"Temperature increases with altitude through the inverted layer, then resumes cooling above it\"},{\"label\":\"Cause of a surface inversion\",\"value\":\"Terrestrial radiation cools the ground (and the air resting on it) on a clear night with little or no wind\"},{\"label\":\"Effect\",\"value\":\"Cold, dense air sits trapped beneath warmer air, often with poor visibility, mist or fog\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SURFACE INVERSIONS FORM BY TERRESTRIAL RADIATION ON CLEAR, CALM NIGHTS\", \"subline\": \"THE GROUND LOSES HEAT AND COOLS THE AIR NEXT TO IT, LEAVING WARMER AIR ABOVE\", \"blocks\": [{\"label\": \"Clear sky\", \"value\": \"Heat radiates away from the ground freely\"}, {\"label\": \"Light or no wind\", \"value\": \"Little mixing, so the coldest air stays at the surface\"}, {\"label\": \"Inversion\", \"value\": \"Temperature rises with height instead of falling\"}, {\"label\": \"Effects\", \"value\": \"Poor visibility, fog, smooth air, wind shear at the top\"}]}"
+   }
+  },
+  {
+   "id": 1476,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"IN AN INVERSION, TEMPERATURE RISES WITH ALTITUDE INSTEAD OF FALLING\",\"subline\":\"A SURFACE INVERSION FORMS WHEN THE GROUND COOLS FASTER THAN THE AIR ABOVE IT ON A CLEAR, CALM NIGHT\",\"blocks\":[{\"label\":\"Normal lapse rate\",\"value\":\"Temperature decreases with altitude\"},{\"label\":\"Inversion\",\"value\":\"Temperature increases with altitude through the inverted layer, then resumes cooling above it\"},{\"label\":\"Cause of a surface inversion\",\"value\":\"Terrestrial radiation cools the ground (and the air resting on it) on a clear night with little or no wind\"},{\"label\":\"Effect\",\"value\":\"Cold, dense air sits trapped beneath warmer air, often with poor visibility, mist or fog\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SURFACE INVERSIONS FORM BY TERRESTRIAL RADIATION ON CLEAR, CALM NIGHTS\", \"subline\": \"THE GROUND LOSES HEAT AND COOLS THE AIR NEXT TO IT, LEAVING WARMER AIR ABOVE\", \"blocks\": [{\"label\": \"Clear sky\", \"value\": \"Heat radiates away from the ground freely\"}, {\"label\": \"Light or no wind\", \"value\": \"Little mixing, so the coldest air stays at the surface\"}, {\"label\": \"Inversion\", \"value\": \"Temperature rises with height instead of falling\"}, {\"label\": \"Effects\", \"value\": \"Poor visibility, fog, smooth air, wind shear at the top\"}]}"
+   }
+  },
+  {
+   "id": 77,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"THE BLACK SOUTH EASTER IS A SOUTH EASTER ACCOMPANIED BY RAIN\",\"subline\":\"A DEEP LOW OVER THE SW CAPE PLUS AN INTENSE SOUTH ATLANTIC HIGH PRODUCE A STEEP PRESSURE GRADIENT AND STRONG WIND WITH RAIN\",\"blocks\":[{\"label\":\"Cape Doctor (dry)\",\"value\":\"South Easter driven by a high alone, under clear skies\"},{\"label\":\"Black South Easter\",\"value\":\"The same wind, but strengthened and made rain-bearing by a deep low over the south-western Cape working against an intense high\"},{\"label\":\"Season\",\"value\":\"Mainly spring and autumn, often with cut-off low pressure systems\"},{\"label\":\"Consequence\",\"value\":\"Can produce very heavy rain, as in the 1981 Laingsburg floods\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE BLACK SOUTH EASTER BLOWS WHEN A STRONG HIGH LIES WEST OR SOUTH-WEST OF CAPE TOWN\", \"subline\": \"A STRONG PRESSURE GRADIENT AND A LONG SEA TRACK BRING CLOUD AND RAIN\", \"blocks\": [{\"label\": \"Ordinary south easter\", \"value\": \"Dry, with the “tablecloth” cloud over Table Mountain\"}, {\"label\": \"Black south easter\", \"value\": \"The long sea track picks up moisture: low cloud and rain\"}, {\"label\": \"Pressure\", \"value\": \"A well-developed high to the west or south-west of Cape Town\"}]}"
+   }
+  },
+  {
+   "id": 747,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"THE BLACK SOUTH EASTER IS A SOUTH EASTER ACCOMPANIED BY RAIN\",\"subline\":\"A DEEP LOW OVER THE SW CAPE PLUS AN INTENSE SOUTH ATLANTIC HIGH PRODUCE A STEEP PRESSURE GRADIENT AND STRONG WIND WITH RAIN\",\"blocks\":[{\"label\":\"Cape Doctor (dry)\",\"value\":\"South Easter driven by a high alone, under clear skies\"},{\"label\":\"Black South Easter\",\"value\":\"The same wind, but strengthened and made rain-bearing by a deep low over the south-western Cape working against an intense high\"},{\"label\":\"Season\",\"value\":\"Mainly spring and autumn, often with cut-off low pressure systems\"},{\"label\":\"Consequence\",\"value\":\"Can produce very heavy rain, as in the 1981 Laingsburg floods\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE BLACK SOUTH EASTER BLOWS WHEN A STRONG HIGH LIES WEST OR SOUTH-WEST OF CAPE TOWN\", \"subline\": \"A STRONG PRESSURE GRADIENT AND A LONG SEA TRACK BRING CLOUD AND RAIN\", \"blocks\": [{\"label\": \"Ordinary south easter\", \"value\": \"Dry, with the “tablecloth” cloud over Table Mountain\"}, {\"label\": \"Black south easter\", \"value\": \"The long sea track picks up moisture: low cloud and rain\"}, {\"label\": \"Pressure\", \"value\": \"A well-developed high to the west or south-west of Cape Town\"}]}"
+   }
+  },
+  {
+   "id": 17,
+   "change": "nonsense wrong options replaced",
+   "before": {
+    "option_a": "Temperature decreases",
+    "option_b": "100%",
+    "option_c": "Humid air is less dense",
+    "option_d": "Temperature increases"
+   },
+   "after": {
+    "option_a": "Humid air is denser than dry air",
+    "option_b": "Adding water vapour has no effect on density",
+    "option_c": "Humid air is less dense",
+    "option_d": "Humid air is denser only at night"
+   }
+  },
+  {
+   "ids": [
+    9,
+    13,
+    17,
+    24,
+    25,
+    60,
+    78,
+    617,
+    618,
+    620,
+    621,
+    624,
+    625,
+    627,
+    628,
+    629,
+    630,
+    632,
+    634,
+    635,
+    636,
+    638,
+    639,
+    640,
+    642,
+    643,
+    644,
+    646,
+    647,
+    648,
+    649,
+    651,
+    652,
+    654,
+    655,
+    658,
+    659,
+    661,
+    665,
+    666,
+    667,
+    668,
+    669,
+    670,
+    673,
+    674,
+    683,
+    687,
+    688,
+    691,
+    693,
+    701,
+    705,
+    708,
+    710,
+    711,
+    718,
+    725,
+    727,
+    737,
+    742,
+    744,
+    745,
+    746,
+    747,
+    755,
+    1465,
+    1474,
+    1476,
+    1478,
+    1479,
+    1484,
+    1485,
+    1487,
+    1493,
+    1497,
+    1500,
+    1514,
+    1521,
+    1526,
+    1528
+   ],
+   "change": "restored (is_hidden true -> false): no word-for-word duplicates",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  }
+ ]
+}

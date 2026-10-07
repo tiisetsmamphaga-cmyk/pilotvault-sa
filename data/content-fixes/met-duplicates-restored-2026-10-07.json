@@ -1,0 +1,162 @@
+{
+ "date": "2026-10-07",
+ "subject": "meteorology",
+ "change": "Restored 9 questions hidden as duplicates that ask the same fact a different way. Only direct duplicates (the same question reworded) stay hidden.",
+ "rows": [
+  {
+   "id": 645,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: radiation fog: conditions given, name asked (kept #43 asks the conditions)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 689,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: cold front: description given, name asked (kept #63 asks how it forms)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 749,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: occlusion: name given, cause asked (kept #64 gives the cause, asks the name)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 18,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: relative humidity: effect given, cause asked (kept #622 gives the cause, asks the effect)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 1512,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: Foehn: name given, description asked (kept #75 gives the description, asks the name)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 653,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: sea breeze: time of day given, name asked (kept #44 asks when it develops); #746 stays hidden as a word-for-word copy of #653",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 656,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: land breeze: time of day given, name asked (kept #45 asks when it develops)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 672,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: anabatic: description given, name asked (kept #46 gives the name, asks the description)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 728,
+   "change": "restored (is_hidden true -> false)",
+   "why": "not a direct duplicate: Coriolis: effect given, name of force asked (kept #67 asks the direction of deflection)",
+   "before": {
+    "is_hidden": true
+   },
+   "after": {
+    "is_hidden": false
+   }
+  },
+  {
+   "id": 672,
+   "change": "picture and card added (same as #46, which asks about the same wind)",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/anabatic-katabatic-v3.webp",
+    "explanation_image_title": "Anabatic and Katabatic Winds",
+    "explanation_visual_key": "met-anabatic-katabatic-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN ANABATIC WIND BLOWS UP A SLOPE BY DAY\", \"subline\": \"A KATABATIC WIND BLOWS DOWN THE SLOPE AT NIGHT\", \"blocks\": [{\"label\": \"Anabatic\", \"value\": \"Sun heats the slope, the air in contact warms, becomes less dense and rises\"}, {\"label\": \"Katabatic\", \"value\": \"The slope cools by radiation at night; cold, dense air drains downhill\"}, {\"label\": \"Memory aid\", \"value\": \"ANA = UP (like ascend), KATA = DOWN\"}]}"
+   }
+  },
+  {
+   "id": 689,
+   "change": "generic card replaced with one that answers the question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"COLD FRONTS ARE STEEP AND FAST; WARM FRONTS ARE SHALLOW AND SLOW\",\"subline\":\"FRONTAL SLOPE DETERMINES THE CLOUD TYPE AND RAIN CHARACTER AT EACH\",\"blocks\":[{\"label\":\"Cold front\",\"value\":\"Steep slope, cumuliform cloud, heavy but short-duration rain\"},{\"label\":\"Warm front\",\"value\":\"Shallow slope, stratiform cloud, steady and longer-duration rain\"},{\"label\":\"Cold front mechanism\",\"value\":\"Cold air undercuts and lifts the warm air ahead of it\"},{\"label\":\"Warm front mechanism\",\"value\":\"Warm air rises gradually over the retreating cold air ahead of it\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COLD AIR CUTTING UNDER WARM AIR IS A COLD FRONT\", \"subline\": \"THE DENSE COLD AIR WEDGES UNDER THE WARM AIR AND LIFTS IT STEEPLY\", \"blocks\": [{\"label\": \"Cold front\", \"value\": \"Cold air undercuts the warm air: steep slope, cumuliform cloud, heavy but short showers\"}, {\"label\": \"Warm front\", \"value\": \"Warm air slides up over the cold air: shallow slope, layered cloud, steady rain\"}, {\"label\": \"Occlusion\", \"value\": \"A cold front catches up with a warm front\"}]}"
+   }
+  },
+  {
+   "id": 18,
+   "change": "explanation: 62% -> 52% at 20°C (textbook error; the cards already say 52%)",
+   "before": {
+    "explanation": "A worked example shows air holding a fixed amount of water vapour cooling from 100% relative humidity at 10°C to 62% at 20°C and just 28% at 30°C. The absolute moisture content never changes in that example - only the temperature does - which is exactly why relative humidity falls as temperature rises: warmer air can hold more moisture, so the same vapour represents a shrinking fraction of what the air could now hold."
+   },
+   "after": {
+    "explanation": "A worked example shows air holding a fixed amount of water vapour cooling from 100% relative humidity at 10°C to 52% at 20°C and just 28% at 30°C. The absolute moisture content never changes in that example - only the temperature does - which is exactly why relative humidity falls as temperature rises: warmer air can hold more moisture, so the same vapour represents a shrinking fraction of what the air could now hold."
+   }
+  },
+  {
+   "id": 622,
+   "change": "explanation: 62% -> 52% at 20°C (textbook error; the cards already say 52%)",
+   "before": {
+    "explanation": "A parcel of air holding a constant amount of water vapour has its relative humidity fall from 100% at 10°C to 62% at 20°C and 28% at 30°C - purely because warming raises the air's capacity to hold moisture without adding any more of it. Relative humidity is the ratio of actual to maximum possible moisture at that temperature, so raising the temperature alone, with nothing else changing, must push that ratio down."
+   },
+   "after": {
+    "explanation": "A parcel of air holding a constant amount of water vapour has its relative humidity fall from 100% at 10°C to 52% at 20°C and 28% at 30°C - purely because warming raises the air's capacity to hold moisture without adding any more of it. Relative humidity is the ratio of actual to maximum possible moisture at that temperature, so raising the temperature alone, with nothing else changing, must push that ratio down."
+   }
+  },
+  {
+   "id": 1487,
+   "change": "explanation: 62% -> 52% at 20°C (textbook error; the cards already say 52%)",
+   "before": {
+    "explanation": "Warming raises the air's capacity to hold water vapour: a parcel holding a fixed amount of moisture drops from 100% relative humidity at 10°C to 62% at 20°C and just 28% at 30°C. Since the actual water-vapour content hasn't changed in that example, only the temperature has, relative humidity must decrease whenever unsaturated air is warmed with nothing added to it."
+   },
+   "after": {
+    "explanation": "Warming raises the air's capacity to hold water vapour: a parcel holding a fixed amount of moisture drops from 100% relative humidity at 10°C to 52% at 20°C and just 28% at 30°C. Since the actual water-vapour content hasn't changed in that example, only the temperature has, relative humidity must decrease whenever unsaturated air is warmed with nothing added to it."
+   }
+  }
+ ]
+}

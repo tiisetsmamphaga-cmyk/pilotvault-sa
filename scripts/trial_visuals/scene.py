@@ -5,12 +5,13 @@ is at least MIN_TXT (about 12 px on a phone). Comparisons are stacked panels, to
 
 Parts: panel stacks with captions, sky and ground gradients, terrain, sun, moon, stars, trees, airflow
 streamlines, labels with halos, molecule grids, clouds measured from the cloud-types chart (cumulus,
-cumulonimbus, rain, lightning, fog) and the aircraft from aircraft.py.
+cumulonimbus, rain, lightning, fog), the aircraft from aircraft.py (side and top view), and for navigation an
+aerial view of the ground, angle arcs and north arrows.
 """
 import math
 import random
 
-from aircraft import aircraft, aircraft_defs  # noqa: F401  (re-exported for scene modules)
+from aircraft import aircraft, aircraft_defs, aircraft_top  # noqa: F401  (re-exported for scene modules)
 
 W = 900                      # canvas width
 PHONE_W = 328                # width the picture gets on a phone (CSS px)
@@ -83,6 +84,7 @@ COMMON_DEFS = (
     lg("ground_night", [(0, "#4a4a55"), (0.5, "#33463a"), (1, "#1f2e26")]),
     lg("grass", [(0, "#8fb35e"), (1, "#4f7a3a")]),
     lg("sea", [(0, "#2b8fd6"), (1, "#0d4f8b")]),
+    lg("aerial", [(0, "#9db57d"), (1, "#86a468")]),
     lg("sand", [(0, "#f1dfb5"), (1, "#d9bf86")]),
     lg("frost", [(0, "#e8eef5"), (1, "#c3cfdc")]),
     lg("metal", [(0, "#eef1f5"), (0.5, "#b8c0cc"), (1, "#7c8796")]),
@@ -408,6 +410,74 @@ def fence(x0, x1, ground, height=110, posts=5, rime=False):
         y = ground - height * (1 - f)
         s += f'<line x1="{x0:.1f}" y1="{y:.1f}" x2="{x1:.1f}" y2="{y:.1f}" stroke="#5b4a38" stroke-width="6"/>'
     return s
+
+
+# ------------------------------------------------------------------ navigation: the ground from above
+
+FIELD_COLOURS = ("#a9bf86", "#93ad72", "#b8c48f", "#c9c79a", "#8fa66e", "#a3b07a")
+
+
+def ground_above(w, h, seed=1, river=True, road=True):
+    """Quiet aerial view: a patchwork of fields, a river and a road. Use with sky='aerial'."""
+    rnd = random.Random(seed)
+    s = ""
+    cell = 150
+    for gx in range(-1, w // cell + 2):
+        for gy in range(-1, h // cell + 2):
+            x, y = gx * cell + rnd.uniform(-20, 20), gy * cell + rnd.uniform(-20, 20)
+            fw, fh = rnd.uniform(110, 170), rnd.uniform(90, 160)
+            s += (f'<rect x="{x:.0f}" y="{y:.0f}" width="{fw:.0f}" height="{fh:.0f}" rx="6" '
+                  f'fill="{rnd.choice(FIELD_COLOURS)}" transform="rotate({rnd.uniform(-8, 8):.1f} {x + fw / 2:.0f} {y + fh / 2:.0f})" '
+                  f'fill-opacity="0.75" stroke="#7f9762" stroke-width="2" stroke-opacity="0.5"/>')
+    if river:
+        y0 = h * rnd.uniform(0.25, 0.75)
+        pts = [(x, y0 + 60 * math.sin(x / 140 + seed)) for x in range(-20, w + 40, 30)]
+        d = "M " + " L ".join(f"{x:.0f},{y:.0f}" for x, y in pts)
+        s += path(d, "none", "#5f86a8", 22, ' stroke-opacity="0.55"') + path(d, "none", "#8fb6d6", 12, ' stroke-opacity="0.8"')
+    if road:
+        x0 = w * rnd.uniform(0.2, 0.8)
+        d = f"M {x0:.0f},-10 C {x0 + 80:.0f},{h * 0.35:.0f} {x0 - 120:.0f},{h * 0.65:.0f} {x0 + 40:.0f},{h + 10}"
+        s += path(d, "none", "#d6d0bf", 12, ' stroke-opacity="0.85"') + path(d, "none", "#9a937f", 2, ' stroke-dasharray="14 12"')
+    return s
+
+
+def town_above(x, y, size=90, seed=2):
+    """Small town seen from above: a cross of streets with roofs around it, centred on (x, y)."""
+    rnd = random.Random(seed)
+    s = f'<circle cx="{x}" cy="{y}" r="{size * 0.6:.0f}" fill="#d9d2c2" fill-opacity="0.9" stroke="#b8ad95" stroke-width="2"/>'
+    s += path(f"M {x - size * 0.5:.0f},{y} L {x + size * 0.5:.0f},{y} M {x},{y - size * 0.5:.0f} L {x},{y + size * 0.5:.0f}",
+              "none", "#ece6d8", size * 0.05)
+    for _ in range(int(size / 2.5)):
+        a, r = rnd.uniform(0, 2 * math.pi), rnd.uniform(size * 0.12, size * 0.55)
+        bx, by = x + r * math.cos(a), y + r * math.sin(a)
+        if abs(bx - x) < size * 0.07 or abs(by - y) < size * 0.07:
+            continue
+        bw = rnd.uniform(size * 0.07, size * 0.13)
+        s += (f'<rect x="{bx - bw / 2:.0f}" y="{by - bw / 2:.0f}" width="{bw:.0f}" height="{bw * 0.8:.0f}" rx="2" '
+              f'fill="{rnd.choice(("#b5543c", "#a14a36", "#8a8f99", "#c46a4a"))}" stroke="#5b4636" stroke-width="1"/>')
+    return s
+
+
+def compass_xy(cx, cy, r, deg):
+    """Point at compass bearing `deg` (0 = up, clockwise) and distance r from (cx, cy)."""
+    a = math.radians(deg)
+    return cx + r * math.sin(a), cy - r * math.cos(a)
+
+
+def north_line(cx, cy, length, deg, color, mid, w=9, dash=""):
+    """Straight arrow from (cx, cy) towards compass bearing `deg`, with a halo so it reads on any ground."""
+    x, y = compass_xy(cx, cy, length, deg)
+    d = f"M {cx:.1f},{cy:.1f} L {x:.1f},{y:.1f}"
+    extra = f' stroke-dasharray="{dash}"' if dash else ""
+    return path(d, "none", "#ffffff", w + 6, ' stroke-opacity="0.85"' + extra) + path(d, "none", color, w, f' marker-end="url(#{mid})"' + extra)
+
+
+def angle_arc(cx, cy, r, a0, a1, color, w=7):
+    """Arc between compass bearings a0 and a1 (degrees, 0 = up, clockwise)."""
+    x0, y0 = compass_xy(cx, cy, r, a0)
+    x1, y1 = compass_xy(cx, cy, r, a1)
+    sweep = 1 if (a1 - a0) % 360 < 180 else 0
+    return path(f"M {x0:.1f},{y0:.1f} A {r},{r} 0 0 {sweep} {x1:.1f},{y1:.1f}", "none", color, w)
 
 
 def svg_doc(body, w, h):

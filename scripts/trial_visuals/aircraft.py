@@ -1,8 +1,11 @@
-"""Side view of a generic low-wing trainer (PA-28 proportions) for explanation illustrations.
+"""A generic low-wing trainer for explanation illustrations: side view and top (plan) view.
 
-Outline measured from the aircraft in the existing QFE/QNE diagrams, redrawn as clean curves without
+Side view: outline measured from the aircraft in the existing QFE/QNE diagrams, redrawn as clean curves without
 registration or school markings. Local drawing space: nose on the left, about 660 x 250 units.
-Call aircraft_defs() once per SVG, then aircraft(...) for each aircraft.
+Top view: measured from the plan view in principles-of-flight/refined-batch-19/pof-rudder-effect-v2.webp
+(span 1300 px, length 1070 px, wing root chord 250 / tip chord 175, tailplane span 485, cabin 160 wide).
+Local space centred on the wing, nose towards -x.
+Call aircraft_defs() once per SVG, then aircraft(...) or aircraft_top(...) for each aircraft.
 """
 
 BODY = ("M 98,125 L 205,122 L 266,85 C 280,81 300,80 320,82 L 440,97 L 580,113 L 671,9 C 674,4 679,4 682,8 "
@@ -33,6 +36,10 @@ def aircraft_defs():
             '<stop offset="1" stop-color="#3a8ad8"/></linearGradient>'
             '<linearGradient id="ac_spinner" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f5f9"/>'
             '<stop offset="1" stop-color="#94a3b8"/></linearGradient>'
+            '<linearGradient id="act_wing" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8fc4f5"/>'
+            '<stop offset="1" stop-color="#2f78c4"/></linearGradient>'
+            '<linearGradient id="act_body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cbd5e1"/>'
+            '<stop offset="0.5" stop-color="#ffffff"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient>'
             f'<clipPath id="ac_clip" clipPathUnits="userSpaceOnUse"><path d="{BODY}"/></clipPath>'
             f'<clipPath id="ac_fin" clipPathUnits="userSpaceOnUse"><path d="{FIN}"/></clipPath>')
 
@@ -83,4 +90,54 @@ def aircraft(x, y, width=160, pitch=0, nose_right=True, rime=False, prop=True):
         s += '<ellipse cx="93" cy="147" rx="5" ry="58" fill="#64748b" fill-opacity="0.28"/>'
     if rime:
         s += _rime()
+    return s + "</g>\n"
+
+
+# Top view, measured in source pixels and shifted so the wing centre (600, 680) is the origin; nose towards -x.
+TOP_HALF_WIDTH = [(-440, 0), (-432, 30), (-410, 57), (-265, 64), (-150, 76), (0, 80), (120, 76), (250, 60),
+                  (390, 40), (550, 22), (605, 10)]
+TOP_WING = [(-190, 78), (-130, 115), (-75, 648), (100, 640), (122, 90)]
+TOP_TAILPLANE = [(385, 25), (495, 240), (595, 240), (600, 20)]
+
+
+def _smooth(pts):
+    """Catmull-Rom spline through pts as SVG cubic segments (no move-to)."""
+    d = ""
+    for i in range(len(pts) - 1):
+        p0 = pts[max(i - 1, 0)]
+        p1, p2 = pts[i], pts[i + 1]
+        p3 = pts[min(i + 2, len(pts) - 1)]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        d += f" C {c1[0]:.1f},{c1[1]:.1f} {c2[0]:.1f},{c2[1]:.1f} {p2[0]:.1f},{p2[1]:.1f}"
+    return d
+
+
+def _mirror(pts):
+    return [(x, -y) for x, y in pts]
+
+
+def aircraft_top(x, y, span=160, heading=0, prop=True):
+    """Aircraft seen from above, centred on (x, y), wingspan `span` canvas units, nose pointing to `heading`
+    (degrees, 0 = up/north, clockwise)."""
+    k = span / 1300
+    stroke = f'stroke="#334155" stroke-width="{max(2.2 / k / 6, 6):.1f}" stroke-linejoin="round"'
+    s = f'<g transform="translate({x:.1f},{y:.1f}) rotate({90 + heading}) scale({k:.4f})">'
+    w = _mirror(TOP_WING) + list(reversed(TOP_WING))
+    s += '<path d="M ' + " L ".join(f"{a},{b}" for a, b in w) + f' Z" fill="url(#act_wing)" {stroke}/>'
+    s += f'<path d="M 57,-630 L 70,-330 L 114,-330 M 57,630 L 70,330 L 114,330" fill="none" stroke="#1e4f8f" stroke-width="5"/>'
+    t = _mirror(TOP_TAILPLANE) + list(reversed(TOP_TAILPLANE))
+    s += '<path d="M ' + " L ".join(f"{a},{b}" for a, b in t) + f' Z" fill="url(#act_wing)" {stroke}/>'
+    s += '<path d="M 553,-236 L 556,-24 M 553,236 L 556,24" fill="none" stroke="#1e4f8f" stroke-width="5"/>'
+    upper = [(a, -b) for a, b in TOP_HALF_WIDTH]
+    lower = list(reversed(TOP_HALF_WIDTH))
+    body = f"M {upper[0][0]},{upper[0][1]}" + _smooth(upper) + f" L {lower[0][0]},{lower[0][1]}" + _smooth(lower) + " Z"
+    s += f'<path d="{body}" fill="url(#act_body)" {stroke}/>'
+    s += '<path d="M 230,0 Q 420,-14 610,0 Q 420,14 230,0 Z" fill="#e2e8f0" stroke="#334155" stroke-width="5"/>'  # fin
+    s += ('<path d="M -255,-30 C -250,-60 -210,-58 -160,-58 L -60,-56 C -50,-56 -45,-50 -45,-40 L -45,40 C -45,50 -50,56 -60,56 '
+          'L -160,58 C -210,58 -250,60 -255,30 Z" fill="url(#ac_glass)" stroke="#111827" stroke-width="7"/>')  # canopy
+    s += '<path d="M -150,-57 L -150,57" stroke="#111827" stroke-width="6"/>'
+    s += '<path d="M -438,-26 C -455,-24 -470,-10 -472,0 C -470,10 -455,24 -438,26 Z" fill="url(#ac_spinner)" stroke="#334155" stroke-width="5"/>'
+    if prop:
+        s += '<ellipse cx="-440" cy="0" rx="9" ry="145" fill="#64748b" fill-opacity="0.3"/>'
     return s + "</g>\n"

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 
 import { BankAngleLoadFactorVisual } from "./bank-angle-load-factor-visual"
+import { EnlargeButton, ImageViewer } from "./image-viewer"
 
 type ExplanationImageProps = {
   src: string
@@ -147,6 +148,7 @@ function PofExplanationImage({
 }) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [isLandscape, setIsLandscape] = useState(false)
+  const [viewerOpen, setViewerOpen] = useState(false)
   const [attempt, setAttempt] = useState(0)
   const imageRef = useRef<HTMLImageElement>(null)
 
@@ -210,8 +212,11 @@ function PofExplanationImage({
                 }
               }}
               onError={() => setStatus("error")}
-              className={`block h-auto max-h-[28rem] w-auto max-w-full object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
+              onClick={() => status === "loaded" && setViewerOpen(true)}
+              className={`block h-auto max-h-[28rem] w-auto max-w-full cursor-zoom-in object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
             />
+            {status === "loaded" && <EnlargeButton onClick={() => setViewerOpen(true)} />}
+            {viewerOpen && <ImageViewer src={resolvedSrc} alt={alt} onClose={() => setViewerOpen(false)} />}
             {status === "error" && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-4 text-center text-sm font-medium text-slate-700" role="alert">
                 <span>The explanation diagram could not be loaded.</span>
@@ -266,6 +271,7 @@ function PofExplanationImage({
 function StandardExplanationImage({ src, alt, priority = false }: ExplanationImageProps) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [attempt, setAttempt] = useState(0)
+  const [viewerOpen, setViewerOpen] = useState(false)
   const imageRef = useRef<HTMLImageElement>(null)
   const usesNavigationTemplate = src.includes("/explanation-images/navigation/")
   const usesWebsiteTemplate = usesNavigationTemplate
@@ -333,9 +339,12 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
           fetchPriority={priority ? "high" : "auto"}
           onLoad={() => setStatus("loaded")}
           onError={() => setStatus("error")}
+          onClick={() => status === "loaded" && setViewerOpen(true)}
           style={status === "loaded" && usesNavigationTemplate ? { marginTop: "-6%" } : undefined}
-          className={`${imageClass} ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
+          className={`${imageClass} cursor-zoom-in ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
         />
+        {status === "loaded" && <EnlargeButton onClick={() => setViewerOpen(true)} />}
+        {viewerOpen && <ImageViewer src={resolvedSrc} alt={alt} onClose={() => setViewerOpen(false)} />}
 
         {status === "error" && (
           <div className="absolute inset-0 z-10 flex min-h-40 min-w-64 flex-col items-center justify-center gap-3 px-4 text-center" role="alert">

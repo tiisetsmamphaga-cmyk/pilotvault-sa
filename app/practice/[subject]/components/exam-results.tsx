@@ -3,7 +3,7 @@
 import { formatSubjectName } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage, KeyFactSection } from "./explanation-image"
+import { CARD_ONLY_SUBJECTS, ExplanationImage, KeyFactSection } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
@@ -42,7 +42,7 @@ export function ExamResults({
 }: ExamResultsProps) {
   const isHumanPerformance = subject === "human-performance"
   const isPrinciplesOfFlight = subject === "principles-of-flight"
-  const isMeteorology = subject === "meteorology"
+  const showsCardOnly = CARD_ONLY_SUBJECTS.has(subject)
 
   return (
     <main className="pv-exam-results min-h-screen bg-white text-slate-900">
@@ -112,7 +112,7 @@ export function ExamResults({
                       Correct answer: <span className="font-semibold">{question.correctAnswer}</span>
                     </p>
                     <FormattedExplanation text={question.explanation}>
-                      {isMeteorology && !question.explanation_image_url && (
+                      {showsCardOnly && !question.explanation_image_url && (
                         <KeyFactSection template={question.explanation_visual_template} />
                       )}
                     </FormattedExplanation>

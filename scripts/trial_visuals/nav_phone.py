@@ -9,7 +9,7 @@ import math
 
 import random
 
-from scene import (BLUE, globe, globe_line, globe_xy, stars, dial, flow, heading_dial, runway_above, sun, aircraft, beacon_side, ndb_symbol, terrain, vor_rose, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
+from scene import (BLUE, globe, globe_line, globe_xy, stars, dial, flow, heading_dial, runway_above, sun, aircraft, ndb_mast, vor_dme_station, ndb_symbol, terrain, vor_rose, CAPTION, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_top,
                    angle_arc, compass_xy, defs, ground_above, head, label, north_line, path, stack, stack_height)
 
 R = Registry("navigation", "/explanation-images/navigation/refined-batch-2")
@@ -328,16 +328,16 @@ GROUND = 400
 def dme_panel(close):
     def draw(w, h):
         s = terrain(lambda x: GROUND, w, h, "url(#ground_day)")
-        bx = 200
-        s += beacon_side(bx, GROUND, 80)
-        ac = (300, 120) if close else (760, 300)
-        top = (bx, GROUND - 80)
-        s += line((ac[0], GROUND - 6), (bx + 14, GROUND - 6), INK, None, 4, "12 9")
-        s += path(f"M {ac[0]},{ac[1] + 25} L {ac[0]},{GROUND - 10}", "none", "#64748b", 3, ' stroke-dasharray="6 8"')
+        station, top = vor_dme_station(190, GROUND, 300)
+        s += station
+        ac = (390, 110) if close else (760, 300)
+        base = GROUND + 14
+        s += line((ac[0], base), (top[0], base), INK, None, 4, "12 9")
+        s += path(f"M {ac[0]},{ac[1] + 25} L {ac[0]},{base}", "none", "#64748b", 3, ' stroke-dasharray="6 8"')
         s += line(top, toward(top, ac, 50), GOLD, None)
         s += aircraft(*ac, 150, 0, nose_right=True)
         if close:
-            s += label(420, 90, "Slant range", TXT_L, "#9a5b00")
+            s += label(490, 90, "Slant range", TXT_L, "#9a5b00")
             s += label(330, 448, "Ground distance", TXT_M, INK, halo="#cfe0b8")
         else:
             s += label(440, 200, "Slant range", TXT_L, "#9a5b00")
@@ -370,12 +370,12 @@ def ndb_panel(night):
         if night:
             s += f'<rect x="0" y="40" width="{w}" height="70" fill="#a78bfa" fill-opacity="0.28" filter="url(#glow)"/>'
         s += terrain(lambda x: GROUND, w, h, "url(#ground_day)" if not night else "url(#ground_night)")
-        s += beacon_side(130, GROUND, 90)
+        s += ndb_mast(120, GROUND, 250, night)
         for k, y in enumerate((GROUND - 25, GROUND - 60, GROUND - 95)):
             s += flow([(190, y), (640, y)], BLUE if not night else "#7cc4ff", "nh_blue", LINE_W, 1 - k * 0.2)
         s += aircraft(760, 250, 150, 0, nose_right=False)
         if night:
-            sky = [(150, GROUND - 100), (300, 200), (420, 95), (560, 150), (700, 230)]
+            sky = [(130, 160), (280, 105), (420, 85), (560, 140), (700, 230)]
             s += flow(sky, "#f59e0b", "head_comp", LINE_W)
             s += label(460, 60, "Sky wave", TXT_L, "#fbbf24", halo="#0f1d3d")
             s += label(250, 445, "Ground wave", TXT_M, "#ffffff", halo="#0f1d3d")
@@ -575,7 +575,7 @@ def pa_panel(low_qnh):
     def draw(w, h):
         s = terrain(land, w, h, "url(#ground_day)")
         s += f'<rect x="0" y="330" width="300" height="{h - 330}" fill="url(#sea)"/>'
-        s += beacon_side(720, 200, 60)
+        s += aircraft(690, 200 - 116 * 150 / 660, 150, 0, nose_right=False)  # parked on the aerodrome
         datum = 400 if low_qnh else 270
         s += path(f"M 0,{datum} L {w},{datum}", "none", RED, 4, ' stroke-dasharray="14 10"')
         s += path(f"M 820,200 L 820,{datum}", "none", "#ffffff", 10, ' stroke-opacity="0.85"')

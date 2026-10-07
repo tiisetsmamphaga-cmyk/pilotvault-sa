@@ -96,7 +96,7 @@ export function ExplanationImage({
   // SVGs outside refined-batch folders keep the standard renderer.
   const isNavVisual = src.includes("/explanation-images/navigation/refined-batch-")
   const isApprovedNavRaster =
-    /\/explanation-images\/navigation\/refined-batch-(?:1)\//.test(src) &&
+    /\/explanation-images\/navigation\/refined-batch-(?:1|2)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   // POF, HP, Meteorology, Radio Telephony and Air Law are fail-closed. Only
@@ -273,6 +273,10 @@ function KeyFactBody({ template, bare = false }: { template: PofVisualTemplate; 
     </div>
   )
 }
+
+// Subjects whose questions without a picture show their KEY FACT card on its own. A subject is added once
+// every one of its cards has been checked (one subject at a time).
+export const CARD_ONLY_SUBJECTS = new Set(["meteorology", "navigation"])
 
 // KEY FACT for questions that have a card but no picture, shown inside the explanation box.
 export function KeyFactSection({ template }: { template?: string }) {

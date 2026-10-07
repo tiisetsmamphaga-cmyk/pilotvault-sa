@@ -3,7 +3,7 @@
 import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage, KeyFactSection } from "./explanation-image"
+import { CARD_ONLY_SUBJECTS, ExplanationImage, KeyFactSection } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
@@ -93,8 +93,8 @@ export function ExamSimulator({
   const questionIsPinned = pinnedQuestions.includes(currentQuestionIndex)
   const isHumanPerformance = subject === "human-performance"
   const isPrinciplesOfFlight = subject === "principles-of-flight"
-  // Meteorology questions without a picture show their KEY FACT card on its own.
-  const showsCardOnly = subject === "meteorology" && !currentQuestion.explanation_image_url
+  // Meteorology and Navigation questions without a picture show their KEY FACT card in the explanation box.
+  const showsCardOnly = CARD_ONLY_SUBJECTS.has(subject) && !currentQuestion.explanation_image_url
   const usesApprovedBankVisual = isHumanPerformance && currentQuestion.id === 2207
 
   return (

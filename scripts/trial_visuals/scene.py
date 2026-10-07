@@ -468,16 +468,73 @@ def runway_above(x, y, length=200, heading=0):
     return s + "</g>"
 
 
-def beacon_side(x, ground, h=120, color="#334155"):
-    """Radio beacon mast seen from the side, standing on `ground` at x, `h` high. Measured from the airfield
-    beacon in radio-telephony/refined-batch-1/rt-qnh-qfe-explanation-v1.webp (71 px tall: dish 61 px wide on top,
-    29 px at its base and 30% of the height deep; legs splay to 20 px)."""
-    k = h / 71
-    top, bowl = ground - h, ground - h + 21 * k
-    s = path(f"M {x - 30.5 * k:.1f},{top:.1f} L {x + 30.5 * k:.1f},{top:.1f} L {x + 14.5 * k:.1f},{bowl:.1f} "
-             f"L {x - 14.5 * k:.1f},{bowl:.1f} Z", "#e2e8f0", color, 4)
-    s += path(f"M {x - 10 * k:.1f},{ground} L {x:.1f},{bowl:.1f} L {x + 10 * k:.1f},{ground}", "none", color, 5)
+def ndb_mast(x, ground, h=260, night=False):
+    """NDB station from the side: a slim lattice mast with a crossed top-load on an equipment hut, `h` from the
+    ground to the mast top. Measured from a photo of an NDB (Wikimedia Commons, Nkr1.jpg; mast 968 px
+    above the hut roof): the mast tapers from 3.2% of its height wide at the base to 2.1% at the top, cross-braced;
+    the two top-load wires cross at the top, spanning 12-14% of the mast height and sloping about 30 degrees;
+    the hut is 19% of the mast height wide and 16.5% high, with the mast in the middle of its roof.
+    `night` draws the steel light so it shows against a dark sky."""
+    m = h / 1.165
+    steel, leg = ("#cbd5e1", "#e2e8f0") if night else ("#334155", "#1f2937")
+    hut_w, hut_h = 0.19 * m, 0.165 * m
+    roof, top = ground - hut_h, ground - h
+    s = path(f"M {x - hut_w / 2:.1f},{ground} L {x - hut_w / 2:.1f},{roof:.1f} L {x + hut_w / 2:.1f},{roof:.1f} "
+             f"L {x + hut_w / 2:.1f},{ground} Z", "#8a6f52", "#4b3a2a", 2.5)
+    s += path(f"M {x - hut_w / 2 - 3:.1f},{roof:.1f} L {x + hut_w / 2 + 3:.1f},{roof:.1f}", "none", "#4b3a2a", 5)
+    s += path(f"M {x - 0.08 * hut_w:.1f},{ground} L {x - 0.08 * hut_w:.1f},{ground - 0.5 * hut_h:.1f} "
+              f"L {x + 0.15 * hut_w:.1f},{ground - 0.5 * hut_h:.1f} L {x + 0.15 * hut_w:.1f},{ground} Z", "#e2e8f0", "#4b3a2a", 2)
+    hw = lambda y: (0.016 + (0.0105 - 0.016) * (roof - y) / m) * m  # noqa: E731
+    lattice = f"M {x - hw(roof):.1f},{roof:.1f} L {x - hw(top):.1f},{top:.1f} M {x + hw(roof):.1f},{roof:.1f} L {x + hw(top):.1f},{top:.1f}"
+    n = max(4, round(m / 16))
+    for k in range(n):
+        y0, y1 = roof - k * m / n, roof - (k + 1) * m / n
+        lattice += (f" M {x - hw(y0):.1f},{y0:.1f} L {x + hw(y1):.1f},{y1:.1f} M {x + hw(y0):.1f},{y0:.1f} "
+                    f"L {x - hw(y1):.1f},{y1:.1f} M {x - hw(y1):.1f},{y1:.1f} L {x + hw(y1):.1f},{y1:.1f}")
+    s += path(lattice, "none", steel, 1.8)
+    s += path(f"M {x - hw(roof):.1f},{roof:.1f} L {x - hw(top):.1f},{top:.1f} M {x + hw(roof):.1f},{roof:.1f} "
+              f"L {x + hw(top):.1f},{top:.1f}", "none", leg, 2.6)
+    s += path(f"M {x - 0.059 * m:.1f},{top - 0.040 * m:.1f} L {x + 0.050 * m:.1f},{top + 0.039 * m:.1f} "
+              f"M {x - 0.071 * m:.1f},{top + 0.031 * m:.1f} L {x + 0.072 * m:.1f},{top - 0.028 * m:.1f}",
+              "none", leg, 2.6, ' stroke-linecap="round"')
+    s += path(f"M {x - 0.02 * m:.1f},{top - 0.006 * m:.1f} L {x + 0.02 * m:.1f},{top - 0.006 * m:.1f} "
+              f"L {x + 0.02 * m:.1f},{top + 0.01 * m:.1f} L {x - 0.02 * m:.1f},{top + 0.01 * m:.1f} Z", leg)
     return s
+
+
+# VOR/DME cone profile (height above the roof, half width), both as fractions of the roof width.
+_VOR_CONE = [(0.005, 0.109), (0.028, 0.091), (0.052, 0.068), (0.099, 0.040), (0.146, 0.0235), (0.166, 0.019)]
+
+
+def vor_dme_station(x, ground, d=220):
+    """VOR/DME station from the side: a low building under a wide flat round roof (the counterpoise), small
+    antennas round its rim and the flared white antenna in the middle. Measured from a photo of the Oceanside
+    VORTAC (Wikimedia Commons, OceanSideVortac.jpg; roof 425 px wide): roof top 9% of its width above the
+    ground, rim 2% thick, building 62% of the roof width; the antenna is 18.6% of the roof width tall, 21.8% wide
+    at its foot, flaring in to 3.8% for its rounded top 4%. Returns (svg, antenna top (x, y))."""
+    roof = ground - 0.09 * d
+    s = path(f"M {x - 0.31 * d:.1f},{ground} L {x - 0.31 * d:.1f},{roof + 0.03 * d:.1f} L {x + 0.31 * d:.1f},{roof + 0.03 * d:.1f} "
+             f"L {x + 0.31 * d:.1f},{ground} Z", "#e5e7eb", "#64748b", 2.5)
+    s += path(f"M {x - 0.06 * d:.1f},{ground} L {x - 0.06 * d:.1f},{roof + 0.065 * d:.1f} L {x + 0.02 * d:.1f},{roof + 0.065 * d:.1f} "
+              f"L {x + 0.02 * d:.1f},{ground}", "#475569")
+    s += path(f"M {x - 0.5 * d:.1f},{roof:.1f} L {x + 0.5 * d:.1f},{roof:.1f} L {x + 0.5 * d:.1f},{roof + 0.02 * d:.1f} "
+              f"Q {x:.1f},{roof + 0.075 * d:.1f} {x - 0.5 * d:.1f},{roof + 0.02 * d:.1f} Z", "#94a3b8", "#475569", 2.5)
+    s += path(f"M {x - 0.5 * d:.1f},{roof:.1f} L {x + 0.5 * d:.1f},{roof:.1f}", "none", "#f8fafc", 3)
+    for f in (-0.47, -0.34, -0.2, 0.2, 0.34, 0.47):
+        px = x + f * d
+        s += path(f"M {px:.1f},{roof:.1f} L {px:.1f},{roof - 0.014 * d:.1f}", "none", "#64748b", 2)
+        s += path(f"M {px - 0.017 * d:.1f},{roof - 0.016 * d:.1f} L {px + 0.017 * d:.1f},{roof - 0.016 * d:.1f}",
+                  "none", "#64748b", 3, ' stroke-linecap="round"')
+    left = " ".join(f"L {x - hw * d:.1f},{roof - ht * d:.1f}" for ht, hw in _VOR_CONE)
+    right = " ".join(f"L {x + hw * d:.1f},{roof - ht * d:.1f}" for ht, hw in reversed(_VOR_CONE))
+    r = 0.019 * d
+    tip = roof - 0.186 * d
+    cone = (f"M {x - 0.109 * d:.1f},{roof:.1f} {left} L {x - r:.1f},{tip + r:.1f} A {r:.1f},{r:.1f} 0 0 1 {x + r:.1f},{tip + r:.1f} "
+            f"{right} L {x + 0.109 * d:.1f},{roof:.1f} Z")
+    s += path(cone, "#f8fafc", "#64748b", 2.5)
+    s += path(f"M {x + 0.04 * d:.1f},{roof - 0.004 * d:.1f} Q {x + 0.012 * d:.1f},{roof - 0.08 * d:.1f} {x + 0.01 * d:.1f},{tip + r:.1f}",
+              "none", "#cbd5e1", 3)
+    return s, (x, tip)
 
 
 def vor_rose(x, y, r=110, numbers=True):

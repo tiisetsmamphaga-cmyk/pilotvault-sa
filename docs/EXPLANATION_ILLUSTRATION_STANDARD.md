@@ -91,6 +91,14 @@ Parts measured so far:
   cumulonimbus height ≈ 2.4 × base width, bulging to ≈ 1.3 × the base width
   mid-tower and narrowing to ≈ 0.76 × at the top, anvil ≈ 1.4 × the base width
   and ≈ 8% of the height, flat dark base.
+- `aircraft.aircraft_top` — the trainer from above (from the rudder-effect picture).
+- `scene.runway_above` — runway from above (from the contaminated-runway picture).
+- `scene.heading_dial` — heading indicator (from the heading indicator picture).
+- `scene.ndb_mast`, `scene.vor_dme_station` — radio stations from the side. No
+  PilotVault picture or manual had a real one (the old dish-on-legs symbol was
+  a diagram sign, not a station), so they are measured from photos on
+  Wikimedia Commons (`Nkr1.jpg`, `OceanSideVortac.jpg`). An aerodrome on high
+  ground is shown by an aircraft standing on it, as the navigation manual does.
 
 ## 5. Checks before anyone sees a picture
 

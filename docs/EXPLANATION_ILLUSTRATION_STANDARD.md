@@ -5,6 +5,10 @@ The reference is the anabatic/katabatic wind picture
 drawn by `scripts/trial_visuals/met_phone.py` from the parts in
 `scripts/trial_visuals/scene.py`). New explanation pictures should look like it.
 
+**Scope:** this standard applies to new diagrams. Pictures already live (the
+textbook figures and the earlier Air Law, Flight Planning and Radio Telephony
+drawings) stay as they are; do not redraw them unless asked.
+
 ## 1. Phone first
 
 Most students study on a phone, where a picture is about **330 px wide**. Design

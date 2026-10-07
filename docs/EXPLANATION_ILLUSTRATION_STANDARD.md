@@ -63,8 +63,11 @@ Aircraft, instruments, clouds and other real objects are never drawn from
 memory. Freehand shapes come out wrong (the first barometer, plane and cloud
 drafts).
 
-1. **Find a reference picture** of the object: an existing PilotVault diagram,
-   a manual figure, or a photo with the right view.
+1. **Extract it from an existing PilotVault picture first**, the way the
+   aircraft was taken from the QFE/QNE diagrams and the clouds from the cloud
+   types chart: search `public/explanation-images/` and the question images
+   for the object in the right view. Only when no existing picture has it,
+   use a manual figure or a photo.
 2. **Measure it on a grid.**
    `python3 scripts/trial_visuals/measure.py <image> x0 y0 x1 y1 out.png [zoom] [step]`
    gives a zoomed crop with labelled grid lines; read the outline, proportions

@@ -7,8 +7,9 @@
 - Explanation pictures follow `docs/EXPLANATION_ILLUSTRATION_STANDARD.md`
   (reference: the anabatic/katabatic wind picture). Design for a phone first
   (900 px canvas, stacked panels, labels ≥ 32 px), build from the shared parts
-  in `scripts/trial_visuals/scene.py`, measure real objects from a reference
-  instead of drawing freehand, and pass `scripts/trial_visuals/check.py`
+  in `scripts/trial_visuals/scene.py`, measure real objects instead of drawing
+  freehand (extract them from existing PilotVault pictures first, as the
+  aircraft was from the QFE diagram), and pass `scripts/trial_visuals/check.py`
   before showing anyone.
 - Duplicate questions: hide only word-for-word duplicates. Questions that ask
   the same fact in different words stay in the bank.

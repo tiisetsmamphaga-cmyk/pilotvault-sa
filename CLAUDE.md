@@ -10,5 +10,8 @@
   in `scripts/trial_visuals/scene.py`, measure real objects from a reference
   instead of drawing freehand, and pass `scripts/trial_visuals/check.py`
   before showing anyone.
+- Duplicate questions: hide only direct duplicates (the same question
+  reworded, with the same answer). Keep questions that ask the same fact a
+  different way, e.g. giving the description and asking for the name.
 - Deployment rules are in `docs/DEPLOYMENT_POLICY.md`.
 - Use pnpm.

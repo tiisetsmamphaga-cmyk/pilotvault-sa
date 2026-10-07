@@ -185,26 +185,30 @@ ISA_H = 600
 
 def isa_draw(w, h):
     rnd = random.Random(9)
-    s = sun(820, 82, 38) + cumulus(330, 300, 150, seed=2)
-    s += f'<rect x="0" y="430" width="{w}" height="{h - 430}" fill="url(#sea)"/>'
-    s += "".join(path(f"M {30 + k * 85},{470 + (k % 3) * 40} q 18,-9 36,0", "none", "#bfdbfe", 4, ' stroke-opacity="0.7"')
-                 for k in range(6))
-    s += path("M 470,600 L 540,470 C 600,462 760,458 900,456 L 900,600 Z", "url(#sand)")
-    # one cubic metre of air on a kitchen scale on the beach
-    x, y, a, d = 560, 175, 170, 40
-    s += f'<rect x="530" y="396" width="270" height="70" rx="12" fill="url(#metal)" stroke="#4b5563" stroke-width="3"/>'
-    s += f'<rect x="585" y="406" width="160" height="50" rx="8" fill="#1f2937"/>'
-    s += (f'<text x="665" y="445" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="40" '
-          f'font-weight="800" fill="#4ade80" data-label="1225">1225 g</text>')
-    s += f'<rect x="515" y="380" width="300" height="16" rx="6" fill="url(#metal)" stroke="#4b5563" stroke-width="3"/>'
+    s = sun(820, 82, 38) + cumulus(330, 290, 150, seed=2)
+    # sea out to the horizon, beach across the foreground
+    s += f'<rect x="0" y="370" width="{w}" height="{h - 370}" fill="url(#sea)"/>'
+    s += "".join(path(f"M {40 + k * 95},{410 + (k % 3) * 34} q 18,-9 36,0", "none", "#bfdbfe", 4, ' stroke-opacity="0.7"')
+                 for k in range(5))
+    s += path("M 300,600 C 360,520 470,470 640,450 C 740,440 840,432 900,430 L 900,600 Z", "url(#sand)")
+    s += path("M 300,600 C 360,520 470,470 640,450 C 740,440 840,432 900,430", "none", "#ffffff", 6, ' stroke-opacity="0.6"')
+    # one cubic metre of air standing on the sand, with its mass on a tag
+    x, y, a, d = 520, 330, 170, 40          # front face bottom at y + a + d = 540, on the sand
+    s += f'<ellipse cx="{x + (a + d) / 2}" cy="{y + a + d + 4}" rx="{(a + d) / 2 + 10}" ry="12" fill="#8a7550" opacity="0.35"/>'
     s += (f'<path d="M {x},{y + d} L {x + d},{y} L {x + a + d},{y} L {x + a + d},{y + a} L {x + a},{y + a + d} '
           f'L {x},{y + a + d} Z" fill="#bfdbfe" fill-opacity="0.65" stroke="#1d4ed8" stroke-width="4"/>')
     s += path(f"M {x},{y + d} L {x + a},{y + d} L {x + a + d},{y} M {x + a},{y + d} L {x + a},{y + a + d}", "none",
               "#1d4ed8", 4)
     for px, py in grid_points(rnd, (x + 16, y + d + 16, x + a - 8, y + a + d - 8), 34, 5):
         s += molecule(px, py)
+    tx, ty = 738, 300                       # mass tag tied to the top corner of the cube
+    s += f'<line x1="{x + a + d - 6}" y1="{y + 6}" x2="{tx + 20}" y2="{ty + 8}" stroke="#475569" stroke-width="3"/>'
+    s += (f'<path d="M {tx},{ty + 8} L {tx + 22},{ty - 14} L {tx + 150},{ty - 14} L {tx + 150},{ty + 46} L {tx + 22},{ty + 46} Z" '
+          f'fill="#fef3c7" stroke="#b7860b" stroke-width="3"/>')
+    s += circle(tx + 22, ty + 16, 5, "#ffffff", "#b7860b", 2)
+    s += label(tx + 92, ty + 30, "1225 g", 36, INK, "middle", halo=None)
     s += label(36, 82, "ISA at sea level\n1013.25 hPa, +15°C", TXT_L, INK)
-    s += label(560, 158, "1 m³ of air", TXT_M, "#1e3a8a")
+    s += label(x, y - 18, "1 m³ of air", TXT_M, "#1e3a8a")
     return s
 
 

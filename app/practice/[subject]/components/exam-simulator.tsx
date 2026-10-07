@@ -93,7 +93,7 @@ export function ExamSimulator({
   const questionIsPinned = pinnedQuestions.includes(currentQuestionIndex)
   const isHumanPerformance = subject === "human-performance"
   const isPrinciplesOfFlight = subject === "principles-of-flight"
-  // Meteorology and Navigation questions without a picture show their KEY FACT card in the explanation box.
+  // Questions in CARD_ONLY_SUBJECTS without a picture show their KEY FACT card in the explanation box.
   const showsCardOnly = CARD_ONLY_SUBJECTS.has(subject) && !currentQuestion.explanation_image_url
   const usesApprovedBankVisual = isHumanPerformance && currentQuestion.id === 2207
 

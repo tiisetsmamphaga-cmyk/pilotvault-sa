@@ -276,7 +276,7 @@ function KeyFactBody({ template, bare = false }: { template: PofVisualTemplate; 
 
 // Subjects whose questions without a picture show their KEY FACT card on its own. A subject is added once
 // every one of its cards has been checked (one subject at a time).
-export const CARD_ONLY_SUBJECTS = new Set(["meteorology", "navigation"])
+export const CARD_ONLY_SUBJECTS = new Set(["meteorology", "navigation", "flight-planning"])
 
 // KEY FACT for questions that have a card but no picture, shown inside the explanation box.
 export function KeyFactSection({ template }: { template?: string }) {

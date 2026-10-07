@@ -10,7 +10,9 @@
   in `scripts/trial_visuals/scene.py`, measure real objects instead of drawing
   freehand (extract them from existing PilotVault pictures first, as the
   aircraft was from the QFE diagram), and pass `scripts/trial_visuals/check.py`
-  before showing anyone.
+  before showing anyone. Bad existing drawings (failing `check.py`, wrong, or
+  unreadable on a phone) are redrawn to the standard when their subject is
+  worked on; textbook figures and branded images stay.
 - Duplicate questions: hide only word-for-word duplicates. Questions that ask
   the same fact in different words stay in the bank.
 - Deployment rules are in `docs/DEPLOYMENT_POLICY.md`.

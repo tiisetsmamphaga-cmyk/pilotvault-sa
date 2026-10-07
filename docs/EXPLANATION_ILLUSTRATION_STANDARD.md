@@ -5,9 +5,11 @@ The reference is the anabatic/katabatic wind picture
 drawn by `scripts/trial_visuals/met_phone.py` from the parts in
 `scripts/trial_visuals/scene.py`). New explanation pictures should look like it.
 
-**Scope:** this standard applies to new diagrams. Pictures already live (the
-textbook figures and the earlier Air Law, Flight Planning and Radio Telephony
-drawings) stay as they are; do not redraw them unless asked.
+**Scope:** every new diagram follows this standard, and bad existing drawings
+are fixed: when a subject is worked on, each drawn picture in it that fails
+`check.py`, is wrong, or is hard to read on a phone is redrawn to this standard
+(the earlier Air Law, Flight Planning and Radio Telephony drawings currently
+all fail `check.py`). Textbook figures and branded images are not redrawn.
 
 ## 1. Phone first
 

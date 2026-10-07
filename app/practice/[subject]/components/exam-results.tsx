@@ -3,7 +3,7 @@
 import { formatSubjectName } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage, KeyFactCard } from "./explanation-image"
+import { ExplanationImage, KeyFactSection } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
@@ -111,7 +111,11 @@ export function ExamResults({
                     <p className="mt-2 text-green-700">
                       Correct answer: <span className="font-semibold">{question.correctAnswer}</span>
                     </p>
-                    <FormattedExplanation text={question.explanation} />
+                    <FormattedExplanation text={question.explanation}>
+                      {isMeteorology && !question.explanation_image_url && (
+                        <KeyFactSection template={question.explanation_visual_template} />
+                      )}
+                    </FormattedExplanation>
 
                     {isHumanPerformance && !usesApprovedBankVisual && !question.explanation_image_url ? (
                       <HumanPerformanceVisual question={question} />
@@ -125,8 +129,6 @@ export function ExamResults({
                         caption={question.explanation_image_caption}
                         template={question.explanation_visual_template}
                       />
-                    ) : isMeteorology ? (
-                      <KeyFactCard template={question.explanation_visual_template} />
                     ) : null}
                   </div>
                 )

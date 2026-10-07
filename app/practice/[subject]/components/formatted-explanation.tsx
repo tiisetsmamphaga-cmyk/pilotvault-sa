@@ -77,13 +77,15 @@ function renderBody(body: string) {
   )
 }
 
-export function FormattedExplanation({ text }: { text: string }) {
+// children (e.g. a KEY FACT section) render inside the same box, under the text.
+export function FormattedExplanation({ text, children }: { text: string; children?: React.ReactNode }) {
   const sections = parseSections(text)
 
   if (!sections) {
     return (
       <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-5">
         <p className="whitespace-pre-line leading-relaxed text-slate-700">{text}</p>
+        {children}
       </div>
     )
   }
@@ -113,6 +115,7 @@ export function FormattedExplanation({ text }: { text: string }) {
             </div>
           )
         })}
+        {children}
       </div>
     )
   }
@@ -139,6 +142,7 @@ export function FormattedExplanation({ text }: { text: string }) {
           </div>
         )
       })}
+      {children}
     </div>
   )
 }

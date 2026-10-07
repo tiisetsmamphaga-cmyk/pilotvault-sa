@@ -3,7 +3,7 @@
 import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage, KeyFactCard } from "./explanation-image"
+import { ExplanationImage, KeyFactSection } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
@@ -224,7 +224,9 @@ export function ExamSimulator({
                 <p className="text-sm font-semibold text-[#1f4e79]">Correct Answer</p>
                 <p className="mt-2 font-semibold text-slate-900">{currentQuestion.correctAnswer}</p>
                 <p className="mt-4 text-sm font-semibold text-[#1f4e79]">Explanation</p>
-                <FormattedExplanation text={currentQuestion.explanation} />
+                <FormattedExplanation text={currentQuestion.explanation}>
+                  {showsCardOnly && <KeyFactSection template={currentQuestion.explanation_visual_template} />}
+                </FormattedExplanation>
 
                 {isHumanPerformance && !usesApprovedBankVisual && !currentQuestion.explanation_image_url ? (
                   <HumanPerformanceVisual key={`hp-${currentQuestion.id}`} question={currentQuestion} />
@@ -240,8 +242,6 @@ export function ExamSimulator({
                     template={currentQuestion.explanation_visual_template}
                     priority
                   />
-                ) : showsCardOnly ? (
-                  <KeyFactCard template={currentQuestion.explanation_visual_template} />
                 ) : null}
               </div>
             )}

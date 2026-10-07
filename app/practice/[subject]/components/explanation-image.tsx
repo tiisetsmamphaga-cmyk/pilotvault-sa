@@ -247,9 +247,9 @@ function PofExplanationImage({
   )
 }
 
-function KeyFactBody({ template }: { template: PofVisualTemplate }) {
+function KeyFactBody({ template, bare = false }: { template: PofVisualTemplate; bare?: boolean }) {
   return (
-    <div className="flex flex-col rounded-xl border border-[#e2e7ed] bg-white p-5">
+    <div className={bare ? "flex flex-col" : "flex flex-col rounded-xl border border-[#e2e7ed] bg-white p-5"}>
       <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#c9942f]">
         {template.kicker ?? "KEY RELATIONSHIP"}
       </div>
@@ -274,13 +274,13 @@ function KeyFactBody({ template }: { template: PofVisualTemplate }) {
   )
 }
 
-// KEY FACT card on its own, for questions that have a card but no picture.
-export function KeyFactCard({ template }: { template?: string }) {
+// KEY FACT for questions that have a card but no picture, shown inside the explanation box.
+export function KeyFactSection({ template }: { template?: string }) {
   const card = parsePofTemplate(template)
   if (!card) return null
   return (
-    <div className="mt-5 flex flex-col gap-3">
-      <KeyFactBody template={card} />
+    <div className="mt-5 flex flex-col gap-3 border-t border-slate-200 pt-5">
+      <KeyFactBody template={card} bare />
       {card.formula && (
         <div className="rounded-xl bg-[#0b1f33] px-4 py-3 text-center text-base font-extrabold text-white">{card.formula}</div>
       )}

@@ -465,6 +465,47 @@ def runway_above(x, y, length=200, heading=0):
     return s + "</g>"
 
 
+def beacon_side(x, ground, h=120, color="#334155"):
+    """Radio beacon mast seen from the side, standing on `ground` at x, `h` high. Measured from the airfield
+    beacon in radio-telephony/refined-batch-1/rt-qnh-qfe-explanation-v1.webp (71 px tall: dish 61 px wide on top,
+    29 px at its base and 30% of the height deep; legs splay to 20 px)."""
+    k = h / 71
+    top, bowl = ground - h, ground - h + 21 * k
+    s = path(f"M {x - 30.5 * k:.1f},{top:.1f} L {x + 30.5 * k:.1f},{top:.1f} L {x + 14.5 * k:.1f},{bowl:.1f} "
+             f"L {x - 14.5 * k:.1f},{bowl:.1f} Z", "#e2e8f0", color, 4)
+    s += path(f"M {x - 10 * k:.1f},{ground} L {x:.1f},{bowl:.1f} L {x + 10 * k:.1f},{ground}", "none", color, 5)
+    return s
+
+
+def vor_rose(x, y, r=110, numbers=True):
+    """VOR station on a chart: compass ring with ticks every 30 degrees and the station in the middle.
+    From the SA 1:1 000 000 chart symbol in public/question-images/navigation/v1/chart-symbol-vor-reporting-point.svg."""
+    s = f'<circle cx="{x}" cy="{y}" r="{r}" fill="#ffffff" fill-opacity="0.55" stroke="#111827" stroke-width="3"/>'
+    for k in range(12):
+        x0, y0 = compass_xy(x, y, r, k * 30)
+        x1, y1 = compass_xy(x, y, r * 0.84, k * 30)
+        s += f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" stroke="#111827" stroke-width="3"/>'
+    hexagon = " ".join(f"{compass_xy(x, y, r * 0.16, 30 + 60 * k)[0]:.1f},{compass_xy(x, y, r * 0.16, 30 + 60 * k)[1]:.1f}"
+                       for k in range(6))
+    s += f'<polygon points="{hexagon}" fill="#ffffff" stroke="#111827" stroke-width="3"/>'
+    s += f'<circle cx="{x}" cy="{y}" r="{r * 0.04:.1f}" fill="#111827"/>'
+    if numbers:
+        for deg, txt in ((0, "0"), (90, "9"), (180, "18"), (270, "27")):
+            tx, ty = compass_xy(x, y, r * 0.62, deg)
+            s += label(tx, ty + MIN_TXT * 0.36, txt, MIN_TXT, INK, "middle", halo="#ffffff")
+    return s
+
+
+def ndb_symbol(x, y, r=40):
+    """NDB on a chart: a centre dot inside rings of dots."""
+    s = f'<circle cx="{x}" cy="{y}" r="{r * 0.18:.1f}" fill="#7c2d12"/>'
+    for ring, n in ((0.5, 10), (0.8, 16), (1.0, 20)):
+        for k in range(n):
+            dx, dy = compass_xy(x, y, r * ring, k * 360 / n)
+            s += f'<circle cx="{dx:.1f}" cy="{dy:.1f}" r="{r * 0.05:.1f}" fill="#7c2d12"/>'
+    return s
+
+
 def compass_xy(cx, cy, r, deg):
     """Point at compass bearing `deg` (0 = up, clockwise) and distance r from (cx, cy)."""
     a = math.radians(deg)
@@ -479,12 +520,16 @@ def north_line(cx, cy, length, deg, color, mid, w=9, dash=""):
     return path(d, "none", "#ffffff", w + 6, ' stroke-opacity="0.85"' + extra) + path(d, "none", color, w, f' marker-end="url(#{mid})"' + extra)
 
 
-def angle_arc(cx, cy, r, a0, a1, color, w=7):
-    """Arc between compass bearings a0 and a1 (degrees, 0 = up, clockwise)."""
+def angle_arc(cx, cy, r, a0, a1, color, w=7, clockwise=False):
+    """Arc between compass bearings a0 and a1 (degrees, 0 = up, clockwise). By default the shorter way round;
+    clockwise=True always sweeps clockwise from a0 to a1, the long way if needed (e.g. a bearing past 180)."""
     x0, y0 = compass_xy(cx, cy, r, a0)
     x1, y1 = compass_xy(cx, cy, r, a1)
-    sweep = 1 if (a1 - a0) % 360 < 180 else 0
-    return path(f"M {x0:.1f},{y0:.1f} A {r},{r} 0 0 {sweep} {x1:.1f},{y1:.1f}", "none", color, w)
+    if clockwise:
+        large, sweep = (1 if (a1 - a0) % 360 > 180 else 0), 1
+    else:
+        large, sweep = 0, (1 if (a1 - a0) % 360 < 180 else 0)
+    return path(f"M {x0:.1f},{y0:.1f} A {r},{r} 0 {large} {sweep} {x1:.1f},{y1:.1f}", "none", color, w)
 
 
 def svg_doc(body, w, h):

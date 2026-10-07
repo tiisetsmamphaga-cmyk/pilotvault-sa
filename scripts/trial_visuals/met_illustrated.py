@@ -515,3 +515,75 @@ def _():
     s += panel_close(10, W)
     s += caption(620, "FREEZING FOG — supercooled droplets that freeze on contact", "#1e3a8a")
     return s
+
+
+# ------------------------------------------------------------------ what changes air density
+
+def air_cube(x, y, a, rnd, n_air, n_vapour=0, d=34):
+    """Translucent 1 m³ cube (front face top-left at x, y + d) filled with air molecules and optional vapour."""
+    s = (f'<path d="M {x},{y + d} L {x + d},{y} L {x + a + d},{y} L {x + a + d},{y + a} L {x + a},{y + a + d} '
+         f'L {x},{y + a + d} Z" fill="url(#cube)" stroke="#1d4ed8" stroke-width="3"/>')
+    s += path(f"M {x},{y + d} L {x + a},{y + d} L {x + a + d},{y} M {x + a},{y + d} L {x + a},{y + a + d}", "none",
+              "#1d4ed8", 3)
+    pts = []
+    while len(pts) < n_air + n_vapour:
+        p = (x + rnd.uniform(12, a - 12), y + d + rnd.uniform(12, a - 12))
+        if all((p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2 > 15 ** 2 for q in pts):
+            pts.append(p)
+    for i, (px, py) in enumerate(pts):
+        if i < n_air:
+            s += circle(px, py, 6, "#ffffff", "#1d4ed8", 2.5)
+        else:
+            s += circle(px, py, 4, "#67e8f9", "#0891b2", 2)
+    return s
+
+
+def density_panel(ox, dense):
+    import random
+    rnd = random.Random(31 if dense else 8)
+    s = panel_open(ox, "sky_day" if dense else "sky_hot")
+    if dense:
+        # crisp winter day: snow on the peaks
+        s += path(f"M {ox},360 L {ox + 110},250 L {ox + 200},330 L {ox + 330},210 L {ox + 470},320 L {ox + 600},260 "
+                  f"L {ox + 600},560 L {ox},560 Z", "#8da4bd", "none", 0)
+        s += path(f"M {ox + 300},238 L {ox + 330},210 L {ox + 362},236 L {ox + 345},232 L {ox + 330},242 Z", "#ffffff", "none", 0)
+        s += path(f"M {ox + 90},270 L {ox + 110},250 L {ox + 132},270 L {ox + 112},266 Z", "#ffffff", "none", 0)
+    else:
+        s += sun(ox + 500, 80, 40)
+        s += path(f"M {ox},380 L {ox + 140},300 L {ox + 260},360 L {ox + 400},290 L {ox + 600},370 L {ox + 600},560 "
+                  f"L {ox},560 Z", "#c8a98a", "none", 0)
+        for x, y, rx, ry in ((150, 200, 220, 40), (430, 250, 220, 40)):  # humid haze
+            s += f'<ellipse cx="{ox + x}" cy="{y}" rx="{rx}" ry="{ry}" fill="#ffffff" opacity="0.45" filter="url(#soft)"/>'
+    s += f'<rect x="{ox}" y="470" width="600" height="90" fill="url(#grass)"/>'
+    s += air_cube(ox + 200, 282, 170, rnd, 52 if dense else 18, 0 if dense else 12)
+    if dense:
+        s += label(ox + 30, 60, "High pressure, cold, dry", 26, 700, "#1e40af", "start")
+        s += label(ox + 30, 95, "More air packed into\neach cubic metre", 21, 700, "#1e3a8a", "start")
+    else:
+        s += label(ox + 30, 60, "Low pressure, hot, humid", 26, 700, RED, "start")
+        s += label(ox + 30, 95, "Fewer molecules, and light\nwater vapour replaces air", 21, 700, "#7c2d12", "start")
+        s += circle(ox + 152, 525, 6, "#ffffff", "#1d4ed8", 2.5)
+        s += label(ox + 166, 532, "air (N₂, O₂)", 19, 700, "#1f2937", "start")
+        s += circle(ox + 302, 525, 4, "#67e8f9", "#0891b2", 2)
+        s += label(ox + 314, 532, "water vapour (lighter)", 19, 700, "#1f2937", "start")
+    return s + panel_close(ox)
+
+
+DENSITY_CARD = template("DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE AND HUMIDITY",
+                        "DENSE AIR GIVES BETTER ENGINE, PROPELLER AND WING PERFORMANCE",
+                        [("Pressure up", "Density up: more air is packed into the same volume"),
+                         ("Temperature up", "Density down: the air expands"),
+                         ("Humidity up", "Density down: water vapour (mass 18) replaces heavier nitrogen (28) "
+                                         "and oxygen (32)")])
+
+
+def _density():
+    s = defs(*COMMON, lg("cube", [(0, "#dbeafe", 0.75), (1, "#93c5fd", 0.6)], 0, 0, 1, 1))
+    s += density_panel(10, True) + density_panel(630, False)
+    s += caption(310, "DENSE AIR — high pressure, cold, dry", "#1e40af")
+    s += caption(930, "THIN AIR — low pressure, hot, humid", RED)
+    return s
+
+
+R.add(14, "air-density-factors-v2", "What Changes Air Density", DENSITY_CARD, h=650, w=1240)(_density)
+R.add(15, "air-density-factors-v2", "What Changes Air Density", DENSITY_CARD, h=650, w=1240)(_density)

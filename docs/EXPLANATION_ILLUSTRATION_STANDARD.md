@@ -27,6 +27,9 @@ for that size first; desktop is the easy case.
   Break long labels over two lines rather than shrinking them.
 - **Thick lines:** main airflow streamlines 9 px, arrowheads to match
   (`scene.flow_band`).
+- **Navigation lines are thinner:** headings, tracks, north lines, bearings
+  and wind arrows 5 px with a 9 px white edge, arrowheads 26 px, angle arcs
+  4 px (`nav_phone.py`). Thicker arrows swamp a top-down scene.
 - Students can tap any picture to open it full screen, but the picture must
   already read without zooming.
 

@@ -1,0 +1,343 @@
+{
+ "date": "2026-10-07",
+ "subject": "navigation",
+ "change": "Answer-first KEY FACT cards for the Navigation questions that keep their textbook figure.",
+ "rows": [
+  {
+   "id": 1591,
+   "question": "True Airspeed (TAS) is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AT THE SAME IAS, TAS INCREASES WITH ALTITUDE\", \"subline\": \"THINNER AIR MEANS THE AIRCRAFT MUST MOVE FASTER TO PRODUCE THE SAME DYNAMIC PRESSURE\", \"blocks\": [{\"label\": \"RULE OF THUMB\", \"value\": \"TAS ≈ IAS + 2% per 1 000 ft\"}, {\"label\": \"EXAMPLE\", \"value\": \"IAS 100 kt at 10 000 ft gives a TAS of roughly 117–120 kt\"}, {\"label\": \"TAS\", \"value\": \"RAS corrected for pressure altitude and temperature (air density)\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS IS RAS CORRECTED FOR ALTITUDE AND TEMPERATURE\", \"subline\": \"THE AIRCRAFT'S REAL SPEED THROUGH THE AIR\", \"blocks\": [{\"label\": \"IAS → RAS\", \"value\": \"Instrument and position error\"}, {\"label\": \"RAS → TAS\", \"value\": \"Density: pressure altitude and temperature\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS ≈ RAS + 2% per 1,000 ft\"}]}"
+   }
+  },
+  {
+   "id": 1592,
+   "question": "Rectified Airspeed (RAS) or Calibrated Airspeed (CAS) is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE ASI MEASURES PITOT PRESSURE MINUS STATIC PRESSURE\", \"subline\": \"THE DIFFERENCE IS DYNAMIC PRESSURE, DISPLAYED AS INDICATED AIRSPEED\", \"blocks\": [{\"label\": \"IAS → RAS (CAS)\", \"value\": \"Correct for instrument error and position error of the pitot and static sources\"}, {\"label\": \"RAS → TAS\", \"value\": \"Correct for pressure altitude and temperature (air density)\"}, {\"label\": \"ORDER\", \"value\": \"IAS → RAS/CAS → TAS\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RAS (CAS) IS IAS CORRECTED FOR INSTRUMENT AND POSITION ERROR\", \"subline\": \"FROM THE AIRCRAFT'S OWN CALIBRATION CARD\", \"blocks\": [{\"label\": \"Instrument error\", \"value\": \"Imperfections in the ASI itself\"}, {\"label\": \"Position error\", \"value\": \"Where the pitot and static sources sit on the airframe\"}, {\"label\": \"Order\", \"value\": \"IAS → RAS/CAS → TAS\"}]}"
+   }
+  },
+  {
+   "id": 1608,
+   "question": "Compass deviation:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION CHANGES AS THE AIRCRAFT'S HEADING CHANGES\", \"subline\": \"THE AIRCRAFT'S MAGNETIC FIELD TURNS WITH THE AIRCRAFT, SO ITS PULL ON THE NEEDLE CHANGES\", \"blocks\": [{\"label\": \"NIL DEVIATION\", \"value\": \"When the unwanted field lines up with magnetic north it does not deflect the needle\"}, {\"label\": \"OTHER HEADINGS\", \"value\": \"The field pulls the needle sideways, giving east or west deviation\"}, {\"label\": \"DEVIATION CARD\", \"value\": \"A compass swing records the correction for each heading\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION USUALLY VARIES ON EVERY HEADING\", \"subline\": \"THE AIRCRAFT'S OWN MAGNETIC FIELDS TURN WITH IT\", \"blocks\": [{\"label\": \"Cause\", \"value\": \"Engine, electrics, radios and steel parts in the aircraft\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}]}"
+   }
+  },
+  {
+   "id": 1628,
+   "question": "When compass deviation is indicated as East, it means that:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION IS THE ANGLE BETWEEN MAGNETIC NORTH AND COMPASS NORTH\", \"subline\": \"CAUSED BY THE AIRCRAFT'S OWN MAGNETIC FIELDS PULLING ON THE COMPASS NEEDLE\", \"blocks\": [{\"label\": \"CAUSE\", \"value\": \"Engine, electrics, radios and steel parts create unwanted magnetic fields in the aircraft\"}, {\"label\": \"DEVIATION EAST\", \"value\": \"Compass north lies east of magnetic north\"}, {\"label\": \"DEVIATION WEST\", \"value\": \"Compass north lies west of magnetic north\"}, {\"label\": \"IN THE COCKPIT\", \"value\": \"Read the correction for your heading from the deviation card\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"EAST DEVIATION: COMPASS NORTH LIES EAST OF MAGNETIC NORTH\", \"subline\": \"DEVIATION EAST, COMPASS LEAST\", \"blocks\": [{\"label\": \"Compass heading\", \"value\": \"Magnetic heading − east deviation\"}, {\"label\": \"Rule\", \"value\": \"Deviation west, compass best (add); deviation east, compass least (subtract)\"}]}"
+   }
+  },
+  {
+   "id": 1635,
+   "question": "Airfield elevation 3790ft, QNH 1006, temperature ISA +23deg C. The density altitude is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE = PRESSURE ALTITUDE CORRECTED FOR TEMPERATURE\", \"subline\": \"HOT AND HIGH: THE AIRCRAFT PERFORMS AS IF IT WERE MUCH HIGHER\", \"blocks\": [{\"label\": \"PRESSURE ALTITUDE\", \"value\": \"Elevation + (1013 − QNH) × 30 ft\"}, {\"label\": \"ISA TEMPERATURE\", \"value\": \"15°C − 2°C per 1 000 ft of pressure altitude\"}, {\"label\": \"DENSITY ALTITUDE\", \"value\": \"Add 120 ft per °C above ISA (subtract when colder)\"}], \"formula\": \"DA = PA + 120 × (OAT − ISA temp)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE 6,760 FT\", \"subline\": \"PRESSURE ALTITUDE + 120 FT PER °C ABOVE ISA\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"3,790 + (1013 − 1006) × 30 = 4,000 ft\"}, {\"label\": \"Correction\", \"value\": \"120 × 23 = 2,760 ft\"}, {\"label\": \"Density altitude\", \"value\": \"4,000 + 2,760 = 6,760 ft\"}]}"
+   }
+  },
+  {
+   "id": 1640,
+   "question": "Airfield elevation 3380ft, QNH 1009, temperature +28deg C. The density altitude is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE = PRESSURE ALTITUDE CORRECTED FOR TEMPERATURE\", \"subline\": \"HOT AND HIGH: THE AIRCRAFT PERFORMS AS IF IT WERE MUCH HIGHER\", \"blocks\": [{\"label\": \"PRESSURE ALTITUDE\", \"value\": \"Elevation + (1013 − QNH) × 30 ft\"}, {\"label\": \"ISA TEMPERATURE\", \"value\": \"15°C − 2°C per 1 000 ft of pressure altitude\"}, {\"label\": \"DENSITY ALTITUDE\", \"value\": \"Add 120 ft per °C above ISA (subtract when colder)\"}], \"formula\": \"DA = PA + 120 × (OAT − ISA temp)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE 5,900 FT\", \"subline\": \"FIND ISA AT THE PRESSURE ALTITUDE, THEN THE DEVIATION\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"3,380 + (1013 − 1009) × 30 = 3,500 ft\"}, {\"label\": \"ISA at 3,500 ft\", \"value\": \"15 − 7 = 8°C, so 28°C is ISA +20\"}, {\"label\": \"Density altitude\", \"value\": \"3,500 + 120 × 20 = 5,900 ft\"}]}"
+   }
+  },
+  {
+   "id": 1650,
+   "question": "Airfield elevation 1090ft QNH 1016, temperature +22deg C. The density altitude is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE = PRESSURE ALTITUDE CORRECTED FOR TEMPERATURE\", \"subline\": \"HOT AND HIGH: THE AIRCRAFT PERFORMS AS IF IT WERE MUCH HIGHER\", \"blocks\": [{\"label\": \"PRESSURE ALTITUDE\", \"value\": \"Elevation + (1013 − QNH) × 30 ft\"}, {\"label\": \"ISA TEMPERATURE\", \"value\": \"15°C − 2°C per 1 000 ft of pressure altitude\"}, {\"label\": \"DENSITY ALTITUDE\", \"value\": \"Add 120 ft per °C above ISA (subtract when colder)\"}], \"formula\": \"DA = PA + 120 × (OAT − ISA temp)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE 2,080 FT\", \"subline\": \"FIND ISA AT THE PRESSURE ALTITUDE, THEN THE DEVIATION\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"1,090 + (1013 − 1016) × 30 = 1,000 ft\"}, {\"label\": \"ISA at 1,000 ft\", \"value\": \"15 − 2 = 13°C, so 22°C is ISA +9\"}, {\"label\": \"Density altitude\", \"value\": \"1,000 + 120 × 9 = 2,080 ft\"}]}"
+   }
+  },
+  {
+   "id": 1691,
+   "question": "Flight time A to B = 1 hr 15 minutes, Fuel Flow 7.3USG/hr. The trip fuel is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FUEL USED = FUEL FLOW × TIME\", \"subline\": \"SET HOURLY FUEL FLOW AGAINST THE 60 INDEX, THEN READ OPPOSITE THE MINUTES\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Fuel flow per hour (outer) against the 60 index (inner)\"}, {\"label\": \"READ\", \"value\": \"Against flight time in minutes (inner), read fuel used (outer)\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"30 L/hr is ½ L per minute, so 8 minutes uses 4 L\"}], \"formula\": \"Fuel = flow × minutes ÷ 60\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRIP FUEL 9.1 USG\", \"subline\": \"FUEL = FLOW × TIME\", \"blocks\": [{\"label\": \"Time\", \"value\": \"1 h 15 min = 1.25 h\"}, {\"label\": \"Fuel\", \"value\": \"1.25 × 7.3 = 9.1 USG\"}, {\"label\": \"Flight computer\", \"value\": \"Flow against the 60 index, read fuel against the minutes\"}]}"
+   }
+  },
+  {
+   "id": 1762,
+   "question": "A trip takes 1 hour 30 minutes at a fuel flow of 8 USG/hr. Trip fuel required is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FUEL USED = FUEL FLOW × TIME\", \"subline\": \"SET HOURLY FUEL FLOW AGAINST THE 60 INDEX, THEN READ OPPOSITE THE MINUTES\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Fuel flow per hour (outer) against the 60 index (inner)\"}, {\"label\": \"READ\", \"value\": \"Against flight time in minutes (inner), read fuel used (outer)\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"30 L/hr is ½ L per minute, so 8 minutes uses 4 L\"}], \"formula\": \"Fuel = flow × minutes ÷ 60\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRIP FUEL 12 USG\", \"subline\": \"FUEL = FLOW × TIME\", \"blocks\": [{\"label\": \"Time\", \"value\": \"1 h 30 min = 1.5 h\"}, {\"label\": \"Fuel\", \"value\": \"1.5 × 8 = 12 USG\"}, {\"label\": \"Flight computer\", \"value\": \"Flow against the 60 index, read fuel against the minutes\"}]}"
+   }
+  },
+  {
+   "id": 1763,
+   "question": "Using the rule of thumb, TAS is roughly how much higher than IAS per 1000 ft of altitude?",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AT THE SAME IAS, TAS INCREASES WITH ALTITUDE\", \"subline\": \"THINNER AIR MEANS THE AIRCRAFT MUST MOVE FASTER TO PRODUCE THE SAME DYNAMIC PRESSURE\", \"blocks\": [{\"label\": \"RULE OF THUMB\", \"value\": \"TAS ≈ IAS + 2% per 1 000 ft\"}, {\"label\": \"EXAMPLE\", \"value\": \"IAS 100 kt at 10 000 ft gives a TAS of roughly 117–120 kt\"}, {\"label\": \"TAS\", \"value\": \"RAS corrected for pressure altitude and temperature (air density)\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS IS ABOUT 2% HIGHER THAN IAS PER 1,000 FT\", \"subline\": \"THE TAS RULE OF THUMB\", \"blocks\": [{\"label\": \"Example\", \"value\": \"IAS 100 kt at 10,000 ft ≈ TAS 120 kt\"}, {\"label\": \"Why\", \"value\": \"Thinner air: the aircraft must move faster for the same IAS\"}]}"
+   }
+  },
+  {
+   "id": 1775,
+   "question": "An aircraft flies 40 NM in 20 minutes. Its groundspeed is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUNDSPEED = DISTANCE ÷ TIME, READ AGAINST THE 60 INDEX\", \"subline\": \"SET DISTANCE ON THE OUTER SCALE OPPOSITE MINUTES ON THE INNER SCALE\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Distance flown (outer) against minutes taken (inner)\"}, {\"label\": \"READ\", \"value\": \"Opposite the 60 index, the outer scale shows groundspeed in knots\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"16 nm in 10 min → 6 × 16 = 96 kt\"}], \"formula\": \"GS = distance × 60 ÷ minutes\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUNDSPEED 120 KT\", \"subline\": \"DISTANCE ÷ TIME IN HOURS\", \"blocks\": [{\"label\": \"Time\", \"value\": \"20 min = 1/3 h\"}, {\"label\": \"Groundspeed\", \"value\": \"40 × 3 = 120 kt\"}, {\"label\": \"Flight computer\", \"value\": \"Distance against minutes, read GS opposite the 60 index\"}]}"
+   }
+  },
+  {
+   "id": 1784,
+   "question": "High temperature mainly causes density altitude to:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE = PRESSURE ALTITUDE CORRECTED FOR TEMPERATURE\", \"subline\": \"HOT AND HIGH: THE AIRCRAFT PERFORMS AS IF IT WERE MUCH HIGHER\", \"blocks\": [{\"label\": \"PRESSURE ALTITUDE\", \"value\": \"Elevation + (1013 − QNH) × 30 ft\"}, {\"label\": \"ISA TEMPERATURE\", \"value\": \"15°C − 2°C per 1 000 ft of pressure altitude\"}, {\"label\": \"DENSITY ALTITUDE\", \"value\": \"Add 120 ft per °C above ISA (subtract when colder)\"}], \"formula\": \"DA = PA + 120 × (OAT − ISA temp)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HIGH TEMPERATURE INCREASES DENSITY ALTITUDE\", \"subline\": \"WARM AIR IS LESS DENSE\", \"blocks\": [{\"label\": \"Rule\", \"value\": \"Add 120 ft per °C above ISA\"}, {\"label\": \"Effect\", \"value\": \"Longer take-off run, poorer climb\"}]}"
+   }
+  },
+  {
+   "id": 1785,
+   "question": "Compass deviation is the angular difference between:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION IS THE ANGLE BETWEEN MAGNETIC NORTH AND COMPASS NORTH\", \"subline\": \"CAUSED BY THE AIRCRAFT'S OWN MAGNETIC FIELDS PULLING ON THE COMPASS NEEDLE\", \"blocks\": [{\"label\": \"CAUSE\", \"value\": \"Engine, electrics, radios and steel parts create unwanted magnetic fields in the aircraft\"}, {\"label\": \"DEVIATION EAST\", \"value\": \"Compass north lies east of magnetic north\"}, {\"label\": \"DEVIATION WEST\", \"value\": \"Compass north lies west of magnetic north\"}, {\"label\": \"IN THE COCKPIT\", \"value\": \"Read the correction for your heading from the deviation card\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH\", \"subline\": \"CAUSED BY MAGNETIC FIELDS IN THE AIRCRAFT\", \"blocks\": [{\"label\": \"Variation\", \"value\": \"True north ↔ magnetic north\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}]}"
+   }
+  },
+  {
+   "id": 1805,
+   "question": "Deviation is the angular difference between:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION IS THE ANGLE BETWEEN MAGNETIC NORTH AND COMPASS NORTH\", \"subline\": \"CAUSED BY THE AIRCRAFT'S OWN MAGNETIC FIELDS PULLING ON THE COMPASS NEEDLE\", \"blocks\": [{\"label\": \"CAUSE\", \"value\": \"Engine, electrics, radios and steel parts create unwanted magnetic fields in the aircraft\"}, {\"label\": \"DEVIATION EAST\", \"value\": \"Compass north lies east of magnetic north\"}, {\"label\": \"DEVIATION WEST\", \"value\": \"Compass north lies west of magnetic north\"}, {\"label\": \"IN THE COCKPIT\", \"value\": \"Read the correction for your heading from the deviation card\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH\", \"subline\": \"CAUSED BY MAGNETIC FIELDS IN THE AIRCRAFT\", \"blocks\": [{\"label\": \"Variation\", \"value\": \"True north ↔ magnetic north\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}]}"
+   }
+  },
+  {
+   "id": 1812,
+   "question": "On a 1:1 000 000 chart, 23 cm represents a flight distance covered in 45 minutes. The approximate groundspeed is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUNDSPEED = DISTANCE ÷ TIME, READ AGAINST THE 60 INDEX\", \"subline\": \"SET DISTANCE ON THE OUTER SCALE OPPOSITE MINUTES ON THE INNER SCALE\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Distance flown (outer) against minutes taken (inner)\"}, {\"label\": \"READ\", \"value\": \"Opposite the 60 index, the outer scale shows groundspeed in knots\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"16 nm in 10 min → 6 × 16 = 96 kt\"}], \"formula\": \"GS = distance × 60 ÷ minutes\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUNDSPEED ABOUT 165 KT\", \"subline\": \"CHART DISTANCE × SCALE, THEN ÷ TIME\", \"blocks\": [{\"label\": \"Distance\", \"value\": \"23 cm × 1 000 000 = 230 km = 124 nm\"}, {\"label\": \"Time\", \"value\": \"45 min = 0.75 h\"}, {\"label\": \"Groundspeed\", \"value\": \"124 ÷ 0.75 ≈ 165 kt\"}]}"
+   }
+  },
+  {
+   "id": 1835,
+   "question": "To obtain true airspeed from indicated airspeed, the IAS must be corrected for:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE ASI MEASURES PITOT PRESSURE MINUS STATIC PRESSURE\", \"subline\": \"THE DIFFERENCE IS DYNAMIC PRESSURE, DISPLAYED AS INDICATED AIRSPEED\", \"blocks\": [{\"label\": \"IAS → RAS (CAS)\", \"value\": \"Correct for instrument error and position error of the pitot and static sources\"}, {\"label\": \"RAS → TAS\", \"value\": \"Correct for pressure altitude and temperature (air density)\"}, {\"label\": \"ORDER\", \"value\": \"IAS → RAS/CAS → TAS\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"IAS NEEDS INSTRUMENT, POSITION, PRESSURE AND TEMPERATURE CORRECTIONS\", \"subline\": \"IAS → RAS/CAS → TAS\", \"blocks\": [{\"label\": \"IAS → RAS\", \"value\": \"Instrument and position error\"}, {\"label\": \"RAS → TAS\", \"value\": \"Pressure altitude and temperature (density)\"}]}"
+   }
+  },
+  {
+   "id": 1836,
+   "question": "A flight will take 2 hours 54 minutes at a fuel flow of 15.5 USG/hr. The approximate fuel required is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FUEL USED = FUEL FLOW × TIME\", \"subline\": \"SET HOURLY FUEL FLOW AGAINST THE 60 INDEX, THEN READ OPPOSITE THE MINUTES\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Fuel flow per hour (outer) against the 60 index (inner)\"}, {\"label\": \"READ\", \"value\": \"Against flight time in minutes (inner), read fuel used (outer)\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"30 L/hr is ½ L per minute, so 8 minutes uses 4 L\"}], \"formula\": \"Fuel = flow × minutes ÷ 60\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 45 USG\", \"subline\": \"FUEL = FLOW × TIME\", \"blocks\": [{\"label\": \"Time\", \"value\": \"2 h 54 min = 2.9 h\"}, {\"label\": \"Fuel\", \"value\": \"2.9 × 15.5 = 44.95 ≈ 45 USG\"}, {\"label\": \"Flight computer\", \"value\": \"Flow against the 60 index, read fuel against the minutes\"}]}"
+   }
+  },
+  {
+   "id": 1840,
+   "question": "A flight time of 1 hour 15 minutes with a fuel flow of 7.3 USG/hr requires approximately:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FUEL USED = FUEL FLOW × TIME\", \"subline\": \"SET HOURLY FUEL FLOW AGAINST THE 60 INDEX, THEN READ OPPOSITE THE MINUTES\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Fuel flow per hour (outer) against the 60 index (inner)\"}, {\"label\": \"READ\", \"value\": \"Against flight time in minutes (inner), read fuel used (outer)\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"30 L/hr is ½ L per minute, so 8 minutes uses 4 L\"}], \"formula\": \"Fuel = flow × minutes ÷ 60\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRIP FUEL 9.1 USG\", \"subline\": \"FUEL = FLOW × TIME\", \"blocks\": [{\"label\": \"Time\", \"value\": \"1 h 15 min = 1.25 h\"}, {\"label\": \"Fuel\", \"value\": \"1.25 × 7.3 = 9.1 USG\"}, {\"label\": \"Flight computer\", \"value\": \"Flow against the 60 index, read fuel against the minutes\"}]}"
+   }
+  },
+  {
+   "id": 1841,
+   "question": "The wind triangle of velocities contains wind direction and speed. The other two velocity pairs are:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HDG/TAS + W/V = TR/GS\", \"subline\": \"DRIFT IS THE ANGLE BETWEEN HEADING AND TRACK\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Where the nose points and the speed through the air\"}, {\"label\": \"W/V\", \"value\": \"Wind direction and speed — the moving air mass carries the aircraft\"}, {\"label\": \"TR/GS\", \"value\": \"The actual path and speed over the ground\"}, {\"label\": \"DRIFT\", \"value\": \"Track right of heading = right drift; track left of heading = left drift\"}], \"formula\": \"Track = Heading + right drift  (or − left drift)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE OTHER TWO ARE HEADING/TAS AND TRACK/GROUNDSPEED\", \"subline\": \"HDG/TAS + W/V = TR/GS\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Motion through the air\"}, {\"label\": \"TR/GS\", \"value\": \"Motion over the ground\"}]}"
+   }
+  },
+  {
+   "id": 1845,
+   "question": "A FREDA check was completed at 1105Z. At 1247Z the fuel burn is 12.5 USG/hr. Approximately how much fuel has been consumed?",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FUEL USED = FUEL FLOW × TIME\", \"subline\": \"SET HOURLY FUEL FLOW AGAINST THE 60 INDEX, THEN READ OPPOSITE THE MINUTES\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Fuel flow per hour (outer) against the 60 index (inner)\"}, {\"label\": \"READ\", \"value\": \"Against flight time in minutes (inner), read fuel used (outer)\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"30 L/hr is ½ L per minute, so 8 minutes uses 4 L\"}], \"formula\": \"Fuel = flow × minutes ÷ 60\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 21.3 USG USED\", \"subline\": \"TIME SINCE THE FREDA CHECK × FLOW\", \"blocks\": [{\"label\": \"Time\", \"value\": \"1105Z to 1247Z = 1 h 42 min = 1.7 h\"}, {\"label\": \"Fuel\", \"value\": \"1.7 × 12.5 = 21.25 USG\"}, {\"label\": \"Flight computer\", \"value\": \"Flow against the 60 index, read fuel against the minutes\"}]}"
+   }
+  },
+  {
+   "id": 1846,
+   "question": "Compass deviation on a particular aircraft usually:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION CHANGES AS THE AIRCRAFT'S HEADING CHANGES\", \"subline\": \"THE AIRCRAFT'S MAGNETIC FIELD TURNS WITH THE AIRCRAFT, SO ITS PULL ON THE NEEDLE CHANGES\", \"blocks\": [{\"label\": \"NIL DEVIATION\", \"value\": \"When the unwanted field lines up with magnetic north it does not deflect the needle\"}, {\"label\": \"OTHER HEADINGS\", \"value\": \"The field pulls the needle sideways, giving east or west deviation\"}, {\"label\": \"DEVIATION CARD\", \"value\": \"A compass swing records the correction for each heading\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION VARIES WITH AIRCRAFT HEADING\", \"subline\": \"THE AIRCRAFT'S OWN MAGNETIC FIELDS TURN WITH IT\", \"blocks\": [{\"label\": \"Cause\", \"value\": \"Engine, electrics, radios and steel parts in the aircraft\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}]}"
+   }
+  },
+  {
+   "id": 1847,
+   "question": "A FREDA check was completed at 1213Z. At 1247Z the fuel burn is 11.5 USG/hr. Approximately how much fuel has been consumed?",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FUEL USED = FUEL FLOW × TIME\", \"subline\": \"SET HOURLY FUEL FLOW AGAINST THE 60 INDEX, THEN READ OPPOSITE THE MINUTES\", \"blocks\": [{\"label\": \"SET\", \"value\": \"Fuel flow per hour (outer) against the 60 index (inner)\"}, {\"label\": \"READ\", \"value\": \"Against flight time in minutes (inner), read fuel used (outer)\"}, {\"label\": \"ROUGH CHECK\", \"value\": \"30 L/hr is ½ L per minute, so 8 minutes uses 4 L\"}], \"formula\": \"Fuel = flow × minutes ÷ 60\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 6.5 USG USED\", \"subline\": \"TIME SINCE THE FREDA CHECK × FLOW\", \"blocks\": [{\"label\": \"Time\", \"value\": \"1213Z to 1247Z = 34 min = 0.567 h\"}, {\"label\": \"Fuel\", \"value\": \"0.567 × 11.5 = 6.5 USG\"}, {\"label\": \"Flight computer\", \"value\": \"Flow against the 60 index, read fuel against the minutes\"}]}"
+   }
+  },
+  {
+   "id": 1882,
+   "question": "If heading is 046° and track is 038°, the drift is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HDG/TAS + W/V = TR/GS\", \"subline\": \"DRIFT IS THE ANGLE BETWEEN HEADING AND TRACK\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Where the nose points and the speed through the air\"}, {\"label\": \"W/V\", \"value\": \"Wind direction and speed — the moving air mass carries the aircraft\"}, {\"label\": \"TR/GS\", \"value\": \"The actual path and speed over the ground\"}, {\"label\": \"DRIFT\", \"value\": \"Track right of heading = right drift; track left of heading = left drift\"}], \"formula\": \"Track = Heading + right drift  (or − left drift)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIFT 8° LEFT\", \"subline\": \"TRACK LESS THAN HEADING: LEFT DRIFT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"046° − 038° = 8°\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}]}"
+   }
+  },
+  {
+   "id": 1885,
+   "question": "Heading 316°, drift 5° right. The track is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HDG/TAS + W/V = TR/GS\", \"subline\": \"DRIFT IS THE ANGLE BETWEEN HEADING AND TRACK\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Where the nose points and the speed through the air\"}, {\"label\": \"W/V\", \"value\": \"Wind direction and speed — the moving air mass carries the aircraft\"}, {\"label\": \"TR/GS\", \"value\": \"The actual path and speed over the ground\"}, {\"label\": \"DRIFT\", \"value\": \"Track right of heading = right drift; track left of heading = left drift\"}], \"formula\": \"Track = Heading + right drift  (or − left drift)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRACK 321°\", \"subline\": \"RIGHT DRIFT: TRACK = HEADING + DRIFT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"316° + 5° = 321°\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}]}"
+   }
+  },
+  {
+   "id": 1891,
+   "question": "If track is 002° and heading is 358°, the drift is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HDG/TAS + W/V = TR/GS\", \"subline\": \"DRIFT IS THE ANGLE BETWEEN HEADING AND TRACK\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Where the nose points and the speed through the air\"}, {\"label\": \"W/V\", \"value\": \"Wind direction and speed — the moving air mass carries the aircraft\"}, {\"label\": \"TR/GS\", \"value\": \"The actual path and speed over the ground\"}, {\"label\": \"DRIFT\", \"value\": \"Track right of heading = right drift; track left of heading = left drift\"}], \"formula\": \"Track = Heading + right drift  (or − left drift)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIFT 4° RIGHT\", \"subline\": \"TRACK IS 4° CLOCKWISE OF HEADING, ACROSS NORTH\", \"blocks\": [{\"label\": \"Working\", \"value\": \"358° → 360° = 2°, then → 002° = 2° more\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}]}"
+   }
+  },
+  {
+   "id": 1897,
+   "question": "Track 182°, drift 5° right. The heading is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HDG/TAS + W/V = TR/GS\", \"subline\": \"DRIFT IS THE ANGLE BETWEEN HEADING AND TRACK\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Where the nose points and the speed through the air\"}, {\"label\": \"W/V\", \"value\": \"Wind direction and speed — the moving air mass carries the aircraft\"}, {\"label\": \"TR/GS\", \"value\": \"The actual path and speed over the ground\"}, {\"label\": \"DRIFT\", \"value\": \"Track right of heading = right drift; track left of heading = left drift\"}], \"formula\": \"Track = Heading + right drift  (or − left drift)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HEADING 177°\", \"subline\": \"RIGHT DRIFT: HEADING = TRACK − DRIFT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"182° − 5° = 177°\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}]}"
+   }
+  },
+  {
+   "id": 1901,
+   "question": "If track is 226° and heading is 222°, the drift is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HDG/TAS + W/V = TR/GS\", \"subline\": \"DRIFT IS THE ANGLE BETWEEN HEADING AND TRACK\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Where the nose points and the speed through the air\"}, {\"label\": \"W/V\", \"value\": \"Wind direction and speed — the moving air mass carries the aircraft\"}, {\"label\": \"TR/GS\", \"value\": \"The actual path and speed over the ground\"}, {\"label\": \"DRIFT\", \"value\": \"Track right of heading = right drift; track left of heading = left drift\"}], \"formula\": \"Track = Heading + right drift  (or − left drift)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIFT 4° RIGHT\", \"subline\": \"TRACK GREATER THAN HEADING: RIGHT DRIFT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"226° − 222° = 4°\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}]}"
+   }
+  },
+  {
+   "id": 1905,
+   "question": "If heading is 312° and track is 316°, the drift is:",
+   "is_hidden": false,
+   "why": "card stated a general rule; headline now names the answer (textbook picture kept)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HDG/TAS + W/V = TR/GS\", \"subline\": \"DRIFT IS THE ANGLE BETWEEN HEADING AND TRACK\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Where the nose points and the speed through the air\"}, {\"label\": \"W/V\", \"value\": \"Wind direction and speed — the moving air mass carries the aircraft\"}, {\"label\": \"TR/GS\", \"value\": \"The actual path and speed over the ground\"}, {\"label\": \"DRIFT\", \"value\": \"Track right of heading = right drift; track left of heading = left drift\"}], \"formula\": \"Track = Heading + right drift  (or − left drift)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIFT 4° RIGHT\", \"subline\": \"TRACK GREATER THAN HEADING: RIGHT DRIFT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"316° − 312° = 4°\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}]}"
+   }
+  }
+ ]
+}

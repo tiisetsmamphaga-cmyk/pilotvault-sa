@@ -1,6 +1,7 @@
 """KEY FACT cards for the Navigation questions. Each headline states the answer to its own question; the blocks
 carry the working or the facts needed. Numbers follow the checked explanations (2026-10-07 audit).
-Questions on the textbook figures in navigation/refined-batch-1 keep their existing cards and are not listed.
+CARDS covers the redrawn and card-only questions; KEEP_CARDS the questions that keep their textbook figure in
+navigation/refined-batch-1 (written separately, see nav_keep_cards_apply.py).
 """
 import json
 
@@ -887,3 +888,73 @@ CARDS.update({
     1614: card("40 US GALLONS IS ABOUT 151 LITRES", "1 USG = 3.785 L", [("Working", "40 × 3.785 = 151.4 L"), UNITS]),
     1617: card("120 LITRES IS ABOUT 32 USG", "DIVIDE LITRES BY 3.785", [("Working", "120 ÷ 3.785 = 31.7 USG"), UNITS]),
 })
+
+# ------------------------------------------------------------------ Textbook-figure questions (refined-batch-1)
+# These keep their textbook picture; their old cards stated a general rule, so the headline now names the answer.
+DRIFT = ("Drift", "Right drift: track right of heading. Left drift: track left of heading")
+COMPUTER_FUEL = ("Flight computer", "Flow against the 60 index, read fuel against the minutes")
+DEV_CAUSE = ("Cause", "Engine, electrics, radios and steel parts in the aircraft")
+DEV_CARD = ("Deviation card", "A compass swing records the correction for each heading")
+
+
+def fuel(result, sub, time, work):
+    return card(result, sub, [("Time", time), ("Fuel", work), COMPUTER_FUEL])
+
+
+KEEP_CARDS = {
+    1591: card("TAS IS RAS CORRECTED FOR ALTITUDE AND TEMPERATURE", "THE AIRCRAFT'S REAL SPEED THROUGH THE AIR",
+               [("IAS → RAS", "Instrument and position error"), ("RAS → TAS", "Density: pressure altitude and temperature"),
+                ("Rule of thumb", "TAS ≈ RAS + 2% per 1,000 ft")]),
+    1592: card("RAS (CAS) IS IAS CORRECTED FOR INSTRUMENT AND POSITION ERROR", "FROM THE AIRCRAFT'S OWN CALIBRATION CARD",
+               [("Instrument error", "Imperfections in the ASI itself"),
+                ("Position error", "Where the pitot and static sources sit on the airframe"), ("Order", "IAS → RAS/CAS → TAS")]),
+    1608: card("DEVIATION USUALLY VARIES ON EVERY HEADING", "THE AIRCRAFT'S OWN MAGNETIC FIELDS TURN WITH IT",
+               [DEV_CAUSE, DEV_CARD]),
+    1628: card("EAST DEVIATION: COMPASS NORTH LIES EAST OF MAGNETIC NORTH", "DEVIATION EAST, COMPASS LEAST",
+               [("Compass heading", "Magnetic heading − east deviation"), DEV_RULE]),
+    1635: card("DENSITY ALTITUDE 6,760 FT", "PRESSURE ALTITUDE + 120 FT PER °C ABOVE ISA",
+               [("Pressure altitude", "3,790 + (1013 − 1006) × 30 = 4,000 ft"), ("Correction", "120 × 23 = 2,760 ft"),
+                ("Density altitude", "4,000 + 2,760 = 6,760 ft")]),
+    1640: card("DENSITY ALTITUDE 5,900 FT", "FIND ISA AT THE PRESSURE ALTITUDE, THEN THE DEVIATION",
+               [("Pressure altitude", "3,380 + (1013 − 1009) × 30 = 3,500 ft"),
+                ("ISA at 3,500 ft", "15 − 7 = 8°C, so 28°C is ISA +20"), ("Density altitude", "3,500 + 120 × 20 = 5,900 ft")]),
+    1650: card("DENSITY ALTITUDE 2,080 FT", "FIND ISA AT THE PRESSURE ALTITUDE, THEN THE DEVIATION",
+               [("Pressure altitude", "1,090 + (1013 − 1016) × 30 = 1,000 ft"),
+                ("ISA at 1,000 ft", "15 − 2 = 13°C, so 22°C is ISA +9"), ("Density altitude", "1,000 + 120 × 9 = 2,080 ft")]),
+    1691: fuel("TRIP FUEL 9.1 USG", "FUEL = FLOW × TIME", "1 h 15 min = 1.25 h", "1.25 × 7.3 = 9.1 USG"),
+    1762: fuel("TRIP FUEL 12 USG", "FUEL = FLOW × TIME", "1 h 30 min = 1.5 h", "1.5 × 8 = 12 USG"),
+    1763: card("TAS IS ABOUT 2% HIGHER THAN IAS PER 1,000 FT", "THE TAS RULE OF THUMB",
+               [("Example", "IAS 100 kt at 10,000 ft ≈ TAS 120 kt"),
+                ("Why", "Thinner air: the aircraft must move faster for the same IAS")]),
+    1775: card("GROUNDSPEED 120 KT", "DISTANCE ÷ TIME IN HOURS",
+               [("Time", "20 min = 1/3 h"), ("Groundspeed", "40 × 3 = 120 kt"),
+                ("Flight computer", "Distance against minutes, read GS opposite the 60 index")]),
+    1784: card("HIGH TEMPERATURE INCREASES DENSITY ALTITUDE", "WARM AIR IS LESS DENSE",
+               [("Rule", "Add 120 ft per °C above ISA"), ("Effect", "Longer take-off run, poorer climb")]),
+    1785: card("DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH", "CAUSED BY MAGNETIC FIELDS IN THE AIRCRAFT",
+               [("Variation", "True north ↔ magnetic north"), DEV_CARD]),
+    1805: card("DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH", "CAUSED BY MAGNETIC FIELDS IN THE AIRCRAFT",
+               [("Variation", "True north ↔ magnetic north"), DEV_CARD]),
+    1812: card("GROUNDSPEED ABOUT 165 KT", "CHART DISTANCE × SCALE, THEN ÷ TIME",
+               [("Distance", "23 cm × 1 000 000 = 230 km = 124 nm"), ("Time", "45 min = 0.75 h"),
+                ("Groundspeed", "124 ÷ 0.75 ≈ 165 kt")]),
+    1835: card("IAS NEEDS INSTRUMENT, POSITION, PRESSURE AND TEMPERATURE CORRECTIONS", "IAS → RAS/CAS → TAS",
+               [("IAS → RAS", "Instrument and position error"), ("RAS → TAS", "Pressure altitude and temperature (density)")]),
+    1836: fuel("ABOUT 45 USG", "FUEL = FLOW × TIME", "2 h 54 min = 2.9 h", "2.9 × 15.5 = 44.95 ≈ 45 USG"),
+    1840: fuel("TRIP FUEL 9.1 USG", "FUEL = FLOW × TIME", "1 h 15 min = 1.25 h", "1.25 × 7.3 = 9.1 USG"),
+    1841: card("THE OTHER TWO ARE HEADING/TAS AND TRACK/GROUNDSPEED", "HDG/TAS + W/V = TR/GS",
+               [("HDG/TAS", "Motion through the air"), ("TR/GS", "Motion over the ground")]),
+    1845: fuel("ABOUT 21.3 USG USED", "TIME SINCE THE FREDA CHECK × FLOW", "1105Z to 1247Z = 1 h 42 min = 1.7 h",
+               "1.7 × 12.5 = 21.25 USG"),
+    1846: card("DEVIATION VARIES WITH AIRCRAFT HEADING", "THE AIRCRAFT'S OWN MAGNETIC FIELDS TURN WITH IT",
+               [DEV_CAUSE, DEV_CARD]),
+    1847: fuel("ABOUT 6.5 USG USED", "TIME SINCE THE FREDA CHECK × FLOW", "1213Z to 1247Z = 34 min = 0.567 h",
+               "0.567 × 11.5 = 6.5 USG"),
+    1882: card("DRIFT 8° LEFT", "TRACK LESS THAN HEADING: LEFT DRIFT", [("Working", "046° − 038° = 8°"), DRIFT]),
+    1885: card("TRACK 321°", "RIGHT DRIFT: TRACK = HEADING + DRIFT", [("Working", "316° + 5° = 321°"), DRIFT]),
+    1891: card("DRIFT 4° RIGHT", "TRACK IS 4° CLOCKWISE OF HEADING, ACROSS NORTH",
+               [("Working", "358° → 360° = 2°, then → 002° = 2° more"), DRIFT]),
+    1897: card("HEADING 177°", "RIGHT DRIFT: HEADING = TRACK − DRIFT", [("Working", "182° − 5° = 177°"), DRIFT]),
+    1901: card("DRIFT 4° RIGHT", "TRACK GREATER THAN HEADING: RIGHT DRIFT", [("Working", "226° − 222° = 4°"), DRIFT]),
+    1905: card("DRIFT 4° RIGHT", "TRACK GREATER THAN HEADING: RIGHT DRIFT", [("Working", "316° − 312° = 4°"), DRIFT]),
+}

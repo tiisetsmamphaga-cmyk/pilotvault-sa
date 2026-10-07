@@ -14,6 +14,7 @@ Rules
   remaining slots go to the topics not yet covered, then to the largest topics.
 - Within a topic, prefer questions with a KEY FACT card, then 4-option questions, then questions
   already in the trial set, then the lowest id. Near-duplicate stems are skipped.
+- Hidden questions (hidden=true, from questions.is_hidden) are never chosen.
 """
 import difflib
 import json
@@ -101,7 +102,7 @@ def select_subject(topics):
 def select(rows):
     by_subject = defaultdict(lambda: defaultdict(list))
     for r in rows:
-        if r["s"] not in SKIP_SUBJECTS:
+        if r["s"] not in SKIP_SUBJECTS and not r.get("hidden"):
             by_subject[r["s"]][r["t"] or "General"].append(r)
     result = {}
     for subject, topics in sorted(by_subject.items()):

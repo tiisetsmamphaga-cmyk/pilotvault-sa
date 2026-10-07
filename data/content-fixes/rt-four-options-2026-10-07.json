@@ -1,0 +1,2900 @@
+[
+ {
+  "id": 303,
+  "before": {
+   "question": "What does “FA” IN Designator stand for?",
+   "option_a": "South Africa",
+   "option_b": "South America",
+   "option_c": "Egypt",
+   "option_d": null,
+   "correct_answer": "South Africa",
+   "explanation": "FA is the ICAO two-letter country designator assigned to South Africa, part of the global system that lets every FIR, aerodrome and beacon be identified by nationality. That's why South African FIRs (FACA, FAJA, FAJO) and aerodrome codes (e.g. FAOR, FACT) all start with FA."
+  },
+  "after": {
+   "question": "In ICAO location indicators, what does the prefix FA stand for?",
+   "option_a": "South Africa",
+   "option_b": "South America",
+   "option_c": "Egypt",
+   "option_d": "Namibia",
+   "correct_answer": "South Africa",
+   "explanation": "FA is the ICAO two-letter country designator assigned to South Africa, part of the global system that lets every FIR, aerodrome and beacon be identified by nationality. That's why South African FIRs (FACA, FAJA, FAJO) and aerodrome codes (e.g. FAOR, FACT) all start with FA."
+  }
+ },
+ {
+  "id": 305,
+  "before": {
+   "question": "What is the abbreviation for a Control Area?",
+   "option_a": "CNA",
+   "option_b": "CTA",
+   "option_c": "CTR",
+   "option_d": null,
+   "correct_answer": "CTA",
+   "explanation": "CTA (Control Area) is controlled airspace that begins at a specified altitude or flight level rather than the ground. It is normally established above one or more TMAs, at the confluence of several air routes, to give aircraft continuous ATC protection as they climb away from or descend into the terminal environment."
+  },
+  "after": {
+   "question": "What is the abbreviation for a Control Area?",
+   "option_a": "CNA",
+   "option_b": "CTA",
+   "option_c": "CTR",
+   "option_d": "TMA",
+   "correct_answer": "CTA",
+   "explanation": "CTA (Control Area) is controlled airspace that begins at a specified altitude or flight level rather than the ground. It is normally established above one or more TMAs, at the confluence of several air routes, to give aircraft continuous ATC protection as they climb away from or descend into the terminal environment."
+  }
+ },
+ {
+  "id": 306,
+  "before": {
+   "question": "Control Area?",
+   "option_a": "Airspace of defined dimension which extend upward from the surface to an upper limit, usually as altitude.",
+   "option_b": "An airspace of defined dimensions established around an aerodrome for the protection of aerodrome traffic.",
+   "option_c": "Airspace of defined dimension which extend upward from a specified altitude or flight level to an upper limit, usually a flight level.",
+   "option_d": null,
+   "correct_answer": "Airspace of defined dimension which extend upward from a specified altitude or flight level to an upper limit, usually a flight level.",
+   "explanation": "A CTA normally starts above the surface and extends upward to a specified upper limit. This separates it from a CTR which starts at the surface."
+  },
+  "after": {
+   "question": "What is a Control Area (CTA)?",
+   "option_a": "Airspace of defined dimensions extending upward from the surface to an upper limit, usually an altitude",
+   "option_b": "Airspace of defined dimensions established around an aerodrome to protect aerodrome traffic",
+   "option_c": "Airspace of defined dimensions extending upward from a specified altitude or flight level to an upper limit, usually a flight level",
+   "option_d": "Uncontrolled airspace in which only a flight information service is provided",
+   "correct_answer": "Airspace of defined dimensions extending upward from a specified altitude or flight level to an upper limit, usually a flight level",
+   "explanation": "A CTA normally starts above the surface and extends upward to a specified upper limit. This separates it from a CTR which starts at the surface."
+  }
+ },
+ {
+  "id": 308,
+  "before": {
+   "question": "Terminal manoeuvring area?",
+   "option_a": "A control airspace surrounding a major airport with a high volume of traffic.",
+   "option_b": "An uncontrolled airspace surrounding a major airport with a high volume of traffic.",
+   "option_c": "A control airspace surrounding a major airport with a low volume of traffic.",
+   "option_d": null,
+   "correct_answer": "A control airspace surrounding a major airport with a high volume of traffic.",
+   "explanation": "A TMA exists because traffic converging on a busy airport from several routes needs protection while climbing or descending, and is managed by Approach Control Service, often using radar. All TMAs in South Africa are Class C, and where terrain forces different lower limits in different sectors they're subdivided into \"TMA A\", \"TMA B\" etc. -- still one TMA, like a staggered, upside-down wedding cake."
+  },
+  "after": {
+   "question": "What is a Terminal Manoeuvring Area (TMA)?",
+   "option_a": "Uncontrolled airspace surrounding a major airport with a high volume of traffic",
+   "option_b": "Controlled airspace surrounding a major airport with a low volume of traffic",
+   "option_c": "Airspace around a small aerodrome used only for circuit training",
+   "option_d": "Controlled airspace surrounding a major airport with a high volume of traffic",
+   "correct_answer": "Controlled airspace surrounding a major airport with a high volume of traffic",
+   "explanation": "A TMA exists because traffic converging on a busy airport from several routes needs protection while climbing or descending, and is managed by Approach Control Service, often using radar. All TMAs in South Africa are Class C, and where terrain forces different lower limits in different sectors they're subdivided into \"TMA A\", \"TMA B\" etc. -- still one TMA, like a staggered, upside-down wedding cake."
+  }
+ },
+ {
+  "id": 309,
+  "before": {
+   "question": "Select the correct abbreviation for the following airspace which extends from a specified limit to a specified upper limit and is normally established at the confluence of ATS routes in the vicinity of one or more major aerodromes?",
+   "option_a": "ATA",
+   "option_b": "TMA",
+   "option_c": "MTA",
+   "option_d": null,
+   "correct_answer": "TMA",
+   "explanation": "TMAs are positioned above one or more CTRs and/or ATZs specifically to protect aircraft climbing out from or descending into a busy airfield along converging routes. Since a TMA must start at least 700 ft above the ground, its lower limit is often stepped between sectors to follow the terrain."
+  },
+  "after": {
+   "question": "Which airspace extends from a specified lower limit to a specified upper limit and is normally established where ATS routes converge near one or more major aerodromes?",
+   "option_a": "TMA",
+   "option_b": "ATA",
+   "option_c": "MTA",
+   "option_d": "CTR",
+   "correct_answer": "TMA",
+   "explanation": "TMAs are positioned above one or more CTRs and/or ATZs specifically to protect aircraft climbing out from or descending into a busy airfield along converging routes. Since a TMA must start at least 700 ft above the ground, its lower limit is often stepped between sectors to follow the terrain."
+  }
+ },
+ {
+  "id": 312,
+  "before": {
+   "question": "What is “CTR”?",
+   "option_a": "Control area",
+   "option_b": "Advisory route",
+   "option_c": "Control zone",
+   "option_d": null,
+   "correct_answer": "Control zone",
+   "explanation": "CTR (Control Zone) airspace is established around larger airfields specifically to protect IFR traffic during approach and departure, extending from the ground up to a published upper limit. All CTRs in South Africa are currently Class C."
+  },
+  "after": {
+   "question": "What is a CTR?",
+   "option_a": "Control area",
+   "option_b": "Control zone",
+   "option_c": "Advisory route",
+   "option_d": "Terminal control region",
+   "correct_answer": "Control zone",
+   "explanation": "CTR (Control Zone) airspace is established around larger airfields specifically to protect IFR traffic during approach and departure, extending from the ground up to a published upper limit. All CTRs in South Africa are currently Class C."
+  }
+ },
+ {
+  "id": 313,
+  "before": {
+   "question": "Where CTR’s are established?",
+   "option_a": "Inside a TMA",
+   "option_b": "Around a TMA",
+   "option_c": "Above a TMA",
+   "option_d": null,
+   "correct_answer": "Inside a TMA",
+   "explanation": "A CTR sits within the lateral boundaries of a TMA, since a TMA is normally positioned above one or more CTRs and/or ATZs to protect traffic climbing out of or descending into a busy aerodrome."
+  },
+  "after": {
+   "question": "Where are CTRs normally established?",
+   "option_a": "Around a TMA",
+   "option_b": "Above a TMA",
+   "option_c": "Inside a TMA",
+   "option_d": "Only in Class G airspace",
+   "correct_answer": "Inside a TMA",
+   "explanation": "A CTR sits within the lateral boundaries of a TMA, since a TMA is normally positioned above one or more CTRs and/or ATZs to protect traffic climbing out of or descending into a busy aerodrome."
+  }
+ },
+ {
+  "id": 315,
+  "before": {
+   "question": "What is “ATZ”?",
+   "option_a": "Control zone",
+   "option_b": "Aerodrome traffic zone",
+   "option_c": "Terminal manoeuvring area",
+   "option_d": null,
+   "correct_answer": "Aerodrome traffic zone",
+   "explanation": "An ATZ protects traffic taking off, landing and flying the circuit at an aerodrome, extending from the ground to at least 700 ft AGL (often 1000-1500 ft). Depending on the airfield it can be Class C, D or G -- Class G ATZs are serviced by AFIS rather than full ATC."
+  },
+  "after": {
+   "question": "What is an ATZ?",
+   "option_a": "Control zone",
+   "option_b": "Terminal manoeuvring area",
+   "option_c": "Air traffic zone",
+   "option_d": "Aerodrome traffic zone",
+   "correct_answer": "Aerodrome traffic zone",
+   "explanation": "An ATZ protects traffic taking off, landing and flying the circuit at an aerodrome, extending from the ground to at least 700 ft AGL (often 1000-1500 ft). Depending on the airfield it can be Class C, D or G -- Class G ATZs are serviced by AFIS rather than full ATC."
+  }
+ },
+ {
+  "id": 317,
+  "before": {
+   "question": "Aerodrome traffic zone?",
+   "option_a": "A control airspace surrounding a major airport with a high volume of traffic.",
+   "option_b": "Airspace of defined dimension which extend upward from a specified altitude or flight level to an upper limit, usually a flight level.",
+   "option_c": "An airspace of defined dimensions established around an aerodrome for the protection of aerodrome traffic.",
+   "option_d": null,
+   "correct_answer": "An airspace of defined dimensions established around an aerodrome for the protection of aerodrome traffic.",
+   "explanation": "An ATZ protects traffic in the immediate vicinity of an aerodrome -- typically a smaller field -- and, unlike a CTR (always Class C), an ATZ can be Class C, D or even G, in which case it's serviced by AFIS instead of full ATC."
+  },
+  "after": {
+   "question": "What is an Aerodrome Traffic Zone (ATZ)?",
+   "option_a": "Airspace of defined dimensions established around an aerodrome to protect aerodrome traffic",
+   "option_b": "Controlled airspace surrounding a major airport with a high volume of traffic",
+   "option_c": "Airspace of defined dimensions extending upward from a specified altitude or flight level to an upper limit, usually a flight level",
+   "option_d": "Airspace from FL200 upwards in which only IFR flights are permitted",
+   "correct_answer": "Airspace of defined dimensions established around an aerodrome to protect aerodrome traffic",
+   "explanation": "An ATZ protects traffic in the immediate vicinity of an aerodrome -- typically a smaller field -- and, unlike a CTR (always Class C), an ATZ can be Class C, D or even G, in which case it's serviced by AFIS instead of full ATC."
+  }
+ },
+ {
+  "id": 318,
+  "before": {
+   "question": "Which of the following airspaces require clearance prior to entering? CTR, CTA, TMA, FAD, FAR",
+   "option_a": "CTR,CTA,TMA",
+   "option_b": "FAD,CTR,CTA",
+   "option_c": "FAR,FAD,TMA",
+   "option_d": null,
+   "correct_answer": "CTR,CTA,TMA",
+   "explanation": "CTR, CTA and TMA are all controlled (Class C) airspace requiring an ATC clearance before entry. FAD (Danger Area) and FAR (Restricted Area) are Class G airspace -- a FAD needs no permission (just vigilance), and a FAR needs permission from the appropriate authority, not an ATC clearance."
+  },
+  "after": {
+   "question": "Which of these airspaces require a clearance before entering: CTR, CTA, TMA, FAD, FAR?",
+   "option_a": "FAD, CTR, CTA",
+   "option_b": "CTR, CTA, TMA",
+   "option_c": "FAR, FAD, TMA",
+   "option_d": "FAD, FAR",
+   "correct_answer": "CTR, CTA, TMA",
+   "explanation": "CTR, CTA and TMA are all controlled (Class C) airspace requiring an ATC clearance before entry. FAD (Danger Area) and FAR (Restricted Area) are Class G airspace -- a FAD needs no permission (just vigilance), and a FAR needs permission from the appropriate authority, not an ATC clearance."
+  }
+ },
+ {
+  "id": 322,
+  "before": {
+   "question": "Which of these describes Class A airspace?",
+   "option_a": "Airspace below 10000ft",
+   "option_b": "The airspaces above 20 000ft",
+   "option_c": "Airspace below 1000 ft.",
+   "option_d": null,
+   "correct_answer": "The airspaces above 20 000ft",
+   "explanation": "Class A airspace generally starts at FL200 because that's also the ceiling for VFR flight (max FL195) -- above it, only IFR traffic operates, fully separated by ATC, since visual separation becomes impractical at higher speeds and altitudes."
+  },
+  "after": {
+   "question": "Which of these describes Class A airspace?",
+   "option_a": "Airspace below 10 000 ft",
+   "option_b": "Airspace below 1000 ft",
+   "option_c": "Airspace at and above FL200",
+   "option_d": "All airspace around major aerodromes",
+   "correct_answer": "Airspace at and above FL200",
+   "explanation": "Class A airspace generally starts at FL200 because that's also the ceiling for VFR flight (max FL195) -- above it, only IFR traffic operates, fully separated by ATC, since visual separation becomes impractical at higher speeds and altitudes."
+  }
+ },
+ {
+  "id": 323,
+  "before": {
+   "question": "Which of the following would be classified as class C airspace?",
+   "option_a": "All controlled airspace above FL200",
+   "option_b": "All uncontrolled airspace below FL200",
+   "option_c": "All controlled airspace below FL200",
+   "option_d": null,
+   "correct_answer": "All controlled airspace below FL200",
+   "explanation": "Since Class A occupies FL200 and above, virtually all the remaining controlled airspace below that level -- CTRs, ATZs, TMAs and CTAs -- is classified as Class C, where both IFR and VFR are permitted but IFR traffic still receives full separation."
+  },
+  "after": {
+   "question": "Which of the following is classified as Class C airspace?",
+   "option_a": "All controlled airspace above FL200",
+   "option_b": "All uncontrolled airspace below FL200",
+   "option_c": "All airspace above FL460",
+   "option_d": "All controlled airspace below FL200",
+   "correct_answer": "All controlled airspace below FL200",
+   "explanation": "Since Class A occupies FL200 and above, virtually all the remaining controlled airspace below that level -- CTRs, ATZs, TMAs and CTAs -- is classified as Class C, where both IFR and VFR are permitted but IFR traffic still receives full separation."
+  }
+ },
+ {
+  "id": 325,
+  "before": {
+   "question": "Which airspace has the following separation rules: IFR flights are separated from all other flights, and VFR flights are separated from IFR flights and receive traffic information on other VFR flights?",
+   "option_a": "Class C",
+   "option_b": "Class F",
+   "option_c": "Class G",
+   "option_d": null,
+   "correct_answer": "Class C",
+   "explanation": "Class C reflects the busiest mix of controlled traffic: IFR aircraft need full separation from everyone because of their speed and reliance on instruments, while VFR pilots -- who can see and avoid each other -- only need to be told where other VFR traffic is."
+  },
+  "after": {
+   "question": "In which airspace are IFR flights separated from all other flights, while VFR flights are separated from IFR flights and receive traffic information on other VFR flights?",
+   "option_a": "Class A",
+   "option_b": "Class C",
+   "option_c": "Class F",
+   "option_d": "Class G",
+   "correct_answer": "Class C",
+   "explanation": "Class C reflects the busiest mix of controlled traffic: IFR aircraft need full separation from everyone because of their speed and reliance on instruments, while VFR pilots -- who can see and avoid each other -- only need to be told where other VFR traffic is."
+  }
+ },
+ {
+  "id": 329,
+  "before": {
+   "question": "What class of airspace has the following definition: an air traffic control service is provided to all aircraft, IFR flights are separated from each other and receive traffic information on VFR flights while VFR flights receive traffic information on all other traffic.",
+   "option_a": "Class F",
+   "option_b": "Class D",
+   "option_c": "Class G",
+   "option_d": null,
+   "correct_answer": "Class D",
+   "explanation": "In South Africa, Class D at present only exists at the Grand Central ATZ -- a smaller, less busy environment than the major Class C TMAs/CTAs, which is why VFR traffic there gets only information rather than full ATC separation."
+  },
+  "after": {
+   "question": "Which airspace class matches this description: ATC service is provided to all aircraft, IFR flights are separated from each other and receive traffic information on VFR flights, and VFR flights receive traffic information on all other traffic?",
+   "option_a": "Class A",
+   "option_b": "Class D",
+   "option_c": "Class F",
+   "option_d": "Class G",
+   "correct_answer": "Class D",
+   "explanation": "In South Africa, Class D at present only exists at the Grand Central ATZ -- a smaller, less busy environment than the major Class C TMAs/CTAs, which is why VFR traffic there gets only information rather than full ATC separation."
+  }
+ },
+ {
+  "id": 330,
+  "before": {
+   "question": "Which airspace has the following separation rules: IFR flights are separated from IFR flights and receive traffic information on VFR flights while VFR flights receive traffic information on all other traffic?",
+   "option_a": "Class A",
+   "option_b": "Class C",
+   "option_c": "Class D",
+   "option_d": null,
+   "correct_answer": "Class D",
+   "explanation": "Grand Central ATZ is currently the only Class D airspace in South Africa. Because traffic volumes are lower than in Class C, ATC only needs to fully separate IFR from IFR, passing VFR aircraft traffic information rather than actively separating them."
+  },
+  "after": {
+   "question": "In which airspace are IFR flights separated from other IFR flights and receive traffic information on VFR flights, while VFR flights receive traffic information on all other traffic?",
+   "option_a": "Class A",
+   "option_b": "Class C",
+   "option_c": "Class D",
+   "option_d": "Class G",
+   "correct_answer": "Class D",
+   "explanation": "Grand Central ATZ is currently the only Class D airspace in South Africa. Because traffic volumes are lower than in Class C, ATC only needs to fully separate IFR from IFR, passing VFR aircraft traffic information rather than actively separating them."
+  }
+ },
+ {
+  "id": 331,
+  "before": {
+   "question": "What class of airspace permits IFR and VFR flights where all traffic receives traffic information only?",
+   "option_a": "Class G",
+   "option_b": "Class F",
+   "option_c": "Class C",
+   "option_d": null,
+   "correct_answer": "Class G",
+   "explanation": "Class G is uncontrolled airspace -- the remainder of airspace not declared as any other class, plus everything above FL460. There's no ATC service here, only Flight Information Service (FIS) on request; pilots keep their own separation, which is why broadcasting position (and listening to TIBA calls) matters so much in Class G."
+  },
+  "after": {
+   "question": "Which airspace class permits IFR and VFR flights, with all traffic receiving traffic information only?",
+   "option_a": "Class C",
+   "option_b": "Class D",
+   "option_c": "Class F",
+   "option_d": "Class G",
+   "correct_answer": "Class G",
+   "explanation": "Class G is uncontrolled airspace -- the remainder of airspace not declared as any other class, plus everything above FL460. There's no ATC service here, only Flight Information Service (FIS) on request; pilots keep their own separation, which is why broadcasting position (and listening to TIBA calls) matters so much in Class G."
+  }
+ },
+ {
+  "id": 332,
+  "before": {
+   "question": "What class of airspace provides advisory services to IFR flights and traffic information to all flights?",
+   "option_a": "Class C",
+   "option_b": "Class F",
+   "option_c": "Class A",
+   "option_d": null,
+   "correct_answer": "Class F",
+   "explanation": "There's no permanent Class F airspace in South Africa -- it's declared only temporarily, for example over an air show, and published by NOTAM or AIP Supplement. While active, IFR traffic gets an advisory service and VFR gets traffic information, both requiring two-way radio."
+  },
+  "after": {
+   "question": "Which airspace class provides an advisory service to IFR flights and traffic information to all flights?",
+   "option_a": "Class A",
+   "option_b": "Class C",
+   "option_c": "Class F",
+   "option_d": "Class G",
+   "correct_answer": "Class F",
+   "explanation": "There's no permanent Class F airspace in South Africa -- it's declared only temporarily, for example over an air show, and published by NOTAM or AIP Supplement. While active, IFR traffic gets an advisory service and VFR gets traffic information, both requiring two-way radio."
+  }
+ },
+ {
+  "id": 333,
+  "before": {
+   "question": "What does FAD stand for?",
+   "option_a": "Flight Advisory District",
+   "option_b": "Flight Area Division",
+   "option_c": "Danger Area",
+   "option_d": null,
+   "correct_answer": "Danger Area",
+   "explanation": "FAD areas are usually military ranges or General Flying Areas (GFAs) used for training -- Class G airspace that pilots may enter, but should do so vigilantly since hazardous activity (low flying, parachuting, weapons testing) may be underway."
+  },
+  "after": {
+   "question": "What does the designator FAD stand for?",
+   "option_a": "Flight Advisory District",
+   "option_b": "Danger area",
+   "option_c": "Flight Area Division",
+   "option_d": "Prohibited area",
+   "correct_answer": "Danger area",
+   "explanation": "FAD areas are usually military ranges or General Flying Areas (GFAs) used for training -- Class G airspace that pilots may enter, but should do so vigilantly since hazardous activity (low flying, parachuting, weapons testing) may be underway."
+  }
+ },
+ {
+  "id": 334,
+  "before": {
+   "question": "What does FAR stand for?",
+   "option_a": "Restricted Area",
+   "option_b": "Flight Area Restriction",
+   "option_c": "Flight Advisory Region",
+   "option_d": null,
+   "correct_answer": "Restricted Area",
+   "explanation": "A Restricted Area (FAR) is Class G airspace that may only be entered with permission from the responsible authority -- usually military, as published in AIP ENR 5. Example: FAR23 near Upington, a military shooting range extending from the ground to FL195."
+  },
+  "after": {
+   "question": "What does the designator FAR stand for?",
+   "option_a": "Flight Area Restriction",
+   "option_b": "Flight Advisory Region",
+   "option_c": "Restricted area",
+   "option_d": "Danger area",
+   "correct_answer": "Restricted area",
+   "explanation": "A Restricted Area (FAR) is Class G airspace that may only be entered with permission from the responsible authority -- usually military, as published in AIP ENR 5. Example: FAR23 near Upington, a military shooting range extending from the ground to FL195."
+  }
+ },
+ {
+  "id": 337,
+  "before": {
+   "question": "What does FAD 127 stand for?",
+   "option_a": "prohibited area",
+   "option_b": "Restricted area",
+   "option_c": "Dangerous area",
+   "option_d": null,
+   "correct_answer": "Dangerous area",
+   "explanation": "FAD (Danger Area) airspace marks hazardous activity such as a military range or a General Flying Area. Unlike a Prohibited or Restricted Area, a pilot may enter a Danger Area without permission, provided they stay vigilant and keep a good lookout."
+  },
+  "after": {
+   "question": "What type of airspace is FAD 127?",
+   "option_a": "Prohibited area",
+   "option_b": "Restricted area",
+   "option_c": "Control area",
+   "option_d": "Danger area",
+   "correct_answer": "Danger area",
+   "explanation": "FAD (Danger Area) airspace marks hazardous activity such as a military range or a General Flying Area. Unlike a Prohibited or Restricted Area, a pilot may enter a Danger Area without permission, provided they stay vigilant and keep a good lookout."
+  }
+ },
+ {
+  "id": 338,
+  "before": {
+   "question": "What does FAD129 7500ALT represent?",
+   "option_a": "Altitude",
+   "option_b": "cloud base",
+   "option_c": "flight level",
+   "option_d": null,
+   "correct_answer": "Altitude",
+   "explanation": "\"ALT\" on a chart means altitude -- height above mean sea level using the local QNH -- rather than a flight level (a standard-pressure reference, 1013.2 hPa). Low-level danger/restricted-area limits close to the ground are given as ALT so the boundary stays tied to actual terrain, regardless of the day's altimeter setting."
+  },
+  "after": {
+   "question": "On a chart, what does ALT in \"FAD129 7500ALT\" mean?",
+   "option_a": "Altitude",
+   "option_b": "Cloud base",
+   "option_c": "Flight level",
+   "option_d": "Height above ground level",
+   "correct_answer": "Altitude",
+   "explanation": "\"ALT\" on a chart means altitude -- height above mean sea level using the local QNH -- rather than a flight level (a standard-pressure reference, 1013.2 hPa). Low-level danger/restricted-area limits close to the ground are given as ALT so the boundary stays tied to actual terrain, regardless of the day's altimeter setting."
+  }
+ },
+ {
+  "id": 340,
+  "before": {
+   "question": "Referring to the picture below FAD 129 has an upper limit of?",
+   "option_a": "7500ft AGL",
+   "option_b": "7500ft AMSL",
+   "option_c": "FL075",
+   "option_d": null,
+   "correct_answer": "7500ft AMSL",
+   "explanation": "The chart label uses ALT, meaning altitude above mean sea level. Therefore the upper limit is 7500 feet AMSL."
+  },
+  "after": {
+   "question": "Referring to the chart extract, what is the upper limit of FAD 129?",
+   "option_a": "7500 ft AGL",
+   "option_b": "7500 ft AMSL",
+   "option_c": "FL075",
+   "option_d": "750 ft AMSL",
+   "correct_answer": "7500 ft AMSL",
+   "explanation": "The chart label uses ALT, meaning altitude above mean sea level. Therefore the upper limit is 7500 feet AMSL."
+  }
+ },
+ {
+  "id": 342,
+  "before": {
+   "question": "Permission to enter a restricted area must be obtained from?",
+   "option_a": "The police station",
+   "option_b": "Any authority",
+   "option_c": "The appropriate authority.",
+   "option_d": null,
+   "correct_answer": "The appropriate authority.",
+   "explanation": "Restricted Areas are typically military ranges, so the \"appropriate authority\" is usually the military unit responsible for that airspace (as published in AIP ENR 5) -- not ATC, which has no jurisdiction over Restricted Area access."
+  },
+  "after": {
+   "question": "From whom must permission to enter a restricted area be obtained?",
+   "option_a": "The police station",
+   "option_b": "Any authority",
+   "option_c": "The appropriate authority",
+   "option_d": "The nearest ATC unit",
+   "correct_answer": "The appropriate authority",
+   "explanation": "Restricted Areas are typically military ranges, so the \"appropriate authority\" is usually the military unit responsible for that airspace (as published in AIP ENR 5) -- not ATC, which has no jurisdiction over Restricted Area access."
+  }
+ },
+ {
+  "id": 345,
+  "before": {
+   "question": "Which South African airspace designator identifies a prohibited area?",
+   "option_a": "FAD",
+   "option_b": "FAR",
+   "option_c": "FAP",
+   "option_d": null,
+   "correct_answer": "FAP",
+   "explanation": "The letters after the South African prefix FA identify the type of special-use airspace: P means prohibited, R means restricted, and D means danger. Therefore FAP identifies a prohibited area."
+  },
+  "after": {
+   "question": "Which South African airspace designator identifies a prohibited area?",
+   "option_a": "FAD",
+   "option_b": "FAR",
+   "option_c": "FAA",
+   "option_d": "FAP",
+   "correct_answer": "FAP",
+   "explanation": "The letters after the South African prefix FA identify the type of special-use airspace: P means prohibited, R means restricted, and D means danger. Therefore FAP identifies a prohibited area."
+  }
+ },
+ {
+  "id": 394,
+  "before": {
+   "question": "Referring to the picture below, FAR 82 has an upper limit of?",
+   "option_a": "10500 AGL",
+   "option_b": "FL105",
+   "option_c": "10500 ALT",
+   "option_d": null,
+   "correct_answer": "FL105",
+   "explanation": "Correct answer: FL105. FAR means Restricted Area South Africa, and the charted upper limit for FAR 82 is given as a flight level. 10500 AGL is wrong because it refers to height above ground level, and 10500 ALT is wrong because the published limit is expressed as a flight level, not altitude."
+  },
+  "after": {
+   "question": "Referring to the chart extract, what is the upper limit of FAR 171?",
+   "option_a": "FL100",
+   "option_b": "10 000 ft AGL",
+   "option_c": "10 000 ft ALT",
+   "option_d": "FL171",
+   "correct_answer": "FL100",
+   "explanation": "The FAR 171 box reads FL100 over GND: the upper limit is flight level 100 and the lower limit is the ground. A limit given as FL is a pressure level referenced to 1013.25 hPa, so it is neither an altitude (ALT, on QNH) nor a height above ground (AGL). 171 is the area's number, not its level."
+  }
+ },
+ {
+  "id": 396,
+  "before": {
+   "question": "FAP is airspace of defined dimensions within which?",
+   "option_a": "No civilian aircraft is permitted to fly at any time under any circumstances",
+   "option_b": "Flying in this area is permitted with permission",
+   "option_c": "Flying in this area sometimes is permitted.",
+   "option_d": null,
+   "correct_answer": "No civilian aircraft is permitted to fly at any time under any circumstances",
+   "explanation": "Correct answer: No civilian aircraft is permitted to fly at any time under any circumstances. A prohibited area is established to protect sensitive or hazardous locations where civil flight is not allowed. Permission-based entry applies more to restricted areas, not prohibited areas."
+  },
+  "after": {
+   "question": "A prohibited area (FAP) is airspace of defined dimensions within which?",
+   "option_a": "Flying is permitted with permission",
+   "option_b": "No civilian aircraft is permitted to fly at any time under any circumstances",
+   "option_c": "Flying is sometimes permitted",
+   "option_d": "Flying is permitted after contacting ATC",
+   "correct_answer": "No civilian aircraft is permitted to fly at any time under any circumstances",
+   "explanation": "Correct answer: No civilian aircraft is permitted to fly at any time under any circumstances. A prohibited area is established to protect sensitive or hazardous locations where civil flight is not allowed. Permission-based entry applies more to restricted areas, not prohibited areas."
+  }
+ },
+ {
+  "id": 398,
+  "before": {
+   "question": "May aircraft fly in a prohibited area?",
+   "option_a": "Yes",
+   "option_b": "No",
+   "option_c": "Yes, with permission",
+   "option_d": null,
+   "correct_answer": "No",
+   "explanation": "Correct answer: No. Prohibited areas are not available for normal civil aircraft operations. Yes with permission is more appropriate for restricted areas, while prohibited areas are established where entry is not permitted."
+  },
+  "after": {
+   "question": "May civil aircraft fly in a prohibited area?",
+   "option_a": "Yes",
+   "option_b": "Yes, with permission",
+   "option_c": "No",
+   "option_d": "Yes, above 1500 ft AGL",
+   "correct_answer": "No",
+   "explanation": "Correct answer: No. Prohibited areas are not available for normal civil aircraft operations. Yes with permission is more appropriate for restricted areas, while prohibited areas are established where entry is not permitted."
+  }
+ },
+ {
+  "id": 399,
+  "before": {
+   "question": "What is AFIS?",
+   "option_a": "Aerodrome flight control",
+   "option_b": "Aerodrome flight information organization",
+   "option_c": "Aerodrome flight information service.",
+   "option_d": null,
+   "correct_answer": "Aerodrome flight information service.",
+   "explanation": "Correct answer: Aerodrome Flight Information Service. AFIS provides useful aerodrome traffic and flight information to pilots. It is not aerodrome flight control and it is not an organization; it is an information service."
+  },
+  "after": {
+   "question": "What does AFIS stand for?",
+   "option_a": "Aerodrome flight control",
+   "option_b": "Aerodrome flight information organisation",
+   "option_c": "Automatic flight information system",
+   "option_d": "Aerodrome flight information service",
+   "correct_answer": "Aerodrome flight information service",
+   "explanation": "Correct answer: Aerodrome Flight Information Service. AFIS provides useful aerodrome traffic and flight information to pilots. It is not aerodrome flight control and it is not an organization; it is an information service."
+  }
+ },
+ {
+  "id": 401,
+  "before": {
+   "question": "What is the function of an AFIS?",
+   "option_a": "To give information and advice, they cannot issue clearance, decisions are made by the pilot in command.",
+   "option_b": "To give information and advice, they can issue clearance, decisions are made by the pilot in command.",
+   "option_c": "Its control airspace and they can issue clearance.",
+   "option_d": null,
+   "correct_answer": "To give information and advice, they cannot issue clearance, decisions are made by the pilot in command.",
+   "explanation": "Correct answer: AFIS gives information and advice but cannot issue clearances. The pilot-in-command remains responsible for decisions and separation. The options saying AFIS can issue clearances are wrong because that is an ATC function."
+  },
+  "after": {
+   "question": "What is the function of AFIS?",
+   "option_a": "To give information and advice; it cannot issue clearances, and decisions are made by the pilot in command",
+   "option_b": "To give information and advice; it can issue clearances, and decisions are made by the pilot in command",
+   "option_c": "To control the airspace and issue clearances",
+   "option_d": "To provide radar separation between all aircraft",
+   "correct_answer": "To give information and advice; it cannot issue clearances, and decisions are made by the pilot in command",
+   "explanation": "Correct answer: AFIS gives information and advice but cannot issue clearances. The pilot-in-command remains responsible for decisions and separation. The options saying AFIS can issue clearances are wrong because that is an ATC function."
+  }
+ },
+ {
+  "id": 403,
+  "before": {
+   "question": "What is the name of the airspace that AFIS operates in?",
+   "option_a": "CTR",
+   "option_b": "ATA",
+   "option_c": "TMA",
+   "option_d": null,
+   "correct_answer": "ATA",
+   "explanation": "Correct answer: ATA. Aerodrome Traffic Areas (ATA) no longer officially exist -- they have been replaced by ATZ Class G -- but the term is still used in the RT exam syllabus for the uncontrolled airspace where AFIS operates. CTRs and TMAs are controlled airspace served by ATC, not AFIS."
+  },
+  "after": {
+   "question": "In the RT syllabus, in which airspace does AFIS operate?",
+   "option_a": "CTR",
+   "option_b": "ATA",
+   "option_c": "TMA",
+   "option_d": "CTA",
+   "correct_answer": "ATA",
+   "explanation": "Correct answer: ATA. Aerodrome Traffic Areas (ATA) no longer officially exist -- they have been replaced by ATZ Class G -- but the term is still used in the RT exam syllabus for the uncontrolled airspace where AFIS operates. CTRs and TMAs are controlled airspace served by ATC, not AFIS."
+  }
+ },
+ {
+  "id": 405,
+  "before": {
+   "question": "Advisory services can give?",
+   "option_a": "Radar separation",
+   "option_b": "Weather forecasts",
+   "option_c": "Information on other traffic",
+   "option_d": null,
+   "correct_answer": "Information on other traffic",
+   "explanation": "Correct answer: Information on other traffic. Advisory services help pilots maintain awareness by passing traffic information. Radar separation is a control service, and weather forecasts are not the main purpose of an advisory service."
+  },
+  "after": {
+   "question": "What can an advisory service give?",
+   "option_a": "Radar separation",
+   "option_b": "Weather forecasts",
+   "option_c": "Information on other traffic",
+   "option_d": "Take-off and landing clearances",
+   "correct_answer": "Information on other traffic",
+   "explanation": "Correct answer: Information on other traffic. Advisory services help pilots maintain awareness by passing traffic information. Radar separation is a control service, and weather forecasts are not the main purpose of an advisory service."
+  }
+ },
+ {
+  "id": 406,
+  "before": {
+   "question": "The route designator R987D found on an aeronautical chart indicates an?",
+   "option_a": "Advisory route",
+   "option_b": "TMA",
+   "option_c": "CTA",
+   "option_d": null,
+   "correct_answer": "Advisory route",
+   "explanation": "The suffix \"D\" marks an ADR (Advisory Route) -- an older classification for Class F airspace that the current AIP glossary lists as \"not in use anymore\" in South Africa, though it's still tested in the RT syllabus. Exam tip: don't confuse it with \"R987F\", the suffix for a genuine, currently active Information Route (Class G)."
+  },
+  "after": {
+   "question": "What does the route designator R987D on an aeronautical chart indicate?",
+   "option_a": "TMA",
+   "option_b": "CTA",
+   "option_c": "Restricted area",
+   "option_d": "Advisory route",
+   "correct_answer": "Advisory route",
+   "explanation": "The suffix \"D\" marks an ADR (Advisory Route) -- an older classification for Class F airspace that the current AIP glossary lists as \"not in use anymore\" in South Africa, though it's still tested in the RT syllabus. Exam tip: don't confuse it with \"R987F\", the suffix for a genuine, currently active Information Route (Class G)."
+  }
+ },
+ {
+  "id": 409,
+  "before": {
+   "question": "What does AIP SUP stand for?",
+   "option_a": "Aeronautical information publication",
+   "option_b": "Aeronautical information publication supplement.",
+   "option_c": "Aeronautical information circular",
+   "option_d": null,
+   "correct_answer": "Aeronautical information publication supplement.",
+   "explanation": "Correct answer: Aeronautical Information Publication Supplement. An AIP SUP is used for information that is important enough to need wide, timely publicity but is only temporary or supplementary to what's already in the AIP — for example a major, planned airspace change — which is why it's issued separately rather than waiting for the next full AIP amendment. An AIC, by contrast, is used for explanatory or advisory material rather than operational essentials."
+  },
+  "after": {
+   "question": "What does AIP SUP stand for?",
+   "option_a": "Aeronautical information publication supplement",
+   "option_b": "Aeronautical information publication",
+   "option_c": "Aeronautical information circular",
+   "option_d": "Aeronautical information service update",
+   "correct_answer": "Aeronautical information publication supplement",
+   "explanation": "Correct answer: Aeronautical Information Publication Supplement. An AIP SUP is used for information that is important enough to need wide, timely publicity but is only temporary or supplementary to what's already in the AIP — for example a major, planned airspace change — which is why it's issued separately rather than waiting for the next full AIP amendment. An AIC, by contrast, is used for explanatory or advisory material rather than operational essentials."
+  }
+ },
+ {
+  "id": 412,
+  "before": {
+   "question": "What are the two types of flight rules?",
+   "option_a": "VFR and VMC",
+   "option_b": "IFR and IMC",
+   "option_c": "VFR and IFR",
+   "option_d": null,
+   "correct_answer": "VFR and IFR",
+   "explanation": "Correct answer: VFR and IFR. These are the two sets of flight rules a pilot chooses between: VFR relies on the pilot seeing and avoiding terrain and other traffic, while IFR allows flight by reference to instruments with ATC providing separation, which is why IFR needs extra licensing, equipment and fuel-reserve requirements. VMC and IMC describe the weather, not which rules are being flown — an IFR flight can be conducted in either."
+  },
+  "after": {
+   "question": "What are the two types of flight rules?",
+   "option_a": "VFR and VMC",
+   "option_b": "VFR and IFR",
+   "option_c": "IFR and IMC",
+   "option_d": "VMC and IMC",
+   "correct_answer": "VFR and IFR",
+   "explanation": "Correct answer: VFR and IFR. These are the two sets of flight rules a pilot chooses between: VFR relies on the pilot seeing and avoiding terrain and other traffic, while IFR allows flight by reference to instruments with ATC providing separation, which is why IFR needs extra licensing, equipment and fuel-reserve requirements. VMC and IMC describe the weather, not which rules are being flown — an IFR flight can be conducted in either."
+  }
+ },
+ {
+  "id": 416,
+  "before": {
+   "question": "The semi-circular rule shall apply when flying at?",
+   "option_a": "1500ft AGL or below.",
+   "option_b": "1500ft AGL or above.",
+   "option_c": "500ft AGL",
+   "option_d": null,
+   "correct_answer": "1500ft AGL or above.",
+   "explanation": "GIVEN\nQuestion asks the height at or above which the semi-circular rule applies to cruising flight.\n\nRULE\nChapter 5 states: all aircraft cruising (flying level in cruising flight) at or above 1500' AGL in uncontrolled airspace have to adhere to the semi-circular rule.\n\nANSWER\n1500ft AGL or above."
+  },
+  "after": {
+   "question": "When does the semi-circular rule apply?",
+   "option_a": "At 1500 ft AGL or below",
+   "option_b": "At 500 ft AGL",
+   "option_c": "At 1500 ft AGL or above",
+   "option_d": "Only in controlled airspace",
+   "correct_answer": "At 1500 ft AGL or above",
+   "explanation": "GIVEN\nQuestion asks the height at or above which the semi-circular rule applies to cruising flight.\n\nRULE\nChapter 5 states: all aircraft cruising (flying level in cruising flight) at or above 1500' AGL in uncontrolled airspace have to adhere to the semi-circular rule.\n\nANSWER\n1500ft AGL or above."
+  }
+ },
+ {
+  "id": 417,
+  "before": {
+   "question": "In which of the following instances does the semi-circular rule not apply?",
+   "option_a": "Traffic flying VFR at a height of more than 1500 FT AGL.",
+   "option_b": "Traffic flying IFR at a height of more than 1500 FT AGL.",
+   "option_c": "Traffic flying VFR at a height of less than 1500 FT AGL.",
+   "option_d": null,
+   "correct_answer": "Traffic flying VFR at a height of less than 1500 FT AGL.",
+   "explanation": "GIVEN\nQuestion asks in which case the semi-circular rule does not apply.\n\nRULE\nThe rule applies to cruising flight at or above 1500 ft AGL in uncontrolled airspace. Cruising VFR traffic below that height falls outside the rule.\n\nANSWER\nTraffic flying VFR at a height of less than 1500 FT AGL."
+  },
+  "after": {
+   "question": "In which case does the semi-circular rule not apply?",
+   "option_a": "VFR traffic flying above 1500 ft AGL",
+   "option_b": "IFR traffic flying above 1500 ft AGL",
+   "option_c": "IFR traffic flying at FL100",
+   "option_d": "VFR traffic flying below 1500 ft AGL",
+   "correct_answer": "VFR traffic flying below 1500 ft AGL",
+   "explanation": "GIVEN\nQuestion asks in which case the semi-circular rule does not apply.\n\nRULE\nThe rule applies to cruising flight at or above 1500 ft AGL in uncontrolled airspace. Cruising VFR traffic below that height falls outside the rule.\n\nANSWER\nTraffic flying VFR at a height of less than 1500 FT AGL."
+  }
+ },
+ {
+  "id": 423,
+  "before": {
+   "question": "What is the ceiling defined as?",
+   "option_a": "Height above ground or water of the base of the lowest layer of cloud below 20 000 ft, covering more than 4 oktas.",
+   "option_b": "Height above ground or water of the base of the lowest layer of cloud above 20 000 ft, covering more than 4 oktas.",
+   "option_c": "Height above ground or water of the base of the lowest layer of cloud below 2 000 ft, covering less than 4 oktas.",
+   "option_d": null,
+   "correct_answer": "Height above ground or water of the base of the lowest layer of cloud below 20 000 ft, covering more than 4 oktas.",
+   "explanation": "Correct answer: Height above ground or water of the base of the lowest layer of cloud below 20,000 ft, covering more than 4 oktas. The reference is above ground/water (not sea level) because it's the pilot's view of the sky from where they actually are that matters, and 'more than half the sky' (more than 4 of 8 oktas) is the threshold because a lesser amount of cloud doesn't meaningfully block the pilot's visual reference needed for VFR."
+  },
+  "after": {
+   "question": "How is the ceiling defined?",
+   "option_a": "The height above ground or water of the base of the lowest layer of cloud below 20 000 ft covering more than 4 oktas",
+   "option_b": "The height above ground or water of the base of the lowest layer of cloud above 20 000 ft covering more than 4 oktas",
+   "option_c": "The height above ground or water of the base of the lowest layer of cloud below 2000 ft covering less than 4 oktas",
+   "option_d": "The height above mean sea level of the base of the lowest layer of cloud covering 4 oktas or less",
+   "correct_answer": "The height above ground or water of the base of the lowest layer of cloud below 20 000 ft covering more than 4 oktas",
+   "explanation": "Correct answer: Height above ground or water of the base of the lowest layer of cloud below 20,000 ft, covering more than 4 oktas. The reference is above ground/water (not sea level) because it's the pilot's view of the sky from where they actually are that matters, and 'more than half the sky' (more than 4 of 8 oktas) is the threshold because a lesser amount of cloud doesn't meaningfully block the pilot's visual reference needed for VFR."
+  }
+ },
+ {
+  "id": 425,
+  "before": {
+   "question": "What is the minimum ceiling for the VFR in a CTR?",
+   "option_a": "2000 FT",
+   "option_b": "1500 FT",
+   "option_c": "500 FT",
+   "option_d": null,
+   "correct_answer": "1500 FT",
+   "explanation": "Correct answer: 1500 ft. In a CTR, VFR traffic needs a 1500 ft ceiling so aircraft joining or leaving the circuit, and those in the pattern, have enough vertical room to manoeuvre visually and stay clear of cloud. Lower figures (600 ft, 500 ft) belong to the reduced Special VFR minima, which apply only under an ATC clearance in IMC conditions."
+  },
+  "after": {
+   "question": "What is the minimum ceiling for VFR flight in a CTR?",
+   "option_a": "500 ft",
+   "option_b": "1000 ft",
+   "option_c": "1500 ft",
+   "option_d": "2000 ft",
+   "correct_answer": "1500 ft",
+   "explanation": "Correct answer: 1500 ft. In a CTR, VFR traffic needs a 1500 ft ceiling so aircraft joining or leaving the circuit, and those in the pattern, have enough vertical room to manoeuvre visually and stay clear of cloud. Lower figures (600 ft, 500 ft) belong to the reduced Special VFR minima, which apply only under an ATC clearance in IMC conditions."
+  }
+ },
+ {
+  "id": 426,
+  "before": {
+   "question": "What is the minimum visibility required for special VFR in an aeroplane?",
+   "option_a": "5000 M",
+   "option_b": "3000M",
+   "option_c": "1500 M",
+   "option_d": null,
+   "correct_answer": "1500 M",
+   "explanation": "Correct answer: 1500 m. Special VFR trades some of the normal VFR visual margin for ATC-provided separation, so the minimum visibility drops from the normal 5000 m to 1500 m — but the pilot must still be able to see well enough to remain clear of cloud and within sight of the ground. 5000 m is the ordinary VFR figure, not the SVFR one."
+  },
+  "after": {
+   "question": "What is the minimum visibility for special VFR in an aeroplane?",
+   "option_a": "800 m",
+   "option_b": "1500 m",
+   "option_c": "3000 m",
+   "option_d": "5000 m",
+   "correct_answer": "1500 m",
+   "explanation": "Correct answer: 1500 m. Special VFR trades some of the normal VFR visual margin for ATC-provided separation, so the minimum visibility drops from the normal 5000 m to 1500 m — but the pilot must still be able to see well enough to remain clear of cloud and within sight of the ground. 5000 m is the ordinary VFR figure, not the SVFR one."
+  }
+ },
+ {
+  "id": 427,
+  "before": {
+   "question": "Special VFR can only be requested?",
+   "option_a": "During day",
+   "option_b": "During night",
+   "option_c": "During day and night.",
+   "option_d": null,
+   "correct_answer": "During day",
+   "explanation": "Correct answer: During day. Special VFR depends entirely on the pilot's own ability to stay clear of cloud and within sight of the ground, which is far harder to guarantee at night — so SVFR (for both aeroplanes and helicopters) is restricted to daytime only. Night operations require the extra rating and equipment that come with instrument or dedicated night-VFR procedures instead."
+  },
+  "after": {
+   "question": "When can special VFR be requested?",
+   "option_a": "By night only",
+   "option_b": "By day and night",
+   "option_c": "Only in Class G airspace",
+   "option_d": "By day only",
+   "correct_answer": "By day only",
+   "explanation": "Correct answer: During day. Special VFR depends entirely on the pilot's own ability to stay clear of cloud and within sight of the ground, which is far harder to guarantee at night — so SVFR (for both aeroplanes and helicopters) is restricted to daytime only. Night operations require the extra rating and equipment that come with instrument or dedicated night-VFR procedures instead."
+  }
+ },
+ {
+  "id": 431,
+  "before": {
+   "question": "When flying 1500 ft. or higher, how will you indicate your intended height on a flight plan?",
+   "option_a": "Altitude",
+   "option_b": "Flight level",
+   "option_c": "Height.",
+   "option_d": null,
+   "correct_answer": "Flight level",
+   "explanation": "Correct answer: Flight level. Once a flight is cruising at 1500 ft AGL or higher, the semi-circular rule applies, and item 15 of the flight plan records the planned cruising level as a Flight Level (e.g. F095) rather than as an altitude or height, since flight levels are what the semi-circular rule and ATC separation are built around."
+  },
+  "after": {
+   "question": "When flying at 1500 ft AGL or higher, how do you show your intended cruising level on a flight plan?",
+   "option_a": "Flight level",
+   "option_b": "Altitude",
+   "option_c": "Height",
+   "option_d": "QFE height",
+   "correct_answer": "Flight level",
+   "explanation": "Correct answer: Flight level. Once a flight is cruising at 1500 ft AGL or higher, the semi-circular rule applies, and item 15 of the flight plan records the planned cruising level as a Flight Level (e.g. F095) rather than as an altitude or height, since flight levels are what the semi-circular rule and ATC separation are built around."
+  }
+ },
+ {
+  "id": 434,
+  "before": {
+   "question": "What does it mean if a runway reported to be damp?",
+   "option_a": "The surface shows a change of colour due to dry surface.",
+   "option_b": "The runway has extensive patches of water that are visible.",
+   "option_c": "The surface shows a change of colour due to moisture.",
+   "option_d": null,
+   "correct_answer": "The surface shows a change of colour due to moisture.",
+   "explanation": "Correct answer: The surface shows a change of colour due to moisture. 'Damp' is the mildest of the moisture reports — a colour change with no visible standing water at all — as distinct from wet (visible surface moisture), water patches, or flooded (visible pooling). Exam tip: remember the escalation dry → damp → wet → water patches → flooded, each step meaning progressively more water on the surface and more caution needed on landing."
+  },
+  "after": {
+   "question": "What does it mean when a runway is reported as damp?",
+   "option_a": "The surface shows a change of colour because it is dry",
+   "option_b": "The surface shows a change of colour due to moisture",
+   "option_c": "The runway has extensive patches of visible water",
+   "option_d": "The runway is covered with ice",
+   "correct_answer": "The surface shows a change of colour due to moisture",
+   "explanation": "Correct answer: The surface shows a change of colour due to moisture. 'Damp' is the mildest of the moisture reports — a colour change with no visible standing water at all — as distinct from wet (visible surface moisture), water patches, or flooded (visible pooling). Exam tip: remember the escalation dry → damp → wet → water patches → flooded, each step meaning progressively more water on the surface and more caution needed on landing."
+  }
+ },
+ {
+  "id": 435,
+  "before": {
+   "question": "1 hPa is roughly equivalent to?",
+   "option_a": "30 feet",
+   "option_b": "2 feet",
+   "option_c": "100 feet",
+   "option_d": null,
+   "correct_answer": "30 feet",
+   "explanation": "Correct answer: 30 ft. Atmospheric pressure falls by about 1 hPa for every 30 ft of climb (true up to roughly 10,000 ft), which is exactly why the altimeter can be calibrated to read altitude instead of raw pressure. Exam tip: this rule of thumb also lets you quickly estimate altimeter error — e.g. flying on a QNH that is 10 hPa out will put you about 300 ft off your indicated altitude."
+  },
+  "after": {
+   "question": "1 hPa is roughly equivalent to?",
+   "option_a": "2 ft",
+   "option_b": "30 ft",
+   "option_c": "100 ft",
+   "option_d": "300 ft",
+   "correct_answer": "30 ft",
+   "explanation": "Correct answer: 30 ft. Atmospheric pressure falls by about 1 hPa for every 30 ft of climb (true up to roughly 10,000 ft), which is exactly why the altimeter can be calibrated to read altitude instead of raw pressure. Exam tip: this rule of thumb also lets you quickly estimate altimeter error — e.g. flying on a QNH that is 10 hPa out will put you about 300 ft off your indicated altitude."
+  }
+ },
+ {
+  "id": 436,
+  "before": {
+   "question": "The ISA standard atmospheric pressure is?",
+   "option_a": "1003.25 hPa",
+   "option_b": "1013.25 hPa.",
+   "option_c": "1000 hPa",
+   "option_d": null,
+   "correct_answer": "1013.25 hPa.",
+   "explanation": "Correct answer: 1013.25 hPa. This is the sea-level pressure of the International Standard Atmosphere, chosen as a single fixed reference (rather than any day's actual pressure) so that every aircraft flying at a given Flight Level, regardless of the weather below, is using the same datum and can be vertically separated from other traffic. 1003.25 hPa and 1000 hPa are not recognised standard pressure values."
+  },
+  "after": {
+   "question": "What is the ISA standard sea-level pressure?",
+   "option_a": "1000 hPa",
+   "option_b": "1003.25 hPa",
+   "option_c": "1013.25 hPa",
+   "option_d": "1023.25 hPa",
+   "correct_answer": "1013.25 hPa",
+   "explanation": "Correct answer: 1013.25 hPa. This is the sea-level pressure of the International Standard Atmosphere, chosen as a single fixed reference (rather than any day's actual pressure) so that every aircraft flying at a given Flight Level, regardless of the weather below, is using the same datum and can be vertically separated from other traffic. 1003.25 hPa and 1000 hPa are not recognised standard pressure values."
+  }
+ },
+ {
+  "id": 437,
+  "before": {
+   "question": "Where is flight level zero?",
+   "option_a": "Mean sea level",
+   "option_b": "Ground level",
+   "option_c": "1013.25 hPa pressure level",
+   "option_d": null,
+   "correct_answer": "1013.25 hPa pressure level",
+   "explanation": "Correct answer: 1013.25 hPa pressure level. Flight levels are based on the standard pressure datum of 1013.25 hPa, not actual mean sea level or ground level. This is why flight levels maintain standard vertical references between aircraft."
+  },
+  "after": {
+   "question": "Where is flight level zero?",
+   "option_a": "At the 1013.25 hPa pressure level",
+   "option_b": "At mean sea level",
+   "option_c": "At ground level",
+   "option_d": "At the aerodrome where QFE is measured",
+   "correct_answer": "At the 1013.25 hPa pressure level",
+   "explanation": "Correct answer: 1013.25 hPa pressure level. Flight levels are based on the standard pressure datum of 1013.25 hPa, not actual mean sea level or ground level. This is why flight levels maintain standard vertical references between aircraft."
+  }
+ },
+ {
+  "id": 441,
+  "before": {
+   "question": "What does setting QFE indicate?",
+   "option_a": "Height above airfield elevation",
+   "option_b": "Altitude above mean sea level",
+   "option_c": "Height above mean sea level.",
+   "option_d": null,
+   "correct_answer": "Height above airfield elevation",
+   "explanation": "Correct answer: Height above airfield elevation. QFE uses the actual pressure at the aerodrome itself as the datum, so the altimeter reads zero on that runway — useful for circuit and local flying where a pilot mainly needs height above the airfield rather than sea level. QNH, by contrast, always references mean sea level and would show the field's elevation rather than zero."
+  },
+  "after": {
+   "question": "What does the altimeter show when QFE is set?",
+   "option_a": "Altitude above mean sea level",
+   "option_b": "Height above the aerodrome",
+   "option_c": "Height above mean sea level",
+   "option_d": "Flight level",
+   "correct_answer": "Height above the aerodrome",
+   "explanation": "Correct answer: Height above airfield elevation. QFE uses the actual pressure at the aerodrome itself as the datum, so the altimeter reads zero on that runway — useful for circuit and local flying where a pilot mainly needs height above the airfield rather than sea level. QNH, by contrast, always references mean sea level and would show the field's elevation rather than zero."
+  }
+ },
+ {
+  "id": 442,
+  "before": {
+   "question": "While on the ground at an unmanned aerodrome, another aircraft requests the QNH. How could you find this out and give it to the aircraft?",
+   "option_a": "Set your altimeter to the airfield elevation and read QNE on the subscale.",
+   "option_b": "Set your altimeter to the airfield elevation and read QNH on the subscale.",
+   "option_c": "Set your altimeter to the airfield elevation and read QFE on the subscale.",
+   "option_d": null,
+   "correct_answer": "Set your altimeter to the airfield elevation and read QNH on the subscale.",
+   "explanation": "Correct answer: Set your altimeter to the known airfield elevation and read the QNH in the subscale window. QNH is the pressure setting that makes the altimeter indicate aerodrome elevation on the ground. QNE is fixed at 1013.25 hPa, and QFE would make the altimeter read zero."
+  },
+  "after": {
+   "question": "You are on the ground at an unmanned aerodrome and another aircraft asks for the QNH. How can you find it?",
+   "option_a": "Set your altimeter to the aerodrome elevation and read the QNE on the subscale",
+   "option_b": "Set your altimeter to the aerodrome elevation and read the QFE on the subscale",
+   "option_c": "Set your altimeter to the aerodrome elevation and read the QNH on the subscale",
+   "option_d": "Set 1013.25 hPa on the subscale and read the altitude shown",
+   "correct_answer": "Set your altimeter to the aerodrome elevation and read the QNH on the subscale",
+   "explanation": "Correct answer: Set your altimeter to the known airfield elevation and read the QNH in the subscale window. QNH is the pressure setting that makes the altimeter indicate aerodrome elevation on the ground. QNE is fixed at 1013.25 hPa, and QFE would make the altimeter read zero."
+  }
+ },
+ {
+  "id": 443,
+  "before": {
+   "question": "An aircraft with QNH setting set in the altimeter, will have its vertical position indicated as?",
+   "option_a": "Height above airfield elevation",
+   "option_b": "Altitude above airfield elevation",
+   "option_c": "Altitude above mean sea level",
+   "option_d": null,
+   "correct_answer": "Altitude above mean sea level",
+   "explanation": "Correct answer: Altitude above mean sea level. QNH corrects the local pressure to sea level, so once it's set the altimeter shows altitude — the pilot's height above terrain and obstacles wherever they are, which is why QNH is used for take-off, low-level flight and landing. QFE, in contrast, only ever gives height above one specific airfield."
+  },
+  "after": {
+   "question": "With QNH set, what does the altimeter show?",
+   "option_a": "Height above aerodrome elevation",
+   "option_b": "Altitude above aerodrome elevation",
+   "option_c": "Flight level",
+   "option_d": "Altitude above mean sea level",
+   "correct_answer": "Altitude above mean sea level",
+   "explanation": "Correct answer: Altitude above mean sea level. QNH corrects the local pressure to sea level, so once it's set the altimeter shows altitude — the pilot's height above terrain and obstacles wherever they are, which is why QNH is used for take-off, low-level flight and landing. QFE, in contrast, only ever gives height above one specific airfield."
+  }
+ },
+ {
+  "id": 445,
+  "before": {
+   "question": "A student forgets to change from QNH to QNE. What will be broadcast to the SSR?",
+   "option_a": "Flight level",
+   "option_b": "Height above ground",
+   "option_c": "Altitude",
+   "option_d": null,
+   "correct_answer": "Flight level",
+   "explanation": "Correct answer: Flight level. The transponder altitude encoder transmits pressure altitude based on the standard pressure reference, regardless of what the pilot has set on the cockpit altimeter. Therefore SSR altitude reporting is still based on flight level information."
+  },
+  "after": {
+   "question": "A student forgets to change from QNH to the standard setting. What does the transponder report to the SSR?",
+   "option_a": "Flight level",
+   "option_b": "Height above ground",
+   "option_c": "Altitude",
+   "option_d": "Height above the departure aerodrome",
+   "correct_answer": "Flight level",
+   "explanation": "Correct answer: Flight level. The transponder altitude encoder transmits pressure altitude based on the standard pressure reference, regardless of what the pilot has set on the cockpit altimeter. Therefore SSR altitude reporting is still based on flight level information."
+  }
+ },
+ {
+  "id": 446,
+  "before": {
+   "question": "On what altimeter setting will you fly when at or below the transition altitude?",
+   "option_a": "QNE",
+   "option_b": "QNH",
+   "option_c": "QFE",
+   "option_d": null,
+   "correct_answer": "QNH",
+   "explanation": "Correct answer: QNH. Below the transition altitude a pilot needs to know actual height above terrain and obstacles, especially close to the ground during departure or arrival, so QNH (referenced to sea level) is used and vertical position is expressed as altitude. Above the transition level, everyone instead uses the standard setting (QNE) so that traffic is vertically separated on a common datum."
+  },
+  "after": {
+   "question": "Which altimeter setting do you use at or below the transition altitude?",
+   "option_a": "QNE",
+   "option_b": "QNH",
+   "option_c": "QFE",
+   "option_d": "QFF",
+   "correct_answer": "QNH",
+   "explanation": "Correct answer: QNH. Below the transition altitude a pilot needs to know actual height above terrain and obstacles, especially close to the ground during departure or arrival, so QNH (referenced to sea level) is used and vertical position is expressed as altitude. Above the transition level, everyone instead uses the standard setting (QNE) so that traffic is vertically separated on a common datum."
+  }
+ },
+ {
+  "id": 449,
+  "before": {
+   "question": "How high is the transition level above the transition altitude?",
+   "option_a": "Less than 1000 ft.",
+   "option_b": "At least 2000 ft.",
+   "option_c": "At least 1000 ft.",
+   "option_d": null,
+   "correct_answer": "At least 1000 ft.",
+   "explanation": "Correct answer: At least 1000 ft. AIC 20.2 requires this gap so that the transition layer is thick enough to separate climbing and descending traffic changing between QNH and the standard setting — no aircraft may fly level inside this layer at all. Exam tip: because the transition level depends on the day's QNH, it isn't a fixed figure like the transition altitude — it moves to preserve that 1000 ft minimum."
+  },
+  "after": {
+   "question": "How far above the transition altitude is the transition level?",
+   "option_a": "Less than 1000 ft",
+   "option_b": "Exactly 500 ft",
+   "option_c": "At least 1000 ft",
+   "option_d": "At least 2000 ft",
+   "correct_answer": "At least 1000 ft",
+   "explanation": "Correct answer: At least 1000 ft. AIC 20.2 requires this gap so that the transition layer is thick enough to separate climbing and descending traffic changing between QNH and the standard setting — no aircraft may fly level inside this layer at all. Exam tip: because the transition level depends on the day's QNH, it isn't a fixed figure like the transition altitude — it moves to preserve that 1000 ft minimum."
+  }
+ },
+ {
+  "id": 450,
+  "before": {
+   "question": "When should you change from standard setting to QNH?",
+   "option_a": "Descending through the transition level",
+   "option_b": "Climbing through the transition level",
+   "option_c": "Descending through the transition altitude",
+   "option_d": null,
+   "correct_answer": "Descending through the transition level",
+   "explanation": "Correct answer: Descending through the transition level. A descending aircraft keeps using the standard 1013.25 hPa setting (and reports Flight Levels) until it passes through the transition level, at which point it swaps to the local QNH to get an accurate altitude for the approach and landing. Climbing aircraft make the opposite change, but at the transition altitude, not the transition level."
+  },
+  "after": {
+   "question": "When should you change from the standard setting to QNH?",
+   "option_a": "Climbing through the transition level",
+   "option_b": "Descending through the transition altitude",
+   "option_c": "On joining the circuit",
+   "option_d": "Descending through the transition level",
+   "correct_answer": "Descending through the transition level",
+   "explanation": "Correct answer: Descending through the transition level. A descending aircraft keeps using the standard 1013.25 hPa setting (and reports Flight Levels) until it passes through the transition level, at which point it swaps to the local QNH to get an accurate altitude for the approach and landing. Climbing aircraft make the opposite change, but at the transition altitude, not the transition level."
+  }
+ },
+ {
+  "id": 451,
+  "before": {
+   "question": "When should a pilot change the altimeter setting from local QNH to 1013.25?",
+   "option_a": "On the climbing passing through the transition level for that area.",
+   "option_b": "On the climbing passing through the transition altitude for that area.",
+   "option_c": "On the descending passing through the transition altitude for that area.",
+   "option_d": null,
+   "correct_answer": "On the climbing passing through the transition altitude for that area.",
+   "explanation": "Correct answer: On the climb passing through the transition altitude. Below the transition altitude a climbing aircraft stays on QNH for an accurate altitude near terrain, then swaps to the standard 1013.25 hPa setting once through it so it is now vertically referenced the same way as all other cruising traffic. The equivalent change for a descending aircraft happens later, at the transition level."
+  },
+  "after": {
+   "question": "When should a pilot change the altimeter setting from the local QNH to 1013.25 hPa?",
+   "option_a": "Climbing through the transition altitude",
+   "option_b": "Climbing through the transition level",
+   "option_c": "Descending through the transition altitude",
+   "option_d": "Descending through the transition level",
+   "correct_answer": "Climbing through the transition altitude",
+   "explanation": "Correct answer: On the climb passing through the transition altitude. Below the transition altitude a climbing aircraft stays on QNH for an accurate altitude near terrain, then swaps to the standard 1013.25 hPa setting once through it so it is now vertically referenced the same way as all other cruising traffic. The equivalent change for a descending aircraft happens later, at the transition level."
+  }
+ },
+ {
+  "id": 452,
+  "before": {
+   "question": "In VMC, flights intending to land at a point beyond 25nm from any aerodrome with a published transition altitude must observe a height of?",
+   "option_a": "1000 ft. as the transition level",
+   "option_b": "3000 ft. as the transition level",
+   "option_c": "2000 ft. as the transition altitude",
+   "option_d": null,
+   "correct_answer": "2000 ft. as the transition altitude",
+   "explanation": "Correct answer: 2000 ft as the transition altitude. Where an airfield has no published transition altitude and is more than 25 nm from any listed aerodrome, AIC 20.2 gives pilots a standard fallback of 2000 ft AGL (in VMC) so there is still a defined point to change from QNH to the standard setting, rather than leaving it to guesswork. The other options describe the transition level, not the transition altitude, for this same case."
+  },
+  "after": {
+   "question": "An aerodrome has no published transition altitude or level and is more than 25 NM from any listed aerodrome. In VMC, what are the transition altitude and transition level?",
+   "option_a": "Transition altitude 3000 ft AGL, transition level 2000 ft above aerodrome elevation",
+   "option_b": "Transition altitude 2000 ft AGL, transition level 3000 ft above aerodrome elevation",
+   "option_c": "Transition altitude 1000 ft AGL, transition level 1500 ft above aerodrome elevation",
+   "option_d": "Transition altitude 2000 ft AGL, transition level 2500 ft above aerodrome elevation",
+   "correct_answer": "Transition altitude 2000 ft AGL, transition level 3000 ft above aerodrome elevation",
+   "explanation": "Where no transition altitude or level is published and the aerodrome is more than 25 NM from a listed aerodrome, AIC 20.2 gives default VMC values: a transition altitude of 2000 ft AGL and a transition level 3000 ft above aerodrome elevation. This keeps the transition layer at least 1000 ft thick, so traffic changing altimeter settings stays separated."
+  }
+ },
+ {
+  "id": 453,
+  "before": {
+   "question": "What is the transition altitude if it is not published and further than 25NM from control airspace?",
+   "option_a": "2000ft AGL",
+   "option_b": "3000 AGL",
+   "option_c": "1500 AGL",
+   "option_d": null,
+   "correct_answer": "2000ft AGL",
+   "explanation": "Correct answer: 2000ft AGL. When no transition altitude is published and the aircraft is more than 25 nm from a listed aerodrome, AIC 20.2 sets 2000 ft AGL as the default in VMC, giving the pilot a clear point at which to change from QNH to the standard 1013.25 hPa setting. (In IMC the equivalent default is instead the lowest safe cruising altitude, since terrain clearance is the priority when visual reference isn't available.)"
+  },
+  "after": {
+   "question": "No transition altitude is published and you are more than 25 NM from any aerodrome with a published one. What is the transition altitude?",
+   "option_a": "1000 ft AGL",
+   "option_b": "1500 ft AGL",
+   "option_c": "2000 ft AGL",
+   "option_d": "3000 ft AGL",
+   "correct_answer": "2000 ft AGL",
+   "explanation": "Correct answer: 2000ft AGL. When no transition altitude is published and the aircraft is more than 25 nm from a listed aerodrome, AIC 20.2 sets 2000 ft AGL as the default in VMC, giving the pilot a clear point at which to change from QNH to the standard 1013.25 hPa setting. (In IMC the equivalent default is instead the lowest safe cruising altitude, since terrain clearance is the priority when visual reference isn't available.)"
+  }
+ },
+ {
+  "id": 454,
+  "before": {
+   "question": "Transition level in VMC is?",
+   "option_a": "2000ft above aerodrome elevation",
+   "option_b": "3000ft above aerodrome elevation.",
+   "option_c": "3000ft above mean sea level",
+   "option_d": null,
+   "correct_answer": "3000ft above aerodrome elevation.",
+   "explanation": "Correct answer: 3000 ft above aerodrome elevation. AIC 20.2 states that for airfields without a published Transition Level (more than 25 nm from a listed aerodrome), the VMC transition level is the nearest flight level above 3000' AGL. This differs from the IMC case, where the transition level is instead the nearest flight level 500 ft above the lowest safe altitude."
+  },
+  "after": {
+   "question": "Where none is published, what is the transition level in VMC?",
+   "option_a": "1500 ft above aerodrome elevation",
+   "option_b": "2000 ft above aerodrome elevation",
+   "option_c": "3000 ft above aerodrome elevation",
+   "option_d": "3000 ft above mean sea level",
+   "correct_answer": "3000 ft above aerodrome elevation",
+   "explanation": "Correct answer: 3000 ft above aerodrome elevation. AIC 20.2 states that for airfields without a published Transition Level (more than 25 nm from a listed aerodrome), the VMC transition level is the nearest flight level above 3000' AGL. This differs from the IMC case, where the transition level is instead the nearest flight level 500 ft above the lowest safe altitude."
+  }
+ },
+ {
+  "id": 455,
+  "before": {
+   "question": "How may a flight plan be filed?",
+   "option_a": "Post office",
+   "option_b": "Family members only",
+   "option_c": "Telephone, fax or internet",
+   "option_d": null,
+   "correct_answer": "Telephone, fax or internet",
+   "explanation": "Correct answer: Telephone, fax or internet. A flight plan can be filed in person or by telephone with the nearest Air Traffic Service Unit, by telephone with the AIM Service Centre in Johannesburg (0860 FLY NOW), or online via the file2fly system on the ATNS website, which is the preferred method since it reduces transcription errors and time-stamps the filing automatically. It cannot be filed through the post office or informally via family members. Exam tip: whichever method you use, always get a reference number afterwards — flight plans occasionally get lost in the system, and the reference makes it easy to trace."
+  },
+  "after": {
+   "question": "How may a flight plan be filed?",
+   "option_a": "By telephone, fax or internet",
+   "option_b": "At a post office",
+   "option_c": "Only in person at the destination aerodrome",
+   "option_d": "By family members only",
+   "correct_answer": "By telephone, fax or internet",
+   "explanation": "Correct answer: Telephone, fax or internet. A flight plan can be filed in person or by telephone with the nearest Air Traffic Service Unit, by telephone with the AIM Service Centre in Johannesburg (0860 FLY NOW), or online via the file2fly system on the ATNS website, which is the preferred method since it reduces transcription errors and time-stamps the filing automatically. It cannot be filed through the post office or informally via family members. Exam tip: whichever method you use, always get a reference number afterwards — flight plans occasionally get lost in the system, and the reference makes it easy to trace."
+  }
+ },
+ {
+  "id": 456,
+  "before": {
+   "question": "When should a flight plan be closed at an uncontrolled aerodrome?",
+   "option_a": "When you notify ATC after landing",
+   "option_b": "Automatically after touchdown",
+   "option_c": "5 minutes after landing",
+   "option_d": null,
+   "correct_answer": "When you notify ATC after landing",
+   "explanation": "Correct answer: When you notify ATC after landing. At an uncontrolled aerodrome, ATC has no automatic way of knowing the aircraft has landed, so if Search and Rescue was requested the pilot must specifically close the flight plan with ATC, either by radio just before landing (e.g. \"field in sight, landing in 5 minutes, please close my flight plan\") or by telephone afterwards. It is not closed automatically at touchdown, and there is no fixed 5-minute grace period."
+  },
+  "after": {
+   "question": "How is a flight plan closed after landing at an uncontrolled aerodrome?",
+   "option_a": "Automatically after touchdown",
+   "option_b": "You notify ATS after landing",
+   "option_c": "Automatically 5 minutes after landing",
+   "option_d": "Automatically once your ETA has passed",
+   "correct_answer": "You notify ATS after landing",
+   "explanation": "Correct answer: When you notify ATC after landing. At an uncontrolled aerodrome, ATC has no automatic way of knowing the aircraft has landed, so if Search and Rescue was requested the pilot must specifically close the flight plan with ATC, either by radio just before landing (e.g. \"field in sight, landing in 5 minutes, please close my flight plan\") or by telephone afterwards. It is not closed automatically at touchdown, and there is no fixed 5-minute grace period."
+  }
+ },
+ {
+  "id": 457,
+  "before": {
+   "question": "How is a flight plan closed at a controlled aerodrome?",
+   "option_a": "20 minutes after landing",
+   "option_b": "It is normally closed automatically after landing",
+   "option_c": "2 hours after landing",
+   "option_d": null,
+   "correct_answer": "It is normally closed automatically after landing",
+   "explanation": "Correct answer: It is normally closed automatically after landing. A flight plan is closed automatically when the aircraft lands at a controlled aerodrome, since ATC observes the arrival. Waiting 20 minutes or 2 hours is not the procedure here — those delay figures relate to Search and Rescue timing options used at uncontrolled aerodromes, not to closure at a controlled one."
+  },
+  "after": {
+   "question": "How is a flight plan closed at a controlled aerodrome?",
+   "option_a": "20 minutes after landing",
+   "option_b": "2 hours after landing",
+   "option_c": "It is normally closed automatically after landing",
+   "option_d": "When the pilot phones the AIM centre",
+   "correct_answer": "It is normally closed automatically after landing",
+   "explanation": "Correct answer: It is normally closed automatically after landing. A flight plan is closed automatically when the aircraft lands at a controlled aerodrome, since ATC observes the arrival. Waiting 20 minutes or 2 hours is not the procedure here — those delay figures relate to Search and Rescue timing options used at uncontrolled aerodromes, not to closure at a controlled one."
+  }
+ },
+ {
+  "id": 458,
+  "before": {
+   "question": "What does ETA mean?",
+   "option_a": "Estimated elapsed time",
+   "option_b": "Estimated time of departure",
+   "option_c": "Estimated time of arrival",
+   "option_d": null,
+   "correct_answer": "Estimated time of arrival",
+   "explanation": "Correct answer: Estimated time of arrival. ETA matters beyond just informing the destination — it is the reference time against which ATC judges a flight overdue, so if the actual arrival slips well past the filed ETA without a report, Search and Rescue action can begin. Estimated elapsed time is EET, and estimated time of departure is ETD."
+  },
+  "after": {
+   "question": "What does ETA mean?",
+   "option_a": "Estimated elapsed time",
+   "option_b": "Estimated time of departure",
+   "option_c": "Expected time of approach",
+   "option_d": "Estimated time of arrival",
+   "correct_answer": "Estimated time of arrival",
+   "explanation": "Correct answer: Estimated time of arrival. ETA matters beyond just informing the destination — it is the reference time against which ATC judges a flight overdue, so if the actual arrival slips well past the filed ETA without a report, Search and Rescue action can begin. Estimated elapsed time is EET, and estimated time of departure is ETD."
+  }
+ },
+ {
+  "id": 459,
+  "before": {
+   "question": "Is a flight plan required for a local flight?",
+   "option_a": "No",
+   "option_b": "Yes",
+   "option_c": null,
+   "option_d": null,
+   "correct_answer": "No",
+   "explanation": "Correct answer: No. A purely local flight is one of the specific exceptions to the mandatory flight plan requirement. A flight plan may still be filed voluntarily for a local flight, for example to obtain Search and Rescue/alerting protection."
+  },
+  "after": {
+   "question": "Is a flight plan required for a purely local flight?",
+   "option_a": "No, but one may be filed voluntarily",
+   "option_b": "Yes, always",
+   "option_c": "Only if passengers are carried",
+   "option_d": "Only if the aircraft has a transponder",
+   "correct_answer": "No, but one may be filed voluntarily",
+   "explanation": "Correct answer: No. A purely local flight is one of the specific exceptions to the mandatory flight plan requirement. A flight plan may still be filed voluntarily for a local flight, for example to obtain Search and Rescue/alerting protection."
+  }
+ },
+ {
+  "id": 460,
+  "before": {
+   "question": "How do you convert South African local time to UTC?",
+   "option_a": "Subtract 2 hours from UTC to obtain local time",
+   "option_b": "Subtract 2 hours from local time to obtain UTC",
+   "option_c": null,
+   "option_d": null,
+   "correct_answer": "Subtract 2 hours from local time to obtain UTC",
+   "explanation": "Correct answer: Subtract 2 hours from local time to obtain UTC. South African Standard Time is UTC+2, so UTC is two hours behind South African local time. For example, 17:00 local is 15:00 UTC."
+  },
+  "after": {
+   "question": "How do you convert South African local time to UTC?",
+   "option_a": "Add 2 hours to local time",
+   "option_b": "Subtract 2 hours from local time",
+   "option_c": "Subtract 1 hour from local time",
+   "option_d": "Local time and UTC are the same",
+   "correct_answer": "Subtract 2 hours from local time",
+   "explanation": "Correct answer: Subtract 2 hours from local time to obtain UTC. South African Standard Time is UTC+2, so UTC is two hours behind South African local time. For example, 17:00 local is 15:00 UTC."
+  }
+ },
+ {
+  "id": 461,
+  "before": {
+   "question": "Convert the following South African local times to UTC: 17:00, 18:00, 04:00, 13:00, 12:30.",
+   "option_a": "15:00, 16:00, 02:00, 11:00, 10:30",
+   "option_b": "15:00, 18:00, 02:00, 11:00, 10:30",
+   "option_c": "15:00, 16:00, 14:00, 11:00, 10:30",
+   "option_d": null,
+   "correct_answer": "15:00, 16:00, 02:00, 11:00, 10:30",
+   "explanation": "Correct answer: 15:00, 16:00, 02:00, 11:00, 10:30. South African local time is UTC+2, so subtract 2 hours from each time. 18:00 becomes 16:00 UTC, 04:00 becomes 02:00 UTC, and 12:30 becomes 10:30 UTC."
+  },
+  "after": {
+   "question": "Convert these South African local times to UTC: 17:00, 18:00, 04:00, 13:00, 12:30.",
+   "option_a": "15:00, 16:00, 02:00, 11:00, 10:30",
+   "option_b": "15:00, 18:00, 02:00, 11:00, 10:30",
+   "option_c": "15:00, 16:00, 14:00, 11:00, 10:30",
+   "option_d": "19:00, 20:00, 06:00, 15:00, 14:30",
+   "correct_answer": "15:00, 16:00, 02:00, 11:00, 10:30",
+   "explanation": "Correct answer: 15:00, 16:00, 02:00, 11:00, 10:30. South African local time is UTC+2, so subtract 2 hours from each time. 18:00 becomes 16:00 UTC, 04:00 becomes 02:00 UTC, and 12:30 becomes 10:30 UTC."
+  }
+ },
+ {
+  "id": 466,
+  "before": {
+   "question": "Any flight plan should be activated within?",
+   "option_a": "2 hours of departure time",
+   "option_b": "1 hour of departure time",
+   "option_c": "15 minutes of departure time",
+   "option_d": null,
+   "correct_answer": "1 hour of departure time",
+   "explanation": "Correct answer: 1 hour of departure time. A filed flight plan is only a notification of intent and will simply be deleted if not activated — by making first radio contact with an Air Traffic Service Unit — within 60 minutes of the planned departure time. If the flight is delayed beyond that, the pilot must amend the old flight plan or file a new one."
+  },
+  "after": {
+   "question": "A filed flight plan must be activated within?",
+   "option_a": "15 minutes of the planned departure time",
+   "option_b": "30 minutes of the planned departure time",
+   "option_c": "1 hour of the planned departure time",
+   "option_d": "2 hours of the planned departure time",
+   "correct_answer": "1 hour of the planned departure time",
+   "explanation": "Correct answer: 1 hour of departure time. A filed flight plan is only a notification of intent and will simply be deleted if not activated — by making first radio contact with an Air Traffic Service Unit — within 60 minutes of the planned departure time. If the flight is delayed beyond that, the pilot must amend the old flight plan or file a new one."
+  }
+ },
+ {
+  "id": 467,
+  "before": {
+   "question": "An X in Type of flight on the flight plan form means?",
+   "option_a": "General Flight",
+   "option_b": "Helicopter flight",
+   "option_c": "Mercy flight",
+   "option_d": null,
+   "correct_answer": "Mercy flight",
+   "explanation": "Correct answer: Mercy flight. In item 8 (type of flight), X covers any flight that is not General Aviation, Non-scheduled, Scheduled or Military — for example a medical/mercy flight, a fire-fighting flight, or a drone flight — and the nature of the flight is then specified in item 18 under STS/ or RMK/."
+  },
+  "after": {
+   "question": "What does an X in item 8 (type of flight) of the flight plan mean?",
+   "option_a": "Mercy flight",
+   "option_b": "General aviation flight",
+   "option_c": "Helicopter flight",
+   "option_d": "Scheduled air service",
+   "correct_answer": "Mercy flight",
+   "explanation": "Correct answer: Mercy flight. In item 8 (type of flight), X covers any flight that is not General Aviation, Non-scheduled, Scheduled or Military — for example a medical/mercy flight, a fire-fighting flight, or a drone flight — and the nature of the flight is then specified in item 18 under STS/ or RMK/."
+  }
+ },
+ {
+  "id": 470,
+  "before": {
+   "question": "When completing an ATS flight plan, Item 15 requires the cruising speed to be completed. To indicate this speed in knots, which character must be inserted?",
+   "option_a": "N",
+   "option_b": "K",
+   "option_c": "O",
+   "option_d": null,
+   "correct_answer": "N",
+   "explanation": "Correct answer: N. Item 15 needs the units to be unambiguous, so a fixed letter code precedes the figures: N + four digits for knots (e.g. N0115 = 115 kt), or M + three digits for a Mach number (e.g. M082) once an aircraft is fast enough for Mach to be the more meaningful figure. K and O are not used as speed-unit indicators on the ICAO flight plan."
+  },
+  "after": {
+   "question": "In item 15 of an ATS flight plan, which letter shows that the cruising speed is in knots?",
+   "option_a": "K",
+   "option_b": "N",
+   "option_c": "M",
+   "option_d": "O",
+   "correct_answer": "N",
+   "explanation": "Correct answer: N. Item 15 needs the units to be unambiguous, so a fixed letter code precedes the figures: N + four digits for knots (e.g. N0115 = 115 kt), or M + three digits for a Mach number (e.g. M082) once an aircraft is fast enough for Mach to be the more meaningful figure. K and O are not used as speed-unit indicators on the ICAO flight plan."
+  }
+ },
+ {
+  "id": 471,
+  "before": {
+   "question": "What do you enter on the flight plan form in field 9 for aircraft if the aircraft you are flying does not have a type indicator?",
+   "option_a": "TBN",
+   "option_b": "ZZZZ",
+   "option_c": "SAR",
+   "option_d": null,
+   "correct_answer": "ZZZZ",
+   "explanation": "Correct answer: ZZZZ. ZZZZ is used whenever no ICAO type designator has been assigned — typically for drones or a mixed formation — so that ATC still knows to look elsewhere on the form (item 18, under TYP/) rather than assuming the aircraft type is simply unknown or unspecified. TBN and SAR are used for entirely different purposes on the form."
+  },
+  "after": {
+   "question": "What do you enter in item 9 of the flight plan if your aircraft has no ICAO type designator?",
+   "option_a": "TBN",
+   "option_b": "SAR",
+   "option_c": "ZZZZ",
+   "option_d": "XXXX",
+   "correct_answer": "ZZZZ",
+   "explanation": "Correct answer: ZZZZ. ZZZZ is used whenever no ICAO type designator has been assigned — typically for drones or a mixed formation — so that ATC still knows to look elsewhere on the form (item 18, under TYP/) rather than assuming the aircraft type is simply unknown or unspecified. TBN and SAR are used for entirely different purposes on the form."
+  }
+ },
+ {
+  "id": 473,
+  "before": {
+   "question": "Inform ATC if there are changes in the flight plan during the flight regarding time?",
+   "option_a": "Time changes by 1 min",
+   "option_b": "TAS changes by 3% or less",
+   "option_c": "The time changes by more than 2 minutes",
+   "option_d": null,
+   "correct_answer": "The time changes by more than 2 minutes",
+   "explanation": "Correct answer: The time changes by more than 2 minutes. If the estimated time at the next reporting point, FIR boundary or destination changes by more than 2 minutes, ATC must be advised (CAR 91.03.4 and ICAO; the Pilot's Radio Handbook confirms 2 minutes is the correct figure, although some older AIP text still quotes 3 minutes). A 1-minute change is within tolerance, and TAS changes are reported when they reach 5% or more."
+  },
+  "after": {
+   "question": "In flight, when must ATC be told about a change to your time estimates?",
+   "option_a": "When an estimate changes by 1 minute",
+   "option_b": "When the TAS changes by 3% or less",
+   "option_c": "Only when the ETA changes by more than 30 minutes",
+   "option_d": "When an estimate changes by more than 2 minutes",
+   "correct_answer": "When an estimate changes by more than 2 minutes",
+   "explanation": "Correct answer: The time changes by more than 2 minutes. If the estimated time at the next reporting point, FIR boundary or destination changes by more than 2 minutes, ATC must be advised (CAR 91.03.4 and ICAO; the Pilot's Radio Handbook confirms 2 minutes is the correct figure, although some older AIP text still quotes 3 minutes). A 1-minute change is within tolerance, and TAS changes are reported when they reach 5% or more."
+  }
+ },
+ {
+  "id": 474,
+  "before": {
+   "question": "If the aircraft is flying from an uncontrolled airfield into a controlled airfield with no other controlled airspace being flown through, must a flight plan be filed for the flight?",
+   "option_a": "No",
+   "option_b": "Yes",
+   "option_c": null,
+   "option_d": null,
+   "correct_answer": "No",
+   "explanation": "Correct answer: No. Flying from an uncontrolled aerodrome into a controlled one, without entering any other controlled or advisory airspace en route, is one of the specific exemptions from the mandatory flight plan requirement. A flight plan may still be filed voluntarily, for example to obtain Search and Rescue cover."
+  },
+  "after": {
+   "question": "You fly from an uncontrolled airfield to a controlled airfield without passing through any other controlled airspace. Must you file a flight plan?",
+   "option_a": "No",
+   "option_b": "Yes, at least 30 minutes before departure",
+   "option_c": "Yes, at least 1 hour before departure",
+   "option_d": "Yes, but only by telephone",
+   "correct_answer": "No",
+   "explanation": "Correct answer: No. Flying from an uncontrolled aerodrome into a controlled one, without entering any other controlled or advisory airspace en route, is one of the specific exemptions from the mandatory flight plan requirement. A flight plan may still be filed voluntarily, for example to obtain Search and Rescue cover."
+  }
+ },
+ {
+  "id": 478,
+  "before": {
+   "question": "What must be entered into item 13 (departure aerodrome and time) of an ICAO flight plan form?",
+   "option_a": "Off-block time in UTC",
+   "option_b": "Take-off time in UTC",
+   "option_c": "Off-block time in local time",
+   "option_d": null,
+   "correct_answer": "Off-block time in UTC",
+   "explanation": "Correct answer: Off-block time in UTC. Item 13 records the estimated off-block time — the time the aircraft starts taxiing to the holding point — expressed in UTC, not local time. Only helicopters and drones enter their take-off time here instead of an off-block time."
+  },
+  "after": {
+   "question": "What must be entered in item 13 (departure aerodrome and time) of an ICAO flight plan?",
+   "option_a": "Take-off time in UTC",
+   "option_b": "Off-block time in UTC",
+   "option_c": "Off-block time in local time",
+   "option_d": "Take-off time in local time",
+   "correct_answer": "Off-block time in UTC",
+   "explanation": "Correct answer: Off-block time in UTC. Item 13 records the estimated off-block time — the time the aircraft starts taxiing to the holding point — expressed in UTC, not local time. Only helicopters and drones enter their take-off time here instead of an off-block time."
+  }
+ },
+ {
+  "id": 479,
+  "before": {
+   "question": "The equipment on board is VHF, RT/F, VOR, ILS and mode C transponder. What would you put on the flight plan under equipment?",
+   "option_a": "V/C",
+   "option_b": "S/C",
+   "option_c": "V/S",
+   "option_d": null,
+   "correct_answer": "S/C",
+   "explanation": "Correct answer: S/C. VHF voice, VOR and ILS together make up the bundled 'Standard' code S in item 10a, because that combination is the baseline equipment fit assumed for ordinary IFR-capable flying — listing S avoids having to spell out V, O and L individually. A Mode C (altitude-encoding) transponder is then entered separately as C in item 10b, giving S/C."
+  },
+  "after": {
+   "question": "The aircraft has VHF RTF, VOR, ILS and a Mode C transponder. What do you enter under equipment on the flight plan?",
+   "option_a": "V/C",
+   "option_b": "V/S",
+   "option_c": "S/C",
+   "option_d": "S/A",
+   "correct_answer": "S/C",
+   "explanation": "Correct answer: S/C. VHF voice, VOR and ILS together make up the bundled 'Standard' code S in item 10a, because that combination is the baseline equipment fit assumed for ordinary IFR-capable flying — listing S avoids having to spell out V, O and L individually. A Mode C (altitude-encoding) transponder is then entered separately as C in item 10b, giving S/C."
+  }
+ },
+ {
+  "id": 480,
+  "before": {
+   "question": "Your aircraft is equipped with a VHF radio and mode C transponder but no VOR. Select the correct option of how this should be entered into the equipment field (item 10) of the ATS flight plan?",
+   "option_a": "S/C",
+   "option_b": "C/V",
+   "option_c": "V/C",
+   "option_d": null,
+   "correct_answer": "V/C",
+   "explanation": "Correct answer: V/C. Without VOR (or ILS) on board the aircraft doesn't qualify for the bundled 'Standard' code S, so each piece of equipment must be listed on its own — V for VHF voice in item 10a — followed by C in item 10b for the Mode C transponder. This shows why item 10a is a flexible letter set rather than a single tick-box: it must describe exactly what's fitted, not a rounded-up category."
+  },
+  "after": {
+   "question": "Your aircraft has a VHF radio and a Mode C transponder but no VOR. How is this entered in item 10 (equipment) of the ATS flight plan?",
+   "option_a": "S/C",
+   "option_b": "C/V",
+   "option_c": "V/A",
+   "option_d": "V/C",
+   "correct_answer": "V/C",
+   "explanation": "Correct answer: V/C. Without VOR (or ILS) on board the aircraft doesn't qualify for the bundled 'Standard' code S, so each piece of equipment must be listed on its own — V for VHF voice in item 10a — followed by C in item 10b for the Mode C transponder. This shows why item 10a is a flexible letter set rather than a single tick-box: it must describe exactly what's fitted, not a rounded-up category."
+  }
+ },
+ {
+  "id": 481,
+  "before": {
+   "question": "When the number of passengers for your flight is not yet known at the time of filing an ATS flight plan, which designator should you place in Item 19 (persons on board)?",
+   "option_a": "TBN",
+   "option_b": "NYK",
+   "option_c": "TBA",
+   "option_d": null,
+   "correct_answer": "TBN",
+   "explanation": "Correct answer: TBN. TBN ('to be notified') is entered in item 19 when the passenger count isn't finalised at filing time, so ATC still has a complete flight plan on file — this matters because item 19's headcount is exactly what Search and Rescue would need if the aircraft went missing, so it should be updated once known rather than left blank."
+  },
+  "after": {
+   "question": "The number of passengers is not yet known when you file an ATS flight plan. What do you enter in item 19 (persons on board)?",
+   "option_a": "TBN",
+   "option_b": "NYK",
+   "option_c": "TBA",
+   "option_d": "ZZZZ",
+   "correct_answer": "TBN",
+   "explanation": "Correct answer: TBN. TBN ('to be notified') is entered in item 19 when the passenger count isn't finalised at filing time, so ATC still has a complete flight plan on file — this matters because item 19's headcount is exactly what Search and Rescue would need if the aircraft went missing, so it should be updated once known rather than left blank."
+  }
+ },
+ {
+  "id": 482,
+  "before": {
+   "question": "A flight plan is compulsory when?",
+   "option_a": "Search and rescue is not required",
+   "option_b": "Search and rescue is required",
+   "option_c": "Flight time more than 2 hours",
+   "option_d": null,
+   "correct_answer": "Search and rescue is required",
+   "explanation": "Correct answer: Search and rescue is required. A flight plan is mandatory whenever Search and Rescue/alerting protection is required for the flight — this is one of the explicit triggers for mandatory filing, independent of flight duration."
+  },
+  "after": {
+   "question": "When is a flight plan compulsory?",
+   "option_a": "When search and rescue is not required",
+   "option_b": "When search and rescue is required",
+   "option_c": "When the flight time is more than 2 hours",
+   "option_d": "Only for flights carrying passengers",
+   "correct_answer": "When search and rescue is required",
+   "explanation": "Correct answer: Search and rescue is required. A flight plan is mandatory whenever Search and Rescue/alerting protection is required for the flight — this is one of the explicit triggers for mandatory filing, independent of flight duration."
+  }
+ },
+ {
+  "id": 483,
+  "before": {
+   "question": "In flight plan item 15, the cruising airspeed used is?",
+   "option_a": "IAS",
+   "option_b": "CAS",
+   "option_c": "TAS",
+   "option_d": null,
+   "correct_answer": "TAS",
+   "explanation": "Correct answer: TAS. Item 15's cruising speed is always given as True Airspeed, not indicated or calibrated airspeed, because TAS is what actually determines the aircraft's speed over the ground and is used for ATC's time and fuel calculations."
+  },
+  "after": {
+   "question": "Which airspeed is entered as the cruising speed in item 15 of the flight plan?",
+   "option_a": "IAS",
+   "option_b": "CAS",
+   "option_c": "TAS",
+   "option_d": "Ground speed",
+   "correct_answer": "TAS",
+   "explanation": "Correct answer: TAS. Item 15's cruising speed is always given as True Airspeed, not indicated or calibrated airspeed, because TAS is what actually determines the aircraft's speed over the ground and is used for ATC's time and fuel calculations."
+  }
+ },
+ {
+  "id": 484,
+  "before": {
+   "question": "How long before start must a flight plan be filed?",
+   "option_a": "30 minutes",
+   "option_b": "1 hour",
+   "option_c": "10 minutes",
+   "option_d": null,
+   "correct_answer": "30 minutes",
+   "explanation": "Correct answer: 30 minutes. A flight plan must reach the ATSU at least 30 minutes before departure (60 minutes for an international flight) to give them time to process it and make it available to other units before the aircraft is airborne — though it may be filed up to 5 days in advance if convenient. Filing right on departure, or only 10 minutes before, doesn't leave enough lead time."
+  },
+  "after": {
+   "question": "How long before departure must a domestic flight plan be filed?",
+   "option_a": "10 minutes",
+   "option_b": "30 minutes",
+   "option_c": "1 hour",
+   "option_d": "2 hours",
+   "correct_answer": "30 minutes",
+   "explanation": "Correct answer: 30 minutes. A flight plan must reach the ATSU at least 30 minutes before departure (60 minutes for an international flight) to give them time to process it and make it available to other units before the aircraft is airborne — though it may be filed up to 5 days in advance if convenient. Filing right on departure, or only 10 minutes before, doesn't leave enough lead time."
+  }
+ },
+ {
+  "id": 487,
+  "before": {
+   "question": "The letter G entered into item 8 (type of flight) of an ATS flight plan means?",
+   "option_a": "Scheduled air transport",
+   "option_b": "General navigation",
+   "option_c": "Mercy flight",
+   "option_d": null,
+   "correct_answer": "General navigation",
+   "explanation": "Correct answer: General navigation. Item 8's type-of-flight letter tells ATC what kind of operation they're dealing with — G (General Aviation) covers ordinary private, training and navigation flights, as opposed to N (charter), S (scheduled airline), M (military) or X (anything else, such as a medical or drone flight), which may carry different priority or handling."
+  },
+  "after": {
+   "question": "What does the letter G in item 8 (type of flight) of an ATS flight plan mean?",
+   "option_a": "General aviation",
+   "option_b": "Scheduled air transport",
+   "option_c": "Mercy flight",
+   "option_d": "Military flight",
+   "correct_answer": "General aviation",
+   "explanation": "Correct answer: General aviation. Item 8's type-of-flight letter tells ATC what kind of operation they're dealing with — G (General Aviation) covers ordinary private, training and navigation flights, as opposed to N (charter), S (scheduled airline), M (military) or X (anything else, such as a medical or drone flight), which may carry different priority or handling."
+  }
+ },
+ {
+  "id": 488,
+  "before": {
+   "question": "Item 13 of an ATS flight plan requires the ETD (estimated time of departure) to be completed. The value entered in this field is based on?",
+   "option_a": "Bravo time",
+   "option_b": "Local time",
+   "option_c": "UTC",
+   "option_d": null,
+   "correct_answer": "UTC",
+   "explanation": "Correct answer: UTC. Every time on an ICAO flight plan, including the ETD in item 13, is given in UTC rather than local time specifically so that pilots and ATS units in different time zones — or on a flight crossing several — are all working from one unambiguous reference. Mixing local and UTC times on the form would risk serious misunderstanding about actual departure or arrival timing."
+  },
+  "after": {
+   "question": "Item 13 of an ATS flight plan requires the estimated time of departure. Which time is used?",
+   "option_a": "Bravo time",
+   "option_b": "UTC",
+   "option_c": "Local time",
+   "option_d": "Local mean time (LMT)",
+   "correct_answer": "UTC",
+   "explanation": "Correct answer: UTC. Every time on an ICAO flight plan, including the ETD in item 13, is given in UTC rather than local time specifically so that pilots and ATS units in different time zones — or on a flight crossing several — are all working from one unambiguous reference. Mixing local and UTC times on the form would risk serious misunderstanding about actual departure or arrival timing."
+  }
+ },
+ {
+  "id": 489,
+  "before": {
+   "question": "Inform ATC if there are changes in the flight plan during the flight regarding airspeed?",
+   "option_a": "TAS changes by 5%",
+   "option_b": "GS changes by 5%",
+   "option_c": "TAS changes by more than 10 kt or 0.02 Mach",
+   "option_d": null,
+   "correct_answer": "TAS changes by more than 10 kt or 0.02 Mach",
+   "explanation": "GIVEN\nAn aircraft in flight with a filed Flight Plan.\n\nRULE\nATC must be notified by radio if the True Airspeed (TAS) changes by more than 10 kt or 0.02 Mach from the TAS nominated in the flight plan, or if the estimated time at the next reporting point or destination changes by more than 2 minutes.\n\nANSWER\nTAS changes by more than 10 kt or 0.02 Mach"
+  },
+  "after": {
+   "question": "In flight, when must ATC be told about a change in airspeed?",
+   "option_a": "When the TAS changes by 5%",
+   "option_b": "When the ground speed changes by 5%",
+   "option_c": "When the TAS changes by more than 10 kt or 0.02 Mach",
+   "option_d": "When the IAS changes by more than 5 kt",
+   "correct_answer": "When the TAS changes by more than 10 kt or 0.02 Mach",
+   "explanation": "GIVEN\nAn aircraft in flight with a filed Flight Plan.\n\nRULE\nATC must be notified by radio if the True Airspeed (TAS) changes by more than 10 kt or 0.02 Mach from the TAS nominated in the flight plan, or if the estimated time at the next reporting point or destination changes by more than 2 minutes.\n\nANSWER\nTAS changes by more than 10 kt or 0.02 Mach"
+  }
+ },
+ {
+  "id": 490,
+  "before": {
+   "question": "What is the call-sign for the Area Control Centre unit or service?",
+   "option_a": "Information",
+   "option_b": "Control",
+   "option_c": "Centre",
+   "option_d": null,
+   "correct_answer": "Control",
+   "explanation": "The Area Control Centre's call sign is CONTROL (AREA is also used, e.g. \"Johannesburg Area\"), so Control is the answer here. It provides area control service to aircraft in a CTA, airway or other controlled part of the FIR. INFORMATION is the call sign of a flight information service, which gives information but no control."
+  },
+  "after": {
+   "question": "What is the call sign of an Area Control Centre?",
+   "option_a": "Information",
+   "option_b": "Centre",
+   "option_c": "Approach",
+   "option_d": "Control",
+   "correct_answer": "Control",
+   "explanation": "The Area Control Centre's call sign is CONTROL (AREA is also used, e.g. \"Johannesburg Area\"), so Control is the answer here. It provides area control service to aircraft in a CTA, airway or other controlled part of the FIR. INFORMATION is the call sign of a flight information service, which gives information but no control."
+  }
+ },
+ {
+  "id": 493,
+  "before": {
+   "question": "Under what condition may a pilot abbreviate his or her call sign when speaking to a controller?",
+   "option_a": "If the controller has used the full call sign and there is no ambiguity with another call sign.",
+   "option_b": "If the controller has first used the abbreviated call sign, even if there is ambiguity with another call sign.",
+   "option_c": "If the controller has first used the abbreviated call sign and there is no ambiguity with another call sign.",
+   "option_d": null,
+   "correct_answer": "If the controller has first used the abbreviated call sign and there is no ambiguity with another call sign.",
+   "explanation": "A callsign may be abbreviated only once ATC has used the abbreviated version and there is no risk of confusion."
+  },
+  "after": {
+   "question": "Under what condition may a pilot abbreviate their call sign when speaking to a controller?",
+   "option_a": "If the controller has first used the abbreviated call sign and there is no ambiguity with another call sign",
+   "option_b": "If the controller has used the full call sign and there is no ambiguity with another call sign",
+   "option_c": "If the controller has first used the abbreviated call sign, even if there is ambiguity with another call sign",
+   "option_d": "At any time after the first call on a frequency",
+   "correct_answer": "If the controller has first used the abbreviated call sign and there is no ambiguity with another call sign",
+   "explanation": "A callsign may be abbreviated only once ATC has used the abbreviated version and there is no risk of confusion."
+  }
+ },
+ {
+  "id": 495,
+  "before": {
+   "question": "In the phonetic alphabet Q and U stand for?",
+   "option_a": "Quebec and Uniform.",
+   "option_b": "Kilo and Uniform",
+   "option_c": "Québec and Unit",
+   "option_d": null,
+   "correct_answer": "Quebec and Uniform.",
+   "explanation": "The ICAO phonetic alphabet spells out letters as Quebec (Q) and Uniform (U) rather than saying the bare letter, because single letters like Q and U can sound alike or get lost in radio static. Every pilot must learn the full alphabet by heart, since it is used for callsigns, location indicators, and any letter group that is not unmistakable in normal speech."
+  },
+  "after": {
+   "question": "In the ICAO phonetic alphabet, how are Q and U spoken?",
+   "option_a": "Kilo and Uniform",
+   "option_b": "Quebec and Uniform",
+   "option_c": "Quebec and Unit",
+   "option_d": "Queen and Union",
+   "correct_answer": "Quebec and Uniform",
+   "explanation": "The ICAO phonetic alphabet spells out letters as Quebec (Q) and Uniform (U) rather than saying the bare letter, because single letters like Q and U can sound alike or get lost in radio static. Every pilot must learn the full alphabet by heart, since it is used for callsigns, location indicators, and any letter group that is not unmistakable in normal speech."
+  }
+ },
+ {
+  "id": 496,
+  "before": {
+   "question": "How should the frequency of 125.8 MHz be pronounced?",
+   "option_a": "WUN TOO FIVE DAYSEEMAL AIT",
+   "option_b": "WUN TOO FIFE DAYSEEMAL AIT",
+   "option_c": "WUN TOO FIFE POINT AIT",
+   "option_d": null,
+   "correct_answer": "WUN TOO FIFE DAYSEEMAL AIT",
+   "explanation": "Radio frequencies are spoken digit by digit using standard ICAO pronunciation (WUN, TOO, FIFE, AIT...), and the decimal is spoken DAYSEEMAL. Therefore 125.8 is transmitted as WUN TOO FIFE DAYSEEMAL AIT; FIVE and POINT are not ICAO radio pronunciation."
+  },
+  "after": {
+   "question": "How is the frequency 125.8 MHz pronounced?",
+   "option_a": "WUN TOO FIVE DAYSEEMAL AIT",
+   "option_b": "WUN TOO FIFE POINT AIT",
+   "option_c": "WUN TOO FIFE DAYSEEMAL AIT",
+   "option_d": "WUN TWENTY-FIFE DAYSEEMAL AIT",
+   "correct_answer": "WUN TOO FIFE DAYSEEMAL AIT",
+   "explanation": "Radio frequencies are spoken digit by digit using standard ICAO pronunciation (WUN, TOO, FIFE, AIT...), and the decimal is spoken DAYSEEMAL. Therefore 125.8 is transmitted as WUN TOO FIFE DAYSEEMAL AIT; FIVE and POINT are not ICAO radio pronunciation."
+  }
+ },
+ {
+  "id": 500,
+  "before": {
+   "question": "How would a QNH of 989 hPa be used over the radio?",
+   "option_a": "NINE AIT NINE",
+   "option_b": "NINER EIGHT NINER",
+   "option_c": "NINER AIT NINER.",
+   "option_d": null,
+   "correct_answer": "NINER AIT NINER.",
+   "explanation": "QNH values are spoken digit-by-digit (NINER AIT NINER for 989), not as \"nine eighty-nine\", because 989 is not a whole hundred or thousand. Precise digit-by-digit pronunciation matters especially here, since a misheard QNH directly affects an altimeter setting and therefore terrain clearance."
+  },
+  "after": {
+   "question": "How is a QNH of 989 hPa transmitted over the radio?",
+   "option_a": "NINE AIT NINE",
+   "option_b": "NINER EIGHT NINER",
+   "option_c": "NINE HUNDRED AIT-TEE NINER",
+   "option_d": "NINER AIT NINER",
+   "correct_answer": "NINER AIT NINER",
+   "explanation": "QNH values are spoken digit-by-digit (NINER AIT NINER for 989), not as \"nine eighty-nine\", because 989 is not a whole hundred or thousand. Precise digit-by-digit pronunciation matters especially here, since a misheard QNH directly affects an altimeter setting and therefore terrain clearance."
+  }
+ },
+ {
+  "id": 501,
+  "before": {
+   "question": "What quality would a strength 5 transmission be?",
+   "option_a": "Perfectly readable",
+   "option_b": "Readable with difficulty",
+   "option_c": "Unreadable",
+   "option_d": null,
+   "correct_answer": "Perfectly readable",
+   "explanation": "Readability 5 means perfectly readable. It is the highest value on the radio-check scale and indicates that the entire transmission is clear without difficulty."
+  },
+  "after": {
+   "question": "On the readability scale, what does readability 5 mean?",
+   "option_a": "Perfectly readable",
+   "option_b": "Readable",
+   "option_c": "Readable with difficulty",
+   "option_d": "Unreadable",
+   "correct_answer": "Perfectly readable",
+   "explanation": "Readability 5 means perfectly readable. It is the highest value on the radio-check scale and indicates that the entire transmission is clear without difficulty."
+  }
+ },
+ {
+  "id": 502,
+  "before": {
+   "question": "What quality would a strength 3 transmission be?",
+   "option_a": "Unreadable",
+   "option_b": "Readable with difficulty",
+   "option_c": "Perfectly readable",
+   "option_d": null,
+   "correct_answer": "Readable with difficulty",
+   "explanation": "Readability 3 means readable with difficulty. The message can be understood, but interference, weakness, or distortion makes reception unreliable."
+  },
+  "after": {
+   "question": "On the readability scale, what does readability 3 mean?",
+   "option_a": "Unreadable",
+   "option_b": "Readable with difficulty",
+   "option_c": "Readable now and then",
+   "option_d": "Perfectly readable",
+   "correct_answer": "Readable with difficulty",
+   "explanation": "Readability 3 means readable with difficulty. The message can be understood, but interference, weakness, or distortion makes reception unreliable."
+  }
+ },
+ {
+  "id": 504,
+  "before": {
+   "question": "An aeroplane with the call sign ZS-ABC is at the holding point and wants to tell ATC that he is ready to take off. What would the correct radio call be?",
+   "option_a": "Zulu Sierra Alpha Bravo Charlie, ready.",
+   "option_b": "Ready, Zulu Sierra Alpha Bravo Charlie, Tower.",
+   "option_c": "Tower, Zulu Sierra Alpha Bravo Charlie, ready.",
+   "option_d": null,
+   "correct_answer": "Tower, Zulu Sierra Alpha Bravo Charlie, ready.",
+   "explanation": "The standard call format is: station addressed, own callsign, then the message - \"Tower, Zulu Sierra Alpha Bravo Charlie, ready.\" Naming Tower first ensures the right unit picks up the call, and the full callsign must be used until ATC has used an abbreviated version back to you."
+  },
+  "after": {
+   "question": "ZS-ABC is at the holding point and ready for take-off. What is the correct radio call?",
+   "option_a": "Zulu Sierra Alpha Bravo Charlie, ready",
+   "option_b": "Ready, Zulu Sierra Alpha Bravo Charlie, Tower",
+   "option_c": "Tower, Zulu Sierra Alpha Bravo Charlie, ready",
+   "option_d": "Zulu Sierra Alpha Bravo Charlie, Tower, ready",
+   "correct_answer": "Tower, Zulu Sierra Alpha Bravo Charlie, ready",
+   "explanation": "The standard call format is: station addressed, own callsign, then the message - \"Tower, Zulu Sierra Alpha Bravo Charlie, ready.\" Naming Tower first ensures the right unit picks up the call, and the full callsign must be used until ATC has used an abbreviated version back to you."
+  }
+ },
+ {
+  "id": 512,
+  "before": {
+   "question": "What should you do if you are told to change frequency and monitor 120.4?",
+   "option_a": "Tune into 120.4 and listen out",
+   "option_b": "Tune into 120.4 and report your position",
+   "option_c": "Stay on the frequency you are.",
+   "option_d": null,
+   "correct_answer": "Tune into 120.4 and listen out",
+   "explanation": "MONITOR means change to the stated frequency and listen out. Do not make an initial call unless instructed or unless operationally necessary."
+  },
+  "after": {
+   "question": "ATC tells you to monitor 120.4. What should you do?",
+   "option_a": "Tune to 120.4 and report your position",
+   "option_b": "Stay on the current frequency",
+   "option_c": "Tune to 120.4 and request a clearance",
+   "option_d": "Tune to 120.4 and listen without making a call",
+   "correct_answer": "Tune to 120.4 and listen without making a call",
+   "explanation": "MONITOR means change to the stated frequency and listen out. Do not make an initial call unless instructed or unless operationally necessary."
+  }
+ },
+ {
+  "id": 515,
+  "before": {
+   "question": "What is the meaning of the phrase Confirm?",
+   "option_a": "Let me know that you have received and understood this message.",
+   "option_b": "Yes",
+   "option_c": "Have I correctly received the following...? Or did you correctly receive the message?",
+   "option_d": null,
+   "correct_answer": "Have I correctly received the following...? Or did you correctly receive the message?",
+   "explanation": "CONFIRM is used to check whether information has been correctly received or understood. The expected reply normally confirms the information or corrects it."
+  },
+  "after": {
+   "question": "What does the word CONFIRM mean?",
+   "option_a": "Have I correctly received the following...? or Did you correctly receive this message?",
+   "option_b": "Let me know that you have received and understood this message",
+   "option_c": "Yes",
+   "option_d": "Permission for the proposed action is granted",
+   "correct_answer": "Have I correctly received the following...? or Did you correctly receive this message?",
+   "explanation": "CONFIRM is used to check whether information has been correctly received or understood. The expected reply normally confirms the information or corrects it."
+  }
+ },
+ {
+  "id": 516,
+  "before": {
+   "question": "The word AFFIRM means?",
+   "option_a": "I am in agreement with the requesting transmission",
+   "option_b": "Permission is granted",
+   "option_c": "I am correcting an error in my own transmission",
+   "option_d": null,
+   "correct_answer": "I am in agreement with the requesting transmission",
+   "explanation": "AFFIRM means yes or correct. It is used instead of the ordinary word yes because the standard word is clearer and less likely to be confused over a noisy frequency."
+  },
+  "after": {
+   "question": "What does the word AFFIRM mean?",
+   "option_a": "Permission is granted",
+   "option_b": "Yes",
+   "option_c": "I am correcting an error in my own transmission",
+   "option_d": "I have received all of your last transmission",
+   "correct_answer": "Yes",
+   "explanation": "AFFIRM means yes or correct. It is used instead of the ordinary word yes because the standard word is clearer and less likely to be confused over a noisy frequency."
+  }
+ },
+ {
+  "id": 517,
+  "before": {
+   "question": "What does HOLD YOUR POSITION mean?",
+   "option_a": "Take another position",
+   "option_b": "Stay where you are",
+   "option_c": "Stop before reaching a certain point",
+   "option_d": null,
+   "correct_answer": "Stay where you are",
+   "explanation": "HOLD YOUR POSITION means stop and remain exactly where you are. It must not be confused with HOLD SHORT, which requires stopping before a specified runway or point."
+  },
+  "after": {
+   "question": "What does HOLD POSITION mean?",
+   "option_a": "Take another position",
+   "option_b": "Stop before reaching a certain point",
+   "option_c": "Stay where you are",
+   "option_d": "Report your position",
+   "correct_answer": "Stay where you are",
+   "explanation": "HOLD YOUR POSITION means stop and remain exactly where you are. It must not be confused with HOLD SHORT, which requires stopping before a specified runway or point."
+  }
+ },
+ {
+  "id": 518,
+  "before": {
+   "question": "What does Line up and wait mean?",
+   "option_a": "Start the take-off roll but do not lift off",
+   "option_b": "Take off and wait for further instructions before take off",
+   "option_c": "Taxi onto the runway and wait for further instructions",
+   "option_d": null,
+   "correct_answer": "Taxi onto the runway and wait for further instructions",
+   "explanation": "LINE UP AND WAIT authorises the aircraft to enter the runway, align with the centreline, and wait. It is not a take-off clearance, so the take-off roll must not begin."
+  },
+  "after": {
+   "question": "What does LINE UP AND WAIT mean?",
+   "option_a": "Start the take-off roll but do not lift off",
+   "option_b": "Take off and wait for further instructions",
+   "option_c": "Cross the runway and hold on the other side",
+   "option_d": "Taxi onto the runway and wait for further instructions",
+   "correct_answer": "Taxi onto the runway and wait for further instructions",
+   "explanation": "LINE UP AND WAIT authorises the aircraft to enter the runway, align with the centreline, and wait. It is not a take-off clearance, so the take-off roll must not begin."
+  }
+ },
+ {
+  "id": 520,
+  "before": {
+   "question": "What is the meaning of the phrase Go Ahead?",
+   "option_a": "Proceed with your message",
+   "option_b": "Cleared to taxi / take-off",
+   "option_c": "Cleared to next waypoint",
+   "option_d": null,
+   "correct_answer": "Proceed with your message",
+   "explanation": "GO AHEAD means proceed with your radio message. It does not authorise an aircraft to taxi, take off, or continue along a route."
+  },
+  "after": {
+   "question": "What does GO AHEAD mean?",
+   "option_a": "Proceed with your message",
+   "option_b": "Cleared to taxi or take off",
+   "option_c": "Cleared to the next waypoint",
+   "option_d": "Repeat your last message",
+   "correct_answer": "Proceed with your message",
+   "explanation": "GO AHEAD means proceed with your radio message. It does not authorise an aircraft to taxi, take off, or continue along a route."
+  }
+ },
+ {
+  "id": 522,
+  "before": {
+   "question": "What does it mean if ATC asks you to monitor a frequency?",
+   "option_a": "Continue listening on the frequency",
+   "option_b": "Listen out on the frequency",
+   "option_c": "Change the frequency and report your position.",
+   "option_d": null,
+   "correct_answer": "Listen out on the frequency",
+   "explanation": "MONITOR means listen on the specified frequency. It normally does not require an initial transmission after changing frequency."
+  },
+  "after": {
+   "question": "What does it mean when ATC tells you to CONTACT a frequency?",
+   "option_a": "Change to that frequency and listen without calling",
+   "option_b": "Change to that frequency and make an initial call",
+   "option_c": "Stay on the current frequency and listen out",
+   "option_d": "Switch off the radio until called",
+   "correct_answer": "Change to that frequency and make an initial call",
+   "explanation": "CONTACT means establish communication with the named unit: change to its frequency and make an initial call. Compare MONITOR, where you change frequency and listen out without calling unless instructed."
+  }
+ },
+ {
+  "id": 525,
+  "before": {
+   "question": "Why should a student pilot prefix their radio calls with the words student?",
+   "option_a": "To alert ATC and other aircraft that the aircraft making the call is on an instruction flight.",
+   "option_b": "To alert ATC and other aircraft that the aircraft making the call could perform manoeuvres not normally required for normal flying for training purposes.",
+   "option_c": "To alert ATC and other aircraft that the person making the call is a student pilot flying solo.",
+   "option_d": null,
+   "correct_answer": "To alert ATC and other aircraft that the aircraft making the call is on an instruction flight.",
+   "explanation": "In South Africa (AIP ENR 1.8 and the Pilot's Radio Handbook) the prefix STUDENT is used on an ab-initio training flight with an instructor on board, telling ATC and other traffic that this is an instruction flight. A student flying solo uses the prefix SOLO STUDENT instead, so controllers can allow for limited experience."
+  },
+  "after": {
+   "question": "Why should a student pilot prefix their radio calls with the word STUDENT?",
+   "option_a": "To alert ATC and other aircraft that the aircraft may perform manoeuvres not required in normal flying",
+   "option_b": "To alert ATC and other aircraft that the person making the call is a student pilot flying solo",
+   "option_c": "To alert ATC and other aircraft that the aircraft making the call is on an instruction flight",
+   "option_d": "To ask ATC for priority over other traffic",
+   "correct_answer": "To alert ATC and other aircraft that the aircraft making the call is on an instruction flight",
+   "explanation": "In South Africa (AIP ENR 1.8 and the Pilot's Radio Handbook) the prefix STUDENT is used on an ab-initio training flight with an instructor on board, telling ATC and other traffic that this is an instruction flight. A student flying solo uses the prefix SOLO STUDENT instead, so controllers can allow for limited experience."
+  }
+ },
+ {
+  "id": 528,
+  "before": {
+   "question": "What does it mean to orbit?",
+   "option_a": "Turn through 360°",
+   "option_b": "Hurry up",
+   "option_c": "Stay where you are",
+   "option_d": null,
+   "correct_answer": "Turn through 360°",
+   "explanation": "ORBIT means make a complete 360-degree turn, normally in the direction stated by ATC. The pilot must maintain safe separation and remain within any assigned area."
+  },
+  "after": {
+   "question": "What does ORBIT mean?",
+   "option_a": "Hurry up",
+   "option_b": "Stay where you are",
+   "option_c": "Climb to a higher level",
+   "option_d": "Make a 360° turn",
+   "correct_answer": "Make a 360° turn",
+   "explanation": "ORBIT means make a complete 360-degree turn, normally in the direction stated by ATC. The pilot must maintain safe separation and remain within any assigned area."
+  }
+ },
+ {
+  "id": 530,
+  "before": {
+   "question": "What is the frequency range for a VHF radio?",
+   "option_a": "3 MHz - 30 MHz",
+   "option_b": "30 MHz - 300 MHz",
+   "option_c": "30 MHz - 300 GHz",
+   "option_d": null,
+   "correct_answer": "30 MHz - 300 MHz",
+   "explanation": "VHF means the radio-frequency band from 30 MHz to 300 MHz. Aeronautical voice communication uses only part of this wider VHF band, beginning at approximately 118 MHz."
+  },
+  "after": {
+   "question": "What is the frequency range of the VHF band?",
+   "option_a": "3 MHz - 30 MHz",
+   "option_b": "30 MHz - 300 MHz",
+   "option_c": "30 MHz - 300 GHz",
+   "option_d": "300 MHz - 3 GHz",
+   "correct_answer": "30 MHz - 300 MHz",
+   "explanation": "VHF means the radio-frequency band from 30 MHz to 300 MHz. Aeronautical voice communication uses only part of this wider VHF band, beginning at approximately 118 MHz."
+  }
+ },
+ {
+  "id": 531,
+  "before": {
+   "question": "What transponder code is used for interference?",
+   "option_a": "7600",
+   "option_b": "7700",
+   "option_c": "7500",
+   "option_d": null,
+   "correct_answer": "7500",
+   "explanation": "Code 7500 indicates unlawful interference, such as a hijacking. It is one of three internationally reserved transponder codes that can be remembered with the mnemonic ICE, from lowest to highest: 7500 = Interference, 7600 = Communications failure, 7700 = Emergency."
+  },
+  "after": {
+   "question": "Which transponder code indicates unlawful interference?",
+   "option_a": "2000",
+   "option_b": "7500",
+   "option_c": "7600",
+   "option_d": "7700",
+   "correct_answer": "7500",
+   "explanation": "Code 7500 indicates unlawful interference, such as a hijacking. It is one of three internationally reserved transponder codes that can be remembered with the mnemonic ICE, from lowest to highest: 7500 = Interference, 7600 = Communications failure, 7700 = Emergency."
+  }
+ },
+ {
+  "id": 532,
+  "before": {
+   "question": "If you have a radio failure in the general flying area, which of the following options would you do?",
+   "option_a": "Broadcast blind, squawk 7600, return to the field from where you took off, enter the circuit and land",
+   "option_b": "Broadcast blind, squawk 7600, route to the nearest airfield, enter the circuit and land",
+   "option_c": "Remain in uncontrolled airspace, broadcast blind, squawk 7600, and land at an uncontrolled airfield",
+   "option_d": null,
+   "correct_answer": "Remain in uncontrolled airspace, broadcast blind, squawk 7600, and land at an uncontrolled airfield",
+   "explanation": "A General Flying Area is uncontrolled airspace. The Pilot's Radio Handbook (AIP ENR 1.5, SA-CATS 91.06.16) says a VFR pilot whose radio fails in uncontrolled airspace must remain in uncontrolled airspace, squawk 7600, switch on the landing light and continue to an uncontrolled airfield, joining normally and prefixing calls with \"transmitting blind\". Returning to the departure field or heading for the nearest airfield could mean entering controlled airspace without a clearance. If a flight plan was filed or you were in contact with an ATSU, telephone the nearest ATSU after landing."
+  },
+  "after": {
+   "question": "Your radio fails while you are in a General Flying Area. What should you do?",
+   "option_a": "Broadcast blind, squawk 7600, return to the departure field, enter the circuit and land",
+   "option_b": "Broadcast blind, squawk 7600, route to the nearest airfield, enter the circuit and land",
+   "option_c": "Remain in uncontrolled airspace, broadcast blind, squawk 7600 and land at an uncontrolled airfield",
+   "option_d": "Squawk 7700 and fly into the nearest controlled airspace to attract attention",
+   "correct_answer": "Remain in uncontrolled airspace, broadcast blind, squawk 7600 and land at an uncontrolled airfield",
+   "explanation": "A General Flying Area is uncontrolled airspace. The Pilot's Radio Handbook (AIP ENR 1.5, SA-CATS 91.06.16) says a VFR pilot whose radio fails in uncontrolled airspace must remain in uncontrolled airspace, squawk 7600, switch on the landing light and continue to an uncontrolled airfield, joining normally and prefixing calls with \"transmitting blind\". Returning to the departure field or heading for the nearest airfield could mean entering controlled airspace without a clearance. If a flight plan was filed or you were in contact with an ATSU, telephone the nearest ATSU after landing."
+  }
+ },
+ {
+  "id": 533,
+  "before": {
+   "question": "When you are setting a new squawk code, you should first?",
+   "option_a": "Notify ATC",
+   "option_b": "Set the transponder to standby",
+   "option_c": "Turn the alternator off",
+   "option_d": null,
+   "correct_answer": "Set the transponder to standby",
+   "explanation": "When changing squawk codes, first select STANDBY, then dial in the new code, then switch back to ALT. This prevents spurious/incorrect codes from being transmitted momentarily while cycling through the numbers."
+  },
+  "after": {
+   "question": "Before setting a new squawk code, what should you do first?",
+   "option_a": "Notify ATC",
+   "option_b": "Turn the alternator off",
+   "option_c": "Press IDENT",
+   "option_d": "Set the transponder to standby",
+   "correct_answer": "Set the transponder to standby",
+   "explanation": "When changing squawk codes, first select STANDBY, then dial in the new code, then switch back to ALT. This prevents spurious/incorrect codes from being transmitted momentarily while cycling through the numbers."
+  }
+ },
+ {
+  "id": 534,
+  "before": {
+   "question": "What is direction of a standard circuit?",
+   "option_a": "Right",
+   "option_b": "Depends on the airfield surroundings",
+   "option_c": "Left",
+   "option_d": null,
+   "correct_answer": "Left",
+   "explanation": "The standard circuit is always flown to the left unless ATC specifically instructs otherwise - for example \"report right downwind\" calls for a non-standard right-hand pattern instead. Knowing this default means a plain \"report downwind\" clearance always implies a left-hand circuit."
+  },
+  "after": {
+   "question": "In which direction is a standard circuit flown?",
+   "option_a": "Left-hand",
+   "option_b": "Right-hand",
+   "option_c": "It depends on the airfield surroundings",
+   "option_d": "Either direction, at the pilot's choice",
+   "correct_answer": "Left-hand",
+   "explanation": "The standard circuit is always flown to the left unless ATC specifically instructs otherwise - for example \"report right downwind\" calls for a non-standard right-hand pattern instead. Knowing this default means a plain \"report downwind\" clearance always implies a left-hand circuit."
+  }
+ },
+ {
+  "id": 536,
+  "before": {
+   "question": "What does TIBA stand for?",
+   "option_a": "Traffic information broadcast by aircraft.",
+   "option_b": "Traffic information broadcast by the tower.",
+   "option_c": "Traffic information broadcast by radar.",
+   "option_d": null,
+   "correct_answer": "Traffic information broadcast by aircraft.",
+   "explanation": "TIBA means Traffic Information Broadcast by Aircraft. Pilots use it to exchange position and intention information in designated airspace where normal ATC separation is not being provided."
+  },
+  "after": {
+   "question": "What does TIBA stand for?",
+   "option_a": "Traffic information broadcast by the tower",
+   "option_b": "Traffic information broadcast by aircraft",
+   "option_c": "Traffic information broadcast by radar",
+   "option_d": "Traffic information broadcast by AFIS",
+   "correct_answer": "Traffic information broadcast by aircraft",
+   "explanation": "TIBA means Traffic Information Broadcast by Aircraft. Pilots use it to exchange position and intention information in designated airspace where normal ATC separation is not being provided."
+  }
+ },
+ {
+  "id": 538,
+  "before": {
+   "question": "Choose the correct order?",
+   "option_a": "Communicate - Aviate - Navigate",
+   "option_b": "Aviate - Navigate - Communicate",
+   "option_c": "Navigate - Aviate - Communicate",
+   "option_d": null,
+   "correct_answer": "Aviate - Navigate - Communicate",
+   "explanation": "ANC - Aviate, Navigate, Communicate - is a golden rule for handling any in-flight difficulty: fly the aircraft first, work out where you are going second, and only then talk to ATC. Getting this order backwards, such as fumbling with the radio while the aircraft is mishandled, is a classic way an otherwise-survivable problem turns into an accident."
+  },
+  "after": {
+   "question": "When handling a problem in flight, what is the correct order of priorities?",
+   "option_a": "Communicate - Aviate - Navigate",
+   "option_b": "Navigate - Aviate - Communicate",
+   "option_c": "Aviate - Navigate - Communicate",
+   "option_d": "Aviate - Communicate - Navigate",
+   "correct_answer": "Aviate - Navigate - Communicate",
+   "explanation": "ANC - Aviate, Navigate, Communicate - is a golden rule for handling any in-flight difficulty: fly the aircraft first, work out where you are going second, and only then talk to ATC. Getting this order backwards, such as fumbling with the radio while the aircraft is mishandled, is a classic way an otherwise-survivable problem turns into an accident."
+  }
+ },
+ {
+  "id": 539,
+  "before": {
+   "question": "Radar identified means?",
+   "option_a": "You are no longer provided with radar control service",
+   "option_b": "Dial given code into transponder and switch it on.",
+   "option_c": "You are identified on their screen",
+   "option_d": null,
+   "correct_answer": "You are identified on their screen",
+   "explanation": "Radar identified means ATC has positively confirmed your aircraft's position on their radar display. Once identified, the aircraft can be given a radar service (monitoring, traffic information, or vectors)."
+  },
+  "after": {
+   "question": "What does \"radar identified\" mean?",
+   "option_a": "You are no longer provided with a radar service",
+   "option_b": "Dial the given code into the transponder and switch it on",
+   "option_c": "ATC will now separate you from all other traffic",
+   "option_d": "ATC has identified your aircraft on the radar display",
+   "correct_answer": "ATC has identified your aircraft on the radar display",
+   "explanation": "Radar identified means ATC has positively confirmed your aircraft's position on their radar display. Once identified, the aircraft can be given a radar service (monitoring, traffic information, or vectors)."
+  }
+ },
+ {
+  "id": 540,
+  "before": {
+   "question": "Do you have to read back wind speed and direction when replying to an ATC clearance?",
+   "option_a": "YES",
+   "option_b": "NO",
+   "option_c": null,
+   "option_d": null,
+   "correct_answer": "NO",
+   "explanation": "Wind speed and direction are informational and do not need to be read back. Only instructions, clearances, and the QNH must be read back exactly as received."
+  },
+  "after": {
+   "question": "Which of the following must you read back to ATC?",
+   "option_a": "The QNH",
+   "option_b": "The surface wind",
+   "option_c": "The visibility",
+   "option_d": "Traffic information",
+   "correct_answer": "The QNH",
+   "explanation": "Wind speed and direction are informational and do not need to be read back. Only instructions, clearances, and the QNH must be read back exactly as received."
+  }
+ },
+ {
+  "id": 542,
+  "before": {
+   "question": "A VHF radio signal range will?",
+   "option_a": "Increase with altitude",
+   "option_b": "Be unaffected by altitude",
+   "option_c": "Decrease with altitude",
+   "option_d": null,
+   "correct_answer": "Increase with altitude",
+   "explanation": "Because VHF propagates by direct line-of-sight waves, the radio horizon expands the higher you climb - similar to being able to see further from a hilltop. This is why aircraft flying low or behind terrain often lose contact even when not actually far from the ground station."
+  },
+  "after": {
+   "question": "How does the range of a VHF radio signal change with altitude?",
+   "option_a": "It is unaffected by altitude",
+   "option_b": "It increases with altitude",
+   "option_c": "It decreases with altitude",
+   "option_d": "It increases only over water",
+   "correct_answer": "It increases with altitude",
+   "explanation": "Because VHF propagates by direct line-of-sight waves, the radio horizon expands the higher you climb - similar to being able to see further from a hilltop. This is why aircraft flying low or behind terrain often lose contact even when not actually far from the ground station."
+  }
+ },
+ {
+  "id": 543,
+  "before": {
+   "question": "What does the IDENT function of the transponder do?",
+   "option_a": "Make the aircraft blip on the radar screen brighter for a long time.",
+   "option_b": "Make the aircraft blip on the radar screen brighter for a short time.",
+   "option_c": "Does not do anything.",
+   "option_d": null,
+   "correct_answer": "Make the aircraft blip on the radar screen brighter for a short time.",
+   "explanation": "Pressing IDENT makes the aircraft's return brighten on the controller's screen for a short time, letting the controller pick out one specific aircraft among many blips on a busy radar display. It should only be pressed when asked to, since pressing it unprompted just adds unexplained clutter to the screen."
+  },
+  "after": {
+   "question": "What does the IDENT function of the transponder do?",
+   "option_a": "It makes the aircraft's return brighter on the radar screen for a long time",
+   "option_b": "It does nothing",
+   "option_c": "It makes the aircraft's return brighter on the radar screen for a short time",
+   "option_d": "It changes the squawk to 7700",
+   "correct_answer": "It makes the aircraft's return brighter on the radar screen for a short time",
+   "explanation": "Pressing IDENT makes the aircraft's return brighten on the controller's screen for a short time, letting the controller pick out one specific aircraft among many blips on a busy radar display. It should only be pressed when asked to, since pressing it unprompted just adds unexplained clutter to the screen."
+  }
+ },
+ {
+  "id": 546,
+  "before": {
+   "question": "In what direction is the wind related to when its direction is given from the tower?",
+   "option_a": "Compass",
+   "option_b": "True",
+   "option_c": "Magnetic",
+   "option_d": null,
+   "correct_answer": "Magnetic",
+   "explanation": "Surface wind given by the tower for take-off and landing is always in degrees magnetic, matching runway numbering. All other wind information (e.g. winds aloft for navigation) is given in degrees true."
+  },
+  "after": {
+   "question": "When the tower gives the surface wind, its direction is relative to which north?",
+   "option_a": "True",
+   "option_b": "Compass",
+   "option_c": "Grid",
+   "option_d": "Magnetic",
+   "correct_answer": "Magnetic",
+   "explanation": "Surface wind given by the tower for take-off and landing is always in degrees magnetic, matching runway numbering. All other wind information (e.g. winds aloft for navigation) is given in degrees true."
+  }
+ },
+ {
+  "id": 550,
+  "before": {
+   "question": "What is the direction of a non-standard circuit?",
+   "option_a": "Right",
+   "option_b": "It depends on the airfield surroundings",
+   "option_c": "Left",
+   "option_d": null,
+   "correct_answer": "Right",
+   "explanation": "A right-hand circuit is 'non-standard' precisely because left-hand is the default; ATC must explicitly instruct it (e.g. \"report right downwind\") or it must be published for that aerodrome. This mirrors the standard-circuit rule - if nothing is said, always assume left."
+  },
+  "after": {
+   "question": "In which direction is a non-standard circuit flown?",
+   "option_a": "Right-hand",
+   "option_b": "Left-hand",
+   "option_c": "It depends on the airfield surroundings",
+   "option_d": "Either direction, at the pilot's choice",
+   "correct_answer": "Right-hand",
+   "explanation": "A right-hand circuit is 'non-standard' precisely because left-hand is the default; ATC must explicitly instruct it (e.g. \"report right downwind\") or it must be published for that aerodrome. This mirrors the standard-circuit rule - if nothing is said, always assume left."
+  }
+ },
+ {
+  "id": 551,
+  "before": {
+   "question": "What does VHF stand for?",
+   "option_a": "Very low frequency",
+   "option_b": "Very High Frequency",
+   "option_c": "Very high volt",
+   "option_d": null,
+   "correct_answer": "Very High Frequency",
+   "explanation": "VHF stands for Very High Frequency, covering 30 MHz to 300 MHz. Aviation communication frequencies occupy a smaller section within that overall band."
+  },
+  "after": {
+   "question": "What does VHF stand for?",
+   "option_a": "Very Low Frequency",
+   "option_b": "Very High Frequency",
+   "option_c": "Very High Voltage",
+   "option_d": "Variable High Frequency",
+   "correct_answer": "Very High Frequency",
+   "explanation": "VHF stands for Very High Frequency, covering 30 MHz to 300 MHz. Aviation communication frequencies occupy a smaller section within that overall band."
+  }
+ },
+ {
+  "id": 552,
+  "before": {
+   "question": "A pilot on a VFR cross country flight to a controlled aerodrome experiences radio failure outside of controlled airspace. Unless otherwise published in AIP, the pilot should?",
+   "option_a": "Remain clear of controlled airspace and land at a manned aerodrome",
+   "option_b": "Broadcast blind, squawk 7700, and land at a suitable airfield.",
+   "option_c": "Remain clear of controlled airspace and land at an unmanned aerodrome",
+   "option_d": null,
+   "correct_answer": "Remain clear of controlled airspace and land at an unmanned aerodrome",
+   "explanation": "Without a working radio you cannot request or receive a clearance into controlled airspace, so the pilot must stay outside it and land at an unmanned aerodrome where no clearance is needed - unless the AIP publishes a different procedure for that route. This follows the same logic as squawking 7600: assume nobody can talk to you, and pick the option that needs no further communication."
+  },
+  "after": {
+   "question": "A pilot on a VFR cross-country flight to a controlled aerodrome has a radio failure outside controlled airspace. Unless the AIP publishes otherwise, what should the pilot do?",
+   "option_a": "Remain clear of controlled airspace and land at a manned aerodrome",
+   "option_b": "Broadcast blind, squawk 7700 and land at a suitable airfield",
+   "option_c": "Remain clear of controlled airspace and land at an unmanned aerodrome",
+   "option_d": "Continue to the destination and join the circuit without a clearance",
+   "correct_answer": "Remain clear of controlled airspace and land at an unmanned aerodrome",
+   "explanation": "Without a working radio you cannot request or receive a clearance into controlled airspace, so the pilot must stay outside it and land at an unmanned aerodrome where no clearance is needed - unless the AIP publishes a different procedure for that route. This follows the same logic as squawking 7600: assume nobody can talk to you, and pick the option that needs no further communication."
+  }
+ },
+ {
+  "id": 553,
+  "before": {
+   "question": "What is the squawk if the radio fails?",
+   "option_a": "7600",
+   "option_b": "7700",
+   "option_c": "7500",
+   "option_d": null,
+   "correct_answer": "7600",
+   "explanation": "7600 is the middle code of the ICE mnemonic (7500 Interference, 7600 Communications failure, 7700 Emergency) and tells ATC you have a communications failure even though you cannot hear or respond to them. Once controllers see it, they can fall back on light signals or predictable standard procedures to work with you."
+  },
+  "after": {
+   "question": "Which transponder code indicates a radio failure?",
+   "option_a": "2000",
+   "option_b": "7500",
+   "option_c": "7600",
+   "option_d": "7700",
+   "correct_answer": "7600",
+   "explanation": "7600 is the middle code of the ICE mnemonic (7500 Interference, 7600 Communications failure, 7700 Emergency) and tells ATC you have a communications failure even though you cannot hear or respond to them. Once controllers see it, they can fall back on light signals or predictable standard procedures to work with you."
+  }
+ },
+ {
+  "id": 557,
+  "before": {
+   "question": "When may RMK/SARNML be entered in Field 18 of a South African flight plan?",
+   "option_a": "For every flight, regardless of destination",
+   "option_b": "When the destination aerodrome has an ATSU in operation",
+   "option_c": "Only when an ELT is carried",
+   "option_d": null,
+   "correct_answer": "When the destination aerodrome has an ATSU in operation",
+   "explanation": "Correct answer: When the destination aerodrome has an ATSU in operation. RMK/SARNML (\"SAR normal\") can only be requested when the destination is a manned aerodrome, i.e. one with an Air Traffic Service Unit in operation. It gives automatic SAR protection for a missed reporting point in controlled airspace or non-arrival at the destination."
+  },
+  "after": {
+   "question": "When may RMK/SARNML be entered in item 18 of a South African flight plan?",
+   "option_a": "When the destination aerodrome has an ATSU in operation",
+   "option_b": "For every flight, regardless of destination",
+   "option_c": "Only when an ELT is carried",
+   "option_d": "Only for flights in controlled airspace",
+   "correct_answer": "When the destination aerodrome has an ATSU in operation",
+   "explanation": "Correct answer: When the destination aerodrome has an ATSU in operation. RMK/SARNML (\"SAR normal\") can only be requested when the destination is a manned aerodrome, i.e. one with an Air Traffic Service Unit in operation. It gives automatic SAR protection for a missed reporting point in controlled airspace or non-arrival at the destination."
+  }
+ },
+ {
+  "id": 558,
+  "before": {
+   "question": "What is a distress condition?",
+   "option_a": "A condition concerning the safety of an aircraft, vessel, vehicle, or person on board or within sight, but which does not require immediate assistance.",
+   "option_b": "A condition of high stress and possible danger due to being uncertain of your position or lost.",
+   "option_c": "A condition of being threatened by serious and/or imminent danger and/or requiring immediate assistance",
+   "option_d": null,
+   "correct_answer": "A condition of being threatened by serious and/or imminent danger and/or requiring immediate assistance",
+   "explanation": "Distress is defined by two features together: serious or imminent danger AND the need for immediate assistance - for example an engine fire or an engine failure in a single-engine aircraft. It is this need for immediate help that puts distress (MAYDAY) above urgency (PAN-PAN) in the priority-of-messages list, giving it absolute priority over all other radio traffic."
+  },
+  "after": {
+   "question": "What is a distress condition?",
+   "option_a": "A condition concerning the safety of an aircraft, vessel, vehicle or person on board or within sight, but which does not require immediate assistance",
+   "option_b": "A condition of being threatened by serious and/or imminent danger and/or requiring immediate assistance",
+   "option_c": "A condition of high stress and possible danger due to being uncertain of your position or lost",
+   "option_d": "Any situation in which the aircraft radio has failed",
+   "correct_answer": "A condition of being threatened by serious and/or imminent danger and/or requiring immediate assistance",
+   "explanation": "Distress is defined by two features together: serious or imminent danger AND the need for immediate assistance - for example an engine fire or an engine failure in a single-engine aircraft. It is this need for immediate help that puts distress (MAYDAY) above urgency (PAN-PAN) in the priority-of-messages list, giving it absolute priority over all other radio traffic."
+  }
+ },
+ {
+  "id": 559,
+  "before": {
+   "question": "In what order should the information in an emergency message be transmitted?",
+   "option_a": "Call-sign Type of aircraft Nature of emergency Intentions Position",
+   "option_b": "Nature of emergency Intentions Type of aircraft Position",
+   "option_c": "Flight level or altitude and heading Nature of emergency any other useful information.",
+   "option_d": null,
+   "correct_answer": "Call-sign Type of aircraft Nature of emergency Intentions Position",
+   "explanation": "The message builds a complete picture in the order most useful to whoever is helping you: who you are, what you are flying, what is wrong, what you intend to do, and where you are - matching the standard MAYDAY structure (station addressed, aircraft ID, nature of distress, intentions, position/altitude/heading, other useful information). Giving as much of this as possible in the first transmission avoids wasting time if contact is lost partway through."
+  },
+  "after": {
+   "question": "In what order should the information in an emergency message be transmitted?",
+   "option_a": "Nature of emergency, intentions, type of aircraft, position",
+   "option_b": "Flight level or altitude and heading, nature of emergency, any other useful information",
+   "option_c": "Call sign, type of aircraft, nature of emergency, intentions, position",
+   "option_d": "Position, call sign, intentions, nature of emergency",
+   "correct_answer": "Call sign, type of aircraft, nature of emergency, intentions, position",
+   "explanation": "The message builds a complete picture in the order most useful to whoever is helping you: who you are, what you are flying, what is wrong, what you intend to do, and where you are - matching the standard MAYDAY structure (station addressed, aircraft ID, nature of distress, intentions, position/altitude/heading, other useful information). Giving as much of this as possible in the first transmission avoids wasting time if contact is lost partway through."
+  }
+ },
+ {
+  "id": 561,
+  "before": {
+   "question": "If an aircraft is already in the circuit and suffers from a radio failure, may it land?",
+   "option_a": "Yes, with permission",
+   "option_b": "Yes",
+   "option_c": "No",
+   "option_d": null,
+   "correct_answer": "Yes",
+   "explanation": "An aircraft already established in the circuit can continue and land, following the same core radio-failure principle used everywhere else: prefix all calls with \"transmitting blind\", keep a careful lookout for other traffic since they may not know your radio has failed, and follow normal circuit and joining procedures."
+  },
+  "after": {
+   "question": "An aircraft already in the circuit has a radio failure. May it land?",
+   "option_a": "Yes, but only after receiving permission",
+   "option_b": "No, it must divert to an unmanned aerodrome",
+   "option_c": "No, it must hold overhead until the radio works",
+   "option_d": "Yes, keeping a lookout for traffic and light signals",
+   "correct_answer": "Yes, keeping a lookout for traffic and light signals",
+   "explanation": "An aircraft already established in the circuit can continue and land, following the same core radio-failure principle used everywhere else: prefix all calls with \"transmitting blind\", keep a careful lookout for other traffic since they may not know your radio has failed, and follow normal circuit and joining procedures."
+  }
+ },
+ {
+  "id": 564,
+  "before": {
+   "question": "Can you get search and rescue without a flight plan?",
+   "option_a": "Only if you ask ATC beforehand",
+   "option_b": "No",
+   "option_c": "Yes",
+   "option_d": null,
+   "correct_answer": "Yes",
+   "explanation": "Correct answer: Yes. Search and Rescue/alerting protection is not only available through a filed flight plan: it is automatic for a flight that fails to report within 5 minutes of being expected to after departing a manned aerodrome, for any flight 5 minutes overdue at a reporting point in controlled airspace, and for a flight to a manned aerodrome that fails to arrive."
+  },
+  "after": {
+   "question": "Can you receive search and rescue protection without filing a flight plan?",
+   "option_a": "Yes",
+   "option_b": "No",
+   "option_c": "Only if you ask ATC beforehand",
+   "option_d": "Only in controlled airspace",
+   "correct_answer": "Yes",
+   "explanation": "Correct answer: Yes. Search and Rescue/alerting protection is not only available through a filed flight plan: it is automatic for a flight that fails to report within 5 minutes of being expected to after departing a manned aerodrome, for any flight 5 minutes overdue at a reporting point in controlled airspace, and for a flight to a manned aerodrome that fails to arrive."
+  }
+ },
+ {
+  "id": 566,
+  "before": {
+   "question": "Alerting service is provided by ATSU to all aircraft requiring?",
+   "option_a": "Search and rescue",
+   "option_b": "Need to fly",
+   "option_c": "FL 100",
+   "option_d": null,
+   "correct_answer": "Search and rescue",
+   "explanation": "Correct answer: Search and rescue. Alerting Service is one of the three broad categories of Air Traffic Service (alongside Control Service and Information Service) and is provided to any aircraft that needs SAR assistance, in any airspace — which is why SAR protection can apply even to a flight with no flight plan filed at all, provided one of the automatic triggers (e.g. failing to report after departure) is met."
+  },
+  "after": {
+   "question": "To which aircraft does an ATSU provide an alerting service?",
+   "option_a": "Only aircraft flying above FL100",
+   "option_b": "Aircraft that require search and rescue",
+   "option_c": "Only scheduled airline flights",
+   "option_d": "Only aircraft in Class A airspace",
+   "correct_answer": "Aircraft that require search and rescue",
+   "explanation": "Correct answer: Search and rescue. Alerting Service is one of the three broad categories of Air Traffic Service (alongside Control Service and Information Service) and is provided to any aircraft that needs SAR assistance, in any airspace — which is why SAR protection can apply even to a flight with no flight plan filed at all, provided one of the automatic triggers (e.g. failing to report after departure) is met."
+  }
+ },
+ {
+  "id": 568,
+  "before": {
+   "question": "When may RMK/SARNIL be entered in Field 18 of a South African flight plan?",
+   "option_a": "Only when the destination aerodrome has an ATSU in operation",
+   "option_b": "When the destination aerodrome has no ATSU in operation and SAR is not required",
+   "option_c": "Whenever the aircraft carries an ELT",
+   "option_d": null,
+   "correct_answer": "When the destination aerodrome has no ATSU in operation and SAR is not required",
+   "explanation": "Correct answer: When the destination aerodrome has no ATSU in operation and SAR is not required. RMK/SARNIL can only be used when the destination is unmanned. The aircraft still gets automatic SAR protection for a missed reporting point while it remains in controlled airspace, but that protection ends once the aircraft reports leaving controlled airspace, unless an emergency exists."
+  },
+  "after": {
+   "question": "When may RMK/SARNIL be entered in item 18 of a South African flight plan?",
+   "option_a": "Only when the destination aerodrome has an ATSU in operation",
+   "option_b": "Whenever the aircraft carries an ELT",
+   "option_c": "When the destination aerodrome has no ATSU in operation and SAR is not required",
+   "option_d": "For every flight into controlled airspace",
+   "correct_answer": "When the destination aerodrome has no ATSU in operation and SAR is not required",
+   "explanation": "Correct answer: When the destination aerodrome has no ATSU in operation and SAR is not required. RMK/SARNIL can only be used when the destination is unmanned. The aircraft still gets automatic SAR protection for a missed reporting point while it remains in controlled airspace, but that protection ends once the aircraft reports leaving controlled airspace, unless an emergency exists."
+  }
+ },
+ {
+  "id": 569,
+  "before": {
+   "question": "If you lose radio communications, how many times must you transmit blind transmissions?",
+   "option_a": "Twice",
+   "option_b": "Once",
+   "option_c": null,
+   "option_d": null,
+   "correct_answer": "Twice",
+   "explanation": "Because a pilot with a silent radio cannot tell whether it is a receiver failure or a total failure, the standard procedure is to assume the transmitter still works and transmit blind anyway - sending each message twice to give any listening station the best chance of catching it despite the uncertain link."
+  },
+  "after": {
+   "question": "After a radio failure, how many times should each blind transmission be made?",
+   "option_a": "Once",
+   "option_b": "Three times",
+   "option_c": "Until ATC replies",
+   "option_d": "Twice",
+   "correct_answer": "Twice",
+   "explanation": "Because a pilot with a silent radio cannot tell whether it is a receiver failure or a total failure, the standard procedure is to assume the transmitter still works and transmit blind anyway - sending each message twice to give any listening station the best chance of catching it despite the uncertain link."
+  }
+ },
+ {
+  "id": 570,
+  "before": {
+   "question": "If you required assistance, what letter would you lay your signal strips to look like?",
+   "option_a": "M",
+   "option_b": "H",
+   "option_c": "V",
+   "option_d": null,
+   "correct_answer": "V",
+   "explanation": "Correct answer: V. Signal strips laid out as a V are the internationally recognised ground-to-air symbol for 'require assistance', used after a forced landing when the aircraft can be seen by a search aircraft but radio contact isn't possible. Exam tip: pair this with X (medical assistance), N (no) and Y (yes) from the same signalling code."
+  },
+  "after": {
+   "question": "After a forced landing, which ground signal means \"require assistance\"?",
+   "option_a": "V",
+   "option_b": "H",
+   "option_c": "M",
+   "option_d": "X",
+   "correct_answer": "V",
+   "explanation": "Correct answer: V. Signal strips laid out as a V are the internationally recognised ground-to-air symbol for 'require assistance', used after a forced landing when the aircraft can be seen by a search aircraft but radio contact isn't possible. Exam tip: pair this with X (medical assistance), N (no) and Y (yes) from the same signalling code."
+  }
+ },
+ {
+  "id": 575,
+  "before": {
+   "question": "What is an urgency condition?",
+   "option_a": "A condition concerning the safety of an aircraft, vessel, vehicle, or person on board or within sight, but which does not require immediate assistance.",
+   "option_b": "A condition of being threatened by serious and/or imminent danger and/or requiring immediate assistance.",
+   "option_c": "A condition of high stress and possible danger due to being uncertain of your position or lost.",
+   "option_d": null,
+   "correct_answer": "A condition concerning the safety of an aircraft, vessel, vehicle, or person on board or within sight, but which does not require immediate assistance.",
+   "explanation": "Urgency covers situations that concern safety but do not yet need immediate assistance - typical examples are a low oil pressure indication or a passenger medical emergency. This is the key difference from distress: urgency traffic has priority over all routine calls, but must still give way to any distress (MAYDAY) traffic."
+  },
+  "after": {
+   "question": "What is an urgency condition?",
+   "option_a": "A condition of being threatened by serious and/or imminent danger and/or requiring immediate assistance",
+   "option_b": "A condition concerning the safety of an aircraft, vessel, vehicle or person on board or within sight, but which does not require immediate assistance",
+   "option_c": "A condition of high stress and possible danger due to being uncertain of your position or lost",
+   "option_d": "Any situation in which the aircraft radio has failed",
+   "correct_answer": "A condition concerning the safety of an aircraft, vessel, vehicle or person on board or within sight, but which does not require immediate assistance",
+   "explanation": "Urgency covers situations that concern safety but do not yet need immediate assistance - typical examples are a low oil pressure indication or a passenger medical emergency. This is the key difference from distress: urgency traffic has priority over all routine calls, but must still give way to any distress (MAYDAY) traffic."
+  }
+ },
+ {
+  "id": 576,
+  "before": {
+   "question": "A white dumbbell displayed in a signal area at an airfield means?",
+   "option_a": "Aircraft may only use the taxiways",
+   "option_b": "Aircraft may only use the runways and taxiways",
+   "option_c": "Aircraft may only use the runways",
+   "option_d": null,
+   "correct_answer": "Aircraft may only use the runways and taxiways",
+   "explanation": "A white dumbbell in the signal area means aircraft must stay on runways and taxiways - i.e. no using the grass or unprepared surfaces. Exam tip: a dumbbell WITH black stripes reverses this - take-off and land on runways only, but taxi anywhere, including the grass."
+  },
+  "after": {
+   "question": "What does a white dumbbell in the signal area of an aerodrome mean?",
+   "option_a": "Aircraft may only use the taxiways",
+   "option_b": "Aircraft may only use the runways",
+   "option_c": "Aircraft may only use the runways and taxiways",
+   "option_d": "Gliding is in progress",
+   "correct_answer": "Aircraft may only use the runways and taxiways",
+   "explanation": "A white dumbbell in the signal area means aircraft must stay on runways and taxiways - i.e. no using the grass or unprepared surfaces. Exam tip: a dumbbell WITH black stripes reverses this - take-off and land on runways only, but taxi anywhere, including the grass."
+  }
+ },
+ {
+  "id": 577,
+  "before": {
+   "question": "What does a horizontal white or orange T indicate?",
+   "option_a": "Which runway is in use",
+   "option_b": "The direction of the wind, which is along the bar towards the crossbar",
+   "option_c": "The take-off and landing direction, which is along the bar towards the crossbar",
+   "option_d": null,
+   "correct_answer": "The take-off and landing direction, which is along the bar towards the crossbar",
+   "explanation": "A horizontal white or orange T indicates the runway direction to use for take-off and landing: land or depart along the shaft, heading towards the crossbar. It is a fallback direction indicator for aerodromes without other means of showing which way traffic is landing, alongside things like the windsock and L-shaped circuit-direction markers."
+  },
+  "after": {
+   "question": "What does a horizontal white or orange T indicate?",
+   "option_a": "Which runway is closed",
+   "option_b": "The direction of the wind, which is along the bar towards the crossbar",
+   "option_c": "The aerodrome is closed",
+   "option_d": "The take-off and landing direction, which is along the bar towards the crossbar",
+   "correct_answer": "The take-off and landing direction, which is along the bar towards the crossbar",
+   "explanation": "A horizontal white or orange T indicates the runway direction to use for take-off and landing: land or depart along the shaft, heading towards the crossbar. It is a fallback direction indicator for aerodromes without other means of showing which way traffic is landing, alongside things like the windsock and L-shaped circuit-direction markers."
+  }
+ },
+ {
+  "id": 578,
+  "before": {
+   "question": "A white cross at the threshold of a runway means?",
+   "option_a": "Runway unsafe to use",
+   "option_b": "Runway safe to use",
+   "option_c": "Aircraft may only use the runways",
+   "option_d": null,
+   "correct_answer": "Runway unsafe to use",
+   "explanation": "White or yellow crosses are placed at both ends of a runway or taxiway section that is unsafe to use - for example a waterlogged runway or ground undermined by moles - and aircraft may not land, take off, or taxi in the marked area between them. At night the same unserviceable area is marked with red lights instead."
+  },
+  "after": {
+   "question": "What does a white cross at the threshold of a runway mean?",
+   "option_a": "The runway is unsafe to use",
+   "option_b": "The runway is safe to use",
+   "option_c": "Aircraft may only use the runways",
+   "option_d": "Gliding is in progress",
+   "correct_answer": "The runway is unsafe to use",
+   "explanation": "White or yellow crosses are placed at both ends of a runway or taxiway section that is unsafe to use - for example a waterlogged runway or ground undermined by moles - and aircraft may not land, take off, or taxi in the marked area between them. At night the same unserviceable area is marked with red lights instead."
+  }
+ },
+ {
+  "id": 579,
+  "before": {
+   "question": "No aircraft shall fly under FL100 at a speed?",
+   "option_a": "Of more than 300 kts",
+   "option_b": "Of more than 250 kts",
+   "option_c": null,
+   "option_d": null,
+   "correct_answer": "Of more than 250 kts",
+   "explanation": "The 250kt speed limit below FL100 exists to give pilots enough time to see and avoid other traffic in the busiest, most crowded layer of airspace, where aircraft of very different speeds and experience levels mix. A higher airspeed leaves far less reaction time for a visual collision-avoidance scan at low level."
+  },
+  "after": {
+   "question": "Below FL100, no aircraft may fly at a speed of more than?",
+   "option_a": "200 kt",
+   "option_b": "250 kt",
+   "option_c": "300 kt",
+   "option_d": "350 kt",
+   "correct_answer": "250 kt",
+   "explanation": "The 250kt speed limit below FL100 exists to give pilots enough time to see and avoid other traffic in the busiest, most crowded layer of airspace, where aircraft of very different speeds and experience levels mix. A higher airspeed leaves far less reaction time for a visual collision-avoidance scan at low level."
+  }
+ },
+ {
+  "id": 580,
+  "before": {
+   "question": "What does a series of red flashes to an aircraft in the air mean?",
+   "option_a": "Continue circling, landing clearance will be given shortly",
+   "option_b": "Aerodrome unsafe, do not land",
+   "option_c": "Do not land for the time being",
+   "option_d": null,
+   "correct_answer": "Aerodrome unsafe, do not land",
+   "explanation": "A series of red flashes from the ground to an aircraft in flight means the aerodrome is unsafe - do not land; the same signal to an aircraft on the ground means taxi clear of the landing area in use. These light signals are the fallback system for radio failure, still part of the regulations even though almost no South African airport still carries flare guns to fire them."
+  },
+  "after": {
+   "question": "What does a series of red flashes directed at an aircraft in the air mean?",
+   "option_a": "Continue circling, landing clearance will be given shortly",
+   "option_b": "Return for landing",
+   "option_c": "Aerodrome unsafe, do not land",
+   "option_d": "Cleared to land",
+   "correct_answer": "Aerodrome unsafe, do not land",
+   "explanation": "A series of red flashes from the ground to an aircraft in flight means the aerodrome is unsafe - do not land; the same signal to an aircraft on the ground means taxi clear of the landing area in use. These light signals are the fallback system for radio failure, still part of the regulations even though almost no South African airport still carries flare guns to fire them."
+  }
+ },
+ {
+  "id": 583,
+  "before": {
+   "question": "Which of the following answers are correct with regards to the order of priority for aeronautical messages?",
+   "option_a": "Flight safety messages take precedence over urgency messages.",
+   "option_b": "Flight regulatory messages take precedence over urgency messages.",
+   "option_c": "Messages relating to direction finding take precedence over meteorological messages.",
+   "option_d": null,
+   "correct_answer": "Messages relating to direction finding take precedence over meteorological messages.",
+   "explanation": "Direction-finding communications - helping a lost or disoriented pilot fix their position - rank above ordinary flight-safety, meteorological, and flight-regularity messages in the priority list, second only to distress and urgency. This reflects that DF assistance is usually requested by a pilot already in some difficulty, even if it has not been declared as an urgency or distress."
+  },
+  "after": {
+   "question": "Which statement about the order of priority of aeronautical messages is correct?",
+   "option_a": "Flight safety messages take precedence over urgency messages",
+   "option_b": "Flight regularity messages take precedence over urgency messages",
+   "option_c": "Meteorological messages take precedence over urgency messages",
+   "option_d": "Messages relating to direction finding take precedence over meteorological messages",
+   "correct_answer": "Messages relating to direction finding take precedence over meteorological messages",
+   "explanation": "Direction-finding communications - helping a lost or disoriented pilot fix their position - rank above ordinary flight-safety, meteorological, and flight-regularity messages in the priority list, second only to distress and urgency. This reflects that DF assistance is usually requested by a pilot already in some difficulty, even if it has not been declared as an urgency or distress."
+  }
+ },
+ {
+  "id": 584,
+  "before": {
+   "question": "What does a series of white flashes to an aircraft in the air mean?",
+   "option_a": "Land at this aerodrome.",
+   "option_b": "Aerodrome unsafe do not land.",
+   "option_c": "Return to the starting point of the aerodrome.",
+   "option_d": null,
+   "correct_answer": "Land at this aerodrome.",
+   "explanation": "A flashing white signal to an aircraft in flight instructs it to land at the aerodrome and proceed to the apron. The actual landing and taxi clearances are given separately as the aircraft approaches and lands.\n\nExam tip: flashing white in flight = land here and proceed to the apron."
+  },
+  "after": {
+   "question": "What does a series of white flashes directed at an aircraft in the air mean?",
+   "option_a": "Land at this aerodrome",
+   "option_b": "Aerodrome unsafe, do not land",
+   "option_c": "Return to the starting point on the aerodrome",
+   "option_d": "Give way to other aircraft and continue circling",
+   "correct_answer": "Land at this aerodrome",
+   "explanation": "A flashing white signal to an aircraft in flight instructs it to land at the aerodrome and proceed to the apron. The actual landing and taxi clearances are given separately as the aircraft approaches and lands.\n\nExam tip: flashing white in flight = land here and proceed to the apron."
+  }
+ },
+ {
+  "id": 585,
+  "before": {
+   "question": "If a marshaller has his arms above his head in a vertical position, it means?",
+   "option_a": "Move straight ahead",
+   "option_b": "Park in this bay.",
+   "option_c": "Turn cut the engine",
+   "option_d": null,
+   "correct_answer": "Park in this bay.",
+   "explanation": "Both arms held vertically above the head indicate the parking bay or position. The pilot continues to follow the marshaller until a separate stop signal is shown."
+  },
+  "after": {
+   "question": "A marshaller holds both arms straight up above the head. What does this mean?",
+   "option_a": "Move straight ahead",
+   "option_b": "Park in this bay",
+   "option_c": "Cut the engine",
+   "option_d": "Turn left",
+   "correct_answer": "Park in this bay",
+   "explanation": "Both arms held vertically above the head indicate the parking bay or position. The pilot continues to follow the marshaller until a separate stop signal is shown."
+  }
+ },
+ {
+  "id": 587,
+  "before": {
+   "question": "If a marshaller has his arms extended, bent at the elbows and is moving them up and down from chest height to head height, it means?",
+   "option_a": "Park at this bay",
+   "option_b": "Cut the engine.",
+   "option_c": "Move straight ahead",
+   "option_d": null,
+   "correct_answer": "Move straight ahead",
+   "explanation": "Moving both bent arms repeatedly upward and downward from chest to head height signals the aircraft to move straight ahead. The pilot should continue slowly while watching for the next instruction."
+  },
+  "after": {
+   "question": "A marshaller's arms are extended and bent at the elbows, moving up and down from chest height to head height. What does this mean?",
+   "option_a": "Park in this bay",
+   "option_b": "Cut the engine",
+   "option_c": "Move straight ahead",
+   "option_d": "Slow down",
+   "correct_answer": "Move straight ahead",
+   "explanation": "Moving both bent arms repeatedly upward and downward from chest to head height signals the aircraft to move straight ahead. The pilot should continue slowly while watching for the next instruction."
+  }
+ },
+ {
+  "id": 589,
+  "before": {
+   "question": "The definitions of “classes of airspace” within the republic can be found in?",
+   "option_a": "The AIP and SACARs",
+   "option_b": "The AIP and NOTAMS",
+   "option_c": "The AIP and AVIATION WEATHER",
+   "option_d": null,
+   "correct_answer": "The AIP and SACARs",
+   "explanation": "South African airspace classifications and their application are published in the AIP and supported by the Civil Aviation Regulations. These are the authoritative sources rather than informal notes or charts alone."
+  },
+  "after": {
+   "question": "Where are the definitions of the classes of airspace in South Africa found?",
+   "option_a": "The AIP and NOTAMs",
+   "option_b": "The AIP and aviation weather reports",
+   "option_c": "The aircraft flight manual",
+   "option_d": "The AIP and SACARs",
+   "correct_answer": "The AIP and SACARs",
+   "explanation": "South African airspace classifications and their application are published in the AIP and supported by the Civil Aviation Regulations. These are the authoritative sources rather than informal notes or charts alone."
+  }
+ },
+ {
+  "id": 590,
+  "before": {
+   "question": "Info the ATC if there are changes in the flight plan during the flight?",
+   "option_a": "GS changes by 5%",
+   "option_b": "TAS changes by 5%",
+   "option_c": "TAS changes by more than 10 kt or 0.02 Mach",
+   "option_d": null,
+   "correct_answer": "TAS changes by more than 10 kt or 0.02 Mach",
+   "explanation": "GIVEN\nAn aircraft in flight with a filed Flight Plan.\n\nRULE\nATC must be notified by radio if the True Airspeed (TAS) changes by more than 10 kt or 0.02 Mach from the TAS nominated in the flight plan, or if the estimated time at the next reporting point or destination changes by more than 2 minutes.\n\nANSWER\nTAS changes by more than 10 kt or 0.02 Mach"
+  },
+  "after": {
+   "question": "Your flight plan shows a TAS of 110 kt. At which actual TAS must you inform ATC?",
+   "option_a": "105 kt",
+   "option_b": "115 kt",
+   "option_c": "118 kt",
+   "option_d": "121 kt",
+   "correct_answer": "121 kt",
+   "explanation": "ATC must be told when the TAS differs from the flight-plan TAS by more than 10 kt (or 0.02 Mach). 121 kt is 11 kt above the planned 110 kt, so it must be reported. 105, 115 and 118 kt are all within 10 kt of the plan."
+  }
+ },
+ {
+  "id": 591,
+  "before": {
+   "question": "Flight plan may be filled in by?",
+   "option_a": "post office",
+   "option_b": "families only",
+   "option_c": "Telephone, fax or internet (File 2 fly .co.za)",
+   "option_d": null,
+   "correct_answer": "Telephone, fax or internet (File 2 fly .co.za)",
+   "explanation": "Correct answer: Telephone, fax or internet (File 2 fly .co.za). A flight plan can be filed in person or by telephone with the nearest ATSU, by telephone with the AIM Service Centre, or online via the file2fly system, which is the preferred method since it is faster and less error-prone than a verbal filing. It cannot be filed through the post office or informally via family members. Exam tip: always obtain a reference number after filing — it's what you use to trace a flight plan that has gone missing in the system."
+  },
+  "after": {
+   "question": "How long before departure must a flight plan for an international flight be filed?",
+   "option_a": "10 minutes",
+   "option_b": "30 minutes",
+   "option_c": "60 minutes",
+   "option_d": "2 hours",
+   "correct_answer": "60 minutes",
+   "explanation": "A flight plan for an international flight must be filed at least 60 minutes before departure, compared with 30 minutes for a domestic flight. The extra time lets the plan reach the ATS units along the route before the aircraft does."
+  }
+ },
+ {
+  "id": 593,
+  "before": {
+   "question": "How do you get UTC time from South African local time?",
+   "option_a": "Subtract 2 hours from local time to obtain UTC",
+   "option_b": "Subtract 2 hours from UTC to obtain LMT.",
+   "option_c": null,
+   "option_d": null,
+   "correct_answer": "Subtract 2 hours from local time to obtain UTC",
+   "explanation": "Correct answer: Subtract 2 hours from local time to obtain UTC. South African Standard Time (SAST) is UTC+2, so UTC is always two hours behind local time. Exam tip: e.g. 14:00 SAST is 12:00 UTC."
+  },
+  "after": {
+   "question": "It is 08:30 UTC. What is the local time in South Africa?",
+   "option_a": "06:30",
+   "option_b": "08:30",
+   "option_c": "09:30",
+   "option_d": "10:30",
+   "correct_answer": "10:30",
+   "explanation": "South African Standard Time is UTC+2, so add 2 hours to UTC to get local time: 08:30 UTC is 10:30 local. To go the other way, subtract 2 hours from local time to get UTC."
+  }
+ },
+ {
+  "id": 594,
+  "before": {
+   "question": "In which of the following airspace will the ATC only provide information service?",
+   "option_a": "Class G and F",
+   "option_b": "Class D",
+   "option_c": "Class C and A.",
+   "option_d": null,
+   "correct_answer": "Class G and F",
+   "explanation": "Classes F and G are uncontrolled airspace. Here the Flight Information Service (FIS) -- not ATC -- gives pilots traffic and other information, but does not issue clearances or provide separation; pilots remain responsible for their own separation."
+  },
+  "after": {
+   "question": "In which airspace classes is only an information service provided?",
+   "option_a": "Class C and A",
+   "option_b": "Class C and D",
+   "option_c": "Class D",
+   "option_d": "Class G and F",
+   "correct_answer": "Class G and F",
+   "explanation": "Classes F and G are uncontrolled airspace. Here the Flight Information Service (FIS) -- not ATC -- gives pilots traffic and other information, but does not issue clearances or provide separation; pilots remain responsible for their own separation."
+  }
+ },
+ {
+  "id": 599,
+  "before": {
+   "question": "The flight plan closed in uncontrolled airdrome when?",
+   "option_a": "automatic after touch down",
+   "option_b": "5 minutes after landing.",
+   "option_c": "When you notify the ATC after landing",
+   "option_d": null,
+   "correct_answer": "When you notify the ATC after landing",
+   "explanation": "Correct answer: When you notify the ATC after landing. At an uncontrolled aerodrome, ATC has no automatic way of knowing the aircraft has landed, so the pilot must notify ATS after landing to close the flight plan. It is not closed automatically at touchdown, and there is no fixed 5-minute grace period."
+  },
+  "after": {
+   "question": "What happens to a filed flight plan that is not activated within 1 hour of its departure time?",
+   "option_a": "It is deleted",
+   "option_b": "It stays valid for 24 hours",
+   "option_c": "Search and rescue action is started",
+   "option_d": "It is activated automatically",
+   "correct_answer": "It is deleted",
+   "explanation": "A filed flight plan is only a notice of intent. If it is not activated, by making first radio contact with an ATS unit, within 60 minutes of the planned departure time, it is deleted and a new flight plan must be filed."
+  }
+ },
+ {
+  "id": 603,
+  "before": {
+   "question": "IF a marshalled has his arms extended, bent at the elbows and is moving them up and down from chest height to head height it means?",
+   "option_a": "Park at this pay",
+   "option_b": "Cut the engine.",
+   "option_c": "Move straight ahead",
+   "option_d": null,
+   "correct_answer": "Move straight ahead",
+   "explanation": "This marshalling motion instructs the pilot to move straight ahead. The pilot should use minimum safe speed and remain focused on the marshaller until another signal is given."
+  },
+  "after": {
+   "question": "A marshaller holds one arm level with the shoulder and draws the hand across the throat. What does this mean?",
+   "option_a": "Move straight ahead",
+   "option_b": "Cut the engine",
+   "option_c": "Stop",
+   "option_d": "Start the engine",
+   "correct_answer": "Cut the engine",
+   "explanation": "Drawing the hand across the throat at shoulder height is the standard marshalling signal to cut the engine. It is normally given once the aircraft has stopped in its parking position, and the pilot shuts down only when it is safe to do so."
+  }
+ }
+]

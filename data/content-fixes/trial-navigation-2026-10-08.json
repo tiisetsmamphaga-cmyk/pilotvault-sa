@@ -24,6 +24,28 @@
    "after": {
     "is_trial_question": true
    }
+  },
+  {
+   "id": 1591,
+   "question": "True Airspeed (TAS) is:",
+   "why": "leaves the trial set (picture swap picked by the user)",
+   "before": {
+    "is_trial_question": true
+   },
+   "after": {
+    "is_trial_question": false
+   }
+  },
+  {
+   "id": 1604,
+   "question": "An aircraft in the southern hemisphere is to maintain a constant heading of 90deg (M) on a magnetic compass. If the aircraft’s speed is increased, the compass would:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false
+   },
+   "after": {
+    "is_trial_question": true
+   }
   }
  ]
 }

@@ -12,8 +12,8 @@ from PIL import Image
 from common import Registry
 from kit import embed, template
 from nav_phone import NAV_DEFS, NORTH_H, north_panel
-from scene import (BLUE, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_front, circle, defs, flow,
-                   head, label, lg, path, stack, stack_height)
+from scene import (BLUE, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft, aircraft_front, circle, cumulus,
+                   defs, flow, head, label, lg, path, stack, stack_height)
 
 R = Registry("aircraft-technical-and-general", "/explanation-images/aircraft-technical-and-general/refined-batch-1")
 
@@ -390,3 +390,47 @@ def torque_panel():
        template("TORQUE REACTION ACTS OPPOSITE TO THE PROPELLER'S ROTATION"), h=stack_height([PT_H]), w=W)
 def _():
     return picture([torque_panel()])
+
+
+# ------------------------------------------------------------------ tailplane: longitudinal stability
+# The measured side-view trainer, nose disturbed up or down: the tailplane's angle of attack changes, its force acts
+# up or down and pitches the nose back. Tail and centre-of-pressure points are taken from aircraft.py's side view
+# (tailplane at local 676,137; wing centre of pressure at 330,160; drawing centred on 385,130).
+
+TS_H = 500
+TS_W = 560                # aircraft length on the canvas
+
+
+def ac_point(cx, cy, pitch, lx, ly, width=TS_W):
+    """Canvas position of a point of the side-view aircraft (local units, nose right) flown at `pitch`."""
+    k = width / 660
+    px, py = -(lx - 385) * k, (ly - 130) * k
+    t = math.radians(-pitch)
+    return cx + px * math.cos(t) - py * math.sin(t), cy + px * math.sin(t) + py * math.cos(t)
+
+
+def tail_panel(nose_up):
+    pitch = 12 if nose_up else -12
+
+    def draw(w, h):
+        cx, cy = 480, 250
+        s = aircraft(cx, cy, TS_W, pitch=pitch)
+        tx, ty = ac_point(cx, cy, pitch, 758, 137)                  # just aft of the tailplane and fin
+        dy = -150 if nose_up else 150
+        s += path(f"M {tx:.1f},{ty:.1f} L {tx:.1f},{ty + dy:.1f}", "none", RED, 10, ' marker-end="url(#hd_red)"')
+        # the nose is pitched back about the centre of gravity: down after nose-up, up after nose-down
+        a0, a1 = (70, 102) if nose_up else (122, 82)
+        s += path(arc(cx, cy, 330, a0, a1), "none", NAVY_BLUE, 9, ' marker-end="url(#hd_navy)"')
+        s += label(30, ty + dy - 24 if nose_up else ty + dy + 50, "Tail force up" if nose_up else "Tail force down",
+                   TXT_M, RED, "start")
+        s += label(890, 60, "Nose pushed\nback down" if nose_up else "Nose pushed\nback up", TXT_M, NAVY_BLUE, "end")
+        return s
+    caption = "NOSE PITCHES UP: TAIL FORCE UP" if nose_up else "NOSE PITCHES DOWN: TAIL FORCE DOWN"
+    return dict(h=TS_H, sky="sky_day", draw=draw, caption=caption, color=RED if nose_up else NAVY_BLUE)
+
+
+@R.add(2464, "tailplane-stability-v1", "Tailplane and Longitudinal Stability",
+       template("THE TAILPLANE GIVES LONGITUDINAL STABILITY WITH AN UP OR DOWN FORCE"),
+       h=stack_height([TS_H, TS_H]), w=W)
+def _():
+    return picture([tail_panel(True), tail_panel(False)])

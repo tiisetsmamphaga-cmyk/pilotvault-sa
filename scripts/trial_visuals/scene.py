@@ -11,7 +11,7 @@ aerial view of the ground, angle arcs and north arrows.
 import math
 import random
 
-from aircraft import aircraft, aircraft_defs, aircraft_top  # noqa: F401  (re-exported for scene modules)
+from aircraft import aircraft, aircraft_defs, aircraft_top, airliner_side  # noqa: F401  (re-exported for scene modules)
 
 W = 900                      # canvas width
 PHONE_W = 328                # width the picture gets on a phone (CSS px)
@@ -596,6 +596,70 @@ def heading_dial(cx, cy, r, heading, aircraft_mark=True):
               f'L 140,10 L 140,40 L 14,10 L 14,150 L 50,190 L 50,210 L 0,195 L -50,210 L -50,190 L -14,150 L -14,10 '
               f'L -140,40 L -140,10 L -14,-60 L -14,-200 C -14,-240 -12,-260 0,-260 Z" fill="none" stroke="#f28a1e" stroke-width="{3 / k:.1f}"/>')
     return s
+
+
+# Airspeed indicator, measured from the textbook figure (PHAK, airspeed-indicator-markings-source-v1.webp):
+# knots -> degrees clockwise from the top. The scale is wider at low speed, as on the real instrument.
+ASI_ANGLES = [(40, 26), (60, 51), (80, 80), (100, 114), (120, 144), (140, 178), (160, 213), (180, 242), (200, 275),
+              (220, 307), (240, 338)]
+
+
+def asi_angle(kt):
+    for (k0, a0), (k1, a1) in zip(ASI_ANGLES[:-1], ASI_ANGLES[1:]):
+        if kt <= k1:
+            return a0 + (a1 - a0) * (kt - k0) / (k1 - k0)
+    return ASI_ANGLES[-1][1]
+
+
+def asi_dial(cx, cy, r, white=(58, 100), green=(64, 165), yellow=(165, 208), red=208, needle=120,
+             numbers=range(40, 241, 20)):
+    """Airspeed indicator with its colour arcs. Proportions as in the textbook figure: black face to the rim,
+    green and yellow arcs 0.815-0.95 of the radius, white arc inside them 0.727-0.81, red radial line 0.71-0.95,
+    ticks every 10 kt, numbers every 20 kt at 0.64 of the radius, white needle."""
+    s = circle(cx, cy, r * 1.04, "url(#bezel)", "#374151", 3) + circle(cx, cy, r, "#111317")
+
+    def band(a, b, r0, r1, fill):
+        a0, a1 = asi_angle(a), asi_angle(b)
+        big = 1 if a1 - a0 > 180 else 0
+        p0, p1 = compass_xy(cx, cy, r1, a0), compass_xy(cx, cy, r1, a1)
+        q1, q0 = compass_xy(cx, cy, r0, a1), compass_xy(cx, cy, r0, a0)
+        return path(f"M {p0[0]:.1f},{p0[1]:.1f} A {r1:.1f},{r1:.1f} 0 {big} 1 {p1[0]:.1f},{p1[1]:.1f} "
+                    f"L {q1[0]:.1f},{q1[1]:.1f} A {r0:.1f},{r0:.1f} 0 {big} 0 {q0[0]:.1f},{q0[1]:.1f} Z", fill)
+    s += band(*white, r * 0.727, r * 0.81, "#ffffff")
+    s += band(*green, r * 0.815, r * 0.95, "#16a34a")
+    s += band(*yellow, r * 0.815, r * 0.95, "#facc15")
+    for kt in range(40, 241, 5):
+        a = asi_angle(kt)
+        p0, p1 = compass_xy(cx, cy, r * 0.95, a), compass_xy(cx, cy, r * (0.84 if kt % 10 == 0 else 0.89), a)
+        s += f'<line x1="{p0[0]:.1f}" y1="{p0[1]:.1f}" x2="{p1[0]:.1f}" y2="{p1[1]:.1f}" stroke="#f4f4f4" stroke-width="{4 if kt % 10 == 0 else 2.5}"/>'
+    p0, p1 = compass_xy(cx, cy, r * 0.95, asi_angle(red)), compass_xy(cx, cy, r * 0.71, asi_angle(red))
+    s += f'<line x1="{p0[0]:.1f}" y1="{p0[1]:.1f}" x2="{p1[0]:.1f}" y2="{p1[1]:.1f}" stroke="#dc2626" stroke-width="{r * 0.035:.1f}"/>'
+    for kt in numbers:
+        tx, ty = compass_xy(cx, cy, r * 0.62, asi_angle(kt))
+        s += label(tx, ty + MIN_TXT * 0.36, str(kt), MIN_TXT, "#f4f4f4", "middle", halo=None, role="dial")
+    a = math.radians(asi_angle(needle))
+    dx, dy = math.sin(a), -math.cos(a)
+    L, b = r * 0.8, r * 0.035
+    s += (f'<path d="M {cx - dx * r * 0.12 + dy * b:.1f},{cy - dy * r * 0.12 - dx * b:.1f} L {cx + dx * L:.1f},{cy + dy * L:.1f} '
+          f'L {cx - dx * r * 0.12 - dy * b:.1f},{cy - dy * r * 0.12 + dx * b:.1f} Z" fill="#f8fafc" stroke="#111317" stroke-width="2"/>')
+    return s + circle(cx, cy, r * 0.06, "url(#hub)", "#111827", 2)
+
+
+def tyre(cx, cy, r, flat=0.0):
+    """Aircraft main wheel from the side, proportions of the trainer's wheel in aircraft.py (hub 0.39 of the
+    tyre radius). `flat` squashes the bottom by that fraction of r, as a tyre does under load."""
+    fy = cy + r * (1 - flat)
+    if flat:
+        hw = r * math.sqrt(1 - (1 - flat) ** 2)
+        s = path(f"M {cx - hw:.1f},{fy:.1f} A {r},{r} 0 1 1 {cx + hw:.1f},{fy:.1f} Z", "#111827")
+    else:
+        s = circle(cx, cy, r, "#111827")
+    s += circle(cx, cy, r * 0.82, "none", "#374151", r * 0.03)
+    s += circle(cx, cy, r * 0.39, "#e5e7eb", "#94a3b8", r * 0.02)
+    for k in range(5):
+        bx, by = compass_xy(cx, cy, r * 0.25, k * 72)
+        s += circle(bx, by, r * 0.035, "#64748b")
+    return s + circle(cx, cy, r * 0.09, "#94a3b8")
 
 
 def globe_xy(cx, cy, r, lat, lon, tilt=-25, lon0=25):

@@ -99,6 +99,14 @@ Parts measured so far:
   a diagram sign, not a station), so they are measured from photos on
   Wikimedia Commons (`Nkr1.jpg`, `OceanSideVortac.jpg`). An aerodrome on high
   ground is shown by an aircraft standing on it, as the navigation manual does.
+- `scene.asi_dial` — airspeed indicator with its colour arcs (from the textbook
+  figure `airspeed-indicator-markings-source-v1.webp`; the knots-to-angle table
+  is measured, so the scale is wider at low speed as on the real instrument).
+- `scene.tyre` — main wheel close-up (proportions of the trainer's wheel).
+- `aircraft.airliner_side` — wide-body "heavy" from the side, for wake
+  turbulence. No PilotVault picture had one, so it is measured from the
+  Boeing 767-300 side view in Julien Scavini's schematic on Wikimedia Commons
+  (`Boeing_767_family_v1.0.png`).
 
 ## 5. Checks before anyone sees a picture
 

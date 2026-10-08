@@ -15,12 +15,14 @@ from fp_cards import CARDS  # noqa: E402
 from fp_pictures import CARD_ONLY, PICTURE, PICTURE_TITLE  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
+DATES = {"b1": "2026-10-07", "b2": "2026-10-08"}
 FIELDS = ("explanation_image_url", "explanation_image_title", "explanation_visual_template")
 
 
 def main():
     batch, before_path, sql_path = sys.argv[1:4]
-    record = REPO / f"data/content-fixes/fp-visuals-{batch}-2026-10-07.json"
+    DATE = DATES[batch]
+    record = REPO / f"data/content-fixes/fp-visuals-{batch}-{DATE}.json"
     before = {r["id"]: r for r in json.loads(Path(before_path).read_text())}
     rows, updates = [], []
     for qid in sorted(set(PICTURE) | set(CARD_ONLY)):
@@ -39,7 +41,7 @@ def main():
                      "before": {f: r[f] for f in FIELDS}, "after": after})
         updates.append({"id": qid, **after})
     record.write_text(json.dumps({
-        "date": "2026-10-07", "subject": "flight-planning", "batch": batch,
+        "date": DATE, "subject": "flight-planning", "batch": batch,
         "change": "Flight Planning to the explanation standard: phone-first pictures and a KEY FACT card per question.",
         "rows": rows}, indent=1, ensure_ascii=False) + "\n")
     body = "[\n" + ",\n".join(json.dumps(u, ensure_ascii=False, separators=(",", ":")) for u in updates) + "\n]"

@@ -141,3 +141,47 @@ def aircraft_top(x, y, span=160, heading=0, prop=True):
     if prop:
         s += '<ellipse cx="-440" cy="0" rx="9" ry="145" fill="#64748b" fill-opacity="0.3"/>'
     return s + "</g>\n"
+
+
+# Airliner side view (wake-turbulence "heavy"): measured from the Boeing 767-300 side view in Julien Scavini's
+# schematic on Wikimedia Commons (Boeing_767_family_v1.0.png, crop x 240-1200, y 1060-1360). Points are in
+# crop pixels: nose tip (20, 207), tail cone (903, 192), ground under the wheels y = 284, so the aircraft is
+# 883 px long and the fin top (y 28) is 256 px high (15.9 m on a 54.9 m airframe, as published).
+AL_BODY = [(20, 207), (24, 199), (31, 192), (40, 185), (52, 178), (66, 172), (84, 167), (110, 163), (150, 160),
+           (720, 160), (780, 167), (840, 177), (880, 184), (898, 187), (903, 192), (900, 198), (888, 204),
+           (860, 212), (820, 222), (760, 233), (700, 244), (640, 250), (560, 253), (300, 253), (140, 252),
+           (100, 249), (70, 244), (48, 236), (32, 226), (23, 216), (20, 207)]
+AL_FIN = "M 715,161 C 740,157 752,148 760,141 L 872,28 L 907,28 L 848,181 Z"
+AL_STAB = [(775, 199), (800, 193), (860, 186), (900, 185), (880, 193), (840, 201), (800, 203), (775, 199)]
+AL_WING = [(310, 226), (360, 216), (450, 210), (540, 203), (612, 196), (560, 214), (470, 229), (380, 234), (320, 232)]
+AL_ENGINE = [(333, 228), (345, 224), (395, 225), (430, 232), (462, 243), (468, 247), (462, 251), (430, 254),
+             (395, 261), (345, 265), (333, 262)]
+AL_MAIN, AL_GROUND = 476, 284   # main-gear contact point: the pivot for rotation
+
+
+def airliner_side(x, y, length=420, pitch=0, facing_right=True):
+    """Twin-engine wide-body airliner from the side, `length` canvas units nose to tail, standing with its main
+    wheels on (x, y) and rotating about them by `pitch` degrees nose-up."""
+    k = length / 883
+    sx = -k if facing_right else k
+    rot = -pitch if facing_right else pitch
+    sw = 1.6 / k
+    stroke = f'stroke="#334155" stroke-width="{sw:.1f}" stroke-linejoin="round"'
+    pts = lambda p: f"M {p[0][0]},{p[0][1]}" + _smooth(p) + " Z"  # noqa: E731
+    s = f'<g transform="translate({x:.1f},{y:.1f}) rotate({rot}) scale({sx:.4f},{k:.4f}) translate(-{AL_MAIN},-{AL_GROUND})">'
+    s += f'<path d="M 92,250 L 92,276 M 476,250 L 476,274" stroke="#64748b" stroke-width="4" fill="none"/>'
+    for cx, r in ((92, 7), (465, 9), (488, 9)):
+        cy = AL_GROUND - r
+        s += f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#111827"/><circle cx="{cx}" cy="{cy}" r="{r * 0.4:.1f}" fill="#e5e7eb"/>'
+    s += f'<path d="{pts(AL_BODY)}" fill="url(#ac_body)" {stroke}/>'
+    s += f'<path d="M 30,236 C 200,256 560,258 700,244 L 640,250 L 300,253 L 140,252 Z" fill="#cbd5e1"/>'  # belly shade
+    s += f'<path d="{AL_FIN}" fill="url(#ac_blue)" {stroke}/>'
+    s += f'<path d="M 893,28 L 812,175" stroke="#1e4f8f" stroke-width="{sw:.1f}"/>'
+    s += f'<path d="M 140,197 L 700,197" stroke="#1e293b" stroke-width="7" stroke-dasharray="4 7"/>'  # cabin windows
+    s += f'<path d="M 38,193 L 48,186 L 66,186 L 69,195 L 58,198 Z" fill="#1e293b"/>'  # flight deck
+    s += f'<path d="M 100,184 L 118,184 L 118,212 L 100,212 Z" fill="none" stroke="#94a3b8" stroke-width="{sw * 0.8:.1f}"/>'
+    s += f'<path d="{pts(AL_STAB)}" fill="url(#ac_body)" {stroke}/>'
+    s += f'<path d="{pts(AL_WING)}" fill="url(#ac_wing)" {stroke}/>'
+    s += f'<path d="{pts(AL_ENGINE)}" fill="url(#metal)" {stroke}/>'
+    s += f'<ellipse cx="336" cy="244.5" rx="4" ry="19" fill="#475569" {stroke}/>'
+    return s + "</g>\n"

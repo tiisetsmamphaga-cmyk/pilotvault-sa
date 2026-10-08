@@ -1,7 +1,8 @@
 """Which picture each Flight Planning question shows (none = KEY FACT card only).
 
 Batch 1 (2026-10-07): questions that reuse the Navigation and Meteorology pictures, and the card-only questions
-(table and chart readings, fuel sums, weight definitions). Later batches add the new flight-planning pictures.
+(table and chart readings, fuel sums, weight definitions). Batch 2 (2026-10-08): the new flight-planning pictures
+drawn in scripts/trial_visuals/fp_phone.py.
 """
 NAV = "/explanation-images/navigation/refined-batch-2/"
 MET_DA = "/explanation-images/meteorology/refined-batch-2/density-altitude-v3.webp"
@@ -29,9 +30,30 @@ CARD_ONLY = [
     2321, 2344,
 ]
 
+FP = "/explanation-images/flight-planning/refined-batch-1/"
+NEW = {
+    FP + "takeoff-distance-v1.webp": ("Take-off Distance",
+                                      [2247, 2317, 2320, 2330, 2358, 2381, 2382, 2383, 2384, 2385, 2248, 2393, 2394, 2395,
+                                       2288, 2293, 2269, 2306, 2336, 2339, 2326, 2352, 2396, 2397]),
+    FP + "landing-distance-v1.webp": ("Landing Distance", [2266, 2281, 2313, 2389, 2315, 2380, 2301, 2356]),
+    FP + "glide-range-v1.webp": ("Glide Range", [2250, 2253, 2274, 2304, 2360]),
+    FP + "cg-moment-v1.webp": ("Moment and Centre of Gravity",
+                               [2263, 2295, 2299, 2303, 2331, 2340, 2355, 2368, 2369, 2401, 2402, 2411, 2417]),
+    FP + "displaced-threshold-v1.webp": ("Displaced Threshold",
+                                         [2245, 2251, 2366, 2267, 2273, 2278, 2333, 2350, 2314, 2412]),
+    FP + "declared-distances-v1.webp": ("Declared Distances", [2297, 2298, 2391]),
+    FP + "runway-slope-v1.webp": ("Runway Slope", [2255, 2277, 2319, 2409, 2413]),
+    FP + "aquaplaning-v1.webp": ("Aquaplaning", [2276, 2285, 2300, 2367]),
+    FP + "windshear-v1.webp": ("Wind Shear", [2241, 2264, 2259, 2307, 2328, 2361]),
+    FP + "wake-turbulence-v1.webp": ("Wake Turbulence", [2287, 2362, 2363, 2364]),
+    FP + "asi-arcs-v1.webp": ("Airspeed Indicator Markings", [2254, 2258, 2365]),
+    FP + "vx-vy-v1.webp": ("VX and VY", [2342, 2349, 2390]),
+}
+
 PICTURE, PICTURE_TITLE = {}, {}
-for url, (title, ids) in REUSED.items():
+for url, (title, ids) in {**REUSED, **NEW}.items():
     for q in ids:
         PICTURE[q], PICTURE_TITLE[q] = url, title
 
 assert not set(PICTURE) & set(CARD_ONLY)
+assert sum(len(ids) for _, ids in {**REUSED, **NEW}.values()) == len(PICTURE)

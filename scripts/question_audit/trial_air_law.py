@@ -42,6 +42,8 @@ PICTURE = {
 
 # id -> card; only questions whose card changes
 CARDS = {
+    1103: card("CROSSES MARK AN UNSERVICEABLE RUNWAY OR TAXIWAY", "A WHITE OR YELLOW CROSS AT EACH END MEANS: DO NOT USE",
+               [("Meaning", "No landing, take-off or taxiing on the marked surface")]),
     1098: card("A LETTER A: AGRICULTURAL FLIGHTS IN OPERATION", "EXPECT CROP-SPRAYING AIRCRAFT FLYING LOW", [SIGNALS]),
     1100: card("RED SQUARE, YELLOW CROSS: LANDINGS PROHIBITED", "DISPLAYED IN THE SIGNAL AREA",
                [("One yellow diagonal stripe", "Take special care when landing"), SIGNALS]),

@@ -468,6 +468,55 @@ def runway_above(x, y, length=200, heading=0):
     return s + "</g>"
 
 
+def runway_close(x, y, length, width):
+    """Close-up of a runway from above for ground-movement scenes: threshold at (x, y) (centreline), runway running
+    to the right for `length`. Colours and centreline dashes as runway_above; ICAO threshold piano keys (8 bars
+    across) and white edge lines. A taxi-holding scene uses it with taxiway()."""
+    s = f'<rect x="{x:.1f}" y="{y - width / 2:.1f}" width="{length:.1f}" height="{width:.1f}" fill="#465569" stroke="#2f3a49" stroke-width="2"/>'
+    for e in (-1, 1):
+        s += f'<rect x="{x:.1f}" y="{y + e * width * 0.44 - width * 0.012:.1f}" width="{length:.1f}" height="{width * 0.024:.1f}" fill="#ffffff"/>'
+    bar_w, bar_l = width * 0.055, width * 0.6
+    for k in range(8):
+        off = -width * 0.39 + k * width * 0.78 / 7 + (width * 0.06 if k >= 4 else -width * 0.06) * 0.5
+        s += f'<rect x="{x + width * 0.08:.1f}" y="{y + off - bar_w / 2:.1f}" width="{bar_l:.1f}" height="{bar_w:.1f}" fill="#ffffff"/>'
+    dash, gap = width * 0.55, width * 0.45
+    xx = x + width * 0.85
+    while xx + dash < x + length:
+        s += f'<rect x="{xx:.1f}" y="{y - width * 0.02:.1f}" width="{dash:.1f}" height="{width * 0.04:.1f}" fill="#ffffff"/>'
+        xx += dash + gap
+    return s
+
+
+def taxiway(pts, width, hold=None):
+    """Taxiway from above along the points pts (already smooth), `width` wide, grey as runway_above's taxiway, with
+    a yellow centreline. hold=(x, y, angle) draws the runway-holding position marking across it there (two solid
+    and two dashed yellow lines, the solid ones on the taxiway side; angle = the taxiway direction towards the
+    runway, degrees, 0 = right, clockwise)."""
+    d = "M " + " L ".join(f"{a:.1f},{b:.1f}" for a, b in pts)
+    s = path(d, "none", "#2f3a49", width + 4) + path(d, "none", "#7b8696", width)
+    s += path(d, "none", "#f2c230", width * 0.05)
+    if hold:
+        hx, hy, ang = hold
+        s += f'<g transform="translate({hx:.1f},{hy:.1f}) rotate({ang:.1f})">'
+        lw, sp = width * 0.05, width * 0.12
+        for k, dash in enumerate(("", "", f"{width * 0.12:.1f} {width * 0.08:.1f}", f"{width * 0.12:.1f} {width * 0.08:.1f}")):
+            xx = -1.5 * sp + k * sp
+            extra = f' stroke-dasharray="{dash}"' if dash else ""
+            s += path(f"M {xx:.1f},{-width / 2:.1f} L {xx:.1f},{width / 2:.1f}", "none", "#f2c230", lw, extra)
+        s += "</g>"
+    return s
+
+
+def signal_strip(x, y, length, angle=0):
+    """One ground-air signal strip seen from above, centred on (x, y): white material, 2.5 m long and 0.6 m wide
+    (the handbook's strips; aspect 4.2), with a soft shadow so it reads on grass."""
+    w = length / 4.2
+    s = f'<g transform="translate({x:.1f},{y:.1f}) rotate({angle:.1f})">'
+    s += f'<rect x="{-length / 2 + 4:.1f}" y="{-w / 2 + 5:.1f}" width="{length:.1f}" height="{w:.1f}" rx="3" fill="#000000" fill-opacity="0.22"/>'
+    s += f'<rect x="{-length / 2:.1f}" y="{-w / 2:.1f}" width="{length:.1f}" height="{w:.1f}" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>'
+    return s + "</g>"
+
+
 def ndb_mast(x, ground, h=260, night=False):
     """NDB station from the side: a slim lattice mast with a crossed top-load on an equipment hut, `h` from the
     ground to the mast top. Measured from a photo of an NDB (Wikimedia Commons, Nkr1.jpg; mast 968 px

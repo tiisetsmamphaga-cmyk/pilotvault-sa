@@ -340,7 +340,7 @@
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/air-law/refined-batch-1/al-visual-ground-signals-runway-closed-v1.webp",
     "explanation_image_title": "Runway Closed — Crosses at Each End (Unserviceable Area)",
-    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"CROSSES MARK AN UNSERVICEABLE RUNWAY OR TAXIWAY\",\"subline\":\"A WHITE OR YELLOW CROSS AT EACH END MEANS: DO NOT USE\",\"blocks\":[{\"label\":\"LOCATION\",\"value\":\"Displayed at each end of the closed runway or taxiway section\"},{\"label\":\"MEANING\",\"value\":\"No landing, take-off or taxiing on the marked surface\"},{\"label\":\"AT NIGHT\",\"value\":\"Marked with red lights instead\"}]}\n"
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CROSSES MARK AN UNSERVICEABLE RUNWAY OR TAXIWAY\", \"subline\": \"A WHITE OR YELLOW CROSS AT EACH END MEANS: DO NOT USE\", \"blocks\": [{\"label\": \"Meaning\", \"value\": \"No landing, take-off or taxiing on the marked surface\"}]}"
    }
   },
   {

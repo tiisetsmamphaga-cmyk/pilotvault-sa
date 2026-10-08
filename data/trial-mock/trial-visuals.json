@@ -37,15 +37,15 @@
  },
  "506": {
   "subject": "radio-telephony",
-  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-backtrack.webp",
-  "title": "Backtrack the Runway",
-  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway — follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}]}"
+  "url": "/explanation-images/radio-telephony/refined-batch-2/backtrack-v1.webp",
+  "title": "Backtrack",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK: TAXI ALONG THE RUNWAY IN USE, AGAINST THE LANDING AND TAKE-OFF DIRECTION\", \"subline\": \"USUALLY TO TURN ROUND AT THE END AND LINE UP\"}"
  },
  "518": {
   "subject": "radio-telephony",
-  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-line-up-and-wait.webp",
+  "url": "/explanation-images/radio-telephony/refined-batch-2/line-up-and-wait-v1.webp",
   "title": "Line Up and Wait",
-  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LINE UP AND WAIT: ENTER THE RUNWAY, LINE UP, DO NOT TAKE OFF\", \"subline\": \"IT IS NOT A TAKE-OFF CLEARANCE\", \"blocks\": [{\"label\": \"DO\", \"value\": \"Taxi onto the runway and line up on the centreline\"}, {\"label\": \"DON'T\", \"value\": \"Start the take-off roll until cleared for take-off\"}, {\"label\": \"READ BACK\", \"value\": \"'Lining up and waiting, runway 03'\"}]}"
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LINE UP AND WAIT: TAXI ONTO THE RUNWAY, LINE UP, AND HOLD THERE\", \"subline\": \"DO NOT START THE TAKE-OFF ROLL UNTIL CLEARED FOR TAKE-OFF\"}"
  },
  "567": {
   "subject": "radio-telephony",
@@ -55,9 +55,9 @@
  },
  "570": {
   "subject": "radio-telephony",
-  "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-ground-signal-v.webp",
-  "title": "Ground-to-Air Signal — V",
-  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"LAY OUT LARGE, HIGH-CONTRAST STRIPS SO A SEARCH AIRCRAFT CAN READ THEM\", \"blocks\": [{\"label\": \"V\", \"value\": \"Require assistance\"}, {\"label\": \"X\", \"value\": \"Require medical assistance\"}, {\"label\": \"N / Y\", \"value\": \"No (negative) / Yes (affirmative)\"}]}"
+  "url": "/explanation-images/radio-telephony/refined-batch-2/ground-signals-v-x-v1.webp",
+  "title": "Ground Signals: V and X",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"X = REQUIRE MEDICAL ASSISTANCE\"}"
  },
  "764": {
   "subject": "air-law",

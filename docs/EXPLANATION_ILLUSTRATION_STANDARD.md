@@ -123,6 +123,9 @@ Parts measured so far:
   turbulence. No PilotVault picture had one, so it is measured from the
   Boeing 767-300 side view in Julien Scavini's schematic on Wikimedia Commons
   (`Boeing_767_family_v1.0.png`).
+- `scene.runway_close`, `scene.taxiway`, `scene.signal_strip` — ground-movement close-ups: runway and
+  taxiway colours from `runway_above`, ICAO threshold, edge and holding-position markings, and the radio
+  handbook's ground-air signal strips (white, 2.5 m × 0.6 m).
 
 ## 5. Checks before anyone sees a picture
 

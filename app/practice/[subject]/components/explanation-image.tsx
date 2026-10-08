@@ -84,7 +84,7 @@ export function ExplanationImage({
 
   const isRtVisual = src.includes("/explanation-images/radio-telephony/refined-batch-")
   const isApprovedRtRaster =
-    /\/explanation-images\/radio-telephony\/refined-batch-(?:1)\//.test(src) &&
+    /\/explanation-images\/radio-telephony\/refined-batch-(?:1|2)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   const isAirLawVisual = src.includes("/explanation-images/air-law/refined-batch-")

@@ -12,7 +12,7 @@ from PIL import Image
 from common import Registry
 from kit import embed, template
 from nav_phone import NAV_DEFS, NORTH_H, north_panel
-from scene import (BLUE, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft, aircraft_front, circle, cumulus,
+from scene import (BLUE, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft, aircraft_front, cg_mark, circle, cumulus,
                    defs, flow, head, label, lg, path, stack, stack_height)
 
 R = Registry("aircraft-technical-and-general", "/explanation-images/aircraft-technical-and-general/refined-batch-1")
@@ -20,11 +20,18 @@ R = Registry("aircraft-technical-and-general", "/explanation-images/aircraft-tec
 FIG = Path(__file__).resolve().parent / "fig" / "atg"
 
 
+def dim_head(mid, color, size=30):
+    """Arrowhead for a dimension line: points outwards at both ends (marker-start and marker-end)."""
+    return (f'<marker id="{mid}" markerUnits="userSpaceOnUse" markerWidth="{size}" markerHeight="{size}" '
+            f'refX="{size * 0.8:.1f}" refY="{size / 2}" orient="auto-start-reverse"><path d="M0,{size * 0.12:.1f} '
+            f'L{size * 0.9:.1f},{size / 2} L0,{size * 0.88:.1f} Z" fill="{color}"/></marker>')
+
+
 OIL = "#e0a526"
 FLUID = "#d63a24"
 METAL = "#9aa4b2"
 DARK = "#334155"
-ATG_DEFS = (head("hd_navy", NAVY_BLUE, 30), head("hd_red", RED, 30), head("ring_blue", BLUE, 70), head("ring_red", RED, 70),
+ATG_DEFS = (dim_head("dim_navy", NAVY_BLUE), dim_head("dim_red", RED), head("hd_navy", NAVY_BLUE, 30), head("hd_red", RED, 30), head("ring_blue", BLUE, 70), head("ring_red", RED, 70),
             lg("oil", [(0, "#f6c95a"), (1, "#d99a1c")]), lg("steel", [(0, "#e5e9ef"), (1, "#8d97a6")]))
 
 
@@ -434,3 +441,36 @@ def tail_panel(nose_up):
        h=stack_height([TS_H, TS_H]), w=W)
 def _():
     return picture([tail_panel(True), tail_panel(False)])
+
+
+# ------------------------------------------------------------------ CG position and longitudinal stability
+# The same side-view trainer, level: with the CG forward the tailplane works on a long arm and its restoring moment
+# is strong; with the CG aft the arm is shorter, the restoring moment weaker and the aircraft less stable.
+
+CG_H = 420
+
+
+def cg_panel(aft):
+    def draw(w, h):
+        cx, cy = 450, 190
+        s = aircraft(cx, cy, TS_W, pitch=0)
+        gx, gy = ac_point(cx, cy, 0, 395 if aft else 300, 158)
+        tx, _ = ac_point(cx, cy, 0, 676, 137)
+        col, mid = (RED, "dim_red") if aft else (NAVY_BLUE, "dim_navy")
+        s += cg_mark(gx, gy, 22)
+        y = 330
+        s += path(f"M {gx:.1f},{y - 26} L {gx:.1f},{y + 26} M {tx:.1f},{y - 26} L {tx:.1f},{y + 26}", "none", col, 4)
+        s += path(f"M {gx - 6:.1f},{y} L {tx + 6:.1f},{y}", "none", col, 6,
+                  f' marker-start="url(#{mid})" marker-end="url(#{mid})"')
+        s += label((gx + tx) / 2, y - 22, "Short tail arm" if aft else "Long tail arm", TXT_M, col, "middle")
+        s += label(gx, 136, "CG", TXT_L, INK, "middle")
+        return s
+    caption = "CG AFT: SHORT ARM, LESS STABLE" if aft else "CG FORWARD: LONG ARM, STABLE"
+    return dict(h=CG_H, sky="sky_day", draw=draw, caption=caption, color=RED if aft else NAVY_BLUE)
+
+
+@R.add(2432, "cg-aft-stability-v1", "CG Position and Longitudinal Stability",
+       template("AFT CG: SHORTER TAIL ARM, WEAKER RESTORING MOMENT, LESS STABLE"),
+       h=stack_height([CG_H, CG_H]), w=W)
+def _():
+    return picture([cg_panel(False), cg_panel(True)])

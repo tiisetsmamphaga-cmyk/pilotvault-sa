@@ -66,8 +66,8 @@
    },
    "after": {
     "is_trial_question": true,
-    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
-    "explanation_image_title": "LONGITUDINAL STABILITY AND CG POSITION",
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cg-aft-stability-v1.webp",
+    "explanation_image_title": "CG Position and Longitudinal Stability",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFT CG REDUCES LONGITUDINAL STABILITY\", \"subline\": \"THE TAILPLANE'S MOMENT ARM IS SHORTER, SO THE RESTORING MOMENT IS WEAKER\", \"blocks\": [{\"label\": \"Stability\", \"value\": \"Reduced\"}, {\"label\": \"Elevator feel\", \"value\": \"Lighter; easy to over-control\"}, {\"label\": \"Stall speed\", \"value\": \"Slightly lower (less tail download)\"}]}"
    }
   },
@@ -134,8 +134,8 @@
    },
    "after": {
     "is_trial_question": true,
-    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
-    "explanation_image_title": "TAIL FORCE AND LONGITUDINAL STABILITY",
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/tailplane-stability-v1.webp",
+    "explanation_image_title": "Tailplane and Longitudinal Stability",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TAILPLANE PUSHES UP OR DOWN AS REQUIRED\", \"subline\": \"IT GIVES LONGITUDINAL (PITCH) STABILITY\", \"blocks\": [{\"label\": \"Force\", \"value\": \"Up or down, depending on CG and flight condition\"}, {\"label\": \"Directional stability\", \"value\": \"Comes from the fin\"}, {\"label\": \"Lateral stability\", \"value\": \"Mainly from wing dihedral\"}]}"
    }
   },

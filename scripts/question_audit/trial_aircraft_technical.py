@@ -9,7 +9,7 @@ from its figures in HD; its two photographs (strut-braced monoplane, finned cyli
 (atg_figures.py); deviation uses the Navigation scene; all in aircraft-technical-and-general/refined-batch-1
 (atg_phone.py), as are the pitot-static diagram and a front view of the trainer for propeller torque. The
 load-factor question moves to the textbook chart, ASI calibration and engine power to the Met ISA and air
-density pictures; one of three airspeed-indicator questions (2724) gave way to engine power in dense air (2726).
+density pictures; the tailplane and aft-CG questions get their own side-view scenes; one of three airspeed-indicator questions (2724) gave way to engine power in dense air (2726).
 """
 TRIAL = [2428, 2474, 2500, 2520, 2525, 2566, 2584, 2673, 2675, 2701, 2768, 2771, 2773,
          2553, 2559, 2564, 2464, 2629, 2740, 2726, 2466, 2450, 2634, 2707, 2432]
@@ -32,6 +32,8 @@ PICTURE = {
     2450: (ATG + "propeller-torque-reaction-v1.webp", "Propeller Torque Reaction"),
     2771: ("/explanation-images/meteorology/refined-batch-2/isa-sea-level-v3.webp", "ISA Sea Level"),
     2726: ("/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp", "What Makes Air Dense"),
+    2464: (ATG + "tailplane-stability-v1.webp", "Tailplane and Longitudinal Stability"),
+    2432: (ATG + "cg-aft-stability-v1.webp", "CG Position and Longitudinal Stability"),
     2673: ("/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v2.webp",
            "Bank Angle and Load Factor"),
 }

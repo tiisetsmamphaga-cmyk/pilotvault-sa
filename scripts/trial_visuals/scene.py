@@ -468,6 +468,14 @@ def runway_above(x, y, length=200, heading=0):
     return s + "</g>"
 
 
+def cg_mark(x, y, r=22):
+    """Centre-of-gravity symbol: a circle quartered black and white."""
+    s = circle(x, y, r, "#ffffff", "#111827", 3)
+    s += path(f"M {x},{y} L {x + r},{y} A {r},{r} 0 0 1 {x},{y + r} Z", "#111827")
+    s += path(f"M {x},{y} L {x - r},{y} A {r},{r} 0 0 1 {x},{y - r} Z", "#111827")
+    return s
+
+
 def runway_close(x, y, length, width):
     """Close-up of a runway from above for ground-movement scenes: threshold at (x, y) (centreline), runway running
     to the right for `length`. Colours and centreline dashes as runway_above; ICAO threshold piano keys (8 bars

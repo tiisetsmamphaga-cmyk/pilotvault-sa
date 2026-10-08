@@ -6,6 +6,8 @@ equipment, SAR phases, contaminated runway) and the second "park in this bay" ma
 for questions with textbook figures; they stay in the full bank. Backtrack, line up and wait and the V ground
 signal are redrawn as aerial scenes (radio-telephony/refined-batch-2); QDR uses the Navigation QDM/QDR picture.
 The FIR cards said South Africa has two FIRs; the map shows three (FAJA, FACA and the oceanic FAJO).
+344 (FAR 86 upper limit, chart extract in the question) replaces 318, one of six trial questions sharing the
+airspace-division picture; 344 gets its first KEY FACT card.
 """
 import json
 
@@ -20,7 +22,7 @@ def card(headline, subline, blocks=()):
 RT2 = "/explanation-images/radio-telephony/refined-batch-2/"
 
 TRIAL = [304, 307, 314, 316, 410, 419, 438, 448, 506, 518, 570, 576, 577, 578, 585, 610, 615,
-         303, 308, 315, 318, 416, 441, 451, 587]
+         303, 308, 315, 344, 416, 441, 451, 587]
 
 # id -> (picture url, title); only questions whose picture changes
 PICTURE = {
@@ -57,6 +59,9 @@ CARDS = {
     315: card("ATZ = AERODROME TRAFFIC ZONE", "AIRSPACE AROUND AN AERODROME TO PROTECT AERODROME TRAFFIC", [CTR]),
     318: card("CTR, CTA AND TMA NEED A CLEARANCE BEFORE ENTERING", "THEY ARE CONTROLLED AIRSPACE",
               [("FAD / FAR", "Danger and restricted areas: special-use airspace, not controlled airspace")]),
+    344: card("FAR 86: UPPER LIMIT FL120", "THE BOX GIVES THE LIMITS: UPPER ABOVE, LOWER BELOW",
+              [("Upper limit", "FL120 (top line)"), ("Lower limit", "GND (bottom line)"),
+               ("FL", "Flight level: altitude with 1013.25 hPa set")]),
     419: card("TRACK 090° MAGNETIC, VFR: FL075 IS CORRECT", "000°–179° TAKES ODD THOUSANDS PLUS 500 FT", SEMI),
     416: card("THE SEMI-CIRCULAR RULE APPLIES AT AND ABOVE 1500 FT AGL", "CRUISING LEVEL IS CHOSEN BY MAGNETIC TRACK", SEMI),
     438: card("QNE (1013.25 hPa) SET: THE ALTIMETER SHOWS PRESSURE ALTITUDE", "READ AS A FLIGHT LEVEL", SETTINGS[:2]),

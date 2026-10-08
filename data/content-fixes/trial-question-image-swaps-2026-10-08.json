@@ -1,0 +1,24 @@
+{
+ "date": "2026-10-08",
+ "change": "Trial swaps picked by the user: questions with a picture in the question replace trial questions whose explanation picture was repeated in the trial.",
+ "rows": [
+  {
+   "subject": "radio-telephony",
+   "in": 344,
+   "out": 318,
+   "note": "318 shared the airspace-division picture with five other trial questions; 344 gets a KEY FACT card"
+  },
+  {
+   "subject": "navigation",
+   "in": 1552,
+   "out": 1885,
+   "note": "1885 shared the triangle of velocities with 1841 and 1882"
+  },
+  {
+   "subject": "meteorology",
+   "in": 721,
+   "out": 1494,
+   "note": "1494 shared the air-mass picture with 71"
+  }
+ ]
+}

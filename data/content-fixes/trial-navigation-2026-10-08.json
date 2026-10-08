@@ -46,6 +46,28 @@
    "after": {
     "is_trial_question": true
    }
+  },
+  {
+   "id": 1816,
+   "question": "When measuring a course on a 1:500 000 aeronautical chart, the protractor should normally be aligned with:",
+   "why": "leaves the trial set (picture swap picked by the user)",
+   "before": {
+    "is_trial_question": true
+   },
+   "after": {
+    "is_trial_question": false
+   }
+  },
+  {
+   "id": 1663,
+   "question": "An aircraft flies from A to B, distance 133nm in 1hr12mins. If there is a headwind of 12kts the TAS is:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false
+   },
+   "after": {
+    "is_trial_question": true
+   }
   }
  ]
 }

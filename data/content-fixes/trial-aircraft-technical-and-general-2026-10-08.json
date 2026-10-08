@@ -227,7 +227,7 @@
   {
    "id": 2520,
    "question": "The lubricating system of a piston engine normally makes use of:",
-   "why": "trial question: picture and/or card brought to the standard",
+   "why": "leaves the trial set (2549 carries the lubrication cutaway); keeps the new picture in the bank",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2542-gear-type-oil-pump.webp",
@@ -235,9 +235,9 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GEAR PUMP PLUS SPLASH LUBRICATION\", \"subline\": \"PRESSURE OIL FOR THE BEARINGS; OIL MIST FOR THE REST\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings, camshaft, accessories\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends, gears\"}, {\"label\": \"Oil in fuel\", \"value\": \"Only some two-strokes\"}]}"
    },
    "after": {
-    "is_trial_question": true,
-    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/gear-oil-pump-v1.webp",
-    "explanation_image_title": "Gear-type Oil Pump",
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/lubrication-pump-splash-v1.webp",
+    "explanation_image_title": "Gear Pump and Splash Lubrication",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GEAR PUMP PLUS SPLASH LUBRICATION\", \"subline\": \"PRESSURE OIL FOR THE BEARINGS; OIL MIST FOR THE REST\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings, camshaft, accessories\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends, gears\"}, {\"label\": \"Oil in fuel\", \"value\": \"Only some two-strokes\"}]}"
    }
   },
@@ -273,6 +273,23 @@
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cylinder-cooling-fins-v1.webp",
     "explanation_image_title": "Cylinder Cooling Fins",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COOLING FINS IMPROVE ENGINE COOLING\", \"subline\": \"THEY GREATLY INCREASE THE AREA LOSING HEAT TO THE AIR\", \"blocks\": [{\"label\": \"Fins\", \"value\": \"More surface area\"}, {\"label\": \"Baffles\", \"value\": \"Direct air through the fins\"}, {\"label\": \"Cowl flaps\", \"value\": \"Control how much air flows\"}]}"
+   }
+  },
+  {
+   "id": 2549,
+   "question": "Lubrication of the main bearings and crankshaft of the engine is provided:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2549-crankshaft-bearing-lubrication.webp",
+    "explanation_image_title": "CRANKSHAFT AND BEARING LUBRICATION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"THROUGH GALLERIES AND CRANKSHAFT DRILLINGS TO THE BIG ENDS\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why\", \"value\": \"Heaviest loads need a positive supply\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/lubrication-pump-splash-v1.webp",
+    "explanation_image_title": "Gear Pump and Splash Lubrication",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"THROUGH GALLERIES AND CRANKSHAFT DRILLINGS TO THE BIG ENDS\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why\", \"value\": \"Heaviest loads need a positive supply\"}]}"
    }
   },
   {

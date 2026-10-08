@@ -278,7 +278,7 @@
   {
    "id": 2553,
    "question": "The primary purpose of a cowl-flap is to:",
-   "why": "joins the trial set",
+   "why": "leaves the trial set (its drawn cooling picture was not strong enough for the trial); keeps it in the bank",
    "before": {
     "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2553-cowl-flaps.webp",
@@ -286,7 +286,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COWL FLAPS CONTROL THE COOLING AIRFLOW\", \"subline\": \"TO KEEP CYLINDER AND OIL TEMPERATURES IN LIMITS\", \"blocks\": [{\"label\": \"Open\", \"value\": \"Ground running and climb: low speed, high power\"}, {\"label\": \"Closed\", \"value\": \"Cruise and descent: less drag, no over-cooling\"}, {\"label\": \"Baffles\", \"value\": \"Only direct the air\"}]}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cowl-flap-v1.webp",
     "explanation_image_title": "Cowl Flap",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COWL FLAPS CONTROL THE COOLING AIRFLOW\", \"subline\": \"TO KEEP CYLINDER AND OIL TEMPERATURES IN LIMITS\", \"blocks\": [{\"label\": \"Open\", \"value\": \"Ground running and climb: low speed, high power\"}, {\"label\": \"Closed\", \"value\": \"Cruise and descent: less drag, no over-cooling\"}, {\"label\": \"Baffles\", \"value\": \"Only direct the air\"}]}"
@@ -426,6 +426,23 @@
     "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-tas-increase-with-altitude-v1.webp",
     "explanation_image_title": "TAS INCREASES WITH ALTITUDE AT CONSTANT IAS",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS = CAS CORRECTED FOR DENSITY\", \"subline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Thinner air: ASI reads less than TAS\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS about 2% above CAS per 1,000 ft\"}, {\"label\": \"IAS to CAS\", \"value\": \"Instrument and position error\"}]}"
+   }
+  },
+  {
+   "id": 2647,
+   "question": "On an airspeed indicator (ASI) the cautionary range is indicated by:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v2.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR MARKINGS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"YELLOW ARC: CAUTION RANGE\", \"subline\": \"FROM VNO TO VNE: SMOOTH AIR ONLY\", \"blocks\": [{\"label\": \"Yellow\", \"value\": \"VNO to VNE\"}, {\"label\": \"Green\", \"value\": \"Normal operating range\"}, {\"label\": \"White\", \"value\": \"Flap operating range\"}, {\"label\": \"Red line\", \"value\": \"VNE\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v2.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR MARKINGS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"YELLOW ARC: CAUTION RANGE\", \"subline\": \"FROM VNO TO VNE: SMOOTH AIR ONLY\", \"blocks\": [{\"label\": \"Yellow\", \"value\": \"VNO to VNE\"}, {\"label\": \"Green\", \"value\": \"Normal operating range\"}, {\"label\": \"White\", \"value\": \"Flap operating range\"}, {\"label\": \"Red line\", \"value\": \"VNE\"}]}"
    }
   },
   {

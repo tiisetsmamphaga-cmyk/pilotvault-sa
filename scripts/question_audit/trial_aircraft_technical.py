@@ -12,9 +12,11 @@ load-factor question moves to the textbook chart, ASI calibration and engine pow
 density pictures; the tailplane and aft-CG questions get their own side-view scenes; one of three airspeed-indicator questions (2724) gave way to engine power in dense air (2726). The
 lubrication question (2520) leaves the trial set: its cutaway was not strong enough for the trial, so it stays
 on 2520 in the bank, and the turn-coordinator taxi check (2710, textbook instrument) takes the place.
+The cowl-flap question (2553) also left the trial set for the ASI caution-range question (2647, textbook
+ASI); 2553 keeps its picture in the bank.
 """
 TRIAL = [2428, 2474, 2500, 2710, 2525, 2566, 2584, 2673, 2675, 2701, 2768, 2771, 2773,
-         2553, 2559, 2564, 2464, 2629, 2740, 2726, 2466, 2450, 2634, 2707, 2432]
+         2647, 2559, 2564, 2464, 2629, 2740, 2726, 2466, 2450, 2634, 2707, 2432]
 
 ATG = "/explanation-images/aircraft-technical-and-general/refined-batch-1/"
 

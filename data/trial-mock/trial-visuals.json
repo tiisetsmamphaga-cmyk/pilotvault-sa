@@ -173,6 +173,60 @@
   "title": "Logbook Entries — Away From Base",
   "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AWAY FROM BASE: UPDATE THE LOGBOOK WITHIN 48 HOURS OF RETURNING\", \"subline\": \"ROUTINE ENTRIES OTHERWISE HAVE A 7-DAY WINDOW\", \"blocks\": [{\"label\": \"AWAY FROM BASE\", \"value\": \"Within 48 h after returning to base\"}, {\"label\": \"ROUTINE\", \"value\": \"Within 7 days\"}]}"
  },
+ "2428": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/semi-cantilever-struts-v1.webp",
+  "title": "Semi-cantilever Monoplane",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-CANTILEVER: STRUTS FROM THE LOWER FUSELAGE BRACE THE WING\"}"
+ },
+ "2474": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/valve-lead-v1.webp",
+  "title": "Valve Lead",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VALVE LEAD: THE INLET VALVE OPENS BEFORE TDC\"}"
+ },
+ "2520": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/gear-oil-pump-v1.webp",
+  "title": "Gear-type Oil Pump",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A GEAR-TYPE PUMP SUPPLIES PRESSURE OIL; SPLASH DOES THE REST\"}"
+ },
+ "2525": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cylinder-cooling-fins-v1.webp",
+  "title": "Cylinder Cooling Fins",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FINS GIVE THE CYLINDER MORE AREA TO LOSE HEAT\"}"
+ },
+ "2553": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cowl-flap-v1.webp",
+  "title": "Cowl Flap",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COWL FLAPS CONTROL THE COOLING AIRFLOW OVER THE CYLINDERS\"}"
+ },
+ "2559": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/hydraulic-brake-pascal-v1.webp",
+  "title": "Hydraulic Brakes: Pascal's Law",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PRESSURE ON A CONFINED FLUID IS TRANSMITTED THROUGH IT\"}"
+ },
+ "2564": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/engine-baffles-v1.webp",
+  "title": "Engine Baffles",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES DIRECT THE COOLING AIR OVER THE CYLINDERS\"}"
+ },
+ "2701": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/compass-deviation-v1.webp",
+  "title": "Compass Deviation",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION: THE AIRCRAFT'S OWN MAGNETIC FIELDS PULL THE COMPASS\"}"
+ },
+ "2773": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/oil-pressure-not-rising-v1.webp",
+  "title": "No Oil Pressure After Start",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO OIL PRESSURE IN TIME: SHUT THE ENGINE DOWN\"}"
+ },
  "2814": {
   "subject": "radio-telephony",
   "url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-runway-contaminated.webp",

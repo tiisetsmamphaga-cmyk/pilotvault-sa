@@ -4,16 +4,16 @@ usage: python3 scripts/trial_visuals/atg_figures.py [name ...]     (needs reales
 
 The manual (091e41264c1bdb10.pdf) is a scan at about 87 ppi, too soft for a phone. Each figure is cropped from
 the page scan at its native resolution, upscaled 4x with Real-ESRGAN (the anime/line-art model for drawings, the
-photo model for photographs), its small printed text is painted out with the colour beside it (the pictures add
-phone-size labels instead) and it is written to fig/atg/<name>.png. Crop boxes are in 200-dpi page pixels (the
-page render is 2084 px wide); paint-out boxes are in the upscaled figure's pixels.
+photo model for photographs) and written to fig/atg/<name>.png. Crop boxes are in 200-dpi page pixels (the page
+render is 2084 px wide). Print too small for a phone is covered in atg_phone.py, which adds phone-size labels.
+Photos too poor to sharpen (the oil cooler and crankcase photos) are not used.
 """
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageFilter
 
 HERE = Path(__file__).resolve().parent
 PDF = HERE.parents[1] / "091e41264c1bdb10.pdf"
@@ -31,15 +31,13 @@ FIGS = {
     "oil-pressure-zero": ([(103, (679, 447, 1493, 1083))], LINE),
     "cowl-flap": ([(83, (481, 1826, 1716, 2631))], LINE),
     "hydraulic-brake": ([(48, (686, 796, 1508, 1549))], LINE),
-    "oil-cooler": ([(88, (684, 524, 1511, 1345))], PHOTO),
-    "main-bearings": ([(91, (695, 1525, 1461, 2250))], PHOTO),
 }
 # figures already in public/ that are too small: name: (path, model)
 SMALL = {
     "compass-deviation": ("explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp", LINE),
 }
-# small printed text painted out after upscaling: name: [(x0, y0, x1, y1), ...]
-PAINT = {}
+# photos whose scan screening shows as streaks after upscaling: name: median filter size applied first
+DESCREEN = {"cylinder-fins": 3}
 
 
 def page_scan(page, tmp):
@@ -54,6 +52,8 @@ def crop(parts):
             scan = page_scan(page, tmp)
             k = scan.width / PAGE_W
             pieces.append(scan.crop(tuple(round(v * k) for v in box)))
+    if len(pieces) > 1:            # a figure split over two pages: drop the blank margin rows at the join
+        pieces = [trim_blank(p, bottom=i == 0) for i, p in enumerate(pieces)]
     out = Image.new("RGB", (max(p.width for p in pieces), sum(p.height for p in pieces)), "white")
     y = 0
     for p in pieces:
@@ -62,13 +62,18 @@ def crop(parts):
     return out
 
 
-def paint_out(im, box):
-    px = im.load()
-    x0, y0, x1, y1 = box
-    for y in range(y0, y1):
-        c = px[max(x0 - 4, 0), y]
-        for x in range(x0, x1):
-            px[x, y] = c
+def trim_blank(im, bottom):
+    """Remove near-white rows from the bottom (or top) edge of one half of a split figure."""
+    g = im.convert("L")
+    rows = range(im.height - 1, -1, -1) if bottom else range(im.height)
+    cut = 0
+    for y in rows:
+        dark = sum(1 for x in range(im.width) if g.getpixel((x, y)) < 225)
+        if dark > im.width * 0.01:
+            break
+        cut += 1
+    return im.crop((0, 0, im.width, im.height - cut)) if bottom else im.crop((0, cut, im.width, im.height))
+
 
 
 def upscale(im, model):
@@ -86,9 +91,9 @@ def main():
         else:
             path, model = SMALL[name]
             im = Image.open(PUBLIC / path).convert("RGB")
+        if name in DESCREEN:
+            im = im.filter(ImageFilter.MedianFilter(DESCREEN[name]))
         hd = upscale(im, model)
-        for box in PAINT.get(name, ()):
-            paint_out(hd, box)
         hd.save(OUT / f"{name}.png", optimize=True)
         print(name, im.size, "->", hd.size)
 

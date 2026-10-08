@@ -179,6 +179,12 @@
   "title": "Semi-cantilever Monoplane",
   "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-CANTILEVER: STRUTS FROM THE LOWER FUSELAGE BRACE THE WING\"}"
  },
+ "2450": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/propeller-torque-reaction-v1.webp",
+  "title": "Propeller Torque Reaction",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE REACTION ACTS OPPOSITE TO THE PROPELLER'S ROTATION\"}"
+ },
  "2474": {
   "subject": "aircraft-technical-and-general",
   "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/valve-lead-v1.webp",
@@ -214,6 +220,18 @@
   "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/engine-baffles-v1.webp",
   "title": "Engine Baffles",
   "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES DIRECT THE COOLING AIR OVER THE CYLINDERS\"}"
+ },
+ "2566": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/asi-pitot-capsule-v1.webp",
+  "title": "Airspeed Indicator: Pitot and Static",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE GOES INTO THE CAPSULE; STATIC FILLS THE CASE\"}"
+ },
+ "2584": {
+  "subject": "aircraft-technical-and-general",
+  "url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/pitot-tube-airflow-v1.webp",
+  "title": "Pitot Tube",
+  "template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE IS TAKEN FROM A TUBE FACING INTO THE AIRFLOW\"}"
  },
  "2701": {
   "subject": "aircraft-technical-and-general",

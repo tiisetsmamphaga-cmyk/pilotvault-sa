@@ -7,10 +7,12 @@ battery, deviation card, inverter) were swapped for questions with textbook figu
 The manual's diagrams (valve timing, gear pump, hydraulic brake, engine cooling, oil pressure gauge) are redrawn
 from its figures in HD; its two photographs (strut-braced monoplane, finned cylinder) are upscaled to HD
 (atg_figures.py); deviation uses the Navigation scene; all in aircraft-technical-and-general/refined-batch-1
-(atg_phone.py). The load-factor question moves to the textbook chart.
+(atg_phone.py), as are the pitot-static diagram and a front view of the trainer for propeller torque. The
+load-factor question moves to the textbook chart, ASI calibration and engine power to the Met ISA and air
+density pictures; one of three airspeed-indicator questions (2724) gave way to engine power in dense air (2726).
 """
 TRIAL = [2428, 2474, 2500, 2520, 2525, 2566, 2584, 2673, 2675, 2701, 2768, 2771, 2773,
-         2553, 2559, 2564, 2464, 2629, 2740, 2724, 2466, 2450, 2634, 2707, 2432]
+         2553, 2559, 2564, 2464, 2629, 2740, 2726, 2466, 2450, 2634, 2707, 2432]
 
 ATG = "/explanation-images/aircraft-technical-and-general/refined-batch-1/"
 
@@ -25,6 +27,11 @@ PICTURE = {
     2553: (ATG + "cowl-flap-v1.webp", "Cowl Flap"),
     2559: (ATG + "hydraulic-brake-pascal-v1.webp", "Hydraulic Brakes: Pascal's Law"),
     2564: (ATG + "engine-baffles-v1.webp", "Engine Baffles"),
+    2566: (ATG + "asi-pitot-capsule-v1.webp", "Airspeed Indicator: Pitot and Static"),
+    2584: (ATG + "pitot-tube-airflow-v1.webp", "Pitot Tube"),
+    2450: (ATG + "propeller-torque-reaction-v1.webp", "Propeller Torque Reaction"),
+    2771: ("/explanation-images/meteorology/refined-batch-2/isa-sea-level-v3.webp", "ISA Sea Level"),
+    2726: ("/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp", "What Makes Air Dense"),
     2673: ("/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v2.webp",
            "Bank Angle and Load Factor"),
 }

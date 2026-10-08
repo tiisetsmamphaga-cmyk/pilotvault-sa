@@ -108,6 +108,8 @@ Parts measured so far:
   mid-tower and narrowing to ≈ 0.76 × at the top, anvil ≈ 1.4 × the base width
   and ≈ 8% of the height, flat dark base.
 - `aircraft.aircraft_top` — the trainer from above (from the rudder-effect picture).
+- `aircraft.aircraft_front` — the trainer from straight ahead, derived from the measured side and top views
+  (cabin section, span, tailplane, fin and gear proportions; propeller radius from the side view).
 - `scene.runway_above` — runway from above (from the contaminated-runway picture).
 - `scene.heading_dial` — heading indicator (from the heading indicator picture).
 - `scene.ndb_mast`, `scene.vor_dme_station` — radio stations from the side. No

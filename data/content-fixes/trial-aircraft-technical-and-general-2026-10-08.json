@@ -1,0 +1,585 @@
+{
+ "date": "2026-10-08",
+ "subject": "aircraft-technical-and-general",
+ "change": "Trial set: 25 questions, each with a strong picture and an answer-first KEY FACT card.",
+ "rows": [
+  {
+   "id": 2418,
+   "question": "Nose wheel shimmy is controlled by:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2418-shimmy-damper.webp",
+    "explanation_image_title": "SHIMMY DAMPER",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NOSE-WHEEL SHIMMY IS CONTROLLED BY A SHIMMY DAMPER\", \"subline\": \"IT RESISTS RAPID SIDE-TO-SIDE OSCILLATION BUT STILL ALLOWS NORMAL STEERING\", \"blocks\": [{\"label\": \"Shimmy\", \"value\": \"Rapid side-to-side oscillation of the nose wheel\"}, {\"label\": \"Damper\", \"value\": \"Small hydraulic piston and cylinder, or friction unit, between strut and fork\"}, {\"label\": \"Not the cause\", \"value\": \"Worn torque links cause shimmy; they do not control it\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2418-shimmy-damper.webp",
+    "explanation_image_title": "SHIMMY DAMPER",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NOSE-WHEEL SHIMMY IS CONTROLLED BY A SHIMMY DAMPER\", \"subline\": \"IT RESISTS RAPID SIDE-TO-SIDE OSCILLATION BUT STILL ALLOWS NORMAL STEERING\", \"blocks\": [{\"label\": \"Shimmy\", \"value\": \"Rapid side-to-side oscillation of the nose wheel\"}, {\"label\": \"Damper\", \"value\": \"Small hydraulic piston and cylinder, or friction unit, between strut and fork\"}, {\"label\": \"Not the cause\", \"value\": \"Worn torque links cause shimmy; they do not control it\"}]}"
+   }
+  },
+  {
+   "id": 2421,
+   "question": "A fuselage which is constructed to allow the skin to take some of the load is:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2421-semi-monocoque-fuselage.webp",
+    "explanation_image_title": "SEMI-MONOCOQUE FUSELAGE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-MONOCOQUE: THE SKIN CARRIES SOME OF THE LOAD\", \"subline\": \"FORMERS AND STRINGERS GIVE SHAPE; THE STRESSED SKIN SHARES THE LOAD\", \"blocks\": [{\"label\": \"Truss\", \"value\": \"Framework carries all the load; covering carries none\"}, {\"label\": \"Monocoque\", \"value\": \"Skin carries all the load\"}, {\"label\": \"Semi-monocoque\", \"value\": \"Frame and skin share the load\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2421-semi-monocoque-fuselage.webp",
+    "explanation_image_title": "SEMI-MONOCOQUE FUSELAGE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-MONOCOQUE: THE SKIN CARRIES SOME OF THE LOAD\", \"subline\": \"FORMERS AND STRINGERS GIVE SHAPE; THE STRESSED SKIN SHARES THE LOAD\", \"blocks\": [{\"label\": \"Truss\", \"value\": \"Framework carries all the load; covering carries none\"}, {\"label\": \"Monocoque\", \"value\": \"Skin carries all the load\"}, {\"label\": \"Semi-monocoque\", \"value\": \"Frame and skin share the load\"}]}"
+   }
+  },
+  {
+   "id": 2428,
+   "question": "A semi-cantilever monoplane is:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2428-braced-monoplane.webp",
+    "explanation_image_title": "SEMI-CANTILEVER (STRUT-BRACED) MONOPLANE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-CANTILEVER: WING BRACED BY STRUTS\", \"subline\": \"STRUTS RUN FROM THE LOWER FUSELAGE TO THE WING\", \"blocks\": [{\"label\": \"Cantilever\", \"value\": \"Supported at the root only, all loads carried by the spars\"}, {\"label\": \"Semi-cantilever\", \"value\": \"External struts share the load\"}, {\"label\": \"Trade-off\", \"value\": \"Lighter spar, more drag\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/semi-cantilever-struts-v1.webp",
+    "explanation_image_title": "Semi-cantilever Monoplane",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-CANTILEVER: WING BRACED BY STRUTS\", \"subline\": \"STRUTS RUN FROM THE LOWER FUSELAGE TO THE WING\", \"blocks\": [{\"label\": \"Cantilever\", \"value\": \"Supported at the root only, all loads carried by the spars\"}, {\"label\": \"Semi-cantilever\", \"value\": \"External struts share the load\"}, {\"label\": \"Trade-off\", \"value\": \"Lighter spar, more drag\"}]}"
+   }
+  },
+  {
+   "id": 2432,
+   "question": "If the centre of gravity is moved aft during flight the effect will be:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+    "explanation_image_title": "LONGITUDINAL STABILITY AND CG POSITION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFT CG REDUCES LONGITUDINAL STABILITY\", \"subline\": \"THE TAILPLANE'S MOMENT ARM IS SHORTER, SO THE RESTORING MOMENT IS WEAKER\", \"blocks\": [{\"label\": \"Stability\", \"value\": \"Reduced\"}, {\"label\": \"Elevator feel\", \"value\": \"Lighter; easy to over-control\"}, {\"label\": \"Stall speed\", \"value\": \"Slightly lower (less tail download)\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+    "explanation_image_title": "LONGITUDINAL STABILITY AND CG POSITION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFT CG REDUCES LONGITUDINAL STABILITY\", \"subline\": \"THE TAILPLANE'S MOMENT ARM IS SHORTER, SO THE RESTORING MOMENT IS WEAKER\", \"blocks\": [{\"label\": \"Stability\", \"value\": \"Reduced\"}, {\"label\": \"Elevator feel\", \"value\": \"Lighter; easy to over-control\"}, {\"label\": \"Stall speed\", \"value\": \"Slightly lower (less tail download)\"}]}"
+   }
+  },
+  {
+   "id": 2435,
+   "question": "The reduction in the blade angle of a propeller towards the tip ensures that the thrust is constant along the blade and is referred to as:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2435-propeller-helical-twist.webp",
+    "explanation_image_title": "PROPELLER HELICAL TWIST",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HELICAL TWIST: BLADE ANGLE REDUCES TOWARDS THE TIP\", \"subline\": \"EVERY SECTION MEETS THE AIR AT ABOUT THE SAME ANGLE OF ATTACK\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Sections further out travel faster\"}, {\"label\": \"Result\", \"value\": \"Even thrust along the blade\"}, {\"label\": \"Blade angle\", \"value\": \"Chord line to plane of rotation\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2435-propeller-helical-twist.webp",
+    "explanation_image_title": "PROPELLER HELICAL TWIST",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HELICAL TWIST: BLADE ANGLE REDUCES TOWARDS THE TIP\", \"subline\": \"EVERY SECTION MEETS THE AIR AT ABOUT THE SAME ANGLE OF ATTACK\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Sections further out travel faster\"}, {\"label\": \"Result\", \"value\": \"Even thrust along the blade\"}, {\"label\": \"Blade angle\", \"value\": \"Chord line to plane of rotation\"}]}"
+   }
+  },
+  {
+   "id": 2441,
+   "question": "Torque links may be incorporated on the nose shock struts of some undercarriage systems in order to:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2441-torque-links.webp",
+    "explanation_image_title": "TORQUE (SCISSOR) LINKS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE LINKS STOP THE PISTON ROTATING\", \"subline\": \"THE STRUT CAN STILL COMPRESS, BUT THE WHEEL STAYS ALIGNED\", \"blocks\": [{\"label\": \"Joins\", \"value\": \"Upper link on the cylinder, lower link on the piston\"}, {\"label\": \"Result\", \"value\": \"Steering inputs reach the wheel\"}, {\"label\": \"Worn links\", \"value\": \"Cause nose-wheel shimmy\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2441-torque-links.webp",
+    "explanation_image_title": "TORQUE (SCISSOR) LINKS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE LINKS STOP THE PISTON ROTATING\", \"subline\": \"THE STRUT CAN STILL COMPRESS, BUT THE WHEEL STAYS ALIGNED\", \"blocks\": [{\"label\": \"Joins\", \"value\": \"Upper link on the cylinder, lower link on the piston\"}, {\"label\": \"Result\", \"value\": \"Steering inputs reach the wheel\"}, {\"label\": \"Worn links\", \"value\": \"Cause nose-wheel shimmy\"}]}"
+   }
+  },
+  {
+   "id": 2450,
+   "question": "A rotating propeller will produce a force which acts in the opposite direction of rotation. This force is called:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-left-turning-tendency-v2.webp",
+    "explanation_image_title": "TORQUE REACTION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE REACTION ACTS OPPOSITE TO PROPELLER ROTATION\", \"subline\": \"NEWTON'S THIRD LAW: THE ENGINE TURNS THE PROPELLER, THE PROPELLER TURNS THE AIRCRAFT BACK\", \"blocks\": [{\"label\": \"In the air\", \"value\": \"Tends to roll the aircraft\"}, {\"label\": \"On the ground\", \"value\": \"Loads one main wheel more: the aircraft swings\"}, {\"label\": \"Not torque\", \"value\": \"Centrifugal force, P-factor, gyroscopic precession\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/propeller-torque-reaction-v1.webp",
+    "explanation_image_title": "Propeller Torque Reaction",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE REACTION ACTS OPPOSITE TO PROPELLER ROTATION\", \"subline\": \"NEWTON'S THIRD LAW: THE ENGINE TURNS THE PROPELLER, THE PROPELLER TURNS THE AIRCRAFT BACK\", \"blocks\": [{\"label\": \"In the air\", \"value\": \"Tends to roll the aircraft\"}, {\"label\": \"On the ground\", \"value\": \"Loads one main wheel more: the aircraft swings\"}, {\"label\": \"Not torque\", \"value\": \"Centrifugal force, P-factor, gyroscopic precession\"}]}"
+   }
+  },
+  {
+   "id": 2464,
+   "question": "The horizontal stabiliser on the tail:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+    "explanation_image_title": "TAIL FORCE AND LONGITUDINAL STABILITY",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TAILPLANE PUSHES UP OR DOWN AS REQUIRED\", \"subline\": \"IT GIVES LONGITUDINAL (PITCH) STABILITY\", \"blocks\": [{\"label\": \"Force\", \"value\": \"Up or down, depending on CG and flight condition\"}, {\"label\": \"Directional stability\", \"value\": \"Comes from the fin\"}, {\"label\": \"Lateral stability\", \"value\": \"Mainly from wing dihedral\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+    "explanation_image_title": "TAIL FORCE AND LONGITUDINAL STABILITY",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TAILPLANE PUSHES UP OR DOWN AS REQUIRED\", \"subline\": \"IT GIVES LONGITUDINAL (PITCH) STABILITY\", \"blocks\": [{\"label\": \"Force\", \"value\": \"Up or down, depending on CG and flight condition\"}, {\"label\": \"Directional stability\", \"value\": \"Comes from the fin\"}, {\"label\": \"Lateral stability\", \"value\": \"Mainly from wing dihedral\"}]}"
+   }
+  },
+  {
+   "id": 2466,
+   "question": "The type of flap which, when extended, increases the surface area of the wing is called a:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+    "explanation_image_title": "TRAILING-EDGE FLAP TYPES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE FOWLER FLAP INCREASES WING AREA\", \"subline\": \"IT RUNS AFT ON TRACKS BEFORE IT MOVES DOWN\", \"blocks\": [{\"label\": \"Early travel\", \"value\": \"Mostly area: lift with little drag\"}, {\"label\": \"Full travel\", \"value\": \"Area and camber: the largest lift increase\"}, {\"label\": \"Others\", \"value\": \"Plain, split, slotted add no significant area\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+    "explanation_image_title": "TRAILING-EDGE FLAP TYPES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE FOWLER FLAP INCREASES WING AREA\", \"subline\": \"IT RUNS AFT ON TRACKS BEFORE IT MOVES DOWN\", \"blocks\": [{\"label\": \"Early travel\", \"value\": \"Mostly area: lift with little drag\"}, {\"label\": \"Full travel\", \"value\": \"Area and camber: the largest lift increase\"}, {\"label\": \"Others\", \"value\": \"Plain, split, slotted add no significant area\"}]}"
+   }
+  },
+  {
+   "id": 2469,
+   "question": "The purpose of baffles in an aircraft's fuel tank is to:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2469-fuel-tank-baffles-v2.webp",
+    "explanation_image_title": "FUEL TANK BAFFLES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES STOP THE FUEL SURGING\", \"subline\": \"INTERNAL WALLS WITH HOLES DIVIDE THE TANK\", \"blocks\": [{\"label\": \"Outlet\", \"value\": \"Stays covered in manoeuvres\"}, {\"label\": \"CG\", \"value\": \"No sudden shifts\"}, {\"label\": \"Vents / drains\", \"value\": \"Pressure and water, not surge\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2469-fuel-tank-baffles-v2.webp",
+    "explanation_image_title": "FUEL TANK BAFFLES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES STOP THE FUEL SURGING\", \"subline\": \"INTERNAL WALLS WITH HOLES DIVIDE THE TANK\", \"blocks\": [{\"label\": \"Outlet\", \"value\": \"Stays covered in manoeuvres\"}, {\"label\": \"CG\", \"value\": \"No sudden shifts\"}, {\"label\": \"Vents / drains\", \"value\": \"Pressure and water, not surge\"}]}"
+   }
+  },
+  {
+   "id": 2474,
+   "question": "The term \"valve lead\" refers to:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2474-valve-lead.webp",
+    "explanation_image_title": "VALVE LEAD",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VALVE LEAD: INLET OPENS BEFORE TDC\", \"subline\": \"AT THE END OF THE EXHAUST STROKE\", \"blocks\": [{\"label\": \"Lead\", \"value\": \"Valve opens early\"}, {\"label\": \"Lag\", \"value\": \"Valve closes late (inlet after BDC)\"}, {\"label\": \"Overlap\", \"value\": \"Both valves open around TDC\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/valve-lead-v1.webp",
+    "explanation_image_title": "Valve Lead",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VALVE LEAD: INLET OPENS BEFORE TDC\", \"subline\": \"AT THE END OF THE EXHAUST STROKE\", \"blocks\": [{\"label\": \"Lead\", \"value\": \"Valve opens early\"}, {\"label\": \"Lag\", \"value\": \"Valve closes late (inlet after BDC)\"}, {\"label\": \"Overlap\", \"value\": \"Both valves open around TDC\"}]}"
+   }
+  },
+  {
+   "id": 2499,
+   "question": "With regard to the engine handling:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2499-smooth-throttle-handling.webp",
+    "explanation_image_title": "SMOOTH THROTTLE HANDLING",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"OPEN AND CLOSE THE THROTTLE SMOOTHLY\", \"subline\": \"ABRUPT CHANGES STRESS THE CRANKSHAFT AND PROPELLER\", \"blocks\": [{\"label\": \"Sudden opening\", \"value\": \"Torque shock and possible hesitation\"}, {\"label\": \"Smooth movement\", \"value\": \"Predictable power, less wear\"}, {\"label\": \"Before more power\", \"value\": \"Mixture rich, not lean\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2499-smooth-throttle-handling.webp",
+    "explanation_image_title": "SMOOTH THROTTLE HANDLING",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"OPEN AND CLOSE THE THROTTLE SMOOTHLY\", \"subline\": \"ABRUPT CHANGES STRESS THE CRANKSHAFT AND PROPELLER\", \"blocks\": [{\"label\": \"Sudden opening\", \"value\": \"Torque shock and possible hesitation\"}, {\"label\": \"Smooth movement\", \"value\": \"Predictable power, less wear\"}, {\"label\": \"Before more power\", \"value\": \"Mixture rich, not lean\"}]}"
+   }
+  },
+  {
+   "id": 2504,
+   "question": "100 LL aviation fuel or AVGAS can be identified by its:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2504-avgas-100ll-blue.webp",
+    "explanation_image_title": "AVGAS 100LL IS BLUE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AVGAS 100LL IS BLUE\", \"subline\": \"FUEL IS DYED SO ITS GRADE CAN BE SEEN IN A SAMPLE\", \"blocks\": [{\"label\": \"100LL\", \"value\": \"Blue\"}, {\"label\": \"100\", \"value\": \"Green\"}, {\"label\": \"80\", \"value\": \"Red\"}, {\"label\": \"Jet A-1\", \"value\": \"Clear / straw: never in a piston engine\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2504-avgas-100ll-blue.webp",
+    "explanation_image_title": "AVGAS 100LL IS BLUE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AVGAS 100LL IS BLUE\", \"subline\": \"FUEL IS DYED SO ITS GRADE CAN BE SEEN IN A SAMPLE\", \"blocks\": [{\"label\": \"100LL\", \"value\": \"Blue\"}, {\"label\": \"100\", \"value\": \"Green\"}, {\"label\": \"80\", \"value\": \"Red\"}, {\"label\": \"Jet A-1\", \"value\": \"Clear / straw: never in a piston engine\"}]}"
+   }
+  },
+  {
+   "id": 2520,
+   "question": "The lubricating system of a piston engine normally makes use of:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2542-gear-type-oil-pump.webp",
+    "explanation_image_title": "GEAR-TYPE OIL PUMP",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GEAR PUMP PLUS SPLASH LUBRICATION\", \"subline\": \"PRESSURE OIL FOR THE BEARINGS; OIL MIST FOR THE REST\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings, camshaft, accessories\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends, gears\"}, {\"label\": \"Oil in fuel\", \"value\": \"Only some two-strokes\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/gear-oil-pump-v1.webp",
+    "explanation_image_title": "Gear-type Oil Pump",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GEAR PUMP PLUS SPLASH LUBRICATION\", \"subline\": \"PRESSURE OIL FOR THE BEARINGS; OIL MIST FOR THE REST\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings, camshaft, accessories\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends, gears\"}, {\"label\": \"Oil in fuel\", \"value\": \"Only some two-strokes\"}]}"
+   }
+  },
+  {
+   "id": 2523,
+   "question": "The colour of Phosphate Ester hydraulic fluid is:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2523-hydraulic-fluid-phosphate-purple.webp",
+    "explanation_image_title": "HYDRAULIC FLUID IDENTIFICATION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PHOSPHATE ESTER IS PURPLE\", \"subline\": \"PURPLE AND PHOSPHATE BOTH START WITH P\", \"blocks\": [{\"label\": \"Mineral\", \"value\": \"Red\"}, {\"label\": \"Vegetable\", \"value\": \"Blue\"}, {\"label\": \"Phosphate ester\", \"value\": \"Purple (synthetic, fire-resistant)\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2523-hydraulic-fluid-phosphate-purple.webp",
+    "explanation_image_title": "HYDRAULIC FLUID IDENTIFICATION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PHOSPHATE ESTER IS PURPLE\", \"subline\": \"PURPLE AND PHOSPHATE BOTH START WITH P\", \"blocks\": [{\"label\": \"Mineral\", \"value\": \"Red\"}, {\"label\": \"Vegetable\", \"value\": \"Blue\"}, {\"label\": \"Phosphate ester\", \"value\": \"Purple (synthetic, fire-resistant)\"}]}"
+   }
+  },
+  {
+   "id": 2525,
+   "question": "Engine cylinders and barrels are usually fitted with the fins in order to:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2525-cylinder-cooling-fins.webp",
+    "explanation_image_title": "CYLINDER COOLING FINS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COOLING FINS IMPROVE ENGINE COOLING\", \"subline\": \"THEY GREATLY INCREASE THE AREA LOSING HEAT TO THE AIR\", \"blocks\": [{\"label\": \"Fins\", \"value\": \"More surface area\"}, {\"label\": \"Baffles\", \"value\": \"Direct air through the fins\"}, {\"label\": \"Cowl flaps\", \"value\": \"Control how much air flows\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cylinder-cooling-fins-v1.webp",
+    "explanation_image_title": "Cylinder Cooling Fins",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COOLING FINS IMPROVE ENGINE COOLING\", \"subline\": \"THEY GREATLY INCREASE THE AREA LOSING HEAT TO THE AIR\", \"blocks\": [{\"label\": \"Fins\", \"value\": \"More surface area\"}, {\"label\": \"Baffles\", \"value\": \"Direct air through the fins\"}, {\"label\": \"Cowl flaps\", \"value\": \"Control how much air flows\"}]}"
+   }
+  },
+  {
+   "id": 2553,
+   "question": "The primary purpose of a cowl-flap is to:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2553-cowl-flaps.webp",
+    "explanation_image_title": "COWL FLAPS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COWL FLAPS CONTROL THE COOLING AIRFLOW\", \"subline\": \"TO KEEP CYLINDER AND OIL TEMPERATURES IN LIMITS\", \"blocks\": [{\"label\": \"Open\", \"value\": \"Ground running and climb: low speed, high power\"}, {\"label\": \"Closed\", \"value\": \"Cruise and descent: less drag, no over-cooling\"}, {\"label\": \"Baffles\", \"value\": \"Only direct the air\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cowl-flap-v1.webp",
+    "explanation_image_title": "Cowl Flap",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COWL FLAPS CONTROL THE COOLING AIRFLOW\", \"subline\": \"TO KEEP CYLINDER AND OIL TEMPERATURES IN LIMITS\", \"blocks\": [{\"label\": \"Open\", \"value\": \"Ground running and climb: low speed, high power\"}, {\"label\": \"Closed\", \"value\": \"Cruise and descent: less drag, no over-cooling\"}, {\"label\": \"Baffles\", \"value\": \"Only direct the air\"}]}"
+   }
+  },
+  {
+   "id": 2559,
+   "question": "A hydraulic system operates on the basic principle that:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2559-pascals-law-hydraulic-brakes.webp",
+    "explanation_image_title": "PASCAL'S LAW: HYDRAULIC BRAKES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PASCAL'S LAW: PRESSURE IS TRANSMITTED\", \"subline\": \"PRESSURE ON A CONFINED FLUID ACTS EQUALLY IN ALL DIRECTIONS\", \"blocks\": [{\"label\": \"Fluid\", \"value\": \"Practically incompressible\"}, {\"label\": \"Small piston\", \"value\": \"Creates pressure\"}, {\"label\": \"Large piston\", \"value\": \"Gives a larger force\"}], \"formula\": \"FORCE = PRESSURE x AREA\"}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/hydraulic-brake-pascal-v1.webp",
+    "explanation_image_title": "Hydraulic Brakes: Pascal's Law",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PASCAL'S LAW: PRESSURE IS TRANSMITTED\", \"subline\": \"PRESSURE ON A CONFINED FLUID ACTS EQUALLY IN ALL DIRECTIONS\", \"blocks\": [{\"label\": \"Fluid\", \"value\": \"Practically incompressible\"}, {\"label\": \"Small piston\", \"value\": \"Creates pressure\"}, {\"label\": \"Large piston\", \"value\": \"Gives a larger force\"}], \"formula\": \"FORCE = PRESSURE x AREA\"}"
+   }
+  },
+  {
+   "id": 2564,
+   "question": "The purpose of baffles in the engine compartments is to:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2564-engine-baffles.webp",
+    "explanation_image_title": "ENGINE BAFFLES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES DIRECT AIR OVER THE CYLINDERS\", \"subline\": \"THEY FORCE COOLING AIR CLOSELY THROUGH THE FINS\", \"blocks\": [{\"label\": \"Result\", \"value\": \"Every cylinder cooled evenly\"}, {\"label\": \"Fixed\", \"value\": \"Plates and seals, not adjustable\"}, {\"label\": \"Amount of air\", \"value\": \"Controlled by the cowl flaps\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/engine-baffles-v1.webp",
+    "explanation_image_title": "Engine Baffles",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES DIRECT AIR OVER THE CYLINDERS\", \"subline\": \"THEY FORCE COOLING AIR CLOSELY THROUGH THE FINS\", \"blocks\": [{\"label\": \"Result\", \"value\": \"Every cylinder cooled evenly\"}, {\"label\": \"Fixed\", \"value\": \"Plates and seals, not adjustable\"}, {\"label\": \"Amount of air\", \"value\": \"Controlled by the cowl flaps\"}]}"
+   }
+  },
+  {
+   "id": 2566,
+   "question": "In a simple airspeed indicator, pitot pressure is supplied to:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-pitot-static-system-v1.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR: PITOT AND STATIC PRESSURE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE GOES INTO THE ASI CAPSULE\", \"subline\": \"STATIC PRESSURE FILLS THE CASE AROUND IT\", \"blocks\": [{\"label\": \"Capsule\", \"value\": \"Expands with pitot minus static\"}, {\"label\": \"Difference\", \"value\": \"Dynamic pressure: shown as airspeed\"}, {\"label\": \"Calibrated leak\", \"value\": \"Belongs to the VSI\"}], \"formula\": \"PITOT - STATIC = DYNAMIC PRESSURE\"}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/asi-pitot-capsule-v1.webp",
+    "explanation_image_title": "Airspeed Indicator: Pitot and Static",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE GOES INTO THE ASI CAPSULE\", \"subline\": \"STATIC PRESSURE FILLS THE CASE AROUND IT\", \"blocks\": [{\"label\": \"Capsule\", \"value\": \"Expands with pitot minus static\"}, {\"label\": \"Difference\", \"value\": \"Dynamic pressure: shown as airspeed\"}, {\"label\": \"Calibrated leak\", \"value\": \"Belongs to the VSI\"}], \"formula\": \"PITOT - STATIC = DYNAMIC PRESSURE\"}"
+   }
+  },
+  {
+   "id": 2580,
+   "question": "An operational advantage of the alternator is that it:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2589-alternator-vs-generator-low-rpm.webp",
+    "explanation_image_title": "ALTERNATOR VS GENERATOR AT LOW RPM",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ALTERNATORS STILL CHARGE AT LOW RPM\", \"subline\": \"EVEN AT IDLE OR WHILE TAXIING\", \"blocks\": [{\"label\": \"DC generator\", \"value\": \"Little output until RPM is fairly high\"}, {\"label\": \"Alternator\", \"value\": \"Useful output at idle; lighter\"}, {\"label\": \"But\", \"value\": \"Needs battery power to energise its field\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2589-alternator-vs-generator-low-rpm.webp",
+    "explanation_image_title": "ALTERNATOR VS GENERATOR AT LOW RPM",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ALTERNATORS STILL CHARGE AT LOW RPM\", \"subline\": \"EVEN AT IDLE OR WHILE TAXIING\", \"blocks\": [{\"label\": \"DC generator\", \"value\": \"Little output until RPM is fairly high\"}, {\"label\": \"Alternator\", \"value\": \"Useful output at idle; lighter\"}, {\"label\": \"But\", \"value\": \"Needs battery power to energise its field\"}]}"
+   }
+  },
+  {
+   "id": 2584,
+   "question": "Pitot pressure is taken from:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-pitot-static-system-v1.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR: PITOT AND STATIC PRESSURE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE: A TUBE IN THE AIRFLOW\", \"subline\": \"FORWARD-FACING, CLEAR OF DISTURBED AIR\", \"blocks\": [{\"label\": \"Pitot tube\", \"value\": \"Total pressure (static + dynamic)\"}, {\"label\": \"Static port\", \"value\": \"Flush on the fuselage side\"}, {\"label\": \"Pre-flight\", \"value\": \"Remove the pitot cover\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/pitot-tube-airflow-v1.webp",
+    "explanation_image_title": "Pitot Tube",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE: A TUBE IN THE AIRFLOW\", \"subline\": \"FORWARD-FACING, CLEAR OF DISTURBED AIR\", \"blocks\": [{\"label\": \"Pitot tube\", \"value\": \"Total pressure (static + dynamic)\"}, {\"label\": \"Static port\", \"value\": \"Flush on the fuselage side\"}, {\"label\": \"Pre-flight\", \"value\": \"Remove the pitot cover\"}]}"
+   }
+  },
+  {
+   "id": 2586,
+   "question": "The correct level of electrolyte in a lead acid battery should be maintained by the addition of:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2609-battery-electrolyte.webp",
+    "explanation_image_title": "LEAD-ACID BATTERY ELECTROLYTE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOP UP A LEAD-ACID BATTERY WITH DISTILLED WATER\", \"subline\": \"CHARGING LOSES WATER, NOT ACID\", \"blocks\": [{\"label\": \"Distilled\", \"value\": \"Tap-water minerals contaminate the plates\"}, {\"label\": \"Never add acid\", \"value\": \"Electrolyte would be too strong\"}, {\"label\": \"Hydrogen\", \"value\": \"Explosive: keep the battery ventilated\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2609-battery-electrolyte.webp",
+    "explanation_image_title": "LEAD-ACID BATTERY ELECTROLYTE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOP UP A LEAD-ACID BATTERY WITH DISTILLED WATER\", \"subline\": \"CHARGING LOSES WATER, NOT ACID\", \"blocks\": [{\"label\": \"Distilled\", \"value\": \"Tap-water minerals contaminate the plates\"}, {\"label\": \"Never add acid\", \"value\": \"Electrolyte would be too strong\"}, {\"label\": \"Hydrogen\", \"value\": \"Explosive: keep the battery ventilated\"}]}"
+   }
+  },
+  {
+   "id": 2629,
+   "question": "The green arc on an airspeed indicator represents:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v2.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR MARKINGS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GREEN ARC: NORMAL OPERATING RANGE\", \"subline\": \"FROM VS1 TO VNO\", \"blocks\": [{\"label\": \"Green\", \"value\": \"VS1 (clean stall) to VNO\"}, {\"label\": \"White\", \"value\": \"Flap operating range\"}, {\"label\": \"Yellow\", \"value\": \"Caution: smooth air only\"}, {\"label\": \"Red line\", \"value\": \"VNE\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v2.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR MARKINGS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GREEN ARC: NORMAL OPERATING RANGE\", \"subline\": \"FROM VS1 TO VNO\", \"blocks\": [{\"label\": \"Green\", \"value\": \"VS1 (clean stall) to VNO\"}, {\"label\": \"White\", \"value\": \"Flap operating range\"}, {\"label\": \"Yellow\", \"value\": \"Caution: smooth air only\"}, {\"label\": \"Red line\", \"value\": \"VNE\"}]}"
+   }
+  },
+  {
+   "id": 2634,
+   "question": "True airspeed is:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-tas-increase-with-altitude-v1.webp",
+    "explanation_image_title": "TAS INCREASES WITH ALTITUDE AT CONSTANT IAS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS = CAS CORRECTED FOR DENSITY\", \"subline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Thinner air: ASI reads less than TAS\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS about 2% above CAS per 1,000 ft\"}, {\"label\": \"IAS to CAS\", \"value\": \"Instrument and position error\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-tas-increase-with-altitude-v1.webp",
+    "explanation_image_title": "TAS INCREASES WITH ALTITUDE AT CONSTANT IAS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS = CAS CORRECTED FOR DENSITY\", \"subline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Thinner air: ASI reads less than TAS\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS about 2% above CAS per 1,000 ft\"}, {\"label\": \"IAS to CAS\", \"value\": \"Instrument and position error\"}]}"
+   }
+  },
+  {
+   "id": 2673,
+   "question": "During a level coordinated turn, the additional load imposed on the wings is a function of:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2673-load-factor-level-turn.webp",
+    "explanation_image_title": "LOAD FACTOR IN A LEVEL TURN",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOAD FACTOR DEPENDS ONLY ON BANK ANGLE\", \"subline\": \"IN A LEVEL, COORDINATED TURN\", \"blocks\": [{\"label\": \"30 degrees\", \"value\": \"1.15 g\"}, {\"label\": \"45 degrees\", \"value\": \"1.41 g\"}, {\"label\": \"60 degrees\", \"value\": \"2 g\"}], \"formula\": \"n = 1 / cos(BANK)\"}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v2.webp",
+    "explanation_image_title": "Bank Angle and Load Factor",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOAD FACTOR DEPENDS ONLY ON BANK ANGLE\", \"subline\": \"IN A LEVEL, COORDINATED TURN\", \"blocks\": [{\"label\": \"30 degrees\", \"value\": \"1.15 g\"}, {\"label\": \"45 degrees\", \"value\": \"1.41 g\"}, {\"label\": \"60 degrees\", \"value\": \"2 g\"}], \"formula\": \"n = 1 / cos(BANK)\"}"
+   }
+  },
+  {
+   "id": 2674,
+   "question": "Compass deviation in a particular aircraft:",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2674-deviation-card.webp",
+    "explanation_image_title": "DEVIATION VARIES WITH HEADING",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION VARIES WITH HEADING\", \"subline\": \"CAUSED BY THE AIRCRAFT'S OWN MAGNETIC FIELDS\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Steel parts, engine, radios, wiring\"}, {\"label\": \"Measured\", \"value\": \"By a compass swing\"}, {\"label\": \"Recorded\", \"value\": \"On the deviation card for each heading\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2674-deviation-card.webp",
+    "explanation_image_title": "DEVIATION VARIES WITH HEADING",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION VARIES WITH HEADING\", \"subline\": \"CAUSED BY THE AIRCRAFT'S OWN MAGNETIC FIELDS\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Steel parts, engine, radios, wiring\"}, {\"label\": \"Measured\", \"value\": \"By a compass swing\"}, {\"label\": \"Recorded\", \"value\": \"On the deviation card for each heading\"}]}"
+   }
+  },
+  {
+   "id": 2701,
+   "question": "The deviation error found in a magnetic compass:",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp",
+    "explanation_image_title": "COMPASS DEVIATION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION COMES FROM THE AIRCRAFT'S OWN MAGNETIC FIELDS\", \"subline\": \"IT CHANGES WITH HEADING\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Steel parts, engine, radios, wiring, loose items\"}, {\"label\": \"Reduced by\", \"value\": \"Compass swing and compensating magnets\"}, {\"label\": \"Remainder\", \"value\": \"Shown on the deviation card\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/compass-deviation-v1.webp",
+    "explanation_image_title": "Compass Deviation",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION COMES FROM THE AIRCRAFT'S OWN MAGNETIC FIELDS\", \"subline\": \"IT CHANGES WITH HEADING\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Steel parts, engine, radios, wiring, loose items\"}, {\"label\": \"Reduced by\", \"value\": \"Compass swing and compensating magnets\"}, {\"label\": \"Remainder\", \"value\": \"Shown on the deviation card\"}]}"
+   }
+  },
+  {
+   "id": 2707,
+   "question": "According to the International Standard Atmosphere, the standard sea-level temperature and lapse rate are:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-summary-v1.webp",
+    "explanation_image_title": "THE INTERNATIONAL STANDARD ATMOSPHERE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA: +15 C AT SEA LEVEL, FALLING 1.98 C PER 1,000 FT\", \"subline\": \"UP TO THE TROPOPAUSE AT 36,090 FT, THEN CONSTANT AT -56.5 C\", \"blocks\": [{\"label\": \"Sea-level pressure\", \"value\": \"1013.25 hPa\"}, {\"label\": \"Sea-level density\", \"value\": \"1.225 kg/m3\"}, {\"label\": \"3 C per 1,000 ft\", \"value\": \"Dry adiabatic rate, not ISA\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-summary-v1.webp",
+    "explanation_image_title": "THE INTERNATIONAL STANDARD ATMOSPHERE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA: +15 C AT SEA LEVEL, FALLING 1.98 C PER 1,000 FT\", \"subline\": \"UP TO THE TROPOPAUSE AT 36,090 FT, THEN CONSTANT AT -56.5 C\", \"blocks\": [{\"label\": \"Sea-level pressure\", \"value\": \"1013.25 hPa\"}, {\"label\": \"Sea-level density\", \"value\": \"1.225 kg/m3\"}, {\"label\": \"3 C per 1,000 ft\", \"value\": \"Dry adiabatic rate, not ISA\"}]}"
+   }
+  },
+  {
+   "id": 2726,
+   "question": "Under which atmospheric conditions can a normally aspirated piston engine produce the greatest power?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-humidity-density-v2.webp",
+    "explanation_image_title": "AIR DENSITY AND PERFORMANCE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST POWER IN COLD, DRY, HIGH-PRESSURE AIR\", \"subline\": \"THE DENSEST AIR PUTS THE MOST OXYGEN IN EACH CYLINDER\", \"blocks\": [{\"label\": \"Cold\", \"value\": \"Denser than warm air\"}, {\"label\": \"High pressure\", \"value\": \"Denser air\"}, {\"label\": \"Dry\", \"value\": \"Water vapour is lighter than the air it displaces\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp",
+    "explanation_image_title": "What Makes Air Dense",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST POWER IN COLD, DRY, HIGH-PRESSURE AIR\", \"subline\": \"THE DENSEST AIR PUTS THE MOST OXYGEN IN EACH CYLINDER\", \"blocks\": [{\"label\": \"Cold\", \"value\": \"Denser than warm air\"}, {\"label\": \"High pressure\", \"value\": \"Denser air\"}, {\"label\": \"Dry\", \"value\": \"Water vapour is lighter than the air it displaces\"}]}"
+   }
+  },
+  {
+   "id": 2734,
+   "question": "Which unit converts direct current into alternating current?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2607-inverter.webp",
+    "explanation_image_title": "INVERTER: DC TO AC",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN INVERTER CONVERTS DC TO AC\", \"subline\": \"FOR AC INSTRUMENTS AND AVIONICS IN A DC AIRCRAFT\", \"blocks\": [{\"label\": \"Inverter\", \"value\": \"DC to AC\"}, {\"label\": \"Rectifier\", \"value\": \"AC to DC\"}, {\"label\": \"TRU\", \"value\": \"Transformer-rectifier: AC to lower-voltage DC\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2607-inverter.webp",
+    "explanation_image_title": "INVERTER: DC TO AC",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN INVERTER CONVERTS DC TO AC\", \"subline\": \"FOR AC INSTRUMENTS AND AVIONICS IN A DC AIRCRAFT\", \"blocks\": [{\"label\": \"Inverter\", \"value\": \"DC to AC\"}, {\"label\": \"Rectifier\", \"value\": \"AC to DC\"}, {\"label\": \"TRU\", \"value\": \"Transformer-rectifier: AC to lower-voltage DC\"}]}"
+   }
+  },
+  {
+   "id": 2740,
+   "question": "Which abbreviation denotes the maximum speed with flaps extended?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vfe-v2.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR MARKINGS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE: MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"TOP OF THE WHITE ARC\", \"blocks\": [{\"label\": \"VFE\", \"value\": \"Flaps extended\"}, {\"label\": \"VLE\", \"value\": \"Landing gear extended\"}, {\"label\": \"VNO\", \"value\": \"Maximum structural cruising speed\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vfe-v2.webp",
+    "explanation_image_title": "AIRSPEED INDICATOR MARKINGS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE: MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"TOP OF THE WHITE ARC\", \"blocks\": [{\"label\": \"VFE\", \"value\": \"Flaps extended\"}, {\"label\": \"VLE\", \"value\": \"Landing gear extended\"}, {\"label\": \"VNO\", \"value\": \"Maximum structural cruising speed\"}]}"
+   }
+  },
+  {
+   "id": 2771,
+   "question": "A simple airspeed indicator is calibrated using which reference condition?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-pitot-static-system-v1.webp",
+    "explanation_image_title": "ASI: PITOT AND STATIC PRESSURE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"subline\": \"1.225 kg/m3: ONLY THERE DOES IAS EQUAL TAS\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Lower density: ASI reads below TAS\"}, {\"label\": \"TAS\", \"value\": \"Worked out from CAS, altitude and temperature\"}, {\"label\": \"Stall speeds\", \"value\": \"Stay much the same in IAS\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-sea-level-v3.webp",
+    "explanation_image_title": "ISA Sea Level",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"subline\": \"1.225 kg/m3: ONLY THERE DOES IAS EQUAL TAS\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Lower density: ASI reads below TAS\"}, {\"label\": \"TAS\", \"value\": \"Worked out from CAS, altitude and temperature\"}, {\"label\": \"Stall speeds\", \"value\": \"Stay much the same in IAS\"}]}"
+   }
+  },
+  {
+   "id": 2773,
+   "question": "After starting a cold piston engine, what should the pilot do if oil pressure does not rise within the time specified by the manufacturer?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2773-no-oil-pressure-after-start.webp",
+    "explanation_image_title": "NO OIL PRESSURE AFTER START",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO OIL PRESSURE IN TIME: SHUT DOWN AT ONCE\", \"subline\": \"THE ENGINE MAY BE RUNNING WITHOUT LUBRICATION\", \"blocks\": [{\"label\": \"Normal\", \"value\": \"Pressure within about 30 s (longer when very cold)\"}, {\"label\": \"Damage\", \"value\": \"Can occur within a minute\"}, {\"label\": \"Investigate\", \"value\": \"Low oil, failed pump or faulty gauge\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/oil-pressure-not-rising-v1.webp",
+    "explanation_image_title": "No Oil Pressure After Start",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO OIL PRESSURE IN TIME: SHUT DOWN AT ONCE\", \"subline\": \"THE ENGINE MAY BE RUNNING WITHOUT LUBRICATION\", \"blocks\": [{\"label\": \"Normal\", \"value\": \"Pressure within about 30 s (longer when very cold)\"}, {\"label\": \"Damage\", \"value\": \"Can occur within a minute\"}, {\"label\": \"Investigate\", \"value\": \"Low oil, failed pump or faulty gauge\"}]}"
+   }
+  }
+ ]
+}

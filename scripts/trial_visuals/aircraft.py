@@ -147,6 +147,41 @@ def aircraft_top(x, y, span=160, heading=0, prop=True):
 # schematic on Wikimedia Commons (Boeing_767_family_v1.0.png, crop x 240-1200, y 1060-1360). Points are in
 # crop pixels: nose tip (20, 207), tail cone (903, 192), ground under the wheels y = 284, so the aircraft is
 # 883 px long and the fin top (y 28) is 256 px high (15.9 m on a 54.9 m airframe, as published).
+# Front view, derived from the side and top views above (side units x 1.6 = top units; span 1300): cabin section
+# 160 wide x 187 deep with its centre as the origin, low wing 40 thick at the root and 26 at the tip with 6 deg
+# dihedral, tailplane span 480 level with the cabin centre, fin rising 213 above it, main wheels (radius 29)
+# 143 below on a track of 0.3 x span, nose wheel radius 22, propeller radius 110 at the spinner (0, 22).
+
+
+def aircraft_front(x, y, span=700, prop=True):
+    """Trainer seen from straight ahead, centred on the cabin at (x, y), wingspan `span` canvas units."""
+    k = span / 1300
+    st = 'stroke="#334155" stroke-width="5" stroke-linejoin="round"'
+    s = f'<g transform="translate({x:.1f},{y:.1f}) scale({k:.4f})">'
+    s += f'<path d="M -8,-30 L -5,-215 L 5,-215 L 8,-30 Z" fill="url(#ac_blue)" {st}/>'            # fin
+    s += f'<path d="M -240,-6 L 240,-6 L 240,6 L -240,6 Z" fill="url(#ac_body)" {st}/>'           # tailplane
+    for side in (-1, 1):                                                                       # wings
+        tip_y = 72 - (648 - 78) * 0.105
+        s += (f'<path d="M {side * 78},{52} L {side * 648},{tip_y - 13:.1f} L {side * 648},{tip_y + 13:.1f} '
+              f'L {side * 78},{92} Z" fill="url(#ac_wing)" {st}/>')
+        s += f'<path d="M {side * 190},{88} L {side * 195},{120}" stroke="#64748b" stroke-width="12"/>'
+        s += f'<rect x="{side * 195 - 8}" y="114" width="16" height="58" rx="7" fill="#111827"/>'          # main wheels
+    s += '<path d="M 0,90 L 0,128" stroke="#64748b" stroke-width="10"/>'
+    s += '<rect x="-7" y="125" width="14" height="44" rx="6" fill="#111827"/>'                  # nose wheel
+    s += (f'<path d="M -70,-94 C -30,-102 30,-102 70,-94 C 82,-60 82,40 74,72 C 50,94 -50,94 -74,72 '
+          f'C -82,40 -82,-60 -70,-94 Z" fill="url(#ac_body)" {st}/>')                            # fuselage
+    s += f'<path d="M -74,30 C -80,52 -76,66 -74,72 C -50,94 50,94 74,72 C 76,66 80,52 74,30 Z" fill="url(#ac_blue)"/>'
+    s += f'<path d="M -58,-82 L 58,-82 L 52,-34 L -52,-34 Z" fill="url(#ac_glass)" stroke="#111827" stroke-width="5"/>'
+    s += f'<ellipse cx="0" cy="22" rx="62" ry="50" fill="#e5e9ef" {st}/>'                          # cowling
+    s += '<ellipse cx="-30" cy="46" rx="16" ry="9" fill="#1f2937"/><ellipse cx="30" cy="46" rx="16" ry="9" fill="#1f2937"/>'
+    if prop:
+        s += '<circle cx="0" cy="22" r="110" fill="#64748b" fill-opacity="0.16"/>'
+        for a in (25, 205):
+            s += f'<ellipse cx="0" cy="-33" rx="11" ry="55" fill="#1f2937" transform="rotate({a} 0 22)"/>'
+    s += f'<circle cx="0" cy="22" r="18" fill="url(#ac_spinner)" {st}/>'
+    return s + "</g>\n"
+
+
 AL_BODY = [(20, 207), (24, 199), (31, 192), (40, 185), (52, 178), (66, 172), (84, 167), (110, 163), (150, 160),
            (720, 160), (780, 167), (840, 177), (880, 184), (898, 187), (903, 192), (900, 198), (888, 204),
            (860, 212), (820, 222), (760, 233), (700, 244), (640, 250), (560, 253), (300, 253), (140, 252),

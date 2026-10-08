@@ -11,7 +11,7 @@ aerial view of the ground, angle arcs and north arrows.
 import math
 import random
 
-from aircraft import aircraft, aircraft_defs, aircraft_top, airliner_side  # noqa: F401  (re-exported for scene modules)
+from aircraft import aircraft, aircraft_defs, aircraft_front, aircraft_top, airliner_side  # noqa: F401  (re-exported for scene modules)
 
 W = 900                      # canvas width
 PHONE_W = 328                # width the picture gets on a phone (CSS px)

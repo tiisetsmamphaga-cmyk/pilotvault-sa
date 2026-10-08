@@ -12,8 +12,8 @@ from PIL import Image
 from common import Registry
 from kit import embed, template
 from nav_phone import NAV_DEFS, NORTH_H, north_panel
-from scene import (BLUE, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, circle, defs, flow, head, label,
-                   lg, path, stack, stack_height)
+from scene import (BLUE, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W, aircraft_front, circle, defs, flow,
+                   head, label, lg, path, stack, stack_height)
 
 R = Registry("aircraft-technical-and-general", "/explanation-images/aircraft-technical-and-general/refined-batch-1")
 
@@ -304,3 +304,89 @@ def _():
        template("DEVIATION: THE AIRCRAFT'S OWN MAGNETIC FIELDS PULL THE COMPASS"), h=stack_height([NORTH_H]), w=W)
 def _():
     return picture([north_panel("dev")])
+
+
+# ------------------------------------------------------------------ pitot-static: the ASI
+# Redrawn from the textbook pitot-static figure used in Navigation: the pitot tube faces into the airflow and feeds
+# the capsule; static pressure from the static vent fills the instrument case around the capsule.
+
+PS_H = 540
+
+
+def capsule(cx, top, bottom, half_w, folds=5):
+    """Corrugated capsule (bellows), drawn with smooth waisted folds like the textbook's diaphragm."""
+    step = (bottom - top) / folds
+    right = f"M {cx - half_w:.1f},{top:.1f} L {cx + half_w:.1f},{top:.1f} "
+    for i in range(folds):
+        y0 = top + i * step
+        right += f"Q {cx + half_w * 0.72:.1f},{y0 + step / 2:.1f} {cx + half_w:.1f},{y0 + step:.1f} "
+    left = f"L {cx - half_w:.1f},{bottom:.1f} "
+    for i in range(folds, 0, -1):
+        y0 = top + i * step
+        left += f"Q {cx - half_w * 0.72:.1f},{y0 - step / 2:.1f} {cx - half_w:.1f},{y0 - step:.1f} "
+    s = path(right + left + "Z", "#f9c4bb", RED, 6)
+    for i in range(1, folds):
+        y = top + i * step
+        s += path(f"M {cx - half_w + 4:.1f},{y:.1f} L {cx + half_w - 4:.1f},{y:.1f}", "none", RED, 3)
+    return s
+
+
+def pitot_panel(focus):
+    def draw(w, h):
+        s = path("M 30,470 L 520,470", "none", "#64748b", 10)                                   # fuselage skin
+        s += path("M 150,395 L 150,470", "none", DARK, 26) + path("M 150,395 L 150,470", "none", "#bfdbfe", 14)
+        s += path("M 60,90 L 420,90 L 420,395 L 60,395 Z", "#dbeafe", DARK, 8)                    # instrument case
+        s += path("M 300,230 L 820,230", "none", DARK, 40) + path("M 300,230 L 830,230", "none", "#f9c4bb", 22)
+        s += path("M 806,206 L 830,206 M 806,254 L 830,254", "none", DARK, 8)                    # open mouth
+        s += capsule(240, 130, 340, 70)
+        for y in (190, 230, 270):
+            s += flow([(890, y + (0 if y == 230 else (y - 230) * 0.4)), (845, y)], BLUE, "head_blue", 8)
+        s += flow([(150, 520), (150, 482)], BLUE, "head_blue", 7)
+        if focus == "capsule":
+            s += label(240, 70, "Capsule", TXT_M, RED, "middle")
+            s += label(190, 445, "Static vent", TXT_M, NAVY_BLUE, "start")
+        else:
+            s += label(620, 190, "Pitot tube", TXT_M, RED, "middle")
+            s += label(890, 340, "Airflow", TXT_M, BLUE, "end")
+        return s
+    caption = ("PITOT PRESSURE GOES INTO THE CAPSULE" if focus == "capsule" else "THE PITOT TUBE FACES INTO THE AIRFLOW")
+    return dict(h=PS_H, sky="chart_paper", draw=draw, caption=caption, color=RED)
+
+
+@R.add(2566, "asi-pitot-capsule-v1", "Airspeed Indicator: Pitot and Static",
+       template("PITOT PRESSURE GOES INTO THE CAPSULE; STATIC FILLS THE CASE"), h=stack_height([PS_H]), w=W)
+def _():
+    return picture([pitot_panel("capsule")])
+
+
+@R.add(2584, "pitot-tube-airflow-v1", "Pitot Tube",
+       template("PITOT PRESSURE IS TAKEN FROM A TUBE FACING INTO THE AIRFLOW"), h=stack_height([PS_H]), w=W)
+def _():
+    return picture([pitot_panel("tube")])
+
+
+# ------------------------------------------------------------------ propeller torque reaction
+# Seen from ahead: the propeller turns one way (anticlockwise from the front, clockwise from the cockpit) and the
+# reaction tries to roll the aircraft the other way.
+
+PT_H = 560
+
+
+def torque_panel():
+    def draw(w, h):
+        cx, cy, span = 450, 260, 840
+        s = aircraft_front(cx, cy, span)
+        pc = (cx, cy + 22 * span / 1300)
+        s += path(arc(*pc, 105, 60, -200), "none", NAVY_BLUE, 8, ' marker-end="url(#hd_navy)"')
+        s += path(arc(cx, cy, 420, 66, 114), "none", RED, 9, ' marker-end="url(#hd_red)"')
+        s += path(arc(cx, cy, 420, -114, -66), "none", RED, 9, ' marker-end="url(#hd_red)"')
+        s += label(575, 470, "Propeller turns", TXT_M, NAVY_BLUE, "start")
+        s += label(450, 530, "Aircraft rolls the other way", TXT_M, RED, "middle")
+        return s
+    return dict(h=PT_H, sky="sky_day", draw=draw, caption="TORQUE: ACTS OPPOSITE TO THE PROPELLER", color=RED)
+
+
+@R.add(2450, "propeller-torque-reaction-v1", "Propeller Torque Reaction",
+       template("TORQUE REACTION ACTS OPPOSITE TO THE PROPELLER'S ROTATION"), h=stack_height([PT_H]), w=W)
+def _():
+    return picture([torque_panel()])

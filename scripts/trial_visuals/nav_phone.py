@@ -1020,3 +1020,166 @@ def tv_panel():
        h=stack_height([TV_H]), w=W)
 def _():
     return picture([tv_panel()])
+
+
+# ------------------------------------------------------------------ flight computer (CRP) scales (the manual's figures, redrawn)
+
+CRP_H = 420
+CRP_C, CRP_R = (450, 720), 570          # the computer's centre (off the panel) and the edge between the two discs
+CRP_BAND = 105                          # width of the outer disc's band
+
+
+def _crp_deg(v):
+    """Log scale: one turn of the disc is one decade (10 to 100)."""
+    return 360 * math.log10(v / 10)
+
+
+def crp_panel(outer_name, inner_name, outer_at_60, pair, caption):
+    """Outer scale set with `outer_at_60` over the 60 index; `pair` = (outer, inner) read further round."""
+    th60 = _crp_deg(60)
+
+    def near(v, ref):
+        """Disc angle of value v (any decade), taken within half a turn of ref."""
+        t = _crp_deg(v * 10 ** -math.floor(math.log10(v)) * 10) % 360
+        return t + 360 * round((ref - t) / 360)
+
+    thp = near(pair[1], th60)
+    centre = (th60 + thp) / 2
+    shift = near(outer_at_60, th60) - th60
+
+    def at(theta, r):
+        return compass_xy(*CRP_C, r, theta - centre)
+
+    def num(v, theta, r, size, color):
+        x, y = at(theta, r)
+        return f'<g transform="rotate({theta - centre:.1f} {x:.1f} {y:.1f})">' + label(x, y + size * 0.35, str(v), size, color, "middle") + "</g>"
+
+    def draw(w, h):
+        span = 62
+        a0, a1 = -span, span
+        s = f'<rect x="0" y="0" width="{w}" height="{h}" fill="#ffffff"/>'
+        p0, p1 = compass_xy(*CRP_C, CRP_R, a0), compass_xy(*CRP_C, CRP_R, a1)
+        q0, q1 = compass_xy(*CRP_C, CRP_R + CRP_BAND, a0), compass_xy(*CRP_C, CRP_R + CRP_BAND, a1)
+        r2 = CRP_R + CRP_BAND
+        s += (f'<path d="M {p0[0]:.1f},{p0[1]:.1f} A {CRP_R},{CRP_R} 0 0 1 {p1[0]:.1f},{p1[1]:.1f} '
+              f'L {q1[0]:.1f},{q1[1]:.1f} A {r2},{r2} 0 0 0 {q0[0]:.1f},{q0[1]:.1f} Z" fill="#d9e3f1"/>')
+        s += path(f"M {p0[0]:.1f},{p0[1]:.1f} A {CRP_R},{CRP_R} 0 0 1 {p1[0]:.1f},{p1[1]:.1f}", "none", INK, 5)
+        # graduations on both discs: every unit, longer every 5 and 10 (halves from 10 to 20)
+        for disc, off, sign in (("outer", shift, 1), ("inner", 0, -1)):
+            v = 10.0
+            while v < 100:
+                th = _crp_deg(v) - off
+                for t in (th - 360, th, th + 360):
+                    if abs(t - centre) < span - 1:
+                        big = v % 10 == 0 or v == 15
+                        mid = v % 5 == 0
+                        ln = 30 if big else 22 if mid else 13
+                        x0, y0 = at(t, CRP_R + sign * 3)
+                        x1, y1 = at(t, CRP_R + sign * (3 + ln))
+                        s += path(f"M {x0:.1f},{y0:.1f} L {x1:.1f},{y1:.1f}", "none", "#475569", 2.5 if mid else 1.6)
+                v += 0.5 if v < 20 else 1
+        # the two readings: a red line across both discs
+        for th in (th60, thp):
+            x0, y0 = at(th, CRP_R - (0 if th == th60 else 40))      # the triangle marks the 60 below the edge
+            x1, y1 = at(th, CRP_R + 48)
+            s += path(f"M {x0:.1f},{y0:.1f} L {x1:.1f},{y1:.1f}", "none", RED, 4)
+        s += num(outer_at_60, th60, CRP_R + 72, TXT_L, INK)
+        # the 60 index: an upright triangle with its point on the edge
+        tx, ty = at(th60, CRP_R - 4)
+        s += (f'<path d="M {tx:.1f},{ty:.1f} L {tx + 50:.1f},{ty + 92:.1f} L {tx - 50:.1f},{ty + 92:.1f} Z" '
+              f'fill="#ffffff" stroke="{NAVY_BLUE}" stroke-width="4" stroke-linejoin="round"/>')
+        s += label(tx, ty + 80, "60", TXT_M, NAVY_BLUE, "middle")
+        s += num(pair[0], thp, CRP_R + 72, TXT_L, INK)
+        s += num(pair[1], thp, CRP_R - 68, TXT_L, INK)
+        s += label(450, CRP_C[1] - CRP_R - 55, outer_name, TXT_M, "#334155", "middle")
+        s += label(450, CRP_C[1] - CRP_R + 60, inner_name, TXT_M, "#334155", "middle")
+        return s
+    return dict(h=CRP_H, sky="aerial", draw=draw, caption=caption, color=NAVY_BLUE)
+
+
+@R.add(1812, "crp-groundspeed-v1", "Flight Computer: Groundspeed",
+       template("SET TIME UNDER DISTANCE; READ GROUNDSPEED OVER THE 60",
+                "THE 60 INDEX MARKS ONE HOUR",
+                [("Outer scale", "Distance (NM)"), ("Inner scale", "Time (minutes)"),
+                 ("Example", "16 NM in 10 min: 96 kt over the 60")]),
+       h=stack_height([CRP_H]), w=W)
+def _():
+    return picture([crp_panel("Distance", "Time", 96, (16, 10), "16 NM IN 10 MIN: 96 KT OVER THE 60")])
+
+
+@R.add(1762, "crp-fuel-v1", "Flight Computer: Fuel",
+       template("SET THE FUEL FLOW OVER THE 60; READ FUEL OVER THE TIME",
+                "THE 60 INDEX MARKS ONE HOUR",
+                [("Outer scale", "Fuel (litres or USG)"), ("Inner scale", "Time (minutes)"),
+                 ("Example", "30 litres/hr: 4 litres in 8 min")]),
+       h=stack_height([CRP_H]), w=W)
+def _():
+    return picture([crp_panel("Litres", "Time", 30, (4, 8), "30 L/HR OVER THE 60: 4 L IN 8 MIN")])
+
+
+# ------------------------------------------------------------------ compass deviation (the manual's figures, redrawn)
+
+DEV_H = 900
+FIELD_C = NAVY_BLUE                      # the aircraft's own (unwanted) magnetic fields
+
+
+def dev_panel():
+    def draw(w, h):
+        s = f'<rect x="0" y="0" width="{w}" height="{h}" fill="#ffffff"/>'
+        a = (270, 760)                   # the compass, in the aircraft
+        s += line(a, (a[0], 150), MAG_C, "head_mag")
+        s += line(a, compass_xy(*a, 612, 8), COMP_C, "head_comp")
+        s += angle_arc(*a, 470, 0, 8, INK, ARC_W)
+        s += line(a, compass_xy(*a, 300, 42), FIELD_C, "nh_navy")
+        s += aircraft_top(*a, 170, heading=90)
+        s += label(245, 100, "Magnetic\nnorth", TXT_L, MAG_C, "end")
+        s += label(360, 100, "Compass\nnorth", TXT_L, "#9a5b00")
+        s += label(375, 330, "Compass deviation", TXT_L, INK)
+        s += label(500, 560, "Total effect of\nunwanted magnetic\nfields of aircraft", TXT_M, FIELD_C)
+        s += label(380, 870, "HDG 090°M", TXT_L, INK)
+        return s
+    return dict(h=DEV_H, sky="aerial", draw=draw, caption="EAST: COMPASS NORTH EAST OF MAGNETIC",
+                color=NAVY_BLUE)
+
+
+@R.add(1785, "compass-deviation-v2", "Compass Deviation",
+       template("DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH",
+                "CAUSED BY THE AIRCRAFT'S OWN MAGNETIC FIELDS",
+                [("Deviation east", "Compass north lies east of magnetic north"),
+                 ("Changes with", "Heading")]),
+       h=stack_height([DEV_H]), w=W)
+def _():
+    return picture([dev_panel()])
+
+
+NIL_H = 500
+
+
+def nil_panel(hdg):
+    def draw(w, h):
+        s = f'<rect x="0" y="0" width="{w}" height="{h}" fill="#ffffff"/>'
+        up = hdg < 180
+        p = (330, 330 if up else 250)
+        s += line(p, (p[0], 55), MAG_C, "head_mag")
+        s += path(f"M {p[0]},{p[1]} L {p[0]},70", "none", COMP_C, 4, ' stroke-dasharray="14 12"')
+        if up:
+            s += line((385, 250), (385, 120), FIELD_C, "nh_navy")
+        else:
+            s += line((385, 330), (385, 470), FIELD_C, "nh_navy")
+        s += aircraft_top(*p, 150, heading=hdg)
+        s += label(360, 95, "Magnetic = compass north", TXT_M, INK)
+        s += label(415, 205 if up else 405, "Unwanted\nmagnetic fields", TXT_M, FIELD_C)
+        s += label(225, p[1] + 75, f"HDG {hdg:03d}", TXT_L, INK, "end")
+        return s
+    return dict(h=NIL_H, sky="aerial", draw=draw, caption=f"HDG {hdg:03d}: FIELDS IN LINE, NO DEVIATION",
+                color=NAVY_BLUE)
+
+
+@R.add(1846, "compass-nil-deviation-v2", "Compass Deviation Changes with Heading",
+       template("DEVIATION CHANGES WITH HEADING",
+                "THE AIRCRAFT'S FIELDS TURN WITH IT; THE EARTH'S DO NOT",
+                [("Fields in line with the needle", "No deviation"),
+                 ("Any other heading", "The fields pull the needle aside")]),
+       h=stack_height([NIL_H, NIL_H]), w=W)
+def _():
+    return picture([nil_panel(45), nil_panel(225)])

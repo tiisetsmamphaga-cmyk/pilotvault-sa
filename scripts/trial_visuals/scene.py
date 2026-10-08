@@ -777,6 +777,37 @@ def angle_arc(cx, cy, r, a0, a1, color, w=7, clockwise=False):
     return path(f"M {x0:.1f},{y0:.1f} A {r},{r} 0 {large} {sweep} {x1:.1f},{y1:.1f}", "none", color, w)
 
 
+# ------------------------------------------------------------------ aerofoil (NACA 4-digit section, not freehand)
+
+def aerofoil_pts(x, y, chord, aoa=0.0, m=0.02, p=0.4, t=0.12, n=60):
+    """Outline of a NACA 4-digit aerofoil (default 2412, a typical light-aircraft section): leading edge at (x, y),
+    chord `chord` canvas units, nose up by `aoa` degrees (the trailing edge drops to the right)."""
+    a = math.radians(aoa)
+    upper, lower = [], []
+    for i in range(n + 1):
+        xc = (1 - math.cos(math.pi * i / n)) / 2                     # cosine spacing: more points at the nose
+        yt = 5 * t * (0.2969 * math.sqrt(xc) - 0.1260 * xc - 0.3516 * xc ** 2 + 0.2843 * xc ** 3 - 0.1015 * xc ** 4)
+        yc = m / p ** 2 * (2 * p * xc - xc ** 2) if xc < p else m / (1 - p) ** 2 * (1 - 2 * p + 2 * p * xc - xc ** 2)
+        dy = 2 * m / p ** 2 * (p - xc) if xc < p else 2 * m / (1 - p) ** 2 * (p - xc)
+        th = math.atan(dy)
+        upper.append((xc - yt * math.sin(th), yc + yt * math.cos(th)))
+        lower.append((xc + yt * math.sin(th), yc - yt * math.cos(th)))
+    pts = upper[::-1] + lower[1:]
+    # chord units -> canvas (y down), rotated nose-up about the leading edge
+    return [(x + chord * (u * math.cos(a) + v * math.sin(a)), y + chord * (u * math.sin(a) - v * math.cos(a))) for u, v in pts]
+
+
+def chord_point(x, y, chord, aoa, frac):
+    """Point `frac` of the way along the chord line from the leading edge."""
+    a = math.radians(aoa)
+    return x + chord * frac * math.cos(a), y + chord * frac * math.sin(a)
+
+
+def aerofoil(x, y, chord, aoa=0.0, fill="#cbd5e1", stroke="#475569", w=4):
+    pts = aerofoil_pts(x, y, chord, aoa)
+    return path("M " + " L ".join(f"{px:.1f},{py:.1f}" for px, py in pts) + " Z", fill, stroke, w)
+
+
 def svg_doc(body, w, h):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}">'
             f'<rect width="{w}" height="{h}" fill="#ffffff"/>{defs(*COMMON_DEFS)}{body}</svg>')

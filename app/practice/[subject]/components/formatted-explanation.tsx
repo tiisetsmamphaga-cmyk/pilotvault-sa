@@ -1,5 +1,7 @@
 "use client"
 
+import { isEquationLine, MathLine } from "./math-text"
+
 type Section = {
   label: string
   suffix: string | null
@@ -62,18 +64,52 @@ function parseSections(text: string): Section[] | null {
   return sections.length > 0 ? sections : null
 }
 
+// Sections that hold worked sums: their equation lines are set as school-style maths.
+const MATH_SECTIONS = new Set(["FORMULA", "METHOD", "WORKING", "SOLVE"])
+
 // Bolds inline annotations like "Exam tip:", "Rough check:", "Trap:" within a body of text.
-function renderBody(body: string) {
-  const trimmed = body.trim()
-  const parts = trimmed.split(/(Exam tip:|Rough check:|Trap:)/g)
+function renderText(text: string, key: string) {
+  const parts = text.split(/(Exam tip:|Rough check:|Trap:)/g)
   return parts.map((part, i) =>
     part === "Exam tip:" || part === "Rough check:" || part === "Trap:" ? (
-      <strong key={i} className="font-semibold text-slate-900">
+      <strong key={`${key}-${i}`} className="font-semibold text-slate-900">
         {part}
       </strong>
     ) : (
       part
     ),
+  )
+}
+
+// In maths sections each line is its own row, so a sum set as a fraction gets its own height and a blank line
+// between steps is a small, even gap rather than a whole empty line.
+function renderBody(body: string, label?: string) {
+  const trimmed = body.trim()
+  if (!label || !MATH_SECTIONS.has(label)) return renderText(trimmed, "t")
+  return trimmed.split("\n").map((line, i) =>
+    line.trim() === "" ? (
+      <span key={i} className="block h-3" aria-hidden />
+    ) : (
+      <span key={i} className="block">
+        {isEquationLine(line) && !/Exam tip:|Rough check:|Trap:/.test(line) ? <MathLine line={line} /> : renderText(line, `l${i}`)}
+      </span>
+    ),
+  )
+}
+
+// The ANSWER section's first line is the answer; anything after it (an exam tip) is ordinary text.
+function splitAnswer(body: string) {
+  const lines = body.trim().split("\n")
+  return { answer: lines[0], rest: lines.slice(1).join("\n").trim() }
+}
+
+function AnswerBody({ body, className }: { body: string; className: string }) {
+  const { answer, rest } = splitAnswer(body)
+  return (
+    <>
+      <p className={className}>{answer}</p>
+      {rest && <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">{renderText(rest, "a")}</p>}
+    </>
   )
 }
 
@@ -103,15 +139,13 @@ export function FormattedExplanation({ text, children }: { text: string; childre
                 </span>
                 {section.suffix && <span className="text-xs font-medium text-slate-500">{section.suffix}</span>}
               </div>
-              <p
-                className={
-                  section.label === "ANSWER"
-                    ? "mt-2 whitespace-pre-line text-lg font-bold leading-relaxed text-green-900"
-                    : "mt-2 whitespace-pre-line leading-relaxed text-slate-700"
-                }
-              >
-                {renderBody(section.body)}
-              </p>
+              {section.label === "ANSWER" ? (
+                <AnswerBody body={section.body} className="mt-2 text-lg font-bold leading-relaxed text-green-900" />
+              ) : (
+                <p className="mt-2 whitespace-pre-line leading-relaxed text-slate-700">
+                  {renderBody(section.body, section.label)}
+                </p>
+              )}
             </div>
           )
         })}
@@ -130,15 +164,13 @@ export function FormattedExplanation({ text, children }: { text: string; childre
               <span className={`text-xs font-bold tracking-wide ${labelColor}`}>{section.label}</span>
               {section.suffix && <span className="text-xs font-medium text-slate-400">{section.suffix}</span>}
             </div>
-            <p
-              className={
-                section.label === "ANSWER"
-                  ? "mt-1 whitespace-pre-line text-lg font-bold leading-relaxed text-green-800"
-                  : "mt-1 whitespace-pre-line leading-relaxed text-slate-700"
-              }
-            >
-              {renderBody(section.body)}
-            </p>
+            {section.label === "ANSWER" ? (
+              <AnswerBody body={section.body} className="mt-1 text-lg font-bold leading-relaxed text-green-800" />
+            ) : (
+              <p className="mt-1 whitespace-pre-line leading-relaxed text-slate-700">
+                {renderBody(section.body, section.label)}
+              </p>
+            )}
           </div>
         )
       })}

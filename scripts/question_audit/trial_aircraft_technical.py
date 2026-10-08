@@ -10,10 +10,10 @@ from its figures in HD; its two photographs (strut-braced monoplane, finned cyli
 (atg_phone.py), as are the pitot-static diagram and a front view of the trainer for propeller torque. The
 load-factor question moves to the textbook chart, ASI calibration and engine power to the Met ISA and air
 density pictures; the tailplane and aft-CG questions get their own side-view scenes; one of three airspeed-indicator questions (2724) gave way to engine power in dense air (2726). The
-lubrication cutaway (gear-pump pressure to the main bearing and big end, splash for the rest) carries the
-main-bearing question (2549) in the trial set; 2520 keeps it in the bank.
+lubrication question (2520) leaves the trial set: its cutaway was not strong enough for the trial, so it stays
+on 2520 in the bank, and the turn-coordinator taxi check (2710, textbook instrument) takes the place.
 """
-TRIAL = [2428, 2474, 2500, 2549, 2525, 2566, 2584, 2673, 2675, 2701, 2768, 2771, 2773,
+TRIAL = [2428, 2474, 2500, 2710, 2525, 2566, 2584, 2673, 2675, 2701, 2768, 2771, 2773,
          2553, 2559, 2564, 2464, 2629, 2740, 2726, 2466, 2450, 2634, 2707, 2432]
 
 ATG = "/explanation-images/aircraft-technical-and-general/refined-batch-1/"
@@ -23,7 +23,6 @@ PICTURE = {
     2428: (ATG + "semi-cantilever-struts-v1.webp", "Semi-cantilever Monoplane"),
     2474: (ATG + "valve-lead-v1.webp", "Valve Lead"),
     2520: (ATG + "lubrication-pump-splash-v1.webp", "Gear Pump and Splash Lubrication"),
-    2549: (ATG + "lubrication-pump-splash-v1.webp", "Gear Pump and Splash Lubrication"),
     2525: (ATG + "cylinder-cooling-fins-v1.webp", "Cylinder Cooling Fins"),
     2773: (ATG + "oil-pressure-not-rising-v1.webp", "No Oil Pressure After Start"),
     2701: (ATG + "compass-deviation-v1.webp", "Compass Deviation"),

@@ -227,7 +227,7 @@
   {
    "id": 2520,
    "question": "The lubricating system of a piston engine normally makes use of:",
-   "why": "leaves the trial set (2549 carries the lubrication cutaway); keeps the new picture in the bank",
+   "why": "leaves the trial set (its new lubrication cutaway was not strong enough for the trial); keeps the cutaway in the bank",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2542-gear-type-oil-pump.webp",
@@ -273,23 +273,6 @@
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/cylinder-cooling-fins-v1.webp",
     "explanation_image_title": "Cylinder Cooling Fins",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COOLING FINS IMPROVE ENGINE COOLING\", \"subline\": \"THEY GREATLY INCREASE THE AREA LOSING HEAT TO THE AIR\", \"blocks\": [{\"label\": \"Fins\", \"value\": \"More surface area\"}, {\"label\": \"Baffles\", \"value\": \"Direct air through the fins\"}, {\"label\": \"Cowl flaps\", \"value\": \"Control how much air flows\"}]}"
-   }
-  },
-  {
-   "id": 2549,
-   "question": "Lubrication of the main bearings and crankshaft of the engine is provided:",
-   "why": "joins the trial set",
-   "before": {
-    "is_trial_question": false,
-    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2549-crankshaft-bearing-lubrication.webp",
-    "explanation_image_title": "CRANKSHAFT AND BEARING LUBRICATION",
-    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"THROUGH GALLERIES AND CRANKSHAFT DRILLINGS TO THE BIG ENDS\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why\", \"value\": \"Heaviest loads need a positive supply\"}]}"
-   },
-   "after": {
-    "is_trial_question": true,
-    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/lubrication-pump-splash-v1.webp",
-    "explanation_image_title": "Gear Pump and Splash Lubrication",
-    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"THROUGH GALLERIES AND CRANKSHAFT DRILLINGS TO THE BIG ENDS\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why\", \"value\": \"Heaviest loads need a positive supply\"}]}"
    }
   },
   {
@@ -511,6 +494,23 @@
     "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-summary-v1.webp",
     "explanation_image_title": "THE INTERNATIONAL STANDARD ATMOSPHERE",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA: +15 C AT SEA LEVEL, FALLING 1.98 C PER 1,000 FT\", \"subline\": \"UP TO THE TROPOPAUSE AT 36,090 FT, THEN CONSTANT AT -56.5 C\", \"blocks\": [{\"label\": \"Sea-level pressure\", \"value\": \"1013.25 hPa\"}, {\"label\": \"Sea-level density\", \"value\": \"1.225 kg/m3\"}, {\"label\": \"3 C per 1,000 ft\", \"value\": \"Dry adiabatic rate, not ISA\"}]}"
+   }
+  },
+  {
+   "id": 2710,
+   "question": "When checking a turn coordinator while taxying, the correct indications are:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-skid-right-v2.webp",
+    "explanation_image_title": "TURN COORDINATOR: BALL TO THE OUTSIDE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAXI CHECK: NEEDLE WITH THE TURN, BALL OUTSIDE\", \"subline\": \"LIKE A PASSENGER PUSHED OUTWARDS IN A CAR\", \"blocks\": [{\"label\": \"Needle / aircraft\", \"value\": \"Same direction as the turn\"}, {\"label\": \"Ball\", \"value\": \"Outside of the turn\"}, {\"label\": \"Faulty if\", \"value\": \"Needle still, or ball moves inwards\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-skid-right-v2.webp",
+    "explanation_image_title": "TURN COORDINATOR: BALL TO THE OUTSIDE",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAXI CHECK: NEEDLE WITH THE TURN, BALL OUTSIDE\", \"subline\": \"LIKE A PASSENGER PUSHED OUTWARDS IN A CAR\", \"blocks\": [{\"label\": \"Needle / aircraft\", \"value\": \"Same direction as the turn\"}, {\"label\": \"Ball\", \"value\": \"Outside of the turn\"}, {\"label\": \"Faulty if\", \"value\": \"Needle still, or ball moves inwards\"}]}"
    }
   },
   {

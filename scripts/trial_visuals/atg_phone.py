@@ -38,7 +38,7 @@ ATG_DEFS = (dim_head("dim_navy", NAVY_BLUE), dim_head("dim_red", RED), head("hd_
 
 def picture(panels):
     body, _ = stack(panels)
-    return defs(*COMMON_DEFS, *NAV_DEFS, *ATG_DEFS) + body
+    return defs(*COMMON_DEFS, *NAV_DEFS, *ATG_DEFS, *LUB_DEFS) + body
 
 
 def polar(cx, cy, r, deg):
@@ -479,45 +479,93 @@ def _():
 
 
 # ------------------------------------------------------------------ lubrication: gear pump pressure plus splash
-# An engine cutaway after the manual's piston-and-cylinder figures: the gear pump in the sump sends pressure oil up
-# a gallery to the crankshaft main bearing; the turning crank throws oil splash onto the cylinder walls and piston.
+# An engine cutaway redrawn from the AGK manual's cylinder figure (finned barrel, inclined inlet and exhaust valves,
+# piston with three rings, connecting rod, crank in a bell-shaped crankcase; piston width : rod length about
+# 1 : 0.88; stroke about 0.65 of the bore, as on flat-four aero engines) and its crankshaft figure (oil drillings through the webs).
+# The gear pump in the sump sends pressure oil up a gallery to the main bearing and through the web to the big end;
+# the big end throws splash onto the cylinder walls and the underside of the piston.
 
-LB_H = 720
+LB_H = 880
+AX, MAIN, PIN, SMALL = 430, (430, 612), (516, 572), (430, 330)
+LUB_DEFS = (lg("alu", [(0, "#f1f4f8"), (1, "#c5ced9")]), lg("alu_h", [(0, "#c5ced9"), (0.5, "#f4f6f9"), (1, "#b4bfcc")], 0, 0, 1, 0),
+            lg("barrel", [(0, "#9aa5b4"), (0.5, "#e9edf2"), (1, "#8b96a6")], 0, 0, 1, 0),
+            lg("chamber", [(0, "#fde9c8"), (1, "#f7d9a8")]))
 
 
-def drop(x, y, r=9):
-    return path(f"M {x:.1f},{y - r * 1.6:.1f} Q {x + r:.1f},{y - r * 0.2:.1f} {x:.1f},{y + r:.1f} "
-                f"Q {x - r:.1f},{y - r * 0.2:.1f} {x:.1f},{y - r * 1.6:.1f} Z", OIL, "#a16207", 2)
+def drop(x, y, r=9, ang=0):
+    return (f'<g transform="rotate({ang:.0f} {x:.1f} {y:.1f})">' +
+            path(f"M {x:.1f},{y - r * 1.7:.1f} Q {x + r:.1f},{y - r * 0.1:.1f} {x:.1f},{y + r:.1f} "
+                 f"Q {x - r:.1f},{y - r * 0.1:.1f} {x:.1f},{y - r * 1.7:.1f} Z", "url(#oil)", "#a16207", 2) + "</g>")
+
+
+def valve(x0, y0, ang, length=86):
+    """Poppet valve seated at (x0, y0), stem leaning `ang` degrees from vertical, spring round the upper stem."""
+    g = f'<g transform="rotate({ang} {x0:.1f} {y0:.1f})">'
+    g += path(f"M {x0:.1f},{y0:.1f} L {x0:.1f},{y0 - length:.1f}", "none", DARK, 9)
+    g += path(f"M {x0 - 16:.1f},{y0 - 40:.1f} " + " ".join(
+        f"L {x0 + (16 if k % 2 else -16):.1f},{y0 - 40 - 7 * (k + 1):.1f}" for k in range(6)), "none", "#64748b", 5)
+    g += path(f"M {x0 - 30:.1f},{y0:.1f} L {x0 + 30:.1f},{y0:.1f} L {x0 + 7:.1f},{y0 - 18:.1f} L {x0 - 7:.1f},{y0 - 18:.1f} Z",
+              "url(#steel)", DARK, 4)
+    return g + "</g>"
 
 
 def lubrication_panel():
     def draw(w, h):
-        s = path("M 330,330 L 220,380 L 220,560 L 240,690 L 660,690 L 680,560 L 680,380 L 570,330 Z",
-                 "#e2e8f0", DARK, 8)                                                    # crankcase and sump
-        s += path("M 236,612 L 664,612 L 656,682 L 244,682 Z", "url(#oil)")              # oil in the sump
-        s += path("M 330,40 L 570,40 L 570,335 L 330,335 Z", "#f1f5f9", DARK, 8)         # cylinder
-        for y in range(70, 330, 26):                                                   # cooling fins
-            s += path(f"M 300,{y} L 330,{y} M 570,{y} L 600,{y}", "none", "#94a3b8", 8)
-        for x in (395, 505):                                                           # valves in the head
-            s += path(f"M {x},20 L {x},62 M {x - 26},66 L {x + 26},66", "none", DARK, 9)
-        s += path("M 346,190 L 554,190 L 554,282 L 346,282 Z", "url(#steel)", DARK, 5)   # piston
-        for y in (204, 218):
-            s += path(f"M 346,{y} L 554,{y}", "none", DARK, 3)
-        s += path("M 450,250 L 512,440", "none", DARK, 30) + path("M 450,250 L 512,440", "none", "#cbd5e1", 20)
-        s += circle(450, 470, 92, "url(#steel)", DARK, 5)                                 # crank web
-        s += circle(512, 440, 24, "#cbd5e1", DARK, 4) + circle(450, 250, 14, "#cbd5e1", DARK, 4)
-        s += circle(450, 470, 34, "#e2e8f0", OIL, 10) + circle(450, 470, 12, DARK)        # main bearing, oil-fed
-        s += gear(318, 640, n=10, r_tip=30, r_root=23) + gear(376, 640, n=10, r_tip=30, r_root=23, phase=18)
-        s += pipe("M 300,612 L 300,560 L 252,560 L 252,470 L 404,470", 22)                  # pressure gallery
-        for pts in (((252, 540), (252, 500)), ((290, 470), (360, 470))):
-            s += path(f"M {pts[0][0]},{pts[0][1]} L {pts[1][0]},{pts[1][1]}", "none", NAVY_BLUE, 6,
-                      ' marker-end="url(#hd_navy)"')
-        for x, y in ((540, 380), (556, 330), (546, 296), (374, 380), (356, 330), (366, 300), (470, 320), (520, 345)):
-            s += drop(x, y)
-        s += path(arc(450, 470, 120, 30, 70), "none", OIL, 5, ' stroke-dasharray="10 9"')
-        s += path(arc(450, 470, 120, -30, -70), "none", OIL, 5, ' stroke-dasharray="10 9"')
-        s += label(620, 300, "Splash", TXT_M, "#a16207", "start")
-        s += label(20, 650, "Gear pump", TXT_M, NAVY_BLUE, "start")
+        bx0, bx1 = AX - 150, AX + 150                      # cylinder bore
+        # crankcase (aluminium) and sump
+        s = path(f"M {bx0 - 24},380 C 230,420 205,500 205,600 C 205,690 240,730 255,740 L 255,830 "
+                 f"Q 255,850 275,850 L 585,850 Q 605,850 605,830 L 605,740 C 620,730 655,690 655,600 "
+                 f"C 655,500 630,420 {bx1 + 24},380 Z", "url(#alu)", DARK, 7)
+        s += path("M 262,758 Q 300,750 340,758 T 420,758 T 500,758 T 598,758 L 598,843 L 262,843 Z", "url(#oil)")
+        # cylinder barrel with cooling fins, oil film on the walls
+        for k, y in enumerate(range(150, 372, 22)):
+            s += path(f"M {bx0 - 62},{y} L {bx1 + 62},{y} L {bx1 + 62},{y + 10} L {bx0 - 62},{y + 10} Z", "#b4bfcc", "#64748b", 2)
+        s += path(f"M {bx0 - 24},120 L {bx1 + 24},120 L {bx1 + 24},382 L {bx0 - 24},382 Z", "url(#barrel)", DARK, 6)
+        s += path(f"M {bx0},120 L {bx1},120 L {bx1},385 L {bx0},385 Z", "#eef2f6")
+        s += path(f"M {bx0 + 4},250 L {bx0 + 4},380 M {bx1 - 4},250 L {bx1 - 4},380", "none", OIL, 7)
+        # cylinder head with combustion chamber, ports and inclined valves
+        s += path(f"M {bx0 - 40},120 L {bx0 - 40},40 Q {bx0 - 40},20 {bx0 - 20},20 L {bx1 + 20},20 Q {bx1 + 40},20 {bx1 + 40},40 "
+                  f"L {bx1 + 40},120 Z", "url(#alu)", DARK, 6)
+        s += path(f"M {bx0},122 Q {AX},84 {bx1},122 Z", "url(#chamber)", DARK, 3)
+        for side in (-1, 1):                                                                              # ports
+            d = f"M {AX + side * 66},{104} Q {AX + side * 110},{70} {AX + side * 176},{66}"
+            s += path(d, "none", DARK, 34) + path(d, "none", "#94a3b8", 26)
+        s += valve(AX - 66, 106, -22) + valve(AX + 66, 106, 22)
+        s += path(f"M {AX - 12},30 L {AX + 12},30 L {AX + 8},82 L {AX - 8},82 Z", "#cbd5e1", DARK, 3)          # spark plug
+        # piston with rings and gudgeon pin
+        s += path(f"M {bx0 + 6},236 L {bx1 - 6},236 L {bx1 - 6},356 L {bx0 + 6},356 Z", "url(#steel)", DARK, 5)
+        for y in (250, 264, 278):
+            s += path(f"M {bx0 + 6},{y} L {bx1 - 6},{y}", "none", DARK, 4)
+        # connecting rod (H-section, tapering) and big end on the crankpin
+        dx, dy = PIN[0] - SMALL[0], PIN[1] - SMALL[1]
+        L = math.hypot(dx, dy)
+        nx, ny = -dy / L, dx / L
+        rod = [(SMALL[0] + nx * 16, SMALL[1] + ny * 16), (PIN[0] + nx * 26, PIN[1] + ny * 26),
+               (PIN[0] - nx * 26, PIN[1] - ny * 26), (SMALL[0] - nx * 16, SMALL[1] - ny * 16)]
+        # crank web with counterweight (opposite the crankpin), main journal and drilling to the crankpin
+        s += circle(*MAIN, 132, "url(#steel)", DARK, 5) + circle(*MAIN, 116, "none", "#94a3b8", 3)          # crank web
+        s += path("M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in rod) + " Z", "url(#steel)", DARK, 5)
+        s += path(f"M {SMALL[0]:.1f},{SMALL[1]:.1f} L {PIN[0]:.1f},{PIN[1]:.1f}", "none", "#94a3b8", 8)
+        s += circle(*SMALL, 20, "#e2e8f0", DARK, 4)
+        s += circle(*PIN, 44, "url(#steel)", DARK, 5) + circle(*PIN, 30, "#e2e8f0", OIL, 8)
+        s += circle(*MAIN, 40, "#e2e8f0", OIL, 10) + circle(*MAIN, 16, DARK)
+        s += path(f"M {MAIN[0]:.1f},{MAIN[1]:.1f} L {PIN[0]:.1f},{PIN[1]:.1f}", "none", OIL, 6, ' stroke-dasharray="10 8"')
+        # gear pump in the sump: housing, two gears, pick-up below, gallery up the crankcase wall to the main bearing
+        s += path("M 300,818 L 300,840 M 286,840 L 314,840", "none", DARK, 5)
+        s += path("M 262,770 Q 262,752 280,752 L 364,752 Q 382,752 382,770 L 382,800 Q 382,818 364,818 L 280,818 "
+                  "Q 262,818 262,800 Z", "#cbd5e1", DARK, 5)
+        s += gear(298, 785, n=10, r_tip=28, r_root=21) + gear(347, 785, n=10, r_tip=28, r_root=21, phase=18)
+        s += pipe(f"M 270,752 L 270,660 Q 270,{MAIN[1]} 300,{MAIN[1]} L {MAIN[0] - 42},{MAIN[1]}", 20)
+        s += path("M 270,734 L 270,684", "none", NAVY_BLUE, 6, ' marker-end="url(#hd_navy)"')
+        s += path(f"M 316,{MAIN[1]} L 372,{MAIN[1]}", "none", NAVY_BLUE, 6, ' marker-end="url(#hd_navy)"')
+        # splash thrown from the big end
+        for x, y, a in ((300, 392, -8), (306, 440, -12), (318, 492, -20), (560, 392, 8), (554, 440, 12),
+                        (540, 494, 20), (372, 376, -4), (430, 386, 0), (490, 378, 6), (352, 420, -10), (512, 424, 10)):
+            s += drop(x, y, 9, a)
+        s += path(f"M {PIN[0] - 30},{PIN[1] - 40} Q 380,470 330,420", "none", OIL, 5, ' stroke-dasharray="10 9"')
+        s += path(f"M {PIN[0] + 10},{PIN[1] - 48} Q 545,480 548,420", "none", OIL, 5, ' stroke-dasharray="10 9"')
+        s += label(668, 545, "Splash", TXT_M, "#a16207", "start")
+        s += label(20, 800, "Gear pump", TXT_M, NAVY_BLUE, "start")
         return s
     return dict(h=LB_H, sky="chart_paper", draw=draw, caption="GEAR PUMP PRESSURE PLUS SPLASH", color=NAVY_BLUE)
 

@@ -11,6 +11,16 @@ are fixed: when a subject is worked on, each drawn picture in it that fails
 (the earlier Air Law, Flight Planning and Radio Telephony drawings currently
 all fail `check.py`). Textbook figures and branded images are not redrawn.
 
+**Start from a picture we already have.** Before drawing anything new, look
+for a figure of the same idea in the subject's manual (the PDFs in the repo
+root and `public/`) and in `public/explanation-images/`. When one exists, use
+it as the base: extract it at full resolution, paint out text too small for a
+phone, and add phone-size labels and captions on top (`hp_figures.py` and
+`hp_phone.py` do this for the Human Performance approach illusions, from the
+JAA manual's Figures 8.25–8.30). Draw a scene from scratch only when no
+picture of the idea exists; plain shapes built from scratch read as low
+quality next to the textbook figures.
+
 ## 1. Phone first
 
 Most students study on a phone, where a picture is about **330 px wide**. Design

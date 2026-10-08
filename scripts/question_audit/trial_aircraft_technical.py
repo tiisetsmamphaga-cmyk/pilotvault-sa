@@ -20,7 +20,7 @@ ATG = "/explanation-images/aircraft-technical-and-general/refined-batch-1/"
 PICTURE = {
     2428: (ATG + "semi-cantilever-struts-v1.webp", "Semi-cantilever Monoplane"),
     2474: (ATG + "valve-lead-v1.webp", "Valve Lead"),
-    2520: (ATG + "gear-oil-pump-v1.webp", "Gear-type Oil Pump"),
+    2520: (ATG + "lubrication-pump-splash-v1.webp", "Gear Pump and Splash Lubrication"),
     2525: (ATG + "cylinder-cooling-fins-v1.webp", "Cylinder Cooling Fins"),
     2773: (ATG + "oil-pressure-not-rising-v1.webp", "No Oil Pressure After Start"),
     2701: (ATG + "compass-deviation-v1.webp", "Compass Deviation"),

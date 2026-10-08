@@ -16,6 +16,7 @@ from scene import (BLUE, COMMON_DEFS, GOLD, INK, NAVY_BLUE, RED, TXT_L, TXT_M, W
                    defs, flow, head, label, lg, path, stack, stack_height)
 
 R = Registry("aircraft-technical-and-general", "/explanation-images/aircraft-technical-and-general/refined-batch-1")
+HOLD = Registry("aircraft-technical-and-general", "/explanation-images/aircraft-technical-and-general/refined-batch-1")
 
 FIG = Path(__file__).resolve().parent / "fig" / "atg"
 
@@ -145,7 +146,8 @@ def gear(cx, cy, n=12, r_tip=132, r_root=106, phase=0.0):
         for da, r in ((-0.30, r_root), (-0.16, r_tip), (0.16, r_tip), (0.30, r_root)):
             pts.append(polar(cx, cy, r, a + da * 360 / n))
     d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts) + " Z"
-    return (path(d, "url(#steel)", DARK, 4) + circle(cx, cy, 40, "#cbd5e1", DARK, 4) + circle(cx, cy, 13, DARK))
+    hub = r_root * 0.38
+    return (path(d, "url(#steel)", DARK, 4) + circle(cx, cy, hub, "#cbd5e1", DARK, 4) + circle(cx, cy, hub / 3, DARK))
 
 
 def pipe(d, w=64):
@@ -175,7 +177,7 @@ def gear_pump_panel():
                 color=NAVY_BLUE)
 
 
-@R.add(2520, "gear-oil-pump-v1", "Gear-type Oil Pump",
+@HOLD.add(2520, "gear-oil-pump-v1", "Gear-type Oil Pump",
        template("A GEAR-TYPE PUMP SUPPLIES PRESSURE OIL; SPLASH DOES THE REST"), h=stack_height([GP_H]), w=W)
 def _():
     return picture([gear_pump_panel()])
@@ -474,3 +476,53 @@ def cg_panel(aft):
        h=stack_height([CG_H, CG_H]), w=W)
 def _():
     return picture([cg_panel(False), cg_panel(True)])
+
+
+# ------------------------------------------------------------------ lubrication: gear pump pressure plus splash
+# An engine cutaway after the manual's piston-and-cylinder figures: the gear pump in the sump sends pressure oil up
+# a gallery to the crankshaft main bearing; the turning crank throws oil splash onto the cylinder walls and piston.
+
+LB_H = 720
+
+
+def drop(x, y, r=9):
+    return path(f"M {x:.1f},{y - r * 1.6:.1f} Q {x + r:.1f},{y - r * 0.2:.1f} {x:.1f},{y + r:.1f} "
+                f"Q {x - r:.1f},{y - r * 0.2:.1f} {x:.1f},{y - r * 1.6:.1f} Z", OIL, "#a16207", 2)
+
+
+def lubrication_panel():
+    def draw(w, h):
+        s = path("M 330,330 L 220,380 L 220,560 L 240,690 L 660,690 L 680,560 L 680,380 L 570,330 Z",
+                 "#e2e8f0", DARK, 8)                                                    # crankcase and sump
+        s += path("M 236,612 L 664,612 L 656,682 L 244,682 Z", "url(#oil)")              # oil in the sump
+        s += path("M 330,40 L 570,40 L 570,335 L 330,335 Z", "#f1f5f9", DARK, 8)         # cylinder
+        for y in range(70, 330, 26):                                                   # cooling fins
+            s += path(f"M 300,{y} L 330,{y} M 570,{y} L 600,{y}", "none", "#94a3b8", 8)
+        for x in (395, 505):                                                           # valves in the head
+            s += path(f"M {x},20 L {x},62 M {x - 26},66 L {x + 26},66", "none", DARK, 9)
+        s += path("M 346,190 L 554,190 L 554,282 L 346,282 Z", "url(#steel)", DARK, 5)   # piston
+        for y in (204, 218):
+            s += path(f"M 346,{y} L 554,{y}", "none", DARK, 3)
+        s += path("M 450,250 L 512,440", "none", DARK, 30) + path("M 450,250 L 512,440", "none", "#cbd5e1", 20)
+        s += circle(450, 470, 92, "url(#steel)", DARK, 5)                                 # crank web
+        s += circle(512, 440, 24, "#cbd5e1", DARK, 4) + circle(450, 250, 14, "#cbd5e1", DARK, 4)
+        s += circle(450, 470, 34, "#e2e8f0", OIL, 10) + circle(450, 470, 12, DARK)        # main bearing, oil-fed
+        s += gear(318, 640, n=10, r_tip=30, r_root=23) + gear(376, 640, n=10, r_tip=30, r_root=23, phase=18)
+        s += pipe("M 300,612 L 300,560 L 252,560 L 252,470 L 404,470", 22)                  # pressure gallery
+        for pts in (((252, 540), (252, 500)), ((290, 470), (360, 470))):
+            s += path(f"M {pts[0][0]},{pts[0][1]} L {pts[1][0]},{pts[1][1]}", "none", NAVY_BLUE, 6,
+                      ' marker-end="url(#hd_navy)"')
+        for x, y in ((540, 380), (556, 330), (546, 296), (374, 380), (356, 330), (366, 300), (470, 320), (520, 345)):
+            s += drop(x, y)
+        s += path(arc(450, 470, 120, 30, 70), "none", OIL, 5, ' stroke-dasharray="10 9"')
+        s += path(arc(450, 470, 120, -30, -70), "none", OIL, 5, ' stroke-dasharray="10 9"')
+        s += label(620, 300, "Splash", TXT_M, "#a16207", "start")
+        s += label(20, 650, "Gear pump", TXT_M, NAVY_BLUE, "start")
+        return s
+    return dict(h=LB_H, sky="chart_paper", draw=draw, caption="GEAR PUMP PRESSURE PLUS SPLASH", color=NAVY_BLUE)
+
+
+@R.add(2520, "lubrication-pump-splash-v1", "Gear Pump and Splash Lubrication",
+       template("A GEAR-TYPE PUMP SUPPLIES PRESSURE OIL; SPLASH DOES THE REST"), h=stack_height([LB_H]), w=W)
+def _():
+    return picture([lubrication_panel()])

@@ -55,6 +55,23 @@
    }
   },
   {
+   "id": 2429,
+   "question": "The main longitudinal member in a Truss type of fuselage construction would be:",
+   "why": "joins the trial set (user's pick)",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2429-truss-longerons.webp",
+    "explanation_image_title": "TRUSS FUSELAGE: LONGERONS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LONGERON IS THE MAIN LENGTHWISE MEMBER\", \"subline\": \"IN A TRUSS FUSELAGE THE BRACED FRAMEWORK CARRIES THE LOADS\", \"blocks\": [{\"label\": \"Longerons\", \"value\": \"Main longitudinal members, usually four\"}, {\"label\": \"Bracing\", \"value\": \"Verticals and diagonals form rigid triangles\"}, {\"label\": \"Covering\", \"value\": \"Carries no load\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2429-truss-longerons.webp",
+    "explanation_image_title": "TRUSS FUSELAGE: LONGERONS",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LONGERON IS THE MAIN LENGTHWISE MEMBER\", \"subline\": \"IN A TRUSS FUSELAGE THE BRACED FRAMEWORK CARRIES THE LOADS\", \"blocks\": [{\"label\": \"Longerons\", \"value\": \"Main longitudinal members, usually four\"}, {\"label\": \"Bracing\", \"value\": \"Verticals and diagonals form rigid triangles\"}, {\"label\": \"Covering\", \"value\": \"Carries no load\"}]}"
+   }
+  },
+  {
    "id": 2432,
    "question": "If the centre of gravity is moved aft during flight the effect will be:",
    "why": "joins the trial set",
@@ -89,6 +106,23 @@
    }
   },
   {
+   "id": 2440,
+   "question": "The most important structural component of a wing is:",
+   "why": "joins the trial set (user's pick)",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2440-wing-main-spar.webp",
+    "explanation_image_title": "WING STRUCTURE: MAIN SPAR",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE MAIN SPAR IS THE WING'S KEY STRUCTURE\", \"subline\": \"ROOT-TO-TIP BEAM CARRYING MOST OF THE BENDING AND SHEAR\", \"blocks\": [{\"label\": \"Main spar\", \"value\": \"Primary load-carrying beam\"}, {\"label\": \"Ribs\", \"value\": \"Shape; pass air loads to the spars\"}, {\"label\": \"Rear spar\", \"value\": \"Carries the trailing-edge controls\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2440-wing-main-spar.webp",
+    "explanation_image_title": "WING STRUCTURE: MAIN SPAR",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE MAIN SPAR IS THE WING'S KEY STRUCTURE\", \"subline\": \"ROOT-TO-TIP BEAM CARRYING MOST OF THE BENDING AND SHEAR\", \"blocks\": [{\"label\": \"Main spar\", \"value\": \"Primary load-carrying beam\"}, {\"label\": \"Ribs\", \"value\": \"Shape; pass air loads to the spars\"}, {\"label\": \"Rear spar\", \"value\": \"Carries the trailing-edge controls\"}]}"
+   }
+  },
+  {
    "id": 2441,
    "question": "Torque links may be incorporated on the nose shock struts of some undercarriage systems in order to:",
    "why": "leaves the trial set (no strong picture for it)",
@@ -120,6 +154,23 @@
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/propeller-torque-reaction-v1.webp",
     "explanation_image_title": "Propeller Torque Reaction",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE REACTION ACTS OPPOSITE TO PROPELLER ROTATION\", \"subline\": \"NEWTON'S THIRD LAW: THE ENGINE TURNS THE PROPELLER, THE PROPELLER TURNS THE AIRCRAFT BACK\", \"blocks\": [{\"label\": \"In the air\", \"value\": \"Tends to roll the aircraft\"}, {\"label\": \"On the ground\", \"value\": \"Loads one main wheel more: the aircraft swings\"}, {\"label\": \"Not torque\", \"value\": \"Centrifugal force, P-factor, gyroscopic precession\"}]}"
+   }
+  },
+  {
+   "id": 2452,
+   "question": "Ignoring crosswind, an aeroplane with a tricycle undercarriage and a clockwise-rotating propeller, as viewed from the cockpit, will tend to:",
+   "why": "joins the trial set (user's pick)",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-left-turning-tendency-v2.webp",
+    "explanation_image_title": "LEFT-TURNING TENDENCIES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLOCKWISE PROPELLER: THE AEROPLANE YAWS LEFT\", \"subline\": \"RIGHT RUDDER KEEPS IT STRAIGHT ON THE TAKE-OFF RUN\", \"blocks\": [{\"label\": \"Slipstream\", \"value\": \"Spirals onto the left of the fin\"}, {\"label\": \"Torque reaction\", \"value\": \"Presses the left wheel down\"}, {\"label\": \"P-factor\", \"value\": \"Down-going right blade gives more thrust\"}, {\"label\": \"Gyroscopic\", \"value\": \"Small: a tricycle's tail is not raised\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-left-turning-tendency-v2.webp",
+    "explanation_image_title": "LEFT-TURNING TENDENCIES",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLOCKWISE PROPELLER: THE AEROPLANE YAWS LEFT\", \"subline\": \"RIGHT RUDDER KEEPS IT STRAIGHT ON THE TAKE-OFF RUN\", \"blocks\": [{\"label\": \"Slipstream\", \"value\": \"Spirals onto the left of the fin\"}, {\"label\": \"Torque reaction\", \"value\": \"Presses the left wheel down\"}, {\"label\": \"P-factor\", \"value\": \"Down-going right blade gives more thrust\"}, {\"label\": \"Gyroscopic\", \"value\": \"Small: a tricycle's tail is not raised\"}]}"
    }
   },
   {
@@ -159,7 +210,7 @@
   {
    "id": 2469,
    "question": "The purpose of baffles in an aircraft's fuel tank is to:",
-   "why": "leaves the trial set (no strong picture for it)",
+   "why": "joins the trial set (user's pick)",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2469-fuel-tank-baffles-v2.webp",
@@ -167,7 +218,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES STOP THE FUEL SURGING\", \"subline\": \"INTERNAL WALLS WITH HOLES DIVIDE THE TANK\", \"blocks\": [{\"label\": \"Outlet\", \"value\": \"Stays covered in manoeuvres\"}, {\"label\": \"CG\", \"value\": \"No sudden shifts\"}, {\"label\": \"Vents / drains\", \"value\": \"Pressure and water, not surge\"}]}"
    },
    "after": {
-    "is_trial_question": false,
+    "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2469-fuel-tank-baffles-v2.webp",
     "explanation_image_title": "FUEL TANK BAFFLES",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES STOP THE FUEL SURGING\", \"subline\": \"INTERNAL WALLS WITH HOLES DIVIDE THE TANK\", \"blocks\": [{\"label\": \"Outlet\", \"value\": \"Stays covered in manoeuvres\"}, {\"label\": \"CG\", \"value\": \"No sudden shifts\"}, {\"label\": \"Vents / drains\", \"value\": \"Pressure and water, not surge\"}]}"
@@ -210,7 +261,7 @@
   {
    "id": 2504,
    "question": "100 LL aviation fuel or AVGAS can be identified by its:",
-   "why": "leaves the trial set (no strong picture for it)",
+   "why": "joins the trial set (user's pick)",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2504-avgas-100ll-blue.webp",
@@ -218,7 +269,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AVGAS 100LL IS BLUE\", \"subline\": \"FUEL IS DYED SO ITS GRADE CAN BE SEEN IN A SAMPLE\", \"blocks\": [{\"label\": \"100LL\", \"value\": \"Blue\"}, {\"label\": \"100\", \"value\": \"Green\"}, {\"label\": \"80\", \"value\": \"Red\"}, {\"label\": \"Jet A-1\", \"value\": \"Clear / straw: never in a piston engine\"}]}"
    },
    "after": {
-    "is_trial_question": false,
+    "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2504-avgas-100ll-blue.webp",
     "explanation_image_title": "AVGAS 100LL IS BLUE",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AVGAS 100LL IS BLUE\", \"subline\": \"FUEL IS DYED SO ITS GRADE CAN BE SEEN IN A SAMPLE\", \"blocks\": [{\"label\": \"100LL\", \"value\": \"Blue\"}, {\"label\": \"100\", \"value\": \"Green\"}, {\"label\": \"80\", \"value\": \"Red\"}, {\"label\": \"Jet A-1\", \"value\": \"Clear / straw: never in a piston engine\"}]}"
@@ -276,6 +327,40 @@
    }
   },
   {
+   "id": 2530,
+   "question": "Dry sump piston engine lubrication systems make use of a scavenge pump to:",
+   "why": "joins the trial set (user's pick)",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2530-dry-sump-scavenge-pump.webp",
+    "explanation_image_title": "DRY SUMP: SCAVENGE PUMP",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SCAVENGE PUMP RETURNS OIL TO THE TANK\", \"subline\": \"IT KEEPS THE SUMP OF A DRY-SUMP ENGINE DRY\", \"blocks\": [{\"label\": \"Oil stored\", \"value\": \"In a separate tank\"}, {\"label\": \"Pressure pump\", \"value\": \"Tank to engine\"}, {\"label\": \"Scavenge pump\", \"value\": \"Sump to tank; larger capacity\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2530-dry-sump-scavenge-pump.webp",
+    "explanation_image_title": "DRY SUMP: SCAVENGE PUMP",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SCAVENGE PUMP RETURNS OIL TO THE TANK\", \"subline\": \"IT KEEPS THE SUMP OF A DRY-SUMP ENGINE DRY\", \"blocks\": [{\"label\": \"Oil stored\", \"value\": \"In a separate tank\"}, {\"label\": \"Pressure pump\", \"value\": \"Tank to engine\"}, {\"label\": \"Scavenge pump\", \"value\": \"Sump to tank; larger capacity\"}]}"
+   }
+  },
+  {
+   "id": 2549,
+   "question": "Lubrication of the main bearings and crankshaft of the engine is provided:",
+   "why": "joins the trial set (user's pick)",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2549-crankshaft-bearing-lubrication.webp",
+    "explanation_image_title": "CRANKSHAFT AND BEARING LUBRICATION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"THROUGH GALLERIES AND CRANKSHAFT DRILLINGS TO THE BIG ENDS\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why\", \"value\": \"Heaviest loads need a positive supply\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2549-crankshaft-bearing-lubrication.webp",
+    "explanation_image_title": "CRANKSHAFT AND BEARING LUBRICATION",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"THROUGH GALLERIES AND CRANKSHAFT DRILLINGS TO THE BIG ENDS\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why\", \"value\": \"Heaviest loads need a positive supply\"}]}"
+   }
+  },
+  {
    "id": 2553,
    "question": "The primary purpose of a cowl-flap is to:",
    "why": "leaves the trial set (its drawn cooling picture was not strong enough for the trial); keeps it in the bank",
@@ -295,7 +380,7 @@
   {
    "id": 2559,
    "question": "A hydraulic system operates on the basic principle that:",
-   "why": "joins the trial set",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2559-pascals-law-hydraulic-brakes.webp",
@@ -303,7 +388,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PASCAL'S LAW: PRESSURE IS TRANSMITTED\", \"subline\": \"PRESSURE ON A CONFINED FLUID ACTS EQUALLY IN ALL DIRECTIONS\", \"blocks\": [{\"label\": \"Fluid\", \"value\": \"Practically incompressible\"}, {\"label\": \"Small piston\", \"value\": \"Creates pressure\"}, {\"label\": \"Large piston\", \"value\": \"Gives a larger force\"}], \"formula\": \"FORCE = PRESSURE x AREA\"}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/hydraulic-brake-pascal-v1.webp",
     "explanation_image_title": "Hydraulic Brakes: Pascal's Law",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PASCAL'S LAW: PRESSURE IS TRANSMITTED\", \"subline\": \"PRESSURE ON A CONFINED FLUID ACTS EQUALLY IN ALL DIRECTIONS\", \"blocks\": [{\"label\": \"Fluid\", \"value\": \"Practically incompressible\"}, {\"label\": \"Small piston\", \"value\": \"Creates pressure\"}, {\"label\": \"Large piston\", \"value\": \"Gives a larger force\"}], \"formula\": \"FORCE = PRESSURE x AREA\"}"
@@ -312,7 +397,7 @@
   {
    "id": 2564,
    "question": "The purpose of baffles in the engine compartments is to:",
-   "why": "joins the trial set",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2564-engine-baffles.webp",
@@ -320,7 +405,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES DIRECT AIR OVER THE CYLINDERS\", \"subline\": \"THEY FORCE COOLING AIR CLOSELY THROUGH THE FINS\", \"blocks\": [{\"label\": \"Result\", \"value\": \"Every cylinder cooled evenly\"}, {\"label\": \"Fixed\", \"value\": \"Plates and seals, not adjustable\"}, {\"label\": \"Amount of air\", \"value\": \"Controlled by the cowl flaps\"}]}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/engine-baffles-v1.webp",
     "explanation_image_title": "Engine Baffles",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES DIRECT AIR OVER THE CYLINDERS\", \"subline\": \"THEY FORCE COOLING AIR CLOSELY THROUGH THE FINS\", \"blocks\": [{\"label\": \"Result\", \"value\": \"Every cylinder cooled evenly\"}, {\"label\": \"Fixed\", \"value\": \"Plates and seals, not adjustable\"}, {\"label\": \"Amount of air\", \"value\": \"Controlled by the cowl flaps\"}]}"
@@ -329,7 +414,7 @@
   {
    "id": 2566,
    "question": "In a simple airspeed indicator, pitot pressure is supplied to:",
-   "why": "trial question: picture and/or card brought to the standard",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-pitot-static-system-v1.webp",
@@ -337,7 +422,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE GOES INTO THE ASI CAPSULE\", \"subline\": \"STATIC PRESSURE FILLS THE CASE AROUND IT\", \"blocks\": [{\"label\": \"Capsule\", \"value\": \"Expands with pitot minus static\"}, {\"label\": \"Difference\", \"value\": \"Dynamic pressure: shown as airspeed\"}, {\"label\": \"Calibrated leak\", \"value\": \"Belongs to the VSI\"}], \"formula\": \"PITOT - STATIC = DYNAMIC PRESSURE\"}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/asi-pitot-capsule-v1.webp",
     "explanation_image_title": "Airspeed Indicator: Pitot and Static",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE GOES INTO THE ASI CAPSULE\", \"subline\": \"STATIC PRESSURE FILLS THE CASE AROUND IT\", \"blocks\": [{\"label\": \"Capsule\", \"value\": \"Expands with pitot minus static\"}, {\"label\": \"Difference\", \"value\": \"Dynamic pressure: shown as airspeed\"}, {\"label\": \"Calibrated leak\", \"value\": \"Belongs to the VSI\"}], \"formula\": \"PITOT - STATIC = DYNAMIC PRESSURE\"}"
@@ -363,7 +448,7 @@
   {
    "id": 2584,
    "question": "Pitot pressure is taken from:",
-   "why": "trial question: picture and/or card brought to the standard",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-pitot-static-system-v1.webp",
@@ -371,7 +456,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE: A TUBE IN THE AIRFLOW\", \"subline\": \"FORWARD-FACING, CLEAR OF DISTURBED AIR\", \"blocks\": [{\"label\": \"Pitot tube\", \"value\": \"Total pressure (static + dynamic)\"}, {\"label\": \"Static port\", \"value\": \"Flush on the fuselage side\"}, {\"label\": \"Pre-flight\", \"value\": \"Remove the pitot cover\"}]}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/pitot-tube-airflow-v1.webp",
     "explanation_image_title": "Pitot Tube",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PITOT PRESSURE: A TUBE IN THE AIRFLOW\", \"subline\": \"FORWARD-FACING, CLEAR OF DISTURBED AIR\", \"blocks\": [{\"label\": \"Pitot tube\", \"value\": \"Total pressure (static + dynamic)\"}, {\"label\": \"Static port\", \"value\": \"Flush on the fuselage side\"}, {\"label\": \"Pre-flight\", \"value\": \"Remove the pitot cover\"}]}"
@@ -414,7 +499,7 @@
   {
    "id": 2634,
    "question": "True airspeed is:",
-   "why": "joins the trial set",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": false,
     "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-tas-increase-with-altitude-v1.webp",
@@ -422,7 +507,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS = CAS CORRECTED FOR DENSITY\", \"subline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Thinner air: ASI reads less than TAS\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS about 2% above CAS per 1,000 ft\"}, {\"label\": \"IAS to CAS\", \"value\": \"Instrument and position error\"}]}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-tas-increase-with-altitude-v1.webp",
     "explanation_image_title": "TAS INCREASES WITH ALTITUDE AT CONSTANT IAS",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS = CAS CORRECTED FOR DENSITY\", \"subline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Thinner air: ASI reads less than TAS\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS about 2% above CAS per 1,000 ft\"}, {\"label\": \"IAS to CAS\", \"value\": \"Instrument and position error\"}]}"
@@ -431,7 +516,7 @@
   {
    "id": 2647,
    "question": "On an airspeed indicator (ASI) the cautionary range is indicated by:",
-   "why": "joins the trial set",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": false,
     "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v2.webp",
@@ -439,7 +524,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"YELLOW ARC: CAUTION RANGE\", \"subline\": \"FROM VNO TO VNE: SMOOTH AIR ONLY\", \"blocks\": [{\"label\": \"Yellow\", \"value\": \"VNO to VNE\"}, {\"label\": \"Green\", \"value\": \"Normal operating range\"}, {\"label\": \"White\", \"value\": \"Flap operating range\"}, {\"label\": \"Red line\", \"value\": \"VNE\"}]}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vno-v2.webp",
     "explanation_image_title": "AIRSPEED INDICATOR MARKINGS",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"YELLOW ARC: CAUTION RANGE\", \"subline\": \"FROM VNO TO VNE: SMOOTH AIR ONLY\", \"blocks\": [{\"label\": \"Yellow\", \"value\": \"VNO to VNE\"}, {\"label\": \"Green\", \"value\": \"Normal operating range\"}, {\"label\": \"White\", \"value\": \"Flap operating range\"}, {\"label\": \"Red line\", \"value\": \"VNE\"}]}"
@@ -516,7 +601,7 @@
   {
    "id": 2710,
    "question": "When checking a turn coordinator while taxying, the correct indications are:",
-   "why": "joins the trial set",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": false,
     "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-skid-right-v2.webp",
@@ -524,7 +609,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAXI CHECK: NEEDLE WITH THE TURN, BALL OUTSIDE\", \"subline\": \"LIKE A PASSENGER PUSHED OUTWARDS IN A CAR\", \"blocks\": [{\"label\": \"Needle / aircraft\", \"value\": \"Same direction as the turn\"}, {\"label\": \"Ball\", \"value\": \"Outside of the turn\"}, {\"label\": \"Faulty if\", \"value\": \"Needle still, or ball moves inwards\"}]}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-13/pof-turn-coordinator-skid-right-v2.webp",
     "explanation_image_title": "TURN COORDINATOR: BALL TO THE OUTSIDE",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAXI CHECK: NEEDLE WITH THE TURN, BALL OUTSIDE\", \"subline\": \"LIKE A PASSENGER PUSHED OUTWARDS IN A CAR\", \"blocks\": [{\"label\": \"Needle / aircraft\", \"value\": \"Same direction as the turn\"}, {\"label\": \"Ball\", \"value\": \"Outside of the turn\"}, {\"label\": \"Faulty if\", \"value\": \"Needle still, or ball moves inwards\"}]}"
@@ -550,7 +635,7 @@
   {
    "id": 2734,
    "question": "Which unit converts direct current into alternating current?",
-   "why": "leaves the trial set (no strong picture for it)",
+   "why": "joins the trial set (user's pick)",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2607-inverter.webp",
@@ -558,7 +643,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN INVERTER CONVERTS DC TO AC\", \"subline\": \"FOR AC INSTRUMENTS AND AVIONICS IN A DC AIRCRAFT\", \"blocks\": [{\"label\": \"Inverter\", \"value\": \"DC to AC\"}, {\"label\": \"Rectifier\", \"value\": \"AC to DC\"}, {\"label\": \"TRU\", \"value\": \"Transformer-rectifier: AC to lower-voltage DC\"}]}"
    },
    "after": {
-    "is_trial_question": false,
+    "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2607-inverter.webp",
     "explanation_image_title": "INVERTER: DC TO AC",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN INVERTER CONVERTS DC TO AC\", \"subline\": \"FOR AC INSTRUMENTS AND AVIONICS IN A DC AIRCRAFT\", \"blocks\": [{\"label\": \"Inverter\", \"value\": \"DC to AC\"}, {\"label\": \"Rectifier\", \"value\": \"AC to DC\"}, {\"label\": \"TRU\", \"value\": \"Transformer-rectifier: AC to lower-voltage DC\"}]}"
@@ -601,7 +686,7 @@
   {
    "id": 2773,
    "question": "After starting a cold piston engine, what should the pilot do if oil pressure does not rise within the time specified by the manufacturer?",
-   "why": "trial question: picture and/or card brought to the standard",
+   "why": "leaves the trial set (user's pick: no repeated pictures in the set)",
    "before": {
     "is_trial_question": true,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/clean-v1/q2773-no-oil-pressure-after-start.webp",
@@ -609,7 +694,7 @@
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO OIL PRESSURE IN TIME: SHUT DOWN AT ONCE\", \"subline\": \"THE ENGINE MAY BE RUNNING WITHOUT LUBRICATION\", \"blocks\": [{\"label\": \"Normal\", \"value\": \"Pressure within about 30 s (longer when very cold)\"}, {\"label\": \"Damage\", \"value\": \"Can occur within a minute\"}, {\"label\": \"Investigate\", \"value\": \"Low oil, failed pump or faulty gauge\"}]}"
    },
    "after": {
-    "is_trial_question": true,
+    "is_trial_question": false,
     "explanation_image_url": "/explanation-images/aircraft-technical-and-general/refined-batch-1/oil-pressure-not-rising-v1.webp",
     "explanation_image_title": "No Oil Pressure After Start",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO OIL PRESSURE IN TIME: SHUT DOWN AT ONCE\", \"subline\": \"THE ENGINE MAY BE RUNNING WITHOUT LUBRICATION\", \"blocks\": [{\"label\": \"Normal\", \"value\": \"Pressure within about 30 s (longer when very cold)\"}, {\"label\": \"Damage\", \"value\": \"Can occur within a minute\"}, {\"label\": \"Investigate\", \"value\": \"Low oil, failed pump or faulty gauge\"}]}"

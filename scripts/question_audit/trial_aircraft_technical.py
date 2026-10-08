@@ -14,9 +14,13 @@ lubrication question (2520) leaves the trial set: its cutaway was not strong eno
 on 2520 in the bank, and the turn-coordinator taxi check (2710, textbook instrument) takes the place.
 The cowl-flap question (2553) also left the trial set for the ASI caution-range question (2647, textbook
 ASI); 2553 keeps its picture in the bank.
+On review the user picked eight swaps so that no picture repeats in the set: 2429 (truss longerons), 2440 (wing
+main spar), 2549 (main-bearing lubrication), 2452 (clockwise propeller yaw), 2504 (AVGAS colour), 2530 (dry-sump
+scavenge pump), 2469 (fuel-tank baffles) and 2734 (inverter) replace 2710, 2647, 2559, 2564, 2566, 2584, 2773
+and 2634; those stay in the bank with their pictures.
 """
-TRIAL = [2428, 2474, 2500, 2710, 2525, 2566, 2584, 2673, 2675, 2701, 2768, 2771, 2773,
-         2647, 2559, 2564, 2464, 2629, 2740, 2726, 2466, 2450, 2634, 2707, 2432]
+TRIAL = [2428, 2474, 2500, 2429, 2525, 2504, 2530, 2673, 2675, 2701, 2768, 2771, 2469,
+         2440, 2549, 2452, 2464, 2629, 2740, 2726, 2466, 2450, 2734, 2707, 2432]
 
 ATG = "/explanation-images/aircraft-technical-and-general/refined-batch-1/"
 

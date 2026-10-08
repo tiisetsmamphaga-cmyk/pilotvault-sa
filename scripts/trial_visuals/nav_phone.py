@@ -974,3 +974,49 @@ def mt_panel():
        h=stack_height([MT_H]), w=W)
 def _():
     return picture([mt_panel()])
+
+
+# ------------------------------------------------------------------ triangle of velocities (the manual's figure, redrawn)
+
+TV_H = 1000
+TV_BOT, TV_TOP = (330, 930), (330, 175)  # the track: straight up the page, as in the manual
+TV_HDG_END = (575, 75)                   # heading/TAS: out to the right of the track
+TV_DRIFT = math.degrees(math.atan2(TV_HDG_END[0] - TV_BOT[0], TV_BOT[1] - TV_HDG_END[1]))
+
+
+def vector(a, b, color, mid, at=0.55, w=None):
+    """A velocity vector a to b: haloed line with its arrowhead part-way along, as in the manual's figure."""
+    w = w or LINE_W
+    d = f"M {a[0]:.0f},{a[1]:.0f} L {b[0]:.0f},{b[1]:.0f}"
+    s = path(d, "none", "#ffffff", w + 4, ' stroke-opacity="0.85"') + path(d, "none", color, w)
+    m = (a[0] + (b[0] - a[0]) * at, a[1] + (b[1] - a[1]) * at)
+    return s + path(f"M {a[0]:.0f},{a[1]:.0f} L {m[0]:.0f},{m[1]:.0f}", "none", "none", w, f' marker-end="url(#{mid})"')
+
+
+def tv_panel():
+    def draw(w, h):
+        s = f'<rect x="0" y="0" width="{w}" height="{h}" fill="#ffffff"/>'
+        s += vector(TV_BOT, TV_HDG_END, INK, "head_true", 0.62)          # HDG/TAS
+        s += vector(TV_HDG_END, TV_TOP, BLUE, "nh_blue", 0.3)            # W/V
+        s += vector(TV_BOT, TV_TOP, RED, "nh_red", 0.55)                 # TR/GS
+        s += angle_arc(*TV_BOT, 330, 0, TV_DRIFT, RED, ARC_W)
+        for y in (900, 650, 370):                                        # along its track, nose on its heading
+            s += aircraft_top(TV_BOT[0], y, 120, heading=TV_DRIFT)
+        s += label(TV_HDG_END[0] - 140, 105, "W/V", TXT_L, BLUE, "middle")
+        s += label(300, 530, "TR/GS", TXT_L, RED, "end")
+        s += label(525, 420, "HDG/TAS", TXT_L, INK)
+        s += label(450, 630, "Drift", TXT_L, RED)
+        return s
+    return dict(h=TV_H, sky="aerial", draw=draw, caption="HDG/TAS + W/V = TR/GS", color=NAVY_BLUE)
+
+
+@R.add(1841, "triangle-of-velocities-v2", "Triangle of Velocities",
+       template("THE TRIANGLE: HEADING/TAS, TRACK/GS AND W/V",
+                "THE WIND JOINS WHERE THE AIRCRAFT POINTS TO WHERE IT GOES",
+                [("Air vector", "Heading and TAS"),
+                 ("Wind vector", "Wind direction and speed (W/V)"),
+                 ("Ground vector", "Track and groundspeed"),
+                 ("Drift", "The angle between heading and track")]),
+       h=stack_height([TV_H]), w=W)
+def _():
+    return picture([tv_panel()])

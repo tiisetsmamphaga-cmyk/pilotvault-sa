@@ -1,0 +1,70 @@
+{
+ "date": "2026-10-08",
+ "subject": "navigation",
+ "change": "Triangle of velocities redrawn in HD as the manual's figure (nav_phone.py); the old scan is replaced on every question that used it. Titles and cards unchanged.",
+ "rows": [
+  {
+   "id": 1841,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-triangle-of-velocities-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/triangle-of-velocities-v2.webp"
+   }
+  },
+  {
+   "id": 1882,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-triangle-of-velocities-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/triangle-of-velocities-v2.webp"
+   }
+  },
+  {
+   "id": 1885,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-triangle-of-velocities-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/triangle-of-velocities-v2.webp"
+   }
+  },
+  {
+   "id": 1891,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-triangle-of-velocities-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/triangle-of-velocities-v2.webp"
+   }
+  },
+  {
+   "id": 1897,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-triangle-of-velocities-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/triangle-of-velocities-v2.webp"
+   }
+  },
+  {
+   "id": 1901,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-triangle-of-velocities-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/triangle-of-velocities-v2.webp"
+   }
+  },
+  {
+   "id": 1905,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-triangle-of-velocities-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/triangle-of-velocities-v2.webp"
+   }
+  }
+ ]
+}

@@ -629,3 +629,108 @@ def aqua_panel(fast):
        h=stack_height([AQ_H, AQ_H]), w=W)
 def _():
     return picture([aqua_panel(False), aqua_panel(True)])
+
+
+# ------------------------------------------------------------------ Figure 1-7: climb performance
+# Redrawn from the SACAA-01 manual's Figure 1-7 at phone size. Every line was measured on the manual figure, in its
+# own pixels: 6.5 px per °C with 0°C at x 288.5, 0.65 px per ft/min with 0 at x 810, the plot from y 150 to 930.
+# The pressure-altitude lines are parallel, x = c − 0.85 y. The two halves keep their own scales here (the
+# temperature half wider, the rate half cut at 800 ft/min, past the end of the climb line) so the labels fit a phone.
+
+F7_PA = {0: 1173, 1000: 1105, 2000: 1035, 3000: 967, 4000: 899, 5000: 827, 6000: 759, 7000: 683, 8000: 615,
+         9000: 551, 10000: 483, 11000: 425, 12000: 361, 13000: 283}
+F7_LX, F7_LS = 40, 0.86                # canvas x of −40°C, canvas px per figure px (temperature half)
+F7_RX, F7_RS = 537, 0.6                # canvas x of 0 ft/min, canvas px per figure px (rate half)
+F7_Y0, F7_SY = 120, 0.8                # canvas y of the plot top, canvas px per figure px
+F7_H = F7_Y0 + 780 * F7_SY + 120
+
+
+def f7_tx(t):                          # °C to canvas x
+    return F7_LX + (t + 40) * 6.5 * F7_LS
+
+
+def f7_rx(r):                          # ft/min to canvas x
+    return F7_RX + r * 0.65 * F7_RS
+
+
+def f7_y(py):                          # figure y to canvas y
+    return F7_Y0 + (py - 150) * F7_SY
+
+
+def f7_lx(px):                         # figure x in the temperature half to canvas x
+    return f7_tx((px - 288.5) / 6.5)
+
+
+def f7_roc(py):                        # the rate-of-climb line: ft/min at figure y
+    return (943.5 + 0.449 * (py - 157) - 810) / 0.65
+
+
+def f7_pa_seg(c):
+    """Pressure-altitude line clipped to the temperature half (figure px), top end first."""
+    xa, ya, xb, yb = c - 0.85 * 150, 150, c - 0.85 * 930, 930
+    if xa > 548:
+        xa, ya = 548, (c - 548) / 0.85
+    if xb < 28:
+        xb, yb = 28, (c - 28) / 0.85
+    return (xa, ya), (xb, yb)
+
+
+def f7_panel(t, pa):
+    def draw(w, h):
+        s = f'<rect x="0" y="0" width="{w}" height="{h}" fill="#ffffff"/>'
+        s += label(40, 48, "Full throttle, flaps up, 75 KIAS, 2500 lb", 32, "#475569", halo=None)
+        top, bot = f7_y(150), f7_y(930)
+        halves = ((f7_tx(-40), f7_tx(40), 13 * F7_LS), (f7_rx(0), f7_rx(800), 13 * F7_RS))
+        for x0, x1, step in halves:                     # minor every 2°C / 20 ft/min, major every 10 cells
+            for k in range(0, round((x1 - x0) / step) + 1):
+                x, major = x0 + k * step, k % 10 == 0
+                s += path(f"M {x:.1f},{top:.1f} L {x:.1f},{bot:.1f}", "none", "#94a3b8" if major else "#dbe3ee", 2.5 if major else 1)
+            for k in range(0, 61):
+                y, major = top + k * 13 * F7_SY, k % 10 == 0
+                s += path(f"M {x0:.1f},{y:.1f} L {x1:.1f},{y:.1f}", "none", "#94a3b8" if major else "#dbe3ee", 2.5 if major else 1)
+            s += f'<rect x="{x0:.1f}" y="{top:.1f}" width="{x1 - x0:.1f}" height="{bot - top:.1f}" fill="none" stroke="{INK}" stroke-width="3"/>'
+        # pressure-altitude lines, labelled every 2000 ft where they leave the chart
+        for alt, c in F7_PA.items():
+            (xa, ya), (xb, yb) = f7_pa_seg(c)
+            hot = alt == pa
+            s += path(f"M {f7_lx(xb):.1f},{f7_y(yb):.1f} L {f7_lx(xa):.1f},{f7_y(ya):.1f}", "none",
+                      NAVY_BLUE if hot else INK, 6 if hot else 2.5)
+            if alt % 2000:
+                continue
+            col = NAVY_BLUE if hot else INK
+            if xa >= 548:                                 # leaves through the right side: label beside it
+                s += label(f7_lx(548) + 12, f7_y(ya) + 11, "Sea level" if alt == 0 else str(alt), 32, col)
+            else:                                         # leaves through the top: label above it
+                s += label(f7_lx(xa), top - 14, str(alt), 32, col, "middle", halo=None)
+        # standard temperature (dashed) and the rate-of-climb line
+        sa, sb = (f7_lx(202.6 + 0.1974 * 150), top), (f7_lx(202.6 + 0.1974 * 930), bot)
+        s += path(f"M {sa[0]:.1f},{sa[1]:.1f} L {sb[0]:.1f},{sb[1]:.1f}", "none", "#64748b", 3, ' stroke-dasharray="10 7"')
+        sy = f7_y(420)
+        sx = sa[0] + (sb[0] - sa[0]) * (sy - top) / (bot - top)
+        rot = math.degrees(math.atan2(bot - top, sb[0] - sa[0]))
+        s += f'<g transform="rotate({rot:.1f} {sx:.1f} {sy:.1f})">' + label(sx, sy - 10, "Std temp", 32, "#475569", "middle") + "</g>"
+        s += path(f"M {f7_rx(f7_roc(150)):.1f},{top:.1f} L {f7_rx(f7_roc(930)):.1f},{bot:.1f}", "none", INK, 5)
+        # the reading: up from the temperature to the altitude line, across to the climb line, down to the rate
+        py = (F7_PA[pa] - (288.5 + 6.5 * t)) / 0.85
+        roc = f7_roc(py)
+        a, b, c2, d = (f7_tx(t), bot), (f7_tx(t), f7_y(py)), (f7_rx(roc), f7_y(py)), (f7_rx(roc), bot)
+        s += polyline([a, b, c2, d], RED, 6, mid="nh_red")
+        for p in (b, c2):
+            s += circle(p[0], p[1], 10, "#ffffff", RED, 5)
+        s += label(d[0] - 16, bot - 24, f"≈ {round(roc / 10) * 10:.0f}", TXT_L, RED, "end")
+        # axes
+        for v in range(-40, 41, 20):
+            s += label(f7_tx(v), bot + 40, f"{v:+d}" if v else "0", 32, INK, "middle", halo=None)
+        for v in range(0, 801, 200):
+            s += label(f7_rx(v), bot + 40, str(v), 32, INK, "middle", halo=None)
+        s += label(f7_tx(0), bot + 88, "OAT, °C", TXT_M, INK, "middle", halo=None)
+        s += label(f7_rx(400), bot + 88, "Rate of climb, ft/min", TXT_M, INK, "middle", halo=None)
+        return s
+    return dict(h=F7_H, sky="white", draw=draw, color=RED, caption=f"{t:+d}°C AT {pa} FT: ABOUT 540 FT/MIN")
+
+
+@R.add(2305, "climb-rate-fig-1-7-v1", "Figure 1-7: Rate of Climb",
+       template("RATE OF CLIMB ABOUT 540 FT/MIN", "READ FIGURE 1-7"),
+       h=stack_height([F7_H]), w=W)
+def _():
+    return picture([f7_panel(10, 4000)])

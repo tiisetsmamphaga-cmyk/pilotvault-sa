@@ -699,6 +699,281 @@
     "explanation_image_title": "No Oil Pressure After Start",
     "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO OIL PRESSURE IN TIME: SHUT DOWN AT ONCE\", \"subline\": \"THE ENGINE MAY BE RUNNING WITHOUT LUBRICATION\", \"blocks\": [{\"label\": \"Normal\", \"value\": \"Pressure within about 30 s (longer when very cold)\"}, {\"label\": \"Damage\", \"value\": \"Can occur within a minute\"}, {\"label\": \"Investigate\", \"value\": \"Low oil, failed pump or faulty gauge\"}]}"
    }
+  },
+  {
+   "id": 2428,
+   "question": "A semi-cantilever monoplane is:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-CANTILEVER: WING BRACED BY STRUTS\", \"subline\": \"STRUTS RUN FROM THE LOWER FUSELAGE TO THE WING\", \"blocks\": [{\"label\": \"Cantilever\", \"value\": \"Supported at the root only, all loads carried by the spars\"}, {\"label\": \"Semi-cantilever\", \"value\": \"External struts share the load\"}, {\"label\": \"Trade-off\", \"value\": \"Lighter spar, more drag\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SEMI-CANTILEVER = WING BRACED BY STRUTS\", \"subline\": \"STRUTS RUN FROM THE LOWER FUSELAGE TO THE WING\", \"blocks\": [{\"label\": \"You'll see it on\", \"value\": \"Cessna 172, Piper Cub: a high wing with a lift strut\"}, {\"label\": \"Full cantilever\", \"value\": \"No struts; the spar carries every load to the root (PA-28)\"}, {\"label\": \"Why struts\", \"value\": \"A lighter spar and wing structure\"}, {\"label\": \"The cost\", \"value\": \"Extra drag from the struts\"}, {\"label\": \"Exam trap\", \"value\": \"\\\"Cantilever\\\" on its own means no external bracing\"}]}"
+   }
+  },
+  {
+   "id": 2429,
+   "question": "The main longitudinal member in a Truss type of fuselage construction would be:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LONGERON IS THE MAIN LENGTHWISE MEMBER\", \"subline\": \"IN A TRUSS FUSELAGE THE BRACED FRAMEWORK CARRIES THE LOADS\", \"blocks\": [{\"label\": \"Longerons\", \"value\": \"Main longitudinal members, usually four\"}, {\"label\": \"Bracing\", \"value\": \"Verticals and diagonals form rigid triangles\"}, {\"label\": \"Covering\", \"value\": \"Carries no load\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LONGERON IS THE MAIN LENGTHWISE MEMBER\", \"subline\": \"IN A TRUSS FUSELAGE THE FRAMEWORK CARRIES ALL THE LOAD\", \"blocks\": [{\"label\": \"Longerons\", \"value\": \"Usually four, running from the firewall to the tail\"}, {\"label\": \"Bracing\", \"value\": \"Verticals and diagonals form rigid triangles\"}, {\"label\": \"Covering\", \"value\": \"Fabric or light skin: carries no load\"}, {\"label\": \"Not in a truss\", \"value\": \"Formers and stringers (monocoque, semi-monocoque)\"}, {\"label\": \"Remember\", \"value\": \"LONGeron = the LONG member\"}]}"
+   }
+  },
+  {
+   "id": 2432,
+   "question": "If the centre of gravity is moved aft during flight the effect will be:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFT CG REDUCES LONGITUDINAL STABILITY\", \"subline\": \"THE TAILPLANE'S MOMENT ARM IS SHORTER, SO THE RESTORING MOMENT IS WEAKER\", \"blocks\": [{\"label\": \"Stability\", \"value\": \"Reduced\"}, {\"label\": \"Elevator feel\", \"value\": \"Lighter; easy to over-control\"}, {\"label\": \"Stall speed\", \"value\": \"Slightly lower (less tail download)\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFT CG REDUCES LONGITUDINAL STABILITY\", \"subline\": \"SHORTER TAIL ARM, SO A WEAKER RESTORING MOMENT\", \"blocks\": [{\"label\": \"Stability\", \"value\": \"Less stable in pitch\"}, {\"label\": \"Elevator\", \"value\": \"Lighter; easy to over-control\"}, {\"label\": \"Stall speed\", \"value\": \"Slightly lower (less tail download)\"}, {\"label\": \"Behind the aft limit\", \"value\": \"Stall and spin recovery may not be possible\"}, {\"label\": \"Forward CG\", \"value\": \"More stable, heavier elevator, higher stall speed\"}]}"
+   }
+  },
+  {
+   "id": 2440,
+   "question": "The most important structural component of a wing is:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE MAIN SPAR IS THE WING'S KEY STRUCTURE\", \"subline\": \"ROOT-TO-TIP BEAM CARRYING MOST OF THE BENDING AND SHEAR\", \"blocks\": [{\"label\": \"Main spar\", \"value\": \"Primary load-carrying beam\"}, {\"label\": \"Ribs\", \"value\": \"Shape; pass air loads to the spars\"}, {\"label\": \"Rear spar\", \"value\": \"Carries the trailing-edge controls\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE MAIN SPAR IS THE WING'S MOST IMPORTANT PART\", \"subline\": \"A ROOT-TO-TIP BEAM CARRYING MOST OF THE BENDING AND SHEAR\", \"blocks\": [{\"label\": \"Main spar\", \"value\": \"The primary load-carrying beam\"}, {\"label\": \"Ribs\", \"value\": \"Give the aerofoil shape; pass the air loads to the spars\"}, {\"label\": \"Rear spar\", \"value\": \"Carries the ailerons and flaps\"}, {\"label\": \"Skin and stringers\", \"value\": \"Share the load in a stressed-skin wing\"}, {\"label\": \"Exam trap\", \"value\": \"Longerons belong to the fuselage, not the wing\"}]}"
+   }
+  },
+  {
+   "id": 2450,
+   "question": "A rotating propeller will produce a force which acts in the opposite direction of rotation. This force is called:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE REACTION ACTS OPPOSITE TO PROPELLER ROTATION\", \"subline\": \"NEWTON'S THIRD LAW: THE ENGINE TURNS THE PROPELLER, THE PROPELLER TURNS THE AIRCRAFT BACK\", \"blocks\": [{\"label\": \"In the air\", \"value\": \"Tends to roll the aircraft\"}, {\"label\": \"On the ground\", \"value\": \"Loads one main wheel more: the aircraft swings\"}, {\"label\": \"Not torque\", \"value\": \"Centrifugal force, P-factor, gyroscopic precession\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORQUE: THE REACTION OPPOSITE TO THE PROPELLER'S ROTATION\", \"subline\": \"NEWTON'S THIRD LAW: PROPELLER ONE WAY, AIRCRAFT THE OTHER\", \"blocks\": [{\"label\": \"In the air\", \"value\": \"Tries to roll the aircraft\"}, {\"label\": \"On the ground\", \"value\": \"One main wheel pressed down harder: the aircraft swings\"}, {\"label\": \"Biggest when\", \"value\": \"High power at low airspeed: the take-off run\"}, {\"label\": \"Not torque\", \"value\": \"P-factor, slipstream, gyroscopic precession, centrifugal force\"}]}"
+   }
+  },
+  {
+   "id": 2452,
+   "question": "Ignoring crosswind, an aeroplane with a tricycle undercarriage and a clockwise-rotating propeller, as viewed from the cockpit, will tend to:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLOCKWISE PROPELLER: THE AEROPLANE YAWS LEFT\", \"subline\": \"RIGHT RUDDER KEEPS IT STRAIGHT ON THE TAKE-OFF RUN\", \"blocks\": [{\"label\": \"Slipstream\", \"value\": \"Spirals onto the left of the fin\"}, {\"label\": \"Torque reaction\", \"value\": \"Presses the left wheel down\"}, {\"label\": \"P-factor\", \"value\": \"Down-going right blade gives more thrust\"}, {\"label\": \"Gyroscopic\", \"value\": \"Small: a tricycle's tail is not raised\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLOCKWISE PROPELLER: THE AEROPLANE YAWS LEFT\", \"subline\": \"HOLD IT STRAIGHT WITH RIGHT RUDDER ON THE TAKE-OFF RUN\", \"blocks\": [{\"label\": \"Slipstream\", \"value\": \"Spirals round and hits the left of the fin\"}, {\"label\": \"Torque reaction\", \"value\": \"Presses the left wheel down harder\"}, {\"label\": \"P-factor\", \"value\": \"The down-going right blade pulls harder at high angles\"}, {\"label\": \"Gyroscopic\", \"value\": \"Little effect: a tricycle's tail stays down\"}, {\"label\": \"Pilot action\", \"value\": \"Right rudder as the power comes in\"}]}"
+   }
+  },
+  {
+   "id": 2464,
+   "question": "The horizontal stabiliser on the tail:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TAILPLANE PUSHES UP OR DOWN AS REQUIRED\", \"subline\": \"IT GIVES LONGITUDINAL (PITCH) STABILITY\", \"blocks\": [{\"label\": \"Force\", \"value\": \"Up or down, depending on CG and flight condition\"}, {\"label\": \"Directional stability\", \"value\": \"Comes from the fin\"}, {\"label\": \"Lateral stability\", \"value\": \"Mainly from wing dihedral\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TAILPLANE GIVES PITCH STABILITY\", \"subline\": \"ITS FORCE ACTS UP OR DOWN, WHICHEVER BRINGS THE NOSE BACK\", \"blocks\": [{\"label\": \"Nose pitches up\", \"value\": \"Tail force up: the nose is pushed back down\"}, {\"label\": \"Nose pitches down\", \"value\": \"Tail force down: the nose is pushed back up\"}, {\"label\": \"In normal cruise\", \"value\": \"Usually a small download, balancing a nose-heavy CG\"}, {\"label\": \"Remember\", \"value\": \"Tailplane: pitch · Fin: yaw · Dihedral: roll\"}]}"
+   }
+  },
+  {
+   "id": 2466,
+   "question": "The type of flap which, when extended, increases the surface area of the wing is called a:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE FOWLER FLAP INCREASES WING AREA\", \"subline\": \"IT RUNS AFT ON TRACKS BEFORE IT MOVES DOWN\", \"blocks\": [{\"label\": \"Early travel\", \"value\": \"Mostly area: lift with little drag\"}, {\"label\": \"Full travel\", \"value\": \"Area and camber: the largest lift increase\"}, {\"label\": \"Others\", \"value\": \"Plain, split, slotted add no significant area\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE FOWLER FLAP INCREASES WING AREA\", \"subline\": \"IT RUNS BACK ON TRACKS, THEN DOWN\", \"blocks\": [{\"label\": \"First stage\", \"value\": \"Mostly more area: extra lift, little drag\"}, {\"label\": \"Fully down\", \"value\": \"Area and camber: the biggest lift increase\"}, {\"label\": \"Plain flap\", \"value\": \"Hinged trailing edge: camber only\"}, {\"label\": \"Split flap\", \"value\": \"Lower surface only: lots of drag\"}, {\"label\": \"Slotted flap\", \"value\": \"A slot re-energises the airflow over the flap\"}]}"
+   }
+  },
+  {
+   "id": 2469,
+   "question": "The purpose of baffles in an aircraft's fuel tank is to:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES STOP THE FUEL SURGING\", \"subline\": \"INTERNAL WALLS WITH HOLES DIVIDE THE TANK\", \"blocks\": [{\"label\": \"Outlet\", \"value\": \"Stays covered in manoeuvres\"}, {\"label\": \"CG\", \"value\": \"No sudden shifts\"}, {\"label\": \"Vents / drains\", \"value\": \"Pressure and water, not surge\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BAFFLES STOP THE FUEL SURGING\", \"subline\": \"WALLS WITH HOLES INSIDE THE TANK SLOW THE FUEL DOWN\", \"blocks\": [{\"label\": \"Fuel outlet\", \"value\": \"Stays covered in turns and manoeuvres\"}, {\"label\": \"CG\", \"value\": \"No sudden shifts\"}, {\"label\": \"Tank structure\", \"value\": \"Not hammered by moving fuel\"}, {\"label\": \"Vent\", \"value\": \"Keeps the tank at atmospheric pressure\"}, {\"label\": \"Drain and sump\", \"value\": \"Where water is removed\"}]}"
+   }
+  },
+  {
+   "id": 2474,
+   "question": "The term \"valve lead\" refers to:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VALVE LEAD: INLET OPENS BEFORE TDC\", \"subline\": \"AT THE END OF THE EXHAUST STROKE\", \"blocks\": [{\"label\": \"Lead\", \"value\": \"Valve opens early\"}, {\"label\": \"Lag\", \"value\": \"Valve closes late (inlet after BDC)\"}, {\"label\": \"Overlap\", \"value\": \"Both valves open around TDC\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VALVE LEAD: THE INLET OPENS BEFORE TDC\", \"subline\": \"AT THE END OF THE EXHAUST STROKE\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Fully open when induction starts, so more mixture gets in\"}, {\"label\": \"Valve lag\", \"value\": \"The inlet closes late, after BDC\"}, {\"label\": \"Valve overlap\", \"value\": \"Inlet and exhaust both open around TDC\"}, {\"label\": \"Remember\", \"value\": \"Lead = opens early · Lag = closes late\"}]}"
+   }
+  },
+  {
+   "id": 2500,
+   "question": "An engine which starts to run rough and then slowly loses power is probably suffering from:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ROUGH, THEN A SLOW LOSS OF POWER: CARB ICE\", \"subline\": \"ICE BUILDS GRADUALLY AROUND THE VENTURI AND BUTTERFLY\", \"blocks\": [{\"label\": \"Magneto failure\", \"value\": \"Immediate drop and roughness\"}, {\"label\": \"Fuel starvation\", \"value\": \"Surging, then stopping\"}, {\"label\": \"Action\", \"value\": \"Full carb heat at the first signs\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ROUGH RUNNING, THEN A SLOW LOSS OF POWER: CARB ICE\", \"subline\": \"ICE BUILDS GRADUALLY AT THE VENTURI AND THROTTLE BUTTERFLY\", \"blocks\": [{\"label\": \"Why it forms\", \"value\": \"Fuel evaporation and the venturi cool the air by up to 30°C\"}, {\"label\": \"Worst conditions\", \"value\": \"Humid air and low power, even on warm days\"}, {\"label\": \"Fixed-pitch propeller\", \"value\": \"A gradual drop in RPM\"}, {\"label\": \"Not carb ice\", \"value\": \"Magneto: sudden drop · Empty tank: surging, then stopping\"}, {\"label\": \"Action\", \"value\": \"Full carb heat at the first sign\"}]}"
+   }
+  },
+  {
+   "id": 2504,
+   "question": "100 LL aviation fuel or AVGAS can be identified by its:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AVGAS 100LL IS BLUE\", \"subline\": \"FUEL IS DYED SO ITS GRADE CAN BE SEEN IN A SAMPLE\", \"blocks\": [{\"label\": \"100LL\", \"value\": \"Blue\"}, {\"label\": \"100\", \"value\": \"Green\"}, {\"label\": \"80\", \"value\": \"Red\"}, {\"label\": \"Jet A-1\", \"value\": \"Clear / straw: never in a piston engine\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AVGAS 100LL IS DYED BLUE\", \"subline\": \"CHECK THE COLOUR EVERY TIME YOU TAKE A FUEL SAMPLE\", \"blocks\": [{\"label\": \"100LL\", \"value\": \"Blue (low lead)\"}, {\"label\": \"100\", \"value\": \"Green\"}, {\"label\": \"80\", \"value\": \"Red\"}, {\"label\": \"Jet A-1\", \"value\": \"Clear to straw: never in a piston engine\"}, {\"label\": \"Water\", \"value\": \"Clear blobs or a layer at the bottom of the cup\"}]}"
+   }
+  },
+  {
+   "id": 2525,
+   "question": "Engine cylinders and barrels are usually fitted with the fins in order to:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COOLING FINS IMPROVE ENGINE COOLING\", \"subline\": \"THEY GREATLY INCREASE THE AREA LOSING HEAT TO THE AIR\", \"blocks\": [{\"label\": \"Fins\", \"value\": \"More surface area\"}, {\"label\": \"Baffles\", \"value\": \"Direct air through the fins\"}, {\"label\": \"Cowl flaps\", \"value\": \"Control how much air flows\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COOLING FINS IMPROVE ENGINE COOLING\", \"subline\": \"THEY ADD SURFACE AREA FOR THE HEAT TO ESCAPE TO THE AIR\", \"blocks\": [{\"label\": \"Fins\", \"value\": \"More area losing heat to the air\"}, {\"label\": \"Baffles\", \"value\": \"Force the air through the fins\"}, {\"label\": \"Cowl flaps\", \"value\": \"Control how much air flows\"}, {\"label\": \"Watch\", \"value\": \"Cylinder head and oil temperatures in long climbs\"}, {\"label\": \"Exam trap\", \"value\": \"Fins do not increase the airflow\"}]}"
+   }
+  },
+  {
+   "id": 2530,
+   "question": "Dry sump piston engine lubrication systems make use of a scavenge pump to:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SCAVENGE PUMP RETURNS OIL TO THE TANK\", \"subline\": \"IT KEEPS THE SUMP OF A DRY-SUMP ENGINE DRY\", \"blocks\": [{\"label\": \"Oil stored\", \"value\": \"In a separate tank\"}, {\"label\": \"Pressure pump\", \"value\": \"Tank to engine\"}, {\"label\": \"Scavenge pump\", \"value\": \"Sump to tank; larger capacity\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SCAVENGE PUMP RETURNS OIL TO THE TANK\", \"subline\": \"IT KEEPS THE SUMP OF A DRY-SUMP ENGINE DRY\", \"blocks\": [{\"label\": \"Oil stored\", \"value\": \"In a separate tank, not the sump\"}, {\"label\": \"Pressure pump\", \"value\": \"Tank to the engine\"}, {\"label\": \"Scavenge pump\", \"value\": \"Sump back to the tank\"}, {\"label\": \"Bigger capacity\", \"value\": \"The returning oil is hot and frothy\"}, {\"label\": \"Wet sump\", \"value\": \"Oil kept in the sump; no scavenge pump\"}]}"
+   }
+  },
+  {
+   "id": 2549,
+   "question": "Lubrication of the main bearings and crankshaft of the engine is provided:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"THROUGH GALLERIES AND CRANKSHAFT DRILLINGS TO THE BIG ENDS\", \"blocks\": [{\"label\": \"Pressure fed\", \"value\": \"Main and big-end bearings\"}, {\"label\": \"Splash\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why\", \"value\": \"Heaviest loads need a positive supply\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAIN BEARINGS GET HIGH-PRESSURE OIL\", \"subline\": \"FROM THE PUMP THROUGH GALLERIES AND CRANKSHAFT DRILLINGS\", \"blocks\": [{\"label\": \"Pressure-fed\", \"value\": \"Main and big-end bearings, camshaft\"}, {\"label\": \"Splash-fed\", \"value\": \"Cylinder walls, pistons, small ends\"}, {\"label\": \"Why pressure\", \"value\": \"The heaviest loads need a positive supply\"}, {\"label\": \"Low oil pressure\", \"value\": \"The bearings are at risk: treat it as serious\"}]}"
+   }
+  },
+  {
+   "id": 2629,
+   "question": "The green arc on an airspeed indicator represents:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GREEN ARC: NORMAL OPERATING RANGE\", \"subline\": \"FROM VS1 TO VNO\", \"blocks\": [{\"label\": \"Green\", \"value\": \"VS1 (clean stall) to VNO\"}, {\"label\": \"White\", \"value\": \"Flap operating range\"}, {\"label\": \"Yellow\", \"value\": \"Caution: smooth air only\"}, {\"label\": \"Red line\", \"value\": \"VNE\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GREEN ARC: THE NORMAL OPERATING RANGE\", \"subline\": \"FROM VS1 (CLEAN STALL) TO VNO\", \"blocks\": [{\"label\": \"Bottom of the green\", \"value\": \"VS1: stall with flaps up at maximum weight\"}, {\"label\": \"Top of the green\", \"value\": \"VNO: maximum structural cruising speed\"}, {\"label\": \"White arc\", \"value\": \"Flap operating range: VSO to VFE\"}, {\"label\": \"Yellow arc\", \"value\": \"Caution: smooth air only\"}, {\"label\": \"Red line\", \"value\": \"VNE: never exceed\"}]}"
+   }
+  },
+  {
+   "id": 2673,
+   "question": "During a level coordinated turn, the additional load imposed on the wings is a function of:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOAD FACTOR DEPENDS ONLY ON BANK ANGLE\", \"subline\": \"IN A LEVEL, COORDINATED TURN\", \"blocks\": [{\"label\": \"30 degrees\", \"value\": \"1.15 g\"}, {\"label\": \"45 degrees\", \"value\": \"1.41 g\"}, {\"label\": \"60 degrees\", \"value\": \"2 g\"}], \"formula\": \"n = 1 / cos(BANK)\"}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOAD FACTOR DEPENDS ONLY ON THE ANGLE OF BANK\", \"subline\": \"IN A LEVEL, COORDINATED TURN\", \"blocks\": [{\"label\": \"30°\", \"value\": \"1.15 g\"}, {\"label\": \"45°\", \"value\": \"1.41 g\"}, {\"label\": \"60°\", \"value\": \"2 g\"}, {\"label\": \"Stall speed\", \"value\": \"Rises with √n: about 41% higher at 60°\"}, {\"label\": \"Not a factor\", \"value\": \"Airspeed or rate of turn (they set the radius)\"}], \"formula\": \"n = 1 / cos (BANK)\"}"
+   }
+  },
+  {
+   "id": 2675,
+   "question": "The needle or pointer of a Turn co-ordinator shows:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TURN COORDINATOR SHOWS RATE OF TURN\", \"subline\": \"RATE ONE = 3 DEGREES PER SECOND (2 MINUTES FOR 360)\", \"blocks\": [{\"label\": \"Canted gyro\", \"value\": \"Also senses rate of roll\"}, {\"label\": \"Does not show\", \"value\": \"Bank angle\"}, {\"label\": \"Balance ball\", \"value\": \"Shows coordination\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TURN COORDINATOR SHOWS RATE OF TURN\", \"subline\": \"RATE ONE = 3° PER SECOND, 360° IN 2 MINUTES\", \"blocks\": [{\"label\": \"Canted gyro\", \"value\": \"Tilted about 30°, so it also senses roll\"}, {\"label\": \"Rate-one bank\", \"value\": \"Rule of thumb: IAS ÷ 10 + 7 degrees\"}, {\"label\": \"Does not show\", \"value\": \"Bank angle: use the attitude indicator\"}, {\"label\": \"Balance ball\", \"value\": \"Shows slip or skid\"}]}"
+   }
+  },
+  {
+   "id": 2701,
+   "question": "The deviation error found in a magnetic compass:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION COMES FROM THE AIRCRAFT'S OWN MAGNETIC FIELDS\", \"subline\": \"IT CHANGES WITH HEADING\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Steel parts, engine, radios, wiring, loose items\"}, {\"label\": \"Reduced by\", \"value\": \"Compass swing and compensating magnets\"}, {\"label\": \"Remainder\", \"value\": \"Shown on the deviation card\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION COMES FROM THE AIRCRAFT'S OWN MAGNETISM\", \"subline\": \"IT CHANGES WITH HEADING\", \"blocks\": [{\"label\": \"Sources\", \"value\": \"Engine steel, radios, wiring, loose items near the compass\"}, {\"label\": \"Reduced by\", \"value\": \"A compass swing and the compensating magnets\"}, {\"label\": \"What's left\", \"value\": \"Shown on the deviation card\"}, {\"label\": \"Variation\", \"value\": \"True vs magnetic north: depends on where you are\"}, {\"label\": \"Remember\", \"value\": \"Deviation: the aircraft · Variation: the Earth\"}]}"
+   }
+  },
+  {
+   "id": 2707,
+   "question": "According to the International Standard Atmosphere, the standard sea-level temperature and lapse rate are:",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA: +15 C AT SEA LEVEL, FALLING 1.98 C PER 1,000 FT\", \"subline\": \"UP TO THE TROPOPAUSE AT 36,090 FT, THEN CONSTANT AT -56.5 C\", \"blocks\": [{\"label\": \"Sea-level pressure\", \"value\": \"1013.25 hPa\"}, {\"label\": \"Sea-level density\", \"value\": \"1.225 kg/m3\"}, {\"label\": \"3 C per 1,000 ft\", \"value\": \"Dry adiabatic rate, not ISA\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA: +15°C AT SEA LEVEL, FALLING 1.98°C PER 1,000 FT\", \"subline\": \"UP TO THE TROPOPAUSE AT 36,090 FT, THEN -56.5°C\", \"blocks\": [{\"label\": \"Pressure\", \"value\": \"1013.25 hPa at sea level\"}, {\"label\": \"Density\", \"value\": \"1.225 kg/m³ at sea level\"}, {\"label\": \"Above 36,090 ft\", \"value\": \"Constant -56.5°C\"}, {\"label\": \"Quick check\", \"value\": \"ISA temperature ≈ 15 − 2 × altitude in thousands of ft\"}, {\"label\": \"Not ISA\", \"value\": \"3°C per 1,000 ft is the dry adiabatic rate\"}]}"
+   }
+  },
+  {
+   "id": 2726,
+   "question": "Under which atmospheric conditions can a normally aspirated piston engine produce the greatest power?",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST POWER IN COLD, DRY, HIGH-PRESSURE AIR\", \"subline\": \"THE DENSEST AIR PUTS THE MOST OXYGEN IN EACH CYLINDER\", \"blocks\": [{\"label\": \"Cold\", \"value\": \"Denser than warm air\"}, {\"label\": \"High pressure\", \"value\": \"Denser air\"}, {\"label\": \"Dry\", \"value\": \"Water vapour is lighter than the air it displaces\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST POWER IN COLD, DRY, HIGH-PRESSURE AIR\", \"subline\": \"DENSE AIR PUTS MORE OXYGEN IN EACH CYLINDER\", \"blocks\": [{\"label\": \"Cold\", \"value\": \"Denser than warm air\"}, {\"label\": \"High pressure\", \"value\": \"More air in the same space\"}, {\"label\": \"Dry\", \"value\": \"Water vapour is lighter than the air it replaces\"}, {\"label\": \"Worst case\", \"value\": \"Hot, humid, high airfield: long take-off run, poor climb\"}]}"
+   }
+  },
+  {
+   "id": 2734,
+   "question": "Which unit converts direct current into alternating current?",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN INVERTER CONVERTS DC TO AC\", \"subline\": \"FOR AC INSTRUMENTS AND AVIONICS IN A DC AIRCRAFT\", \"blocks\": [{\"label\": \"Inverter\", \"value\": \"DC to AC\"}, {\"label\": \"Rectifier\", \"value\": \"AC to DC\"}, {\"label\": \"TRU\", \"value\": \"Transformer-rectifier: AC to lower-voltage DC\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN INVERTER CONVERTS DC TO AC\", \"subline\": \"FOR AC INSTRUMENTS AND AVIONICS IN A DC AIRCRAFT\", \"blocks\": [{\"label\": \"Inverter\", \"value\": \"DC to AC\"}, {\"label\": \"Rectifier\", \"value\": \"AC to DC\"}, {\"label\": \"TRU\", \"value\": \"Transformer-rectifier: AC to lower-voltage DC\"}, {\"label\": \"Thermistor\", \"value\": \"A temperature-sensitive resistor, not a converter\"}, {\"label\": \"Remember\", \"value\": \"The INverter turns DC INto AC\"}]}"
+   }
+  },
+  {
+   "id": 2740,
+   "question": "Which abbreviation denotes the maximum speed with flaps extended?",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE: MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"TOP OF THE WHITE ARC\", \"blocks\": [{\"label\": \"VFE\", \"value\": \"Flaps extended\"}, {\"label\": \"VLE\", \"value\": \"Landing gear extended\"}, {\"label\": \"VNO\", \"value\": \"Maximum structural cruising speed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE: MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"THE TOP OF THE WHITE ARC\", \"blocks\": [{\"label\": \"VFE\", \"value\": \"Flaps extended\"}, {\"label\": \"VLE\", \"value\": \"Landing gear extended\"}, {\"label\": \"VNO\", \"value\": \"Maximum structural cruising speed: top of the green\"}, {\"label\": \"VSO\", \"value\": \"Stall in the landing configuration: bottom of the white\"}, {\"label\": \"Before selecting flap\", \"value\": \"Check you are below VFE\"}]}"
+   }
+  },
+  {
+   "id": 2768,
+   "question": "On a turn-and-slip indicator, which component shows whether the aircraft is slipping or skidding?",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE BALL SHOWS SLIP OR SKID\", \"subline\": \"THE NEEDLE SHOWS RATE AND DIRECTION OF TURN\", \"blocks\": [{\"label\": \"Ball centred\", \"value\": \"Coordinated\"}, {\"label\": \"Ball inside\", \"value\": \"Slipping\"}, {\"label\": \"Ball outside\", \"value\": \"Skidding\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE BALL SHOWS SLIP OR SKID\", \"subline\": \"THE NEEDLE SHOWS RATE AND DIRECTION OF TURN\", \"blocks\": [{\"label\": \"Ball centred\", \"value\": \"A coordinated turn\"}, {\"label\": \"Ball inside the turn\", \"value\": \"Slipping: too much bank for the rate of turn\"}, {\"label\": \"Ball outside the turn\", \"value\": \"Skidding: too much rudder\"}, {\"label\": \"The fix\", \"value\": \"Step on the ball: rudder on the side the ball has moved to\"}]}"
+   }
+  },
+  {
+   "id": 2771,
+   "question": "A simple airspeed indicator is calibrated using which reference condition?",
+   "why": "fuller KEY FACT card (user approved the first-draft cards; explanation unchanged)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"subline\": \"1.225 kg/m3: ONLY THERE DOES IAS EQUAL TAS\", \"blocks\": [{\"label\": \"Higher or warmer\", \"value\": \"Lower density: ASI reads below TAS\"}, {\"label\": \"TAS\", \"value\": \"Worked out from CAS, altitude and temperature\"}, {\"label\": \"Stall speeds\", \"value\": \"Stay much the same in IAS\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE ASI IS CALIBRATED FOR ISA SEA-LEVEL DENSITY\", \"subline\": \"1.225 kg/m³: ONLY THERE DOES IAS EQUAL TAS\", \"blocks\": [{\"label\": \"It measures\", \"value\": \"Dynamic pressure, which depends on speed and density\"}, {\"label\": \"Higher or hotter\", \"value\": \"Thinner air: the ASI reads below TAS\"}, {\"label\": \"Rule of thumb\", \"value\": \"TAS ≈ IAS + 2% per 1,000 ft\"}, {\"label\": \"Stall speed\", \"value\": \"Stays about the same in IAS\"}], \"formula\": \"DYNAMIC PRESSURE = ½ × DENSITY × V²\"}"
+   }
   }
  ]
 }

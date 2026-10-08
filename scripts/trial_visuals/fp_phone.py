@@ -539,10 +539,11 @@ def asi_panel():
         from scene import asi_angle, compass_xy
         cx, cy, r = 450, 370, 300
         s = asi_dial(cx, cy, r, needle=90)
-        vfe = compass_xy(cx, cy, r * 0.77, asi_angle(100))
-        vno = compass_xy(cx, cy, r * 0.88, asi_angle(165))
-        s += line(vfe, (790, 600), INK, w=4) + label(800, 640, "VFE", TXT_L, INK)
-        s += line(vno, (120, 690), INK, w=4) + label(110, 730, "VNO", TXT_L, INK, "end")
+        # each label sits just outside the rim, beside the end of its arc
+        vx, vy = compass_xy(cx, cy, r * 1.13, asi_angle(100))
+        nx, ny = compass_xy(cx, cy, r * 1.13, asi_angle(165))
+        s += label(vx + 4, vy + 30, "VFE", TXT_L, INK)
+        s += label(nx - 4, ny + 30, "VNO", TXT_L, INK, "end")
         return s
     return dict(h=ASI_H, sky="sky_grey", draw=draw, color=RED, caption="RED LINE: VNE, NEVER EXCEED")
 

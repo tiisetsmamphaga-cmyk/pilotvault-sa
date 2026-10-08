@@ -41,6 +41,12 @@ for that size first; desktop is the easy case.
   corners, thin grey border (`scene.stack`).
 - **The physics is drawn as flow.** Three smooth parallel streamlines with
   arrowheads, strongest nearest the surface, fading outwards.
+- **Flight paths are one smooth curve** (`fp_phone.curve` / `track`). The
+  aircraft sits on its own path — main wheels on the line, turned to the
+  path's direction or its real attitude (`fp_phone.plane_on`) — and the
+  arrowhead ends clear of the aircraft and the labels. Paths depart from a
+  reference line gradually (e.g. wind shear leaving the glide path), never
+  with a kink or a loop; reference lines (glide path, ground roll) are dashed.
 - **Labels sit on the picture** with a soft halo. No leader lines, call-out
   boxes, pills or tables.
 - **A caption under each panel** in the panel's colour, naming the answer

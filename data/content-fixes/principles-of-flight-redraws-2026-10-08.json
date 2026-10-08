@@ -1,0 +1,343 @@
+{
+ "date": "2026-10-08",
+ "subject": "principles-of-flight",
+ "change": "Trial pictures redrawn in HD from the textbook figures (pof_phone.py), applied to the 25 trial questions; the centre-of-pressure redraw also to its three bank questions (1142, 1286, 1301). KEY FACT cards unchanged.",
+ "rows": [
+  {
+   "id": -5,
+   "question": "An aeroplane weighs 4,600 lb. What approximate load must the structure support in a level 50° banked turn? (Refer to Figure PPL PoF-1.)",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-17/pof-load-factor-50deg-v2.webp",
+    "explanation_image_title": "Load in a 50° Banked Turn"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/load-factor-50deg-v1.webp",
+    "explanation_image_title": "Load Factor and Bank Angle"
+   }
+  },
+  {
+   "id": -3,
+   "question": "What is the load factor in a level 60° banked turn? (Refer to Figure PPL PoF-1.)",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-bank-load-factor-v2.webp",
+    "explanation_image_title": "Bank Angle, Load Factor & Stall Speed"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/load-factor-60deg-v1.webp",
+    "explanation_image_title": "Load Factor and Bank Angle"
+   }
+  },
+  {
+   "id": 1110,
+   "question": "The equation of continuity states that if the area of a venturi is decreased, what happens to the velocity of the air?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-16/pof-venturi-effect-v2.webp",
+    "explanation_image_title": "Venturi Effect"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/venturi-speed-v1.webp",
+    "explanation_image_title": "Venturi: Speed"
+   }
+  },
+  {
+   "id": 1111,
+   "question": "If the centre of gravity is moved aft during flight, what happens to longitudinal stability?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+    "explanation_image_title": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/lift-weight-tail-v1.webp",
+    "explanation_image_title": "Lift, Weight and Tail Force"
+   }
+  },
+  {
+   "id": 1113,
+   "question": "The lift force produced by an aerofoil acts in what direction?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-lift-perpendicular-v2.webp",
+    "explanation_image_title": "Lift: Direction of Action"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/lift-perpendicular-v1.webp",
+    "explanation_image_title": "Lift Acts at 90° to the Relative Airflow"
+   }
+  },
+  {
+   "id": 1126,
+   "question": "In normal level flight, a reduction in power causes the nose to drop mainly because of what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-longitudinal-stability-v3.webp",
+    "explanation_image_title": "Longitudinal Stability & CG Position"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/lift-weight-tail-v1.webp",
+    "explanation_image_title": "Lift, Weight and Tail Force"
+   }
+  },
+  {
+   "id": 1138,
+   "question": "On an aerofoil or aircraft, the point through which total weight acts is called what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-gravity-v2.webp",
+    "explanation_image_title": "Center of Gravity"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/centre-of-gravity-v1.webp",
+    "explanation_image_title": "Centre of Gravity"
+   }
+  },
+  {
+   "id": 1140,
+   "question": "Bernoulli’s principle states that if the velocity of air flowing through a venturi is increased, what must happen to pressure energy?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-16/pof-venturi-effect-v2.webp",
+    "explanation_image_title": "Venturi Effect"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/venturi-pressure-v1.webp",
+    "explanation_image_title": "Venturi: Pressure"
+   }
+  },
+  {
+   "id": 1142,
+   "question": "On an aerofoil, the point through which total lift acts is called what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-pressure-v2.webp",
+    "explanation_image_title": "Center of Pressure"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/centre-of-pressure-v1.webp",
+    "explanation_image_title": "Centre of Pressure"
+   }
+  },
+  {
+   "id": 1152,
+   "question": "The angle between the chord line and the longitudinal axis is called what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-angle-of-incidence-v2.webp",
+    "explanation_image_title": "Angle of Incidence"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/angle-of-incidence-v1.webp",
+    "explanation_image_title": "Angle of Incidence"
+   }
+  },
+  {
+   "id": 1153,
+   "question": "With reference to the figure below, curve B on the graph indicates:",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-drag-curves-v3.webp",
+    "explanation_image_title": "Induced, Parasite & Total Drag"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/drag-curves-v1.webp",
+    "explanation_image_title": "Drag and Speed"
+   }
+  },
+  {
+   "id": 1154,
+   "question": "The primary and secondary effects of aileron are what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-12/pof-aileron-further-effects-v2.webp",
+    "explanation_image_title": "Aileron: Primary & Further Effects"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/aileron-roll-v1.webp",
+    "explanation_image_title": "Ailerons: Roll"
+   }
+  },
+  {
+   "id": 1158,
+   "question": "Induced drag increases with what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-drag-vs-speed-v2.webp",
+    "explanation_image_title": "Induced & Parasite Drag vs Speed"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/drag-curves-v1.webp",
+    "explanation_image_title": "Drag and Speed"
+   }
+  },
+  {
+   "id": 1168,
+   "question": "Dihedral is incorporated into aeroplane design to improve what stability?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-dihedral-lateral-stability-v3.webp",
+    "explanation_image_title": "Dihedral & Lateral Stability"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/dihedral-v1.webp",
+    "explanation_image_title": "Dihedral"
+   }
+  },
+  {
+   "id": 1190,
+   "question": "An adjustable trim tab attached to an elevator will, when the elevator is moved, do what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v2.webp",
+    "explanation_image_title": "Elevator Trim Tab"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/trim-tab-v1.webp",
+    "explanation_image_title": "Elevator Trim Tab"
+   }
+  },
+  {
+   "id": 1199,
+   "question": "An increase in wing loading will have what effect on stalling speed?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-4/pof-critical-aoa-stall-v6.webp",
+    "explanation_image_title": "Critical Angle of Attack & Stall"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/aoa-to-stall-v1.webp",
+    "explanation_image_title": "Angle of Attack to the Stall"
+   }
+  },
+  {
+   "id": 1201,
+   "question": "The primary purpose of Fowler flaps is to do what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-fowler-flap-v2.webp",
+    "explanation_image_title": "Fowler Flap: Purpose"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/flap-types-v1.webp",
+    "explanation_image_title": "Types of Flap"
+   }
+  },
+  {
+   "id": 1205,
+   "question": "If aircraft weight is increased, what happens to stalling speed and stalling angle of attack?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-16/pof-critical-aoa-v2.webp",
+    "explanation_image_title": "Critical Angle of Attack"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/aoa-to-stall-v1.webp",
+    "explanation_image_title": "Angle of Attack to the Stall"
+   }
+  },
+  {
+   "id": 1219,
+   "question": "In a steady climb with constant speed and power, what is true?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-16/pof-climb-forces-v2.webp",
+    "explanation_image_title": "Forces in a Climb"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/climb-forces-v1.webp",
+    "explanation_image_title": "Forces in a Steady Climb"
+   }
+  },
+  {
+   "id": 1239,
+   "question": "An aeroplane with a high lift-to-drag ratio will have what type of gliding angle?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-1/pof-glide-ld-v2.webp",
+    "explanation_image_title": "Lift-to-Drag Ratio & Glide Angle"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/glide-forces-v1.webp",
+    "explanation_image_title": "Forces in a Glide"
+   }
+  },
+  {
+   "id": 1264,
+   "question": "Vne is what speed?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-18/pof-asi-vne-v2.webp",
+    "explanation_image_title": "VNE: Never-Exceed Speed"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/asi-vne-v1.webp",
+    "explanation_image_title": "Airspeed Indicator: VNE"
+   }
+  },
+  {
+   "id": 1286,
+   "question": "On an aerofoil, the point through which the total lift force acts is known as:-",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-pressure-v2.webp",
+    "explanation_image_title": "Center of Pressure"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/centre-of-pressure-v1.webp",
+    "explanation_image_title": "Centre of Pressure"
+   }
+  },
+  {
+   "id": 1300,
+   "question": "The angle between an aerofoil's chord line and the relative airflow is referred to as:-",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-19/pof-aoa-examples-v2.webp",
+    "explanation_image_title": "Angle of Attack: Definition"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/aoa-examples-v1.webp",
+    "explanation_image_title": "Angle of Attack"
+   }
+  },
+  {
+   "id": 1301,
+   "question": "On an aerofoil, the point through which the total lift acts is called the:-",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-center-of-pressure-v2.webp",
+    "explanation_image_title": "Center of Pressure"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/centre-of-pressure-v1.webp",
+    "explanation_image_title": "Centre of Pressure"
+   }
+  },
+  {
+   "id": 1308,
+   "question": "A change in bank will cause an aircraft to rotate around its:-",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-16/pof-axes-roll-v2.webp",
+    "explanation_image_title": "Roll: Longitudinal Axis"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/three-axes-v1.webp",
+    "explanation_image_title": "The Three Axes"
+   }
+  },
+  {
+   "id": 1345,
+   "question": "With regard to humidity and air density:-",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-humidity-density-v2.webp",
+    "explanation_image_title": "Humidity & Air Density"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/humidity-density-v1.webp",
+    "explanation_image_title": "Humidity and Air Density"
+   }
+  },
+  {
+   "id": 2012,
+   "question": "When a conventional control surface with a simple trim tab moves, the trim tab remains at the selected angle relative to what?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-elevator-trim-tab-v2.webp",
+    "explanation_image_title": "Elevator Trim Tab"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/trim-tab-v1.webp",
+    "explanation_image_title": "Elevator Trim Tab"
+   }
+  },
+  {
+   "id": 2025,
+   "question": "During a spin, which instrument most reliably indicates the direction of rotation?",
+   "before": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-21/pof-spin-turn-needle-v1.webp",
+    "explanation_image_title": "Spin Direction: Turn Needle"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/principles-of-flight/refined-batch-2/turn-coordinator-spin-v1.webp",
+    "explanation_image_title": "Turn Coordinator in a Spin"
+   }
+  }
+ ]
+}

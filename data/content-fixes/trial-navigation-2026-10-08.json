@@ -1,0 +1,29 @@
+{
+ "date": "2026-10-08",
+ "subject": "navigation",
+ "change": "Trial set: the user's picture picks, so that no picture repeats.",
+ "rows": [
+  {
+   "id": 1592,
+   "question": "Rectified Airspeed (RAS) or Calibrated Airspeed (CAS) is:",
+   "why": "leaves the trial set (picture swap picked by the user)",
+   "before": {
+    "is_trial_question": true
+   },
+   "after": {
+    "is_trial_question": false
+   }
+  },
+  {
+   "id": 1664,
+   "question": "An aircraft is overhead airfield A (elevation sea level) at 1000ft and is required to be at 8500ft within 25nm. Mean climb TAS 100kts, mean climb headwind 6kts. The mean rate of climb required is:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false
+   },
+   "after": {
+    "is_trial_question": true
+   }
+  }
+ ]
+}

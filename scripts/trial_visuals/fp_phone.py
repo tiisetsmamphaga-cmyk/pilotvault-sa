@@ -72,28 +72,81 @@ def on_ground(x, ground, width, nose_right=True, pitch=0):
     return aircraft(x, ground - 116 * width / 660, width, pitch, nose_right=nose_right)
 
 
+# ------------------------------------------------------------------ flight paths
+# A path is drawn once as a smooth curve; the aircraft sits on it with its main wheels on the line, turned to
+# the path's direction (or to a given attitude), and the arrowhead marks where the path ends.
+
+def curve(pts, n=40):
+    """Dense points along a Catmull-Rom spline through pts."""
+    out = []
+    for i in range(len(pts) - 1):
+        p0, p1, p2 = pts[max(i - 1, 0)], pts[i], pts[i + 1]
+        p3 = pts[min(i + 2, len(pts) - 1)]
+        for k in range(n):
+            t = k / n
+            out.append(tuple(0.5 * ((2 * p1[j]) + (-p0[j] + p2[j]) * t + (2 * p0[j] - 5 * p1[j] + 4 * p2[j] - p3[j]) * t * t
+                                    + (-p0[j] + 3 * p1[j] - 3 * p2[j] + p3[j]) * t ** 3) for j in (0, 1)))
+    return out + [pts[-1]]
+
+
+def track(dense, color, mid=None, w=LINE_W, dash=""):
+    d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in dense)
+    extra = (f' stroke-dasharray="{dash}"' if dash else "")
+    s = path(d, "none", "#ffffff", w + 4, ' stroke-opacity="0.85"' + extra)
+    return s + path(d, "none", color, w, (f' marker-end="url(#{mid})"' if mid else "") + extra)
+
+
+def at(dense, f):
+    """Point and direction (degrees, nose-up positive, moving right) a fraction f of the way along a path."""
+    seg = [math.dist(a, b) for a, b in zip(dense[:-1], dense[1:])]
+    goal, run, i = f * sum(seg), 0.0, 0
+    while i < len(seg) - 1 and run + seg[i] < goal:
+        run += seg[i]
+        i += 1
+    (x0, y0), (x1, y1) = dense[i], dense[i + 1]
+    t = (goal - run) / seg[i] if seg[i] else 0
+    return (x0 + (x1 - x0) * t, y0 + (y1 - y0) * t), math.degrees(math.atan2(y0 - y1, x1 - x0))
+
+
+def plane_on(dense, f, width=120, pitch=None, prop=True):
+    """Trainer flying right along the path, main wheels on it; pitch defaults to the path direction."""
+    (x, y), ang = at(dense, f)
+    p = math.radians(ang if pitch is None else pitch)
+    k = width / 660
+    a, b = 53 * k, 116 * k   # main wheel from the aircraft centre
+    return aircraft(x - (a * math.cos(p) + b * math.sin(p)), y - (-a * math.sin(p) + b * math.cos(p)), width,
+                    ang if pitch is None else pitch, prop=prop)
+
+
+def straight(a, b):
+    return [a, b]
+
+
 # ------------------------------------------------------------------ take-off distance
 
 TO_H, TO_G = 440, 330
+LIFT, SCREEN = 440, (720, 160)
+CLIMB = curve([(LIFT, TO_G), (LIFT + 90, TO_G - 22), (SCREEN[0], SCREEN[1]), (860, 70)])
 
 
 def takeoff_panel(full):
     def draw(w, h):
         s = terrain(flat(TO_G), w, h, "url(#ground_day)") + runway_side(0, w, TO_G)
-        lift, scr = (470, TO_G), (760, 150)
-        s += polyline([(70, TO_G - 8), lift], INK, 4, "12 9")
-        s += line(lift, scr if full else (600, TO_G - 70), NAVY_BLUE, "nh_navy")
+        s += track([(70, TO_G - 2), (LIFT, TO_G - 2)], INK, w=4, dash="12 9")
         if full:
-            s += screen(scr[0], TO_G, scr[1])
-            s += aircraft(scr[0] + 50, scr[1] - 34, 130, 10)
-            s += label(scr[0] + 26, 250, "50 ft", TXT_L, RED)
-            s += dim_h(70, scr[0], TO_G + 36)
-            s += label(415, TO_G + 84, "Take-off distance", TXT_M, INK, "middle", halo="#cfe0b8")
+            s += screen(SCREEN[0], TO_G, SCREEN[1])
+            s += track(CLIMB, NAVY_BLUE, "nh_navy")
+            s += plane_on(CLIMB, 0.8)
+            s += label(SCREEN[0] + 26, 270, "50 ft", TXT_L, RED)
+            s += dim_h(70, SCREEN[0], TO_G + 36)
+            s += label(395, TO_G + 84, "Take-off distance", TXT_M, INK, "middle", halo="#cfe0b8")
         else:
-            s += on_ground(lift[0], TO_G, 130, pitch=8)
-            s += dim_h(70, lift[0], TO_G + 36)
-            s += label(270, TO_G + 84, "Ground roll", TXT_M, INK, "middle", halo="#cfe0b8")
-            s += label(lift[0] + 30, 180, "Lift-off", TXT_L, NAVY_BLUE)
+            part = CLIMB[:len(CLIMB) // 2]
+            s += track(part, NAVY_BLUE, "nh_navy")
+            s += plane_on(CLIMB, 0.0, pitch=8)
+            s += dim_h(70, LIFT, TO_G + 36)
+            s += label(255, TO_G + 84, "Ground roll", TXT_M, INK, "middle", halo="#cfe0b8")
+            s += label(LIFT - 40, 250, "Lift-off", TXT_L, NAVY_BLUE, "end")
         return s
     return dict(h=TO_H, sky="sky_day", draw=draw, color=NAVY_BLUE if full else INK,
                 caption="TAKE-OFF DISTANCE: TO 50 FT" if full else "GROUND ROLL: TO LIFT-OFF")
@@ -109,23 +162,26 @@ def _():
 
 # ------------------------------------------------------------------ landing distance
 
+SCR_L, TD, STOP = (140, 160), 450, 780
+APPROACH = curve([(0, 160 - 140 * 170 / 310), SCR_L, (TD - 70, TO_G - 18), (TD, TO_G)])
+
+
 def landing_panel(full):
     def draw(w, h):
         s = terrain(flat(TO_G), w, h, "url(#ground_day)") + runway_side(0, w, TO_G)
-        scr, td, stop = (130, 150), (440, TO_G), (790, TO_G)
-        s += line((0, 150 - 130 * 0.58), scr, NAVY_BLUE, w=LINE_W, dash="12 9")
-        s += line(scr, toward(scr, td, 24), NAVY_BLUE, "nh_navy")
-        s += polyline([td, (stop[0] - 30, TO_G - 8)], INK, 4, "12 9")
-        s += on_ground(stop[0], TO_G, 130)
+        s += track(APPROACH, NAVY_BLUE, "nh_navy")
+        s += track([(TD + 20, TO_G - 2), (STOP - 40, TO_G - 2)], INK, w=4, dash="12 9")
         if full:
-            s += screen(scr[0], TO_G, scr[1])
-            s += label(scr[0] + 26, 250, "50 ft", TXT_L, RED)
-            s += dim_h(scr[0], stop[0] + 20, TO_G + 36)
+            s += screen(SCR_L[0], TO_G, SCR_L[1])
+            s += plane_on(APPROACH, 0.3, pitch=-2)
+            s += label(SCR_L[0] + 26, 270, "50 ft", TXT_L, RED)
+            s += dim_h(SCR_L[0], STOP + 20, TO_G + 36)
             s += label(470, TO_G + 84, "Landing distance", TXT_M, INK, "middle", halo="#cfe0b8")
         else:
-            s += dim_h(td[0], stop[0] + 20, TO_G + 36)
-            s += label(620, TO_G + 84, "Ground roll", TXT_M, INK, "middle", halo="#cfe0b8")
-            s += label(td[0] + 20, 270, "Touchdown", TXT_L, NAVY_BLUE)
+            s += on_ground(STOP, TO_G, 130)
+            s += dim_h(TD, STOP + 20, TO_G + 36)
+            s += label(625, TO_G + 84, "Ground roll", TXT_M, INK, "middle", halo="#cfe0b8")
+            s += label(TD + 10, 250, "Touchdown", TXT_L, NAVY_BLUE)
         return s
     return dict(h=TO_H, sky="sky_day", draw=draw, color=NAVY_BLUE if full else INK,
                 caption="LANDING DISTANCE: FROM 50 FT" if full else "GROUND ROLL: TOUCHDOWN TO STOP")
@@ -327,31 +383,29 @@ WS_H = 460
 
 def shear_panel(more_headwind):
     def draw(w, h):
-        g = 400
+        g, td = 400, 690
         s = terrain(flat(g), w, h, "url(#ground_day)") + runway_side(620, w, g)
-        a, td = (40, 90), (680, g)
-        s += line(a, td, INK, w=4, dash="14 10")
-        s += label(40, 60, "Glide path", TXT_M, INK)
-        mid = (a[0] + 0.35 * (td[0] - a[0]), a[1] + 0.35 * (td[1] - a[1]))
-        if more_headwind:
-            end = (td[0] + 160, g - 150)
+        gy = lambda x: 160 + (g - 160) * x / td  # noqa: E731  (the glide path, 0 to touchdown)
+        s += track([(0, gy(0)), (td, g)], INK, w=4, dash="14 10")
+        s += label(30, 120, "Glide path", TXT_M, INK)
+        x0 = 230
+        if more_headwind:   # balloons above the path and floats past the touchdown point
+            pts = [(x0, gy(x0)), (x0 + 140, gy(x0 + 140) - 22), (x0 + 300, gy(x0 + 300) - 62), (x0 + 470, gy(x0 + 470) - 92)]
             col, mk = NAVY_BLUE, "nh_navy"
-        else:
-            end = (td[0] - 230, g)
+        else:               # sinks below the path and lands short
+            pts = [(x0, gy(x0)), (x0 + 110, gy(x0 + 110) + 26), (x0 + 220, gy(x0 + 220) + 66), (x0 + 300, g - 6)]
             col, mk = RED, "nh_red"
-        pts = [mid] + [(mid[0] + (end[0] - mid[0]) * t, mid[1] + (end[1] - mid[1]) * t
-                        - (1 - t) * t * (120 if more_headwind else -90)) for t in (0.3, 0.6, 1.0)]
-        d = f"M {pts[0][0]:.0f},{pts[0][1]:.0f} C {pts[1][0]:.0f},{pts[1][1]:.0f} {pts[2][0]:.0f},{pts[2][1]:.0f} {pts[3][0]:.0f},{pts[3][1]:.0f}"
-        s += path(d, "none", "#ffffff", 10, ' stroke-opacity="0.85"') + path(d, "none", col, 6, f' marker-end="url(#{mk})"')
-        s += aircraft(mid[0], mid[1] - 22, 120, -4)
+        dense = curve(pts)
+        s += track(dense, col, mk)
+        s += plane_on(dense, 0.02, pitch=-3)
         if more_headwind:
-            for k, y in enumerate((130, 200)):
-                s += flow([(870, y), (720, y)], BLUE, "head_blue", 9 - 2 * k)
-            s += label(880, 70, "More headwind", TXT_M, BLUE, "end")
+            for k, y in enumerate((70, 130)):
+                s += flow([(880, y), (730, y)], BLUE, "head_blue", 7 - 2 * k)
+            s += label(880, 190, "More headwind", TXT_M, BLUE, "end")
         else:
-            for k, y in enumerate((130, 200)):
-                s += flow([(560, y), (720, y)], RED, "head_red", 9 - 2 * k)
-            s += label(880, 70, "More tailwind\nor less headwind", TXT_M, RED, "end")
+            for k, y in enumerate((70, 130)):
+                s += flow([(580, y), (730, y)], RED, "head_red", 7 - 2 * k)
+            s += label(880, 190, "More tailwind\nor less headwind", TXT_M, RED, "end")
         return s
     return dict(h=WS_H, sky="sky_day", draw=draw, color=NAVY_BLUE if more_headwind else RED,
                 caption="ABOVE THE PATH: OVERSHOOT" if more_headwind else "BELOW THE PATH: UNDERSHOOT")
@@ -397,20 +451,26 @@ def wake_panel(departing):
         s = terrain(flat(g), w, h, "url(#ground_day)") + runway_side(0, w, g)
         if not departing:
             td = 330
-            s += wake([(0, 150), (td - 60, g - 70)], sink=20)
+            heavy = [(0, 170), (td, g)]
+            s += track(heavy, "#64748b", w=4, dash="12 9")
+            s += wake([(0, 170), (td - 70, g - 45)], sink=24)
             s += airliner_side(td, g, 360, 0, facing_right=True)
-            s += polyline([(0, 40), (700, g - 4)], NAVY_BLUE, 5, mid="nh_navy")
-            s += aircraft(190, 118, 110, -6)
+            light = curve([(0, 50), (420, 230), (640, g - 4)])
+            s += track(light, NAVY_BLUE, "nh_navy")
+            s += plane_on(light, 0.3, 110, pitch=-3)
             s += path(f"M {td},{g + 6} L {td},{g + 40}", "none", INK, 5)
             s += label(td, g + 76, "Heavy's touchdown", TXT_M, INK, "middle", halo="#cfe0b8")
             s += label(870, 240, "Land\nbeyond", TXT_L, NAVY_BLUE, "end")
         else:
             lo = 560
-            s += wake([(lo + 20, g - 40), (w, g - 210)], sink=20)
-            s += airliner_side(lo + 230, g - 120, 360, 12, facing_right=True)
-            s += polyline([(60, g - 8), (330, g - 8)], INK, 4, "12 9")
-            s += line((330, g - 8), (560, 130), NAVY_BLUE, "nh_navy")
-            s += aircraft(470, 210, 110, 14)
+            heavy = [(lo, g), (w + 40, g - 75)]
+            s += track(heavy, "#64748b", w=4, dash="12 9")
+            s += wake([(lo + 40, g - 8), (w, g - 64)], sink=22)
+            s += airliner_side(lo + 170, g - 34, 300, 12, facing_right=True)
+            s += track([(60, g - 2), (300, g - 2)], INK, w=4, dash="12 9")
+            light = curve([(300, g), (380, g - 30), (600, 170)])
+            s += track(light, NAVY_BLUE, "nh_navy")
+            s += plane_on(light, 0.55, 110)
             s += path(f"M {lo},{g + 6} L {lo},{g + 40}", "none", INK, 5)
             s += label(lo, g + 76, "Heavy's lift-off", TXT_M, INK, "middle", halo="#cfe0b8")
             s += label(40, 120, "Lift off\nbefore", TXT_L, NAVY_BLUE)
@@ -430,9 +490,10 @@ def _():
 # ------------------------------------------------------------------ VX and VY
 
 VX_H = 440
-# A typical trainer: VX 63 kt at 600 ft/min, VY 79 kt at 650 ft/min (VX: more height per mile; VY: per minute).
-VX = (63, 600)
-VY = (79, 650)
+# Illustrative numbers, spread so the two climbs separate on a phone: VX 55 kt at 600 ft/min (655 ft per NM),
+# VY 80 kt at 700 ft/min (525 ft per NM). VX gains more height per mile, VY more per minute.
+VX = (55, 600)
+VY = (80, 700)
 PX_NM, PX_FT, X0, G0 = 520, 0.42, 110, 380
 
 
@@ -443,18 +504,18 @@ def climb_xy(speed, rate, minutes):
 def vxvy_panel(same_time):
     def draw(w, h):
         s = terrain(flat(G0), w, h, "url(#ground_day)") + runway_side(0, 300, G0)
+        px, py = climb_xy(*VX, 1.0)
         if same_time:
-            px, py = climb_xy(*VX, 1.0)
             qx, qy = climb_xy(*VY, 1.0)
         else:
-            px, py = climb_xy(*VX, 1.0)
             qx, qy = climb_xy(*VY, (px - X0) / PX_NM * 60 / VY[0])
-            s += path(f"M {px:.0f},{G0} L {px:.0f},{py - 40:.0f}", "none", INK, 3, ' stroke-dasharray="10 8"')
+            s += path(f"M {px:.0f},{G0} L {px:.0f},{py - 60:.0f}", "none", INK, 3, ' stroke-dasharray="10 8"')
             s += tree(px - 40, G0, 1.6) + tree(px + 10, G0, 2.0)
-        s += line((X0, G0 - 6), (px, py), RED, "nh_red")
-        s += line((X0, G0 - 6), (qx, qy), NAVY_BLUE, "nh_navy")
-        s += label(px - 40, py - 20, "VX", TXT_L, RED, "end")
-        s += label(qx + 20, qy + 60, "VY", TXT_L, NAVY_BLUE)
+        vx_path, vy_path = [(X0, G0), (px, py)], [(X0, G0), (qx, qy)]
+        s += track(vy_path, NAVY_BLUE) + track(vx_path, RED)
+        s += plane_on(vy_path, 0.99, 100) + plane_on(vx_path, 0.99, 100)
+        s += label(px - 70, py - 40, "VX", TXT_L, RED, "end")
+        s += label(qx + 20, qy + 70, "VY", TXT_L, NAVY_BLUE)
         return s
     return dict(h=VX_H, sky="sky_day", draw=draw, color=RED if not same_time else NAVY_BLUE,
                 caption="SAME DISTANCE: VX CLIMBS MORE" if not same_time else "SAME TIME: VY CLIMBS MORE")
@@ -503,13 +564,14 @@ def glide_panel():
         g = 400
         hill = lambda x: g - 70 * math.exp(-((x - 520) / 90) ** 2)  # noqa: E731
         s = terrain(hill, w, h, "url(#ground_day)")
-        a, end = (150, 110), (820, g)
-        s += aircraft(a[0], a[1], 130, -3, prop=False)
-        s += line((a[0] + 60, a[1] + 12), end, NAVY_BLUE, "nh_navy", dash="14 10")
-        s += dim_v(70, a[1] + 10, g, RED)
+        start, end = (170, 130), (830, g - 2)
+        glide = [start, end]
+        s += track(glide, NAVY_BLUE, "nh_navy", dash="14 10")
+        s += plane_on(glide, 0.02, 130, pitch=-3, prop=False)
+        s += dim_v(70, start[1], g, RED)
         s += label(90, 260, "Height\nabove terrain", TXT_M, RED)
-        s += dim_h(a[0], end[0], g + 50)
-        s += label((a[0] + end[0]) / 2, g + 100, "Glide range", TXT_M, INK, "middle", halo="#cfe0b8")
+        s += dim_h(start[0], end[0], g + 50)
+        s += label((start[0] + end[0]) / 2, g + 100, "Glide range", TXT_M, INK, "middle", halo="#cfe0b8")
         return s
     return dict(h=GL_H, sky="sky_day", draw=draw, color=RED, caption="HEIGHT = CRUISE PA − TERRAIN PA")
 

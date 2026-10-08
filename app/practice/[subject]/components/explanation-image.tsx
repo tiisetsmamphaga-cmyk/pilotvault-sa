@@ -69,7 +69,7 @@ export function ExplanationImage({
 
   const isHpVisual = src.includes("/explanation-images/human-performance/refined-batch-")
   const isApprovedHpRaster =
-    /\/explanation-images\/human-performance\/refined-batch-(?:1|2|3|4|5|6|7|8|9|10)\//.test(src) &&
+    /\/explanation-images\/human-performance\/refined-batch-(?:1|2|3|4|5|6|7|8|9|10|11)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   // Meteorology explanation diagrams live in the same refined-batch-N tree as
@@ -276,7 +276,7 @@ function KeyFactBody({ template, bare = false }: { template: PofVisualTemplate; 
 
 // Subjects whose questions without a picture show their KEY FACT card on its own. A subject is added once
 // every one of its cards has been checked (one subject at a time).
-export const CARD_ONLY_SUBJECTS = new Set(["meteorology", "navigation", "flight-planning"])
+export const CARD_ONLY_SUBJECTS = new Set(["meteorology", "navigation", "flight-planning", "human-performance"])
 
 // KEY FACT for questions that have a card but no picture, shown inside the explanation box.
 export function KeyFactSection({ template }: { template?: string }) {

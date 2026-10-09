@@ -92,6 +92,24 @@ export async function POST(request: Request) {
       },
     })
 
+    // Record the checkout attempt so /admin can show who started paying and
+    // for what. Fulfilment upserts this same row (same reference) to
+    // "pending" and then "fulfilled", so a row still "initialized" means the
+    // buyer never completed that checkout. Best-effort: never block payment.
+    const { error: attemptError } = await supabaseAdmin.from("Payments").insert({
+      reference: transaction.reference,
+      user_id: user.id,
+      product_code: product.productCode,
+      subject: product.subject,
+      amount,
+      currency: product.currency,
+      status: "initialized",
+    })
+
+    if (attemptError) {
+      console.error("Could not record the checkout attempt", attemptError)
+    }
+
     return NextResponse.json({
       authorizationUrl: transaction.authorization_url,
       accessCode: transaction.access_code,

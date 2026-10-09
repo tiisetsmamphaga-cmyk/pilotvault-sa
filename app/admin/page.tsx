@@ -15,6 +15,7 @@ import {
   type FunnelCounts,
   type SeriesData,
 } from "./insights"
+import { PASS_MARK } from "@/app/practice/[subject]/practice-utils"
 import { QuestionReports } from "./reports"
 
 const SUBJECTS = [
@@ -47,6 +48,21 @@ type AdminUser = {
   attemptCount: number
   lastAttemptAt: string | null
   subjectsTried: string[]
+  trialMocks: {
+    subject: string
+    scorePercentage: number
+    correctAnswers: number
+    totalQuestions: number
+    completedAt: string
+  }[]
+  hasSession: boolean | null
+  lastActiveAt: string | null
+  unpaidCheckouts: {
+    productCode: string | null
+    subject: string | null
+    amountCents: number | null
+    startedAt: string
+  }[]
   fulfilledPayments: number
 }
 
@@ -76,6 +92,7 @@ type Overview = {
     paidAt: string | null
     createdAt: string
   }[]
+  sessionsAvailable: boolean
 }
 
 type PreviewMode = "admin" | "ppl" | "trial" | "trial_expired" | "subject"
@@ -151,6 +168,31 @@ function formatRand(cents: number | null) {
 
 function isFuture(value: string | null) {
   return Boolean(value) && new Date(value!).getTime() > Date.now()
+}
+
+// An open tab refreshes its session about once an hour, so activity within
+// the last hour (plus a little slack) means the student is on the site now
+// or was very recently.
+const ACTIVE_WINDOW_MS = 65 * 60 * 1000
+
+function isActiveNow(user: AdminUser) {
+  return (
+    user.hasSession === true &&
+    user.lastActiveAt !== null &&
+    Date.now() - new Date(user.lastActiveAt).getTime() < ACTIVE_WINDOW_MS
+  )
+}
+
+function sessionLabel(user: AdminUser) {
+  if (user.hasSession === null) return "Unknown"
+  if (!user.hasSession) return "Signed out"
+  if (isActiveNow(user)) return "Active now"
+  return `Signed in · active ${formatDate(user.lastActiveAt, true)}`
+}
+
+function productName(productCode: string | null, subject: string | null) {
+  if (productCode === "ppl_pack") return "PPL Pack"
+  return subject ? subjectName(subject) : productCode ?? "—"
 }
 
 function accessBadge(user: AdminUser) {
@@ -336,6 +378,12 @@ export default function AdminPage() {
     [overview, showTest]
   )
 
+  // Students only (plus test accounts when shown), for the follow-up lists.
+  const followUpUsers = useMemo(
+    () => (overview?.users ?? []).filter((user) => !user.isAdmin && (showTest || !user.isTestAccount)),
+    [overview, showTest]
+  )
+
   if (loading) return <PageSkeleton variant="dashboard" />
 
   if (forbidden) {
@@ -444,6 +492,10 @@ export default function AdminPage() {
               </div>
             ))}
           </section>
+        )}
+
+        {overview && (
+          <FollowUp users={followUpUsers} sessionsAvailable={overview.sessionsAvailable} />
         )}
 
         {overview && (
@@ -629,11 +681,7 @@ export default function AdminPage() {
                           )}
                         </td>
                         <td className="px-4 py-3">
-                          {payment.productCode === "ppl_pack"
-                            ? "PPL Pack"
-                            : payment.subject
-                              ? subjectName(payment.subject)
-                              : payment.productCode ?? "—"}
+                          {productName(payment.productCode, payment.subject)}
                         </td>
                         <td className="px-4 py-3 tabular-nums">{formatRand(payment.amountCents)}</td>
                         <td className="px-4 py-3 capitalize">{payment.status ?? "—"}</td>
@@ -683,13 +731,23 @@ function AccountCard({
           {user.isTestAccount && !user.isAdmin && (
             <span className="rounded-full bg-slate-800 px-2.5 py-1 text-xs font-semibold text-white">Test account</span>
           )}
+          {!user.emailConfirmed && (
+            <span className="rounded-full bg-[#fdf3d9] px-2.5 py-1 text-xs font-semibold text-[#8a6508] ring-1 ring-[#f4b400]/40">
+              Email not confirmed
+            </span>
+          )}
+          {isActiveNow(user) && (
+            <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-200">
+              Active now
+            </span>
+          )}
           <span className={`w-fit rounded-full px-2.5 py-1 text-xs font-semibold ${badge.className}`}>
             {badge.label}
           </span>
         </div>
       </div>
 
-      <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:grid-cols-4">
+      <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:grid-cols-5">
         <div>
           <dt className="text-slate-500">Signed up</dt>
           <dd className="font-medium text-slate-800">{formatDate(user.createdAt, true)}</dd>
@@ -697,6 +755,10 @@ function AccountCard({
         <div>
           <dt className="text-slate-500">Last login</dt>
           <dd className="font-medium text-slate-800">{formatDate(user.lastSignInAt, true)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Session</dt>
+          <dd className="font-medium text-slate-800">{sessionLabel(user)}</dd>
         </div>
         <div>
           <dt className="text-slate-500">Mock exams</dt>
@@ -710,6 +772,36 @@ function AccountCard({
           <dd className="font-medium text-slate-800">{user.fulfilledPayments}</dd>
         </div>
       </dl>
+
+      {user.trialMocks.length > 0 && (
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
+          <span className="text-slate-500">Trial mocks:</span>
+          {user.trialMocks.map((mock) => (
+            <span
+              key={mock.completedAt}
+              title={formatDate(mock.completedAt, true)}
+              className="rounded-full bg-slate-100 px-2.5 py-0.5 text-slate-700"
+            >
+              {subjectName(mock.subject)} ·{" "}
+              <span className={`font-semibold ${mock.scorePercentage >= PASS_MARK ? "text-emerald-700" : "text-red-700"}`}>
+                {mock.scorePercentage}%
+              </span>{" "}
+              ({mock.correctAnswers}/{mock.totalQuestions})
+            </span>
+          ))}
+        </div>
+      )}
+
+      {user.unpaidCheckouts.length > 0 && (
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
+          <span className="text-slate-500">Checkout not completed:</span>
+          {user.unpaidCheckouts.map((checkout) => (
+            <span key={checkout.startedAt} className="rounded-full bg-[#fdf3d9] px-2.5 py-0.5 text-[#8a6508]">
+              {productName(checkout.productCode, checkout.subject)} · {formatDate(checkout.startedAt, true)}
+            </span>
+          ))}
+        </div>
+      )}
 
       {activeSubjects.length > 0 && (
         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
@@ -848,5 +940,83 @@ function AccountCard({
         </div>
       )}
     </article>
+  )
+}
+
+function FollowUp({ users, sessionsAvailable }: { users: AdminUser[]; sessionsAvailable: boolean }) {
+  const activeNow = users
+    .filter(isActiveNow)
+    .sort((a, b) => (b.lastActiveAt ?? "").localeCompare(a.lastActiveAt ?? ""))
+  const checkouts = users
+    .flatMap((user) => user.unpaidCheckouts.map((checkout) => ({ user, checkout })))
+    .sort((a, b) => b.checkout.startedAt.localeCompare(a.checkout.startedAt))
+  const unconfirmed = users.filter((user) => !user.emailConfirmed)
+
+  return (
+    <section aria-label="Follow-up" className="mt-6 grid gap-4 lg:grid-cols-3">
+      <FollowUpPanel
+        title="Active in the last hour"
+        count={sessionsAvailable ? activeNow.length : null}
+        empty={sessionsAvailable ? "Nobody right now." : "Session activity is unavailable."}
+        rows={activeNow.map((user) => ({
+          key: user.id,
+          primary: user.email ?? "—",
+          secondary: formatDate(user.lastActiveAt, true),
+        }))}
+      />
+      <FollowUpPanel
+        title="Checkout not completed"
+        count={checkouts.length}
+        empty="No unfinished checkouts."
+        rows={checkouts.map(({ user, checkout }) => ({
+          key: `${user.id}-${checkout.startedAt}`,
+          primary: user.email ?? "—",
+          secondary: `${productName(checkout.productCode, checkout.subject)} · ${formatRand(checkout.amountCents)} · ${formatDate(checkout.startedAt, true)}`,
+        }))}
+      />
+      <FollowUpPanel
+        title="Email not confirmed"
+        count={unconfirmed.length}
+        empty="Everyone has confirmed."
+        rows={unconfirmed.map((user) => ({
+          key: user.id,
+          primary: user.email ?? "—",
+          secondary: `Signed up ${formatDate(user.createdAt, true)}`,
+        }))}
+      />
+    </section>
+  )
+}
+
+function FollowUpPanel({
+  title,
+  count,
+  empty,
+  rows,
+}: {
+  title: string
+  count: number | null
+  empty: string
+  rows: { key: string; primary: string; secondary: string }[]
+}) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-4">
+      <h2 className="text-sm font-semibold text-slate-950">
+        {title}
+        {count !== null && <span className="font-normal text-slate-500"> ({count})</span>}
+      </h2>
+      {rows.length ? (
+        <ul className="mt-2 max-h-64 divide-y divide-slate-100 overflow-y-auto">
+          {rows.map((row) => (
+            <li key={row.key} className="py-2">
+              <p className="truncate text-sm text-slate-800">{row.primary}</p>
+              <p className="text-xs text-slate-500">{row.secondary}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-2 text-sm text-slate-500">{empty}</p>
+      )}
+    </div>
   )
 }

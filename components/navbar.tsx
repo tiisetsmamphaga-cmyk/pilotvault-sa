@@ -82,7 +82,7 @@ export function Navbar() {
     }
 
     setAuthMessage(
-      "Password reset email sent. Check your inbox and follow the link to choose a new password."
+      "Password reset email sent. Check your inbox and follow the link to choose a new password. Not there? Check your spam or junk folder."
     )
   }
 
@@ -161,7 +161,11 @@ export function Navbar() {
 
     if (error) {
       setLoading(false)
-      setAuthMessage(error.message)
+      setAuthMessage(
+        error.code === "email_not_confirmed"
+          ? "Please confirm your email first: tap the link we sent you. Not in your inbox? Check your spam or junk folder."
+          : error.message
+      )
       return
     }
 
@@ -171,7 +175,9 @@ export function Navbar() {
       // when email confirmation is required, so a client-side insert would
       // fail the "auth.uid() = id" RLS policy.
       setLoading(false)
-      setAuthMessage("Account created. Check your email and tap the confirmation link to open your dashboard.")
+      setAuthMessage(
+        "Account created. Check your email and tap the confirmation link to open your dashboard. Not in your inbox? Check your spam or junk folder."
+      )
       setAuthMode("login")
       setPassword("")
       setConfirmPassword("")

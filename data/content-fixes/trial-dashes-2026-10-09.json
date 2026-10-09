@@ -1,0 +1,718 @@
+{
+ "date": "2026-10-09",
+ "change": "AI-style dashes (—, --, spaced – and spaced - used as dashes) removed from the explanations and KEY FACT cards of the trial questions: pairs became commas or brackets, a dash before a new clause became a full stop, a dash before a trailing phrase became a comma (a colon before a list), and in card points a colon. Written by scripts/question_audit/dashfix.py, with the hand fixes in dashfix_trial_overrides.py. Maths lines, chart scale names quoted from the manual (RATE OF CLIMB - FPM) and the HIGH TEMP - HIGH TROP mnemonic are unchanged.",
+ "rows": [
+  {
+   "id": 910,
+   "subject": "air-law",
+   "explanation": {
+    "before": "The long navigation flight’s specific requirements — 150 NM total, a point at least 50 NM from base, and two full-stop landings away from base — are designed to genuinely test cross-country planning and diversion skills, not just repeat local circuit flying.",
+    "after": "The long navigation flight’s specific requirements (150 NM total, a point at least 50 NM from base, and two full-stop landings away from base) are designed to genuinely test cross-country planning and diversion skills, not just repeat local circuit flying."
+   }
+  },
+  {
+   "id": 1019,
+   "subject": "air-law",
+   "explanation": {
+    "before": "Night runs from 15 minutes after sunset to 15 minutes before sunrise — the mirror image of the “day” definition. Getting this boundary right matters because flights inside this window require night currency, and without a night rating a PPL(A) holder cannot legally fly in it.",
+    "after": "Night runs from 15 minutes after sunset to 15 minutes before sunrise, the mirror image of the “day” definition. Getting this boundary right matters because flights inside this window require night currency, and without a night rating a PPL(A) holder cannot legally fly in it."
+   }
+  },
+  {
+   "id": 1048,
+   "subject": "air-law",
+   "explanation": {
+    "before": "An ATZ is airspace of defined dimensions established around an aerodrome to protect traffic taking off, landing and flying the circuit. Note the nuance here: an ATZ can be Class C, D or G — Class C/D ATZs are controlled airspace with aerodrome control in operation (this option), but a Class G ATZ is uncontrolled and only gets AFIS (advice, not control). Most ATZs at busier fields are C/D, which is why this is the expected answer, but don't assume every ATZ is controlled.",
+    "after": "An ATZ is airspace of defined dimensions established around an aerodrome to protect traffic taking off, landing and flying the circuit. Note the nuance here: an ATZ can be Class C, D or G. Class C/D ATZs are controlled airspace with aerodrome control in operation (this option), but a Class G ATZ is uncontrolled and only gets AFIS (advice, not control). Most ATZs at busier fields are C/D, which is why this is the expected answer, but don't assume every ATZ is controlled."
+   }
+  },
+  {
+   "id": 1080,
+   "subject": "air-law",
+   "card": {
+    "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SEMI-CIRCULAR RULE APPLIES AT AND ABOVE 1500 FT AGL\", \"subline\": \"CRUISING LEVEL CHOSEN BY MAGNETIC TRACK, UNLESS ATC DIRECTS OTHERWISE\", \"blocks\": [{\"label\": \"000° – 179°\", \"value\": \"Odd thousands; VFR adds 500 ft (3500, 5500, 7500 …)\"}, {\"label\": \"180° – 359°\", \"value\": \"Even thousands; VFR adds 500 ft (4500, 6500, 8500 …)\"}, {\"label\": \"BELOW 1500 FT AGL\", \"value\": \"The rule does not apply\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SEMI-CIRCULAR RULE APPLIES AT AND ABOVE 1500 FT AGL\", \"subline\": \"CRUISING LEVEL CHOSEN BY MAGNETIC TRACK, UNLESS ATC DIRECTS OTHERWISE\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"Odd thousands; VFR adds 500 ft (3500, 5500, 7500 …)\"}, {\"label\": \"180°–359°\", \"value\": \"Even thousands; VFR adds 500 ft (4500, 6500, 8500 …)\"}, {\"label\": \"BELOW 1500 FT AGL\", \"value\": \"The rule does not apply\"}]}"
+   }
+  },
+  {
+   "id": 1100,
+   "subject": "air-law",
+   "explanation": {
+    "before": "A red square with a yellow diagonal cross displayed in the signal area means landings are prohibited. (A related but different signal — a red square with only a single yellow diagonal stripe, not a full cross — warns pilots to exercise special precaution when landing, usually because of the poor state of the airfield.)",
+    "after": "A red square with a yellow diagonal cross displayed in the signal area means landings are prohibited. (A related but different signal, a red square with only a single yellow diagonal stripe rather than a full cross, warns pilots to exercise special precaution when landing, usually because of the poor state of the airfield.)"
+   }
+  },
+  {
+   "id": 1103,
+   "subject": "air-law",
+   "explanation": {
+    "before": "White or yellow crosses displayed at each end of a runway (or taxiway) mark an unserviceable or unsafe area — for example a waterlogged runway or ground undermined by moles. In effect, the runway is closed: aircraft may not land, take off or taxi in the area between the crosses. By night the unserviceable area is marked with red lights, and any runway/taxiway lighting between those red lights is switched off.",
+    "after": "White or yellow crosses displayed at each end of a runway (or taxiway) mark an unserviceable or unsafe area, for example a waterlogged runway or ground undermined by moles. In effect, the runway is closed: aircraft may not land, take off or taxi in the area between the crosses. By night the unserviceable area is marked with red lights, and any runway/taxiway lighting between those red lights is switched off."
+   }
+  },
+  {
+   "id": 1404,
+   "subject": "air-law",
+   "explanation": {
+    "before": "A marshaller signals brakes with a raised open hand that closes into a fist. Open hand raised then closing into a fist means \"set/apply brakes\" - the aircraft must stop and hold position using its parking brake. The reverse motion (closed fist opening into an open hand) means \"release brakes.\"\n\nANSWER\nApply parking brake",
+    "after": "A marshaller signals brakes with a raised open hand that closes into a fist. Open hand raised then closing into a fist means \"set/apply brakes\". The aircraft must stop and hold position using its parking brake. The reverse motion (closed fist opening into an open hand) means \"release brakes.\"\n\nANSWER\nApply parking brake"
+   }
+  },
+  {
+   "id": 1412,
+   "subject": "air-law",
+   "explanation": {
+    "before": "A marshaller raises the left arm and draws the right arm from the left shoulder across the throat in a slicing motion. This signal means \"cut engine(s)\" - the pilot should shut down the engine(s) indicated by which arm is raised (or both, if not specific to one side).\n\nANSWER\nCut engine",
+    "after": "A marshaller raises the left arm and draws the right arm from the left shoulder across the throat in a slicing motion. This signal means \"cut engine(s)\". The pilot should shut down the engine(s) indicated by which arm is raised (or both, if not specific to one side).\n\nANSWER\nCut engine"
+   }
+  },
+  {
+   "id": 2810,
+   "subject": "air-law",
+   "explanation": {
+    "before": "Left = red, right = green, each covering 110° from dead ahead round to the side — the same convention used on ships, so a pilot seeing a red light on their left knows another aircraft's left wingtip is facing them. A steady white light covering 140° (70° either side of dead astern) covers the tail. Exam tip: red and left both have 4 letters — an easy way to remember which side is which.",
+    "after": "Left = red, right = green, each covering 110° from dead ahead round to the side, the same convention used on ships, so a pilot seeing a red light on their left knows another aircraft's left wingtip is facing them. A steady white light covering 140° (70° either side of dead astern) covers the tail. Exam tip: red and left both have 4 letters, an easy way to remember which side is which."
+   }
+  },
+  {
+   "id": 2812,
+   "subject": "air-law",
+   "explanation": {
+    "before": "Two digits displayed vertically at or near the control tower give the take-off direction to the nearest 10 degrees of the magnetic compass — so \"09\" means take off on a heading of approximately 090°. This lets a pilot confirm the active direction visually, as a backup to radio calls or when the tower frequency can't be raised.",
+    "after": "Two digits displayed vertically at or near the control tower give the take-off direction to the nearest 10 degrees of the magnetic compass, so \"09\" means take off on a heading of approximately 090°. This lets a pilot confirm the active direction visually, as a backup to radio calls or when the tower frequency can't be raised."
+   }
+  },
+  {
+   "id": 2629,
+   "subject": "aircraft-technical-and-general",
+   "explanation": {
+    "before": "The ASI's colour markings show the key speeds. The green arc is the normal operating range, from VS1 - the clean (flaps up) stalling speed at maximum weight - at its lower end, up to VNO, the maximum structural cruising speed, at its upper end. The white arc is the flap operating range, the yellow arc the caution range (smooth air only), and the red line VNE, the never-exceed speed.",
+    "after": "The ASI's colour markings show the key speeds. The green arc is the normal operating range, from VS1 (the clean, flaps-up stalling speed at maximum weight) at its lower end, up to VNO, the maximum structural cruising speed, at its upper end. The white arc is the flap operating range, the yellow arc the caution range (smooth air only), and the red line VNE, the never-exceed speed."
+   }
+  },
+  {
+   "id": 2673,
+   "subject": "aircraft-technical-and-general",
+   "explanation": {
+    "before": "In a level turn the wing's lift must be tilted to provide the turning force while still supporting the weight, so total lift - and the load on the wings - must increase. The load factor depends only on the angle of bank: n = 1 / cos(bank), so 30 degrees gives about 1.15 g, 45 degrees 1.41 g and 60 degrees 2 g. For a given bank angle, airspeed and rate of turn change the radius of the turn, not the load factor.",
+    "after": "In a level turn the wing's lift must be tilted to provide the turning force while still supporting the weight, so total lift, and the load on the wings, must increase. The load factor depends only on the angle of bank: n = 1 / cos(bank), so 30 degrees gives about 1.15 g, 45 degrees 1.41 g and 60 degrees 2 g. For a given bank angle, airspeed and rate of turn change the radius of the turn, not the load factor."
+   }
+  },
+  {
+   "id": 2701,
+   "subject": "aircraft-technical-and-general",
+   "explanation": {
+    "before": "Deviation is caused by magnetic fields within the aircraft itself - steel components, the engine, radios, electrical wiring and even items placed near the compass. It deflects the compass away from magnetic north by an amount that changes with heading. It is minimised by swinging the compass and adjusting its compensating magnets, and the remaining error is shown on the deviation card. The difference between true and magnetic north is variation.",
+    "after": "Deviation is caused by magnetic fields within the aircraft itself: steel components, the engine, radios, electrical wiring and even items placed near the compass. It deflects the compass away from magnetic north by an amount that changes with heading. It is minimised by swinging the compass and adjusting its compensating magnets, and the remaining error is shown on the deviation card. The difference between true and magnetic north is variation."
+   }
+  },
+  {
+   "id": 2726,
+   "subject": "aircraft-technical-and-general",
+   "explanation": {
+    "before": "Engine power depends on the mass of air, and so of oxygen, drawn into the cylinders on each stroke. Cold air is denser than warm air, high pressure means denser air, and dry air is denser than humid air because water vapour is lighter than the nitrogen and oxygen it displaces. So cold, dry, high-pressure air is the densest and gives the most power - worth remembering on hot, humid days at high-elevation airfields such as those on the Highveld.",
+    "after": "Engine power depends on the mass of air, and so of oxygen, drawn into the cylinders on each stroke. Cold air is denser than warm air, high pressure means denser air, and dry air is denser than humid air because water vapour is lighter than the nitrogen and oxygen it displaces. So cold, dry, high-pressure air is the densest and gives the most power, worth remembering on hot, humid days at high-elevation airfields such as those on the Highveld."
+   }
+  },
+  {
+   "id": 2043,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Cyanosis - a bluish discolouration of the lips and fingertips - occurs when the blood is carrying an inadequate supply of oxygen, making it one of the visible outward signs of hypoxia.",
+    "after": "Cyanosis, a bluish discolouration of the lips and fingertips, occurs when the blood is carrying an inadequate supply of oxygen, making it one of the visible outward signs of hypoxia."
+   }
+  },
+  {
+   "id": 2047,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "White blood cells are the body's immune defence, patrolling the bloodstream to attack invading bacteria, viruses and other harmful micro-organisms. This distinguishes them from red blood cells, which carry oxygen, and platelets, which handle clotting - each blood component has its own dedicated job.",
+    "after": "White blood cells are the body's immune defence, patrolling the bloodstream to attack invading bacteria, viruses and other harmful micro-organisms. This distinguishes them from red blood cells, which carry oxygen, and platelets, which handle clotting. Each blood component has its own dedicated job."
+   }
+  },
+  {
+   "id": 2057,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Since hypoxia results from an inadequate partial pressure of oxygen reaching the body's tissues, it is prevented either by staying at an altitude where the partial pressure of oxygen is still sufficient - normally below about 10,000 feet - or, above that, by breathing supplementary oxygen delivered at a rate that restores an adequate partial pressure in the lungs.",
+    "after": "Since hypoxia results from an inadequate partial pressure of oxygen reaching the body's tissues, it is prevented either by staying at an altitude where the partial pressure of oxygen is still sufficient (normally below about 10,000 feet) or, above that, by breathing supplementary oxygen delivered at a rate that restores an adequate partial pressure in the lungs."
+   }
+  },
+  {
+   "id": 2063,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "The Eustachian tube runs from the middle ear to the back of the mouth and nose, letting air pressure in the middle ear vent and equalise with the changing ambient pressure outside as an aircraft climbs or descends. On the climb, the higher pressure in the middle ear escapes easily down the tube; on descent a small flap makes equalising harder, which is why ear discomfort is more common then. A blocked tube (from a cold, catarrh or sinus infection) can trap a pressure difference across the eardrum severe enough to cause pain or even rupture it (otic barotrauma) - swallowing, yawning, or the Valsalva manoeuvre usually clears it.",
+    "after": "The Eustachian tube runs from the middle ear to the back of the mouth and nose, letting air pressure in the middle ear vent and equalise with the changing ambient pressure outside as an aircraft climbs or descends. On the climb, the higher pressure in the middle ear escapes easily down the tube; on descent a small flap makes equalising harder, which is why ear discomfort is more common then. A blocked tube (from a cold, catarrh or sinus infection) can trap a pressure difference across the eardrum severe enough to cause pain or even rupture it (otic barotrauma): swallowing, yawning, or the Valsalva manoeuvre usually clears it."
+   }
+  },
+  {
+   "id": 2088,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Episodic memory stores the record of specific events and experiences in a person's life - a particular flight, a conversation, an incident - as opposed to general facts or practised skills. It is notably less reliable than other forms of long-term memory, since episodic recollections tend to drift over time toward how we would have liked events to unfold rather than how they actually happened.",
+    "after": "Episodic memory stores the record of specific events and experiences in a person's life (a particular flight, a conversation, an incident) as opposed to general facts or practised skills. It is notably less reliable than other forms of long-term memory, since episodic recollections tend to drift over time toward how we would have liked events to unfold rather than how they actually happened."
+   }
+  },
+  {
+   "id": 2112,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Physical stress isn't only about workload or emotional demands - the aircraft cabin itself is a source of ongoing physical stressors: continuous engine and airflow noise, vibration through the airframe, and swings in temperature and humidity as the aircraft climbs and descends. These physical loads add to a pilot's total fatigue over a flight even when none of them feels dramatic in the moment.",
+    "after": "Physical stress isn't only about workload or emotional demands. The aircraft cabin itself is a source of ongoing physical stressors: continuous engine and airflow noise, vibration through the airframe, and swings in temperature and humidity as the aircraft climbs and descends. These physical loads add to a pilot's total fatigue over a flight even when none of them feels dramatic in the moment."
+   }
+  },
+  {
+   "id": 2119,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "A closed-loop control process continually feeds the actual outcome of an action back to the decision maker, who compares it with the intended result and adjusts accordingly - exactly how a pilot rolling into a bank uses the visual picture of the horizon as feedback, easing off control pressure once the desired angle is reached. Without that feedback loop, the pilot would have no way of knowing whether the correction was too much, too little, or just right.",
+    "after": "A closed-loop control process continually feeds the actual outcome of an action back to the decision maker, who compares it with the intended result and adjusts accordingly. This is exactly how a pilot rolling into a bank uses the visual picture of the horizon as feedback, easing off control pressure once the desired angle is reached. Without that feedback loop, the pilot would have no way of knowing whether the correction was too much, too little, or just right."
+   }
+  },
+  {
+   "id": 2171,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Diving to a depth of 30 feet exposes the body to about two atmospheres of pressure - one from the air above the water and one from the water itself - which drives extra nitrogen into solution in body tissues. A minimum of 24 hours is needed for that excess nitrogen to clear before flying above 8,000 ft, since climbing into lower pressure before it does risks nitrogen bubbles forming and triggering decompression sickness, potentially at altitudes as low as 6,000 ft if the rule is ignored.",
+    "after": "Diving to a depth of 30 feet exposes the body to about two atmospheres of pressure, one from the air above the water and one from the water itself, which drives extra nitrogen into solution in body tissues. A minimum of 24 hours is needed for that excess nitrogen to clear before flying above 8,000 ft, since climbing into lower pressure before it does risks nitrogen bubbles forming and triggering decompression sickness, potentially at altitudes as low as 6,000 ft if the rule is ignored."
+   }
+  },
+  {
+   "id": 2174,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "The left ventricle is the heart's most muscular chamber, built specifically to generate enough pressure to drive freshly oxygenated blood - arriving from the lungs via the pulmonary vein - out through the aorta and around the entire body's systemic circulation. The right side of the heart handles the opposite, lower-pressure job: sending oxygen-depleted blood to the lungs to be reoxygenated.",
+    "after": "The left ventricle is the heart's most muscular chamber, built specifically to generate enough pressure to drive freshly oxygenated blood, arriving from the lungs via the pulmonary vein, out through the aorta and around the entire body's systemic circulation. The right side of the heart handles the opposite, lower-pressure job: sending oxygen-depleted blood to the lungs to be reoxygenated."
+   }
+  },
+  {
+   "id": 2178,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "A higher partial pressure of oxygen in the alveoli increases the pressure difference driving diffusion into the blood, so more oxygen transfers per breath - which is exactly why breathing supplementary oxygen at altitude, which raises the oxygen partial pressure in the alveoli well above what the thin outside air alone would provide, restores adequate oxygen transfer into the blood.",
+    "after": "A higher partial pressure of oxygen in the alveoli increases the pressure difference driving diffusion into the blood, so more oxygen transfers per breath, which is exactly why breathing supplementary oxygen at altitude, which raises the oxygen partial pressure in the alveoli well above what the thin outside air alone would provide, restores adequate oxygen transfer into the blood."
+   }
+  },
+  {
+   "id": 2211,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Perception is what turns raw sensory input - patterns of light, sound and pressure - into a meaningful mental picture the brain can actually use, rather than leaving the senses to deliver nothing more than unprocessed noise. Without this interpretive step, detecting a stimulus would provide no usable information on which to base a decision.",
+    "after": "Perception is what turns raw sensory input (patterns of light, sound and pressure) into a meaningful mental picture the brain can actually use, rather than leaving the senses to deliver nothing more than unprocessed noise. Without this interpretive step, detecting a stimulus would provide no usable information on which to base a decision."
+   }
+  },
+  {
+   "id": 2223,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Arousal - a person's readiness, fitness and ability to respond effectively to a stressor - has a sweet spot: too little leaves a pilot under-stimulated, bored and slow to react (a real risk during long, routine, low-workload flying), while too much narrows attention and can overload decision-making (a real risk in deteriorating weather or an emergency). A moderate level in between is where interest, alertness and task performance are all at their best.",
+    "after": "Arousal (a person's readiness, fitness and ability to respond effectively to a stressor) has a sweet spot: too little leaves a pilot under-stimulated, bored and slow to react (a real risk during long, routine, low-workload flying), while too much narrows attention and can overload decision-making (a real risk in deteriorating weather or an emergency). A moderate level in between is where interest, alertness and task performance are all at their best."
+   }
+  },
+  {
+   "id": 2224,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Arousal is essentially a measure of readiness and ability to cope with a given stressor, and that readiness improves directly with successful past experience - confidence built from having handled a similar situation well before, plus a tested response plan already in memory. Facing the same or a similar challenge again, a pilot typically perceives it as less demanding relative to their now-greater coping ability, which is exactly why training and repeated practice reduce perceived stress over time.",
+    "after": "Arousal is essentially a measure of readiness and ability to cope with a given stressor, and that readiness improves directly with successful past experience: confidence built from having handled a similar situation well before, plus a tested response plan already in memory. Facing the same or a similar challenge again, a pilot typically perceives it as less demanding relative to their now-greater coping ability, which is exactly why training and repeated practice reduce perceived stress over time."
+   }
+  },
+  {
+   "id": 2233,
+   "subject": "human-performance",
+   "explanation": {
+    "before": "Well-designed controls reduce selection errors through several combined cues at once - standardised location, direction of movement, and distinct shape you can identify by touch alone, without looking. Matching controls only by material or general appearance ignores the tactile and positional cues that actually prevent a pilot from grabbing the wrong control under pressure or in the dark.",
+    "after": "Well-designed controls reduce selection errors through several combined cues at once: standardised location, direction of movement, and distinct shape you can identify by touch alone, without looking. Matching controls only by material or general appearance ignores the tactile and positional cues that actually prevent a pilot from grabbing the wrong control under pressure or in the dark."
+   }
+  },
+  {
+   "id": 16,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "At constant pressure, heating air makes it expand: the molecules move faster and spread further apart, so the same mass of air now fills a larger volume. Because density is mass divided by volume, that expansion - not any change in the amount of air - is what drives density down as temperature rises.",
+    "after": "At constant pressure, heating air makes it expand: the molecules move faster and spread further apart, so the same mass of air now fills a larger volume. Because density is mass divided by volume, that expansion, not any change in the amount of air, is what drives density down as temperature rises."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY FACT\",\"headline\":\"AT THE SAME PRESSURE, WARMER AIR IS LESS DENSE\",\"subline\":\"A COLUMN OF WARM AIR AND A COLUMN OF COLD AIR CAN HOLD THE SAME MASS AT THE SAME SURFACE PRESSURE, BUT THE WARM COLUMN IS TALLER\",\"blocks\":[{\"label\":\"Cold air column (15°C)\",\"value\":\"Shorter, but reaches 700 hPa with the same number of molecules as the warm column\"},{\"label\":\"Warm air column (30°C)\",\"value\":\"Taller — the same mass of air occupies more volume when warm\"},{\"label\":\"Density\",\"value\":\"Same mass in a larger volume means lower density, so increasing temperature at constant pressure decreases density\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"AT THE SAME PRESSURE, WARMER AIR IS LESS DENSE\", \"subline\": \"A COLUMN OF WARM AIR AND A COLUMN OF COLD AIR CAN HOLD THE SAME MASS AT THE SAME SURFACE PRESSURE, BUT THE WARM COLUMN IS TALLER\", \"blocks\": [{\"label\": \"Cold air column (15°C)\", \"value\": \"Shorter, but reaches 700 hPa with the same number of molecules as the warm column\"}, {\"label\": \"Warm air column (30°C)\", \"value\": \"Taller: the same mass of air occupies more volume when warm\"}, {\"label\": \"Density\", \"value\": \"Same mass in a larger volume means lower density, so increasing temperature at constant pressure decreases density\"}]}"
+   }
+  },
+  {
+   "id": 20,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "QNE is the name for the ISA standard pressure setting: 1013.25 hPa, entered as 1013 on the subscale. Every aircraft above the transition altitude uses this same fixed reference so they are all flying relative to the same datum - reported as flight levels rather than altitudes - which is what gives air traffic control reliable vertical separation between aircraft regardless of the actual sea-level pressure below them.",
+    "after": "QNE is the name for the ISA standard pressure setting: 1013.25 hPa, entered as 1013 on the subscale. Every aircraft above the transition altitude uses this same fixed reference so they are all flying relative to the same datum, reported as flight levels rather than altitudes, which is what gives air traffic control reliable vertical separation between aircraft regardless of the actual sea-level pressure below them."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY FACT\",\"headline\":\"QNE (STANDARD SETTING) IS 1013 hPa\",\"subline\":\"WITH 1013 SET, THE ALTIMETER READS PRESSURE ALTITUDE, NOT HEIGHT ABOVE SEA LEVEL\",\"blocks\":[{\"label\":\"QNE\",\"value\":\"The ISA standard pressure setting, 1013 hPa\"},{\"label\":\"Used for\",\"value\":\"Flight levels, above the transition altitude\"},{\"label\":\"Reads\",\"value\":\"Pressure altitude — height above the 1013 hPa datum, which itself floats above or below true sea level depending on actual pressure\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"QNE (STANDARD SETTING) IS 1013 hPa\", \"subline\": \"WITH 1013 SET, THE ALTIMETER READS PRESSURE ALTITUDE, NOT HEIGHT ABOVE SEA LEVEL\", \"blocks\": [{\"label\": \"QNE\", \"value\": \"The ISA standard pressure setting, 1013 hPa\"}, {\"label\": \"Used for\", \"value\": \"Flight levels, above the transition altitude\"}, {\"label\": \"Reads\", \"value\": \"Pressure altitude: height above the 1013 hPa datum, which itself floats above or below true sea level depending on actual pressure\"}]}"
+   }
+  },
+  {
+   "id": 33,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "An unsaturated parcel of air rising or sinking without exchanging heat with its surroundings cools or warms at the dry adiabatic lapse rate (DALR) of about 3°C per 1000 ft, or 1°C per 100 m. This rate applies purely to expansion and compression - it has nothing to do with condensation, which only slows the cooling once the air becomes saturated.",
+    "after": "An unsaturated parcel of air rising or sinking without exchanging heat with its surroundings cools or warms at the dry adiabatic lapse rate (DALR) of about 3°C per 1000 ft, or 1°C per 100 m. This rate applies purely to expansion and compression. It has nothing to do with condensation, which only slows the cooling once the air becomes saturated."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY DATA\",\"headline\":\"DALR = 3.0°C/1000FT, SALR = 1.5°C/1000FT\",\"subline\":\"COMPARING THE ELR TO THESE TWO RATES DETERMINES STABILITY\",\"blocks\":[{\"label\":\"DALR (dry adiabatic lapse rate)\",\"value\":\"3.0°C per 1,000 ft — the rate unsaturated rising air cools at\"},{\"label\":\"SALR (saturated adiabatic lapse rate)\",\"value\":\"1.5°C per 1,000 ft — the slower rate saturated rising air cools at\"},{\"label\":\"ELR below SALR\",\"value\":\"Absolutely stable\"},{\"label\":\"ELR above DALR\",\"value\":\"Absolutely unstable\"},{\"label\":\"ELR between SALR and DALR\",\"value\":\"Conditionally unstable — depends on whether the parcel is dry or saturated\"}],\"formula\":\"ELR < SALR ⇒ STABLE   |   ELR > DALR ⇒ UNSTABLE\"}",
+    "after": "{\"kicker\": \"KEY DATA\", \"headline\": \"DALR = 3.0°C/1000FT, SALR = 1.5°C/1000FT\", \"subline\": \"COMPARING THE ELR TO THESE TWO RATES DETERMINES STABILITY\", \"blocks\": [{\"label\": \"DALR (dry adiabatic lapse rate)\", \"value\": \"3.0°C per 1,000 ft: the rate unsaturated rising air cools at\"}, {\"label\": \"SALR (saturated adiabatic lapse rate)\", \"value\": \"1.5°C per 1,000 ft: the slower rate saturated rising air cools at\"}, {\"label\": \"ELR below SALR\", \"value\": \"Absolutely stable\"}, {\"label\": \"ELR above DALR\", \"value\": \"Absolutely unstable\"}, {\"label\": \"ELR between SALR and DALR\", \"value\": \"Conditionally unstable: depends on whether the parcel is dry or saturated\"}], \"formula\": \"ELR < SALR ⇒ STABLE   |   ELR > DALR ⇒ UNSTABLE\"}"
+   }
+  },
+  {
+   "id": 37,
+   "subject": "meteorology",
+   "card": {
+    "before": "{\"kicker\":\"KEY FACT\",\"headline\":\"THE DEW POINT IS WHERE A RISING PARCEL'S COOLING CURVE MEETS SATURATION\",\"subline\":\"BELOW THAT POINT THE AIR COOLS AT THE DALR; ABOVE IT, CONDENSATION RELEASES LATENT HEAT AND COOLING SLOWS TO THE SALR\",\"blocks\":[{\"label\":\"Below the condensation level\",\"value\":\"Unsaturated air cools at the DALR, a constant 3°C per 1,000 ft\"},{\"label\":\"At the condensation level\",\"value\":\"The parcel reaches saturation (its dew point) and cloud begins to form\"},{\"label\":\"Above the condensation level\",\"value\":\"Condensing water vapour releases latent heat, slowing cooling to the SALR\"},{\"label\":\"Latent heat\",\"value\":\"Released whenever a gas condenses to a liquid — the reverse of the heat absorbed during evaporation\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE DEW POINT IS WHERE A RISING PARCEL'S COOLING CURVE MEETS SATURATION\", \"subline\": \"BELOW THAT POINT THE AIR COOLS AT THE DALR; ABOVE IT, CONDENSATION RELEASES LATENT HEAT AND COOLING SLOWS TO THE SALR\", \"blocks\": [{\"label\": \"Below the condensation level\", \"value\": \"Unsaturated air cools at the DALR, a constant 3°C per 1,000 ft\"}, {\"label\": \"At the condensation level\", \"value\": \"The parcel reaches saturation (its dew point) and cloud begins to form\"}, {\"label\": \"Above the condensation level\", \"value\": \"Condensing water vapour releases latent heat, slowing cooling to the SALR\"}, {\"label\": \"Latent heat\", \"value\": \"Released whenever a gas condenses to a liquid: the reverse of the heat absorbed during evaporation\"}]}"
+   }
+  },
+  {
+   "id": 40,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "A temperature inversion is exactly what its name says: the normal decrease of temperature with height is inverted, so temperature rises with altitude instead. There are two common causes - warm air subsiding and compressing over the sub-tropical highs above places like Johannesburg, and the permanent inversion above the tropopause where the stratosphere warms with height - and in both cases the layer is very stable and resists vertical mixing.",
+    "after": "A temperature inversion is exactly what its name says: the normal decrease of temperature with height is inverted, so temperature rises with altitude instead. There are two common causes: warm air subsiding and compressing over the sub-tropical highs above places like Johannesburg, and the permanent inversion above the tropopause where the stratosphere warms with height. In both cases the layer is very stable and resists vertical mixing."
+   }
+  },
+  {
+   "id": 42,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "Advection fog needs horizontal air movement, not just cooling: warm, moist air is carried by wind across a surface colder than the air itself, and contact with that cold surface chills the air from below until it reaches its dew point. Unlike radiation fog, it can form under cloudy skies or in a moderate wind, and it is common along coasts - a classic example is South Africa's west coast, where Atlantic air crosses the cold Benguela Current.",
+    "after": "Advection fog needs horizontal air movement, not just cooling: warm, moist air is carried by wind across a surface colder than the air itself, and contact with that cold surface chills the air from below until it reaches its dew point. Unlike radiation fog, it can form under cloudy skies or in a moderate wind, and it is common along coasts. A classic example is South Africa's west coast, where Atlantic air crosses the cold Benguela Current."
+   }
+  },
+  {
+   "id": 43,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "Radiation fog needs a clear sky so the ground can radiate its heat away freely, a light wind to gently mix - but not disperse - the cooling air, and enough moisture that only a small temperature drop is needed to reach the dew point. Gauteng's Highveld winter nights are a classic local example of exactly these conditions coming together.",
+    "after": "Radiation fog needs a clear sky so the ground can radiate its heat away freely, a light wind to gently mix, but not disperse, the cooling air, and enough moisture that only a small temperature drop is needed to reach the dew point. Gauteng's Highveld winter nights are a classic local example of exactly these conditions coming together."
+   }
+  },
+  {
+   "id": 44,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "Land heats up faster than the sea once the sun is out, so by mid-morning the air over land is warmer and less dense than the air over the water. That warm air rises, and cooler, denser marine air flows in underneath it to replace it - which is why a sea breeze is a daytime phenomenon that dies away once the land stops heating in the late afternoon.",
+    "after": "Land heats up faster than the sea once the sun is out, so by mid-morning the air over land is warmer and less dense than the air over the water. That warm air rises, and cooler, denser marine air flows in underneath it to replace it, which is why a sea breeze is a daytime phenomenon that dies away once the land stops heating in the late afternoon."
+   }
+  },
+  {
+   "id": 69,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "Carburettor icing is not just a cold-weather hazard. As air accelerates through the venturi its pressure drops, and with it the temperature - typically by 20 to 30°C below the outside air temperature - which is enough to freeze condensing moisture even on a warm day if humidity is high. Serious icing at descent power is possible with ambient temperatures above 30°C and relative humidity as low as 30%, and the light-icing zone extends to almost +40°C when the dewpoint is high, which is where the roughly +38°C figure comes from.",
+    "after": "Carburettor icing is not just a cold-weather hazard. As air accelerates through the venturi its pressure drops, and with it the temperature, typically by 20 to 30°C below the outside air temperature, which is enough to freeze condensing moisture even on a warm day if humidity is high. Serious icing at descent power is possible with ambient temperatures above 30°C and relative humidity as low as 30%, and the light-icing zone extends to almost +40°C when the dewpoint is high, which is where the roughly +38°C figure comes from."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY DATA\",\"headline\":\"CARBURETTOR ICING CAN OCCUR AT TEMPERATURES UP TO ABOUT +38°C\",\"subline\":\"RISK DEPENDS ON BOTH TEMPERATURE AND DEWPOINT, EVEN IN AIR FREE OF CLOUD OR PRECIPITATION\",\"blocks\":[{\"label\":\"Serious icing, any power\",\"value\":\"Can occur even in relatively mild, moderately humid air\"},{\"label\":\"Moderate/serious icing, cruise/descent power\",\"value\":\"Spans a wide band roughly 0°C to +30°C\"},{\"label\":\"Light icing\",\"value\":\"Possible at temperatures approaching +40°C if the dewpoint is high enough\"},{\"label\":\"Key point\",\"value\":\"Icing is not just a cold-weather hazard — warm, humid days are also at risk\"}]}",
+    "after": "{\"kicker\": \"KEY DATA\", \"headline\": \"CARBURETTOR ICING CAN OCCUR AT TEMPERATURES UP TO ABOUT +38°C\", \"subline\": \"RISK DEPENDS ON BOTH TEMPERATURE AND DEWPOINT, EVEN IN AIR FREE OF CLOUD OR PRECIPITATION\", \"blocks\": [{\"label\": \"Serious icing, any power\", \"value\": \"Can occur even in relatively mild, moderately humid air\"}, {\"label\": \"Moderate/serious icing, cruise/descent power\", \"value\": \"Spans a wide band roughly 0°C to +30°C\"}, {\"label\": \"Light icing\", \"value\": \"Possible at temperatures approaching +40°C if the dewpoint is high enough\"}, {\"label\": \"Key point\", \"value\": \"Icing is not just a cold-weather hazard: warm, humid days are also at risk\"}]}"
+   }
+  },
+  {
+   "id": 71,
+   "subject": "meteorology",
+   "card": {
+    "before": "{\"kicker\":\"KEY FACT\",\"headline\":\"SOUTH AFRICA IS AFFECTED BY AIR MASSES FROM FOUR SOURCE REGIONS\",\"subline\":\"CLASSIFIED BY SOURCE (MARITIME OR CONTINENTAL) AND TEMPERATURE (POLAR OR TROPICAL)\",\"blocks\":[{\"label\":\"mP — maritime polar\",\"value\":\"Cold, moist air arriving from the Southern Ocean/Antarctica\"},{\"label\":\"cT — continental tropical\",\"value\":\"Hot, dry air forming over the African interior landmass\"},{\"label\":\"mTw — maritime tropical, warm\",\"value\":\"Warm, moist air from the Indian Ocean (east coast)\"},{\"label\":\"mTk — maritime tropical, cool\",\"value\":\"Cooler, moist air from the Atlantic Ocean (west coast)\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"SOUTH AFRICA IS AFFECTED BY AIR MASSES FROM FOUR SOURCE REGIONS\", \"subline\": \"CLASSIFIED BY SOURCE (MARITIME OR CONTINENTAL) AND TEMPERATURE (POLAR OR TROPICAL)\", \"blocks\": [{\"label\": \"mP: maritime polar\", \"value\": \"Cold, moist air arriving from the Southern Ocean/Antarctica\"}, {\"label\": \"cT: continental tropical\", \"value\": \"Hot, dry air forming over the African interior landmass\"}, {\"label\": \"mTw: maritime tropical, warm\", \"value\": \"Warm, moist air from the Indian Ocean (east coast)\"}, {\"label\": \"mTk: maritime tropical, cool\", \"value\": \"Cooler, moist air from the Atlantic Ocean (west coast)\"}]}"
+   }
+  },
+  {
+   "id": 622,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "A parcel of air holding a constant amount of water vapour has its relative humidity fall from 100% at 10°C to 52% at 20°C and 28% at 30°C - purely because warming raises the air's capacity to hold moisture without adding any more of it. Relative humidity is the ratio of actual to maximum possible moisture at that temperature, so raising the temperature alone, with nothing else changing, must push that ratio down.",
+    "after": "A parcel of air holding a constant amount of water vapour has its relative humidity fall from 100% at 10°C to 52% at 20°C and 28% at 30°C, purely because warming raises the air's capacity to hold moisture without adding any more of it. Relative humidity is the ratio of actual to maximum possible moisture at that temperature, so raising the temperature alone, with nothing else changing, must push that ratio down."
+   }
+  },
+  {
+   "id": 623,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "Nitrogen makes up about 78% of dry air by volume, by far the largest single component. Oxygen contributes roughly 21%, leaving only about 1% for argon and the trace gases - carbon dioxide, water vapour and ozone - that, despite being minor constituents, are the ones that actually shape day-to-day weather.",
+    "after": "Nitrogen makes up about 78% of dry air by volume, by far the largest single component. Oxygen contributes roughly 21%, leaving only about 1% for argon and the trace gases (carbon dioxide, water vapour and ozone) that, despite being minor constituents, are the ones that actually shape day-to-day weather."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY DATA\",\"headline\":\"NITROGEN 78%, OXYGEN 21%, ALL OTHER GASES 1%\",\"subline\":\"THE PROPORTIONS ARE CONSTANT THROUGHOUT THE TROPOSPHERE\",\"blocks\":[{\"label\":\"Nitrogen\",\"value\":\"78% by volume — by far the largest share\"},{\"label\":\"Oxygen\",\"value\":\"21% by volume\"},{\"label\":\"Carbon dioxide, argon and others\",\"value\":\"The remaining 1%, though these minor gases play an outsized role in weather\"}]}",
+    "after": "{\"kicker\": \"KEY DATA\", \"headline\": \"NITROGEN 78%, OXYGEN 21%, ALL OTHER GASES 1%\", \"subline\": \"THE PROPORTIONS ARE CONSTANT THROUGHOUT THE TROPOSPHERE\", \"blocks\": [{\"label\": \"Nitrogen\", \"value\": \"78% by volume: by far the largest share\"}, {\"label\": \"Oxygen\", \"value\": \"21% by volume\"}, {\"label\": \"Carbon dioxide, argon and others\", \"value\": \"The remaining 1%, though these minor gases play an outsized role in weather\"}]}"
+   }
+  },
+  {
+   "id": 626,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "QFE ties the altimeter to the aerodrome's own reference level rather than to sea level, so an aircraft sitting exactly at that reference level - on the ground - has, by definition, zero height above it. That is exactly what a correctly set QFE altimeter should show.",
+    "after": "QFE ties the altimeter to the aerodrome's own reference level rather than to sea level, so an aircraft on the ground at that reference level has, by definition, zero height above it. That is exactly what a correctly set QFE altimeter should show."
+   }
+  },
+  {
+   "id": 637,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "The troposphere reaches its greatest depth over the equator, roughly 18 km (60,000 ft), because intense solar heating there expands the air column and drives strong vertical convection that carries the tropopause higher. Over the cold poles it shrinks to as little as 8 km (26,000 ft) - the basis of the mnemonic \"HIGH TEMP - HIGH TROP.\"",
+    "after": "The troposphere reaches its greatest depth over the equator, roughly 18 km (60,000 ft), because intense solar heating there expands the air column and drives strong vertical convection that carries the tropopause higher. Over the cold poles it shrinks to as little as 8 km (26,000 ft), the basis of the mnemonic \"HIGH TEMP - HIGH TROP.\""
+   }
+  },
+  {
+   "id": 739,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "Surface convergence happens where air masses move toward each other and have nowhere to go but up - the same mechanism that makes the equator a belt of low pressure. As that air is forced to rise it cools adiabatically, and rising, cooling air is inherently the unstable half of the atmosphere's vertical motion.",
+    "after": "Surface convergence happens where air masses move toward each other and have nowhere to go but up, the same mechanism that makes the equator a belt of low pressure. As that air is forced to rise it cools adiabatically, and rising, cooling air is inherently the unstable half of the atmosphere's vertical motion."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY FACT\",\"headline\":\"CONVERGENCE AT THE SURFACE PRODUCES LOW PRESSURE AND RISING, UNSTABLE AIR\",\"subline\":\"DIVERGENCE AT THE SURFACE PRODUCES HIGH PRESSURE AND SINKING, STABLE AIR\",\"blocks\":[{\"label\":\"Surface convergence\",\"value\":\"Air flowing together at the surface is forced upward — a low-pressure system with instability\"},{\"label\":\"Surface divergence\",\"value\":\"Air flowing apart at the surface draws air down from aloft — a high-pressure system with stable, subsiding air\"},{\"label\":\"Aloft\",\"value\":\"The pattern reverses near the tropopause: convergence aloft feeds subsidence, divergence aloft feeds uplift\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONVERGENCE AT THE SURFACE PRODUCES LOW PRESSURE AND RISING, UNSTABLE AIR\", \"subline\": \"DIVERGENCE AT THE SURFACE PRODUCES HIGH PRESSURE AND SINKING, STABLE AIR\", \"blocks\": [{\"label\": \"Surface convergence\", \"value\": \"Air flowing together at the surface is forced upward: a low-pressure system with instability\"}, {\"label\": \"Surface divergence\", \"value\": \"Air flowing apart at the surface draws air down from aloft: a high-pressure system with stable, subsiding air\"}, {\"label\": \"Aloft\", \"value\": \"The pattern reverses near the tropopause: convergence aloft feeds subsidence, divergence aloft feeds uplift\"}]}"
+   }
+  },
+  {
+   "id": 748,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "When the air behind a cold front is colder than the air ahead of the slower warm front, it undercuts both the warm sector and the cooler pre-frontal air, lifting the entire warm sector off the ground - this is a cold occlusion, the type of occlusion actually experienced in Southern Africa. Its opposite, the warm occlusion, needs the coldest air to sit ahead of the system rather than behind it, which essentially never happens here.",
+    "after": "When the air behind a cold front is colder than the air ahead of the slower warm front, it undercuts both the warm sector and the cooler pre-frontal air, lifting the entire warm sector off the ground. This is a cold occlusion, the type of occlusion actually experienced in Southern Africa. Its opposite, the warm occlusion, needs the coldest air to sit ahead of the system rather than behind it, which essentially never happens here."
+   }
+  },
+  {
+   "id": 750,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "The KwaZulu-Natal south-westerly buster develops as a low-pressure system passes and a high ridges in behind it. Since surface wind circulates clockwise around a Southern Hemisphere low, the wind to the rear of the departing low - and ahead of the following high's anticyclonic flow - swings onshore, producing the buster's sudden, sharp deterioration: a near-180° wind change, a jump in wind speed, rain, and a drop in temperature, all within minutes.",
+    "after": "The KwaZulu-Natal south-westerly buster develops as a low-pressure system passes and a high ridges in behind it. Since surface wind circulates clockwise around a Southern Hemisphere low, the wind to the rear of the departing low, and ahead of the following high's anticyclonic flow, swings onshore, producing the buster's sudden, sharp deterioration: a near-180° wind change, a jump in wind speed, rain, and a drop in temperature, all within minutes."
+   }
+  },
+  {
+   "id": 1488,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "Hill fog is simply low cloud that happens to intersect rising terrain: humid, stable air is forced up a slope, expanding and cooling until it reaches its dew point, and because the resulting cloud base sits right at hill level, anyone on the high ground finds themselves inside cloud with visibility dropping sharply. It needs stable air specifically - unstable air forced up the same slope would instead build cumulus rather than a smooth, ground-hugging layer.",
+    "after": "Hill fog is simply low cloud that happens to intersect rising terrain: humid, stable air is forced up a slope, expanding and cooling until it reaches its dew point, and because the resulting cloud base sits right at hill level, anyone on the high ground finds themselves inside cloud with visibility dropping sharply. It needs stable air specifically. Unstable air forced up the same slope would instead build cumulus rather than a smooth, ground-hugging layer."
+   }
+  },
+  {
+   "id": 1536,
+   "subject": "meteorology",
+   "explanation": {
+    "before": "A barometer measures atmospheric pressure - a classic aneroid barometer has a sealed capsule that expands and contracts with changing pressure to move a needle across a dial marked in inches of mercury and hectopascals. Aerodrome pressure readings taken this way are then reduced or converted into the settings pilots actually use, such as QNH.",
+    "after": "A barometer measures atmospheric pressure. A classic aneroid barometer has a sealed capsule that expands and contracts with changing pressure to move a needle across a dial marked in inches of mercury and hectopascals. Aerodrome pressure readings taken this way are then reduced or converted into the settings pilots actually use, such as QNH."
+   }
+  },
+  {
+   "id": 1537,
+   "subject": "meteorology",
+   "card": {
+    "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLEAR ICE IS USUALLY THE MOST DANGEROUS\", \"subline\": \"IT IS HEAVY, HARD TO SEE, HARD TO REMOVE AND SPREADS BACK OVER THE WING\", \"blocks\": [{\"label\": \"Clear ice\", \"value\": \"Large supercooled drops freeze slowly, flowing back into a smooth, hard, transparent layer\"}, {\"label\": \"Rime ice\", \"value\": \"Small drops freeze instantly: rough, milky and brittle — lighter and easier to remove\"}, {\"label\": \"Hoar frost\", \"value\": \"Deposited directly from water vapour; thin, but can still spoil lift on take-off\"}, {\"label\": \"Why clear ice is worst\", \"value\": \"It adds weight quickly and changes the shape of the wing\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLEAR ICE IS USUALLY THE MOST DANGEROUS\", \"subline\": \"IT IS HEAVY, HARD TO SEE, HARD TO REMOVE AND SPREADS BACK OVER THE WING\", \"blocks\": [{\"label\": \"Clear ice\", \"value\": \"Large supercooled drops freeze slowly, flowing back into a smooth, hard, transparent layer\"}, {\"label\": \"Rime ice\", \"value\": \"Small drops freeze instantly: rough, milky and brittle; lighter and easier to remove\"}, {\"label\": \"Hoar frost\", \"value\": \"Deposited directly from water vapour; thin, but can still spoil lift on take-off\"}, {\"label\": \"Why clear ice is worst\", \"value\": \"It adds weight quickly and changes the shape of the wing\"}]}"
+   }
+  },
+  {
+   "id": 1608,
+   "subject": "navigation",
+   "explanation": {
+    "before": "Deviation is caused by the aircraft's own stray magnetic fields — its metal structure, engine, radios and wiring — acting on the compass magnet, not by the earth's field. As the aircraft turns onto different headings, these fixed internal fields present themselves to the compass magnet at different angles relative to the earth's magnetic field, so the size and direction of the deflection changes with heading: on some headings the unwanted field may line up fore-and-aft and cause little or no deviation, while on others it causes the largest error. This is why the deviation (compass correction) card lists a different correction for each heading rather than one constant value for the whole compass rose.",
+    "after": "Deviation is caused by the aircraft's own stray magnetic fields (its metal structure, engine, radios and wiring) acting on the compass magnet, not by the earth's field. As the aircraft turns onto different headings, these fixed internal fields present themselves to the compass magnet at different angles relative to the earth's magnetic field, so the size and direction of the deflection changes with heading: on some headings the unwanted field may line up fore-and-aft and cause little or no deviation, while on others it causes the largest error. This is why the deviation (compass correction) card lists a different correction for each heading rather than one constant value for the whole compass rose."
+   }
+  },
+  {
+   "id": -3,
+   "subject": "principles-of-flight",
+   "card": {
+    "before": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"AT 60° BANK, LOAD FACTOR = 2.0 G\", \"subline\": \"LOAD FACTOR = 1 / cos(BANK ANGLE) - IT DEPENDS ONLY ON BANK ANGLE IN A LEVEL TURN\", \"blocks\": [{\"label\": \"60° level turn\", \"value\": \"Load factor = 1 / cos 60° = 2.0 G - the wings support twice the aircraft's gross weight\"}, {\"label\": \"What drives it\", \"value\": \"In a level, coordinated turn, the extra load on the wings is a function of bank angle alone, not airspeed or aircraft type\"}, {\"label\": \"Other banks\", \"value\": \"30° ≈ 1.15 G · 45° ≈ 1.41 G · 75° ≈ 3.9 G\"}, {\"label\": \"Stall speed\", \"value\": \"Rises with √n: at 60°, × 1.41 (+41%)\"}, {\"label\": \"Limit\", \"value\": \"Normal category aeroplanes: +3.8 G\"}], \"formula\": \"LOAD FACTOR = 1 / cos(BANK ANGLE)\"}",
+    "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"AT 60° BANK, LOAD FACTOR = 2.0 G\", \"subline\": \"LOAD FACTOR = 1 / cos(BANK ANGLE): IT DEPENDS ONLY ON BANK ANGLE IN A LEVEL TURN\", \"blocks\": [{\"label\": \"60° level turn\", \"value\": \"Load factor = 1 / cos 60° = 2.0 G: the wings support twice the aircraft's gross weight\"}, {\"label\": \"What drives it\", \"value\": \"In a level, coordinated turn, the extra load on the wings is a function of bank angle alone, not airspeed or aircraft type\"}, {\"label\": \"Other banks\", \"value\": \"30° ≈ 1.15 G · 45° ≈ 1.41 G · 75° ≈ 3.9 G\"}, {\"label\": \"Stall speed\", \"value\": \"Rises with √n: at 60°, × 1.41 (+41%)\"}, {\"label\": \"Limit\", \"value\": \"Normal category aeroplanes: +3.8 G\"}], \"formula\": \"LOAD FACTOR = 1 / cos(BANK ANGLE)\"}"
+   }
+  },
+  {
+   "id": 1110,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "For a steady flow, the same mass of air has to pass through every cross-section of the tube each second - none of it can pile up or vanish. Narrowing the venturi shrinks the cross-sectional area, so the air has to speed up through that section to keep pushing the same mass through in the same time, which is exactly what the equation of continuity describes.",
+    "after": "For a steady flow, the same mass of air has to pass through every cross-section of the tube each second. None of it can pile up or vanish. Narrowing the venturi shrinks the cross-sectional area, so the air has to speed up through that section to keep pushing the same mass through in the same time, which is exactly what the equation of continuity describes."
+   }
+  },
+  {
+   "id": 1111,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Longitudinal stability depends heavily on where the centre of gravity sits relative to the centre of pressure - the further forward the CG, the longer the \"moment arm\" the tailplane has to work with in restoring the aircraft after a pitch disturbance. Moving the CG aft shortens that arm and weakens the restoring effect, which is exactly why an aft CG reduces pitch stability.",
+    "after": "Longitudinal stability depends heavily on where the centre of gravity sits relative to the centre of pressure: the further forward the CG, the longer the \"moment arm\" the tailplane has to work with in restoring the aircraft after a pitch disturbance. Moving the CG aft shortens that arm and weakens the restoring effect, which is exactly why an aft CG reduces pitch stability."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"CG NORMALLY SITS FORWARD OF THE CENTRE OF PRESSURE\",\"subline\":\"THAT NOSE-HEAVY BALANCE, RESTORED BY THE TAILPLANE, IS WHAT MAKES THE AIRCRAFT LONGITUDINALLY STABLE\",\"blocks\":[{\"label\":\"Normal level flight\",\"value\":\"CG sits forward of the centre of pressure (aerodynamic centre); this is also why reduced power lets the nose drop, since less power weakens the tailplane's balancing effect\"},{\"label\":\"CG moves aft\",\"value\":\"Longitudinal stability decreases; if too far aft, the aircraft becomes difficult to control in pitch\"},{\"label\":\"CG moves forward\",\"value\":\"Longitudinal stability increases\"},{\"label\":\"Restoring a nose-down disturbance\",\"value\":\"The tailplane generates an increased downward force, creating a nose-up moment that returns the aircraft to trim\"},{\"label\":\"If the aerodynamic centre were ahead of the CG\",\"value\":\"A change in lift would produce a pitching moment that increases that change further - an unstable, destabilising arrangement\"}]}",
+    "after": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"CG NORMALLY SITS FORWARD OF THE CENTRE OF PRESSURE\",\"subline\":\"THAT NOSE-HEAVY BALANCE, RESTORED BY THE TAILPLANE, IS WHAT MAKES THE AIRCRAFT LONGITUDINALLY STABLE\",\"blocks\":[{\"label\":\"Normal level flight\",\"value\":\"CG sits forward of the centre of pressure (aerodynamic centre); this is also why reduced power lets the nose drop, since less power weakens the tailplane's balancing effect\"},{\"label\":\"CG moves aft\",\"value\":\"Longitudinal stability decreases; if too far aft, the aircraft becomes difficult to control in pitch\"},{\"label\":\"CG moves forward\",\"value\":\"Longitudinal stability increases\"},{\"label\":\"Restoring a nose-down disturbance\",\"value\":\"The tailplane generates an increased downward force, creating a nose-up moment that returns the aircraft to trim\"},{\"label\":\"If the aerodynamic centre were ahead of the CG\",\"value\":\"A change in lift would produce a pitching moment that increases that change further: an unstable, destabilising arrangement\"}]}"
+   }
+  },
+  {
+   "id": 1113,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Lift is defined by convention as the aerodynamic force component acting perpendicular to the relative airflow - not straight up relative to the ground. In a climb, descent, or steep bank the aircraft's actual \"up\" and the direction lift acts can differ noticeably, since lift always follows the relative airflow's orientation, not gravity's.",
+    "after": "Lift is defined by convention as the aerodynamic force component acting perpendicular to the relative airflow, not straight up relative to the ground. In a climb, descent, or steep bank the aircraft's actual \"up\" and the direction lift acts can differ noticeably, since lift always follows the relative airflow's orientation, not gravity's."
+   }
+  },
+  {
+   "id": 1126,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Because the centre of gravity sits forward of the centre of pressure in normal flight, the wing is always trying to pitch the nose down, held in check by the tail's balancing download - and that download depends partly on airflow driven by power. Reduce power, and that balancing effect weakens relative to the CG-forward pitching moment, so the nose tends to drop.",
+    "after": "Because the centre of gravity sits forward of the centre of pressure in normal flight, the wing is always trying to pitch the nose down, held in check by the tail's balancing download, and that download depends partly on airflow driven by power. Reduce power, and that balancing effect weakens relative to the CG-forward pitching moment, so the nose tends to drop."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"CG NORMALLY SITS FORWARD OF THE CENTRE OF PRESSURE\",\"subline\":\"THAT NOSE-HEAVY BALANCE, RESTORED BY THE TAILPLANE, IS WHAT MAKES THE AIRCRAFT LONGITUDINALLY STABLE\",\"blocks\":[{\"label\":\"Normal level flight\",\"value\":\"CG sits forward of the centre of pressure (aerodynamic centre); this is also why reduced power lets the nose drop, since less power weakens the tailplane's balancing effect\"},{\"label\":\"CG moves aft\",\"value\":\"Longitudinal stability decreases; if too far aft, the aircraft becomes difficult to control in pitch\"},{\"label\":\"CG moves forward\",\"value\":\"Longitudinal stability increases\"},{\"label\":\"Restoring a nose-down disturbance\",\"value\":\"The tailplane generates an increased downward force, creating a nose-up moment that returns the aircraft to trim\"},{\"label\":\"If the aerodynamic centre were ahead of the CG\",\"value\":\"A change in lift would produce a pitching moment that increases that change further - an unstable, destabilising arrangement\"}]}",
+    "after": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"CG NORMALLY SITS FORWARD OF THE CENTRE OF PRESSURE\",\"subline\":\"THAT NOSE-HEAVY BALANCE, RESTORED BY THE TAILPLANE, IS WHAT MAKES THE AIRCRAFT LONGITUDINALLY STABLE\",\"blocks\":[{\"label\":\"Normal level flight\",\"value\":\"CG sits forward of the centre of pressure (aerodynamic centre); this is also why reduced power lets the nose drop, since less power weakens the tailplane's balancing effect\"},{\"label\":\"CG moves aft\",\"value\":\"Longitudinal stability decreases; if too far aft, the aircraft becomes difficult to control in pitch\"},{\"label\":\"CG moves forward\",\"value\":\"Longitudinal stability increases\"},{\"label\":\"Restoring a nose-down disturbance\",\"value\":\"The tailplane generates an increased downward force, creating a nose-up moment that returns the aircraft to trim\"},{\"label\":\"If the aerodynamic centre were ahead of the CG\",\"value\":\"A change in lift would produce a pitching moment that increases that change further: an unstable, destabilising arrangement\"}]}"
+   }
+  },
+  {
+   "id": 1138,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "The centre of gravity is the single point through which an aircraft's entire weight can be considered to act - if you could suspend the aircraft from a rope attached at exactly that point, it would balance perfectly level. Its position, controlled by how the aircraft is loaded, has a major effect on stability and performance, which is why weight and balance calculations are done before every flight.",
+    "after": "The centre of gravity is the single point through which an aircraft's entire weight can be considered to act. If you could suspend the aircraft from a rope attached at exactly that point, it would balance perfectly level. Its position, controlled by how the aircraft is loaded, has a major effect on stability and performance, which is why weight and balance calculations are done before every flight."
+   }
+  },
+  {
+   "id": 1140,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Bernoulli's principle states that the pressure of a moving fluid falls at points where its speed rises. So as air accelerates through the narrowing throat of a venturi, its pressure energy has to decrease to compensate - the two trade off against each other so that the fluid's total energy stays constant.",
+    "after": "Bernoulli's principle states that the pressure of a moving fluid falls at points where its speed rises. So as air accelerates through the narrowing throat of a venturi, its pressure energy has to decrease to compensate. The two trade off against each other so that the fluid's total energy stays constant."
+   }
+  },
+  {
+   "id": 1152,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Angle of incidence is a fixed, built-in angle set by the manufacturer between the wing's chord line and the aircraft's longitudinal axis - unlike angle of attack, which changes constantly as the pilot manoeuvres and depends on the direction of the airflow, not the aircraft's structure.",
+    "after": "Angle of incidence is a fixed, built-in angle set by the manufacturer between the wing's chord line and the aircraft's longitudinal axis, unlike angle of attack, which changes constantly as the pilot manoeuvres and depends on the direction of the airflow, not the aircraft's structure."
+   },
+   "card": {
+    "before": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"CHORD LINE vs LONGITUDINAL AXIS\", \"subline\": \"FIXED BY WING RIGGING — DOES NOT CHANGE IN FLIGHT\", \"blocks\": [{\"label\": \"Definition\", \"value\": \"Angle between the chord line and a line parallel to the longitudinal axis\"}, {\"label\": \"Set by\", \"value\": \"Wing/fuselage rigging at manufacture\"}, {\"label\": \"In flight\", \"value\": \"Fixed — does not vary with AoA\"}]}",
+    "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"CHORD LINE vs LONGITUDINAL AXIS\", \"subline\": \"FIXED BY WING RIGGING: DOES NOT CHANGE IN FLIGHT\", \"blocks\": [{\"label\": \"Definition\", \"value\": \"Angle between the chord line and a line parallel to the longitudinal axis\"}, {\"label\": \"Set by\", \"value\": \"Wing/fuselage rigging at manufacture\"}, {\"label\": \"In flight\", \"value\": \"Fixed: does not vary with AoA\"}]}"
+   }
+  },
+  {
+   "id": 1153,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "On a typical drag curve, curve B rises steadily with speed rather than falling at low speed - that upward-only shape belongs to parasite (or profile) drag, which grows because the aircraft is pushing more air aside and generating more skin friction the faster it flies. This is the opposite behaviour to induced drag, which is worst at low speed and improves as speed increases.",
+    "after": "On a typical drag curve, curve B rises steadily with speed rather than falling at low speed. That upward-only shape belongs to parasite (or profile) drag, which grows because the aircraft is pushing more air aside and generating more skin friction the faster it flies. This is the opposite behaviour to induced drag, which is worst at low speed and improves as speed increases."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"PARASITE DRAG RISES WITH THE SQUARE OF SPEED\",\"subline\":\"INDUCED DRAG FALLS AS SPEED INCREASES; THEIR SUM IS TOTAL DRAG, LOWEST AT Vmd\",\"blocks\":[{\"label\":\"Curve A - Induced drag\",\"value\":\"High at low speed, falls as speed increases\"},{\"label\":\"Curve B - Parasite (profile) drag\",\"value\":\"Rises with the square of speed; doubling speed roughly quadruples this drag\"},{\"label\":\"Curve C - Total drag\",\"value\":\"The sum of induced and parasite drag at every speed\"},{\"label\":\"Minimum drag point (Vmd)\",\"value\":\"Where total drag is lowest and lift-to-drag ratio is at its maximum\"}]}",
+    "after": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"PARASITE DRAG RISES WITH THE SQUARE OF SPEED\",\"subline\":\"INDUCED DRAG FALLS AS SPEED INCREASES; THEIR SUM IS TOTAL DRAG, LOWEST AT Vmd\",\"blocks\":[{\"label\":\"Curve A: Induced drag\",\"value\":\"High at low speed, falls as speed increases\"},{\"label\":\"Curve B: Parasite (profile) drag\",\"value\":\"Rises with the square of speed; doubling speed roughly quadruples this drag\"},{\"label\":\"Curve C: Total drag\",\"value\":\"The sum of induced and parasite drag at every speed\"},{\"label\":\"Minimum drag point (Vmd)\",\"value\":\"Where total drag is lowest and lift-to-drag ratio is at its maximum\"}]}"
+   }
+  },
+  {
+   "id": 1158,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "At lower speeds the wing has less dynamic pressure to work with, so it must fly at a higher angle of attack to generate the lift needed to support the aircraft's weight. Since induced drag grows directly with angle of attack, this is exactly why induced drag rises sharply as speed decreases - it is the dominant drag source at the slow end of the speed range.",
+    "after": "At lower speeds the wing has less dynamic pressure to work with, so it must fly at a higher angle of attack to generate the lift needed to support the aircraft's weight. Since induced drag grows directly with angle of attack, this is exactly why induced drag rises sharply as speed decreases. It is the dominant drag source at the slow end of the speed range."
+   },
+   "card": {
+    "before": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"INDUCED DRAG FALLS, PARASITE DRAG RISES, WITH SPEED\", \"subline\": \"TOTAL DRAG IS LOWEST AT ONE SPEED — THE BEST LIFT/DRAG RATIO\", \"blocks\": [{\"label\": \"Induced drag\", \"value\": \"Highest at low speed/high AoA, decreases as speed increases\"}, {\"label\": \"Parasite drag\", \"value\": \"Low at low speed, increases sharply as speed increases\"}, {\"label\": \"Below min-drag speed\", \"value\": \"Slowing further raises induced drag faster than parasite drag falls, so total drag increases\"}]}",
+    "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"INDUCED DRAG FALLS, PARASITE DRAG RISES, WITH SPEED\", \"subline\": \"TOTAL DRAG IS LOWEST AT ONE SPEED: THE BEST LIFT/DRAG RATIO\", \"blocks\": [{\"label\": \"Induced drag\", \"value\": \"Highest at low speed/high AoA, decreases as speed increases\"}, {\"label\": \"Parasite drag\", \"value\": \"Low at low speed, increases sharply as speed increases\"}, {\"label\": \"Below min-drag speed\", \"value\": \"Slowing further raises induced drag faster than parasite drag falls, so total drag increases\"}]}"
+   }
+  },
+  {
+   "id": 1168,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Dihedral - the upward slant of the wings from root to tip - creates lateral stability through a simple mechanism: if one wing drops, the aircraft sideslips slightly, and that sideslip gives the lower, more exposed wing a greater effective angle of attack than the upper wing. The lower wing's extra lift produces a rolling moment that pushes the aircraft back toward wings-level flight.",
+    "after": "Dihedral, the upward slant of the wings from root to tip, creates lateral stability through a simple mechanism: if one wing drops, the aircraft sideslips slightly, and that sideslip gives the lower, more exposed wing a greater effective angle of attack than the upper wing. The lower wing's extra lift produces a rolling moment that pushes the aircraft back toward wings-level flight."
+   }
+  },
+  {
+   "id": 1199,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "A heavier aircraft, or one with the same weight concentrated on a smaller wing (higher wing loading), needs a greater angle of attack to generate the extra lift required to support that weight at any given speed. Since the critical angle of attack itself doesn't change, the wing simply reaches that same critical angle at a higher speed - so stalling speed rises with wing loading.",
+    "after": "A heavier aircraft, or one with the same weight concentrated on a smaller wing (higher wing loading), needs a greater angle of attack to generate the extra lift required to support that weight at any given speed. Since the critical angle of attack itself doesn't change, the wing simply reaches that same critical angle at a higher speed, so stalling speed rises with wing loading."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"HIGHER WING LOADING MEANS A HIGHER STALLING SPEED\",\"subline\":\"MORE LIFT IS NEEDED AT THE SAME CRITICAL ANGLE OF ATTACK, SO SPEED MUST RISE\",\"blocks\":[{\"label\":\"Wing loading\",\"value\":\"Weight supported per unit of wing area\"},{\"label\":\"Higher wing loading\",\"value\":\"The wing must generate more lift per unit area, which - at the same fixed critical angle of attack - requires a higher airspeed\"},{\"label\":\"Result\",\"value\":\"Stalling speed increases\"}]}",
+    "after": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"HIGHER WING LOADING MEANS A HIGHER STALLING SPEED\",\"subline\":\"MORE LIFT IS NEEDED AT THE SAME CRITICAL ANGLE OF ATTACK, SO SPEED MUST RISE\",\"blocks\":[{\"label\":\"Wing loading\",\"value\":\"Weight supported per unit of wing area\"},{\"label\":\"Higher wing loading\",\"value\":\"The wing must generate more lift per unit area, which, at the same fixed critical angle of attack, requires a higher airspeed\"},{\"label\":\"Result\",\"value\":\"Stalling speed increases\"}]}"
+   }
+  },
+  {
+   "id": 1201,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Unlike a plain or split flap, which simply hinges downward, a Fowler flap slides backward on tracks before tilting down. That rearward travel is what actually increases the wing's surface area, on top of the camber increase every flap type provides - which is exactly why Fowler flaps can add substantial lift without the drag penalty of the other flap types.",
+    "after": "Unlike a plain or split flap, which simply hinges downward, a Fowler flap slides backward on tracks before tilting down. That rearward travel is what actually increases the wing's surface area, on top of the camber increase every flap type provides, which is exactly why Fowler flaps can add substantial lift without the drag penalty of the other flap types."
+   },
+   "card": {
+    "before": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"EXTENDS AFT + DOWN\", \"subline\": \"INCREASES BOTH WING AREA AND CAMBER\", \"blocks\": [{\"label\": \"Motion\", \"value\": \"Slides aft, then deflects down\"}, {\"label\": \"Effect\", \"value\": \"Increases wing area as well as camber\"}, {\"label\": \"Vs. other flap types\", \"value\": \"Plain/split/slotted only deflect down — no area increase\"}]}",
+    "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"EXTENDS AFT + DOWN\", \"subline\": \"INCREASES BOTH WING AREA AND CAMBER\", \"blocks\": [{\"label\": \"Motion\", \"value\": \"Slides aft, then deflects down\"}, {\"label\": \"Effect\", \"value\": \"Increases wing area as well as camber\"}, {\"label\": \"Vs. other flap types\", \"value\": \"Plain/split/slotted only deflect down: no area increase\"}]}"
+   }
+  },
+  {
+   "id": 1205,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Extra weight means the wing has to generate more lift to support the aircraft, which it can only do by reaching a higher speed before hitting its critical angle of attack - so stalling speed increases. The critical angle of attack itself, however, is a fixed property of the wing's shape and doesn't change with weight; only the speed at which that same angle is reached does.",
+    "after": "Extra weight means the wing has to generate more lift to support the aircraft, which it can only do by reaching a higher speed before hitting its critical angle of attack, so stalling speed increases. The critical angle of attack itself, however, is a fixed property of the wing's shape and doesn't change with weight; only the speed at which that same angle is reached does."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"THE CRITICAL (STALLING) ANGLE OF ATTACK IS FIXED FOR A GIVEN AEROFOIL\",\"subline\":\"A STALL IS ALWAYS CAUSED BY EXCEEDING THIS ANGLE - NEVER BY SPEED, WEIGHT OR BANK ALONE\",\"blocks\":[{\"label\":\"Critical angle of attack\",\"value\":\"A fixed value for a given aerofoil shape; does not change with airspeed, bank angle or weight\"},{\"label\":\"A stall happens when\",\"value\":\"The wing exceeds this critical angle, whatever speed or configuration the aircraft is in\"},{\"label\":\"Increasing weight\",\"value\":\"Increases the stalling speed, since more lift - and so a higher speed at the same angle - is needed to support the extra weight, but the stalling angle itself stays the same\"}]}",
+    "after": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"THE CRITICAL (STALLING) ANGLE OF ATTACK IS FIXED FOR A GIVEN AEROFOIL\",\"subline\":\"A STALL IS ALWAYS CAUSED BY EXCEEDING THIS ANGLE: NEVER BY SPEED, WEIGHT OR BANK ALONE\",\"blocks\":[{\"label\":\"Critical angle of attack\",\"value\":\"A fixed value for a given aerofoil shape; does not change with airspeed, bank angle or weight\"},{\"label\":\"A stall happens when\",\"value\":\"The wing exceeds this critical angle, whatever speed or configuration the aircraft is in\"},{\"label\":\"Increasing weight\",\"value\":\"Increases the stalling speed, since more lift, and so a higher speed at the same angle, is needed to support the extra weight, but the stalling angle itself stays the same\"}]}"
+   }
+  },
+  {
+   "id": 1219,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "In a steady climb, the aircraft's weight can be split into two components: one opposing lift, and one acting rearward along the flight path opposing thrust. Because part of the weight is now acting like extra drag, thrust must exceed the wing's own drag to keep climbing, while lift only needs to balance its own, smaller component of weight - so lift ends up less than total weight, with the difference made up by thrust.",
+    "after": "In a steady climb, the aircraft's weight can be split into two components: one opposing lift, and one acting rearward along the flight path opposing thrust. Because part of the weight is now acting like extra drag, thrust must exceed the wing's own drag to keep climbing, while lift only needs to balance its own, smaller component of weight, so lift ends up less than total weight, with the difference made up by thrust."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"IN A STEADY CLIMB, THRUST EXCEEDS DRAG AND LIFT IS LESS THAN WEIGHT\",\"subline\":\"THE CLIMB ANGLE IS SET BY HOW MUCH EXCESS THRUST IS AVAILABLE\",\"blocks\":[{\"label\":\"Thrust vs Drag\",\"value\":\"Thrust is greater than drag - the excess thrust is what climbs the aircraft\"},{\"label\":\"Lift vs Weight\",\"value\":\"Lift is less than weight, since part of the aircraft's weight is now supported by the climb angle itself\"},{\"label\":\"Maximum angle of climb\",\"value\":\"Determined by the greatest excess of thrust over drag, not by excess power\"}]}",
+    "after": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"IN A STEADY CLIMB, THRUST EXCEEDS DRAG AND LIFT IS LESS THAN WEIGHT\",\"subline\":\"THE CLIMB ANGLE IS SET BY HOW MUCH EXCESS THRUST IS AVAILABLE\",\"blocks\":[{\"label\":\"Thrust vs Drag\",\"value\":\"Thrust is greater than drag: the excess thrust is what climbs the aircraft\"},{\"label\":\"Lift vs Weight\",\"value\":\"Lift is less than weight, since part of the aircraft's weight is now supported by the climb angle itself\"},{\"label\":\"Maximum angle of climb\",\"value\":\"Determined by the greatest excess of thrust over drag, not by excess power\"}]}"
+   }
+  },
+  {
+   "id": 1239,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Lift-to-drag ratio is a direct measure of how far the aircraft glides forward for every unit of height it gives up - a high L/D means a lot of forward distance per foot lost. That efficient trade is exactly what produces a shallow gliding angle, the signature of a low-drag airframe like a glider.",
+    "after": "Lift-to-drag ratio is a direct measure of how far the aircraft glides forward for every unit of height it gives up. A high L/D means a lot of forward distance per foot lost. That efficient trade is exactly what produces a shallow gliding angle, the signature of a low-drag airframe like a glider."
+   }
+  },
+  {
+   "id": 1300,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "The angle of attack is specifically defined as the angle between the aerofoil's chord line (the straight reference from leading to trailing edge) and the relative airflow meeting the wing - not the aircraft's pitch attitude relative to the horizon, and not the angle of incidence, which is a fixed structural angle rather than one that changes with flight condition.",
+    "after": "The angle of attack is specifically defined as the angle between the aerofoil's chord line (the straight reference from leading to trailing edge) and the relative airflow meeting the wing, not the aircraft's pitch attitude relative to the horizon, and not the angle of incidence, which is a fixed structural angle rather than one that changes with flight condition."
+   }
+  },
+  {
+   "id": 1308,
+   "subject": "principles-of-flight",
+   "explanation": {
+    "before": "Bank is rotation about the longitudinal axis, running nose to tail through the centre of gravity - the common point every one of the aircraft's three rotational axes passes through. Ailerons control rotation about this specific axis.",
+    "after": "Bank is rotation about the longitudinal axis, running nose to tail through the centre of gravity, the common point every one of the aircraft's three rotational axes passes through. Ailerons control rotation about this specific axis."
+   },
+   "card": {
+    "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"ROLL IS ROTATION ABOUT THE LONGITUDINAL AXIS\",\"subline\":\"CONTROLLED BY THE AILERONS\",\"blocks\":[{\"label\":\"Longitudinal axis\",\"value\":\"Runs nose to tail through the centre of gravity\"},{\"label\":\"Roll (bank)\",\"value\":\"Rotation about the longitudinal axis - one wing moving up, the other down\"},{\"label\":\"Primary control\",\"value\":\"Ailerons\"}]}",
+    "after": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"ROLL IS ROTATION ABOUT THE LONGITUDINAL AXIS\",\"subline\":\"CONTROLLED BY THE AILERONS\",\"blocks\":[{\"label\":\"Longitudinal axis\",\"value\":\"Runs nose to tail through the centre of gravity\"},{\"label\":\"Roll (bank)\",\"value\":\"Rotation about the longitudinal axis: one wing moving up, the other down\"},{\"label\":\"Primary control\",\"value\":\"Ailerons\"}]}"
+   }
+  },
+  {
+   "id": 2025,
+   "subject": "principles-of-flight",
+   "card": {
+    "before": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"TURN NEEDLE SHOWS ROTATION DIRECTION\", \"subline\": \"IT DEFLECTS TOWARD THE DIRECTION OF ROTATION AND STAYS RELIABLE THROUGHOUT THE SPIN\", \"blocks\": [{\"label\": \"Turn needle\", \"value\": \"Deflects fully toward the spin direction (L or R) throughout autorotation\"}, {\"label\": \"Why it's reliable\", \"value\": \"Rate-based — unaffected by the extreme attitude that can tumble the attitude indicator\"}, {\"label\": \"Slip ball\", \"value\": \"Unreliable in a spin: don't use it for the direction\"}, {\"label\": \"Recovery\", \"value\": \"Power idle, ailerons neutral, full rudder against the needle, then stick forward\"}, {\"label\": \"Exam trap\", \"value\": \"The attitude indicator and DI may topple\"}]}",
+    "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"TURN NEEDLE SHOWS ROTATION DIRECTION\", \"subline\": \"IT DEFLECTS TOWARD THE DIRECTION OF ROTATION AND STAYS RELIABLE THROUGHOUT THE SPIN\", \"blocks\": [{\"label\": \"Turn needle\", \"value\": \"Deflects fully toward the spin direction (L or R) throughout autorotation\"}, {\"label\": \"Why it's reliable\", \"value\": \"Rate-based: unaffected by the extreme attitude that can tumble the attitude indicator\"}, {\"label\": \"Slip ball\", \"value\": \"Unreliable in a spin: don't use it for the direction\"}, {\"label\": \"Recovery\", \"value\": \"Power idle, ailerons neutral, full rudder against the needle, then stick forward\"}, {\"label\": \"Exam trap\", \"value\": \"The attitude indicator and DI may topple\"}]}"
+   }
+  },
+  {
+   "id": 304,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "South Africa's airspace is divided into FIRs so that flight information, alerting and area control services can each be handled by a dedicated Flight Information Centre with a manageable workload. The three FIRs -- Cape Town (FACA), Johannesburg (FAJA) and Johannesburg Oceanic (FAJO) -- are further split into sectors (e.g. FAJA North, South-West, East) for the same reason.",
+    "after": "South Africa's airspace is divided into FIRs so that flight information, alerting and area control services can each be handled by a dedicated Flight Information Centre with a manageable workload. The three FIRs, Cape Town (FACA), Johannesburg (FAJA) and Johannesburg Oceanic (FAJO), are further split into sectors (e.g. FAJA North, South-West, East) for the same reason."
+   }
+  },
+  {
+   "id": 307,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "A CTA typically picks up where the TMA below it ends -- existing CTA lower limits in South Africa run from about FL105 to FL145, with an upper limit usually at FL195 or FL200. Exam tip: think of CTR-TMA-CTA as stacked layers of Class C protection, each one further from the ground.",
+    "after": "A CTA typically picks up where the TMA below it ends: existing CTA lower limits in South Africa run from about FL105 to FL145, with an upper limit usually at FL195 or FL200. Exam tip: think of CTR-TMA-CTA as stacked layers of Class C protection, each one further from the ground."
+   }
+  },
+  {
+   "id": 308,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "A TMA exists because traffic converging on a busy airport from several routes needs protection while climbing or descending, and is managed by Approach Control Service, often using radar. All TMAs in South Africa are Class C, and where terrain forces different lower limits in different sectors they're subdivided into \"TMA A\", \"TMA B\" etc. -- still one TMA, like a staggered, upside-down wedding cake.",
+    "after": "A TMA exists because traffic converging on a busy airport from several routes needs protection while climbing or descending, and is managed by Approach Control Service, often using radar. All TMAs in South Africa are Class C, and where terrain forces different lower limits in different sectors they're subdivided into \"TMA A\", \"TMA B\" etc., still one TMA, like a staggered, upside-down wedding cake."
+   }
+  },
+  {
+   "id": 315,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "An ATZ protects traffic taking off, landing and flying the circuit at an aerodrome, extending from the ground to at least 700 ft AGL (often 1000-1500 ft). Depending on the airfield it can be Class C, D or G -- Class G ATZs are serviced by AFIS rather than full ATC.",
+    "after": "An ATZ protects traffic taking off, landing and flying the circuit at an aerodrome, extending from the ground to at least 700 ft AGL (often 1000-1500 ft). Depending on the airfield it can be Class C, D or G. Class G ATZs are serviced by AFIS rather than full ATC."
+   }
+  },
+  {
+   "id": 438,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "Correct answer: Pressure Altitude. QNE is the standard setting of 1013.25 hPa, used once an aircraft is above the Transition Altitude so that all traffic — no matter what the actual sea-level pressure is at any given moment — shares one common reference, expressed as a Flight Level. QNH instead gives altitude above mean sea level, and QFE gives height above the aerodrome, both of which vary from place to place.",
+    "after": "Correct answer: Pressure Altitude. QNE is the standard setting of 1013.25 hPa, used once an aircraft is above the Transition Altitude so that all traffic, no matter what the actual sea-level pressure is at any given moment, shares one common reference, expressed as a Flight Level. QNH instead gives altitude above mean sea level, and QFE gives height above the aerodrome, both of which vary from place to place."
+   }
+  },
+  {
+   "id": 441,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "Correct answer: Height above airfield elevation. QFE uses the actual pressure at the aerodrome itself as the datum, so the altimeter reads zero on that runway — useful for circuit and local flying where a pilot mainly needs height above the airfield rather than sea level. QNH, by contrast, always references mean sea level and would show the field's elevation rather than zero.",
+    "after": "Correct answer: Height above airfield elevation. QFE uses the actual pressure at the aerodrome itself as the datum, so the altimeter reads zero on that runway, useful for circuit and local flying where a pilot mainly needs height above the airfield rather than sea level. QNH, by contrast, always references mean sea level and would show the field's elevation rather than zero."
+   }
+  },
+  {
+   "id": 448,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "Correct answer: Higher than the transition altitude. Between the transition altitude and transition level lies the transition layer, a buffer that must exist so no aircraft is ever cruising level while its altimeter reference is ambiguous — this is only possible if the transition level sits above the transition altitude, never below or at it.",
+    "after": "Correct answer: Higher than the transition altitude. Between the transition altitude and transition level lies the transition layer, a buffer that must exist so no aircraft is ever cruising level while its altimeter reference is ambiguous. This is only possible if the transition level sits above the transition altitude, never below or at it."
+   }
+  },
+  {
+   "id": 506,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "BACKTRACK RUNWAY means entering the runway and taxiing along it against the landing/take-off direction - used, for example, when there is no full-length parallel taxiway to reach the threshold. Because this puts you on the active runway, the clearance must be followed exactly and you must vacate before conflicting traffic.",
+    "after": "BACKTRACK RUNWAY means entering the runway and taxiing along it against the landing/take-off direction, used, for example, when there is no full-length parallel taxiway to reach the threshold. Because this puts you on the active runway, the clearance must be followed exactly and you must vacate before conflicting traffic."
+   },
+   "card": {
+    "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway — follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}, {\"label\": \"Read back\", \"value\": \"Runway instructions are always read back in full\"}, {\"label\": \"Be quick\", \"value\": \"Nobody else can use the runway while you are on it\"}, {\"label\": \"Exam trap\", \"value\": \"Not reversing the route, not an ILS back course\"}]}",
+    "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway: follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}, {\"label\": \"Read back\", \"value\": \"Runway instructions are always read back in full\"}, {\"label\": \"Be quick\", \"value\": \"Nobody else can use the runway while you are on it\"}, {\"label\": \"Exam trap\", \"value\": \"Not reversing the route, not an ILS back course\"}]}"
+   }
+  },
+  {
+   "id": 576,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "A white dumbbell in the signal area means aircraft must stay on runways and taxiways - i.e. no using the grass or unprepared surfaces. Exam tip: a dumbbell WITH black stripes reverses this - take-off and land on runways only, but taxi anywhere, including the grass.",
+    "after": "A white dumbbell in the signal area means aircraft must stay on runways and taxiways, i.e. no using the grass or unprepared surfaces. Exam tip: a dumbbell WITH black stripes reverses this: take off and land on runways only, but taxi anywhere, including the grass."
+   }
+  },
+  {
+   "id": 578,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "White or yellow crosses are placed at both ends of a runway or taxiway section that is unsafe to use - for example a waterlogged runway or ground undermined by moles - and aircraft may not land, take off, or taxi in the marked area between them. At night the same unserviceable area is marked with red lights instead.",
+    "after": "White or yellow crosses are placed at both ends of a runway or taxiway section that is unsafe to use, for example a waterlogged runway or ground undermined by moles, and aircraft may not land, take off, or taxi in the marked area between them. At night the same unserviceable area is marked with red lights instead."
+   }
+  },
+  {
+   "id": 610,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "South Africa's three FIRs -- Cape Town (FACA), Johannesburg (FAJA) and Johannesburg Oceanic (FAJO) -- extend from the surface all the way up to FL650, with individual sectors capped at FL460. Dividing the country this way lets each Flight Information Centre (Cape Town or Johannesburg) manage information and alerting services for a defined, manageable area.",
+    "after": "South Africa's three FIRs, Cape Town (FACA), Johannesburg (FAJA) and Johannesburg Oceanic (FAJO), extend from the surface all the way up to FL650, with individual sectors capped at FL460. Dividing the country this way lets each Flight Information Centre (Cape Town or Johannesburg) manage information and alerting services for a defined, manageable area."
+   }
+  },
+  {
+   "id": 615,
+   "subject": "radio-telephony",
+   "explanation": {
+    "before": "Arms fully extended sideways and slowly moved above the head until they cross means STOP. (A different gesture — one arm drawn across the throat — means cut engine(s).)",
+    "after": "Arms fully extended sideways and slowly moved above the head until they cross means STOP. (A different gesture, one arm drawn across the throat, means cut engine(s).)"
+   },
+   "card": {
+    "before": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"ARMS SWEPT UP UNTIL THEY CROSS OVERHEAD MEANS STOP\",\"subline\":\"NOT TO BE CONFUSED WITH THE CUT-ENGINE SIGNAL (A HAND DRAWN ACROSS THE THROAT)\",\"blocks\":[{\"label\":\"SIGNAL\",\"value\":\"Arms fully extended sideways, slowly moved up until they cross above the head\"},{\"label\":\"MEANING\",\"value\":\"Stop\"},{\"label\":\"DO NOT CONFUSE WITH\",\"value\":\"Cut engine(s) — one arm up, other hand drawn across the throat\"}]}\n",
+    "after": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"ARMS SWEPT UP UNTIL THEY CROSS OVERHEAD MEANS STOP\",\"subline\":\"NOT TO BE CONFUSED WITH THE CUT-ENGINE SIGNAL (A HAND DRAWN ACROSS THE THROAT)\",\"blocks\":[{\"label\":\"SIGNAL\",\"value\":\"Arms fully extended sideways, slowly moved up until they cross above the head\"},{\"label\":\"MEANING\",\"value\":\"Stop\"},{\"label\":\"DO NOT CONFUSE WITH\",\"value\":\"Cut engine(s): one arm up, other hand drawn across the throat\"}]}\n"
+   }
+  }
+ ]
+}

@@ -1,0 +1,517 @@
+{
+ "date": "2026-10-08",
+ "subject": "radio-telephony",
+ "change": "Trial set: 25 questions, each with a strong picture and an answer-first KEY FACT card.",
+ "rows": [
+  {
+   "id": 303,
+   "question": "In ICAO location indicators, what does the prefix FA stand for?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-fir-boundaries-v2.webp",
+    "explanation_image_title": "Flight Information Regions Of Southern Africa",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"SOUTH AFRICA IS DIVIDED INTO TWO FLIGHT INFORMATION REGIONS\",\"subline\":\"JOHANNESBURG FIR (FAJA) AND CAPE TOWN FIR (FACA)\",\"blocks\":[{\"label\":\"FIR\",\"value\":\"Flight Information Region - airspace where flight information and alerting services are provided\"},{\"label\":\"JOHANNESBURG FIR (FAJA)\",\"value\":\"Covers the northern and eastern interior, plus Johannesburg Oceanic FIR (FAJO)\"},{\"label\":\"CAPE TOWN FIR (FACA)\",\"value\":\"Covers the southern and western coastal region\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-fir-boundaries-v2.webp",
+    "explanation_image_title": "Flight Information Regions Of Southern Africa",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FA = SOUTH AFRICA IN ICAO LOCATION INDICATORS\", \"subline\": \"EVERY SOUTH AFRICAN INDICATOR STARTS WITH FA\", \"blocks\": [{\"label\": \"Aerodromes\", \"value\": \"FAOR O.R. Tambo · FACT Cape Town · FALE King Shaka\"}, {\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}]}"
+   }
+  },
+  {
+   "id": 304,
+   "question": "South Africa is divided into various regions in which Air Traffic Service is provided. These regions are termed?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-fir-boundaries-v2.webp",
+    "explanation_image_title": "Flight Information Regions Of Southern Africa",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"SOUTH AFRICA IS DIVIDED INTO TWO FLIGHT INFORMATION REGIONS\",\"subline\":\"JOHANNESBURG FIR (FAJA) AND CAPE TOWN FIR (FACA)\",\"blocks\":[{\"label\":\"FIR\",\"value\":\"Flight Information Region - airspace where flight information and alerting services are provided\"},{\"label\":\"JOHANNESBURG FIR (FAJA)\",\"value\":\"Covers the northern and eastern interior, plus Johannesburg Oceanic FIR (FAJO)\"},{\"label\":\"CAPE TOWN FIR (FACA)\",\"value\":\"Covers the southern and western coastal region\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-fir-boundaries-v2.webp",
+    "explanation_image_title": "Flight Information Regions Of Southern Africa",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THESE REGIONS ARE FLIGHT INFORMATION REGIONS (FIRs)\", \"subline\": \"FLIGHT INFORMATION AND ALERTING SERVICES ARE PROVIDED IN EACH\", \"blocks\": [{\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}]}"
+   }
+  },
+  {
+   "id": 307,
+   "question": "Where is the most likely place a CTA (Control Area) would be established?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"AIRSPACE IS DIVIDED INTO CONTROLLED AND UNCONTROLLED LAYERS\",\"subline\":\"CTA, TMA, CTR AND ATZ ARE ALL FORMS OF CONTROLLED AIRSPACE\",\"blocks\":[{\"label\":\"CONTROL AREA (CTA)\",\"value\":\"Controlled airspace above a specified level, usually sitting above one or more TMAs\"},{\"label\":\"TERMINAL CONTROL AREA (TMA)\",\"value\":\"Controlled airspace around a major airport with a high volume of traffic\"},{\"label\":\"CONTROL ZONE (CTR)\",\"value\":\"Controlled airspace from the surface up to a specified upper limit, normally inside a TMA\"},{\"label\":\"AERODROME TRAFFIC ZONE (ATZ)\",\"value\":\"Defined airspace around an aerodrome for the protection of aerodrome traffic\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CTA IS NORMALLY ESTABLISHED ABOVE ONE OR MORE TMAs\", \"subline\": \"THE HIGHER LAYER OF CONTROLLED AIRSPACE\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}]}"
+   }
+  },
+  {
+   "id": 308,
+   "question": "What is a Terminal Manoeuvring Area (TMA)?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"AIRSPACE IS DIVIDED INTO CONTROLLED AND UNCONTROLLED LAYERS\",\"subline\":\"CTA, TMA, CTR AND ATZ ARE ALL FORMS OF CONTROLLED AIRSPACE\",\"blocks\":[{\"label\":\"CONTROL AREA (CTA)\",\"value\":\"Controlled airspace above a specified level, usually sitting above one or more TMAs\"},{\"label\":\"TERMINAL CONTROL AREA (TMA)\",\"value\":\"Controlled airspace around a major airport with a high volume of traffic\"},{\"label\":\"CONTROL ZONE (CTR)\",\"value\":\"Controlled airspace from the surface up to a specified upper limit, normally inside a TMA\"},{\"label\":\"AERODROME TRAFFIC ZONE (ATZ)\",\"value\":\"Defined airspace around an aerodrome for the protection of aerodrome traffic\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TMA: CONTROLLED AIRSPACE AROUND A BUSY AIRPORT\", \"subline\": \"WHERE SEVERAL ROUTES MEET NEAR ONE OR MORE MAJOR AERODROMES\", \"blocks\": [{\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}]}"
+   }
+  },
+  {
+   "id": 314,
+   "question": "What is \"Controlled airspace extending from the surface of the earth upwards to a specified upper limit\"?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"AIRSPACE IS DIVIDED INTO CONTROLLED AND UNCONTROLLED LAYERS\",\"subline\":\"CTA, TMA, CTR AND ATZ ARE ALL FORMS OF CONTROLLED AIRSPACE\",\"blocks\":[{\"label\":\"CONTROL AREA (CTA)\",\"value\":\"Controlled airspace above a specified level, usually sitting above one or more TMAs\"},{\"label\":\"TERMINAL CONTROL AREA (TMA)\",\"value\":\"Controlled airspace around a major airport with a high volume of traffic\"},{\"label\":\"CONTROL ZONE (CTR)\",\"value\":\"Controlled airspace from the surface up to a specified upper limit, normally inside a TMA\"},{\"label\":\"AERODROME TRAFFIC ZONE (ATZ)\",\"value\":\"Defined airspace around an aerodrome for the protection of aerodrome traffic\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SURFACE TO A SPECIFIED UPPER LIMIT: A CONTROL ZONE (CTR)\", \"subline\": \"CONTROLLED AIRSPACE AROUND AN AERODROME\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}]}"
+   }
+  },
+  {
+   "id": 315,
+   "question": "What is an ATZ?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"AIRSPACE IS DIVIDED INTO CONTROLLED AND UNCONTROLLED LAYERS\",\"subline\":\"CTA, TMA, CTR AND ATZ ARE ALL FORMS OF CONTROLLED AIRSPACE\",\"blocks\":[{\"label\":\"CONTROL AREA (CTA)\",\"value\":\"Controlled airspace above a specified level, usually sitting above one or more TMAs\"},{\"label\":\"TERMINAL CONTROL AREA (TMA)\",\"value\":\"Controlled airspace around a major airport with a high volume of traffic\"},{\"label\":\"CONTROL ZONE (CTR)\",\"value\":\"Controlled airspace from the surface up to a specified upper limit, normally inside a TMA\"},{\"label\":\"AERODROME TRAFFIC ZONE (ATZ)\",\"value\":\"Defined airspace around an aerodrome for the protection of aerodrome traffic\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ATZ = AERODROME TRAFFIC ZONE\", \"subline\": \"AIRSPACE AROUND AN AERODROME TO PROTECT AERODROME TRAFFIC\", \"blocks\": [{\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}]}"
+   }
+  },
+  {
+   "id": 316,
+   "question": "Where control zones are normally established?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"AIRSPACE IS DIVIDED INTO CONTROLLED AND UNCONTROLLED LAYERS\",\"subline\":\"CTA, TMA, CTR AND ATZ ARE ALL FORMS OF CONTROLLED AIRSPACE\",\"blocks\":[{\"label\":\"CONTROL AREA (CTA)\",\"value\":\"Controlled airspace above a specified level, usually sitting above one or more TMAs\"},{\"label\":\"TERMINAL CONTROL AREA (TMA)\",\"value\":\"Controlled airspace around a major airport with a high volume of traffic\"},{\"label\":\"CONTROL ZONE (CTR)\",\"value\":\"Controlled airspace from the surface up to a specified upper limit, normally inside a TMA\"},{\"label\":\"AERODROME TRAFFIC ZONE (ATZ)\",\"value\":\"Defined airspace around an aerodrome for the protection of aerodrome traffic\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONTROL ZONES ARE ESTABLISHED AROUND AERODROMES\", \"subline\": \"FROM THE SURFACE UP TO A SPECIFIED LIMIT\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}]}"
+   }
+  },
+  {
+   "id": 318,
+   "question": "Which of these airspaces require a clearance before entering: CTR, CTA, TMA, FAD, FAR?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"AIRSPACE IS DIVIDED INTO CONTROLLED AND UNCONTROLLED LAYERS\",\"subline\":\"CTA, TMA, CTR AND ATZ ARE ALL FORMS OF CONTROLLED AIRSPACE\",\"blocks\":[{\"label\":\"CONTROL AREA (CTA)\",\"value\":\"Controlled airspace above a specified level, usually sitting above one or more TMAs\"},{\"label\":\"TERMINAL CONTROL AREA (TMA)\",\"value\":\"Controlled airspace around a major airport with a high volume of traffic\"},{\"label\":\"CONTROL ZONE (CTR)\",\"value\":\"Controlled airspace from the surface up to a specified upper limit, normally inside a TMA\"},{\"label\":\"AERODROME TRAFFIC ZONE (ATZ)\",\"value\":\"Defined airspace around an aerodrome for the protection of aerodrome traffic\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-airspace-division-v1.webp",
+    "explanation_image_title": "Typical Airspace Division",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CTR, CTA AND TMA NEED A CLEARANCE BEFORE ENTERING\", \"subline\": \"THEY ARE CONTROLLED AIRSPACE\", \"blocks\": [{\"label\": \"FAD / FAR\", \"value\": \"Danger and restricted areas: special-use airspace, not controlled airspace\"}]}"
+   }
+  },
+  {
+   "id": 410,
+   "question": "What does the code 'QDR' mean?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-qdr.webp",
+    "explanation_image_title": "Q-Codes — QDR and QDM",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"QDR = MAGNETIC BEARING FROM THE STATION\", \"subline\": \"QDM IS THE MAGNETIC BEARING TO THE STATION (QDR ± 180°)\", \"blocks\": [{\"label\": \"QDR\", \"value\": \"Magnetic bearing FROM the station\"}, {\"label\": \"QDM\", \"value\": \"Magnetic heading/bearing TO the station (zero wind)\"}, {\"label\": \"QTE / QUJ\", \"value\": \"True bearing from / to the station\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/qdm-qdr-v1.webp",
+    "explanation_image_title": "QDM and QDR",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"QDR = MAGNETIC BEARING FROM THE STATION\", \"subline\": \"QDM IS THE MAGNETIC BEARING TO THE STATION (QDR ± 180°)\", \"blocks\": [{\"label\": \"QDR\", \"value\": \"Magnetic bearing FROM the station\"}, {\"label\": \"QDM\", \"value\": \"Magnetic heading/bearing TO the station (zero wind)\"}, {\"label\": \"QTE / QUJ\", \"value\": \"True bearing from / to the station\"}]}"
+   }
+  },
+  {
+   "id": 414,
+   "question": "Which one of the following is correct?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-ifr-vfr-imc-vmc.webp",
+    "explanation_image_title": "Flight Rules vs Weather Conditions",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"IFR CAN BE FLOWN IN VMC OR IMC — VFR ONLY IN VMC\", \"subline\": \"VFR/IFR ARE THE RULES YOU FLY BY; VMC/IMC ARE THE WEATHER CONDITIONS\", \"blocks\": [{\"label\": \"VFR\", \"value\": \"Needs VMC: the pilot sees and avoids\"}, {\"label\": \"IFR\", \"value\": \"Legal in VMC and in IMC (instrument navigation, ATC separation)\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-ifr-vfr-imc-vmc.webp",
+    "explanation_image_title": "Flight Rules vs Weather Conditions",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"IFR CAN BE FLOWN IN VMC OR IMC — VFR ONLY IN VMC\", \"subline\": \"VFR/IFR ARE THE RULES YOU FLY BY; VMC/IMC ARE THE WEATHER CONDITIONS\", \"blocks\": [{\"label\": \"VFR\", \"value\": \"Needs VMC: the pilot sees and avoids\"}, {\"label\": \"IFR\", \"value\": \"Legal in VMC and in IMC (instrument navigation, ATC separation)\"}]}"
+   }
+  },
+  {
+   "id": 416,
+   "question": "When does the semi-circular rule apply?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-semi-circular-rule-v1.webp",
+    "explanation_image_title": "VFR/IFR Semi-Circular Cruising Levels by Magnetic Track",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"CRUISING FLIGHT LEVEL DEPENDS ON MAGNETIC TRACK\",\"subline\":\"EASTBOUND (000-179 DEG) = ODD LEVELS; WESTBOUND (180-359 DEG) = EVEN LEVELS\",\"blocks\":[{\"label\":\"TRACK 000-179 DEG (VFR)\",\"value\":\"Odd flight levels plus 500 ft - FL035, FL055, FL075 ... up to FL195\"},{\"label\":\"TRACK 180-359 DEG (VFR)\",\"value\":\"Even flight levels plus 500 ft - FL045, FL065, FL085 ... up to FL185\"},{\"label\":\"RULE APPLIES ABOVE\",\"value\":\"1500 ft AGL in uncontrolled airspace\"}],\"formula\":\"IFR: ODD LEVELS EAST (000-179 DEG), EVEN LEVELS WEST (180-359 DEG) - NO +500 FT OFFSET\"}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-semi-circular-rule-v1.webp",
+    "explanation_image_title": "VFR/IFR Semi-Circular Cruising Levels by Magnetic Track",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SEMI-CIRCULAR RULE APPLIES AT AND ABOVE 1500 FT AGL\", \"subline\": \"CRUISING LEVEL IS CHOSEN BY MAGNETIC TRACK\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"VFR: odd thousands + 500 ft (FL035, FL055, FL075 …)\"}, {\"label\": \"180°–359°\", \"value\": \"VFR: even thousands + 500 ft (FL045, FL065, FL085 …)\"}]}"
+   }
+  },
+  {
+   "id": 419,
+   "question": "Which statement correctly applies the VFR semi-circular rule to a magnetic track of 090°?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-semi-circular-rule-v1.webp",
+    "explanation_image_title": "VFR/IFR Semi-Circular Cruising Levels by Magnetic Track",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"CRUISING FLIGHT LEVEL DEPENDS ON MAGNETIC TRACK\",\"subline\":\"EASTBOUND (000-179 DEG) = ODD LEVELS; WESTBOUND (180-359 DEG) = EVEN LEVELS\",\"blocks\":[{\"label\":\"TRACK 000-179 DEG (VFR)\",\"value\":\"Odd flight levels plus 500 ft - FL035, FL055, FL075 ... up to FL195\"},{\"label\":\"TRACK 180-359 DEG (VFR)\",\"value\":\"Even flight levels plus 500 ft - FL045, FL065, FL085 ... up to FL185\"},{\"label\":\"RULE APPLIES ABOVE\",\"value\":\"1500 ft AGL in uncontrolled airspace\"}],\"formula\":\"IFR: ODD LEVELS EAST (000-179 DEG), EVEN LEVELS WEST (180-359 DEG) - NO +500 FT OFFSET\"}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-semi-circular-rule-v1.webp",
+    "explanation_image_title": "VFR/IFR Semi-Circular Cruising Levels by Magnetic Track",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRACK 090° MAGNETIC, VFR: FL075 IS CORRECT\", \"subline\": \"000°–179° TAKES ODD THOUSANDS PLUS 500 FT\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"VFR: odd thousands + 500 ft (FL035, FL055, FL075 …)\"}, {\"label\": \"180°–359°\", \"value\": \"VFR: even thousands + 500 ft (FL045, FL065, FL085 …)\"}]}"
+   }
+  },
+  {
+   "id": 428,
+   "question": "What is the minimum ceiling for SVFR in an aeroplane?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-svfr-ceiling.webp",
+    "explanation_image_title": "Special VFR — Minimum Ceiling",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SPECIAL VFR (AEROPLANE): CEILING AT LEAST 600 FT AGL\", \"subline\": \"ATC SEPARATES SVFR TRAFFIC, SO THE CEILING CAN BE LOWER THAN FOR NORMAL VFR\", \"blocks\": [{\"label\": \"SVFR\", \"value\": \"Ceiling ≥ 600 ft; stay clear of cloud with the surface in sight\"}, {\"label\": \"NORMAL VFR IN A CTR\", \"value\": \"Ceiling ≥ 1500 ft\"}, {\"label\": \"CLEARANCE\", \"value\": \"SVFR is only flown with an ATC clearance inside a control zone\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-svfr-ceiling.webp",
+    "explanation_image_title": "Special VFR — Minimum Ceiling",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SPECIAL VFR (AEROPLANE): CEILING AT LEAST 600 FT AGL\", \"subline\": \"ATC SEPARATES SVFR TRAFFIC, SO THE CEILING CAN BE LOWER THAN FOR NORMAL VFR\", \"blocks\": [{\"label\": \"SVFR\", \"value\": \"Ceiling ≥ 600 ft; stay clear of cloud with the surface in sight\"}, {\"label\": \"NORMAL VFR IN A CTR\", \"value\": \"Ceiling ≥ 1500 ft\"}, {\"label\": \"CLEARANCE\", \"value\": \"SVFR is only flown with an ATC clearance inside a control zone\"}]}"
+   }
+  },
+  {
+   "id": 438,
+   "question": "What will the altimeter show when QNE is set?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-qnh-qfe-explanation-v1.webp",
+    "explanation_image_title": "Height, Altitude And Flight Level Explained",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"THE ALTIMETER SETTING DETERMINES HEIGHT, ALTITUDE OR FLIGHT LEVEL\",\"subline\":\"SAME AIRCRAFT, SAME PRESSURE — THREE DIFFERENT READOUTS\",\"blocks\":[{\"label\":\"QNH\",\"value\":\"Local sea-level pressure setting - altimeter reads ALTITUDE above mean sea level\"},{\"label\":\"QFE\",\"value\":\"Aerodrome pressure setting - altimeter reads HEIGHT above the aerodrome\"},{\"label\":\"QNE / 1013.25 hPa\",\"value\":\"Standard pressure setting - altimeter reads FLIGHT LEVEL / pressure altitude\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-qnh-qfe-explanation-v1.webp",
+    "explanation_image_title": "Height, Altitude And Flight Level Explained",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"QNE (1013.25 hPa) SET: THE ALTIMETER SHOWS PRESSURE ALTITUDE\", \"subline\": \"READ AS A FLIGHT LEVEL\", \"blocks\": [{\"label\": \"QNH\", \"value\": \"Altitude above mean sea level\"}, {\"label\": \"QFE\", \"value\": \"Height above the aerodrome\"}]}"
+   }
+  },
+  {
+   "id": 441,
+   "question": "What does the altimeter show when QFE is set?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-qnh-qfe-explanation-v1.webp",
+    "explanation_image_title": "Height, Altitude And Flight Level Explained",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"THE ALTIMETER SETTING DETERMINES HEIGHT, ALTITUDE OR FLIGHT LEVEL\",\"subline\":\"SAME AIRCRAFT, SAME PRESSURE — THREE DIFFERENT READOUTS\",\"blocks\":[{\"label\":\"QNH\",\"value\":\"Local sea-level pressure setting - altimeter reads ALTITUDE above mean sea level\"},{\"label\":\"QFE\",\"value\":\"Aerodrome pressure setting - altimeter reads HEIGHT above the aerodrome\"},{\"label\":\"QNE / 1013.25 hPa\",\"value\":\"Standard pressure setting - altimeter reads FLIGHT LEVEL / pressure altitude\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-qnh-qfe-explanation-v1.webp",
+    "explanation_image_title": "Height, Altitude And Flight Level Explained",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"QFE SET: THE ALTIMETER SHOWS HEIGHT ABOVE THE AERODROME\", \"subline\": \"IT READS ZERO ON THE RUNWAY\", \"blocks\": [{\"label\": \"QNH\", \"value\": \"Altitude above mean sea level\"}, {\"label\": \"1013.25 hPa (QNE)\", \"value\": \"Pressure altitude: flight levels\"}]}"
+   }
+  },
+  {
+   "id": 448,
+   "question": "The transition level at an aerodrome is always?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-transition-altitude-level-v1.webp",
+    "explanation_image_title": "Transition Altitude And Transition Level",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"THE TRANSITION LAYER SEPARATES ALTITUDES FROM FLIGHT LEVELS\",\"subline\":\"CLIMBING THROUGH THE TRANSITION ALTITUDE, SWITCH TO 1013 HPA\",\"blocks\":[{\"label\":\"TRANSITION ALTITUDE\",\"value\":\"At or below this, vertical position is given as altitude, using QNH\"},{\"label\":\"TRANSITION LEVEL\",\"value\":\"The lowest usable flight level above the transition altitude, using 1013.25 hPa\"},{\"label\":\"TRANSITION LAYER\",\"value\":\"The airspace between the transition altitude and the transition level\"}],\"formula\":\"CLIMBING: QNH -> 1013 hPa AT THE TRANSITION ALTITUDE  |  DESCENDING: 1013 hPa -> QNH AT THE TRANSITION LEVEL\"}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-transition-altitude-level-v1.webp",
+    "explanation_image_title": "Transition Altitude And Transition Level",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TRANSITION LEVEL IS ALWAYS ABOVE THE TRANSITION ALTITUDE\", \"subline\": \"THE GAP BETWEEN THEM IS THE TRANSITION LAYER\", \"blocks\": [{\"label\": \"Climbing\", \"value\": \"QNH → 1013.25 hPa at the transition altitude\"}, {\"label\": \"Descending\", \"value\": \"1013.25 hPa → QNH at the transition level\"}]}"
+   }
+  },
+  {
+   "id": 451,
+   "question": "When should a pilot change the altimeter setting from the local QNH to 1013.25 hPa?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-transition-altitude-level-v1.webp",
+    "explanation_image_title": "Transition Altitude And Transition Level",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"THE TRANSITION LAYER SEPARATES ALTITUDES FROM FLIGHT LEVELS\",\"subline\":\"CLIMBING THROUGH THE TRANSITION ALTITUDE, SWITCH TO 1013 HPA\",\"blocks\":[{\"label\":\"TRANSITION ALTITUDE\",\"value\":\"At or below this, vertical position is given as altitude, using QNH\"},{\"label\":\"TRANSITION LEVEL\",\"value\":\"The lowest usable flight level above the transition altitude, using 1013.25 hPa\"},{\"label\":\"TRANSITION LAYER\",\"value\":\"The airspace between the transition altitude and the transition level\"}],\"formula\":\"CLIMBING: QNH -> 1013 hPa AT THE TRANSITION ALTITUDE  |  DESCENDING: 1013 hPa -> QNH AT THE TRANSITION LEVEL\"}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-transition-altitude-level-v1.webp",
+    "explanation_image_title": "Transition Altitude And Transition Level",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLIMBING THROUGH THE TRANSITION ALTITUDE: SET 1013.25 hPa\", \"subline\": \"FROM ALTITUDES ON QNH TO FLIGHT LEVELS\", \"blocks\": [{\"label\": \"Descending\", \"value\": \"1013.25 hPa → QNH at the transition level\"}]}"
+   }
+  },
+  {
+   "id": 460,
+   "question": "How do you convert South African local time to UTC?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-local-to-utc.webp",
+    "explanation_image_title": "South African Time to UTC",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UTC = SOUTH AFRICAN LOCAL TIME − 2 HOURS\", \"subline\": \"SOUTH AFRICAN STANDARD TIME IS UTC+2 ALL YEAR (NO DAYLIGHT SAVING)\", \"blocks\": [{\"label\": \"LOCAL → UTC\", \"value\": \"Subtract 2 hours: 17:00 SAST = 15:00 UTC\"}, {\"label\": \"UTC → LOCAL\", \"value\": \"Add 2 hours: 06:30 UTC = 08:30 SAST\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-local-to-utc.webp",
+    "explanation_image_title": "South African Time to UTC",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UTC = SOUTH AFRICAN LOCAL TIME − 2 HOURS\", \"subline\": \"SOUTH AFRICAN STANDARD TIME IS UTC+2 ALL YEAR (NO DAYLIGHT SAVING)\", \"blocks\": [{\"label\": \"LOCAL → UTC\", \"value\": \"Subtract 2 hours: 17:00 SAST = 15:00 UTC\"}, {\"label\": \"UTC → LOCAL\", \"value\": \"Add 2 hours: 06:30 UTC = 08:30 SAST\"}]}"
+   }
+  },
+  {
+   "id": 484,
+   "question": "How long before departure must a domestic flight plan be filed?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-flight-plan-30min.webp",
+    "explanation_image_title": "Filing a Flight Plan — 30 Minutes",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FILE AT LEAST 30 MINUTES BEFORE DEPARTURE\", \"subline\": \"60 MINUTES FOR AN INTERNATIONAL FLIGHT\", \"blocks\": [{\"label\": \"WHY\", \"value\": \"The ATSU needs time to process the plan and pass it to other units\"}, {\"label\": \"EARLIEST\", \"value\": \"A flight plan may be filed up to 5 days in advance\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-flight-plan-30min.webp",
+    "explanation_image_title": "Filing a Flight Plan — 30 Minutes",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FILE AT LEAST 30 MINUTES BEFORE DEPARTURE\", \"subline\": \"60 MINUTES FOR AN INTERNATIONAL FLIGHT\", \"blocks\": [{\"label\": \"WHY\", \"value\": \"The ATSU needs time to process the plan and pass it to other units\"}, {\"label\": \"EARLIEST\", \"value\": \"A flight plan may be filed up to 5 days in advance\"}]}"
+   }
+  },
+  {
+   "id": 485,
+   "question": "Standard equipment S as entered in Item 10 of an ATS flight plan represents which of the following?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-item10-s.webp",
+    "explanation_image_title": "Flight Plan Item 10 — Equipment Code S",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"S = V + O + L: VHF RADIO, VOR AND ILS\", \"subline\": \"THE STANDARD COM/NAV/APPROACH FIT, NO MORE AND NO LESS\", \"blocks\": [{\"label\": \"V\", \"value\": \"VHF radiotelephony\"}, {\"label\": \"O\", \"value\": \"VOR\"}, {\"label\": \"L\", \"value\": \"ILS\"}, {\"label\": \"ANYTHING ELSE\", \"value\": \"Add its own letter, e.g. D for DME, F for ADF\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-item10-s.webp",
+    "explanation_image_title": "Flight Plan Item 10 — Equipment Code S",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"S = V + O + L: VHF RADIO, VOR AND ILS\", \"subline\": \"THE STANDARD COM/NAV/APPROACH FIT, NO MORE AND NO LESS\", \"blocks\": [{\"label\": \"V\", \"value\": \"VHF radiotelephony\"}, {\"label\": \"O\", \"value\": \"VOR\"}, {\"label\": \"L\", \"value\": \"ILS\"}, {\"label\": \"ANYTHING ELSE\", \"value\": \"Add its own letter, e.g. D for DME, F for ADF\"}]}"
+   }
+  },
+  {
+   "id": 506,
+   "question": "When an aircraft has been cleared to backtrack, it means that the aircraft is cleared to?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-backtrack.webp",
+    "explanation_image_title": "Backtrack the Runway",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway — follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-2/backtrack-v1.webp",
+    "explanation_image_title": "Backtrack",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway — follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}]}"
+   }
+  },
+  {
+   "id": 518,
+   "question": "What does LINE UP AND WAIT mean?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-line-up-and-wait.webp",
+    "explanation_image_title": "Line Up and Wait",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LINE UP AND WAIT: ENTER THE RUNWAY, LINE UP, DO NOT TAKE OFF\", \"subline\": \"IT IS NOT A TAKE-OFF CLEARANCE\", \"blocks\": [{\"label\": \"DO\", \"value\": \"Taxi onto the runway and line up on the centreline\"}, {\"label\": \"DON'T\", \"value\": \"Start the take-off roll until cleared for take-off\"}, {\"label\": \"READ BACK\", \"value\": \"'Lining up and waiting, runway 03'\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-2/line-up-and-wait-v1.webp",
+    "explanation_image_title": "Line Up and Wait",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LINE UP AND WAIT: ENTER THE RUNWAY, LINE UP, DO NOT TAKE OFF\", \"subline\": \"IT IS NOT A TAKE-OFF CLEARANCE\", \"blocks\": [{\"label\": \"DO\", \"value\": \"Taxi onto the runway and line up on the centreline\"}, {\"label\": \"DON'T\", \"value\": \"Start the take-off roll until cleared for take-off\"}, {\"label\": \"READ BACK\", \"value\": \"'Lining up and waiting, runway 03'\"}]}"
+   }
+  },
+  {
+   "id": 567,
+   "question": "Select the 3 official Search and Rescue phases?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-sar-phases.webp",
+    "explanation_image_title": "The Three Emergency (SAR) Phases",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UNCERTAINTY → ALERT → DISTRESS\", \"subline\": \"INCERFA → ALERFA → DETRESFA: THE RESPONSE GROWS AS CONCERN GROWS\", \"blocks\": [{\"label\": \"INCERFA\", \"value\": \"Uncertainty: doubt about the aircraft's safety\"}, {\"label\": \"ALERFA\", \"value\": \"Alert: apprehension about the aircraft and occupants\"}, {\"label\": \"DETRESFA\", \"value\": \"Distress: reasonable certainty of grave and imminent danger\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-sar-phases.webp",
+    "explanation_image_title": "The Three Emergency (SAR) Phases",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UNCERTAINTY → ALERT → DISTRESS\", \"subline\": \"INCERFA → ALERFA → DETRESFA: THE RESPONSE GROWS AS CONCERN GROWS\", \"blocks\": [{\"label\": \"INCERFA\", \"value\": \"Uncertainty: doubt about the aircraft's safety\"}, {\"label\": \"ALERFA\", \"value\": \"Alert: apprehension about the aircraft and occupants\"}, {\"label\": \"DETRESFA\", \"value\": \"Distress: reasonable certainty of grave and imminent danger\"}]}"
+   }
+  },
+  {
+   "id": 570,
+   "question": "After a forced landing, which ground signal means \"require assistance\"?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-ground-signal-v.webp",
+    "explanation_image_title": "Ground-to-Air Signal — V",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"LAY OUT LARGE, HIGH-CONTRAST STRIPS SO A SEARCH AIRCRAFT CAN READ THEM\", \"blocks\": [{\"label\": \"V\", \"value\": \"Require assistance\"}, {\"label\": \"X\", \"value\": \"Require medical assistance\"}, {\"label\": \"N / Y\", \"value\": \"No (negative) / Yes (affirmative)\"}]}"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-2/ground-signals-v-x-v1.webp",
+    "explanation_image_title": "Ground Signals: V and X",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"WHITE STRIPS LAID ON THE GROUND FOR A SEARCH AIRCRAFT TO READ\", \"blocks\": [{\"label\": \"X\", \"value\": \"Require medical assistance\"}, {\"label\": \"N / Y\", \"value\": \"No (negative) / Yes (affirmative)\"}]}"
+   }
+  },
+  {
+   "id": 576,
+   "question": "What does a white dumbbell in the signal area of an aerodrome mean?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-visual-ground-signals-panel-v1.webp",
+    "explanation_image_title": "Aerodrome Signal Area — Ground Panel Symbols",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"GROUND PANEL SYMBOLS WARN OF SPECIAL AERODROME CONDITIONS\",\"subline\":\"DISPLAYED IN THE SIGNAL AREA NEAR THE WINDSOCK\",\"blocks\":[{\"label\":\"RED SQUARE, YELLOW CROSS\",\"value\":\"Landings are prohibited\"},{\"label\":\"RED SQUARE, YELLOW DIAGONAL STRIPE\",\"value\":\"Use special precaution when landing\"},{\"label\":\"WHITE DUMBBELL\",\"value\":\"Aircraft may use runways and taxiways only, not the grass\"},{\"label\":\"WHITE DUMBBELL, BLACK BAR\",\"value\":\"Take off/land on runways only, but may taxi anywhere including grass\"},{\"label\":\"DOUBLE WHITE CROSS\",\"value\":\"Glider operations are in progress\"},{\"label\":\"BLACK LETTER A\",\"value\":\"Agricultural (crop-spraying) operations are in progress\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-visual-ground-signals-panel-v1.webp",
+    "explanation_image_title": "Aerodrome Signal Area — Ground Panel Symbols",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE DUMBBELL: USE ONLY THE RUNWAYS AND TAXIWAYS\", \"subline\": \"NO MOVEMENT ON THE GRASS\", \"blocks\": [{\"label\": \"Dumbbell with black bars\", \"value\": \"Land and take off on runways only; taxi anywhere\"}]}"
+   }
+  },
+  {
+   "id": 578,
+   "question": "What does a white cross at the threshold of a runway mean?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-visual-ground-signals-runway-closed-v1.webp",
+    "explanation_image_title": "Runway Closed — Crosses at Each End (Unserviceable Area)",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"CROSSES MARK AN UNSERVICEABLE RUNWAY OR TAXIWAY\",\"subline\":\"A WHITE OR YELLOW CROSS AT EACH END MEANS: DO NOT USE\",\"blocks\":[{\"label\":\"LOCATION\",\"value\":\"Displayed at each end of the closed runway or taxiway section\"},{\"label\":\"MEANING\",\"value\":\"No landing, take-off or taxiing on the marked surface\"},{\"label\":\"AT NIGHT\",\"value\":\"Marked with red lights instead\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-visual-ground-signals-runway-closed-v1.webp",
+    "explanation_image_title": "Runway Closed — Crosses at Each End (Unserviceable Area)",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE CROSS AT THE THRESHOLD: THE RUNWAY IS UNSAFE TO USE\", \"subline\": \"IT IS CLOSED: NO LANDING, TAKE-OFF OR TAXIING\", \"blocks\": [{\"label\": \"Where\", \"value\": \"A cross at each end of the closed runway or section\"}]}"
+   }
+  },
+  {
+   "id": 587,
+   "question": "A marshaller's arms are extended and bent at the elbows, moving up and down from chest height to head height. What does this mean?",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-marshalling-move-straight-ahead-v1.webp",
+    "explanation_image_title": "Marshalling Signal — Move Straight Ahead",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"ARMS MOVING FROM CHEST TO HEAD HEIGHT MEAN MOVE STRAIGHT AHEAD\",\"subline\":\"BOTH ARMS ARE BENT AT THE ELBOWS AND REPEATEDLY RAISED\",\"blocks\":[{\"label\":\"SIGNAL\",\"value\":\"Arms bent at the elbows, moved up and down from chest height to head height\"},{\"label\":\"MEANING\",\"value\":\"Move straight ahead\"},{\"label\":\"NEXT STEP\",\"value\":\"Taxi slowly and watch for the next signal\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-marshalling-move-straight-ahead-v1.webp",
+    "explanation_image_title": "Marshalling Signal — Move Straight Ahead",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"ARMS MOVING FROM CHEST TO HEAD HEIGHT MEAN MOVE STRAIGHT AHEAD\",\"subline\":\"BOTH ARMS ARE BENT AT THE ELBOWS AND REPEATEDLY RAISED\",\"blocks\":[{\"label\":\"SIGNAL\",\"value\":\"Arms bent at the elbows, moved up and down from chest height to head height\"},{\"label\":\"MEANING\",\"value\":\"Move straight ahead\"},{\"label\":\"NEXT STEP\",\"value\":\"Taxi slowly and watch for the next signal\"}]}\n"
+   }
+  },
+  {
+   "id": 595,
+   "question": "A marshaller holds both arms vertically above the head. What does this signal mean?",
+   "why": "leaves the trial set (same signal as 585, park in this bay)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-marshalling-park-in-bay-v1.webp",
+    "explanation_image_title": "Marshalling Signal — Park in This Bay",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"ARMS RAISED VERTICALLY OVERHEAD MEANS PARK IN THIS BAY\",\"subline\":\"THE PILOT FOLLOWS THE MARSHALLER UNTIL A SEPARATE STOP SIGNAL IS GIVEN\",\"blocks\":[{\"label\":\"SIGNAL\",\"value\":\"Both arms held vertically above the head\"},{\"label\":\"MEANING\",\"value\":\"Park in this bay\"},{\"label\":\"NEXT STEP\",\"value\":\"Continue slowly until the marshaller gives the stop signal\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-marshalling-park-in-bay-v1.webp",
+    "explanation_image_title": "Marshalling Signal — Park in This Bay",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"ARMS RAISED VERTICALLY OVERHEAD MEANS PARK IN THIS BAY\",\"subline\":\"THE PILOT FOLLOWS THE MARSHALLER UNTIL A SEPARATE STOP SIGNAL IS GIVEN\",\"blocks\":[{\"label\":\"SIGNAL\",\"value\":\"Both arms held vertically above the head\"},{\"label\":\"MEANING\",\"value\":\"Park in this bay\"},{\"label\":\"NEXT STEP\",\"value\":\"Continue slowly until the marshaller gives the stop signal\"}]}\n"
+   }
+  },
+  {
+   "id": 610,
+   "question": "FIR is?",
+   "why": "trial question: picture and/or card brought to the standard",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-fir-boundaries-v2.webp",
+    "explanation_image_title": "Flight Information Regions Of Southern Africa",
+    "explanation_visual_template": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"SOUTH AFRICA IS DIVIDED INTO TWO FLIGHT INFORMATION REGIONS\",\"subline\":\"JOHANNESBURG FIR (FAJA) AND CAPE TOWN FIR (FACA)\",\"blocks\":[{\"label\":\"FIR\",\"value\":\"Flight Information Region - airspace where flight information and alerting services are provided\"},{\"label\":\"JOHANNESBURG FIR (FAJA)\",\"value\":\"Covers the northern and eastern interior, plus Johannesburg Oceanic FIR (FAJO)\"},{\"label\":\"CAPE TOWN FIR (FACA)\",\"value\":\"Covers the southern and western coastal region\"}]}\n"
+   },
+   "after": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-fir-boundaries-v2.webp",
+    "explanation_image_title": "Flight Information Regions Of Southern Africa",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FIR = FLIGHT INFORMATION REGION\", \"subline\": \"AIRSPACE WITH A FLIGHT INFORMATION AND ALERTING SERVICE\", \"blocks\": [{\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}]}"
+   }
+  },
+  {
+   "id": 2814,
+   "question": "What does it mean if a runway is reported as contaminated?",
+   "why": "leaves the trial set (no strong picture for it)",
+   "before": {
+    "is_trial_question": true,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-runway-contaminated.webp",
+    "explanation_image_title": "Contaminated Runway",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONTAMINATED: MORE THAN 25% OF THE RUNWAY COVERED\", \"subline\": \"BY STANDING WATER DEEPER THAN 3 MM, SLUSH, SNOW OR ICE\", \"blocks\": [{\"label\": \"AREA\", \"value\": \"More than 25% of the required runway length and width\"}, {\"label\": \"WHAT COUNTS\", \"value\": \"Standing water deeper than 3 mm, or slush, snow or ice\"}, {\"label\": \"WHY IT MATTERS\", \"value\": \"Braking and aquaplaning change enough to need separate performance data\"}]}"
+   },
+   "after": {
+    "is_trial_question": false,
+    "explanation_image_url": "/explanation-images/radio-telephony/refined-batch-1/rt-trial-runway-contaminated.webp",
+    "explanation_image_title": "Contaminated Runway",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONTAMINATED: MORE THAN 25% OF THE RUNWAY COVERED\", \"subline\": \"BY STANDING WATER DEEPER THAN 3 MM, SLUSH, SNOW OR ICE\", \"blocks\": [{\"label\": \"AREA\", \"value\": \"More than 25% of the required runway length and width\"}, {\"label\": \"WHAT COUNTS\", \"value\": \"Standing water deeper than 3 mm, or slush, snow or ice\"}, {\"label\": \"WHY IT MATTERS\", \"value\": \"Braking and aquaplaning change enough to need separate performance data\"}]}"
+   }
+  }
+ ]
+}

@@ -14,7 +14,7 @@ sys.path.insert(0, str(HERE))
 
 from kit import REPO, render, svg  # noqa: E402
 
-MODULES = ["fp", "rt", "airlaw"]
+MODULES = ["rt", "airlaw"]
 RECORD = REPO / "data/trial-mock/trial-visuals.json"
 
 

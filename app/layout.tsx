@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { AppMobileNavigation } from '@/components/app-mobile-navigation'
 import { SessionGuard } from '@/components/session-guard'
 import {
   CONTACT_EMAIL,
@@ -104,7 +103,6 @@ export default function RootLayout({
         />
         {children}
         <SessionGuard />
-        <AppMobileNavigation />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

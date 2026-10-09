@@ -36,3 +36,9 @@ export type DatabaseQuestion = {
 
 export type ExamMode = "menu" | "mock" | "topics" | "topic"
 export type ExamAnswers = Record<number, string>
+
+export type MockSettings = {
+  questionCount: number
+  timed: boolean
+  showAnswerButton: boolean
+}

@@ -1,0 +1,254 @@
+[
+ {
+  "id": 31,
+  "question": "Which ISA assumptions are correct?",
+  "before": {
+   "option_a": "Sea level temperature 10°C",
+   "option_b": "Sea level temperature 20°C",
+   "option_c": "Sea level pressure 950 hPa",
+   "option_d": "Sea level temperature 15°C and lapse rate 1.98°C per 1000 ft",
+   "correct_answer": "Sea level temperature 15°C and lapse rate 1.98°C per 1000 ft"
+  },
+  "after": {
+   "option_a": "Sea level temperature 10°C and lapse rate 1.98°C per 1000 ft",
+   "option_b": "Sea level temperature 15°C and lapse rate 3°C per 1000 ft",
+   "option_c": "Sea level pressure 950 hPa and temperature 15°C",
+   "option_d": "Sea level temperature 15°C and lapse rate 1.98°C per 1000 ft",
+   "correct_answer": "Sea level temperature 15°C and lapse rate 1.98°C per 1000 ft"
+  }
+ },
+ {
+  "id": 41,
+  "question": "Surface temperature inversions usually form because of:",
+  "before": {
+   "option_a": "Strong convection",
+   "option_b": "Terrestrial radiation on clear calm nights",
+   "option_c": "Heavy rain",
+   "option_d": "Thunderstorms",
+   "correct_answer": "Terrestrial radiation on clear calm nights"
+  },
+  "after": {
+   "option_a": "Strong surface heating on sunny afternoons",
+   "option_b": "Terrestrial radiation on clear calm nights",
+   "option_c": "Heavy rain falling from frontal cloud",
+   "option_d": "Strong winds mixing the lowest layers",
+   "correct_answer": "Terrestrial radiation on clear calm nights"
+  }
+ },
+ {
+  "id": 53,
+  "question": "What combination is required for thunderstorm formation?",
+  "before": {
+   "option_a": "Stable dry air",
+   "option_b": "Unstable moist air with lifting action",
+   "option_c": "Cold dense air",
+   "option_d": "Strong wind only",
+   "correct_answer": "Unstable moist air with lifting action"
+  },
+  "after": {
+   "option_a": "Stable moist air with no lifting action",
+   "option_b": "Unstable moist air with lifting action",
+   "option_c": "Unstable dry air with no lifting action",
+   "option_d": "Stable dry air sinking over high ground",
+   "correct_answer": "Unstable moist air with lifting action"
+  }
+ },
+ {
+  "id": 68,
+  "question": "Carburettor icing is usually indicated by:",
+  "before": {
+   "option_a": "Rough engine running and decreasing RPM",
+   "option_b": "Rapid increase in RPM",
+   "option_c": "Increasing oil pressure",
+   "option_d": "Strong vibration only",
+   "correct_answer": "Rough engine running and decreasing RPM"
+  },
+  "after": {
+   "option_a": "Rough engine running and decreasing RPM",
+   "option_b": "Smooth running and a gradual RPM increase",
+   "option_c": "Rising oil pressure and oil temperature",
+   "option_d": "A sudden rise in RPM and engine temperature",
+   "correct_answer": "Rough engine running and decreasing RPM"
+  }
+ },
+ {
+  "id": 86,
+  "question": "Information normally provided by ATIS includes:",
+  "before": {
+   "option_a": "Passenger information",
+   "option_b": "Upper wind charts",
+   "option_c": "Surface wind QNH visibility and runway in use",
+   "option_d": "Fuel planning data",
+   "correct_answer": "Surface wind QNH visibility and runway in use"
+  },
+  "after": {
+   "option_a": "Upper wind charts, fuel data and passenger notices",
+   "option_b": "Flight plan details for each departing aircraft",
+   "option_c": "Surface wind, QNH, visibility and runway in use",
+   "option_d": "Forecast weather for the next 24 hours en route",
+   "correct_answer": "Surface wind, QNH, visibility and runway in use"
+  }
+ },
+ {
+  "id": 699,
+  "question": "The presence of a coastal low, on the east coast of South Africa, may be characterised by?",
+  "before": {
+   "option_a": "strong westerly upper winds",
+   "option_b": "sea fog only",
+   "option_c": "clear skies and no wind",
+   "option_d": "overcast conditions with light rain or drizzle",
+   "correct_answer": "overcast conditions with light rain or drizzle"
+  },
+  "after": {
+   "option_a": "Strong westerly upper winds and clear skies",
+   "option_b": "Dense sea fog only, with no cloud above it",
+   "option_c": "Thunderstorms with large hail and gusty winds",
+   "option_d": "Overcast conditions with light rain or drizzle",
+   "correct_answer": "Overcast conditions with light rain or drizzle"
+  }
+ },
+ {
+  "id": 732,
+  "question": "With reference to the TAF for George (FAGG) on page 8 of the Meteorology Manual, the expected weather includes?",
+  "before": {
+   "option_a": "Continuous snow throughout the period",
+   "option_b": "Fog only between 1000 and 1800 local",
+   "option_c": "Light drizzle becoming clear",
+   "option_d": "Light rain, temporarily heavy rain between 1200 and 2000 local",
+   "correct_answer": "Light rain, temporarily heavy rain between 1200 and 2000 local"
+  },
+  "after": {
+   "option_a": "Light snow, temporarily heavy snow between 1200 and 2000 local",
+   "option_b": "Light rain, temporarily heavy rain between 1000 and 1800 local",
+   "option_c": "Heavy rain, temporarily light rain between 1200 and 2000 local",
+   "option_d": "Light rain, temporarily heavy rain between 1200 and 2000 local",
+   "correct_answer": "Light rain, temporarily heavy rain between 1200 and 2000 local"
+  }
+ },
+ {
+  "id": 738,
+  "question": "With reference to the METAR for Upington (FAUP) on page 9 of the Meteorology Manual?",
+  "before": {
+   "option_a": "Overcast cloud below 500 ft",
+   "option_b": "No operationally significant cloud below 5,000 ft",
+   "option_c": "Cumulonimbus below 3,000 ft",
+   "option_d": "Broken cloud at 1,000 ft",
+   "correct_answer": "No operationally significant cloud below 5,000 ft"
+  },
+  "after": {
+   "option_a": "Few cloud at 5,000 ft with visibility below 10 km",
+   "option_b": "No operationally significant cloud below 5,000 ft",
+   "option_c": "Scattered cumulonimbus below 5,000 ft nearby",
+   "option_d": "Broken cloud below 1,500 ft with light rain showers",
+   "correct_answer": "No operationally significant cloud below 5,000 ft"
+  }
+ },
+ {
+  "id": 750,
+  "question": "The south westerly buster which affects the coast of KwaZulu-Natal (South Africa) is caused by?",
+  "before": {
+   "option_a": "a tropical cyclone moving down the Mozambique Channel",
+   "option_b": "the anti-cyclonic flow of air from a high pressure system ridging in behind a coastal low",
+   "option_c": "a land breeze strengthened by nocturnal cooling",
+   "option_d": "a berg wind descending from the interior",
+   "correct_answer": "the anti-cyclonic flow of air from a high pressure system ridging in behind a coastal low"
+  },
+  "after": {
+   "option_a": "A tropical cyclone moving down the Mozambique Channel",
+   "option_b": "A high-pressure system ridging in behind a coastal low",
+   "option_c": "A land breeze strengthened by cooling at night",
+   "option_d": "A berg wind descending from the interior plateau",
+   "correct_answer": "A high-pressure system ridging in behind a coastal low"
+  }
+ },
+ {
+  "id": 753,
+  "question": "After the passage of a warm front in South Africa, what pressure tendency is normally expected?",
+  "before": {
+   "option_a": "the pressure will continue to fall but at a slower rate and then start to rise",
+   "option_b": "the pressure will fall rapidly without rising",
+   "option_c": "the wind will back suddenly to the south",
+   "option_d": "the temperature will decrease sharply",
+   "correct_answer": "the pressure will continue to fall but at a slower rate and then start to rise"
+  },
+  "after": {
+   "option_a": "It keeps falling, but more slowly, then starts to rise",
+   "option_b": "It falls rapidly and keeps falling for several days",
+   "option_c": "It rises sharply as soon as the front has passed",
+   "option_d": "It stays steady until the next warm front arrives",
+   "correct_answer": "It keeps falling, but more slowly, then starts to rise"
+  }
+ },
+ {
+  "id": 1469,
+  "question": "A stationary front is best described as a front where:",
+  "before": {
+   "option_a": "The cold air always moves fastest",
+   "option_b": "Only thunderstorms occur",
+   "option_c": "There is little or no horizontal motion perpendicular to the front",
+   "option_d": "The front has no wind change",
+   "correct_answer": "There is little or no horizontal motion perpendicular to the front"
+  },
+  "after": {
+   "option_a": "Cold air is advancing quickly under warm air",
+   "option_b": "Warm air is advancing steadily over cold air",
+   "option_c": "The front shows little or no movement",
+   "option_d": "A cold front has overtaken a warm front",
+   "correct_answer": "The front shows little or no movement"
+  }
+ },
+ {
+  "id": 1494,
+  "question": "An air mass is best described as:",
+  "before": {
+   "option_a": "A narrow line of thunderstorms only",
+   "option_b": "A local sea breeze circulation",
+   "option_c": "A single cloud layer",
+   "option_d": "A large body of air with fairly uniform temperature and moisture properties",
+   "correct_answer": "A large body of air with fairly uniform temperature and moisture properties"
+  },
+  "after": {
+   "option_a": "A narrow band of air lying along a cold front",
+   "option_b": "A small, local circulation such as a sea breeze",
+   "option_c": "A layer of air whose moisture changes rapidly",
+   "option_d": "A large body of air with uniform temperature and moisture",
+   "correct_answer": "A large body of air with uniform temperature and moisture"
+  }
+ },
+ {
+  "id": 1519,
+  "question": "What is low-level wind shear?",
+  "before": {
+   "option_a": "A sudden change in wind speed or direction over a small distance",
+   "option_b": "A constant wind at all heights",
+   "option_c": "A light land breeze only",
+   "option_d": "A change in QNH over time",
+   "correct_answer": "A sudden change in wind speed or direction over a small distance"
+  },
+  "after": {
+   "option_a": "A sudden change in wind speed or direction over a short distance",
+   "option_b": "A steady wind that stays the same at every height above ground",
+   "option_c": "A gradual change in QNH over several hours at an aerodrome",
+   "option_d": "A light land breeze that flows out to sea during the night",
+   "correct_answer": "A sudden change in wind speed or direction over a short distance"
+  }
+ },
+ {
+  "id": 1522,
+  "question": "A microburst is best described as:",
+  "before": {
+   "option_a": "A weak steady headwind",
+   "option_b": "A layer of radiation fog",
+   "option_c": "A warm dry downslope wind",
+   "option_d": "A concentrated downdraft with damaging surface outflow",
+   "correct_answer": "A concentrated downdraft with damaging surface outflow"
+  },
+  "after": {
+   "option_a": "A steady headwind that increases slowly with height",
+   "option_b": "A shallow layer of radiation fog over a runway",
+   "option_c": "A warm dry wind flowing down the lee of mountains",
+   "option_d": "A concentrated downdraft with damaging surface outflow",
+   "correct_answer": "A concentrated downdraft with damaging surface outflow"
+  }
+ }
+]

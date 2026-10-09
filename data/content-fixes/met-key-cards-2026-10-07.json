@@ -1,0 +1,319 @@
+{
+ "date": "2026-10-07",
+ "subject": "meteorology",
+ "change": "Corrected wrong KEY FACT cards and replaced generic ones with cards that answer each question.",
+ "rows": [
+  {
+   "id": 7,
+   "question": "In which atmospheric layer do most weather phenomena occur?",
+   "is_hidden": false,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST WEATHER HAPPENS IN THE TROPOSPHERE, THE LOWEST LAYER\", \"subline\": \"IT HOLDS NEARLY ALL THE ATMOSPHERE'S WATER VAPOUR, AND TEMPERATURE FALLS WITH HEIGHT\", \"blocks\": [{\"label\": \"Troposphere\", \"value\": \"From the surface to the tropopause, about 11 km (36,000 ft) on average; almost all cloud and weather\"}, {\"label\": \"Tropopause\", \"value\": \"The boundary with the stratosphere: about 8 km over the poles, up to about 18 km over the equator\"}, {\"label\": \"Stratosphere\", \"value\": \"Above the tropopause; very little water vapour; contains the ozone layer\"}, {\"label\": \"Mesosphere and thermosphere\", \"value\": \"Higher layers, far above where aircraft operate\"}]}"
+   }
+  },
+  {
+   "id": 8,
+   "question": "What is the average height of the troposphere?",
+   "is_hidden": false,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TROPOSPHERE IS ABOUT 11 KM (36,000 FT) DEEP ON AVERAGE\", \"subline\": \"DEEPEST OVER THE EQUATOR, SHALLOWEST OVER THE POLES\", \"blocks\": [{\"label\": \"ISA tropopause\", \"value\": \"11 km (36,090 ft), where the temperature stops falling at −56.5°C\"}, {\"label\": \"Over the equator\", \"value\": \"About 16–18 km\"}, {\"label\": \"Over the poles\", \"value\": \"About 8 km\"}, {\"label\": \"Why it varies\", \"value\": \"Warm air columns are deeper than cold ones\"}]}"
+   }
+  },
+  {
+   "id": 10,
+   "question": "What is the boundary layer between the troposphere and stratosphere called?",
+   "is_hidden": false,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TROPOPAUSE SEPARATES THE TROPOSPHERE FROM THE STRATOSPHERE\", \"subline\": \"IT IS WHERE THE TEMPERATURE STOPS FALLING WITH HEIGHT\", \"blocks\": [{\"label\": \"Height\", \"value\": \"About 11 km (36,000 ft) on average; higher over the equator, lower over the poles\"}, {\"label\": \"Temperature\", \"value\": \"About −56.5°C in the ISA\"}, {\"label\": \"Other boundaries\", \"value\": \"Stratopause: stratosphere to mesosphere. Mesopause: mesosphere to thermosphere\"}]}"
+   }
+  },
+  {
+   "id": 11,
+   "question": "What is the primary importance of the ozone layer?",
+   "is_hidden": false,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE OZONE LAYER ABSORBS HARMFUL ULTRAVIOLET RADIATION\", \"subline\": \"IT LIES IN THE STRATOSPHERE, ABOVE THE WEATHER\", \"blocks\": [{\"label\": \"Where\", \"value\": \"In the stratosphere, roughly 15–35 km up\"}, {\"label\": \"What it does\", \"value\": \"Absorbs most of the sun's UV radiation before it reaches the surface\"}, {\"label\": \"Side effect\", \"value\": \"Absorbing UV warms the stratosphere, so temperature rises with height there\"}, {\"label\": \"Not weather\", \"value\": \"Ozone does not make cloud or rain; weather happens in the troposphere below\"}]}"
+   }
+  },
+  {
+   "id": 50,
+   "question": "Flying from low pressure to high pressure without resetting the altimeter causes the altimeter to:",
+   "is_hidden": false,
+   "why": "wrong fact: headline said high-to-low over-reads, but the question and answer are low-to-high under-reads",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"FLYING FROM HIGH TO LOW PRESSURE WITHOUT RESETTING MAKES THE ALTIMETER OVER-READ\",\"subline\":\"THE AIRCRAFT IS ACTUALLY LOWER THAN INDICATED — HIGH TO LOW, LOOK OUT BELOW\",\"blocks\":[{\"label\":\"Setting too high for actual pressure\",\"value\":\"Altimeter reads 4,000 ft while the aircraft is actually only 3,700 ft — a 300 ft over-read\"},{\"label\":\"Flying high pressure to low pressure\",\"value\":\"Without resetting, the altimeter over-reads — true altitude is lower than indicated\"},{\"label\":\"Flying low pressure to high pressure\",\"value\":\"Without resetting, the altimeter under-reads — true altitude is higher than indicated\"},{\"label\":\"Rule of thumb\",\"value\":\"Every 1 hPa of error is about 30 ft of altimeter error\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FLYING FROM LOW TO HIGH PRESSURE WITHOUT RESETTING MAKES THE ALTIMETER UNDER-READ\", \"subline\": \"THE AIRCRAFT IS ACTUALLY HIGHER THAN INDICATED\", \"blocks\": [{\"label\": \"Low to high pressure\", \"value\": \"The altimeter under-reads: true altitude is higher than indicated\"}, {\"label\": \"High to low pressure\", \"value\": \"The altimeter over-reads: true altitude is lower — \\\"high to low, look out below\\\"\"}, {\"label\": \"Size of the error\", \"value\": \"About 30 ft for every 1 hPa of difference\"}, {\"label\": \"The fix\", \"value\": \"Set the new QNH on the subscale\"}]}"
+   }
+  },
+  {
+   "id": 54,
+   "question": "Which cloud type is commonly associated with thunderstorms?",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"A THUNDERSTORM HAS THREE STAGES: CUMULUS, MATURE, DISSIPATING\",\"subline\":\"UPDRAFTS AND DOWNDRAFTS COEXIST ONLY DURING THE MATURE STAGE\",\"blocks\":[{\"label\":\"Cumulus stage\",\"value\":\"Updrafts only; the cloud is still building\"},{\"label\":\"Mature stage\",\"value\":\"Updrafts and downdrafts occur side by side — the most hazardous stage, with heavy rain, turbulence and possible hail\"},{\"label\":\"Dissipating stage\",\"value\":\"Downdrafts dominate as the storm rains itself out\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THUNDERSTORMS COME FROM CUMULONIMBUS CLOUD\", \"subline\": \"A CUMULONIMBUS GROWS THROUGH THREE STAGES: CUMULUS, MATURE, DISSIPATING\", \"blocks\": [{\"label\": \"Cumulonimbus\", \"value\": \"Towering cloud, often with an anvil top: lightning, heavy rain, hail and severe turbulence\"}, {\"label\": \"Cumulus stage\", \"value\": \"Updraughts only; the cloud is still building\"}, {\"label\": \"Mature stage\", \"value\": \"Updraughts and downdraughts side by side — the most dangerous stage\"}, {\"label\": \"Dissipating stage\", \"value\": \"Downdraughts take over as the storm rains itself out\"}]}"
+   }
+  },
+  {
+   "id": 56,
+   "question": "Light drizzle is most commonly associated with which cloud type?",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIZZLE COMES FROM STRATUS OR STRATOCUMULUS\", \"subline\": \"THIN, LOW LAYER CLOUD HAS TINY DROPLETS AND WEAK UPCURRENTS, SO IT DRIZZLES RATHER THAN RAINS\", \"blocks\": [{\"label\": \"Drizzle\", \"value\": \"Very small drops (under 0.5 mm) falling close together\"}, {\"label\": \"Stratus and stratocumulus\", \"value\": \"Low layer cloud: drizzle, poor visibility and low cloud bases\"}, {\"label\": \"Nimbostratus\", \"value\": \"Deep layer cloud: steady, continuous rain\"}, {\"label\": \"Cumulonimbus\", \"value\": \"Heavy showers, hail and thunderstorms\"}]}"
+   }
+  },
+  {
+   "id": 59,
+   "question": "Nimbostratus cloud is commonly associated with:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NIMBOSTRATUS IS TYPICAL OF A WARM FRONT\", \"subline\": \"WARM AIR SLIDES GENTLY UP OVER THE COLD AIR, FORMING THICK LAYER CLOUD AND STEADY RAIN\", \"blocks\": [{\"label\": \"Warm front cloud\", \"value\": \"Cirrus, cirrostratus, altostratus, then nimbostratus near the front\"}, {\"label\": \"Nimbostratus\", \"value\": \"Thick, dark layer cloud with continuous rain or snow\"}, {\"label\": \"Cold front (contrast)\", \"value\": \"Cumulus and cumulonimbus, with showers and thunderstorms\"}]}"
+   }
+  },
+  {
+   "id": 75,
+   "question": "A warm dry wind descending a mountain slope is commonly called:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"A BERG WIND IS HOT, DRY AIR BLOWING OFFSHORE FROM THE INTERIOR\",\"subline\":\"DRIVEN BY A STRONG HIGH PRESSURE SYSTEM OVER THE INTERIOR, WITH BUYS BALLOT'S LAW GIVING THE WIND DIRECTION\",\"blocks\":[{\"label\":\"Source\",\"value\":\"A strong high pressure system over the interior plateau\"},{\"label\":\"Mechanism\",\"value\":\"Air descends and warms adiabatically as it flows off the escarpment toward the coast\"},{\"label\":\"Character\",\"value\":\"Hot, dry, gusty offshore wind, most notable along the coast\"},{\"label\":\"Buys Ballot's Law\",\"value\":\"With the wind at your back, the low pressure lies to your right in the Southern Hemisphere\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A WARM, DRY WIND DESCENDING A MOUNTAIN SLOPE IS A FÖHN WIND\", \"subline\": \"THE AIR WARMS AS IT IS COMPRESSED ON THE WAY DOWN THE LEE SIDE\", \"blocks\": [{\"label\": \"Windward side\", \"value\": \"Moist air rises, cools and drops its moisture as cloud and rain\"}, {\"label\": \"Lee side\", \"value\": \"The drier air descends and warms at the dry rate, about 3°C per 1,000 ft\"}, {\"label\": \"Result\", \"value\": \"A warm, dry, often gusty wind at the foot of the mountains\"}, {\"label\": \"In South Africa\", \"value\": \"The berg wind is a similar warm, dry wind blowing down from the interior\"}, {\"label\": \"Katabatic (contrast)\", \"value\": \"A cold wind draining downhill at night\"}]}"
+   }
+  },
+  {
+   "id": 617,
+   "question": "The layer between the troposphere and the stratosphere is called:",
+   "is_hidden": true,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TROPOPAUSE SEPARATES THE TROPOSPHERE FROM THE STRATOSPHERE\", \"subline\": \"IT IS WHERE THE TEMPERATURE STOPS FALLING WITH HEIGHT\", \"blocks\": [{\"label\": \"Height\", \"value\": \"About 11 km (36,000 ft) on average; higher over the equator, lower over the poles\"}, {\"label\": \"Temperature\", \"value\": \"About −56.5°C in the ISA\"}, {\"label\": \"Other boundaries\", \"value\": \"Stratopause: stratosphere to mesosphere. Mesopause: mesosphere to thermosphere\"}]}"
+   }
+  },
+  {
+   "id": 618,
+   "question": "The weather experienced on the earth occurs in the:",
+   "is_hidden": true,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST WEATHER HAPPENS IN THE TROPOSPHERE, THE LOWEST LAYER\", \"subline\": \"IT HOLDS NEARLY ALL THE ATMOSPHERE'S WATER VAPOUR, AND TEMPERATURE FALLS WITH HEIGHT\", \"blocks\": [{\"label\": \"Troposphere\", \"value\": \"From the surface to the tropopause, about 11 km (36,000 ft) on average; almost all cloud and weather\"}, {\"label\": \"Tropopause\", \"value\": \"The boundary with the stratosphere: about 8 km over the poles, up to about 18 km over the equator\"}, {\"label\": \"Stratosphere\", \"value\": \"Above the tropopause; very little water vapour; contains the ozone layer\"}, {\"label\": \"Mesosphere and thermosphere\", \"value\": \"Higher layers, far above where aircraft operate\"}]}"
+   }
+  },
+  {
+   "id": 628,
+   "question": "The significance of the ozone layer in the atmosphere is that it:",
+   "is_hidden": true,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE OZONE LAYER ABSORBS HARMFUL ULTRAVIOLET RADIATION\", \"subline\": \"IT LIES IN THE STRATOSPHERE, ABOVE THE WEATHER\", \"blocks\": [{\"label\": \"Where\", \"value\": \"In the stratosphere, roughly 15–35 km up\"}, {\"label\": \"What it does\", \"value\": \"Absorbs most of the sun's UV radiation before it reaches the surface\"}, {\"label\": \"Side effect\", \"value\": \"Absorbing UV warms the stratosphere, so temperature rises with height there\"}, {\"label\": \"Not weather\", \"value\": \"Ozone does not make cloud or rain; weather happens in the troposphere below\"}]}"
+   }
+  },
+  {
+   "id": 636,
+   "question": "The average height of the troposphere is:",
+   "is_hidden": true,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TROPOSPHERE IS ABOUT 11 KM (36,000 FT) DEEP ON AVERAGE\", \"subline\": \"DEEPEST OVER THE EQUATOR, SHALLOWEST OVER THE POLES\", \"blocks\": [{\"label\": \"ISA tropopause\", \"value\": \"11 km (36,090 ft), where the temperature stops falling at −56.5°C\"}, {\"label\": \"Over the equator\", \"value\": \"About 16–18 km\"}, {\"label\": \"Over the poles\", \"value\": \"About 8 km\"}, {\"label\": \"Why it varies\", \"value\": \"Warm air columns are deeper than cold ones\"}]}"
+   }
+  },
+  {
+   "id": 722,
+   "question": "Steady precipitation in the form of rain is most commonly expected from:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STEADY, CONTINUOUS RAIN COMES FROM NIMBOSTRATUS\", \"subline\": \"A THICK LAYER CLOUD, OFTEN AHEAD OF A WARM FRONT\", \"blocks\": [{\"label\": \"Nimbostratus\", \"value\": \"Thick, grey layer cloud with a low base; rain for hours\"}, {\"label\": \"Cumulonimbus\", \"value\": \"Showers: heavy but short\"}, {\"label\": \"Stratus\", \"value\": \"Drizzle at most\"}, {\"label\": \"Cirrus and fair-weather cumulus\", \"value\": \"No significant precipitation\"}]}"
+   }
+  },
+  {
+   "id": 1474,
+   "question": "What is the boundary layer between the troposphere and the stratosphere called?",
+   "is_hidden": true,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TROPOPAUSE SEPARATES THE TROPOSPHERE FROM THE STRATOSPHERE\", \"subline\": \"IT IS WHERE THE TEMPERATURE STOPS FALLING WITH HEIGHT\", \"blocks\": [{\"label\": \"Height\", \"value\": \"About 11 km (36,000 ft) on average; higher over the equator, lower over the poles\"}, {\"label\": \"Temperature\", \"value\": \"About −56.5°C in the ISA\"}, {\"label\": \"Other boundaries\", \"value\": \"Stratopause: stratosphere to mesosphere. Mesopause: mesosphere to thermosphere\"}]}"
+   }
+  },
+  {
+   "id": 1481,
+   "question": "When a mass of air descends, its relative humidity generally:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"52% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DESCENDING AIR WARMS, SO ITS RELATIVE HUMIDITY DECREASES\", \"subline\": \"THE WATER VAPOUR STAYS THE SAME, BUT WARMER AIR CAN HOLD MORE\", \"blocks\": [{\"label\": \"Why it warms\", \"value\": \"Sinking air is compressed and warms at about 3°C per 1,000 ft\"}, {\"label\": \"At 10°C\", \"value\": \"100% relative humidity (saturated)\"}, {\"label\": \"Same air at 20°C\", \"value\": \"52% relative humidity\"}, {\"label\": \"Same air at 30°C\", \"value\": \"28% relative humidity\"}, {\"label\": \"In practice\", \"value\": \"This is why sinking air in a high brings clear, dry weather\"}]}"
+   }
+  },
+  {
+   "id": 1483,
+   "question": "Freezing rain is most likely when:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"DROPLET SIZE AND FREEZING SPEED DETERMINE THE TYPE OF ICE\",\"subline\":\"LARGE DROPLETS FREEZING SLOWLY PRODUCE CLEAR ICE; SMALL DROPLETS FREEZING FAST PRODUCE RIME ICE\",\"blocks\":[{\"label\":\"Clear ice\",\"value\":\"Large supercooled droplets freeze slowly, spreading into a smooth, hard, transparent layer\"},{\"label\":\"Rime ice\",\"value\":\"Small supercooled droplets freeze almost instantly, trapping air into a rough, opaque, milky build-up\"},{\"label\":\"Mixed ice\",\"value\":\"A combination of clear and rime ice, often rough and irregular\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FREEZING RAIN FORMS WHEN RAIN FALLS INTO A LAYER OF AIR BELOW 0°C\", \"subline\": \"THE DROPS BECOME SUPERCOOLED AND FREEZE ON IMPACT AS CLEAR ICE\", \"blocks\": [{\"label\": \"Set-up\", \"value\": \"A warm layer aloft (above 0°C) over a cold layer below\"}, {\"label\": \"The drops\", \"value\": \"Rain from the warm layer falls into the sub-zero layer and supercools without freezing\"}, {\"label\": \"On contact\", \"value\": \"Large supercooled drops spread and freeze into heavy clear ice\"}, {\"label\": \"Where\", \"value\": \"Typically ahead of a warm front — very dangerous for aircraft\"}]}"
+   }
+  },
+  {
+   "id": 1484,
+   "question": "Which layer of the atmosphere contains most water vapour and most weather?",
+   "is_hidden": true,
+   "why": "wrong fact: tropopause averaged 39,000 ft (it is about 11 km / 36,000 ft)",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"THE TROPOSPHERE IS WHERE PRIVATE PILOTS FLY AND WEATHER HAPPENS\",\"subline\":\"THE TROPOPAUSE AVERAGES ABOUT 39,000 FT, RANGING FROM ~26,000 FT AT THE POLES TO ~60,000 FT AT THE EQUATOR\",\"blocks\":[{\"label\":\"Troposphere\",\"value\":\"Lowest layer; contains almost all weather and is where light aircraft fly\"},{\"label\":\"Tropopause\",\"value\":\"Boundary between troposphere and stratosphere, averaging about 39,000 ft\"},{\"label\":\"Stratosphere\",\"value\":\"Above the tropopause; contains the ozone layer, which shields the earth from UV radiation\"},{\"label\":\"Mesosphere & thermosphere\",\"value\":\"Higher layers well above where aircraft operate\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOST WEATHER HAPPENS IN THE TROPOSPHERE, THE LOWEST LAYER\", \"subline\": \"IT HOLDS NEARLY ALL THE ATMOSPHERE'S WATER VAPOUR, AND TEMPERATURE FALLS WITH HEIGHT\", \"blocks\": [{\"label\": \"Troposphere\", \"value\": \"From the surface to the tropopause, about 11 km (36,000 ft) on average; almost all cloud and weather\"}, {\"label\": \"Tropopause\", \"value\": \"The boundary with the stratosphere: about 8 km over the poles, up to about 18 km over the equator\"}, {\"label\": \"Stratosphere\", \"value\": \"Above the tropopause; very little water vapour; contains the ozone layer\"}, {\"label\": \"Mesosphere and thermosphere\", \"value\": \"Higher layers, far above where aircraft operate\"}]}"
+   }
+  },
+  {
+   "id": 1494,
+   "question": "An air mass is best described as:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"SOUTH AFRICA IS AFFECTED BY AIR MASSES FROM FOUR SOURCE REGIONS\",\"subline\":\"CLASSIFIED BY SOURCE (MARITIME OR CONTINENTAL) AND TEMPERATURE (POLAR OR TROPICAL)\",\"blocks\":[{\"label\":\"mP — maritime polar\",\"value\":\"Cold, moist air arriving from the Southern Ocean/Antarctica\"},{\"label\":\"cT — continental tropical\",\"value\":\"Hot, dry air forming over the African interior landmass\"},{\"label\":\"mTw — maritime tropical, warm\",\"value\":\"Warm, moist air from the Indian Ocean (east coast)\"},{\"label\":\"mTk — maritime tropical, cool\",\"value\":\"Cooler, moist air from the Atlantic Ocean (west coast)\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN AIR MASS IS A LARGE BODY OF AIR WITH UNIFORM TEMPERATURE AND MOISTURE\", \"subline\": \"IT TAKES ITS PROPERTIES FROM THE SURFACE OF ITS SOURCE REGION\", \"blocks\": [{\"label\": \"Size\", \"value\": \"Hundreds to thousands of kilometres across\"}, {\"label\": \"Named by source\", \"value\": \"Maritime (m, moist) or continental (c, dry); polar (P, cold) or tropical (T, warm)\"}, {\"label\": \"Over South Africa\", \"value\": \"mP from the Southern Ocean, cT over the interior, mT from the Indian and Atlantic Oceans\"}, {\"label\": \"Fronts\", \"value\": \"A front is where two different air masses meet\"}]}"
+   }
+  },
+  {
+   "id": 1498,
+   "question": "Which cloud type is least likely to produce precipitation?",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CIRRUS IS THE CLOUD LEAST LIKELY TO GIVE PRECIPITATION\", \"subline\": \"IT IS THIN, HIGH CLOUD MADE OF ICE CRYSTALS\", \"blocks\": [{\"label\": \"Cirrus\", \"value\": \"High (6–12 km), thin and wispy; nothing reaches the ground\"}, {\"label\": \"Nimbostratus\", \"value\": \"Steady rain\"}, {\"label\": \"Cumulonimbus\", \"value\": \"Heavy showers, hail and thunder\"}, {\"label\": \"Stratus\", \"value\": \"Drizzle\"}]}"
+   }
+  },
+  {
+   "id": 1499,
+   "question": "A parcel of air is saturated when its relative humidity is:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"THE DEW POINT IS WHERE A RISING PARCEL'S COOLING CURVE MEETS SATURATION\",\"subline\":\"BELOW THAT POINT THE AIR COOLS AT THE DALR; ABOVE IT, CONDENSATION RELEASES LATENT HEAT AND COOLING SLOWS TO THE SALR\",\"blocks\":[{\"label\":\"Below the condensation level\",\"value\":\"Unsaturated air cools at the DALR, a constant 3°C per 1,000 ft\"},{\"label\":\"At the condensation level\",\"value\":\"The parcel reaches saturation (its dew point) and cloud begins to form\"},{\"label\":\"Above the condensation level\",\"value\":\"Condensing water vapour releases latent heat, slowing cooling to the SALR\"},{\"label\":\"Latent heat\",\"value\":\"Released whenever a gas condenses to a liquid — the reverse of the heat absorbed during evaporation\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AIR IS SATURATED WHEN ITS RELATIVE HUMIDITY IS 100%\", \"subline\": \"IT THEN HOLDS ALL THE WATER VAPOUR IT CAN AT THAT TEMPERATURE\", \"blocks\": [{\"label\": \"Relative humidity\", \"value\": \"The water vapour present, as a percentage of what the air could hold at that temperature\"}, {\"label\": \"Dew point\", \"value\": \"The temperature the air must cool to in order to become saturated\"}, {\"label\": \"At saturation\", \"value\": \"Temperature equals dew point; further cooling makes cloud or fog\"}, {\"label\": \"A rising parcel\", \"value\": \"Cools at the DALR until saturated, then at the slower SALR\"}]}"
+   }
+  },
+  {
+   "id": 1503,
+   "question": "From which direction do the trade winds blow in the Southern Hemisphere?",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"THE CAPE DOCTOR IS A STRONG SOUTH-EASTERLY SUMMER WIND OVER THE WESTERN CAPE\",\"subline\":\"ANTICYCLONIC FLOW AROUND THE SOUTH ATLANTIC HIGH DRIVES IT, FROM ABOUT 10 KT UP TO GALE FORCE\",\"blocks\":[{\"label\":\"Cause\",\"value\":\"Anti-cyclonic (clockwise, Southern Hemisphere) flow around a well-developed high pressure system west of the Cape\"},{\"label\":\"Season\",\"value\":\"Most common and strongest during summer\"},{\"label\":\"Character\",\"value\":\"Clear skies, strong and gusty, known locally as the South Easter\"},{\"label\":\"Trade wind link\",\"value\":\"It is essentially the local expression of the south-easterly trade wind flow\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"IN THE SOUTHERN HEMISPHERE THE TRADE WINDS BLOW FROM THE SOUTH-EAST\", \"subline\": \"AIR FLOWS FROM THE SUBTROPICAL HIGHS TOWARDS THE EQUATOR AND IS TURNED LEFT BY THE CORIOLIS EFFECT\", \"blocks\": [{\"label\": \"Source\", \"value\": \"The subtropical high pressure belt, around 30°S\"}, {\"label\": \"Direction\", \"value\": \"Towards the equator, deflected to the left in the Southern Hemisphere: south-easterly\"}, {\"label\": \"Northern Hemisphere\", \"value\": \"Deflected to the right: north-easterly trade winds\"}, {\"label\": \"Where they meet\", \"value\": \"The ITCZ, near the equator\"}, {\"label\": \"Local example\", \"value\": \"The Cape Doctor is a south-easterly linked to this flow\"}]}"
+   }
+  },
+  {
+   "id": 1510,
+   "question": "What cloud sequence is typical when flying towards a warm front?",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"COLD FRONTS ARE STEEP AND FAST; WARM FRONTS ARE SHALLOW AND SLOW\",\"subline\":\"FRONTAL SLOPE DETERMINES THE CLOUD TYPE AND RAIN CHARACTER AT EACH\",\"blocks\":[{\"label\":\"Cold front\",\"value\":\"Steep slope, cumuliform cloud, heavy but short-duration rain\"},{\"label\":\"Warm front\",\"value\":\"Shallow slope, stratiform cloud, steady and longer-duration rain\"},{\"label\":\"Cold front mechanism\",\"value\":\"Cold air undercuts and lifts the warm air ahead of it\"},{\"label\":\"Warm front mechanism\",\"value\":\"Warm air rises gradually over the retreating cold air ahead of it\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"APPROACHING A WARM FRONT: CIRRUS, CIRROSTRATUS, ALTOSTRATUS, THEN NIMBOSTRATUS\", \"subline\": \"THE CLOUD LOWERS AND THICKENS AS THE SHALLOW FRONTAL SURFACE COMES DOWN TO MEET YOU\", \"blocks\": [{\"label\": \"First\", \"value\": \"Cirrus, often several hundred kilometres ahead of the front\"}, {\"label\": \"Then\", \"value\": \"Cirrostratus (a halo round the sun), then altostratus\"}, {\"label\": \"Near the front\", \"value\": \"Nimbostratus with steady rain and a lowering cloud base\"}, {\"label\": \"Cold front (contrast)\", \"value\": \"Steep slope: cumulus and cumulonimbus, short heavy showers\"}]}"
+   }
+  },
+  {
+   "id": 1517,
+   "question": "A trough of low pressure on a surface chart is generally an area of:",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"A TROUGH IS AN ELONGATED WEDGE OF LOW PRESSURE\",\"subline\":\"SHOWN ON A CHART AS A V-SHAPED KINK IN THE ISOBARS EXTENDING FROM A LOW\",\"blocks\":[{\"label\":\"High\",\"value\":\"A region of relatively high pressure with closed isobars\"},{\"label\":\"Low\",\"value\":\"A region of relatively low pressure with closed isobars\"},{\"label\":\"Ridge\",\"value\":\"An elongated extension of high pressure\"},{\"label\":\"Trough\",\"value\":\"An elongated wedge of low pressure between two areas of higher pressure\"},{\"label\":\"Col\",\"value\":\"A saddle-shaped area of relatively flat pressure between two highs and two lows\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A TROUGH IS AN AREA OF CONVERGENCE AND RISING AIR\", \"subline\": \"SO IT OFTEN BRINGS CLOUD, SHOWERS AND THUNDERSTORMS\", \"blocks\": [{\"label\": \"Trough\", \"value\": \"An elongated extension of low pressure: a V-shaped kink in the isobars\"}, {\"label\": \"Airflow\", \"value\": \"Air converges at the surface and is forced to rise\"}, {\"label\": \"Weather\", \"value\": \"Rising air cools, giving cloud and precipitation\"}, {\"label\": \"Ridge (contrast)\", \"value\": \"Divergence and sinking air, usually fair weather\"}]}"
+   }
+  },
+  {
+   "id": 1537,
+   "question": "Which type of icing is usually the most dangerous?",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"DROPLET SIZE AND FREEZING SPEED DETERMINE THE TYPE OF ICE\",\"subline\":\"LARGE DROPLETS FREEZING SLOWLY PRODUCE CLEAR ICE; SMALL DROPLETS FREEZING FAST PRODUCE RIME ICE\",\"blocks\":[{\"label\":\"Clear ice\",\"value\":\"Large supercooled droplets freeze slowly, spreading into a smooth, hard, transparent layer\"},{\"label\":\"Rime ice\",\"value\":\"Small supercooled droplets freeze almost instantly, trapping air into a rough, opaque, milky build-up\"},{\"label\":\"Mixed ice\",\"value\":\"A combination of clear and rime ice, often rough and irregular\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLEAR ICE IS USUALLY THE MOST DANGEROUS\", \"subline\": \"IT IS HEAVY, HARD TO SEE, HARD TO REMOVE AND SPREADS BACK OVER THE WING\", \"blocks\": [{\"label\": \"Clear ice\", \"value\": \"Large supercooled drops freeze slowly, flowing back into a smooth, hard, transparent layer\"}, {\"label\": \"Rime ice\", \"value\": \"Small drops freeze instantly: rough, milky and brittle — lighter and easier to remove\"}, {\"label\": \"Hoar frost\", \"value\": \"Deposited directly from water vapour; thin, but can still spoil lift on take-off\"}, {\"label\": \"Why clear ice is worst\", \"value\": \"It adds weight quickly and changes the shape of the wing\"}]}"
+   }
+  },
+  {
+   "id": 1540,
+   "question": "Which cloud is the most hazardous on a cross-country VFR flight?",
+   "is_hidden": false,
+   "why": "generic card shared with other questions; headline did not answer this question",
+   "before": {
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"CLOUDS ARE CLASSIFIED BY ALTITUDE BAND AND SHAPE\",\"subline\":\"HIGH, MIDDLE AND LOW CLOUD FAMILIES EACH HAVE STRATIFORM AND CUMULIFORM FORMS\",\"blocks\":[{\"label\":\"High clouds\",\"value\":\"Cirrus (Ci), Cirrostratus (Cs), Cirrocumulus (Cc)\"},{\"label\":\"Middle clouds\",\"value\":\"Altostratus (As), Altocumulus (Ac); Nimbostratus (Ns) can span low to middle levels\"},{\"label\":\"Low clouds\",\"value\":\"Stratus (St), Stratocumulus (Sc)\"},{\"label\":\"Vertical development\",\"value\":\"Cumulus (Cu) and cumulonimbus (Cb) build from low bases to great heights\"},{\"label\":\"Stratiform vs cumuliform\",\"value\":\"Stratiform is layered and flat; cumuliform is heaped and vertically developed\"}]}"
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CUMULONIMBUS IS THE MOST HAZARDOUS CLOUD ON A VFR FLIGHT\", \"subline\": \"STAY WELL CLEAR — DO NOT FLY UNDER, THROUGH OR CLOSE TO IT\", \"blocks\": [{\"label\": \"Turbulence\", \"value\": \"Severe up- and downdraughts in and around the cloud\"}, {\"label\": \"Icing and hail\", \"value\": \"Heavy icing, and hail even outside the cloud under the anvil\"}, {\"label\": \"Lightning and downbursts\", \"value\": \"Lightning strikes and downbursts that can be stronger than an aircraft's climb\"}, {\"label\": \"Visibility\", \"value\": \"Very heavy rain cuts visibility almost to nothing\"}]}"
+   }
+  }
+ ]
+}

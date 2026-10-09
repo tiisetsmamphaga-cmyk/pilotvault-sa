@@ -1,0 +1,1416 @@
+{
+ "date": "2026-10-08",
+ "subject": "flight-planning",
+ "batch": "b2",
+ "change": "Flight Planning to the explanation standard: phone-first pictures and a KEY FACT card per question.",
+ "rows": [
+  {
+   "id": 2241,
+   "question": "During the climb out after take-off an aircraft encounters a sudden increase in the headwind component. The aircraft:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/windshear-v1.webp",
+    "explanation_image_title": "Wind Shear",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE HEADWIND ON THE CLIMB-OUT: OVERSHOOT\", \"subline\": \"AIRSPEED AND LIFT RISE, THE AIRCRAFT GOES ABOVE ITS PATH\", \"blocks\": [{\"label\": \"Opposite\", \"value\": \"Less headwind or more tailwind: undershoot\"}]}"
+   }
+  },
+  {
+   "id": 2245,
+   "question": "The take-off distance available:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A DISPLACED THRESHOLD DOES NOT REDUCE TODA\", \"subline\": \"THE PAVEMENT BEFORE IT IS STILL USED FOR TAKE-OFF\", \"blocks\": [{\"label\": \"LDA\", \"value\": \"From the landing threshold to the end of the runway\"}]}"
+   }
+  },
+  {
+   "id": 2247,
+   "question": "With reference to Figure 1-22: Take-off distance, Pressure altitude 4000 ft, weight 2400 lb, temperature +15°C, the take-off distance required to clear 50 ft is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-22-takeoff-distance.webp",
+    "explanation_image_title": "Figure 1-22 — Distance to Clear 50 ft",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"+15°C IS HALFWAY BETWEEN THE +10°C AND +20°C COLUMNS\", \"subline\": \"PA 4000 FT, TOTAL TO CLEAR 50 FT: 2185 FT AT +10°C AND 2345 FT AT +20°C\", \"blocks\": [{\"label\": \"ROW\", \"value\": \"Pressure altitude 4000 ft\"}, {\"label\": \"COLUMN\", \"value\": \"TOTAL TO CLEAR 50 FT (not ground roll)\"}, {\"label\": \"CORRECTIONS\", \"value\": \"No wind or grass correction is given, so none applies\"}], \"formula\": \"(2185 + 2345) ÷ 2 = 2265 ft\"}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"2,265 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, PA 4,000 FT, MIDWAY +10°C TO +20°C\", \"blocks\": [{\"label\": \"Table\", \"value\": \"2,185 ft at +10°C; 2,345 ft at +20°C\"}, {\"label\": \"+15°C\", \"value\": \"(2,185 + 2,345) ÷ 2 = 2,265 ft\"}]}"
+   }
+  },
+  {
+   "id": 2248,
+   "question": "With reference to Figure 1-3, flaps up take-off ground roll, temperatures ISA+22°C, pressure altitude 3500 ft, weight 2500 lb, zero wind, the ground roll required is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 1,900 FT\", \"subline\": \"READ FIGURE 1-3 (FLAPS UP)\", \"blocks\": [{\"label\": \"Temperature\", \"value\": \"ISA at 3,500 ft is +8°C, so ISA +22 = +30°C\"}, {\"label\": \"Enter\", \"value\": \"+30°C, up to 3,500 ft, across to the reference line\"}, {\"label\": \"2,500 lb, no wind\", \"value\": \"Straight on to the scale\"}]}"
+   }
+  },
+  {
+   "id": 2250,
+   "question": "With reference to Figure 1-16: Glide range, cruising pressure altitude 10500 ft, terrain pressure altitude 1500 ft. The distance covered during the glide is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-16-glide-range.webp",
+    "explanation_image_title": "Figure 1-16 — Glide Range From Height Above Terrain",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ENTER WITH THE HEIGHT AVAILABLE, NOT THE CRUISING ALTITUDE\", \"subline\": \"10 500 FT − 1500 FT TERRAIN = 9000 FT OF HEIGHT → ABOUT 19 NM\", \"blocks\": [{\"label\": \"HEIGHT AVAILABLE\", \"value\": \"Cruising pressure altitude − terrain pressure altitude\"}, {\"label\": \"READ\", \"value\": \"Across from 9000 ft to the glide line, then down to the NM scale\"}, {\"label\": \"CONDITIONS\", \"value\": \"Power off, flaps 0°, 75 KIAS, 2500 lb, zero wind\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/glide-range-v1.webp",
+    "explanation_image_title": "Glide Range",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GLIDE RANGE ABOUT 19 NM\", \"subline\": \"HEIGHT = 10,500 − 1,500 = 9,000 FT\", \"blocks\": [{\"label\": \"Figure 1-16\", \"value\": \"Height above the terrain in, glide range out\"}]}"
+   }
+  },
+  {
+   "id": 2251,
+   "question": "Runway length 1550 m, displaced threshold 30 m. The take-off distance available(TODA) is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TODA 1,550 M\", \"subline\": \"THE DISPLACED THRESHOLD ONLY AFFECTS LANDING\", \"blocks\": [{\"label\": \"LDA\", \"value\": \"1,550 − 30 = 1,520 m\"}]}"
+   }
+  },
+  {
+   "id": 2253,
+   "question": "With reference to Figure 1-16:glide range, cruising pressure altitude 8500 ft, terrain elevation 4300 ft, QNH 1023 hPa. The distance covered during the glide is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/glide-range-v1.webp",
+    "explanation_image_title": "Glide Range",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GLIDE RANGE ABOUT 10 NM\", \"subline\": \"HEIGHT = 8,500 − 4,000 = 4,500 FT\", \"blocks\": [{\"label\": \"Terrain\", \"value\": \"4,300 + (1013 − 1023) × 30 = 4,000 ft pressure altitude\"}, {\"label\": \"Figure 1-16\", \"value\": \"Height above the terrain in, glide range out\"}]}"
+   }
+  },
+  {
+   "id": 2254,
+   "question": "The symbol Vfe is used to indicate the:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-asi-vfe-white-arc.webp",
+    "explanation_image_title": "VFE — Top of the White Arc",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE = MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"IT IS THE UPPER END OF THE WHITE ARC ON THE AIRSPEED INDICATOR\", \"blocks\": [{\"label\": \"WHITE ARC\", \"value\": \"Flap operating range: VS0 (bottom) to VFE (top)\"}, {\"label\": \"GREEN ARC\", \"value\": \"Normal operating range: VS1 to VNO\"}, {\"label\": \"YELLOW ARC / RED LINE\", \"value\": \"Caution range VNO to VNE; never exceed VNE\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/asi-arcs-v1.webp",
+    "explanation_image_title": "Airspeed Indicator Markings",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE: MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"TOP OF THE WHITE ARC\", \"blocks\": [{\"label\": \"Bottom of the white arc\", \"value\": \"VS0, stall with full flap\"}]}"
+   }
+  },
+  {
+   "id": 2255,
+   "question": "Runway 36 threshold 5125 ft. Runway 18 threshold 5180 ft, length 3800 ft. The percentage slope of runway 18 is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-runway-slope.webp",
+    "explanation_image_title": "Runway Slope",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SLOPE % = HEIGHT DIFFERENCE ÷ RUNWAY LENGTH × 100\", \"subline\": \"RUNWAY 18 RUNS FROM 5180 FT DOWN TO 5125 FT: 1.45% DOWN\", \"blocks\": [{\"label\": \"DIFFERENCE\", \"value\": \"5180 − 5125 = 55 ft\"}, {\"label\": \"SLOPE\", \"value\": \"55 ÷ 3800 × 100 = 1.45%\"}, {\"label\": \"DIRECTION\", \"value\": \"Runway 18 starts at the high end, so it slopes down\"}], \"formula\": \"55 ÷ 3800 × 100 = 1.45% down\"}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/runway-slope-v1.webp",
+    "explanation_image_title": "Runway Slope",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RUNWAY 18 SLOPES 1.45% DOWN\", \"subline\": \"5,180 FT AT ITS START, 5,125 FT AT ITS END\", \"blocks\": [{\"label\": \"Working\", \"value\": \"55 ÷ 3,800 × 100 = 1.45%\"}, {\"label\": \"Slope\", \"value\": \"Elevation difference ÷ runway length × 100, same units\"}]}"
+   }
+  },
+  {
+   "id": 2258,
+   "question": "The maximum speed at which an aeroplane may be flown under normal operating conditions is referred to as:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/asi-arcs-v1.webp",
+    "explanation_image_title": "Airspeed Indicator Markings",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VNO: MAXIMUM STRUCTURAL CRUISING SPEED\", \"subline\": \"TOP OF THE GREEN ARC\", \"blocks\": [{\"label\": \"Yellow arc\", \"value\": \"Smooth air only, with caution\"}, {\"label\": \"Red line\", \"value\": \"VNE, never exceed\"}]}"
+   }
+  },
+  {
+   "id": 2259,
+   "question": "During the climb out after take-off from a runway with a light tailwind, an aircraft encounters a sudden increase in the tailwind component. The aircraft:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/windshear-v1.webp",
+    "explanation_image_title": "Wind Shear",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE TAILWIND ON THE CLIMB-OUT: UNDERSHOOT\", \"subline\": \"AIRSPEED AND LIFT FALL, THE AIRCRAFT SINKS BELOW ITS PATH\", \"blocks\": [{\"label\": \"Same effect\", \"value\": \"A sudden loss of headwind\"}]}"
+   }
+  },
+  {
+   "id": 2263,
+   "question": "A loaded aircraft's CG is 89.0\" weight 2200 lb. A late passenger weighing 175 lb is seated in a rear seat(arm 116.6\"), 30 lb of baggage is loaded into the baggage compartment(arm 140.5\"), MAUW 2500 lb. The new CG is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-cg-late-passenger.webp",
+    "explanation_image_title": "New CG After Adding Load",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NEW CG = TOTAL MOMENT ÷ TOTAL WEIGHT\", \"subline\": \"220 420 LB·IN ÷ 2405 LB = 91.65 IN\", \"blocks\": [{\"label\": \"MOMENTS\", \"value\": \"Weight × arm for each item, then add\"}, {\"label\": \"TOTAL WEIGHT\", \"value\": \"2200 + 175 + 30 = 2405 lb (within MAUW 2500 lb)\"}, {\"label\": \"CG MOVES AFT\", \"value\": \"Both new items sit well behind the old CG\"}], \"formula\": \"CG = 220 420 ÷ 2405 = 91.65 in\"}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NEW CG 91.65 IN\", \"subline\": \"ADD THE MOMENTS, THEN DIVIDE\", \"blocks\": [{\"label\": \"Moments\", \"value\": \"195,800 + 20,405 + 4,215 = 220,420 lb-in\"}, {\"label\": \"Weight\", \"value\": \"2,200 + 175 + 30 = 2,405 lb (under 2,500)\"}, {\"label\": \"CG\", \"value\": \"220,420 ÷ 2,405 = 91.65 in\"}]}"
+   }
+  },
+  {
+   "id": 2264,
+   "question": "On final approach to land an aircraft encounters a sudden increase in the headwind component. The aircraft:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-windshear-headwind-increase.webp",
+    "explanation_image_title": "Wind Shear on Final — Sudden Headwind Increase",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SUDDEN HEADWIND INCREASE MAKES THE AIRCRAFT OVERSHOOT\", \"subline\": \"IAS AND LIFT JUMP, SO THE AIRCRAFT BALLOONS ABOVE THE GLIDE PATH\", \"blocks\": [{\"label\": \"HEADWIND ↑ (OR TAILWIND ↓)\", \"value\": \"IAS ↑ → lift ↑ → above the path → overshoot\"}, {\"label\": \"HEADWIND ↓ (OR TAILWIND ↑)\", \"value\": \"IAS ↓ → lift ↓ → below the path → undershoot\"}, {\"label\": \"RECOVERY\", \"value\": \"Smooth, positive corrections — don't chase the airspeed\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/windshear-v1.webp",
+    "explanation_image_title": "Wind Shear",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE HEADWIND ON FINAL: OVERSHOOT\", \"subline\": \"AIRSPEED AND LIFT RISE, THE AIRCRAFT GOES ABOVE THE GLIDE PATH\", \"blocks\": [{\"label\": \"Opposite\", \"value\": \"Less headwind or more tailwind: undershoot\"}]}"
+   }
+  },
+  {
+   "id": 2266,
+   "question": "With reference to Figure 1-24, weight 2400 lb, pressure altitude 2000 ft, temperature +35°C, dry grass runway and 4 kt tailwind. The landing distance to clear 50 ft is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,615 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-24, THEN GRASS AND TAILWIND\", \"blocks\": [{\"label\": \"2,000 ft, +35°C\", \"value\": \"Ground roll 605 ft; total 1,402.5 ft\"}, {\"label\": \"Grass\", \"value\": \"1,402.5 + 25% of 605 = 1,553.8 ft\"}, {\"label\": \"4 kt tailwind\", \"value\": \"+4%: 1,553.8 × 1.04 = 1,615 ft\"}]}"
+   }
+  },
+  {
+   "id": 2267,
+   "question": "Runway length 1150 m, stopway 30 m, displaced threshold 25 m. The landing distance available is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-lda-displaced-threshold.webp",
+    "explanation_image_title": "Landing Distance Available",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA STARTS AT THE DISPLACED THRESHOLD AND ENDS AT THE RUNWAY END\", \"subline\": \"1150 − 25 = 1125 M — THE STOPWAY IS NEVER PART OF THE LDA\", \"blocks\": [{\"label\": \"DISPLACED THRESHOLD\", \"value\": \"Usable for take-off, not for landing\"}, {\"label\": \"STOPWAY\", \"value\": \"Counts towards ASDA only (decelerating after a rejected take-off)\"}, {\"label\": \"LDA\", \"value\": \"Runway length − displaced portion\"}], \"formula\": \"LDA = 1150 − 25 = 1125 m\"}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA 1,125 M\", \"subline\": \"RUNWAY − DISPLACEMENT; THE STOPWAY IS NOT INCLUDED\", \"blocks\": [{\"label\": \"Working\", \"value\": \"1,150 − 25 = 1,125 m\"}]}"
+   }
+  },
+  {
+   "id": 2269,
+   "question": "With reference to Figure 1-5: 25° Flaps Take-off ground roll, OAT +25°C, pressure altitude 4500 ft, weight 2450 lb, 5 kt headwind. The ground roll required is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 1,350 FT\", \"subline\": \"READ FIGURE 1-5 (25° FLAPS)\", \"blocks\": [{\"label\": \"Enter\", \"value\": \"+25°C, 4,500 ft, across to the reference line\"}, {\"label\": \"Weight\", \"value\": \"Down to 2,450 lb\"}, {\"label\": \"Wind\", \"value\": \"Headwind lines out to 5 kt\"}]}"
+   }
+  },
+  {
+   "id": 2273,
+   "question": "The landing distance available is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A DISPLACED THRESHOLD DECREASES THE LDA\", \"subline\": \"LANDING STARTS AT THE THRESHOLD\", \"blocks\": [{\"label\": \"LDA\", \"value\": \"From the landing threshold to the end of the runway\"}]}"
+   }
+  },
+  {
+   "id": 2274,
+   "question": "With reference to Figure 1-16: Glide range, Cruising pressure altitude 9000 ft, terrain elevation 2620 ft. QNH 1017 hPa. The distance covered during the glide is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/glide-range-v1.webp",
+    "explanation_image_title": "Glide Range",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GLIDE RANGE ABOUT 14 NM\", \"subline\": \"HEIGHT = 9,000 − 2,500 = 6,500 FT\", \"blocks\": [{\"label\": \"Terrain\", \"value\": \"2,620 + (1013 − 1017) × 30 = 2,500 ft pressure altitude\"}, {\"label\": \"Figure 1-16\", \"value\": \"Height above the terrain in, glide range out\"}]}"
+   }
+  },
+  {
+   "id": 2276,
+   "question": "When approaching to land on a wet runway on which aquaplaning may occur:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/aquaplaning-v1.webp",
+    "explanation_image_title": "Aquaplaning",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LANDING DISTANCE INCREASES\", \"subline\": \"LESS TYRE CONTACT, POOR BRAKING\", \"blocks\": [{\"label\": \"Plan for\", \"value\": \"A longer landing roll\"}]}"
+   }
+  },
+  {
+   "id": 2277,
+   "question": "Runway 06 threshold 1450 ft, runway 24 threshold 1520 ft, length 1500m. The percentage slope of runway 24 is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/runway-slope-v1.webp",
+    "explanation_image_title": "Runway Slope",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RUNWAY 24 SLOPES 1.42% DOWN\", \"subline\": \"1,520 FT AT ITS START, 1,450 FT AT ITS END\", \"blocks\": [{\"label\": \"Length\", \"value\": \"1,500 m × 3.2808 = 4,921 ft\"}, {\"label\": \"Working\", \"value\": \"70 ÷ 4,921 × 100 = 1.42%\"}]}"
+   }
+  },
+  {
+   "id": 2278,
+   "question": "Runway length 1080m, displaced threshold 25m. The landing distance available is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA 1,055 M\", \"subline\": \"RUNWAY − DISPLACEMENT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"1,080 − 25 = 1,055 m\"}]}"
+   }
+  },
+  {
+   "id": 2281,
+   "question": "With reference to Figure 1-24 Landing Distance, weight 2400 lb, airfield elevation 4350 ft, QNH 1008 hPa, temperature +14°C, the landing ground roll is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 617 FT\", \"subline\": \"PRESSURE ALTITUDE FIRST, THEN FIGURE 1-24\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"4,350 + (1013 − 1008) × 30 = 4,500 ft\"}, {\"label\": \"4,500 ft\", \"value\": \"607.5 ft at +10°C; 630 ft at +20°C\"}, {\"label\": \"+14°C\", \"value\": \"607.5 + 0.4 × 22.5 = 617 ft\"}]}"
+   }
+  },
+  {
+   "id": 2285,
+   "question": "A factor which may increase the possibility of aquaplaning is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/aquaplaning-v1.webp",
+    "explanation_image_title": "Aquaplaning",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UNDER-INFLATED TYRES MAKE AQUAPLANING MORE LIKELY\", \"subline\": \"ALSO HIGH SPEED AND STANDING WATER\", \"blocks\": [{\"label\": \"Rule of thumb\", \"value\": \"Aquaplaning speed (kt) ≈ 9 × √tyre pressure (psi)\"}]}"
+   }
+  },
+  {
+   "id": 2287,
+   "question": "In order to avoid the wake turbulence when taking off behind a heavy aircraft which has just taken off, a lighter aircraft should:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/wake-turbulence-v1.webp",
+    "explanation_image_title": "Wake Turbulence",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LIFT OFF BEFORE THE HEAVY AIRCRAFT'S LIFT-OFF POINT\", \"subline\": \"ITS WAKE STARTS WHERE IT ROTATES\", \"blocks\": [{\"label\": \"Then\", \"value\": \"Climb above and upwind of its path\"}]}"
+   }
+  },
+  {
+   "id": 2288,
+   "question": "With reference to Figure 1-4: Flaps Up take-off performance, pressure altitude 5000 ft, OAT 26°C, zero wind, take-off distance over 50 ft barrier available 1850 ft. The maximum weight at which take-off can be made is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAXIMUM WEIGHT ABOUT 1,920 LB\", \"subline\": \"READ FIGURE 1-4 BACKWARDS\", \"blocks\": [{\"label\": \"Distance\", \"value\": \"1,850 ft, down to the zero-wind reference line\"}, {\"label\": \"Conditions\", \"value\": \"+26°C at 5,000 ft from the left\"}, {\"label\": \"Weight\", \"value\": \"Where the two meet: about 1,920 lb\"}]}"
+   }
+  },
+  {
+   "id": 2293,
+   "question": "With reference to Figure 1-4 flaps up take-off performance, airfield elevation 4090 ft, QNH 1016 hPa, OAT -2°C. Weight 2360 lb, zero wind. The take-off distance required over a 50 ft obstacle is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,700 FT OVER 50 FT\", \"subline\": \"READ FIGURE 1-4 (FLAPS UP)\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"4,090 + (1013 − 1016) × 30 = 4,000 ft\"}, {\"label\": \"Enter\", \"value\": \"−2°C, 4,000 ft, then 2,360 lb\"}, {\"label\": \"No wind\", \"value\": \"Straight up to the distance scale\"}]}"
+   }
+  },
+  {
+   "id": 2295,
+   "question": "A loaded aircraft's CG is 89.7\", weight 2500 lb. During flight the aircraft will burn off 208 lb of fuel(arm 93.0\"). The landing CG is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LANDING CG 89.4 IN\", \"subline\": \"TAKE AWAY THE FUEL'S MOMENT\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"224,250 − 208 × 93 = 204,906 lb-in\"}, {\"label\": \"Weight\", \"value\": \"2,500 − 208 = 2,292 lb\"}, {\"label\": \"CG\", \"value\": \"204,906 ÷ 2,292 = 89.4 in\"}]}"
+   }
+  },
+  {
+   "id": 2297,
+   "question": "A clearway may:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/declared-distances-v1.webp",
+    "explanation_image_title": "Declared Distances",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CLEARWAY MAY INCLUDE A STOPWAY\", \"subline\": \"CLEARWAY: THE AIRBORNE CLIMB; STOPWAY: A REJECTED TAKE-OFF\", \"blocks\": [{\"label\": \"TODA\", \"value\": \"TORA + clearway\"}, {\"label\": \"ASDA\", \"value\": \"TORA + stopway\"}]}"
+   }
+  },
+  {
+   "id": 2298,
+   "question": "Take-off run available (TORA) is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/declared-distances-v1.webp",
+    "explanation_image_title": "Declared Distances",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TORA: THE RUNWAY DECLARED FOR THE GROUND RUN\", \"subline\": \"NO STOPWAY OR CLEARWAY\", \"blocks\": [{\"label\": \"ASDA\", \"value\": \"TORA + stopway\"}, {\"label\": \"TODA\", \"value\": \"TORA + clearway\"}]}"
+   }
+  },
+  {
+   "id": 2299,
+   "question": "Aeroplane empty weight is 1380 lb at a CG of 84.5 in. Pilot and front passenger weigh 310 lb at an arm of 77.8 in, fuel weighs 275 lb at an arm of 94 in, and an aft passenger weighs 80 lb at an arm of 116.5 in. With no baggage, the loaded CG is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOADED CG 86.01 IN\", \"subline\": \"ADD THE MOMENTS, THEN DIVIDE\", \"blocks\": [{\"label\": \"Moments\", \"value\": \"116,610 + 24,118 + 25,850 + 9,320 = 175,898 lb-in\"}, {\"label\": \"Weight\", \"value\": \"1,380 + 310 + 275 + 80 = 2,045 lb\"}, {\"label\": \"CG\", \"value\": \"175,898 ÷ 2,045 = 86.01 in\"}]}"
+   }
+  },
+  {
+   "id": 2300,
+   "question": "Aquaplaning is more likely to occur on a wet runway at:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-aquaplaning.webp",
+    "explanation_image_title": "Aquaplaning and Groundspeed",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AQUAPLANING IS MORE LIKELY AT HIGH GROUNDSPEED\", \"subline\": \"THE TYRE CAN'T PUSH THE WATER AWAY FAST ENOUGH AND RIDES ON A FILM\", \"blocks\": [{\"label\": \"RISK UP WITH\", \"value\": \"Speed, standing water, worn tread, low tyre pressure\"}, {\"label\": \"EFFECT\", \"value\": \"Braking and steering are lost while the tyre is off the surface\"}, {\"label\": \"RULE OF THUMB\", \"value\": \"Aquaplaning speed (kt) ≈ 9 × √tyre pressure (psi)\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/aquaplaning-v1.webp",
+    "explanation_image_title": "Aquaplaning",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AQUAPLANING IS MORE LIKELY AT HIGH GROUNDSPEED\", \"subline\": \"THE TYRE CANNOT PUSH THE WATER AWAY IN TIME\", \"blocks\": [{\"label\": \"Also\", \"value\": \"Standing water, low tyre pressure, worn tread\"}]}"
+   }
+  },
+  {
+   "id": 2301,
+   "question": "With reference to Figure 1-18: Landing ground roll, pressure altitude 3500 ft, OAT +25°C, weight 2300 lb, zero wind. The landing ground roll is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 750 FT\", \"subline\": \"READ FIGURE 1-18\", \"blocks\": [{\"label\": \"Enter\", \"value\": \"+25°C, 3,500 ft, across to the reference line\"}, {\"label\": \"Weight\", \"value\": \"Down to 2,300 lb\"}, {\"label\": \"No wind\", \"value\": \"Straight up to the scale\"}]}"
+   }
+  },
+  {
+   "id": 2303,
+   "question": "A loaded aircraft's CG is 88.7\", weight 2350 lb. During the flight, the aircraft will burn off 175 lb of fuel(arm 93.0\"). the landing CG is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LANDING CG 88.35 IN\", \"subline\": \"TAKE AWAY THE FUEL'S MOMENT\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"208,445 − 175 × 93 = 192,170 lb-in\"}, {\"label\": \"Weight\", \"value\": \"2,350 − 175 = 2,175 lb\"}, {\"label\": \"CG\", \"value\": \"192,170 ÷ 2,175 = 88.35 in\"}]}"
+   }
+  },
+  {
+   "id": 2304,
+   "question": "With reference to Figure 1-16: Glide range, Cruising pressure altitude 9500 ft, terrain pressure altitude 3500 ft. The distance covered during the glide is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/glide-range-v1.webp",
+    "explanation_image_title": "Glide Range",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GLIDE RANGE ABOUT 13 NM\", \"subline\": \"HEIGHT = 9,500 − 3,500 = 6,000 FT\", \"blocks\": [{\"label\": \"Figure 1-16\", \"value\": \"Height above the terrain in, glide range out\"}]}"
+   }
+  },
+  {
+   "id": 2306,
+   "question": "With reference to Figure 1-5: 25° flaps take-off ground roll, OAT -2°C, airfield elevation 3450 ft, QNH 1008 hPa, weight 2350 lb, 3 kt tailwind, the ground roll required is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 950 FT\", \"subline\": \"READ FIGURE 1-5 (25° FLAPS)\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"3,450 + (1013 − 1008) × 30 = 3,600 ft\"}, {\"label\": \"Enter\", \"value\": \"−2°C, 3,600 ft, then 2,350 lb\"}, {\"label\": \"Wind\", \"value\": \"Tailwind lines out to 3 kt\"}]}"
+   }
+  },
+  {
+   "id": 2307,
+   "question": "On final approach to land an aircraft encounters a sudden increase in the tailwind component. The aircraft will:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/windshear-v1.webp",
+    "explanation_image_title": "Wind Shear",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE TAILWIND ON FINAL: UNDERSHOOT\", \"subline\": \"AIRSPEED AND LIFT FALL, THE AIRCRAFT SINKS BELOW THE GLIDE PATH\", \"blocks\": [{\"label\": \"Same effect\", \"value\": \"A sudden loss of headwind\"}]}"
+   }
+  },
+  {
+   "id": 2313,
+   "question": "With reference to Figure 1-24, weight 2400 lb, pressure altitude 2500 ft, temperature +20°C, dry grass runway and 5 kt headwind. The landing ground roll is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 695 FT\", \"subline\": \"FIGURE 1-24, THEN GRASS AND HEADWIND\", \"blocks\": [{\"label\": \"2,500 ft, +20°C\", \"value\": \"(575 + 595) ÷ 2 = 585 ft\"}, {\"label\": \"Grass\", \"value\": \"585 × 1.25 = 731 ft\"}, {\"label\": \"5 kt headwind\", \"value\": \"−5%: 731 × 0.95 = 695 ft\"}]}"
+   }
+  },
+  {
+   "id": 2314,
+   "question": "Runway length 1020m, stopway 30m. The landing distance available is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA 1,020 M\", \"subline\": \"A STOPWAY IS NEVER PART OF THE LDA\", \"blocks\": [{\"label\": \"Stopway\", \"value\": \"Adds to ASDA only\"}]}"
+   }
+  },
+  {
+   "id": 2315,
+   "question": "With reference to Figure 1-17: Landing performance, airfield elevation 940 ft, QNH 1011 hPa, OAT +26°C, weight 2150 lb, 7 kt headwind. The landing distance over a 50 ft barrier is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,100 FT OVER 50 FT\", \"subline\": \"READ FIGURE 1-17\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"940 + (1013 − 1011) × 30 = 1,000 ft\"}, {\"label\": \"Enter\", \"value\": \"+26°C, 1,000 ft, then 2,150 lb\"}, {\"label\": \"Wind\", \"value\": \"Headwind lines out to 7 kt\"}]}"
+   }
+  },
+  {
+   "id": 2317,
+   "question": "With reference to Figure 1-22: Take-off Distance, Pressure altitude 3500 ft, weight 2400 lb, temperature +20°C, the take-off distance required to clear 50 ft is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"2,235 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, +20°C, MIDWAY PA 3,000 TO 4,000 FT\", \"blocks\": [{\"label\": \"Table\", \"value\": \"2,125 ft at 3,000 ft; 2,345 ft at 4,000 ft\"}, {\"label\": \"3,500 ft\", \"value\": \"(2,125 + 2,345) ÷ 2 = 2,235 ft\"}]}"
+   }
+  },
+  {
+   "id": 2319,
+   "question": "Runway 16 threshold elevation 2400 ft, runway 34 threshold elevation 2350 ft, length 1350m. The % slope of runway 16 is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/runway-slope-v1.webp",
+    "explanation_image_title": "Runway Slope",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RUNWAY 16 SLOPES 1.13% DOWN\", \"subline\": \"2,400 FT AT ITS START, 2,350 FT AT ITS END\", \"blocks\": [{\"label\": \"Length\", \"value\": \"1,350 m × 3.2808 = 4,429 ft\"}, {\"label\": \"Working\", \"value\": \"50 ÷ 4,429 × 100 = 1.13%\"}]}"
+   }
+  },
+  {
+   "id": 2320,
+   "question": "With reference to Figure 1-22: Take-off distance, pressure altitude 3500 ft, weight 2400 lb, temperature +20°C, 4 kt tailwind. The take-off ground roll is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-22-ground-roll-tailwind.webp",
+    "explanation_image_title": "Figure 1-22 — Ground Roll With a Tailwind",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"INTERPOLATE FIRST, THEN APPLY THE WIND NOTE\", \"subline\": \"TAILWIND: +10% FOR EACH 2 KT, SO 4 KT ADDS 20%\", \"blocks\": [{\"label\": \"ROW\", \"value\": \"PA 3500 ft is halfway between 3000 ft and 4000 ft\"}, {\"label\": \"GROUND ROLL AT +20°C\", \"value\": \"(1190 + 1310) ÷ 2 = 1250 ft\"}, {\"label\": \"TAILWIND 4 KT\", \"value\": \"1250 × 1.20 = 1500 ft\"}], \"formula\": \"1250 × 1.20 = 1500 ft\"}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL 1,500 FT\", \"subline\": \"FIGURE 1-22, THEN THE TAILWIND NOTE\", \"blocks\": [{\"label\": \"3,500 ft, +20°C\", \"value\": \"(1,190 + 1,310) ÷ 2 = 1,250 ft\"}, {\"label\": \"4 kt tailwind\", \"value\": \"+20%: 1,250 × 1.2 = 1,500 ft\"}]}"
+   }
+  },
+  {
+   "id": 2326,
+   "question": "With reference to Figure 1-6: 25° Flaps take-off performance, airfield elevation 4880 ft, QNH 1009 hPa, temperature -5°C, weight 2260 lb, 4 kt tailwind. The take-off distance required over a 50 ft obstacle is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,900 FT OVER 50 FT\", \"subline\": \"READ FIGURE 1-6 (25° FLAPS)\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"4,880 + (1013 − 1009) × 30 = 5,000 ft\"}, {\"label\": \"Enter\", \"value\": \"−5°C, 5,000 ft, then 2,260 lb\"}, {\"label\": \"Wind\", \"value\": \"Tailwind lines out to 4 kt\"}]}"
+   }
+  },
+  {
+   "id": 2328,
+   "question": "During a climb out after take-off, an aircraft encounters a sudden decrease in headwind component. The aircraft will:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/windshear-v1.webp",
+    "explanation_image_title": "Wind Shear",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LESS HEADWIND ON THE CLIMB-OUT: UNDERSHOOT\", \"subline\": \"AIRSPEED AND LIFT FALL, THE AIRCRAFT SINKS BELOW ITS PATH\", \"blocks\": [{\"label\": \"Same effect\", \"value\": \"A sudden increase in tailwind\"}]}"
+   }
+  },
+  {
+   "id": 2330,
+   "question": "With reference to Figure 1-22: Take-off distance, pressure altitude 3000 ft, weight 2400 lb, temperature +10°C, dry, grass runway, 2 kt tailwind. The take-off distance required to clear 50 ft is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"2,306 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, THEN GRASS AND TAILWIND\", \"blocks\": [{\"label\": \"3,000 ft, +10°C\", \"value\": \"Ground roll 1,110 ft; total 1,985 ft\"}, {\"label\": \"Grass\", \"value\": \"1,985 + 111 = 2,096 ft\"}, {\"label\": \"2 kt tailwind\", \"value\": \"+10%: 2,096 × 1.1 = 2,306 ft\"}]}"
+   }
+  },
+  {
+   "id": 2331,
+   "question": "A loaded aircraft CG is 89.2\" weight 2470 lb. During flight the aircraft burns off 173 lb of fuel (arm 93.0\"). The landing CG will have:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE CG MOVES FORWARD\", \"subline\": \"FUEL BURNT BEHIND THE CG (93 IN > 89.2 IN)\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"220,324 − 173 × 93 = 204,235 lb-in\"}, {\"label\": \"CG\", \"value\": \"204,235 ÷ 2,297 = 88.91 in, forward of 89.2\"}]}"
+   }
+  },
+  {
+   "id": 2333,
+   "question": "The presence of permanently displaced threshold:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A DISPLACED THRESHOLD REDUCES THE LDA\", \"subline\": \"LANDING STARTS AT THE THRESHOLD\", \"blocks\": [{\"label\": \"LDA\", \"value\": \"From the landing threshold to the end of the runway\"}]}"
+   }
+  },
+  {
+   "id": 2336,
+   "question": "With reference to Figure 1-5: 25° flaps take-off ground roll, OAT +4°C, airfield elevation 1910 ft, QNH 1010 hPa, weight 2440 lb, zero wind. The ground roll required is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 650 FT\", \"subline\": \"READ FIGURE 1-5 (25° FLAPS)\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"1,910 + (1013 − 1010) × 30 = 2,000 ft\"}, {\"label\": \"Enter\", \"value\": \"+4°C, 2,000 ft, then 2,440 lb\"}, {\"label\": \"No wind\", \"value\": \"Straight up to the ground-roll scale\"}]}"
+   }
+  },
+  {
+   "id": 2339,
+   "question": "With reference to Figure 1-5: 25° flaps take-off ground roll, pressure altitude 4000 ft, 2500 lb, zero wind, ground roll length available 1500 ft. The maximum temperature for this take-off is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAXIMUM TEMPERATURE ABOUT +27°C\", \"subline\": \"READ FIGURE 1-5 BACKWARDS\", \"blocks\": [{\"label\": \"Ground roll\", \"value\": \"1,500 ft, down to the zero-wind reference line\"}, {\"label\": \"2,500 lb\", \"value\": \"Across to the 4,000 ft line\"}, {\"label\": \"Temperature\", \"value\": \"Down to the scale: about +27°C\"}]}"
+   }
+  },
+  {
+   "id": 2340,
+   "question": "A loaded aircraft's CG is 89.4\", weight 2252 lb. A late passenger, weighing 180 lb is seated in a rear seat (arm 116.6\"). MAUW 2500 lb. The new CG is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NEW CG 91.4 IN\", \"subline\": \"ADD THE PASSENGER'S MOMENT\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"201,328.8 + 180 × 116.6 = 222,316.8 lb-in\"}, {\"label\": \"Weight\", \"value\": \"2,252 + 180 = 2,432 lb\"}, {\"label\": \"CG\", \"value\": \"222,316.8 ÷ 2,432 = 91.4 in\"}]}"
+   }
+  },
+  {
+   "id": 2342,
+   "question": "The symbol Vx indicates:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-vx-vs-vy.webp",
+    "explanation_image_title": "VX vs VY",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VX = BEST ANGLE OF CLIMB; VY = BEST RATE OF CLIMB\", \"subline\": \"VX GIVES THE MOST HEIGHT PER DISTANCE; VY THE MOST HEIGHT PER MINUTE\", \"blocks\": [{\"label\": \"VX\", \"value\": \"Use to clear an obstacle close to the runway\"}, {\"label\": \"VY\", \"value\": \"Use for the normal climb to cruising altitude\"}, {\"label\": \"SPEEDS\", \"value\": \"VX is lower than VY\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/vx-vy-v1.webp",
+    "explanation_image_title": "VX and VY",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VX: BEST ANGLE OF CLIMB\", \"subline\": \"MOST HEIGHT FOR THE DISTANCE: CLEARS OBSTACLES\", \"blocks\": [{\"label\": \"VY\", \"value\": \"Best rate: most height per minute\"}]}"
+   }
+  },
+  {
+   "id": 2349,
+   "question": "The symbol Vy indicates:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/vx-vy-v1.webp",
+    "explanation_image_title": "VX and VY",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VY: BEST RATE OF CLIMB\", \"subline\": \"MOST HEIGHT PER MINUTE\", \"blocks\": [{\"label\": \"VX\", \"value\": \"Best angle: most height for the distance\"}]}"
+   }
+  },
+  {
+   "id": 2350,
+   "question": "Runway length is 1480 m with a displaced threshold of 52 m. What is the landing distance available?",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA 1,428 M\", \"subline\": \"RUNWAY − DISPLACEMENT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"1,480 − 52 = 1,428 m\"}]}"
+   }
+  },
+  {
+   "id": 2352,
+   "question": "With reference to Figure 1-6, pressure altitude 3500 ft, standard temperature, weight 2500 lb and 3 kt tailwind. The take-off distance over a 50 ft obstacle is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 2,275 FT OVER 50 FT\", \"subline\": \"READ FIGURE 1-6 (25° FLAPS)\", \"blocks\": [{\"label\": \"Temperature\", \"value\": \"ISA at 3,500 ft is +8°C\"}, {\"label\": \"Enter\", \"value\": \"+8°C, 3,500 ft, 2,500 lb\"}, {\"label\": \"Wind\", \"value\": \"Tailwind lines out to 3 kt\"}]}"
+   }
+  },
+  {
+   "id": 2355,
+   "question": "In mass and balance calculations, moment is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-moment-weight-arm.webp",
+    "explanation_image_title": "Moment = Weight × Arm",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOMENT = WEIGHT × ARM\", \"subline\": \"THE TURNING EFFECT OF A WEIGHT ABOUT THE DATUM\", \"blocks\": [{\"label\": \"ARM\", \"value\": \"Distance from the datum to the item's CG (inches)\"}, {\"label\": \"MOMENT\", \"value\": \"Weight × arm (lb·in)\"}, {\"label\": \"CG\", \"value\": \"Total moment ÷ total weight\"}], \"formula\": \"CG = Σ moments ÷ Σ weights\"}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOMENT = WEIGHT × ARM\", \"subline\": \"THE TURNING EFFECT ABOUT THE DATUM\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"Weight × arm; CG = total moment ÷ total weight\"}]}"
+   }
+  },
+  {
+   "id": 2356,
+   "question": "With reference to Figure 1-18, airfield elevation 2800 ft, QNH 1023 hPa, OAT +10°C, weight 2250 lb and zero wind. The landing ground roll is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 675 FT\", \"subline\": \"READ FIGURE 1-18\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"2,800 + (1013 − 1023) × 30 = 2,500 ft\"}, {\"label\": \"Enter\", \"value\": \"+10°C, 2,500 ft, then 2,250 lb\"}, {\"label\": \"No wind\", \"value\": \"Straight up to the scale\"}]}"
+   }
+  },
+  {
+   "id": 2358,
+   "question": "With reference to Figure 1-22, airfield elevation 3650 ft, QNH 1018 hPa, weight 2400 lb and temperature +15°C. The take-off distance to clear 50 ft is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"2,160 FT TO CLEAR 50 FT\", \"subline\": \"PRESSURE ALTITUDE FIRST, THEN FIGURE 1-22\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"3,650 + (1013 − 1018) × 30 = 3,500 ft\"}, {\"label\": \"3,500 ft\", \"value\": \"2,085 ft at +10°C; 2,235 ft at +20°C\"}, {\"label\": \"+15°C\", \"value\": \"(2,085 + 2,235) ÷ 2 = 2,160 ft\"}]}"
+   }
+  },
+  {
+   "id": 2360,
+   "question": "With reference to Figure 1-16, cruising pressure altitude 11500 ft, terrain elevation 440 ft and QNH 1011 hPa. The glide distance is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/glide-range-v1.webp",
+    "explanation_image_title": "Glide Range",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GLIDE RANGE ABOUT 22.5 NM\", \"subline\": \"HEIGHT = 11,500 − 500 = 11,000 FT\", \"blocks\": [{\"label\": \"Terrain\", \"value\": \"440 + (1013 − 1011) × 30 = 500 ft pressure altitude\"}, {\"label\": \"Figure 1-16\", \"value\": \"Height above the terrain in, glide range out\"}]}"
+   }
+  },
+  {
+   "id": 2361,
+   "question": "With regard to windshear on final approach, a sudden decrease in the headwind component will initially cause the aircraft to:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/windshear-v1.webp",
+    "explanation_image_title": "Wind Shear",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LESS HEADWIND ON FINAL: UNDERSHOOT\", \"subline\": \"AIRSPEED AND LIFT FALL, THE AIRCRAFT SINKS BELOW THE GLIDE PATH\", \"blocks\": [{\"label\": \"Same effect\", \"value\": \"A sudden increase in tailwind\"}]}"
+   }
+  },
+  {
+   "id": 2362,
+   "question": "To avoid wake turbulence while following a heavy aircraft on approach, a lighter aircraft should:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/wake-turbulence-v1.webp",
+    "explanation_image_title": "Wake Turbulence",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STAY ABOVE THE HEAVY AIRCRAFT'S FLIGHT PATH\", \"subline\": \"ITS VORTICES SINK BEHIND AND BELOW IT\", \"blocks\": [{\"label\": \"Landing\", \"value\": \"Touch down beyond its touchdown point\"}]}"
+   }
+  },
+  {
+   "id": 2363,
+   "question": "When landing behind a heavy aircraft that has just landed, a lighter aircraft should:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-wake-landing-behind-heavy.webp",
+    "explanation_image_title": "Landing Behind a Heavy Aircraft",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOUCH DOWN BEYOND THE HEAVY AIRCRAFT'S TOUCHDOWN POINT\", \"subline\": \"WAKE VORTICES STOP ONCE THE HEAVY AIRCRAFT'S WEIGHT IS ON THE RUNWAY\", \"blocks\": [{\"label\": \"APPROACH\", \"value\": \"Stay at or above the heavy aircraft's flight path\"}, {\"label\": \"TOUCHDOWN\", \"value\": \"Land beyond the point where it touched down\"}, {\"label\": \"VORTICES\", \"value\": \"Sink below the path and drift with the wind\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/wake-turbulence-v1.webp",
+    "explanation_image_title": "Wake Turbulence",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOUCH DOWN BEYOND THE HEAVY AIRCRAFT'S TOUCHDOWN POINT\", \"subline\": \"ITS WAKE ENDS WHERE IT TOUCHED DOWN\", \"blocks\": [{\"label\": \"On the approach\", \"value\": \"Stay above its flight path\"}]}"
+   }
+  },
+  {
+   "id": 2364,
+   "question": "When landing behind a heavy aircraft that has just taken off, the lighter aircraft should:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/wake-turbulence-v1.webp",
+    "explanation_image_title": "Wake Turbulence",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOUCH DOWN BEFORE THE HEAVY AIRCRAFT'S LIFT-OFF POINT\", \"subline\": \"ITS WAKE STARTS WHERE IT LIFTED OFF\", \"blocks\": [{\"label\": \"Taking off behind it\", \"value\": \"Lift off before that point too\"}]}"
+   }
+  },
+  {
+   "id": 2365,
+   "question": "The speed VNE is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/asi-arcs-v1.webp",
+    "explanation_image_title": "Airspeed Indicator Markings",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VNE: NEVER EXCEED, IN ANY OPERATION\", \"subline\": \"THE RED LINE ON THE AIRSPEED INDICATOR\", \"blocks\": [{\"label\": \"Below it\", \"value\": \"The yellow caution arc\"}]}"
+   }
+  },
+  {
+   "id": 2366,
+   "question": "A runway has a threshold permanently displaced by 50 metres. For take-off in that direction, the pilot may normally:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAKE OFF FROM THE START OF THE RUNWAY\", \"subline\": \"IF THE PAVEMENT IS MARKED AND SUITABLE\", \"blocks\": [{\"label\": \"The displacement\", \"value\": \"Is not used for landing in that direction\"}]}"
+   }
+  },
+  {
+   "id": 2367,
+   "question": "When landing on a wet runway where aquaplaning may occur, the recommended touchdown technique is to:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/aquaplaning-v1.webp",
+    "explanation_image_title": "Aquaplaning",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAKE A FIRM, POSITIVE TOUCHDOWN\", \"subline\": \"SO THE TYRES BREAK THROUGH THE WATER\", \"blocks\": [{\"label\": \"Avoid\", \"value\": \"Floating and bouncing\"}]}"
+   }
+  },
+  {
+   "id": 2368,
+   "question": "In mass and balance calculations, weight is equal to:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"WEIGHT = MOMENT ÷ ARM\", \"subline\": \"REARRANGE MOMENT = WEIGHT × ARM\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"Weight × arm; CG = total moment ÷ total weight\"}]}"
+   }
+  },
+  {
+   "id": 2369,
+   "question": "In mass and balance calculations, arm is equal to:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ARM = MOMENT ÷ WEIGHT\", \"subline\": \"REARRANGE MOMENT = WEIGHT × ARM\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"Weight × arm; CG = total moment ÷ total weight\"}]}"
+   }
+  },
+  {
+   "id": 2380,
+   "question": "With reference to Figure 1-17: Landing Performance, pressure altitude 5000 ft, OAT +32°C, weight 2500 lb and 13 kt headwind. The landing distance over a 50 ft obstacle is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,290 FT OVER 50 FT\", \"subline\": \"READ FIGURE 1-17\", \"blocks\": [{\"label\": \"Enter\", \"value\": \"+32°C, 5,000 ft, across the reference lines (2,500 lb)\"}, {\"label\": \"Wind\", \"value\": \"Headwind lines out to 13 kt\"}]}"
+   }
+  },
+  {
+   "id": 2381,
+   "question": "With reference to Figure 1-22, pressure altitude 5000 ft, weight 2400 lb, temperature +15°C, dry grass runway and 10 kt headwind. The required ground roll is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 1,223 FT\", \"subline\": \"FIGURE 1-22, THEN GRASS AND HEADWIND\", \"blocks\": [{\"label\": \"5,000 ft, +15°C\", \"value\": \"(1,340 + 1,440) ÷ 2 = 1,390 ft\"}, {\"label\": \"Grass\", \"value\": \"1,390 × 1.1 = 1,529 ft\"}, {\"label\": \"10 kt headwind\", \"value\": \"−20%: 1,529 × 0.8 = 1,223 ft\"}]}"
+   }
+  },
+  {
+   "id": 2382,
+   "question": "With reference to Figure 1-22, pressure altitude 5000 ft, weight 2400 lb, temperature +30°C, dry grass runway and 5 kt headwind. The take-off distance required to clear 50 ft is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 2,650 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, THEN GRASS AND HEADWIND\", \"blocks\": [{\"label\": \"5,000 ft, +30°C\", \"value\": \"Ground roll 1,550 ft; total 2,790 ft\"}, {\"label\": \"Grass\", \"value\": \"2,790 + 155 = 2,945 ft\"}, {\"label\": \"5 kt headwind\", \"value\": \"−10%: 2,945 × 0.9 = 2,650 ft\"}]}"
+   }
+  },
+  {
+   "id": 2383,
+   "question": "With reference to Figure 1-22, pressure altitude 4500 ft, weight 2400 lb, temperature +10°C, dry grass runway and zero wind. The take-off distance required to clear 50 ft is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"2,428 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, THEN THE GRASS NOTE\", \"blocks\": [{\"label\": \"4,500 ft, +10°C\", \"value\": \"Ground roll 1,280 ft; total 2,300 ft\"}, {\"label\": \"Grass\", \"value\": \"2,300 + 10% of 1,280 = 2,428 ft\"}]}"
+   }
+  },
+  {
+   "id": 2384,
+   "question": "With reference to Figure 1-22, pressure altitude 1000 ft, weight 2400 lb, temperature +10°C and 5 kt headwind. The take-off distance required to clear 50 ft is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,490 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, THEN THE HEADWIND NOTE\", \"blocks\": [{\"label\": \"1,000 ft, +10°C\", \"value\": \"1,655 ft\"}, {\"label\": \"5 kt headwind\", \"value\": \"−10%: 1,655 × 0.9 = 1,490 ft\"}]}"
+   }
+  },
+  {
+   "id": 2385,
+   "question": "With reference to Figure 1-22, pressure altitude 500 ft, weight 2400 lb and temperature +10°C. The required ground roll is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 885 FT\", \"subline\": \"FIGURE 1-22, +10°C, MIDWAY SEA LEVEL TO 1,000 FT\", \"blocks\": [{\"label\": \"Table\", \"value\": \"845 ft at sea level; 925 ft at 1,000 ft\"}, {\"label\": \"500 ft\", \"value\": \"(845 + 925) ÷ 2 = 885 ft\"}]}"
+   }
+  },
+  {
+   "id": 2389,
+   "question": "With reference to Figure 1-24, weight 2400 lb, aerodrome elevation 2650 ft, QNH 1018 hPa and temperature +24°C. The landing distance required to clear 50 ft is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/flight-planning/trial-v1/fp-fig-1-24-landing-distance.webp",
+    "explanation_image_title": "Figure 1-24 — Landing Distance in Two Steps",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONVERT TO PRESSURE ALTITUDE, THEN INTERPOLATE ALTITUDE AND TEMPERATURE\", \"subline\": \"PA = 2650 + (1013 − 1018) × 30 = 2500 FT\", \"blocks\": [{\"label\": \"PA 2500 FT\", \"value\": \"Halfway row: 1367.5 ft at +20°C and 1402.5 ft at +30°C\"}, {\"label\": \"+24°C\", \"value\": \"0.4 of the way from +20°C to +30°C\"}, {\"label\": \"RESULT\", \"value\": \"1367.5 + 0.4 × 35 = 1381.5 ≈ 1382 ft\"}], \"formula\": \"1367.5 + 0.4 × 35 ≈ 1382 ft\"}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/landing-distance-v1.webp",
+    "explanation_image_title": "Landing Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,382 FT TO CLEAR 50 FT\", \"subline\": \"PRESSURE ALTITUDE FIRST, THEN FIGURE 1-24\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"2,650 + (1013 − 1018) × 30 = 2,500 ft\"}, {\"label\": \"2,500 ft\", \"value\": \"1,367.5 ft at +20°C; 1,402.5 ft at +30°C\"}, {\"label\": \"+24°C\", \"value\": \"1,367.5 + 0.4 × 35 = 1,382 ft\"}]}"
+   }
+  },
+  {
+   "id": 2390,
+   "question": "The speed that provides the greatest gain in altitude over the shortest horizontal distance is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/vx-vy-v1.webp",
+    "explanation_image_title": "VX and VY",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VX GIVES THE MOST HEIGHT FOR THE DISTANCE\", \"subline\": \"BEST ANGLE OF CLIMB: USE IT TO CLEAR OBSTACLES\", \"blocks\": [{\"label\": \"VY\", \"value\": \"Best rate: most height per minute\"}]}"
+   }
+  },
+  {
+   "id": 2391,
+   "question": "A stopway is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/declared-distances-v1.webp",
+    "explanation_image_title": "Declared Distances",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STOPWAY: PREPARED AREA FOR STOPPING AFTER A REJECTED TAKE-OFF\", \"subline\": \"BEYOND THE TAKE-OFF RUN\", \"blocks\": [{\"label\": \"ASDA\", \"value\": \"TORA + stopway\"}, {\"label\": \"LDA\", \"value\": \"Never includes the stopway\"}]}"
+   }
+  },
+  {
+   "id": 2393,
+   "question": "With reference to Figure 1-3: Flaps Up Take-off Ground Roll, OAT +20°C, pressure altitude 5000 ft, weight 2400 lb and 10 kt headwind. The ground roll required is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 1,475 FT\", \"subline\": \"READ FIGURE 1-3 (FLAPS UP)\", \"blocks\": [{\"label\": \"Enter\", \"value\": \"+20°C, up to 5,000 ft, across to the reference line\"}, {\"label\": \"Weight\", \"value\": \"Follow the lines down to 2,400 lb\"}, {\"label\": \"Wind\", \"value\": \"Follow the headwind lines out to 10 kt\"}]}"
+   }
+  },
+  {
+   "id": 2394,
+   "question": "With reference to Figure 1-3: Flaps Up Take-off Ground Roll, OAT +30°C, pressure altitude 2500 ft, 10 kt headwind and 1200 ft of ground roll available. The maximum take-off weight is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAXIMUM WEIGHT ABOUT 2,500 LB\", \"subline\": \"READ FIGURE 1-3 BACKWARDS\", \"blocks\": [{\"label\": \"Ground roll\", \"value\": \"1,200 ft, down to the 10 kt headwind line\"}, {\"label\": \"Conditions\", \"value\": \"+30°C at 2,500 ft from the left\"}, {\"label\": \"Weight\", \"value\": \"Where the two meet: about 2,500 lb\"}]}"
+   }
+  },
+  {
+   "id": 2395,
+   "question": "With reference to Figure 1-3: Flaps Up Take-off Ground Roll, aerodrome elevation 650 ft, QNH 1018 hPa, OAT +25°C, weight 2500 lb and 5 kt tailwind. The ground roll required is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL ABOUT 1,350 FT\", \"subline\": \"READ FIGURE 1-3 (FLAPS UP)\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"Elevation + (1013 − QNH) × 30 ft\"}, {\"label\": \"Here\", \"value\": \"650 + (1013 − 1018) × 30 = 500 ft\"}, {\"label\": \"Enter\", \"value\": \"+25°C, 500 ft, 2,500 lb, tailwind 5 kt\"}]}"
+   }
+  },
+  {
+   "id": 2396,
+   "question": "With reference to Figure 1-6: 25° Flaps Take-off Performance, pressure altitude 4000 ft, temperature +20°C, 5 kt headwind and 1650 ft take-off distance available to clear 50 ft. The maximum take-off weight is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAXIMUM WEIGHT ABOUT 2,300 LB\", \"subline\": \"READ FIGURE 1-6 BACKWARDS\", \"blocks\": [{\"label\": \"Distance\", \"value\": \"1,650 ft, down to the 5 kt headwind line\"}, {\"label\": \"Conditions\", \"value\": \"+20°C at 4,000 ft from the left\"}, {\"label\": \"Weight\", \"value\": \"Where the two meet: about 2,300 lb\"}]}"
+   }
+  },
+  {
+   "id": 2397,
+   "question": "With reference to Figure 1-6: 25° Flaps Take-off Performance, aerodrome elevation 1410 ft, QNH 1010 hPa, temperature +24°C, weight 2340 lb and 7 kt headwind. The take-off distance required to clear 50 ft is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/takeoff-distance-v1.webp",
+    "explanation_image_title": "Take-off Distance",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 1,125 FT OVER 50 FT\", \"subline\": \"READ FIGURE 1-6 (25° FLAPS)\", \"blocks\": [{\"label\": \"Pressure altitude\", \"value\": \"1,410 + (1013 − 1010) × 30 = 1,500 ft\"}, {\"label\": \"Enter\", \"value\": \"+24°C, 1,500 ft, then 2,340 lb\"}, {\"label\": \"Wind\", \"value\": \"Headwind lines out to 7 kt\"}]}"
+   }
+  },
+  {
+   "id": 2401,
+   "question": "A loaded aircraft's CG is 88.8 in, weight 2300 lb, MAUW 2500 lb. The pilot adds 22 USG of fuel with a specific weight of 6 lb/USG at an arm of 93.0 in. The new CG is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NEW CG ABOUT 89.0 IN\", \"subline\": \"FUEL WEIGHT FIRST: 22 × 6 = 132 LB\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"204,240 + 132 × 93 = 216,516 lb-in\"}, {\"label\": \"Weight\", \"value\": \"2,300 + 132 = 2,432 lb\"}, {\"label\": \"CG\", \"value\": \"216,516 ÷ 2,432 = 89.03 in\"}]}"
+   }
+  },
+  {
+   "id": 2402,
+   "question": "A loaded aircraft's CG is 88.3 in and its weight is 2450 lb. During flight the aircraft burns 280 lb of fuel from an arm of 93.0 in. The landing CG is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LANDING CG ABOUT 87.7 IN\", \"subline\": \"TAKE AWAY THE FUEL'S MOMENT\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"216,335 − 280 × 93 = 190,295 lb-in\"}, {\"label\": \"Weight\", \"value\": \"2,450 − 280 = 2,170 lb\"}, {\"label\": \"CG\", \"value\": \"190,295 ÷ 2,170 = 87.7 in\"}]}"
+   }
+  },
+  {
+   "id": 2409,
+   "question": "Runway 09 threshold elevation is 2250 ft, Runway 27 threshold elevation is 2200 ft, and runway length is 4300 ft. The percentage slope of Runway 27 is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/runway-slope-v1.webp",
+    "explanation_image_title": "Runway Slope",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RUNWAY 27 SLOPES 1.16% UP\", \"subline\": \"2,200 FT AT ITS START, 2,250 FT AT ITS END\", \"blocks\": [{\"label\": \"Working\", \"value\": \"50 ÷ 4,300 × 100 = 1.16%\"}, {\"label\": \"Slope\", \"value\": \"Elevation difference ÷ runway length × 100, same units\"}]}"
+   }
+  },
+  {
+   "id": 2411,
+   "question": "An aeroplane has an empty weight of 1490 lb at a CG of 84.7 in. Pilot and front passenger weigh 350 lb at 77.8 in, fuel weighs 210 lb at 93 in, and an aft passenger weighs 100 lb at 116.6 in. With no baggage, the loaded CG is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOADED CG ABOUT 85.87 IN\", \"subline\": \"ADD THE MOMENTS, THEN DIVIDE\", \"blocks\": [{\"label\": \"Moments\", \"value\": \"126,203 + 27,230 + 19,530 + 11,660 = 184,623 lb-in\"}, {\"label\": \"Weight\", \"value\": \"1,490 + 350 + 210 + 100 = 2,150 lb\"}, {\"label\": \"CG\", \"value\": \"184,623 ÷ 2,150 = 85.87 in\"}]}"
+   }
+  },
+  {
+   "id": 2412,
+   "question": "The presence of a stopway:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/displaced-threshold-v1.webp",
+    "explanation_image_title": "Displaced Threshold",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A STOPWAY DOES NOT AFFECT THE LDA\", \"subline\": \"IT IS FOR STOPPING AFTER A REJECTED TAKE-OFF\", \"blocks\": [{\"label\": \"Stopway\", \"value\": \"Adds to ASDA only\"}]}"
+   }
+  },
+  {
+   "id": 2413,
+   "question": "Runway 31 threshold elevation is 725 ft, Runway 13 threshold elevation is 800 ft, and runway length is 3400 ft. The percentage slope of Runway 13 is:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/runway-slope-v1.webp",
+    "explanation_image_title": "Runway Slope",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RUNWAY 13 SLOPES 2.2% DOWN\", \"subline\": \"800 FT AT ITS START, 725 FT AT ITS END\", \"blocks\": [{\"label\": \"Working\", \"value\": \"75 ÷ 3,400 × 100 = 2.2%\"}, {\"label\": \"Slope\", \"value\": \"Elevation difference ÷ runway length × 100, same units\"}]}"
+   }
+  },
+  {
+   "id": 2417,
+   "question": "A loaded aircraft has a CG of 91.0 in and weighs 2400 lb. A 160 lb front-seat passenger at 77.8 in swaps places with a 100 lb rear-seat passenger at 116.6 in, and 50 lb of fuel is added at an arm of 93.0 in. The new CG is approximately:",
+   "is_hidden": false,
+   "why": "phone-first picture and KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/cg-moment-v1.webp",
+    "explanation_image_title": "Moment and Centre of Gravity",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NEW CG ABOUT 92.0 IN\", \"subline\": \"THE SWAP MOVES 60 LB AFT BY 38.8 IN\", \"blocks\": [{\"label\": \"Swap\", \"value\": \"60 × 38.8 = +2,328 lb-in\"}, {\"label\": \"Fuel\", \"value\": \"50 × 93 = +4,650 lb-in\"}, {\"label\": \"CG\", \"value\": \"225,378 ÷ 2,450 = 91.99 in\"}]}"
+   }
+  }
+ ]
+}

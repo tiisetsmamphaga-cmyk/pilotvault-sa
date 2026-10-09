@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 
 import { BankAngleLoadFactorVisual } from "./bank-angle-load-factor-visual"
+import { EnlargeButton, ImageViewer } from "./image-viewer"
 
 type ExplanationImageProps = {
   src: string
@@ -68,7 +69,7 @@ export function ExplanationImage({
 
   const isHpVisual = src.includes("/explanation-images/human-performance/refined-batch-")
   const isApprovedHpRaster =
-    /\/explanation-images\/human-performance\/refined-batch-(?:1|2|3|4|5|6|7|8|9|10)\//.test(src) &&
+    /\/explanation-images\/human-performance\/refined-batch-(?:1|2|3|4|5|6|7|8|9|10|11)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   // Meteorology explanation diagrams live in the same refined-batch-N tree as
@@ -83,19 +84,19 @@ export function ExplanationImage({
 
   const isRtVisual = src.includes("/explanation-images/radio-telephony/refined-batch-")
   const isApprovedRtRaster =
-    /\/explanation-images\/radio-telephony\/refined-batch-(?:1)\//.test(src) &&
+    /\/explanation-images\/radio-telephony\/refined-batch-(?:1|2)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   const isAirLawVisual = src.includes("/explanation-images/air-law/refined-batch-")
   const isApprovedAirLawRaster =
-    /\/explanation-images\/air-law\/refined-batch-(?:1)\//.test(src) &&
+    /\/explanation-images\/air-law\/refined-batch-(?:1|2)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   // Navigation refined batches are gated the same way; legacy navigation
   // SVGs outside refined-batch folders keep the standard renderer.
   const isNavVisual = src.includes("/explanation-images/navigation/refined-batch-")
   const isApprovedNavRaster =
-    /\/explanation-images\/navigation\/refined-batch-(?:1)\//.test(src) &&
+    /\/explanation-images\/navigation\/refined-batch-(?:1|2)\//.test(src) &&
     /\.(png|jpe?g|webp)(?:\?|$)/i.test(src)
 
   // POF, HP, Meteorology, Radio Telephony and Air Law are fail-closed. Only
@@ -147,6 +148,7 @@ function PofExplanationImage({
 }) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [isLandscape, setIsLandscape] = useState(false)
+  const [viewerOpen, setViewerOpen] = useState(false)
   const [attempt, setAttempt] = useState(0)
   const imageRef = useRef<HTMLImageElement>(null)
 
@@ -210,8 +212,11 @@ function PofExplanationImage({
                 }
               }}
               onError={() => setStatus("error")}
-              className={`block h-auto max-h-[28rem] w-auto max-w-full object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
+              onClick={() => status === "loaded" && setViewerOpen(true)}
+              className={`block h-auto max-h-[28rem] w-auto max-w-full cursor-zoom-in object-contain transition-opacity duration-150 ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
             />
+            {status === "loaded" && <EnlargeButton onClick={() => setViewerOpen(true)} />}
+            {viewerOpen && <ImageViewer src={resolvedSrc} alt={alt} onClose={() => setViewerOpen(false)} />}
             {status === "error" && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 px-4 text-center text-sm font-medium text-slate-700" role="alert">
                 <span>The explanation diagram could not be loaded.</span>
@@ -230,28 +235,7 @@ function PofExplanationImage({
           </div>
         </div>
 
-        <div className="flex flex-col rounded-xl border border-[#e2e7ed] bg-white p-5">
-          <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#c9942f]">
-            {template.kicker ?? "KEY RELATIONSHIP"}
-          </div>
-          <div className="mt-2 text-2xl font-extrabold text-[#0b1f33]">{template.headline}</div>
-          {template.subline && (
-            <div className="mt-1 text-base font-bold leading-snug text-[#c9942f]">{template.subline}</div>
-          )}
-
-          {template.blocks && template.blocks.length > 0 && (
-            <div className="mt-4 border-t border-[#e2e7ed] pt-4">
-              <dl className="flex flex-col gap-3">
-                {template.blocks.map((block) => (
-                  <div key={block.label}>
-                    <dt className="text-xs font-bold uppercase tracking-[0.08em] text-[#5b6b7a]">{block.label}</dt>
-                    <dd className="mt-0.5 text-base font-bold text-[#0b1f33]">{block.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          )}
-        </div>
+        <KeyFactBody template={template} />
       </div>
 
       {template.formula && (
@@ -263,9 +247,55 @@ function PofExplanationImage({
   )
 }
 
+function KeyFactBody({ template, bare = false }: { template: PofVisualTemplate; bare?: boolean }) {
+  return (
+    <div className={bare ? "flex flex-col" : "flex flex-col rounded-xl border border-[#e2e7ed] bg-white p-5"}>
+      <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#c9942f]">
+        {template.kicker ?? "KEY RELATIONSHIP"}
+      </div>
+      <div className="mt-2 text-2xl font-extrabold text-[#0b1f33]">{template.headline}</div>
+      {template.subline && (
+        <div className="mt-1 text-base font-bold leading-snug text-[#c9942f]">{template.subline}</div>
+      )}
+
+      {template.blocks && template.blocks.length > 0 && (
+        <div className="mt-4 border-t border-[#e2e7ed] pt-4">
+          <dl className="flex flex-col gap-3">
+            {template.blocks.map((block) => (
+              <div key={block.label}>
+                <dt className="text-xs font-bold uppercase tracking-[0.08em] text-[#5b6b7a]">{block.label}</dt>
+                <dd className="mt-0.5 text-base font-bold text-[#0b1f33]">{block.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// Subjects whose questions without a picture show their KEY FACT card on its own. A subject is added once
+// every one of its cards has been checked (one subject at a time).
+export const CARD_ONLY_SUBJECTS = new Set(["meteorology", "navigation", "flight-planning", "human-performance"])
+
+// KEY FACT for questions that have a card but no picture, shown inside the explanation box.
+export function KeyFactSection({ template }: { template?: string }) {
+  const card = parsePofTemplate(template)
+  if (!card) return null
+  return (
+    <div className="mt-5 flex flex-col gap-3 border-t border-slate-200 pt-5">
+      <KeyFactBody template={card} bare />
+      {card.formula && (
+        <div className="rounded-xl bg-[#0b1f33] px-4 py-3 text-center text-base font-extrabold text-white">{card.formula}</div>
+      )}
+    </div>
+  )
+}
+
 function StandardExplanationImage({ src, alt, priority = false }: ExplanationImageProps) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading")
   const [attempt, setAttempt] = useState(0)
+  const [viewerOpen, setViewerOpen] = useState(false)
   const imageRef = useRef<HTMLImageElement>(null)
   const usesNavigationTemplate = src.includes("/explanation-images/navigation/")
   const usesWebsiteTemplate = usesNavigationTemplate
@@ -333,9 +363,12 @@ function StandardExplanationImage({ src, alt, priority = false }: ExplanationIma
           fetchPriority={priority ? "high" : "auto"}
           onLoad={() => setStatus("loaded")}
           onError={() => setStatus("error")}
+          onClick={() => status === "loaded" && setViewerOpen(true)}
           style={status === "loaded" && usesNavigationTemplate ? { marginTop: "-6%" } : undefined}
-          className={`${imageClass} ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
+          className={`${imageClass} cursor-zoom-in ${status === "loaded" ? "opacity-100" : "opacity-0"}`}
         />
+        {status === "loaded" && <EnlargeButton onClick={() => setViewerOpen(true)} />}
+        {viewerOpen && <ImageViewer src={resolvedSrc} alt={alt} onClose={() => setViewerOpen(false)} />}
 
         {status === "error" && (
           <div className="absolute inset-0 z-10 flex min-h-40 min-w-64 flex-col items-center justify-center gap-3 px-4 text-center" role="alert">

@@ -6,6 +6,8 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { PasswordInput } from "@/components/password-input"
+import { Turnstile, TURNSTILE_SITE_KEY, type TurnstileHandle } from "@/components/turnstile"
 import { Button } from "@/components/ui/button"
 import { claimDeviceSession } from "@/src/lib/device-session"
 import { supabase } from "@/src/lib/supabase"
@@ -25,6 +27,7 @@ type AuthMode = "login" | "signup" | "reset"
 export function Navbar() {
   const pathname = usePathname()
   const authDialogRef = useRef<HTMLDivElement>(null)
+  const turnstileRef = useRef<TurnstileHandle>(null)
   const [isOpen, setIsOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
   const [authMode, setAuthMode] = useState<AuthMode>("signup")
@@ -37,6 +40,9 @@ export function Navbar() {
   const [authMessage, setAuthMessage] = useState("")
   const [authNotice, setAuthNotice] = useState("")
   const [signedIn, setSignedIn] = useState(false)
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  const captchaRequired = Boolean(TURNSTILE_SITE_KEY) && authMode !== "reset"
+  const captchaMissing = captchaRequired && !captchaToken
 
   const openAuth = (mode: "login" | "signup") => {
     setAuthMode(mode)
@@ -54,14 +60,21 @@ export function Navbar() {
       return
     }
 
+    if (captchaMissing) {
+      setAuthMessage("Please complete the robot check first, then select Forgot password.")
+      return
+    }
+
     setAuthMessage("")
     setResetRequestLoading(true)
 
     const { error } = await supabase.auth.resetPasswordForEmail(normalizedEmail, {
       redirectTo: `${window.location.origin}/`,
+      captchaToken: captchaToken ?? undefined,
     })
 
     setResetRequestLoading(false)
+    turnstileRef.current?.reset()
 
     if (error) {
       setAuthMessage(error.message)
@@ -118,15 +131,22 @@ export function Navbar() {
       }
     }
 
+    if (captchaMissing) {
+      setAuthMessage("Please complete the robot check.")
+      return
+    }
+
     setLoading(true)
 
+    const token = captchaToken ?? undefined
     const { error } =
       authMode === "login"
-        ? await supabase.auth.signInWithPassword({ email, password })
+        ? await supabase.auth.signInWithPassword({ email, password, options: { captchaToken: token } })
         : await supabase.auth.signUp({
             email,
             password,
             options: {
+              captchaToken: token,
               // The confirmation link lands on /auth/callback, which picks
               // up the session from the link and forwards to /dashboard.
               emailRedirectTo: `${window.location.origin}/auth/callback`,
@@ -135,6 +155,9 @@ export function Navbar() {
               },
             },
           })
+
+    // A Turnstile token works once, so get a fresh one for the next try.
+    turnstileRef.current?.reset()
 
     if (error) {
       setLoading(false)
@@ -414,7 +437,7 @@ export function Navbar() {
 
       {authOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/65 px-4 py-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-end justify-center bg-slate-950/60 backdrop-blur-[2px] sm:items-center sm:p-6"
           onMouseDown={() => {
             if (!loading) setAuthOpen(false)
           }}
@@ -425,7 +448,7 @@ export function Navbar() {
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             onMouseDown={(event) => event.stopPropagation()}
-            className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6 text-slate-900 shadow-2xl"
+            className="relative max-h-[92dvh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 text-slate-900 shadow-2xl outline-none sm:rounded-3xl sm:px-6 sm:pb-6"
             role="dialog"
             aria-modal="true"
             aria-labelledby="auth-title"
@@ -435,29 +458,22 @@ export function Navbar() {
               type="button"
               onClick={() => setAuthOpen(false)}
               disabled={loading}
-              className="absolute right-4 top-4 rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-40"
-              aria-label="Close auth modal"
+              className="absolute right-4 top-4 rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 disabled:opacity-40"
+              aria-label="Close"
             >
               <X className="h-5 w-5" />
             </button>
 
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#1f4e79]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
               PilotVault SA
             </p>
-            <h2 id="auth-title" className="mt-3 pr-8 text-2xl font-bold text-slate-900">
+            <h2 id="auth-title" className="mt-1 pr-10 text-xl font-bold tracking-tight text-slate-950">
               {authMode === "login"
-                ? "Welcome back, pilot."
+                ? "Log in"
                 : authMode === "signup"
-                  ? "Start your 3-day free trial."
-                  : "Choose a new password."}
+                  ? "3-day free trial"
+                  : "New password"}
             </h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              {authMode === "login"
-                ? "Log in to continue your SACAA exam preparation."
-                : authMode === "signup"
-                  ? "Create your account and start preparing with realistic SACAA-style questions, mock exams, and progress tracking."
-                  : "Enter a new password for your PilotVault account."}
-            </p>
 
             {authNotice && (
               <p
@@ -469,7 +485,11 @@ export function Navbar() {
             )}
 
             {authMode !== "reset" && (
-              <div className="my-6 grid grid-cols-2 rounded-xl bg-[#f1f5f9] p-1">
+              <div
+                role="tablist"
+                aria-label="Log in or start a free trial"
+                className="my-5 grid grid-cols-2 gap-1 rounded-2xl bg-slate-100 p-1"
+              >
                 <button
                   type="button"
                   disabled={loading}
@@ -478,13 +498,15 @@ export function Navbar() {
                     setAuthMessage("")
                     setAuthNotice("")
                   }}
-                  className={`rounded-lg py-2 text-sm font-semibold transition ${
+                  role="tab"
+                  aria-selected={authMode === "login"}
+                  className={`h-11 rounded-xl text-[15px] font-bold transition ${
                     authMode === "login"
-                      ? "bg-[#1f4e79] text-white shadow-sm"
-                      : "text-slate-600 hover:text-slate-900"
+                      ? "bg-white text-slate-950 shadow-[0_1px_3px_rgba(15,23,42,0.18)]"
+                      : "text-slate-500 hover:text-slate-900"
                   } disabled:opacity-60`}
                 >
-                  Login
+                  Log in
                 </button>
                 <button
                   type="button"
@@ -494,19 +516,21 @@ export function Navbar() {
                     setAuthMessage("")
                     setAuthNotice("")
                   }}
-                  className={`rounded-lg py-2 text-sm font-semibold transition ${
+                  role="tab"
+                  aria-selected={authMode === "signup"}
+                  className={`h-11 rounded-xl text-[15px] font-bold transition ${
                     authMode === "signup"
-                      ? "bg-[#1f4e79] text-white shadow-sm"
-                      : "text-slate-600 hover:text-slate-900"
+                      ? "bg-white text-slate-950 shadow-[0_1px_3px_rgba(15,23,42,0.18)]"
+                      : "text-slate-500 hover:text-slate-900"
                   } disabled:opacity-60`}
                 >
-                  Free Trial
+                  Free trial
                 </button>
               </div>
             )}
 
             <form
-              className={`space-y-4 ${authMode === "reset" ? "mt-6" : ""}`}
+              className={`space-y-3 ${authMode === "reset" ? "mt-5" : ""}`}
               onSubmit={(event) => {
                 event.preventDefault()
                 handleAuth()
@@ -536,8 +560,7 @@ export function Navbar() {
                 />
               )}
 
-              <input
-                type="password"
+              <PasswordInput
                 autoComplete={authMode === "login" ? "current-password" : "new-password"}
                 aria-label={authMode === "reset" ? "New password" : "Password"}
                 placeholder={authMode === "reset" ? "New password" : "Password"}
@@ -554,16 +577,13 @@ export function Navbar() {
                     disabled={resetRequestLoading || loading}
                     className="text-sm font-semibold text-[#1f4e79] transition hover:text-[#183d60] disabled:cursor-wait disabled:opacity-60"
                   >
-                    {resetRequestLoading
-                      ? "Sending reset email..."
-                      : "Forgot password?"}
+                    {resetRequestLoading ? "Sending..." : "Forgot password?"}
                   </button>
                 </div>
               )}
 
               {(authMode === "signup" || authMode === "reset") && (
-                <input
-                  type="password"
+                <PasswordInput
                   autoComplete="new-password"
                   aria-label={
                     authMode === "reset" ? "Confirm new password" : "Confirm password"
@@ -574,6 +594,14 @@ export function Navbar() {
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-[#1f4e79] focus:outline-none focus:ring-2 focus:ring-[#d6e6f7]"
+                />
+              )}
+
+              {authMode !== "reset" && (
+                <Turnstile
+                  ref={turnstileRef}
+                  onToken={setCaptchaToken}
+                  onError={setAuthMessage}
                 />
               )}
 
@@ -588,16 +616,16 @@ export function Navbar() {
 
               <Button
                 type="submit"
-                disabled={loading || resetRequestLoading}
-                className="w-full bg-[#1f4e79] py-6 font-bold text-white hover:bg-[#183d60] disabled:opacity-60"
+                disabled={loading || resetRequestLoading || captchaMissing}
+                className="h-auto w-full rounded-2xl bg-[var(--pv-navy)] py-3.5 text-base font-bold text-white hover:bg-[var(--pv-navy-soft)] disabled:opacity-60"
               >
                 {loading
                   ? "Please wait..."
                   : authMode === "login"
-                    ? "Login"
+                    ? "Log in"
                     : authMode === "signup"
-                      ? "Start Free Trial"
-                      : "Update Password"}
+                      ? "Start free trial"
+                      : "Update password"}
               </Button>
             </form>
           </motion.div>

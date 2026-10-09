@@ -215,23 +215,23 @@ function UpgradePageContent() {
             </span>
           </div>
 
-          <nav aria-label="Plans navigation" className="hidden items-center gap-1 md:flex">
+          <nav aria-label="Plans navigation" className="flex items-center gap-1">
             <Link
               href="/dashboard"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white"
+              className="rounded-lg px-2.5 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white sm:px-3"
             >
               Dashboard
             </Link>
             <Link
               href="/upgrade"
               aria-current="page"
-              className="rounded-lg bg-white/12 px-3 py-2 text-sm font-semibold text-white"
+              className="hidden rounded-lg bg-white/12 px-3 py-2 text-sm font-semibold text-white md:inline-block"
             >
               Plans
             </Link>
             <Link
               href="/profile"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white"
+              className="rounded-lg px-2.5 py-2 text-sm font-medium text-blue-50 transition hover:bg-white/10 hover:text-white sm:px-3"
             >
               Profile
             </Link>

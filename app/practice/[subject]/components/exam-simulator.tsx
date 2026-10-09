@@ -3,17 +3,22 @@
 import { formatSubjectName, formatTime } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage } from "./explanation-image"
+import { CARD_ONLY_SUBJECTS, ExplanationImage, KeyFactSection } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
 import { QuestionReferenceImage } from "./question-reference-image"
+import { ReportQuestionButton } from "./report-question-button"
 
 type ExamSimulatorProps = {
   subject: string
   examLabel: string
   examMode: ExamMode
   timeLeft: number
+  // Seconds allowed for a mock exam, or null when it is untimed.
+  timeLimit: number | null
+  elapsedSeconds: number
+  showAnswerButton: boolean
   currentQuestion: Question
   currentQuestionIndex: number
   examQuestions: Question[]
@@ -56,6 +61,9 @@ export function ExamSimulator({
   examLabel,
   examMode,
   timeLeft,
+  timeLimit,
+  elapsedSeconds,
+  showAnswerButton,
   currentQuestion,
   currentQuestionIndex,
   examQuestions,
@@ -85,6 +93,8 @@ export function ExamSimulator({
   const questionIsPinned = pinnedQuestions.includes(currentQuestionIndex)
   const isHumanPerformance = subject === "human-performance"
   const isPrinciplesOfFlight = subject === "principles-of-flight"
+  // Questions in CARD_ONLY_SUBJECTS without a picture show their KEY FACT card in the explanation box.
+  const showsCardOnly = CARD_ONLY_SUBJECTS.has(subject) && !currentQuestion.explanation_image_url
   const usesApprovedBankVisual = isHumanPerformance && currentQuestion.id === 2207
 
   return (
@@ -99,7 +109,12 @@ export function ExamSimulator({
 
         <div className="flex items-center gap-3">
           <div className="rounded-md border border-white/20 bg-black/20 px-4 py-2 text-right">
-            {examMode === "mock" ? (
+            {examMode === "mock" && timeLimit === null ? (
+              <>
+                <p className="text-xs text-blue-100">Untimed · Time Spent</p>
+                <p className="font-bold text-white">{formatTime(elapsedSeconds)}</p>
+              </>
+            ) : examMode === "mock" ? (
               <>
                 <p className="text-xs text-blue-100">Time Remaining</p>
                 <p className={`font-bold ${timeLeft < 300 ? "text-red-300" : "text-white"}`}>
@@ -148,7 +163,7 @@ export function ExamSimulator({
             <p>Blue: current question</p>
             <p>Light blue: answered</p>
             <p>Red: not answered</p>
-            <p>Yellow: answer viewed</p>
+            {showAnswerButton && <p>Yellow: answer viewed</p>}
             <p>⚑: pinned</p>
           </div>
         </aside>
@@ -161,7 +176,7 @@ export function ExamSimulator({
                 <h2 className="mt-1 text-xl font-semibold text-slate-800">Exam Question</h2>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center justify-end gap-2">
                 <button
                   onClick={onOpenMobileQuestionNav}
                   className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 md:hidden"
@@ -175,6 +190,8 @@ export function ExamSimulator({
                 >
                   {questionIsPinned ? "Pinned" : "Pin"}
                 </button>
+
+                <ReportQuestionButton key={currentQuestion.id} questionId={currentQuestion.id} />
               </div>
             </div>
 
@@ -202,12 +219,14 @@ export function ExamSimulator({
               })}
             </div>
 
-            {answerIsShown && (
+            {showAnswerButton && answerIsShown && (
               <div className="mt-8 border-l-4 border-[#1f4e79] bg-slate-50 p-5">
                 <p className="text-sm font-semibold text-[#1f4e79]">Correct Answer</p>
                 <p className="mt-2 font-semibold text-slate-900">{currentQuestion.correctAnswer}</p>
                 <p className="mt-4 text-sm font-semibold text-[#1f4e79]">Explanation</p>
-                <FormattedExplanation text={currentQuestion.explanation} />
+                <FormattedExplanation text={currentQuestion.explanation}>
+                  {showsCardOnly && <KeyFactSection template={currentQuestion.explanation_visual_template} />}
+                </FormattedExplanation>
 
                 {isHumanPerformance && !usesApprovedBankVisual && !currentQuestion.explanation_image_url ? (
                   <HumanPerformanceVisual key={`hp-${currentQuestion.id}`} question={currentQuestion} />
@@ -227,13 +246,17 @@ export function ExamSimulator({
               </div>
             )}
 
-            <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <button
-                onClick={onToggleAnswer}
-                className="rounded-md border border-[#1f4e79] bg-white px-5 py-3 text-sm font-semibold text-[#1f4e79] hover:bg-blue-50 sm:py-2"
-              >
-                {answerIsShown ? "Hide Answer" : "Show Answer"}
-              </button>
+            <div
+              className={`mt-12 flex flex-col gap-3 sm:flex-row sm:items-center ${showAnswerButton ? "sm:justify-between" : "sm:justify-end"}`}
+            >
+              {showAnswerButton && (
+                <button
+                  onClick={onToggleAnswer}
+                  className="rounded-md border border-[#1f4e79] bg-white px-5 py-3 text-sm font-semibold text-[#1f4e79] hover:bg-blue-50 sm:py-2"
+                >
+                  {answerIsShown ? "Hide Answer" : "Show Answer"}
+                </button>
+              )}
 
               <div className="grid grid-cols-3 gap-3 sm:flex">
                 <button

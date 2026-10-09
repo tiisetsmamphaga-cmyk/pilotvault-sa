@@ -2,6 +2,17 @@ export const MOCK_QUESTION_COUNT = 25
 export const MOCK_TIME_SECONDS = 25 * 60
 export const PASS_MARK = 75
 
+// Question counts a student can pick for a mock exam. Trial accounts always
+// get the fixed 25-question trial set.
+export const MOCK_QUESTION_COUNT_OPTIONS = [10, 20, 25, 30, 40]
+
+// A timed mock allows one minute per question (25 questions = 25 minutes).
+export const SECONDS_PER_MOCK_QUESTION = MOCK_TIME_SECONDS / MOCK_QUESTION_COUNT
+
+export function getMockTimeLimitSeconds(questionCount: number) {
+  return questionCount * SECONDS_PER_MOCK_QUESTION
+}
+
 export function shuffleArray<T>(array: T[]) {
   const shuffled = [...array]
 

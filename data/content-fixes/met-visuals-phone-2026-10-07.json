@@ -1,0 +1,161 @@
+{
+ "date": "2026-10-07",
+ "subject": "meteorology",
+ "change": "Swapped the 8 Meteorology explanation pictures for phone-first redraws (docs/EXPLANATION_ILLUSTRATION_STANDARD.md, scripts/trial_visuals/met_phone.py). Titles and KEY FACT cards unchanged.",
+ "rows": [
+  {
+   "id": 14,
+   "question": "What happens to air density as humidity increases?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v3.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp"
+   }
+  },
+  {
+   "id": 15,
+   "question": "If temperature remains constant increasing pressure will have what effect on density?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v3.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v4.webp"
+   }
+  },
+  {
+   "id": 18,
+   "question": "Relative humidity generally decreases when:",
+   "is_hidden": true,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v3.webp"
+   }
+  },
+  {
+   "id": 19,
+   "question": "What is density altitude?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/density-altitude-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/density-altitude-v3.webp"
+   }
+  },
+  {
+   "id": 32,
+   "question": "According to ISA the density of air at sea level is approximately:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-sea-level-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-sea-level-v3.webp"
+   }
+  },
+  {
+   "id": 36,
+   "question": "The amount of water vapour air can hold depends mainly on:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v3.webp"
+   }
+  },
+  {
+   "id": 46,
+   "question": "An anabatic wind is:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/anabatic-katabatic-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/anabatic-katabatic-v3.webp"
+   }
+  },
+  {
+   "id": 53,
+   "question": "What combination is required for thunderstorm formation?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/thunderstorm-ingredients-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/thunderstorm-ingredients-v3.webp"
+   }
+  },
+  {
+   "id": 622,
+   "question": "Relative humidity:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v3.webp"
+   }
+  },
+  {
+   "id": 659,
+   "question": "The amount of water vapour that can be held in the air is dependent upon:",
+   "is_hidden": true,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v3.webp"
+   }
+  },
+  {
+   "id": 1471,
+   "question": "Freezing fog consists mainly of:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/freezing-fog-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/freezing-fog-v3.webp"
+   }
+  },
+  {
+   "id": 1481,
+   "question": "When a mass of air descends, its relative humidity generally:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v3.webp"
+   }
+  },
+  {
+   "id": 1487,
+   "question": "If unsaturated air is warmed while the water vapour content stays the same, relative humidity will:",
+   "is_hidden": true,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v3.webp"
+   }
+  },
+  {
+   "id": 1536,
+   "question": "Which instrument measures atmospheric pressure?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/aneroid-barometer-v4.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/aneroid-barometer-v5.webp"
+   }
+  }
+ ]
+}

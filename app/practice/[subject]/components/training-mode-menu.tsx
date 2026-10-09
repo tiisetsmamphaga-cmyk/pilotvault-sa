@@ -1,17 +1,19 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, BookOpen, Download } from "lucide-react"
+import { ArrowLeft, ArrowRight, BookOpen, Download, X } from "lucide-react"
 
 import {
   MOCK_QUESTION_COUNT,
-  MOCK_TIME_SECONDS,
+  MOCK_QUESTION_COUNT_OPTIONS,
   PASS_MARK,
   formatSubjectName,
   formatTime,
+  getMockTimeLimitSeconds,
   getReadinessStatus,
 } from "../practice-utils"
+import type { MockSettings } from "../types"
 
 type SubjectManual = {
   title: string
@@ -46,9 +48,11 @@ type TrainingModeMenuProps = {
   savedMockAttempt?: {
     answeredCount: number
     totalQuestions: number
-    timeLeft: number
+    // null for an untimed exam.
+    timeLeft: number | null
   } | null
-  onStartMock: () => void
+  mockSettings: MockSettings
+  onStartMock: (settings: MockSettings) => void
   onContinueMock?: () => void
   onOpenTopics: () => void
 }
@@ -61,24 +65,45 @@ export function TrainingModeMenu({
   mockAverageScore,
   mockAttemptCount,
   savedMockAttempt = null,
+  mockSettings,
   onStartMock,
   onContinueMock,
   onOpenTopics,
 }: TrainingModeMenuProps) {
   const manual = SUBJECT_MANUALS[subject]
-  const mockQuestionCount = Math.min(MOCK_QUESTION_COUNT, questionCount)
   const subjectName = formatSubjectName(subject)
-  const mockDurationMinutes = Math.ceil(MOCK_TIME_SECONDS / 60)
   const readinessStatus = getReadinessStatus(mockAverageScore)
   const averageProgress = mockAverageScore ?? 0
   const progressCircumference = 239
   const progressOffset =
     progressCircumference * (1 - averageProgress / 100)
   const [showMockInstructions, setShowMockInstructions] = useState(false)
+  const [draftSettings, setDraftSettings] = useState<MockSettings>(mockSettings)
+
+  // Trial accounts always sit the fixed 25-question trial set.
+  const countOptions = isTrialAccount
+    ? [Math.min(MOCK_QUESTION_COUNT, questionCount)]
+    : (() => {
+        const available = MOCK_QUESTION_COUNT_OPTIONS.filter(
+          (count) => count <= questionCount
+        )
+        return available.length ? available : [questionCount]
+      })()
+  const selectedCount = countOptions.includes(draftSettings.questionCount)
+    ? draftSettings.questionCount
+    : countOptions.includes(MOCK_QUESTION_COUNT)
+      ? MOCK_QUESTION_COUNT
+      : countOptions[countOptions.length - 1]
+  const timedMinutes = Math.ceil(getMockTimeLimitSeconds(selectedCount) / 60)
+
+  const openMockInstructions = () => {
+    setDraftSettings(mockSettings)
+    setShowMockInstructions(true)
+  }
 
   const beginMockExam = () => {
     setShowMockInstructions(false)
-    onStartMock()
+    onStartMock({ ...draftSettings, questionCount: selectedCount })
   }
 
   const continueMockExam = () => {
@@ -171,7 +196,7 @@ export function TrainingModeMenu({
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <button
             type="button"
-            onClick={() => setShowMockInstructions(true)}
+            onClick={openMockInstructions}
             className="group relative flex min-h-[210px] cursor-pointer flex-col rounded-2xl border border-[#29476d] bg-[#0b1d31] p-5 text-left shadow-[0_14px_40px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 hover:border-[#f4b400] hover:bg-[#0d2238] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4b400]/70 sm:p-6"
           >
             {isTrialAccount && (
@@ -302,118 +327,259 @@ export function TrainingModeMenu({
       </section>
 
       {showMockInstructions && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6 sm:px-6"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="mock-exam-title"
-          onClick={() => setShowMockInstructions(false)}
-        >
-          <div
-            className="w-full max-w-lg overflow-hidden bg-white text-slate-900 shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="bg-[#1f4e79] px-6 py-5 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-100">
-                PilotVault SA Exam Practice
-              </p>
-              <h2 id="mock-exam-title" className="mt-1 text-2xl font-bold">
-                Ready to start?
-              </h2>
-            </div>
-
-            <div className="p-6">
-              <div className="grid grid-cols-3 gap-2">
-                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
-                  <p className="text-xl font-bold text-[#1f4e79]">
-                    {mockQuestionCount}
-                  </p>
-                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                    Questions
-                  </p>
-                </div>
-                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
-                  <p className="text-xl font-bold text-[#1f4e79]">
-                    {mockDurationMinutes}
-                  </p>
-                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                    Minutes
-                  </p>
-                </div>
-                <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-center">
-                  <p className="text-xl font-bold text-[#1f4e79]">
-                    {PASS_MARK}%
-                  </p>
-                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                    Pass mark
-                  </p>
-                </div>
-              </div>
-
-              <h3 className="mt-6 font-bold text-slate-900">
-                Before you begin
-              </h3>
-              <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                  The timer starts as soon as you enter the simulator.
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                  You can move between questions and pin any question for
-                  review.
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f4e79]" />
-                  Unanswered questions count as incorrect, and the exam submits
-                  automatically when time expires.
-                </li>
-              </ul>
-
-              {savedMockAttempt && onContinueMock && (
-                <div className="mt-6 border border-[#1f4e79]/25 bg-blue-50 px-4 py-3">
-                  <p className="text-sm font-bold text-[#1f4e79]">
-                    Unfinished attempt available
-                  </p>
-                  <p className="mt-1 text-sm text-slate-600">
-                    {savedMockAttempt.answeredCount} of{" "}
-                    {savedMockAttempt.totalQuestions} answered ·{" "}
-                    {formatTime(savedMockAttempt.timeLeft)} remaining
-                  </p>
-                </div>
-              )}
-
-              <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap sm:justify-end">
-                <button
-                  type="button"
-                  onClick={() => setShowMockInstructions(false)}
-                  className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 sm:py-2.5"
-                >
-                  Cancel
-                </button>
-
-                {savedMockAttempt && onContinueMock && (
-                  <button
-                    type="button"
-                    onClick={continueMockExam}
-                    className="rounded-md border border-[#1f4e79] bg-white px-5 py-3 text-sm font-semibold text-[#1f4e79] transition hover:bg-blue-50 sm:py-2.5"
-                  >
-                    Continue last attempt
-                  </button>
-                )}
-
-                <button
-                  type="button"
-                  onClick={beginMockExam}
-                  className="rounded-md bg-[#1f4e79] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#183d60] sm:py-2.5"
-                >
-                  {savedMockAttempt ? "Start new exam" : "Start mock exam"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <MockSetupDialog
+          subjectName={subjectName}
+          isTrialAccount={isTrialAccount}
+          countOptions={countOptions}
+          selectedCount={selectedCount}
+          timedMinutes={timedMinutes}
+          settings={draftSettings}
+          savedMockAttempt={onContinueMock ? savedMockAttempt : null}
+          onChange={setDraftSettings}
+          onClose={() => setShowMockInstructions(false)}
+          onStart={beginMockExam}
+          onContinue={continueMockExam}
+        />
       )}
     </main>
+  )
+}
+
+type MockSetupDialogProps = {
+  subjectName: string
+  isTrialAccount: boolean
+  countOptions: number[]
+  selectedCount: number
+  timedMinutes: number
+  settings: MockSettings
+  savedMockAttempt: TrainingModeMenuProps["savedMockAttempt"]
+  onChange: (update: (settings: MockSettings) => MockSettings) => void
+  onClose: () => void
+  onStart: () => void
+  onContinue: () => void
+}
+
+// The mock exam set-up sheet: a bottom sheet on phones, a centred dialog on
+// larger screens. The Start button stays pinned at the bottom.
+function MockSetupDialog({
+  subjectName,
+  isTrialAccount,
+  countOptions,
+  selectedCount,
+  timedMinutes,
+  settings,
+  savedMockAttempt,
+  onChange,
+  onClose,
+  onStart,
+  onContinue,
+}: MockSetupDialogProps) {
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const onCloseRef = useRef(onClose)
+
+  useEffect(() => {
+    onCloseRef.current = onClose
+  }, [onClose])
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onCloseRef.current()
+    }
+
+    window.addEventListener("keydown", onKeyDown)
+    dialogRef.current?.focus()
+
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [])
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/60 backdrop-blur-[2px] sm:items-center sm:p-6"
+      role="presentation"
+      onClick={onClose}
+    >
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mock-exam-title"
+        tabIndex={-1}
+        onClick={(event) => event.stopPropagation()}
+        className="flex max-h-[92dvh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl bg-white text-slate-900 shadow-2xl outline-none sm:rounded-3xl"
+      >
+        <div className="flex items-start justify-between gap-4 border-b border-slate-100 px-5 pb-4 pt-5 sm:px-6">
+          <div className="min-w-0">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
+              {subjectName}
+            </p>
+            <h2
+              id="mock-exam-title"
+              className="mt-1 text-xl font-bold tracking-tight text-slate-950"
+            >
+              Mock exam
+            </h2>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="-mr-1 rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <div className="flex-1 space-y-5 overflow-y-auto px-5 py-5 sm:px-6">
+          {savedMockAttempt && (
+            <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3.5">
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-bold text-slate-900">
+                  Unfinished attempt
+                </p>
+                <p className="text-xs text-slate-500">
+                  {savedMockAttempt.answeredCount} of{" "}
+                  {savedMockAttempt.totalQuestions} answered
+                  {savedMockAttempt.timeLeft !== null &&
+                    ` · ${formatTime(savedMockAttempt.timeLeft)} left`}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={onContinue}
+                className="shrink-0 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-sm font-semibold text-slate-800 transition hover:border-slate-400"
+              >
+                Continue
+              </button>
+            </div>
+          )}
+
+          <SettingSection
+            label="Questions"
+            note={isTrialAccount ? "Fixed at 25 on the trial." : undefined}
+          >
+            <Segmented
+              label="Number of questions"
+              disabled={isTrialAccount}
+              options={countOptions.map((count) => ({
+                value: String(count),
+                label: String(count),
+              }))}
+              value={String(selectedCount)}
+              onChange={(value) =>
+                onChange((current) => ({ ...current, questionCount: Number(value) }))
+              }
+            />
+          </SettingSection>
+
+          <SettingSection label="Timer">
+            <Segmented
+              label="Timer"
+              options={[
+                { value: "timed", label: `${timedMinutes} min` },
+                { value: "untimed", label: "Untimed" },
+              ]}
+              value={settings.timed ? "timed" : "untimed"}
+              onChange={(value) =>
+                onChange((current) => ({ ...current, timed: value === "timed" }))
+              }
+            />
+          </SettingSection>
+
+          <SettingSection label="Show answers">
+            <Segmented
+              label="Show answers"
+              options={[
+                { value: "on", label: "On" },
+                { value: "off", label: "Off" },
+              ]}
+              value={settings.showAnswerButton ? "on" : "off"}
+              onChange={(value) =>
+                onChange((current) => ({
+                  ...current,
+                  showAnswerButton: value === "on",
+                }))
+              }
+            />
+          </SettingSection>
+
+          <p className="text-xs leading-5 text-slate-500">
+            Pass mark {PASS_MARK}%. Unanswered questions count as wrong.
+          </p>
+        </div>
+
+        <div className="border-t border-slate-100 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:px-6 sm:pb-5">
+          <button
+            type="button"
+            onClick={onStart}
+            className="w-full rounded-2xl bg-[var(--pv-navy)] px-5 py-3.5 text-base font-bold text-white transition hover:bg-[var(--pv-navy-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+          >
+            {savedMockAttempt ? "Start new exam" : "Start exam"}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function SettingSection({
+  label,
+  note,
+  children,
+}: {
+  label: string
+  note?: string
+  children: ReactNode
+}) {
+  return (
+    <section>
+      <h3 className="mb-2 text-sm font-bold text-slate-900">{label}</h3>
+      {children}
+      {note && <p className="mt-1.5 text-xs text-slate-500">{note}</p>}
+    </section>
+  )
+}
+
+function Segmented({
+  label,
+  options,
+  value,
+  disabled = false,
+  onChange,
+}: {
+  label: string
+  options: { value: string; label: string }[]
+  value: string
+  disabled?: boolean
+  onChange: (value: string) => void
+}) {
+  return (
+    <div
+      role="radiogroup"
+      aria-label={label}
+      className="grid gap-1 rounded-2xl bg-slate-100 p-1"
+      style={{ gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` }}
+    >
+      {options.map((option) => {
+        const selected = option.value === value
+
+        return (
+          <button
+            key={option.value}
+            type="button"
+            role="radio"
+            aria-checked={selected}
+            disabled={disabled}
+            onClick={() => onChange(option.value)}
+            className={`h-11 rounded-xl text-[15px] font-bold tabular-nums transition disabled:cursor-default ${
+              selected
+                ? "bg-white text-slate-950 shadow-[0_1px_3px_rgba(15,23,42,0.18)]"
+                : "text-slate-500 hover:text-slate-900"
+            }`}
+          >
+            {option.label}
+          </button>
+        )
+      })}
+    </div>
   )
 }

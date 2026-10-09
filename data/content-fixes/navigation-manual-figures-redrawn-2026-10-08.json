@@ -1,0 +1,133 @@
+{
+ "date": "2026-10-08",
+ "subject": "navigation",
+ "change": "Compass deviation, deviation with heading, and the flight computer groundspeed and fuel scales redrawn in HD as the manual's figures (nav_phone.py); the old scans are replaced on every question that used them (2704 is Aircraft Technical). Titles and cards unchanged.",
+ "rows": [
+  {
+   "id": 1608,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-nil-deviation-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/compass-nil-deviation-v2.webp"
+   }
+  },
+  {
+   "id": 1628,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/compass-deviation-v2.webp"
+   }
+  },
+  {
+   "id": 1691,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-fuel-consumption-scale-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-fuel-v1.webp"
+   }
+  },
+  {
+   "id": 1762,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-fuel-consumption-scale-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-fuel-v1.webp"
+   }
+  },
+  {
+   "id": 1775,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-finding-groundspeed-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-groundspeed-v1.webp"
+   }
+  },
+  {
+   "id": 1785,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/compass-deviation-v2.webp"
+   }
+  },
+  {
+   "id": 1805,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/compass-deviation-v2.webp"
+   }
+  },
+  {
+   "id": 1812,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-finding-groundspeed-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-groundspeed-v1.webp"
+   }
+  },
+  {
+   "id": 1836,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-fuel-consumption-scale-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-fuel-v1.webp"
+   }
+  },
+  {
+   "id": 1840,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-fuel-consumption-scale-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-fuel-v1.webp"
+   }
+  },
+  {
+   "id": 1845,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-fuel-consumption-scale-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-fuel-v1.webp"
+   }
+  },
+  {
+   "id": 1846,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-nil-deviation-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/compass-nil-deviation-v2.webp"
+   }
+  },
+  {
+   "id": 1847,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-fuel-consumption-scale-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/crp-fuel-v1.webp"
+   }
+  },
+  {
+   "id": 2704,
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-1/nav-compass-deviation-v1.webp"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/compass-deviation-v2.webp"
+   }
+  }
+ ]
+}

@@ -1,0 +1,273 @@
+{
+ "date": "2026-10-07",
+ "subject": "meteorology",
+ "change": "Replaced poor or off-topic explanation pictures with illustrated scenes (docs/EXPLANATION_ILLUSTRATION_STANDARD.md) and corrected the relative humidity figure (20°C: 62% -> 52%; the source figure was wrong, same moisture as saturated 10°C air gives about 52%).",
+ "rows": [
+  {
+   "id": 14,
+   "question": "What happens to air density as humidity increases?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/air-density-factors-display.png",
+    "explanation_image_title": null,
+    "explanation_image_caption": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v3.webp",
+    "explanation_image_title": "What Changes Air Density",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-air-density-factors-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE AND HUMIDITY\", \"subline\": \"DENSE AIR GIVES BETTER ENGINE, PROPELLER AND WING PERFORMANCE\", \"blocks\": [{\"label\": \"Pressure up\", \"value\": \"Density up: more air is packed into the same volume\"}, {\"label\": \"Temperature up\", \"value\": \"Density down: the air expands\"}, {\"label\": \"Humidity up\", \"value\": \"Density down: water vapour (mass 18) replaces heavier nitrogen (28) and oxygen (32)\"}]}"
+   }
+  },
+  {
+   "id": 15,
+   "question": "If temperature remains constant increasing pressure will have what effect on density?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/air-density-factors-display.png",
+    "explanation_image_title": null,
+    "explanation_image_caption": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/air-density-factors-v3.webp",
+    "explanation_image_title": "What Changes Air Density",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-air-density-factors-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY RISES WITH PRESSURE AND FALLS WITH TEMPERATURE AND HUMIDITY\", \"subline\": \"DENSE AIR GIVES BETTER ENGINE, PROPELLER AND WING PERFORMANCE\", \"blocks\": [{\"label\": \"Pressure up\", \"value\": \"Density up: more air is packed into the same volume\"}, {\"label\": \"Temperature up\", \"value\": \"Density down: the air expands\"}, {\"label\": \"Humidity up\", \"value\": \"Density down: water vapour (mass 18) replaces heavier nitrogen (28) and oxygen (32)\"}]}"
+   }
+  },
+  {
+   "id": 18,
+   "question": "Relative humidity generally decreases when:",
+   "is_hidden": true,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v1.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"62% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"52% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   }
+  },
+  {
+   "id": 19,
+   "question": "What is density altitude?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/air-density-factors-display.png",
+    "explanation_image_title": null,
+    "explanation_image_caption": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/density-altitude-v2.webp",
+    "explanation_image_title": "Density Altitude",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-density-altitude-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"DENSITY ALTITUDE IS PRESSURE ALTITUDE CORRECTED FOR TEMPERATURE\", \"subline\": \"HOT AIR IS LESS DENSE, SO THE AIRCRAFT PERFORMS AS IF IT WERE HIGHER\", \"blocks\": [{\"label\": \"Start with\", \"value\": \"Pressure altitude (1013 hPa set on the altimeter)\"}, {\"label\": \"Correct for\", \"value\": \"How far the temperature is above or below ISA\"}, {\"label\": \"Rule of thumb\", \"value\": \"About 120 ft for every 1°C above ISA\"}, {\"label\": \"Example\", \"value\": \"5,000 ft at 30°C: ISA is 5°C, so +25°C ≈ +3,000 ft, giving about 8,000 ft\"}], \"formula\": \"Density altitude ≈ pressure altitude + 120 × (OAT − ISA temperature)\"}"
+   }
+  },
+  {
+   "id": 32,
+   "question": "According to ISA the density of air at sea level is approximately:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/air-density-factors-display.png",
+    "explanation_image_title": null,
+    "explanation_image_caption": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/isa-sea-level-v2.webp",
+    "explanation_image_title": "ISA Sea-Level Values",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-isa-sea-level-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ISA SEA-LEVEL DENSITY IS 1.225 kg/m³ (1225 g/m³)\", \"subline\": \"THE STANDARD ATMOSPHERE FIXES PRESSURE, TEMPERATURE AND DENSITY AT MEAN SEA LEVEL\", \"blocks\": [{\"label\": \"Pressure\", \"value\": \"1013.25 hPa\"}, {\"label\": \"Temperature\", \"value\": \"+15°C\"}, {\"label\": \"Density\", \"value\": \"1.225 kg/m³ = 1225 g/m³\"}, {\"label\": \"Lapse rate\", \"value\": \"1.98°C per 1,000 ft up to the tropopause at 36,090 ft (11 km)\"}]}"
+   }
+  },
+  {
+   "id": 36,
+   "question": "The amount of water vapour air can hold depends mainly on:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v1.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"62% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"52% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   }
+  },
+  {
+   "id": 46,
+   "question": "An anabatic wind is:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/local-winds-display.png",
+    "explanation_image_title": null,
+    "explanation_image_caption": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/anabatic-katabatic-v2.webp",
+    "explanation_image_title": "Anabatic and Katabatic Winds",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-anabatic-katabatic-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN ANABATIC WIND BLOWS UP A SLOPE BY DAY\", \"subline\": \"A KATABATIC WIND BLOWS DOWN THE SLOPE AT NIGHT\", \"blocks\": [{\"label\": \"Anabatic\", \"value\": \"Sun heats the slope, the air in contact warms, becomes less dense and rises\"}, {\"label\": \"Katabatic\", \"value\": \"The slope cools by radiation at night; cold, dense air drains downhill\"}, {\"label\": \"Memory aid\", \"value\": \"ANA = UP (like ascend), KATA = DOWN\"}]}"
+   }
+  },
+  {
+   "id": 53,
+   "question": "What combination is required for thunderstorm formation?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/thunderstorm-lifecycle-display.png",
+    "explanation_image_title": null,
+    "explanation_image_caption": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/thunderstorm-ingredients-v2.webp",
+    "explanation_image_title": "What a Thunderstorm Needs",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-thunderstorm-ingredients-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A THUNDERSTORM NEEDS MOIST AIR, INSTABILITY AND A LIFTING ACTION\", \"subline\": \"TAKE AWAY ANY ONE OF THE THREE AND NO CUMULONIMBUS FORMS\", \"blocks\": [{\"label\": \"Moisture\", \"value\": \"Enough water vapour to build deep cloud and release latent heat\"}, {\"label\": \"Instability\", \"value\": \"Rising air stays warmer than its surroundings, so it keeps rising\"}, {\"label\": \"Lifting action\", \"value\": \"Surface heating, a front, high ground or convergence starts the air rising\"}]}"
+   }
+  },
+  {
+   "id": 622,
+   "question": "Relative humidity:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v1.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"62% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"52% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   }
+  },
+  {
+   "id": 659,
+   "question": "The amount of water vapour that can be held in the air is dependent upon:",
+   "is_hidden": true,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v1.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"62% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"52% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   }
+  },
+  {
+   "id": 1471,
+   "question": "Freezing fog consists mainly of:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "https://kkmlfbxfopwulwkloaoc.supabase.co/storage/v1/object/public/question-images/meteorology/full-edit-20260817-b880cef667c8247afb420ed2/icing-types-display.png",
+    "explanation_image_title": null,
+    "explanation_image_caption": null,
+    "explanation_visual_key": null,
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/freezing-fog-v2.webp",
+    "explanation_image_title": "Freezing Fog",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-freezing-fog-001",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FREEZING FOG IS MADE OF SUPERCOOLED WATER DROPLETS\", \"subline\": \"THE DROPLETS STAY LIQUID BELOW 0°C AND FREEZE ON CONTACT WITH A SURFACE\", \"blocks\": [{\"label\": \"Temperature\", \"value\": \"Below 0°C\"}, {\"label\": \"Droplets\", \"value\": \"Liquid (supercooled), not ice crystals\"}, {\"label\": \"On contact\", \"value\": \"They freeze onto aircraft, trees and fences as rime ice\"}, {\"label\": \"Hazard\", \"value\": \"Poor visibility plus icing on the ground and during take-off\"}]}"
+   }
+  },
+  {
+   "id": 1481,
+   "question": "When a mass of air descends, its relative humidity generally:",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v1.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"62% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"52% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   }
+  },
+  {
+   "id": 1487,
+   "question": "If unsaturated air is warmed while the water vapour content stays the same, relative humidity will:",
+   "is_hidden": true,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v1.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"62% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/relative-humidity-temperature-v2.webp",
+    "explanation_image_title": "Relative Humidity: Variations with Temperature",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-relative-humidity-temperature-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY DATA\",\"headline\":\"RELATIVE HUMIDITY FALLS AS AIR WARMS, EVEN WITH NO MOISTURE ADDED OR REMOVED\",\"subline\":\"WARMER AIR CAN HOLD MORE WATER VAPOUR, SO THE SAME MOISTURE CONTENT IS A SMALLER PERCENTAGE OF CAPACITY\",\"blocks\":[{\"label\":\"At 10°C\",\"value\":\"100% relative humidity (saturated)\"},{\"label\":\"At 20°C\",\"value\":\"52% relative humidity, same moisture content\"},{\"label\":\"At 30°C\",\"value\":\"28% relative humidity, same moisture content\"},{\"label\":\"Why\",\"value\":\"Warmer air's capacity to hold water vapour increases, while the actual amount present stays constant\"}]}"
+   }
+  },
+  {
+   "id": 1536,
+   "question": "Which instrument measures atmospheric pressure?",
+   "is_hidden": false,
+   "before": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/aneroid-barometer-v1.webp",
+    "explanation_image_title": "Aneroid Barometer",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-aneroid-barometer-001",
+    "explanation_visual_template": "{\"kicker\":\"KEY FACT\",\"headline\":\"AN ANEROID BAROMETER MEASURES ATMOSPHERIC PRESSURE\",\"subline\":\"A SEALED, FLEXIBLE METAL CAPSULE EXPANDS AND CONTRACTS AS PRESSURE CHANGES\",\"blocks\":[{\"label\":\"Instrument\",\"value\":\"Aneroid barometer\"},{\"label\":\"Measures\",\"value\":\"Atmospheric (static) pressure\"},{\"label\":\"Mechanism\",\"value\":\"A sealed capsule flexes as outside pressure changes, driving a dial needle\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/meteorology/refined-batch-2/aneroid-barometer-v4.webp",
+    "explanation_image_title": "How an Aneroid Barometer Works",
+    "explanation_image_caption": null,
+    "explanation_visual_key": "met-aneroid-barometer-002",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A BAROMETER MEASURES ATMOSPHERIC PRESSURE\", \"subline\": \"THE ANEROID TYPE USES A SEALED CAPSULE THAT FLEXES AS OUTSIDE PRESSURE CHANGES\", \"blocks\": [{\"label\": \"Capsule\", \"value\": \"Sealed and partly emptied of air; a spring stops it collapsing\"}, {\"label\": \"Pressure rises\", \"value\": \"The capsule is squeezed thinner and the needle reads higher\"}, {\"label\": \"Pressure falls\", \"value\": \"The capsule expands and the needle reads lower\"}, {\"label\": \"Units\", \"value\": \"Read in hectopascals (hPa)\"}]}"
+   }
+  }
+ ]
+}

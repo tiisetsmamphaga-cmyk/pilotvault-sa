@@ -1,0 +1,135 @@
+{
+ "date": "2026-10-08",
+ "subject": "human-performance",
+ "change": "Human Performance to the explanation standard: an answer-first KEY FACT card per question and phone-first approach-illusion pictures; textbook figures kept.",
+ "rows": [
+  {
+   "id": 2072,
+   "question": "What approach error can be caused by a very wide unfamiliar runway?",
+   "is_hidden": false,
+   "why": "KEY FACT card only (the manual has no figure for it)",
+   "before": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/runway-width-illusion-v1.webp",
+    "explanation_image_title": "Runway Width Illusion",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A WIDE RUNWAY: A HIGHER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO LOW\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   },
+   "after": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A WIDE RUNWAY: A HIGHER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO LOW\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   }
+  },
+  {
+   "id": 2108,
+   "question": "What approach error can an unfamiliar upsloping runway cause?",
+   "is_hidden": false,
+   "why": "new picture and answer-first KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/runway-slope-illusion-v1.webp",
+    "explanation_image_title": "Runway Slope Illusion",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN UPSLOPING RUNWAY: A LOWER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO HIGH\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/runway-slope-illusion-v2.webp",
+    "explanation_image_title": "Runway Slope Illusion",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN UPSLOPING RUNWAY: A LOWER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO HIGH\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   }
+  },
+  {
+   "id": 2158,
+   "question": "What approach error can a very narrow unfamiliar runway cause?",
+   "is_hidden": false,
+   "why": "KEY FACT card only (the manual has no figure for it)",
+   "before": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/runway-width-illusion-v1.webp",
+    "explanation_image_title": "Runway Width Illusion",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A NARROW RUNWAY: A LOWER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO HIGH\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   },
+   "after": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A NARROW RUNWAY: A LOWER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO HIGH\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   }
+  },
+  {
+   "id": 2159,
+   "question": "What approach error can an unfamiliar downsloping runway cause?",
+   "is_hidden": false,
+   "why": "new picture and answer-first KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/runway-slope-illusion-v1.webp",
+    "explanation_image_title": "Runway Slope Illusion",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A DOWNSLOPING RUNWAY: A HIGHER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO LOW\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/runway-slope-illusion-v2.webp",
+    "explanation_image_title": "Runway Slope Illusion",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A DOWNSLOPING RUNWAY: A HIGHER APPROACH\", \"subline\": \"IT MAKES YOU FEEL TOO LOW\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   }
+  },
+  {
+   "id": 2214,
+   "question": "A pilot flying above a sloping cloud layer may incorrectly:",
+   "is_hidden": false,
+   "why": "new picture and answer-first KEY FACT card",
+   "before": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SLOPING CLOUD TOP AS A FALSE HORIZON\", \"subline\": \"LEVELLING ON IT LEAVES THE WINGS BANKED\", \"blocks\": [{\"label\": \"Cure\", \"value\": \"Cross-check the attitude indicator\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/false-horizon-v1.webp",
+    "explanation_image_title": "False Horizon",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SLOPING CLOUD TOP AS A FALSE HORIZON\", \"subline\": \"LEVELLING ON IT LEAVES THE WINGS BANKED\", \"blocks\": [{\"label\": \"Cure\", \"value\": \"Cross-check the attitude indicator\"}]}"
+   }
+  },
+  {
+   "id": 2216,
+   "question": "During a night approach over dark, featureless terrain with only runway lights visible, a pilot may tend to:",
+   "is_hidden": false,
+   "why": "new picture and answer-first KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/black-hole-approach-v1.webp",
+    "explanation_image_title": "Black Hole Approach",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A LOW APPROACH THAT LANDS SHORT\", \"subline\": \"THE BLACK HOLE EFFECT MAKES YOU FEEL TOO HIGH\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/black-hole-approach-v2.webp",
+    "explanation_image_title": "Black Hole Approach",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A LOW APPROACH THAT LANDS SHORT\", \"subline\": \"THE BLACK HOLE EFFECT MAKES YOU FEEL TOO HIGH\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   }
+  },
+  {
+   "id": 2795,
+   "question": "What is the 'Black Hole Effect' (Kraft Illusion)?",
+   "is_hidden": false,
+   "why": "new picture and answer-first KEY FACT card",
+   "before": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/black-hole-approach-v1.webp",
+    "explanation_image_title": "Black Hole Approach",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BLACK HOLE: ONLY RUNWAY LIGHTS, YOU FEEL TOO HIGH\", \"subline\": \"SO THE APPROACH IS FLOWN LOW AND SHORT\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/black-hole-approach-v2.webp",
+    "explanation_image_title": "Black Hole Approach",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BLACK HOLE: ONLY RUNWAY LIGHTS, YOU FEEL TOO HIGH\", \"subline\": \"SO THE APPROACH IS FLOWN LOW AND SHORT\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   }
+  },
+  {
+   "id": 2797,
+   "question": "A pilot used to a standard runway width of approximately 150 feet (46 m) lands at an unfamiliar airfield with a narrower runway. What is the likely effect on his approach?",
+   "is_hidden": false,
+   "why": "KEY FACT card only (the manual has no figure for it)",
+   "before": {
+    "explanation_image_url": "/explanation-images/human-performance/refined-batch-11/runway-width-illusion-v1.webp",
+    "explanation_image_title": "Runway Width Illusion",
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A NARROW RUNWAY: FEELS TOO HIGH, FLIES LOW\", \"subline\": \"USED TO A 150 FT (46 M) WIDE RUNWAY\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   },
+   "after": {
+    "explanation_image_url": null,
+    "explanation_image_title": null,
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A NARROW RUNWAY: FEELS TOO HIGH, FLIES LOW\", \"subline\": \"USED TO A 150 FT (46 M) WIDE RUNWAY\", \"blocks\": [{\"label\": \"Approach illusions\", \"value\": \"Looks too high → flies low: upslope, narrow, black hole · Looks too low → flies high: downslope, wide\"}]}"
+   }
+  }
+ ]
+}

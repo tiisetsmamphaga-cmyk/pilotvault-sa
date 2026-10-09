@@ -88,6 +88,8 @@ async function loadSubjectQuestions(
         `
       )
       .eq("subject", subject)
+      // Hidden questions (for example duplicates) are never served.
+      .eq("is_hidden", false)
       .order("id", { ascending: true })
       .range(from, to)
 

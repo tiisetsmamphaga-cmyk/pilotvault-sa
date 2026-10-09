@@ -3,10 +3,11 @@
 import { formatSubjectName } from "../practice-utils"
 import type { ExamAnswers, ExamMode, Question } from "../types"
 
-import { ExplanationImage } from "./explanation-image"
+import { CARD_ONLY_SUBJECTS, ExplanationImage, KeyFactSection } from "./explanation-image"
 import { FormattedExplanation } from "./formatted-explanation"
 import { HumanPerformanceVisual } from "./human-performance-visual"
 import { PrinciplesOfFlightVisual } from "./principles-of-flight-visual"
+import { ReportQuestionButton } from "./report-question-button"
 
 type ExamResultsProps = {
   subject: string
@@ -41,6 +42,7 @@ export function ExamResults({
 }: ExamResultsProps) {
   const isHumanPerformance = subject === "human-performance"
   const isPrinciplesOfFlight = subject === "principles-of-flight"
+  const showsCardOnly = CARD_ONLY_SUBJECTS.has(subject)
 
   return (
     <main className="pv-exam-results min-h-screen bg-white text-slate-900">
@@ -95,7 +97,13 @@ export function ExamResults({
 
                 return (
                   <div key={question.id} className="border-b border-slate-300 pb-6">
-                    <p className="text-sm font-semibold text-slate-500">Question {originalIndex + 1}</p>
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold text-slate-500">Question {originalIndex + 1}</p>
+                      <ReportQuestionButton
+                        questionId={question.id}
+                        className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+                      />
+                    </div>
                     <h4 className="mt-2 text-lg font-semibold text-slate-900">{question.question}</h4>
                     <p className="mt-4 text-red-700">
                       Your answer: <span className="font-semibold">{answers[originalIndex] || "Not answered"}</span>
@@ -103,7 +111,11 @@ export function ExamResults({
                     <p className="mt-2 text-green-700">
                       Correct answer: <span className="font-semibold">{question.correctAnswer}</span>
                     </p>
-                    <FormattedExplanation text={question.explanation} />
+                    <FormattedExplanation text={question.explanation}>
+                      {showsCardOnly && !question.explanation_image_url && (
+                        <KeyFactSection template={question.explanation_visual_template} />
+                      )}
+                    </FormattedExplanation>
 
                     {isHumanPerformance && !usesApprovedBankVisual && !question.explanation_image_url ? (
                       <HumanPerformanceVisual question={question} />

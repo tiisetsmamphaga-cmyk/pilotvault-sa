@@ -1,0 +1,73 @@
+{
+ "date": "2026-10-08",
+ "subject": "navigation",
+ "change": "Trial set: the user's picture picks, so that no picture repeats.",
+ "rows": [
+  {
+   "id": 1592,
+   "question": "Rectified Airspeed (RAS) or Calibrated Airspeed (CAS) is:",
+   "why": "leaves the trial set (picture swap picked by the user)",
+   "before": {
+    "is_trial_question": true
+   },
+   "after": {
+    "is_trial_question": false
+   }
+  },
+  {
+   "id": 1664,
+   "question": "An aircraft is overhead airfield A (elevation sea level) at 1000ft and is required to be at 8500ft within 25nm. Mean climb TAS 100kts, mean climb headwind 6kts. The mean rate of climb required is:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false
+   },
+   "after": {
+    "is_trial_question": true
+   }
+  },
+  {
+   "id": 1591,
+   "question": "True Airspeed (TAS) is:",
+   "why": "leaves the trial set (picture swap picked by the user)",
+   "before": {
+    "is_trial_question": true
+   },
+   "after": {
+    "is_trial_question": false
+   }
+  },
+  {
+   "id": 1604,
+   "question": "An aircraft in the southern hemisphere is to maintain a constant heading of 90deg (M) on a magnetic compass. If the aircraft’s speed is increased, the compass would:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false
+   },
+   "after": {
+    "is_trial_question": true
+   }
+  },
+  {
+   "id": 1816,
+   "question": "When measuring a course on a 1:500 000 aeronautical chart, the protractor should normally be aligned with:",
+   "why": "leaves the trial set (picture swap picked by the user)",
+   "before": {
+    "is_trial_question": true
+   },
+   "after": {
+    "is_trial_question": false
+   }
+  },
+  {
+   "id": 1663,
+   "question": "An aircraft flies from A to B, distance 133nm in 1hr12mins. If there is a headwind of 12kts the TAS is:",
+   "why": "joins the trial set",
+   "before": {
+    "is_trial_question": false
+   },
+   "after": {
+    "is_trial_question": true
+   }
+  }
+ ]
+}

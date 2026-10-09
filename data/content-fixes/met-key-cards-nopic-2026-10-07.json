@@ -1,0 +1,991 @@
+{
+ "date": "2026-10-07",
+ "subject": "meteorology",
+ "change": "Added KEY FACT cards to the Meteorology questions without a picture.",
+ "rows": [
+  {
+   "id": 35,
+   "question": "At FL085 the temperature is ISA +7°C. What is the outside air temperature?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FL085 AT ISA +7°C: OAT ABOUT +5°C\", \"subline\": \"WORK OUT ISA FOR THE LEVEL, THEN ADD THE DEVIATION\", \"blocks\": [{\"label\": \"ISA\", \"value\": \"+15°C at sea level, falling about 2°C per 1,000 ft\"}, {\"label\": \"ISA at 8,500 ft\", \"value\": \"15 − (8.5 × 2) ≈ −2°C\"}, {\"label\": \"Add +7\", \"value\": \"−2 + 7 = +5°C\"}]}"
+   }
+  },
+  {
+   "id": 38,
+   "question": "When temperature and dew point are close together and becoming closer what can be expected?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TEMPERATURE AND DEW POINT CLOSING TOGETHER MEANS LOW CLOUD OR FOG\", \"subline\": \"THE AIR IS CLOSE TO SATURATION\", \"blocks\": [{\"label\": \"Small spread\", \"value\": \"High relative humidity\"}, {\"label\": \"Watch\", \"value\": \"A spread closing in the evening, as the air cools overnight\"}]}"
+   }
+  },
+  {
+   "id": 47,
+   "question": "A katabatic wind is:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A KATABATIC WIND FLOWS DOWNHILL, USUALLY AT NIGHT\", \"subline\": \"AIR ON THE SLOPE COOLS, BECOMES DENSER AND DRAINS DOWNHILL\", \"blocks\": [{\"label\": \"Anabatic\", \"value\": \"The daytime opposite: warm air flowing up the slope\"}, {\"label\": \"Strength\", \"value\": \"Usually light, but can be strong down long, snow-covered slopes\"}]}"
+   }
+  },
+  {
+   "id": 52,
+   "question": "Which characteristic is associated with unstable air?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"UNSTABLE AIR GIVES GOOD VISIBILITY\", \"subline\": \"RISING AIR CARRIES HAZE AND SMOKE AWAY FROM THE SURFACE\", \"blocks\": [{\"label\": \"Unstable air\", \"value\": \"Heaped (cumuliform) cloud, turbulence, good visibility, showers\"}, {\"label\": \"Stable air\", \"value\": \"Layered (stratiform) cloud, smooth air, poor visibility, drizzle or steady rain\"}]}"
+   }
+  },
+  {
+   "id": 55,
+   "question": "Which condition is commonly associated with stable air?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STABLE AIR GIVES POOR VISIBILITY AND STRATIFORM CLOUD\", \"subline\": \"NO VERTICAL MIXING, SO HAZE STAYS LOW AND CLOUD SPREADS IN LAYERS\", \"blocks\": [{\"label\": \"Stable air\", \"value\": \"Layered (stratiform) cloud, smooth air, poor visibility, drizzle or steady rain\"}, {\"label\": \"Unstable air\", \"value\": \"Heaped (cumuliform) cloud, turbulence, good visibility, showers\"}]}"
+   }
+  },
+  {
+   "id": 62,
+   "question": "What is virga?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"VIRGA IS RAIN OR SNOW THAT EVAPORATES BEFORE IT REACHES THE GROUND\", \"subline\": \"YOU SEE GREY STREAKS HANGING BELOW THE CLOUD BASE\", \"blocks\": [{\"label\": \"Why it matters\", \"value\": \"The evaporation cools the air, which can cause strong downdraughts and turbulence below the cloud\"}, {\"label\": \"Don't confuse it with\", \"value\": \"A shower: that rain reaches the ground\"}, {\"label\": \"Remember\", \"value\": \"Virga is “rain that never lands”\"}]}"
+   }
+  },
+  {
+   "id": 66,
+   "question": "The Coriolis force is caused by:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE CORIOLIS FORCE IS CAUSED BY THE EARTH'S ROTATION\", \"subline\": \"IT DEFLECTS MOVING AIR; IT DOESN'T START THE MOVEMENT\", \"blocks\": [{\"label\": \"Southern Hemisphere\", \"value\": \"Deflects to the left\"}, {\"label\": \"Starts the wind\", \"value\": \"The pressure gradient force\"}, {\"label\": \"Strength\", \"value\": \"Zero at the equator, greatest at the poles\"}]}"
+   }
+  },
+  {
+   "id": 68,
+   "question": "Carburettor icing is usually indicated by:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CARBURETTOR ICE SHOWS AS ROUGH RUNNING AND FALLING RPM\", \"subline\": \"ON A CONSTANT-SPEED PROPELLER, MANIFOLD PRESSURE FALLS INSTEAD\", \"blocks\": [{\"label\": \"Cause\", \"value\": \"Ice narrows the venturi and upsets the fuel/air mixture\"}, {\"label\": \"Action\", \"value\": \"Full carb heat at once\"}, {\"label\": \"Possible\", \"value\": \"Even at warm temperatures when the air is humid\"}]}"
+   }
+  },
+  {
+   "id": 70,
+   "question": "At its cold oceanic source, polar maritime air is usually:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"POLAR MARITIME AIR IS COLD, MOIST AND STABLE AT ITS SOURCE\", \"subline\": \"THE COLD SEA COOLS IT FROM BELOW, WHICH KEEPS IT STABLE\", \"blocks\": [{\"label\": \"Polar\", \"value\": \"Cold, from high latitudes\"}, {\"label\": \"Maritime\", \"value\": \"Moist, from a long track over the sea\"}, {\"label\": \"Changes when\", \"value\": \"It crosses a warmer surface: heated from below, it becomes unstable\"}]}"
+   }
+  },
+  {
+   "id": 79,
+   "question": "What does METAR represent?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A METAR IS THE ACTUAL WEATHER AT AN AERODROME\", \"subline\": \"WHAT WAS OBSERVED AT A STATED TIME, NOT A FORECAST\", \"blocks\": [{\"label\": \"Contains\", \"value\": \"Wind, visibility, weather, cloud, temperature/dew point, QNH\"}, {\"label\": \"TAF instead\", \"value\": \"A forecast for an aerodrome\"}]}"
+   }
+  },
+  {
+   "id": 80,
+   "question": "What does TAF represent?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A TAF IS AN AERODROME FORECAST\", \"subline\": \"WHAT TO EXPECT AT ONE AERODROME OVER A SET PERIOD\", \"blocks\": [{\"label\": \"Covers\", \"value\": \"Up to 30 hours\"}, {\"label\": \"Contains\", \"value\": \"Wind, visibility, weather and cloud\"}, {\"label\": \"METAR instead\", \"value\": \"The actual weather now\"}]}"
+   }
+  },
+  {
+   "id": 81,
+   "question": "Which set of conditions permits CAVOK to be reported?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CAVOK NEEDS 10 KM VISIBILITY, NO SIGNIFICANT WEATHER AND NO SIGNIFICANT CLOUD\", \"subline\": \"ALL CONDITIONS MUST BE MET AT ONCE\", \"blocks\": [{\"label\": \"Visibility\", \"value\": \"10 km or more\"}, {\"label\": \"Cloud\", \"value\": \"None below 5,000 ft (or the minimum sector altitude if higher), and no CB or TCU\"}, {\"label\": \"Weather\", \"value\": \"Nothing significant to aviation\"}]}"
+   }
+  },
+  {
+   "id": 82,
+   "question": "The cloud symbol FEW indicates:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FEW MEANS 1 TO 2 OKTAS\", \"subline\": \"1 OR 2 EIGHTHS OF THE SKY COVERED\", \"blocks\": [{\"label\": \"The scale\", \"value\": \"FEW 1–2 · SCT 3–4 · BKN 5–7 · OVC 8 oktas\"}, {\"label\": \"Ceiling\", \"value\": \"The lowest BKN or OVC layer; FEW and SCT never count\"}]}"
+   }
+  },
+  {
+   "id": 83,
+   "question": "The cloud symbol SCT indicates:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SCT MEANS 3 TO 4 OKTAS\", \"subline\": \"SCATTERED: 3 OR 4 EIGHTHS OF THE SKY COVERED\", \"blocks\": [{\"label\": \"The scale\", \"value\": \"FEW 1–2 · SCT 3–4 · BKN 5–7 · OVC 8 oktas\"}, {\"label\": \"Ceiling\", \"value\": \"The lowest BKN or OVC layer; FEW and SCT never count\"}]}"
+   }
+  },
+  {
+   "id": 84,
+   "question": "The cloud symbol BKN indicates:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BKN MEANS 5 TO 7 OKTAS\", \"subline\": \"BROKEN: 5 TO 7 EIGHTHS OF THE SKY COVERED\", \"blocks\": [{\"label\": \"The scale\", \"value\": \"FEW 1–2 · SCT 3–4 · BKN 5–7 · OVC 8 oktas\"}, {\"label\": \"Ceiling\", \"value\": \"The lowest BKN or OVC layer; FEW and SCT never count\"}]}"
+   }
+  },
+  {
+   "id": 85,
+   "question": "The cloud symbol OVC indicates:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"OVC MEANS 8 OKTAS\", \"subline\": \"OVERCAST: THE WHOLE SKY COVERED\", \"blocks\": [{\"label\": \"The scale\", \"value\": \"FEW 1–2 · SCT 3–4 · BKN 5–7 · OVC 8 oktas\"}, {\"label\": \"Ceiling\", \"value\": \"The lowest BKN or OVC layer; FEW and SCT never count\"}, {\"label\": \"Height\", \"value\": \"The figures after it give the base in hundreds of feet: OVC008 = 800 ft\"}]}"
+   }
+  },
+  {
+   "id": 86,
+   "question": "Information normally provided by ATIS includes:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ATIS GIVES SURFACE WIND, QNH, VISIBILITY AND THE RUNWAY IN USE\", \"subline\": \"A RECORDED BROADCAST OF THE CURRENT AERODROME INFORMATION\", \"blocks\": [{\"label\": \"Also\", \"value\": \"Weather, cloud, temperature and dew point\"}, {\"label\": \"Why\", \"value\": \"Keeps the frequency free for live calls\"}, {\"label\": \"On first contact\", \"value\": \"Report the ATIS letter you have received\"}]}"
+   }
+  },
+  {
+   "id": 650,
+   "question": "On flying overhead an aerodrome at which ground fog is present, the runway is clearly visible to the pilot when looking straight down. Assuming no change in conditions, from the final approach the visibility will appear to have:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ON FINAL, GROUND FOG LOOKS WORSE THAN IT DID FROM OVERHEAD\", \"subline\": \"YOU LOOK THROUGH MUCH MORE FOG ALONG A SHALLOW SLANT\", \"blocks\": [{\"label\": \"Overhead\", \"value\": \"You look down through only the fog's depth\"}, {\"label\": \"On approach\", \"value\": \"The slant path crosses a long stretch of fog\"}, {\"label\": \"Remember\", \"value\": \"Fog that looks thin from above can hide the runway on final\"}]}"
+   }
+  },
+  {
+   "id": 660,
+   "question": "An aircraft is flying at FL095, OAT +5°C. The temperature deviation from ISA is:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FL095 WITH OAT +5°C IS ISA +9°C\", \"subline\": \"DEVIATION = ACTUAL TEMPERATURE − ISA TEMPERATURE\", \"blocks\": [{\"label\": \"ISA\", \"value\": \"+15°C at sea level, falling about 2°C per 1,000 ft\"}, {\"label\": \"ISA at 9,500 ft\", \"value\": \"15 − (9.5 × 2) ≈ −4°C\"}, {\"label\": \"Deviation\", \"value\": \"+5 − (−4) = +9°C\"}]}"
+   }
+  },
+  {
+   "id": 662,
+   "question": "Cooling of the earth’s surface during the night:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NIGHT COOLING IS GREATEST UNDER CLEAR SKIES OVER ROCK OR DESERT\", \"subline\": \"NO CLOUD TO TRAP THE HEAT, AND DRY GROUND STORES LITTLE OF IT\", \"blocks\": [{\"label\": \"Cloud cover\", \"value\": \"Acts like a blanket and slows the cooling\"}, {\"label\": \"Water\", \"value\": \"Changes temperature very little between day and night\"}, {\"label\": \"Result\", \"value\": \"A surface inversion by morning\"}]}"
+   }
+  },
+  {
+   "id": 663,
+   "question": "Which statement correctly distinguishes mist from fog?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MIST HAS VISIBILITY OF 1,000 M OR MORE\", \"subline\": \"MIST AND FOG ARE THE SAME DROPLETS; ONLY THE VISIBILITY DIFFERS\", \"blocks\": [{\"label\": \"Fog\", \"value\": \"Visibility below 1,000 m\"}, {\"label\": \"Mist\", \"value\": \"Visibility 1,000 m or more\"}, {\"label\": \"Haze\", \"value\": \"Dry particles such as dust or smoke, not water droplets\"}]}"
+   }
+  },
+  {
+   "id": 664,
+   "question": "Fog is reported when suspended water droplets or ice crystals reduce visibility to:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FOG IS REPORTED WHEN VISIBILITY IS BELOW 1,000 M\", \"subline\": \"AT 1,000 M OR MORE THE SAME OBSCURATION IS MIST\", \"blocks\": [{\"label\": \"Fog\", \"value\": \"Visibility below 1,000 m\"}, {\"label\": \"Mist\", \"value\": \"Visibility 1,000 m or more\"}, {\"label\": \"In a METAR\", \"value\": \"FG = fog, BR = mist\"}]}"
+   }
+  },
+  {
+   "id": 671,
+   "question": "In a high pressure system in the southern hemisphere?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SOUTHERN HEMISPHERE HIGH: ANTICLOCKWISE, OUTWARDS AND DOWNWARDS\", \"subline\": \"SINKING AIR WARMS, SO HIGHS BRING SETTLED WEATHER\", \"blocks\": [{\"label\": \"High\", \"value\": \"Anticlockwise, flowing out at the surface, air sinking\"}, {\"label\": \"Low\", \"value\": \"Clockwise, flowing in at the surface, air rising\"}, {\"label\": \"Northern Hemisphere\", \"value\": \"The directions are reversed\"}]}"
+   }
+  },
+  {
+   "id": 675,
+   "question": "In the Southern Hemisphere, the wind around a low pressure blows?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SOUTHERN HEMISPHERE LOW: CLOCKWISE AROUND THE LOWEST PRESSURE\", \"subline\": \"FRICTION TURNS THE SURFACE WIND IN ACROSS THE ISOBARS TOWARDS THE CENTRE\", \"blocks\": [{\"label\": \"Low\", \"value\": \"Clockwise, flowing in at the surface, air rising\"}, {\"label\": \"High\", \"value\": \"Anticlockwise, flowing out at the surface, air sinking\"}, {\"label\": \"Northern Hemisphere\", \"value\": \"The directions are reversed\"}]}"
+   }
+  },
+  {
+   "id": 679,
+   "question": "With reference to the METAR for Johannesburg (FAJS) on page 9 of the Meteorology Manual?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FAJS: THE WIND VARIED BETWEEN 350° AND 070°\", \"subline\": \"350V070 MEANS VARYING CLOCKWISE FROM 350° TO 070°\", \"blocks\": [{\"label\": \"V\", \"value\": \"Separates the two extremes of direction\"}, {\"label\": \"Direction\", \"value\": \"Clockwise from the first figure to the second, here through north\"}]}"
+   }
+  },
+  {
+   "id": 681,
+   "question": "The characteristics of a stable air mass include?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A STABLE AIR MASS GIVES POOR SURFACE VISIBILITY\", \"subline\": \"NO VERTICAL MIXING, SO HAZE, SMOKE AND MOISTURE STAY NEAR THE GROUND\", \"blocks\": [{\"label\": \"Stable air\", \"value\": \"Layered (stratiform) cloud, smooth air, poor visibility, drizzle or steady rain\"}, {\"label\": \"Unstable air\", \"value\": \"Heaped (cumuliform) cloud, turbulence, good visibility, showers\"}]}"
+   }
+  },
+  {
+   "id": 682,
+   "question": "Ahead of a cold front approaching the south-western Cape, surface winds are commonly:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AHEAD OF A COLD FRONT, THE SOUTH-WESTERN CAPE GETS NORTH-WESTERLY WINDS\", \"subline\": \"AIR CIRCULATES AROUND THE APPROACHING LOW\", \"blocks\": [{\"label\": \"As the front passes\", \"value\": \"The wind shifts sharply to south-westerly\"}, {\"label\": \"Behind it\", \"value\": \"Colder air, and pressure rises\"}]}"
+   }
+  },
+  {
+   "id": 686,
+   "question": "The factor most likely to cause a decrease in the stability of an air mass is?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"WARMING FROM BELOW MAKES AN AIR MASS LESS STABLE\", \"subline\": \"THE BOTTOM LAYER BECOMES BUOYANT AND THE LAPSE RATE STEEPENS\", \"blocks\": [{\"label\": \"Less stable\", \"value\": \"Heated from below: sunny ground, a warmer sea\"}, {\"label\": \"More stable\", \"value\": \"Cooled from below, subsidence, an inversion\"}, {\"label\": \"Result\", \"value\": \"Cumulus, showers and turbulence\"}]}"
+   }
+  },
+  {
+   "id": 690,
+   "question": "With reference to the TAF for Durban (FADN) on page 8 of the Meteorology Manual, an aircraft landing between 1800 and 2000 local time would expect the surface wind to be?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FADN 1800–2000 LOCAL: WIND 140/12 KT\", \"subline\": \"CONVERT TO UTC FIRST: 1600–1800Z, THE BECMG 1618 PERIOD\", \"blocks\": [{\"label\": \"Time zone\", \"value\": \"South African local time = UTC + 2\"}, {\"label\": \"14012KT\", \"value\": \"From 140° true at 12 kt\"}]}"
+   }
+  },
+  {
+   "id": 692,
+   "question": "In winter, an aeroplane which has been parked outside during a night with clear skies may expect to be covered with?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A PARKED AIRCRAFT AFTER A CLEAR WINTER NIGHT WILL HAVE HOAR FROST\", \"subline\": \"THE SKIN COOLS BELOW 0°C AND VAPOUR TURNS STRAIGHT TO ICE\", \"blocks\": [{\"label\": \"Why clear nights\", \"value\": \"No cloud, so surfaces lose heat fastest\"}, {\"label\": \"Before flight\", \"value\": \"Remove it all: even a thin layer cuts lift\"}]}"
+   }
+  },
+  {
+   "id": 694,
+   "question": "The characteristics of a moist, unstable air mass include?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOIST, UNSTABLE AIR GIVES CUMULIFORM CLOUD AND SHOWERS\", \"subline\": \"LIFTED AIR KEEPS RISING ON ITS OWN AND BUILDS CUMULUS\", \"blocks\": [{\"label\": \"Unstable air\", \"value\": \"Heaped (cumuliform) cloud, turbulence, good visibility, showers\"}, {\"label\": \"Can grow into\", \"value\": \"Towering cumulus and cumulonimbus\"}, {\"label\": \"Stable air\", \"value\": \"Layered (stratiform) cloud, smooth air, poor visibility, drizzle or steady rain\"}]}"
+   }
+  },
+  {
+   "id": 695,
+   "question": "Which cloud form is most typical of a stable air mass?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STABLE AIR FORMS STRATIFORM (LAYERED) CLOUD\", \"subline\": \"CLOUD SPREADS SIDEWAYS INSTEAD OF BUILDING UPWARDS\", \"blocks\": [{\"label\": \"Stratiform types\", \"value\": \"Stratus, stratocumulus, altostratus, nimbostratus\"}, {\"label\": \"Unstable air instead\", \"value\": \"Cumulus, towering cumulus, cumulonimbus\"}]}"
+   }
+  },
+  {
+   "id": 697,
+   "question": "With reference to the METAR for George (FAGG) on page 9 of the Meteorology Manual?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FAGG METAR 16/15: THE DEW POINT IS 15°C\", \"subline\": \"TEMPERATURE FIRST, DEW POINT SECOND\", \"blocks\": [{\"label\": \"Temperature\", \"value\": \"16°C\"}, {\"label\": \"Dew point\", \"value\": \"15°C\"}, {\"label\": \"A 1°C spread\", \"value\": \"Air close to saturation\"}]}"
+   }
+  },
+  {
+   "id": 700,
+   "question": "With reference to the TAF for Port Elizabeth (FAPE) on page 8 of the Meteorology Manual, an aircraft that intends landing between 1300 and 1500 local time would expect?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FAPE 1300–1500 LOCAL: 3 TO 4 OKTAS AT 1,500 FT\", \"subline\": \"CONVERT TO UTC FIRST: 1100–1300Z, THE BECMG 1113 PERIOD\", \"blocks\": [{\"label\": \"Time zone\", \"value\": \"South African local time = UTC + 2\"}, {\"label\": \"SCT015\", \"value\": \"3–4 oktas, base 1,500 ft above the aerodrome\"}]}"
+   }
+  },
+  {
+   "id": 709,
+   "question": "The most hazardous type of thunderstorms to aircraft are?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"THUNDERSTORMS EMBEDDED IN FRONTAL CLOUD ARE THE MOST HAZARDOUS\", \"subline\": \"THEY ARE HIDDEN INSIDE LAYERED CLOUD, SO YOU CAN'T SEE THEM TO AVOID THEM\", \"blocks\": [{\"label\": \"Isolated storms\", \"value\": \"Usually visible from a distance and can be flown around\"}, {\"label\": \"Hazards inside\", \"value\": \"Severe turbulence, hail, lightning and icing\"}, {\"label\": \"Where\", \"value\": \"Unstable air lifted at a front, often an occlusion\"}]}"
+   }
+  },
+  {
+   "id": 712,
+   "question": "Following the passage of a cold front, surface pressure will normally:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFTER A COLD FRONT PASSES, PRESSURE BEGINS TO RISE\", \"subline\": \"PRESSURE IS LOWEST AS THE FRONT GOES THROUGH\", \"blocks\": [{\"label\": \"Ahead of it\", \"value\": \"Pressure falls\"}, {\"label\": \"Behind it\", \"value\": \"Colder, denser air: pressure rises\"}, {\"label\": \"Also\", \"value\": \"Temperature drops and the wind shifts\"}]}"
+   }
+  },
+  {
+   "id": 713,
+   "question": "With reference to Station 2 of the Synoptic Station Models- 1 on page 5 of the Meteorology Manual. The barometric tendency during the past three hours was?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STATION 2: PRESSURE FELL, THEN STEADY\", \"subline\": \"THE TENDENCY SYMBOL IS A PICTURE OF THE BAROGRAPH TRACE\", \"blocks\": [{\"label\": \"Sloping down, then flat\", \"value\": \"Falling, then steady\"}, {\"label\": \"Period\", \"value\": \"The last 3 hours\"}]}"
+   }
+  },
+  {
+   "id": 714,
+   "question": "With reference to the Significant Weather Chart 3 on page 15 of the Meteorology Manual. An aircraft intending to fly from Port Elizabeth (PE) along the coast towards Cape Town (CT) would experience?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PE TO CAPE TOWN: DRIZZLE FROM STRATOCUMULUS AT FIRST, THEN RAIN NEAR CAPE TOWN\", \"subline\": \"READ A SIGNIFICANT WEATHER CHART ALONG THE WHOLE ROUTE, NOT AT ONE END\", \"blocks\": [{\"label\": \"Near Port Elizabeth\", \"value\": \"Shallow stratocumulus with drizzle\"}, {\"label\": \"Towards Cape Town\", \"value\": \"Deeper cloud and rain\"}, {\"label\": \"Method\", \"value\": \"Follow the route line through each weather area in turn\"}]}"
+   }
+  },
+  {
+   "id": 715,
+   "question": "With reference to Station 5 of the Synoptic Station Models- 1 on page 5 of the Meteorology Manual. The pressure change during the past three hours was?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STATION 5: PRESSURE FELL 3 HPA\", \"subline\": \"THE CHANGE IS PLOTTED IN TENTHS OF A HECTOPASCAL\", \"blocks\": [{\"label\": \"30\", \"value\": \"= 3.0 hPa\"}, {\"label\": \"Rise or fall\", \"value\": \"Read from the tendency symbol next to it\"}, {\"label\": \"Period\", \"value\": \"The last 3 hours\"}]}"
+   }
+  },
+  {
+   "id": 716,
+   "question": "With reference to the Winds and Temperatures chart on page 16 of the Meteorology Manual. The wind direction on the Natal North Coast at 5000 ft is?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NATAL NORTH COAST AT 5,000 FT: WIND FROM 115° TRUE\", \"subline\": \"WIND DIRECTIONS ON THESE CHARTS ARE ALWAYS IN DEGREES TRUE\", \"blocks\": [{\"label\": \"Chart entry\", \"value\": \"115/5, temperature +21°C\"}, {\"label\": \"Degrees magnetic\", \"value\": \"Used for the surface wind given by ATC and ATIS\"}]}"
+   }
+  },
+  {
+   "id": 717,
+   "question": "With reference to Station 6 of the Synoptic Station Models- 1, on page 5 of the Meteorology Manual. The present weather is?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STATION 6: MODERATE INTERMITTENT DRIZZLE\", \"subline\": \"PRESENT WEATHER IS PLOTTED TO THE LEFT OF THE STATION CIRCLE\", \"blocks\": [{\"label\": \"Don't confuse it with\", \"value\": \"Cloud-type and pressure-tendency symbols\"}]}"
+   }
+  },
+  {
+   "id": 720,
+   "question": "The term backing refers to?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKING MEANS THE WIND DIRECTION CHANGES ANTICLOCKWISE\", \"subline\": \"FOR EXAMPLE NORTH, THROUGH NORTH-WEST, TO WEST\", \"blocks\": [{\"label\": \"Veering\", \"value\": \"The opposite: a clockwise change, e.g. north to east\"}, {\"label\": \"Speed\", \"value\": \"Backing and veering are about direction only\"}]}"
+   }
+  },
+  {
+   "id": 721,
+   "question": "With reference to Station 4 of the Synoptic Station Models- 1 on page 5 of the Meteorology Manual. The medium cloud indicated is?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STATION 4: THICK ALTOSTRATUS OR NIMBOSTRATUS\", \"subline\": \"READ THE MIDDLE-CLOUD SYMBOL ON THE STATION MODEL\", \"blocks\": [{\"label\": \"These clouds\", \"value\": \"Extensive layers with possible continuous rain\"}]}"
+   }
+  },
+  {
+   "id": 724,
+   "question": "With reference to Station 14 of the Synoptic Station Models- 2 on page 6 of the Meteorology Manual?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STATION 14: VISIBILITY 200 M IN HAZE\", \"subline\": \"READ THE VISIBILITY CODE AND THE WEATHER SYMBOL TOGETHER\", \"blocks\": [{\"label\": \"Code 02\", \"value\": \"0.2 km = 200 m\"}, {\"label\": \"Symbol\", \"value\": \"Haze\"}]}"
+   }
+  },
+  {
+   "id": 729,
+   "question": "The type of cloud which can be expected to form as a result of a moist unstable air mass being forced upwards is?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FORCING MOIST, UNSTABLE AIR UPWARDS BUILDS CLOUD WITH LARGE VERTICAL DEVELOPMENT\", \"subline\": \"ONCE LIFTED, IT KEEPS RISING ON ITS OWN\", \"blocks\": [{\"label\": \"Cloud\", \"value\": \"Cumulus growing into towering cumulus or cumulonimbus\"}, {\"label\": \"Expect\", \"value\": \"Turbulence and heavy showers\"}, {\"label\": \"Stable air forced up\", \"value\": \"A layer of stratiform cloud that stops when the lifting stops\"}]}"
+   }
+  },
+  {
+   "id": 730,
+   "question": "Where is frontal fog most commonly found?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FRONTAL FOG FORMS AHEAD OF A WARM FRONT\", \"subline\": \"RAIN FROM THE WARM AIR ABOVE EVAPORATES INTO THE COLD AIR BELOW\", \"blocks\": [{\"label\": \"How\", \"value\": \"The extra moisture saturates the cold surface air\"}, {\"label\": \"Where\", \"value\": \"In the rain area ahead of the warm front\"}]}"
+   }
+  },
+  {
+   "id": 731,
+   "question": "With reference to the FAGM METAR on page 9, which decoding is correct?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FAGM: TEMPERATURE 16°C, DEW POINT 15°C, ON THE 20TH AT 0730Z\", \"subline\": \"THE DATE/TIME GROUP IS DAY, THEN TIME IN UTC\", \"blocks\": [{\"label\": \"16/15\", \"value\": \"Temperature, then dew point (not maximum and minimum)\"}, {\"label\": \"0730Z\", \"value\": \"0930 South African time\"}]}"
+   }
+  },
+  {
+   "id": 732,
+   "question": "With reference to the TAF for George (FAGG) on page 8 of the Meteorology Manual, the expected weather includes?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FAGG: LIGHT RAIN, TEMPORARILY HEAVY RAIN 1200–2000 LOCAL\", \"subline\": \"TEMPO 1018 IS 1000–1800 UTC\", \"blocks\": [{\"label\": \"−RA / +RA\", \"value\": \"Light rain / heavy rain\"}, {\"label\": \"Time zone\", \"value\": \"South African local time = UTC + 2\"}]}"
+   }
+  },
+  {
+   "id": 733,
+   "question": "With reference to the Winds and Temperatures chart on page 16 of the Meteorology Manual. The wind direction and velocity (W/V) at 4000 ft at S25° E015° is?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"4,000 FT AT S25° E015°: W/V 221/11\", \"subline\": \"INTERPOLATE HALFWAY BETWEEN THE 3,000 FT AND 5,000 FT ROWS\", \"blocks\": [{\"label\": \"3,000 ft\", \"value\": \"246/10\"}, {\"label\": \"5,000 ft\", \"value\": \"196/12\"}, {\"label\": \"Halfway\", \"value\": \"221° at 11 kt\"}]}"
+   }
+  },
+  {
+   "id": 736,
+   "question": "With reference to the Winds and Temperatures chart on page 16 of the Meteorology Manual. The temperature at 5 000 ft at S30° E015°, expressed relative to ISA, is?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"5,000 FT AT S30° E015°: ISA +7°C\", \"subline\": \"COMPARE THE CHART TEMPERATURE WITH ISA FOR THAT HEIGHT\", \"blocks\": [{\"label\": \"Chart\", \"value\": \"+12°C\"}, {\"label\": \"ISA at 5,000 ft\", \"value\": \"15 − (5 × 2) = +5°C\"}, {\"label\": \"Deviation\", \"value\": \"+12 − 5 = +7°C\"}]}"
+   }
+  },
+  {
+   "id": 738,
+   "question": "With reference to the METAR for Upington (FAUP) on page 9 of the Meteorology Manual?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"FAUP CAVOK: NO OPERATIONALLY SIGNIFICANT CLOUD BELOW 5,000 FT\", \"subline\": \"CAVOK ALSO MEANS 10 KM VISIBILITY AND NO SIGNIFICANT WEATHER\", \"blocks\": [{\"label\": \"Cloud\", \"value\": \"None below 5,000 ft (or the minimum sector altitude if higher), and no CB or TCU\"}, {\"label\": \"Visibility\", \"value\": \"10 km or more\"}]}"
+   }
+  },
+  {
+   "id": 741,
+   "question": "As a polar maritime air mass passes over South Africa during summer it will?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"POLAR MARITIME AIR OVER SOUTH AFRICA IN SUMMER BECOMES UNSTABLE\", \"subline\": \"THE HOT GROUND HEATS ITS LOWER LAYERS\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Heating from below steepens the lapse rate\"}, {\"label\": \"Result\", \"value\": \"Cumulus and showers\"}]}"
+   }
+  },
+  {
+   "id": 751,
+   "question": "Following warm-front passage in a Southern Hemisphere depression, the surface wind will normally:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"IN THE SOUTHERN HEMISPHERE, THE WIND BACKS AS A WARM FRONT PASSES\", \"subline\": \"BACKING = TURNING ANTICLOCKWISE\", \"blocks\": [{\"label\": \"Northern Hemisphere\", \"value\": \"The wind veers (turns clockwise)\"}, {\"label\": \"Why\", \"value\": \"Rotation around lows and highs is reversed south of the equator\"}]}"
+   }
+  },
+  {
+   "id": 753,
+   "question": "After the passage of a warm front in South Africa, what pressure tendency is normally expected?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AFTER A WARM FRONT, PRESSURE KEEPS FALLING MORE SLOWLY, THEN STARTS TO RISE\", \"subline\": \"PRESSURE ONLY RISES STEADILY ONCE THE COLD FRONT HAS PASSED\", \"blocks\": [{\"label\": \"Ahead of the warm front\", \"value\": \"Pressure falls\"}, {\"label\": \"In the warm sector\", \"value\": \"Falls more slowly\"}, {\"label\": \"Behind the cold front\", \"value\": \"Pressure rises\"}]}"
+   }
+  },
+  {
+   "id": 1462,
+   "question": "A supercooled droplet is:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SUPERCOOLED DROPLET IS LIQUID WATER BELOW 0°C\", \"subline\": \"IT STAYS LIQUID UNTIL SOMETHING DISTURBS IT\", \"blocks\": [{\"label\": \"On impact\", \"value\": \"It freezes on the aircraft\"}, {\"label\": \"Why it matters\", \"value\": \"The main cause of airframe icing\"}, {\"label\": \"Found in\", \"value\": \"Cloud from 0°C down to about −40°C\"}]}"
+   }
+  },
+  {
+   "id": 1463,
+   "question": "Steam fog is most likely when:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"STEAM FOG FORMS WHEN COLD AIR MOVES OVER WARM WATER\", \"subline\": \"THE WARM WATER EVAPORATES INTO THE COLD AIR, WHICH SATURATES AT ONCE\", \"blocks\": [{\"label\": \"Looks like\", \"value\": \"Wisps rising off a lake or the sea, like steam\"}, {\"label\": \"Advection fog is the opposite\", \"value\": \"Warm, moist air moving over a cold surface\"}, {\"label\": \"Radiation fog\", \"value\": \"Ground cooling on a clear, calm night\"}]}"
+   }
+  },
+  {
+   "id": 1464,
+   "question": "Which front normally moves fastest?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A COLD FRONT NORMALLY MOVES FASTEST\", \"subline\": \"DENSE COLD AIR PUSHES UNDER THE WARM AIR\", \"blocks\": [{\"label\": \"Warm front\", \"value\": \"Slower: warm air only slides gently up over the cold air\"}, {\"label\": \"Result\", \"value\": \"The cold front catches the warm front and forms an occlusion\"}]}"
+   }
+  },
+  {
+   "id": 1482,
+   "question": "The presence of altocumulus castellanus indicates:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"ALTOCUMULUS CASTELLANUS SHOWS INSTABILITY IN THE MIDDLE TROPOSPHERE\", \"subline\": \"TURRETS ON A MIDDLE-LEVEL CLOUD LAYER MEAN CONVECTION AT THAT LEVEL\", \"blocks\": [{\"label\": \"Looks like\", \"value\": \"Small castle-like towers on a layer of altocumulus\"}, {\"label\": \"Warning\", \"value\": \"Often seen in the morning before afternoon thunderstorms\"}]}"
+   }
+  },
+  {
+   "id": 1491,
+   "question": "What are common characteristics of a warm air mass moving over a cold surface?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"WARM AIR OVER A COLD SURFACE GIVES STRATIFORM CLOUD, SMOOTH AIR AND POOR VISIBILITY\", \"subline\": \"COOLED FROM BELOW, IT BECOMES MORE STABLE\", \"blocks\": [{\"label\": \"Also likely\", \"value\": \"Advection fog and drizzle\"}, {\"label\": \"Opposite case\", \"value\": \"Cold air over a warm surface: cumulus, turbulence, good visibility\"}]}"
+   }
+  },
+  {
+   "id": 1492,
+   "question": "Which weather condition can make true altitude lower than indicated altitude and therefore dangerous over high ground?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COLD, LOW-PRESSURE CONDITIONS PUT YOU LOWER THAN THE ALTIMETER SHOWS\", \"subline\": \"BOTH MAKE THE ALTIMETER OVER-READ\", \"blocks\": [{\"label\": \"Low pressure\", \"value\": \"Flying from high to low pressure, the altimeter over-reads\"}, {\"label\": \"Cold air\", \"value\": \"Pressure levels are closer together, so you are lower\"}, {\"label\": \"Remember\", \"value\": \"From high to low, or hot to cold, look out below\"}]}"
+   }
+  },
+  {
+   "id": 1496,
+   "question": "Under what condition does pressure altitude have the same value as density altitude?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"PRESSURE ALTITUDE EQUALS DENSITY ALTITUDE AT STANDARD TEMPERATURE\", \"subline\": \"DENSITY ALTITUDE IS PRESSURE ALTITUDE CORRECTED FOR TEMPERATURE\", \"blocks\": [{\"label\": \"Warmer than ISA\", \"value\": \"Density altitude is higher\"}, {\"label\": \"Colder than ISA\", \"value\": \"Density altitude is lower\"}, {\"label\": \"ISA\", \"value\": \"+15°C at sea level, falling about 2°C per 1,000 ft\"}]}"
+   }
+  },
+  {
+   "id": 1501,
+   "question": "What are common characteristics of a cold air mass moving over a warm surface?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"COLD AIR OVER A WARM SURFACE GIVES CUMULIFORM CLOUD, TURBULENCE AND GOOD VISIBILITY\", \"subline\": \"HEATED FROM BELOW, IT BECOMES UNSTABLE\", \"blocks\": [{\"label\": \"Also expect\", \"value\": \"Showers\"}, {\"label\": \"Why visibility is good\", \"value\": \"Rising air carries haze and smoke away from the surface\"}, {\"label\": \"Opposite case\", \"value\": \"Warm air over a cold surface: layered cloud, smooth air, poor visibility\"}]}"
+   }
+  },
+  {
+   "id": 1502,
+   "question": "Tropical revolving storms can occur in which area relevant to southern Africa?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TROPICAL REVOLVING STORMS NEAR SOUTHERN AFRICA FORM EAST OF MADAGASCAR\", \"subline\": \"THEY NEED A WARM SEA: THE SOUTH-WEST INDIAN OCEAN\", \"blocks\": [{\"label\": \"Not in the Atlantic\", \"value\": \"The cold Benguela Current keeps it too cool\"}, {\"label\": \"Track\", \"value\": \"Can move into the Mozambique Channel\"}]}"
+   }
+  },
+  {
+   "id": 1504,
+   "question": "Which instrument measures atmospheric humidity?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A HYGROMETER MEASURES HUMIDITY\", \"subline\": \"A PSYCHROMETER (WET AND DRY BULB) IS ONE TYPE\", \"blocks\": [{\"label\": \"Anemometer\", \"value\": \"Wind speed\"}, {\"label\": \"Barometer\", \"value\": \"Pressure\"}, {\"label\": \"Radiosonde\", \"value\": \"Temperature and humidity aloft\"}]}"
+   }
+  },
+  {
+   "id": 1505,
+   "question": "If heavy freezing rain is encountered and the aircraft cannot de-ice or land, the safest action is to:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"IN HEAVY FREEZING RAIN YOU CAN'T SHED, TURN BACK OR LEAVE THE AREA AT ONCE\", \"subline\": \"ICE CAN BUILD UP FASTER THAN ANY DE-ICING SYSTEM CAN REMOVE IT\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Each minute in it adds more ice, weight and drag\"}, {\"label\": \"Most light aircraft\", \"value\": \"Have no ice protection at all\"}, {\"label\": \"Freezing rain means\", \"value\": \"A warmer layer above: rain falls from it into air below 0°C\"}]}"
+   }
+  },
+  {
+   "id": 1506,
+   "question": "Which cloud type is most likely to produce moderate to severe airframe icing?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"NIMBOSTRATUS CAN GIVE MODERATE TO SEVERE AIRFRAME ICING\", \"subline\": \"A DEEP, WIDE LAYER OF SUPERCOOLED WATER YOU MAY BE IN FOR A LONG TIME\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Deep and widespread, so the exposure is long\"}, {\"label\": \"Cumulonimbus\", \"value\": \"Also severe icing, plus turbulence and hail\"}, {\"label\": \"Icing needs\", \"value\": \"Visible moisture and a temperature at or below 0°C\"}]}"
+   }
+  },
+  {
+   "id": 1507,
+   "question": "Convective turbulence depends mainly on:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONVECTIVE TURBULENCE DEPENDS MAINLY ON SOLAR HEATING OF THE SURFACE\", \"subline\": \"HEATED GROUND MAKES THERMALS, WITH SINKING AIR BETWEEN THEM\", \"blocks\": [{\"label\": \"Strongest\", \"value\": \"Hot, sunny afternoons\"}, {\"label\": \"Weakest\", \"value\": \"At night or under overcast skies\"}]}"
+   }
+  },
+  {
+   "id": 1511,
+   "question": "When is a gust factor normally included in a METAR wind report?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A GUST IS REPORTED WHEN IT IS AT LEAST 10 KT ABOVE THE MEAN WIND\", \"subline\": \"22015G28KT: 220° AT 15 KT, GUSTING 28 KT\", \"blocks\": [{\"label\": \"Below 10 kt above the mean\", \"value\": \"Only the mean speed is given\"}, {\"label\": \"G\", \"value\": \"Marks the gust figure\"}]}"
+   }
+  },
+  {
+   "id": 1515,
+   "question": "A stationary high-pressure system over land in winter often causes:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A STATIONARY WINTER HIGH OVER LAND OFTEN GIVES FOG AND LOW STRATUS\", \"subline\": \"SINKING AIR FORMS AN INVERSION; CLEAR, CALM NIGHTS COOL THE GROUND\", \"blocks\": [{\"label\": \"Trapped\", \"value\": \"Moisture and haze stay under the inversion\"}, {\"label\": \"Clears\", \"value\": \"When the sun heats the ground enough to burn it off\"}]}"
+   }
+  },
+  {
+   "id": 1516,
+   "question": "Tropical revolving storms generally require sea-surface temperature of at least about:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"TROPICAL REVOLVING STORMS NEED A SEA OF ABOUT +27°C\", \"subline\": \"THE USUAL THRESHOLD IS 26.5°C\", \"blocks\": [{\"label\": \"Also need\", \"value\": \"Low wind shear and enough distance from the equator to spin\"}, {\"label\": \"Near Southern Africa\", \"value\": \"The south-west Indian Ocean\"}]}"
+   }
+  },
+  {
+   "id": 1519,
+   "question": "What is low-level wind shear?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"LOW-LEVEL WIND SHEAR IS A SUDDEN CHANGE IN WIND NEAR THE GROUND\", \"subline\": \"SPEED OR DIRECTION CHANGES OVER A SHORT DISTANCE\", \"blocks\": [{\"label\": \"Danger\", \"value\": \"Airspeed changes suddenly at take-off and landing, with little height to recover\"}, {\"label\": \"Causes\", \"value\": \"Thunderstorms, fronts, inversions, terrain\"}]}"
+   }
+  },
+  {
+   "id": 1520,
+   "question": "A squall line is most likely to be found:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SQUALL LINE FORMS AHEAD OF AN ACTIVE COLD FRONT\", \"subline\": \"A BAND OF THUNDERSTORMS IN THE WARM SECTOR, SEPARATE FROM THE FRONT\", \"blocks\": [{\"label\": \"Brings\", \"value\": \"Severe turbulence, hail and sudden wind shifts\"}, {\"label\": \"Trap\", \"value\": \"It arrives before the front itself\"}]}"
+   }
+  },
+  {
+   "id": 1522,
+   "question": "A microburst is best described as:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A MICROBURST IS A CONCENTRATED DOWNDRAUGHT WITH DAMAGING SURFACE OUTFLOW\", \"subline\": \"IT HITS THE GROUND AND SPREADS OUT IN ALL DIRECTIONS\", \"blocks\": [{\"label\": \"Flying through it\", \"value\": \"Headwind (airspeed rises), then downdraught, then tailwind (airspeed falls)\"}, {\"label\": \"Size\", \"value\": \"Damaging outflow up to about 4 km across\"}, {\"label\": \"Danger\", \"value\": \"Take-off and final approach, close to the ground\"}]}"
+   }
+  },
+  {
+   "id": 1523,
+   "question": "A gust front is formed by:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A GUST FRONT IS THE COLD OUTFLOW FROM A THUNDERSTORM\", \"subline\": \"THE STORM'S DOWNDRAUGHT SPREADS OUT AHEAD OF IT LIKE A MINI COLD FRONT\", \"blocks\": [{\"label\": \"Brings\", \"value\": \"Sudden wind shift, gusts, turbulence, low-level wind shear\"}, {\"label\": \"When\", \"value\": \"It can arrive well before the storm's rain\"}]}"
+   }
+  },
+  {
+   "id": 1527,
+   "question": "Hoar frost forms when:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"HOAR FROST IS WATER VAPOUR TURNING DIRECTLY INTO ICE ON A COLD SURFACE\", \"subline\": \"IT SKIPS THE LIQUID STAGE (DEPOSITION)\", \"blocks\": [{\"label\": \"When\", \"value\": \"Clear, cold nights, surfaces below 0°C\"}, {\"label\": \"Effect\", \"value\": \"Even a thin, sandpaper-like layer can cut lift by up to 30% and raise drag by 40%\"}, {\"label\": \"Before flight\", \"value\": \"Remove all of it\"}]}"
+   }
+  },
+  {
+   "id": 1529,
+   "question": "A stormscope is used to detect:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A STORMSCOPE DETECTS ELECTRICAL DISCHARGES (LIGHTNING)\", \"subline\": \"IT PLOTS LIGHTNING STRIKES AS DOTS ON A COCKPIT DISPLAY\", \"blocks\": [{\"label\": \"Shows\", \"value\": \"Where lightning, and so convection, is happening\"}, {\"label\": \"Weather radar instead\", \"value\": \"Shows precipitation and its intensity\"}]}"
+   }
+  },
+  {
+   "id": 1530,
+   "question": "Where is the surface wind normally measured for official weather observations?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"SURFACE WIND IS MEASURED ON A MAST ABOUT 10 M ABOVE THE GROUND\", \"subline\": \"A STANDARD HEIGHT SO REPORTS FROM DIFFERENT AERODROMES COMPARE\", \"blocks\": [{\"label\": \"Why not lower\", \"value\": \"Buildings and the ground slow and disturb the wind\"}]}"
+   }
+  },
+  {
+   "id": 1532,
+   "question": "Which instrument measures wind speed?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"AN ANEMOMETER MEASURES WIND SPEED\", \"subline\": \"SPINNING CUPS OR A PROPELLER TURN FASTER IN STRONGER WIND\", \"blocks\": [{\"label\": \"Wind direction\", \"value\": \"A wind vane\"}, {\"label\": \"Hygrometer\", \"value\": \"Humidity\"}, {\"label\": \"Ceilometer\", \"value\": \"Cloud base\"}]}"
+   }
+  },
+  {
+   "id": 1534,
+   "question": "A thermal depression is most likely to form:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A THERMAL DEPRESSION FORMS OVER LAND IN SUMMER\", \"subline\": \"STRONG HEATING MAKES THE AIR RISE, LOWERING SURFACE PRESSURE\", \"blocks\": [{\"label\": \"Also called\", \"value\": \"A heat low\"}, {\"label\": \"South Africa\", \"value\": \"Over the interior in summer, drawing moist air in from the coast\"}]}"
+   }
+  },
+  {
+   "id": 1538,
+   "question": "A strong low-level inversion can promote:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A STRONG LOW-LEVEL INVERSION CAN CAUSE VERTICAL WIND SHEAR\", \"subline\": \"THE AIR ABOVE AND BELOW DOESN'T MIX\", \"blocks\": [{\"label\": \"Below\", \"value\": \"Calm or light surface wind\"}, {\"label\": \"Above\", \"value\": \"Can be much stronger or from a different direction\"}, {\"label\": \"Watch\", \"value\": \"Climbing or descending through the inversion\"}]}"
+   }
+  },
+  {
+   "id": 1539,
+   "question": "What is the approximate maximum diameter of a microburst damage area?",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"A MICROBURST'S DAMAGE AREA IS UP TO ABOUT 4 KM ACROSS\", \"subline\": \"SMALL ENOUGH TO CROSS IN SECONDS ON FINAL APPROACH\", \"blocks\": [{\"label\": \"Sequence\", \"value\": \"Headwind, downdraught, then tailwind\"}, {\"label\": \"Danger\", \"value\": \"Changes come too fast to react close to the ground\"}]}"
+   }
+  },
+  {
+   "id": 1542,
+   "question": "Radiosondes are used to measure:",
+   "is_hidden": false,
+   "why": "no picture; card added so the explanation is not text alone",
+   "before": {
+    "explanation_visual_template": null
+   },
+   "after": {
+    "explanation_visual_template": "{\"kicker\": \"KEY FACT\", \"headline\": \"RADIOSONDES MEASURE TEMPERATURE AND HUMIDITY ALOFT\", \"subline\": \"AN INSTRUMENT PACK CARRIED UP BY A WEATHER BALLOON\", \"blocks\": [{\"label\": \"Measures\", \"value\": \"Pressure, temperature and humidity as it climbs\"}, {\"label\": \"Wind\", \"value\": \"Worked out by tracking the balloon's drift\"}]}"
+   }
+  }
+ ]
+}

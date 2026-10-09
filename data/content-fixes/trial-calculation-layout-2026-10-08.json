@@ -1,0 +1,37 @@
+{
+ "date": "2026-10-08",
+ "subject": "flight-planning",
+ "change": "Trial calculation explanations relaid: one sum per line and a blank line between steps, so the display can set the sums as school-style maths. Same facts and numbers.",
+ "rows": [
+  {
+   "id": 2312,
+   "question": "With reference to Figure 1-8: Time, Distance and Fuel to Climb, departure airfield elevation 1380 ft, QNH 1009 hPa, temperature is standard, cruise pressure altitude 7500 ft, temperature ISA+12°C. The distance covered during the climb is approximately:",
+   "before": {
+    "explanation": "GIVEN\nDeparture airfield elevation 1380 ft, QNH 1009 hPa, temperature standard; cruise pressure altitude 7500 ft, temperature ISA+12 deg C. Distance covered during the climb to be found.\n\nMETHOD (SACAA-01 Figure 1-8, Time, Distance and Fuel to Climb)\nStep 1: Convert departure elevation to pressure altitude: PA = 1380 + (1013 - 1009) x 30 = 1500 ft; ISA temperature there = 15 - (2 x 1.5) = 12 deg C.\nStep 2: At 7500 ft, ISA temperature = 15 - (2 x 7.5) = 0 deg C, so cruise OAT = 0 + 12 = 12 deg C.\nStep 3: Enter at +12 deg C / 1500 ft, transfer up to the DISTANCE - NM line and read the cumulative distance at the departure condition; enter again at +12 deg C / 7500 ft and read the cumulative distance at the cruise condition.\nStep 4: Subtract the departure reading from the cruise reading to get the distance covered during the climb.\n\nANSWER\n20 NM"
+   },
+   "after": {
+    "explanation": "GIVEN\nDeparture airfield elevation 1380 ft, QNH 1009 hPa, temperature standard\nCruise pressure altitude 7500 ft, temperature ISA +12°C\nFind the distance covered during the climb\n\nMETHOD (SACAA-01 Figure 1-8, Time, Distance and Fuel to Climb)\nStep 1: Departure pressure altitude and temperature\nPA = 1380 + (1013 − 1009) × 30 = 1500 ft\nISA temperature = 15 − (2 × 1.5) = 12°C\n\nStep 2: Cruise temperature at 7500 ft\nISA temperature = 15 − (2 × 7.5) = 0°C\nCruise OAT = 0 + 12 = 12°C\n\nStep 3: Read the chart twice\nEnter at +12°C and 1500 ft, go up to the DISTANCE (NM) line and read the distance at departure.\nEnter again at +12°C and 7500 ft and read the distance at cruise.\n\nStep 4: Subtract\nClimb distance = cruise reading − departure reading\n\nANSWER\n20 NM"
+   }
+  },
+  {
+   "id": 2320,
+   "question": "With reference to Figure 1-22: Take-off distance, pressure altitude 3500 ft, weight 2400 lb, temperature +20°C, 4 kt tailwind. The take-off ground roll is:",
+   "before": {
+    "explanation": "GIVEN\nPressure altitude 3500 ft, weight 2400 lb, temperature +20°C, 4 kt tailwind. Take-off ground roll.\n\nMETHOD (SACAA-01 Figure 1-22)\nStep 1: Enter the Take-off Performance Table at +20°C.\nStep 2: At +20°C, Ground Roll reads 1190 ft at PA 3000 ft and 1310 ft at PA 4000 ft. PA 3500 ft is exactly midway.\nStep 3: Apply the tailwind footnote: increase all distances by 10% for each 2 kt of tailwind (here 4 kt = 20%).\n\nSOLVE\nInterpolate Ground Roll: (1190+1310)/2 = 1250 ft\nApply 4 kt tailwind (+20%): 1250 x 1.20 = 1500 ft\n\nANSWER\n1500 ft"
+   },
+   "after": {
+    "explanation": "GIVEN\nPressure altitude 3500 ft, weight 2400 lb, temperature +20°C, 4 kt tailwind\nFind the take-off ground roll\n\nMETHOD (SACAA-01 Figure 1-22)\nStep 1: Enter the Take-off Performance Table at +20°C.\nStep 2: Ground roll reads 1190 ft at PA 3000 ft and 1310 ft at PA 4000 ft. PA 3500 ft is exactly midway.\nStep 3: Tailwind footnote: add 10% for each 2 kt of tailwind, so 4 kt adds 20%.\n\nSOLVE\nGround roll at 3500 ft (midway)\n(1190 + 1310) ÷ 2 = 1250 ft\n\nWith the 4 kt tailwind (+20%)\n1250 × 1.20 = 1500 ft\n\nANSWER\n1500 ft"
+   }
+  },
+  {
+   "id": 2389,
+   "question": "With reference to Figure 1-24, weight 2400 lb, aerodrome elevation 2650 ft, QNH 1018 hPa and temperature +24°C. The landing distance required to clear 50 ft is approximately:",
+   "before": {
+    "explanation": "GIVEN\nWeight 2400 lb, elevation 2650 ft, QNH 1018 hPa, OAT +24°C.\n\nSOLVE\nPressure altitude = 2650 + (1013 − 1018) × 30 = 2500 ft\nFigure 1-24, halfway between 2000 ft and 3000 ft: 1367.5 ft at +20°C and 1402.5 ft at +30°C\n+24°C is 0.4 of the way from +20°C to +30°C: 1367.5 + 0.4 × 35 = 1381.5 ft ≈ 1382 ft\n\nANSWER\n1382 ft\n\nExam tip: Convert elevation to pressure altitude before entering a performance table."
+   },
+   "after": {
+    "explanation": "GIVEN\nWeight 2400 lb, elevation 2650 ft, QNH 1018 hPa, OAT +24°C\n\nSOLVE\nPressure altitude = 2650 + (1013 − 1018) × 30 = 2500 ft\n\nFigure 1-24, halfway between 2000 ft and 3000 ft:\n1367.5 ft at +20°C and 1402.5 ft at +30°C\n\n+24°C is 0.4 of the way from +20°C to +30°C:\n1367.5 + 0.4 × 35 = 1381.5 ft ≈ 1382 ft\n\nANSWER\n1382 ft\n\nExam tip: Convert elevation to pressure altitude before entering a performance table."
+   }
+  }
+ ]
+}

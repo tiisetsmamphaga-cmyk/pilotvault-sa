@@ -132,7 +132,7 @@ def _():
     return s
 
 
-@R.add(570, "rt-trial-ground-signal-v", "Ground-to-Air Signal — V",
+@HOLD.add(570, "rt-trial-ground-signal-v", "Ground-to-Air Signal — V",
        template("V = REQUIRE ASSISTANCE",
                 "LAY OUT LARGE, HIGH-CONTRAST STRIPS SO A SEARCH AIRCRAFT CAN READ THEM",
                 [("V", "Require assistance"),
@@ -153,7 +153,7 @@ def _():
 
 # ------------------------------------------------------------------ navigation & flight rules
 
-@R.add(410, "rt-trial-qdr", "Q-Codes — QDR and QDM",
+@HOLD.add(410, "rt-trial-qdr", "Q-Codes — QDR and QDM",
        template("QDR = MAGNETIC BEARING FROM THE STATION",
                 "QDM IS THE MAGNETIC BEARING TO THE STATION (QDR ± 180°)",
                 [("QDR", "Magnetic bearing FROM the station"),
@@ -252,7 +252,7 @@ def _():
 
 # ------------------------------------------------------------------ phraseology
 
-@R.add(506, "rt-trial-backtrack", "Backtrack the Runway",
+@HOLD.add(506, "rt-trial-backtrack", "Backtrack the Runway",
        template("BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE",
                 "USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD",
                 [("WHERE", "On the active runway — follow the clearance exactly"),
@@ -271,7 +271,7 @@ def _():
     return s
 
 
-@R.add(518, "rt-trial-line-up-and-wait", "Line Up and Wait",
+@HOLD.add(518, "rt-trial-line-up-and-wait", "Line Up and Wait",
        template("LINE UP AND WAIT: ENTER THE RUNWAY, LINE UP, DO NOT TAKE OFF",
                 "IT IS NOT A TAKE-OFF CLEARANCE",
                 [("DO", "Taxi onto the runway and line up on the centreline"),

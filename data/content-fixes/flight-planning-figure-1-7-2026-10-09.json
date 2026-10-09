@@ -1,0 +1,20 @@
+{
+ "date": "2026-10-09",
+ "change": "Question 2305 (trial) shows the manual's Figure 1-7, redrawn for phones, instead of the shared climb-and-descent picture. Its METHOD now reads the chart as it is laid out (across, then down); the KEY FACT card is unchanged.",
+ "rows": [
+  {
+   "id": 2305,
+   "subject": "flight-planning",
+   "before": {
+    "explanation_image_url": "/explanation-images/navigation/refined-batch-2/climb-descent-v1.webp",
+    "explanation_image_title": "Climb and Descent Planning",
+    "explanation": "GIVEN\nOAT +10 deg C, pressure altitude 4000 ft (full throttle, flaps up, 75 KIAS, 2500 lb gross weight).\n\nMETHOD (SACAA-01 Figure 1-7, Climb Performance)\nStep 1: Enter the OUTSIDE AIR TEMPERATURE - degC axis in the lower panel at +10 deg C.\nStep 2: Move up to the 4000 ft PRESSURE ALTITUDE diagonal.\nStep 3: From that intersection, transfer straight up into the upper panel to meet the rate-of-climb line.\nStep 4: From that point, move right to read the RATE OF CLIMB - FPM scale.\n\nANSWER\n540 ft/min"
+   },
+   "after": {
+    "explanation_image_url": "/explanation-images/flight-planning/refined-batch-1/climb-rate-fig-1-7-v1.webp",
+    "explanation_image_title": "Figure 1-7: Rate of Climb",
+    "explanation": "GIVEN\nOAT +10°C, pressure altitude 4000 ft (full throttle, flaps up, 75 KIAS, 2500 lb gross weight).\n\nMETHOD (SACAA-01 Figure 1-7, Climb Performance)\nStep 1: Enter the OUTSIDE AIR TEMPERATURE - °C scale at +10°C.\nStep 2: Move up to the 4000 ft PRESSURE ALTITUDE diagonal.\nStep 3: Go straight across to the rate-of-climb line.\nStep 4: Drop straight down to the RATE OF CLIMB - FPM scale.\n\nANSWER\n540 ft/min"
+   }
+  }
+ ]
+}

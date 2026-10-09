@@ -1,0 +1,899 @@
+{
+ "subject": "meteorology",
+ "date": "2026-10-07",
+ "note": "Duplicate questions hidden (questions.is_hidden = true). In each group the first id is kept. Set is_hidden back to false to restore.",
+ "trial_swap": {
+  "removed": 1493,
+  "added": 1537
+ },
+ "groups": [
+  {
+   "keep": {
+    "id": 14,
+    "question": "What happens to air density as humidity increases?"
+   },
+   "hidden": [
+    {
+     "id": 632,
+     "question": "Air density will:"
+    },
+    {
+     "id": 640,
+     "question": "With regard to humidity and air density:"
+    },
+    {
+     "id": 17,
+     "question": "Which statement about humid air is correct?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 32,
+    "question": "According to ISA the density of air at sea level is approximately:"
+   },
+   "hidden": [
+    {
+     "id": 649,
+     "question": "According to ISA, the sea level density of the air is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 15,
+    "question": "If temperature remains constant increasing pressure will have what effect on density?"
+   },
+   "hidden": [
+    {
+     "id": 629,
+     "question": "Assuming that the temperature of a dry parcel of air remains constant:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 16,
+    "question": "If pressure remains constant increasing temperature will:"
+   },
+   "hidden": [
+    {
+     "id": 621,
+     "question": "Assuming that the pressure of a dry parcel of air remains constant:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 19,
+    "question": "What is density altitude?"
+   },
+   "hidden": [
+    {
+     "id": 634,
+     "question": "Density altitude is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 71,
+    "question": "An air mass approaching South Africa from Antarctica is classified as:"
+   },
+   "hidden": [
+    {
+     "id": 742,
+     "question": "An air mass approaching South Africa from the Antarctic across the Southern Ocean is classified as:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 72,
+    "question": "A continental air mass is generally:"
+   },
+   "hidden": [
+    {
+     "id": 745,
+     "question": "Which statement best describes a continental air mass?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 70,
+    "question": "At its cold oceanic source, polar maritime air is usually:"
+   },
+   "hidden": [
+    {
+     "id": 687,
+     "question": "Which description best fits polar maritime air at its source?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 623,
+    "question": "The volume of nitrogen in the atmosphere is approximately:"
+   },
+   "hidden": [
+    {
+     "id": 13,
+     "question": "Approximately what percentage of the atmosphere is nitrogen?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 12,
+    "question": "Approximately what percentage of the atmosphere is oxygen?"
+   },
+   "hidden": [
+    {
+     "id": 630,
+     "question": "The volume of oxygen in the atmosphere is approximately:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 7,
+    "question": "In which atmospheric layer do most weather phenomena occur?"
+   },
+   "hidden": [
+    {
+     "id": 618,
+     "question": "The weather experienced on the earth occurs in the:"
+    },
+    {
+     "id": 1484,
+     "question": "Which layer of the atmosphere contains most water vapour and most weather?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 8,
+    "question": "What is the average height of the troposphere?"
+   },
+   "hidden": [
+    {
+     "id": 636,
+     "question": "The average height of the troposphere is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 637,
+    "question": "The average height of the troposphere:"
+   },
+   "hidden": [
+    {
+     "id": 9,
+     "question": "Where is the troposphere generally at its greatest height?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 10,
+    "question": "What is the boundary layer between the troposphere and stratosphere called?"
+   },
+   "hidden": [
+    {
+     "id": 617,
+     "question": "The layer between the troposphere and the stratosphere is called:"
+    },
+    {
+     "id": 1474,
+     "question": "What is the boundary layer between the troposphere and the stratosphere called?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 11,
+    "question": "What is the primary importance of the ozone layer?"
+   },
+   "hidden": [
+    {
+     "id": 628,
+     "question": "The significance of the ozone layer in the atmosphere is that it:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 31,
+    "question": "Which ISA assumptions are correct?"
+   },
+   "hidden": [
+    {
+     "id": 627,
+     "question": "In terms of the International Standard Atmosphere (ISA), certain assumptions are made. These include:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 68,
+    "question": "Carburettor icing is usually indicated by:"
+   },
+   "hidden": [
+    {
+     "id": 737,
+     "question": "In a fixed-pitch propeller aircraft, carburettor icing is commonly indicated by:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 42,
+    "question": "Advection fog most commonly forms when:"
+   },
+   "hidden": [
+    {
+     "id": 665,
+     "question": "The ideal conditions for the formation of advection fog are:"
+    },
+    {
+     "id": 1493,
+     "question": "Advection fog is most likely to form when:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 43,
+    "question": "Radiation fog most commonly develops under which conditions?"
+   },
+   "hidden": [
+    {
+     "id": 651,
+     "question": "The ideal conditions for the formation of radiation fog at night are:"
+    },
+    {
+     "id": 1465,
+     "question": "Radiation fog is most likely to form under which conditions?"
+    },
+    {
+     "id": 645,
+     "question": "On a clear night, light winds and moist air blowing over the land will most probably create:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 61,
+    "question": "Cirrus clouds are generally:"
+   },
+   "hidden": [
+    {
+     "id": 673,
+     "question": "Cirrus type cloud refers to?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 56,
+    "question": "Light drizzle is most commonly associated with which cloud type?"
+   },
+   "hidden": [
+    {
+     "id": 727,
+     "question": "Precipitation in the form of light drizzle can be expected from?"
+    },
+    {
+     "id": 1485,
+     "question": "Drizzle is most commonly associated with which cloud type?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 664,
+    "question": "Fog is reported when suspended water droplets or ice crystals reduce visibility to:"
+   },
+   "hidden": [
+    {
+     "id": 1497,
+     "question": "Fog is reported when visibility is reduced by water droplets or ice crystals to less than:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 62,
+    "question": "What is virga?"
+   },
+   "hidden": [
+    {
+     "id": 725,
+     "question": "Virga is?"
+    },
+    {
+     "id": 1500,
+     "question": "What are fallstreaks or virga?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 735,
+    "question": "Rime ice may be expected to form on an aircraft?"
+   },
+   "hidden": [
+    {
+     "id": 1528,
+     "question": "Rime ice forms mainly from:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 53,
+    "question": "What combination is required for thunderstorm formation?"
+   },
+   "hidden": [
+    {
+     "id": 1526,
+     "question": "What are the three main requirements for thunderstorm formation?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 59,
+    "question": "Nimbostratus cloud is commonly associated with:"
+   },
+   "hidden": [
+    {
+     "id": 669,
+     "question": "Nimbostratus is most commonly associated with which frontal situation?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 1510,
+    "question": "What cloud sequence is typical when flying towards a warm front?"
+   },
+   "hidden": [
+    {
+     "id": 60,
+     "question": "Which cloud sequence often indicates an approaching warm front?"
+    },
+    {
+     "id": 693,
+     "question": "Which cloud sequence most clearly indicates an approaching warm front?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 63,
+    "question": "A cold front forms when:"
+   },
+   "hidden": [
+    {
+     "id": 689,
+     "question": "A front caused by cold air cutting under warm air is referred to as?"
+    },
+    {
+     "id": 1478,
+     "question": "At a cold front, the cold air generally:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 64,
+    "question": "When a cold front overtakes a warm front what forms?"
+   },
+   "hidden": [
+    {
+     "id": 749,
+     "question": "An occluded front occurs when?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 730,
+    "question": "Where is frontal fog most commonly found?"
+   },
+   "hidden": [
+    {
+     "id": 1514,
+     "question": "Frontal fog is most likely to occur:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 37,
+    "question": "Dew point temperature is defined as:"
+   },
+   "hidden": [
+    {
+     "id": 642,
+     "question": "The dew point temperature is the temperature at which a particular air mass:"
+    },
+    {
+     "id": 643,
+     "question": "Dew point temperature is the temperature at which:"
+    },
+    {
+     "id": 1479,
+     "question": "What does dew point mean?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 622,
+    "question": "Relative humidity:"
+   },
+   "hidden": [
+    {
+     "id": 18,
+     "question": "Relative humidity generally decreases when:"
+    },
+    {
+     "id": 1487,
+     "question": "If unsaturated air is warmed while the water vapour content stays the same, relative humidity will:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 36,
+    "question": "The amount of water vapour air can hold depends mainly on:"
+   },
+   "hidden": [
+    {
+     "id": 659,
+     "question": "The amount of water vapour that can be held in the air is dependent upon:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 38,
+    "question": "When temperature and dew point are close together and becoming closer what can be expected?"
+   },
+   "hidden": [
+    {
+     "id": 666,
+     "question": "When the difference between the temperature and the dewpoint is small and reducing:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 79,
+    "question": "What does METAR represent?"
+   },
+   "hidden": [
+    {
+     "id": 708,
+     "question": "A METAR is?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 80,
+    "question": "What does TAF represent?"
+   },
+   "hidden": [
+    {
+     "id": 705,
+     "question": "A TAF is?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 82,
+    "question": "The cloud symbol FEW indicates:"
+   },
+   "hidden": [
+    {
+     "id": 688,
+     "question": "The symbol FEW is used to indicate?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 83,
+    "question": "The cloud symbol SCT indicates:"
+   },
+   "hidden": [
+    {
+     "id": 691,
+     "question": "The symbol SCT is used to indicate?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 84,
+    "question": "The cloud symbol BKN indicates:"
+   },
+   "hidden": [
+    {
+     "id": 1521,
+     "question": "What does BKN mean in a METAR or TAF?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 86,
+    "question": "Information normally provided by ATIS includes:"
+   },
+   "hidden": [
+    {
+     "id": 701,
+     "question": "The information which is provided by the ATIS includes?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 81,
+    "question": "Which set of conditions permits CAVOK to be reported?"
+   },
+   "hidden": [
+    {
+     "id": 683,
+     "question": "The term CAVOK is used in weather forecasts to indicate?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 48,
+    "question": "Air naturally moves:"
+   },
+   "hidden": [
+    {
+     "id": 674,
+     "question": "Air has a tendency to flow from?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 51,
+    "question": "A trough is best described as:"
+   },
+   "hidden": [
+    {
+     "id": 668,
+     "question": "A \"trough\" is?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 49,
+    "question": "Flying from high pressure to low pressure without resetting the altimeter causes the altimeter to:"
+   },
+   "hidden": [
+    {
+     "id": 710,
+     "question": "When flying from an area of high pressure to an area of low pressure?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 23,
+    "question": "When local QFE is set on an altimeter during flight what will the instrument indicate?"
+   },
+   "hidden": [
+    {
+     "id": 625,
+     "question": "When local QFE is set on the subscale of an altimeter of an aircraft in flight, the instrument will read:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 626,
+    "question": "When QFE is set on an altimeter subscale of an aircraft on the ground at an aerodrome, the instrument will indicate:"
+   },
+   "hidden": [
+    {
+     "id": 24,
+     "question": "When QFE is set on an altimeter while the aircraft is on the ground the instrument should indicate:"
+    },
+    {
+     "id": 755,
+     "question": "When QFE is set on the subscale of the altimeter of an aircraft on the ground at an aerodrome, the instrument will read?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 20,
+    "question": "When QNE is set on an altimeter what pressure setting is used?"
+   },
+   "hidden": [
+    {
+     "id": 620,
+     "question": "When QNE is set on the altimeter of an aircraft, the subscale will read:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 21,
+    "question": "When QNH is set on an altimeter the instrument indicates:"
+   },
+   "hidden": [
+    {
+     "id": 25,
+     "question": "When QNH is set on an altimeter what does the instrument indicate?"
+    },
+    {
+     "id": 635,
+     "question": "When QNH has been set on the subscale of an altimeter, the instrument will indicate:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 65,
+    "question": "According to Buys Ballot's Law in the Southern Hemisphere standing with your back to the wind places low pressure on your:"
+   },
+   "hidden": [
+    {
+     "id": 667,
+     "question": "According to Buys Ballots Law, an observer?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 77,
+    "question": "The Black South Easter occurs when:"
+   },
+   "hidden": [
+    {
+     "id": 747,
+     "question": "The Black South Easter is a wind which occurs in South Africa when?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 75,
+    "question": "A warm dry wind descending a mountain slope is commonly called:"
+   },
+   "hidden": [
+    {
+     "id": 744,
+     "question": "A warm, dry wind blowing down a mountain during the day is a typical characteristic of?"
+    },
+    {
+     "id": 1512,
+     "question": "A Foehn-type wind is best described as:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 696,
+    "question": "Which circulation feature is characteristic of the South African summer?"
+   },
+   "hidden": [
+    {
+     "id": 78,
+     "question": "During South African summer which condition commonly exists?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 28,
+    "question": "The term lapse rate refers to:"
+   },
+   "hidden": [
+    {
+     "id": 624,
+     "question": "The term “lapse rate” is used to describe:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 29,
+    "question": "According to ISA what is the standard temperature lapse rate?"
+   },
+   "hidden": [
+    {
+     "id": 639,
+     "question": "According to International Standard Atmosphere (ISA), the temperature lapse rate is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 33,
+    "question": "What is the dry adiabatic lapse rate?"
+   },
+   "hidden": [
+    {
+     "id": 646,
+     "question": "The dry adiabatic lapse rate is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 39,
+    "question": "Adiabatic cooling refers to:"
+   },
+   "hidden": [
+    {
+     "id": 648,
+     "question": "Adiabatic process is the term used to describe:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 40,
+    "question": "What occurs during a temperature inversion?"
+   },
+   "hidden": [
+    {
+     "id": 655,
+     "question": "In a temperature inversion:"
+    },
+    {
+     "id": 711,
+     "question": "The weather condition associated with a surface temperature inversion is?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 41,
+    "question": "Surface temperature inversions usually form because of:"
+   },
+   "hidden": [
+    {
+     "id": 647,
+     "question": "A surface temperature inversion is caused by:"
+    },
+    {
+     "id": 1476,
+     "question": "What condition commonly causes a surface temperature inversion?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 30,
+    "question": "According to ISA what is the standard mean sea level temperature?"
+   },
+   "hidden": [
+    {
+     "id": 638,
+     "question": "In terms of the ISA, the mean sea level temperature is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 34,
+    "question": "What does insolation mean?"
+   },
+   "hidden": [
+    {
+     "id": 661,
+     "question": "The term “insolation” or “solar radiation” is used to define the:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 35,
+    "question": "At FL085 the temperature is ISA +7°C. What is the outside air temperature?"
+   },
+   "hidden": [
+    {
+     "id": 654,
+     "question": "The temperature at FL085 is ISA+7°C. The outside air temperature is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 44,
+    "question": "A sea breeze usually develops:"
+   },
+   "hidden": [
+    {
+     "id": 644,
+     "question": "A sea breeze will be found at coastal areas:"
+    },
+    {
+     "id": 653,
+     "question": "The type of breeze which may be experienced at the coastal areas during the day is:"
+    },
+    {
+     "id": 746,
+     "question": "The type of wind which may be experienced at coastal areas during the day is?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 45,
+    "question": "A land breeze normally develops:"
+   },
+   "hidden": [
+    {
+     "id": 658,
+     "question": "A land breeze will be found at coastal areas:"
+    },
+    {
+     "id": 656,
+     "question": "The type of wind which may be experienced at the coastal areas during night is:"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 46,
+    "question": "An anabatic wind is:"
+   },
+   "hidden": [
+    {
+     "id": 652,
+     "question": "An anabatic wind:"
+    },
+    {
+     "id": 672,
+     "question": "The type of wind which flows upslope during the day is called?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 66,
+    "question": "The Coriolis force is caused by:"
+   },
+   "hidden": [
+    {
+     "id": 670,
+     "question": "The Coriolis Force is created by?"
+    }
+   ]
+  },
+  {
+   "keep": {
+    "id": 67,
+    "question": "In the Southern Hemisphere the Coriolis force deflects wind:"
+   },
+   "hidden": [
+    {
+     "id": 718,
+     "question": "The flow of air from a high to a low in the southern hemisphere is deflected by the coriolis force?"
+    },
+    {
+     "id": 728,
+     "question": "In the southern hemisphere the wind is deflected to the left by the?"
+    }
+   ]
+  }
+ ]
+}

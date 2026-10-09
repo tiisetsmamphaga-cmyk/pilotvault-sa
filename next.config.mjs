@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // CLAUDE.md is maintained by hand; don't let `next dev` add its own block.
+  agentRules: false,
   typescript: {
     ignoreBuildErrors: true,
   },

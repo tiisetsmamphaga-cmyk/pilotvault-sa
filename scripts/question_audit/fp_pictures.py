@@ -9,7 +9,7 @@ MET_DA = "/explanation-images/meteorology/refined-batch-2/density-altitude-v3.we
 
 REUSED = {
     NAV + "climb-descent-v1.webp": ("Climb and Descent Planning",
-                                    [2239, 2296, 2348, 2257, 2260, 2271, 2279, 2305, 2312, 2329, 2398]),
+                                    [2239, 2296, 2348, 2257, 2260, 2271, 2279, 2312, 2329, 2398]),
     NAV + "pressure-altitude-v1.webp": ("Pressure Altitude", [2283, 2371]),
     MET_DA: ("Density Altitude", [2240, 2374, 2375]),
 }
@@ -37,6 +37,7 @@ NEW = {
                                        2288, 2293, 2269, 2306, 2336, 2339, 2326, 2352, 2396, 2397]),
     FP + "landing-distance-v1.webp": ("Landing Distance", [2266, 2281, 2313, 2389, 2315, 2380, 2301, 2356]),
     FP + "glide-range-v1.webp": ("Glide Range", [2250, 2253, 2274, 2304, 2360]),
+    FP + "climb-rate-fig-1-7-v1.webp": ("Figure 1-7: Rate of Climb", [2305]),
     FP + "cg-moment-v1.webp": ("Moment and Centre of Gravity",
                                [2263, 2295, 2299, 2303, 2331, 2340, 2355, 2368, 2369, 2401, 2402, 2411, 2417]),
     FP + "displaced-threshold-v1.webp": ("Displaced Threshold",

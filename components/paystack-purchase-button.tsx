@@ -10,28 +10,21 @@ type PaystackPurchaseButtonProps = {
   children: React.ReactNode
 }
 
-const PAYSTACK_INLINE_SRC = "https://js.paystack.co/v1/inline.js"
+const PAYSTACK_INLINE_SRC = "https://js.paystack.co/v2/inline.js"
 
-type PaystackPopHandler = {
-  openIframe: () => void
-}
-
-type PaystackPopStatic = {
-  setup: (options: {
-    key: string
-    email: string
-    amount: number
-    currency?: string
-    ref: string
-    metadata?: unknown
-    callback: (response: { reference: string }) => void
-    onClose: () => void
-  }) => PaystackPopHandler
+type PaystackPopInstance = {
+  resumeTransaction: (
+    accessCode: string,
+    callbacks: {
+      onSuccess: (transaction: { reference: string }) => void
+      onCancel: () => void
+    }
+  ) => void
 }
 
 declare global {
   interface Window {
-    PaystackPop?: PaystackPopStatic
+    PaystackPop?: new () => PaystackPopInstance
   }
 }
 
@@ -113,10 +106,8 @@ export function PaystackPurchaseButton({
 
       const result = (await response.json()) as {
         authorizationUrl?: string
+        accessCode?: string
         reference?: string
-        amount?: number
-        email?: string
-        currency?: string
         error?: string
       }
 
@@ -124,8 +115,7 @@ export function PaystackPurchaseButton({
         throw new Error(result.error || "Unable to open secure checkout.")
       }
 
-      const { authorizationUrl, reference, amount, email, currency } = result
-      const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY
+      const { authorizationUrl, accessCode, reference } = result
 
       const goToCallback = () => {
         window.location.assign(
@@ -134,10 +124,12 @@ export function PaystackPurchaseButton({
       }
 
       // Keep checkout on pilotvault.co.za via Paystack's inline popup when
-      // possible. Falls back to the full-page redirect if the popup script
-      // can't load or doesn't behave as expected - payment must never be
-      // blocked by this being unavailable.
-      if (publicKey && amount && email) {
+      // possible. The popup resumes the transaction the server initialised
+      // (same reference, amount and metadata) rather than starting a new
+      // one, so the callback and webhook can always match the payment to
+      // the buyer. Falls back to the full-page redirect if the popup script
+      // can't load - payment must never be blocked by this being unavailable.
+      if (accessCode) {
         try {
           await loadPaystackInlineScript()
 
@@ -147,17 +139,10 @@ export function PaystackPurchaseButton({
             )
           }
 
-          const handler = window.PaystackPop.setup({
-            key: publicKey,
-            email,
-            amount,
-            currency,
-            ref: reference,
-            callback: () => goToCallback(),
-            onClose: () => setLoading(false),
+          new window.PaystackPop().resumeTransaction(accessCode, {
+            onSuccess: () => goToCallback(),
+            onCancel: () => setLoading(false),
           })
-
-          handler.openIframe()
           return
         } catch (inlineError) {
           console.error(

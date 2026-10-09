@@ -147,6 +147,9 @@ export function Navbar() {
             password,
             options: {
               captchaToken: token,
+              // The confirmation link lands on /auth/callback, which picks
+              // up the session from the link and forwards to /dashboard.
+              emailRedirectTo: `${window.location.origin}/auth/callback`,
               data: {
                 full_name: fullName,
               },
@@ -168,7 +171,7 @@ export function Navbar() {
       // when email confirmation is required, so a client-side insert would
       // fail the "auth.uid() = id" RLS policy.
       setLoading(false)
-      setAuthMessage("Account created. Please verify your email, then log in.")
+      setAuthMessage("Account created. Check your email and tap the confirmation link to open your dashboard.")
       setAuthMode("login")
       setPassword("")
       setConfirmPassword("")

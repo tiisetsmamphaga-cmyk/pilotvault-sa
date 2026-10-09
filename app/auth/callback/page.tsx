@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import { Radar } from "lucide-react"
 
 import { VaultLoadingScreen } from "@/components/vault-loading-screen"
+import { claimDeviceSession } from "@/src/lib/device-session"
 import { supabase } from "@/src/lib/supabase"
 
 export default function AuthCallbackPage() {
@@ -60,6 +61,8 @@ export default function AuthCallbackPage() {
 
           if (profileCreateError) throw profileCreateError
         }
+
+        await claimDeviceSession()
 
         if (!cancelled) router.replace("/dashboard")
       } catch (error) {

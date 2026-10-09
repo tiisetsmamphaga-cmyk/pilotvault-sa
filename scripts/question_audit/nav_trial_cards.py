@@ -1,0 +1,118 @@
+"""Navigation trial set: fuller KEY FACT cards, 2026-10-09.
+
+Thin cards (fewer than three points) get four or five, to the standard of atg_trial_cards.py: the working, the
+related rule, the exam trap. Headlines stay; explanations are unchanged.
+"""
+import json
+
+
+def card(headline, subline, blocks, formula=None):
+    d = {"kicker": "KEY FACT", "headline": headline, "subline": subline,
+         "blocks": [{"label": a, "value": b} for a, b in blocks]}
+    if formula:
+        d["formula"] = formula
+    return json.dumps(d, ensure_ascii=False)
+
+
+SWING = ("Deviation card", "A compass swing records the correction for each heading")
+
+CARDS = {
+    1552: card("A LIGHTED OBSTACLE 847 FT ABOVE GROUND LEVEL", "THE FIGURE IN BRACKETS IS THE HEIGHT ABOVE GROUND",
+               [("Chart legend", "Every symbol is explained in the legend on the chart"),
+                ("Two figures", "Top of the obstacle above sea level; in brackets, its height above the ground"),
+                ("Lighted", "Rays drawn round the symbol"),
+                ("Planning", "Use the above-sea-level figure for your altitude"),
+                ("Exam trap", "Read the bracketed figure exactly: 847, not a rounded value")]),
+    1574: card("ORTHOMORPHIC: MERIDIANS AND PARALLELS CUT AT 90°", "ANGLES ARE TRUE (CONFORMAL)",
+               [("Not", "Constant scale or true areas"),
+                ("Lambert chart", "Cone cutting the Earth at two standard parallels"),
+                ("Means", "Small shapes look right and bearings measure true"),
+                ("Both orthomorphic", "Lambert conformal and Mercator"),
+                ("Exam trap", "Orthomorphic ≠ equal area ≠ constant scale")]),
+    1604: card("ACCELERATING ON 090°: APPARENT TURN TO THE SOUTH", "SOUTHERN HEMISPHERE ACCELERATION ERROR",
+               [("Southern Hemisphere", "Accelerate: apparent turn south. Slow down: apparent turn north"),
+                ("Largest", "On east and west headings"),
+                ("None", "On north and south headings"),
+                ("Northern Hemisphere", "The opposite: ANDS, accelerate north, decelerate south"),
+                ("Cause", "The magnet's dip: its weight lags when the speed changes")]),
+    1608: card("DEVIATION USUALLY VARIES ON EVERY HEADING", "THE AIRCRAFT'S OWN MAGNETIC FIELDS TURN WITH IT",
+               [("Cause", "Engine, electrics, radios and steel parts in the aircraft"),
+                SWING,
+                ("Nil deviation", "On some headings the aircraft's field lines up fore-and-aft"),
+                ("Also changes", "When equipment is added, moved or switched on"),
+                ("Exam trap", "Not one value for every heading, not the same in every aircraft of a type")]),
+    1609: card("140 KM IS ABOUT 76 NM", "DIVIDE KILOMETRES BY 1.852",
+               [("Working", "140 ÷ 1.852 ≈ 75.6 nm"),
+                ("Rough check", "km × 0.54: 140 × 0.54 ≈ 76"),
+                ("Exam trap", "140 ÷ 1.609 = 87 is statute miles, not nautical"),
+                ("Why 1.852", "1 nm = 1′ of latitude: 10,000 km ÷ 5,400′"),
+                ("In feet", "1 nm ≈ 6,076 ft")],
+               "nm = km ÷ 1.852"),
+    1628: card("EAST DEVIATION: COMPASS NORTH LIES EAST OF MAGNETIC NORTH", "DEVIATION EAST, COMPASS LEAST",
+               [("Compass heading", "Magnetic heading − east deviation"),
+                ("Rule", "Deviation west, compass best (add); deviation east, compass least (subtract)"),
+                ("Example", "Magnetic 090°, deviation 3°E: steer 087° on the compass"),
+                ("Source", "That aircraft's compass deviation card")],
+               "Compass = magnetic − east deviation (+ west)"),
+    1730: card("VOR/DME GIVES BEARING (VOR) AND DISTANCE (DME)", "ONE STATION GIVES A COMPLETE FIX",
+               [("VOR", "Radial: magnetic bearing from the station"),
+                ("DME", "Slant range in nm"),
+                ("Fix", "Radial + distance from one station = your position"),
+                ("VOR band", "VHF, 108–117.95 MHz: line of sight"),
+                ("Range", "About 1.23 × √(height in ft) nm")]),
+    1741: card("DME MEASURES THE TIME FOR PULSES TO GO TO THE STATION AND BACK", "TIME GIVES SLANT RANGE",
+               [("Reads", "Slant range, not ground distance"),
+                ("How", "The aircraft sends pulse pairs; the station replies after a fixed 50 µs delay"),
+                ("Band", "UHF, 962–1,213 MHz"),
+                ("Overhead", "At 6,000 ft it still reads about 1 nm"),
+                ("DME groundspeed", "Only right when flying straight to or from the station")]),
+    1765: card("AWAY FROM THE EQUATOR, 1° OF LONGITUDE GETS SHORTER TOWARDS THE POLES", "MERIDIANS CONVERGE",
+               [("Equator", "1° ≈ 60 nm"),
+                ("Poles", "Zero"),
+                ("Example", "At 60°S: 60 × cos 60° = 30 nm"),
+                ("Latitude", "1° of latitude is always 60 nm"),
+                ("Exam trap", "Only at the equator does 1° of longitude equal 1° of latitude")],
+               "1° of longitude = 60 × cos(latitude) nm"),
+    1772: card("SUNRISE 0540: OFFICIAL DAY STARTS AT 0525", "15 MIN BEFORE SUNRISE",
+               [("Working", "0540 − 15 min = 0525"),
+                ("Official day", "Sunrise − 15 min to sunset + 15 min"),
+                ("Official night", "Sunset + 15 min to sunrise − 15 min"),
+                ("South Africa", "SAST = UTC + 2 h"),
+                ("Exam trap", "0540 is sunrise itself; 0555 adds instead of subtracting")],
+               "Official day begins = sunrise − 15 min"),
+    1785: card("DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH", "CAUSED BY MAGNETIC FIELDS IN THE AIRCRAFT",
+               [("Variation", "True north ↔ magnetic north"),
+                SWING,
+                ("Order", "True → (variation) → magnetic → (deviation) → compass"),
+                ("Rule", "West is best (add), east is least (subtract)"),
+                ("Exam trap", "True ↔ magnetic is variation; track ↔ heading is drift")]),
+    1804: card("CARDINAL DIRECTIONS: 360°, 090°, 180°, 270°", "NORTH, EAST, SOUTH, WEST",
+               [("North", "360° (also written 000°)"),
+                ("Quadrantal", "045°, 135°, 225°, 315°"),
+                ("Written", "Always three figures: 090°, not 90°"),
+                ("Runways", "Magnetic direction ÷ 10: 09 and 27"),
+                ("Exam trap", "The 45° points are quadrantal, not cardinal")]),
+    1841: card("THE OTHER TWO ARE HEADING/TAS AND TRACK/GROUNDSPEED", "HDG/TAS + W/V = TR/GS",
+               [("HDG/TAS", "Motion through the air"),
+                ("TR/GS", "Motion over the ground"),
+                ("W/V", "Joins the end of HDG/TAS to the end of TR/GS"),
+                ("Drift", "The angle between heading and track"),
+                ("Exam trap", "Never pair heading with groundspeed, or track with TAS")]),
+    1882: card("DRIFT 8° LEFT", "TRACK LESS THAN HEADING: LEFT DRIFT",
+               [("Working", "046° − 038° = 8°"),
+                ("Drift", "Right drift: track right of heading. Left drift: track left of heading"),
+                ("Wind", "Left drift means the wind blows from the right"),
+                ("To hold the track", "Head into wind: steer right of the track"),
+                ("Exam trap", "4° halves the difference; drift is the whole 8°")],
+               "Drift = heading − track (track smaller: left)"),
+    1913: card("TURN 7° RIGHT TO FLY PARALLEL", "TRACK ERROR ONLY",
+               [("Working", "4 × 60 ÷ 35 ≈ 7°; left of track, so turn right"),
+                ("1 in 60", "Angle = distance off × 60 ÷ distance"),
+                ("Still to go", "88 − 35 = 53 nm"),
+                ("To reach F instead", "Add 4 × 60 ÷ 53 ≈ 4.5°: about 11° right (a trap answer)"),
+                ("Meaning", "1° off track puts you 1 nm off after 60 nm")],
+               "Track error (°) = distance off × 60 ÷ distance flown"),
+}
+
+TRIAL = [1552, 1574, 1604, 1608, 1609, 1628, 1730, 1741, 1765, 1772, 1785, 1804, 1841, 1882, 1913]
+assert set(CARDS) == set(TRIAL)

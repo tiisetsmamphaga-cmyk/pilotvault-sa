@@ -1,0 +1,576 @@
+{
+ "date": "2026-10-09",
+ "change": "Thin KEY FACT cards on trial questions (fewer than three points) get four or five points each, to the standard of the Aircraft Technical trial cards. Headlines kept; explanations unchanged.",
+ "rows": [
+  {
+   "id": 2043,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"CYANOSIS IS A SIGN OF HYPOXIA\", \"subline\": \"BLUISH LIPS AND FINGERNAILS FROM POORLY OXYGENATED BLOOD\"}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CYANOSIS IS A SIGN OF HYPOXIA\", \"subline\": \"BLUISH LIPS AND FINGERNAILS FROM POORLY OXYGENATED BLOOD\", \"blocks\": [{\"label\": \"Other signs\", \"value\": \"Faster breathing, tingling, blurred vision, slow thinking\"}, {\"label\": \"The danger\", \"value\": \"Judgement goes first, often with a feeling of well-being\"}, {\"label\": \"Hard to see\", \"value\": \"In a dim cockpit: don't wait for blue lips\"}, {\"label\": \"Action\", \"value\": \"Oxygen on, or descend\"}, {\"label\": \"Exam trap\", \"value\": \"Hyperventilation also tingles, but the lips don't turn blue\"}]}"
+  },
+  {
+   "id": 2046,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"NITROGEN IS THE LARGEST PART\", \"subline\": \"78% NITROGEN, 21% OXYGEN, 1% OTHER GASES\"}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"NITROGEN IS THE LARGEST PART\", \"subline\": \"78% NITROGEN, 21% OXYGEN, 1% OTHER GASES\", \"blocks\": [{\"label\": \"As you climb\", \"value\": \"The 21% oxygen stays the same\"}, {\"label\": \"What falls\", \"value\": \"The total pressure, so the oxygen partial pressure\"}, {\"label\": \"Hypoxia\", \"value\": \"Comes from the lower partial pressure, not a smaller percentage\"}, {\"label\": \"Nitrogen\", \"value\": \"Not used by the body, but dissolves in the tissues (decompression sickness)\"}]}"
+  },
+  {
+   "id": 2047,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE BLOOD CELLS FIGHT INFECTION\", \"subline\": \"THEY ARE THE BODY'S IMMUNE DEFENCE\", \"blocks\": [{\"label\": \"Blood\", \"value\": \"Red cells: oxygen · White cells: infection · Platelets: clotting\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE BLOOD CELLS FIGHT INFECTION\", \"subline\": \"THEY ARE THE BODY'S IMMUNE DEFENCE\", \"blocks\": [{\"label\": \"Red cells\", \"value\": \"Carry oxygen on haemoglobin\"}, {\"label\": \"White cells\", \"value\": \"Attack bacteria and viruses\"}, {\"label\": \"Platelets\", \"value\": \"Clot the blood\"}, {\"label\": \"Plasma\", \"value\": \"The fluid that carries the cells, nutrients and waste\"}, {\"label\": \"Exam trap\", \"value\": \"Clotting is the platelets' job, not the white cells'\"}]}"
+  },
+  {
+   "id": 2052,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE IRIS CONTROLS THE LIGHT\", \"subline\": \"IT CHANGES THE SIZE OF THE PUPIL\"}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE IRIS CONTROLS THE LIGHT\", \"subline\": \"IT CHANGES THE SIZE OF THE PUPIL\", \"blocks\": [{\"label\": \"Pupil\", \"value\": \"The opening in the iris: wide in dim light, small in bright\"}, {\"label\": \"Cornea\", \"value\": \"The clear front window: does most of the focusing\"}, {\"label\": \"Lens\", \"value\": \"Fine focus, changed by the ciliary muscles\"}, {\"label\": \"Retina\", \"value\": \"Rods and cones turn light into nerve signals\"}, {\"label\": \"Optic nerve\", \"value\": \"Carries the signals to the brain\"}]}"
+  },
+  {
+   "id": 2057,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"STAY LOW ENOUGH OR USE SUPPLEMENTARY OXYGEN\", \"subline\": \"KEEP THE OXYGEN PARTIAL PRESSURE ADEQUATE\", \"blocks\": [{\"label\": \"Rule of thumb\", \"value\": \"Below about 10,000 ft without oxygen\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"STAY LOW ENOUGH OR USE SUPPLEMENTARY OXYGEN\", \"subline\": \"KEEP THE OXYGEN PARTIAL PRESSURE ADEQUATE\", \"blocks\": [{\"label\": \"Rule of thumb\", \"value\": \"Below about 10,000 ft without oxygen\"}, {\"label\": \"Above that\", \"value\": \"Supplementary oxygen restores the partial pressure\"}, {\"label\": \"Time of useful consciousness\", \"value\": \"About 20–30 min at 18,000 ft, 3–5 min at 25,000 ft\"}, {\"label\": \"Smokers\", \"value\": \"Carbon monoxide in the blood: hypoxic at lower altitudes\"}, {\"label\": \"Not a cure\", \"value\": \"Breathing faster, or a paper bag (that is for hyperventilation)\"}]}"
+  },
+  {
+   "id": 2059,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CONVEX LENS CORRECTS LONG SIGHT\", \"subline\": \"THE SHORT EYEBALL FOCUSES BEHIND THE RETINA\", \"blocks\": [{\"label\": \"Short sight\", \"value\": \"Concave lens\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CONVEX LENS CORRECTS LONG SIGHT\", \"subline\": \"THE SHORT EYEBALL FOCUSES BEHIND THE RETINA\", \"blocks\": [{\"label\": \"Long sight\", \"value\": \"Short eyeball: near objects blur\"}, {\"label\": \"Convex lens\", \"value\": \"Thicker in the middle: bends the light in sooner\"}, {\"label\": \"Short sight\", \"value\": \"Long eyeball, focuses in front: concave lens\"}, {\"label\": \"Presbyopia\", \"value\": \"The lens stiffens with age: reading glasses (convex)\"}, {\"label\": \"Pilot\", \"value\": \"If glasses are required, carry a spare pair\"}]}"
+  },
+  {
+   "id": 2063,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE EUSTACHIAN TUBE EQUALISES MIDDLE-EAR PRESSURE\", \"subline\": \"WITH THE OUTSIDE AIR\", \"blocks\": [{\"label\": \"Harder\", \"value\": \"In the descent, or with a cold\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE EUSTACHIAN TUBE EQUALISES MIDDLE-EAR PRESSURE\", \"subline\": \"WITH THE OUTSIDE AIR\", \"blocks\": [{\"label\": \"Route\", \"value\": \"Middle ear to the back of the throat\"}, {\"label\": \"Climb\", \"value\": \"Air escapes easily: rarely a problem\"}, {\"label\": \"Descent\", \"value\": \"The tube resists opening: pain if the ear can't equalise\"}, {\"label\": \"Clear it\", \"value\": \"Swallow, yawn, or Valsalva (pinch the nose, blow gently)\"}, {\"label\": \"With a cold\", \"value\": \"Don't fly: risk of barotrauma, even a burst eardrum\"}]}"
+  },
+  {
+   "id": 2069,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LEANS\", \"subline\": \"A SLOW, UNNOTICED ROLL, THEN A BRISK ROLL BACK TO LEVEL\", \"blocks\": [{\"label\": \"Felt\", \"value\": \"A turn the other way\"}, {\"label\": \"Cure\", \"value\": \"Believe the instruments\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LEANS\", \"subline\": \"A SLOW, UNNOTICED ROLL, THEN A BRISK ROLL BACK TO LEVEL\", \"blocks\": [{\"label\": \"Cause\", \"value\": \"The roll was too slow for the semicircular canals to sense\"}, {\"label\": \"Felt\", \"value\": \"Level while banked, then a turn the other way after levelling\"}, {\"label\": \"Typical reaction\", \"value\": \"Leaning the body towards the original bank\"}, {\"label\": \"Danger\", \"value\": \"In cloud it can lead into a spiral dive\"}, {\"label\": \"Cure\", \"value\": \"Believe the attitude indicator\"}]}"
+  },
+  {
+   "id": 2070,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"DAMAGE TO THE COCHLEA: PERMANENT HEARING LOSS\", \"subline\": \"ITS HAIR CELLS DO NOT GROW BACK\"}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"DAMAGE TO THE COCHLEA: PERMANENT HEARING LOSS\", \"subline\": \"ITS HAIR CELLS DO NOT GROW BACK\", \"blocks\": [{\"label\": \"Cochlea\", \"value\": \"Inner ear: hair cells turn vibration into nerve signals\"}, {\"label\": \"Cause\", \"value\": \"Long exposure to noise above about 90 dB\"}, {\"label\": \"Often treatable\", \"value\": \"Wax, a burst eardrum or damaged ossicles (outer and middle ear)\"}, {\"label\": \"Protect\", \"value\": \"Wear a headset or ear defenders\"}, {\"label\": \"Exam trap\", \"value\": \"Pressure equalising is the Eustachian tube; balance is the vestibular system\"}]}"
+  },
+  {
+   "id": 2079,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"SORTING INPUTS AND FOCUSING ON WHAT MATTERS\", \"subline\": \"SELECTIVE ATTENTION\", \"blocks\": [{\"label\": \"Example\", \"value\": \"Hearing your own call sign in busy radio traffic\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"SORTING INPUTS AND FOCUSING ON WHAT MATTERS\", \"subline\": \"SELECTIVE ATTENTION\", \"blocks\": [{\"label\": \"Why\", \"value\": \"The brain decides on one thing at a time\"}, {\"label\": \"Example\", \"value\": \"Hearing your own call sign in busy radio traffic\"}, {\"label\": \"Divided attention\", \"value\": \"Switching rapidly between tasks, not doing them at once\"}, {\"label\": \"Risk\", \"value\": \"Fixating on one thing and missing another, such as traffic\"}, {\"label\": \"Helps\", \"value\": \"A set scan and clear priorities: aviate, navigate, communicate\"}]}"
+  },
+  {
+   "id": 2088,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"EPISODIC MEMORY\", \"subline\": \"PERSONAL EVENTS AND EXPERIENCES\", \"blocks\": [{\"label\": \"Long-term memory\", \"value\": \"Semantic: facts · Episodic: events · Procedural: skills\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"EPISODIC MEMORY\", \"subline\": \"PERSONAL EVENTS AND EXPERIENCES\", \"blocks\": [{\"label\": \"Episodic\", \"value\": \"Events: a particular flight, an incident\"}, {\"label\": \"Semantic\", \"value\": \"Facts and meanings: V-speeds, rules\"}, {\"label\": \"Procedural\", \"value\": \"Skills: flying the aircraft\"}, {\"label\": \"Reliability\", \"value\": \"Episodic memory drifts: it is rebuilt each time, not replayed\"}, {\"label\": \"Short-term memory\", \"value\": \"About 7 ± 2 items for 10–20 seconds\"}]}"
+  },
+  {
+   "id": 2112,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"NOISE, VIBRATION, TEMPERATURE, HUMIDITY\", \"subline\": \"PHYSICAL STRESSORS IN THE COCKPIT\", \"blocks\": [{\"label\": \"They add up\", \"value\": \"Over a flight\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"NOISE, VIBRATION, TEMPERATURE, HUMIDITY\", \"subline\": \"PHYSICAL STRESSORS IN THE COCKPIT\", \"blocks\": [{\"label\": \"Physical\", \"value\": \"Noise, vibration, heat, cold, humidity\"}, {\"label\": \"Physiological\", \"value\": \"Fatigue, hunger, illness, dehydration\"}, {\"label\": \"Psychological\", \"value\": \"Workload, worries at home or about money\"}, {\"label\": \"They add up\", \"value\": \"Over a flight: total stress is all the sources together\"}, {\"label\": \"Reduce them\", \"value\": \"Headset, ventilation, water, rest\"}]}"
+  },
+  {
+   "id": 2119,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CLOSED-LOOP SYSTEM\", \"subline\": \"FEEDBACK COMPARES THE RESULT WITH THE AIM\", \"blocks\": [{\"label\": \"Open loop\", \"value\": \"No feedback: a memorised action runs to the end\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CLOSED-LOOP SYSTEM\", \"subline\": \"FEEDBACK COMPARES THE RESULT WITH THE AIM\", \"blocks\": [{\"label\": \"Closed loop\", \"value\": \"Act, see the result, correct, repeat\"}, {\"label\": \"Example\", \"value\": \"Rolling into a bank: watch the horizon, ease off at the angle you want\"}, {\"label\": \"Open loop\", \"value\": \"No feedback: a memorised action runs to the end\"}, {\"label\": \"Open-loop example\", \"value\": \"A practised, quick skilled movement\"}, {\"label\": \"Exam trap\", \"value\": \"Feedback means closed loop\"}]}"
+  },
+  {
+   "id": 2171,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"WAIT 24 HOURS AFTER SCUBA DIVING\", \"subline\": \"BEFORE FLYING ABOVE 8,000 FT\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Nitrogen absorbed under water can bubble out: decompression sickness\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"WAIT 24 HOURS AFTER SCUBA DIVING\", \"subline\": \"BEFORE FLYING ABOVE 8,000 FT\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Nitrogen absorbed under water can bubble out: decompression sickness\"}, {\"label\": \"Pressure\", \"value\": \"Every 10 m (33 ft) of sea water adds one atmosphere\"}, {\"label\": \"Up to 8,000 ft\", \"value\": \"At least 12 hours after a dive without decompression stops\"}, {\"label\": \"Symptoms\", \"value\": \"Joint pain (the bends), chest pain and coughing (the chokes), itching\"}, {\"label\": \"If it happens\", \"value\": \"Oxygen, descend, land, get to a recompression chamber\"}]}"
+  },
+  {
+   "id": 2174,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LEFT VENTRICLE\", \"subline\": \"PUMPS OXYGEN-RICH BLOOD TO THE WHOLE BODY\", \"blocks\": [{\"label\": \"Heart\", \"value\": \"Atria receive blood, ventricles pump it out; left ventricle to the body\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE LEFT VENTRICLE\", \"subline\": \"PUMPS OXYGEN-RICH BLOOD TO THE WHOLE BODY\", \"blocks\": [{\"label\": \"Right atrium\", \"value\": \"Receives used blood from the body\"}, {\"label\": \"Right ventricle\", \"value\": \"Pumps it to the lungs\"}, {\"label\": \"Left atrium\", \"value\": \"Receives oxygen-rich blood from the lungs\"}, {\"label\": \"Left ventricle\", \"value\": \"Pumps it out through the aorta: the thickest wall\"}, {\"label\": \"Remember\", \"value\": \"Right side to the lungs, left side to the body\"}]}"
+  },
+  {
+   "id": 2178,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE OXYGEN CROSSES INTO THE BLOOD\", \"subline\": \"A BIGGER PRESSURE DIFFERENCE DRIVES IT\", \"blocks\": [{\"label\": \"Why oxygen works\", \"value\": \"It raises the partial pressure in the lungs\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE OXYGEN CROSSES INTO THE BLOOD\", \"subline\": \"A BIGGER PRESSURE DIFFERENCE DRIVES IT\", \"blocks\": [{\"label\": \"Diffusion\", \"value\": \"Oxygen moves from high to low partial pressure: lungs to blood\"}, {\"label\": \"In the alveoli\", \"value\": \"About 100 mmHg at sea level, about 60 at 10,000 ft\"}, {\"label\": \"At altitude\", \"value\": \"Lower pressure in the lungs, less oxygen transferred\"}, {\"label\": \"Why oxygen works\", \"value\": \"It raises the partial pressure in the lungs\"}, {\"label\": \"Exam trap\", \"value\": \"The 21% doesn't change with height; the pressure does\"}]}"
+  },
+  {
+   "id": 2196,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 32 SECONDS\", \"subline\": \"3 KM AT 180 KT CLOSING\", \"blocks\": [{\"label\": \"Working\", \"value\": \"3 ÷ 1.852 = 1.62 NM; 1.62 ÷ 180 × 3,600 = 32 s\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOUT 32 SECONDS\", \"subline\": \"3 KM AT 180 KT CLOSING\", \"blocks\": [{\"label\": \"Working\", \"value\": \"3 ÷ 1.852 = 1.62 NM; 1.62 ÷ 180 × 3,600 = 32 s\"}, {\"label\": \"Reaction time\", \"value\": \"About 12.5 s to see, recognise, decide and move\"}, {\"label\": \"Left to act\", \"value\": \"About 20 s\"}, {\"label\": \"Collision course\", \"value\": \"The other aircraft stays still in the windscreen, then suddenly grows\"}, {\"label\": \"Lookout\", \"value\": \"Scan in sectors of about 10°, pausing on each\"}], \"formula\": \"Time (s) = distance (NM) ÷ closing speed (kt) × 3,600\"}"
+  },
+  {
+   "id": 2197,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE RETINA\", \"subline\": \"HOLDS THE RODS AND CONES\", \"blocks\": [{\"label\": \"Cones\", \"value\": \"Colour and detail, packed in the fovea, poor in dim light\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE RETINA\", \"subline\": \"HOLDS THE RODS AND CONES\", \"blocks\": [{\"label\": \"Cones\", \"value\": \"Colour and detail, packed in the fovea, poor in dim light\"}, {\"label\": \"Rods\", \"value\": \"Dim light and movement, no colour, towards the edge\"}, {\"label\": \"Fovea\", \"value\": \"Sharpest vision, cones only: look straight at things by day\"}, {\"label\": \"Blind spot\", \"value\": \"Where the optic nerve leaves: no rods or cones\"}, {\"label\": \"At night\", \"value\": \"Look slightly off-centre so the rods see the object\"}]}"
+  },
+  {
+   "id": 2201,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"BMI = WEIGHT (KG) ÷ HEIGHT (M)²\", \"subline\": \"NO UNITS\", \"blocks\": [{\"label\": \"Normal (JAA)\", \"value\": \"20–25 men, 19–24 women\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"BMI = WEIGHT (KG) ÷ HEIGHT (M)²\", \"subline\": \"NO UNITS\", \"blocks\": [{\"label\": \"Example\", \"value\": \"80 kg, 1.80 m: 80 ÷ 3.24 ≈ 24.7\"}, {\"label\": \"Normal (JAA)\", \"value\": \"20–25 men, 19–24 women\"}, {\"label\": \"Higher\", \"value\": \"25–30 overweight, over 30 obese\"}, {\"label\": \"Limits\", \"value\": \"A screening number only: it can't tell muscle from fat\"}], \"formula\": \"BMI = kg ÷ m²\"}"
+  },
+  {
+   "id": 2207,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"60° OF BANK GIVES 2 G\", \"subline\": \"LOAD FACTOR = 1 ÷ COS(BANK)\", \"blocks\": [{\"label\": \"Working\", \"value\": \"cos 60° = 0.5, so 1 ÷ 0.5 = 2\"}, {\"label\": \"Others\", \"value\": \"30° ≈ 1.15 G · 45° ≈ 1.41 G · 75° ≈ 3.9 G\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"60° OF BANK GIVES 2 G\", \"subline\": \"LOAD FACTOR = 1 ÷ COS(BANK)\", \"blocks\": [{\"label\": \"Working\", \"value\": \"cos 60° = 0.5, so 1 ÷ 0.5 = 2\"}, {\"label\": \"Others\", \"value\": \"30° ≈ 1.15 G · 45° ≈ 1.41 G · 75° ≈ 3.9 G\"}, {\"label\": \"In the seat\", \"value\": \"You feel twice your weight\"}, {\"label\": \"Stall speed\", \"value\": \"Rises with √n: at 2 G, × 1.41 (+41%)\"}, {\"label\": \"The body\", \"value\": \"Grey-out from about 3 G, black-out about 4.5 G (relaxed)\"}]}"
+  },
+  {
+   "id": 2211,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"PERCEPTION GIVES SENSATIONS MEANING\", \"subline\": \"IT BUILDS THE MENTAL PICTURE YOU DECIDE ON\"}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"PERCEPTION GIVES SENSATIONS MEANING\", \"subline\": \"IT BUILDS THE MENTAL PICTURE YOU DECIDE ON\", \"blocks\": [{\"label\": \"Sensation\", \"value\": \"Eyes, ears, balance and touch pick up raw signals\"}, {\"label\": \"Perception\", \"value\": \"Interprets them, using experience and expectation\"}, {\"label\": \"Decision\", \"value\": \"Made on the mental picture, not the raw data\"}, {\"label\": \"Risk\", \"value\": \"Expectation can make you see or hear what you expect\"}, {\"label\": \"The chain\", \"value\": \"Sense → perceive → decide → act → feedback\"}]}"
+  },
+  {
+   "id": 2223,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"MODERATE AROUSAL: ALERT AND EFFECTIVE\", \"subline\": \"PERFORMANCE PEAKS IN THE MIDDLE\", \"blocks\": [{\"label\": \"Too low\", \"value\": \"Bored, slow\"}, {\"label\": \"Too high\", \"value\": \"Narrowed attention, overload\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"MODERATE AROUSAL: ALERT AND EFFECTIVE\", \"subline\": \"PERFORMANCE PEAKS IN THE MIDDLE\", \"blocks\": [{\"label\": \"Too low\", \"value\": \"Bored, slow to react: a long, routine cruise\"}, {\"label\": \"Moderate\", \"value\": \"Alert and interested: best performance\"}, {\"label\": \"Too high\", \"value\": \"Narrowed attention, overload: an emergency, bad weather\"}, {\"label\": \"The curve\", \"value\": \"An upside-down U (Yerkes–Dodson)\"}, {\"label\": \"Complex tasks\", \"value\": \"Peak at a lower arousal than simple ones\"}]}"
+  },
+  {
+   "id": 2224,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE STRESS MAY BE LOWER\", \"subline\": \"CONFIDENCE AND FAMILIARITY HAVE GROWN\", \"blocks\": [{\"label\": \"Stress\", \"value\": \"Felt when the perceived demand exceeds the perceived ability to cope\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE STRESS MAY BE LOWER\", \"subline\": \"CONFIDENCE AND FAMILIARITY HAVE GROWN\", \"blocks\": [{\"label\": \"Stress\", \"value\": \"Felt when the perceived demand exceeds the perceived ability to cope\"}, {\"label\": \"Experience\", \"value\": \"Raises the ability you see in yourself: same task, less stress\"}, {\"label\": \"Why training works\", \"value\": \"A practised response is ready in memory\"}, {\"label\": \"Coping\", \"value\": \"Fix the problem, rethink it, or calm the symptoms\"}]}"
+  },
+  {
+   "id": 2233,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"SHAPE AND MATERIAL ALONE ARE NOT ENOUGH\", \"subline\": \"CONTROLS NEED STANDARD LOCATION, MOVEMENT AND FEEL\", \"blocks\": [{\"label\": \"Good design\", \"value\": \"Easy to reach; different functions look and feel different\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"SHAPE AND MATERIAL ALONE ARE NOT ENOUGH\", \"subline\": \"CONTROLS NEED STANDARD LOCATION, MOVEMENT AND FEEL\", \"blocks\": [{\"label\": \"Location\", \"value\": \"Standard place; the important ones easiest to reach\"}, {\"label\": \"Movement\", \"value\": \"Standard direction: gear lever up for gear up\"}, {\"label\": \"Shape\", \"value\": \"Known by touch: a wheel-shaped gear knob, a flap-shaped flap lever\"}, {\"label\": \"Colour\", \"value\": \"Throttle black, propeller blue, mixture red\"}, {\"label\": \"Why\", \"value\": \"Stops the wrong control being grabbed under pressure or in the dark\"}]}"
+  },
+  {
+   "id": 2235,
+   "subject": "human-performance",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"SITTING TOO HIGH: ALL THREE EFFECTS\", \"subline\": \"BETTER VIEW DOWN, WORSE INSTRUMENT VIEW, LESS VIEW UP\", \"blocks\": [{\"label\": \"Fix\", \"value\": \"Set the seat to the design eye position\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"SITTING TOO HIGH: ALL THREE EFFECTS\", \"subline\": \"BETTER VIEW DOWN, WORSE INSTRUMENT VIEW, LESS VIEW UP\", \"blocks\": [{\"label\": \"View down\", \"value\": \"Better over the nose\"}, {\"label\": \"Instruments\", \"value\": \"Seen at an angle; some hidden under the glareshield\"}, {\"label\": \"View up\", \"value\": \"Cut off by the roof or the canopy frame\"}, {\"label\": \"Too low\", \"value\": \"Poor view over the nose: worst on the approach\"}, {\"label\": \"Fix\", \"value\": \"Set the seat to the design eye position (use the markers where fitted)\"}]}"
+  },
+  {
+   "id": 2240,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"HIGHER DENSITY ALTITUDE REDUCES CLIMB PERFORMANCE\", \"subline\": \"THINNER AIR: LESS POWER, THRUST AND LIFT\", \"blocks\": [{\"label\": \"Also\", \"value\": \"Longer take-off and landing runs\"}, {\"label\": \"Caused by\", \"value\": \"High elevation, high temperature, low pressure\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"HIGHER DENSITY ALTITUDE REDUCES CLIMB PERFORMANCE\", \"subline\": \"THINNER AIR: LESS POWER, THRUST AND LIFT\", \"blocks\": [{\"label\": \"Caused by\", \"value\": \"High elevation, high temperature, low pressure, high humidity\"}, {\"label\": \"Engine and propeller\", \"value\": \"Less power and less thrust\"}, {\"label\": \"Wings\", \"value\": \"Same IAS, but a higher TAS and groundspeed\"}, {\"label\": \"Runways\", \"value\": \"Longer take-off and landing runs\"}, {\"label\": \"Rule of thumb\", \"value\": \"About 120 ft of density altitude for each 1°C above ISA\"}], \"formula\": \"Density altitude ≈ PA + 120 × (OAT − ISA temperature)\"}"
+  },
+  {
+   "id": 2244,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAXIMUM RAMP WEIGHT = MTOW + TAXI FUEL\", \"subline\": \"THE TAXI FUEL IS BURNT BEFORE BRAKE RELEASE\", \"blocks\": [{\"label\": \"Order\", \"value\": \"Basic empty → zero fuel → take-off → ramp\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"MAXIMUM RAMP WEIGHT = MTOW + TAXI FUEL\", \"subline\": \"THE TAXI FUEL IS BURNT BEFORE BRAKE RELEASE\", \"blocks\": [{\"label\": \"Zero fuel weight\", \"value\": \"Basic empty + crew, passengers and baggage\"}, {\"label\": \"Ramp weight\", \"value\": \"Zero fuel + all the fuel on board: the heaviest\"}, {\"label\": \"Take-off weight\", \"value\": \"Ramp − taxi fuel: must not exceed MTOW\"}, {\"label\": \"Landing weight\", \"value\": \"Take-off − trip fuel: must not exceed MLW\"}, {\"label\": \"Exam trap\", \"value\": \"Not landing weight + reserve: it is MTOW + taxi fuel\"}], \"formula\": \"Ramp weight = take-off weight + taxi fuel\"}"
+  },
+  {
+   "id": 2247,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"2,265 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, PA 4,000 FT, MIDWAY +10°C TO +20°C\", \"blocks\": [{\"label\": \"Table\", \"value\": \"2,185 ft at +10°C; 2,345 ft at +20°C\"}, {\"label\": \"+15°C\", \"value\": \"(2,185 + 2,345) ÷ 2 = 2,265 ft\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"2,265 FT TO CLEAR 50 FT\", \"subline\": \"FIGURE 1-22, PA 4,000 FT, MIDWAY +10°C TO +20°C\", \"blocks\": [{\"label\": \"Table\", \"value\": \"2,185 ft at +10°C; 2,345 ft at +20°C\"}, {\"label\": \"+15°C\", \"value\": \"(2,185 + 2,345) ÷ 2 = 2,265 ft\"}, {\"label\": \"Take-off distance\", \"value\": \"Brake release to 50 ft above the runway\"}, {\"label\": \"Ground roll\", \"value\": \"Brake release to lift-off only\"}, {\"label\": \"Notes on the table\", \"value\": \"Headwind shortens it; tailwind (+10% per 2 kt) lengthens it\"}], \"formula\": \"Midway value = (lower + upper) ÷ 2\"}"
+  },
+  {
+   "id": 2250,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"GLIDE RANGE ABOUT 19 NM\", \"subline\": \"HEIGHT = 10,500 − 1,500 = 9,000 FT\", \"blocks\": [{\"label\": \"Figure 1-16\", \"value\": \"Height above the terrain in, glide range out\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"GLIDE RANGE ABOUT 19 NM\", \"subline\": \"HEIGHT = 10,500 − 1,500 = 9,000 FT\", \"blocks\": [{\"label\": \"Figure 1-16\", \"value\": \"Height above the terrain in, glide range out\"}, {\"label\": \"Chart conditions\", \"value\": \"Power off, flaps 0°, 75 KIAS, 2,500 lb, zero wind\"}, {\"label\": \"Rough check\", \"value\": \"About 2.1 NM per 1,000 ft: 9 × 2.1 ≈ 19 NM\"}, {\"label\": \"Wind\", \"value\": \"A headwind shortens the glide, a tailwind stretches it\"}, {\"label\": \"Exam trap\", \"value\": \"Enter with the height above the terrain, not the cruising altitude\"}]}"
+  },
+  {
+   "id": 2254,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE: MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"TOP OF THE WHITE ARC\", \"blocks\": [{\"label\": \"Bottom of the white arc\", \"value\": \"VS0, stall with full flap\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"VFE: MAXIMUM SPEED WITH FLAPS EXTENDED\", \"subline\": \"TOP OF THE WHITE ARC\", \"blocks\": [{\"label\": \"White arc\", \"value\": \"VS0 at the bottom, VFE at the top: the flap range\"}, {\"label\": \"Green arc\", \"value\": \"VS1 to VNO: normal operation\"}, {\"label\": \"Yellow arc\", \"value\": \"VNO to VNE: smooth air only\"}, {\"label\": \"Red line\", \"value\": \"VNE: never exceed\"}, {\"label\": \"Above VFE\", \"value\": \"Overstresses the flaps and their mountings\"}]}"
+  },
+  {
+   "id": 2255,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"RUNWAY 18 SLOPES 1.45% DOWN\", \"subline\": \"5,180 FT AT ITS START, 5,125 FT AT ITS END\", \"blocks\": [{\"label\": \"Working\", \"value\": \"55 ÷ 3,800 × 100 = 1.45%\"}, {\"label\": \"Slope\", \"value\": \"Elevation difference ÷ runway length × 100, same units\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"RUNWAY 18 SLOPES 1.45% DOWN\", \"subline\": \"5,180 FT AT ITS START, 5,125 FT AT ITS END\", \"blocks\": [{\"label\": \"Working\", \"value\": \"55 ÷ 3,800 × 100 = 1.45%\"}, {\"label\": \"Direction\", \"value\": \"Taking off on 18 you start high and run downhill\"}, {\"label\": \"Runway 36\", \"value\": \"The same 1.45%, but uphill\"}, {\"label\": \"Downslope\", \"value\": \"Shorter take-off, longer landing\"}, {\"label\": \"Upslope\", \"value\": \"Longer take-off, shorter landing\"}], \"formula\": \"Slope % = elevation difference ÷ runway length × 100 (same units)\"}"
+  },
+  {
+   "id": 2264,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE HEADWIND ON FINAL: OVERSHOOT\", \"subline\": \"AIRSPEED AND LIFT RISE, THE AIRCRAFT GOES ABOVE THE GLIDE PATH\", \"blocks\": [{\"label\": \"Opposite\", \"value\": \"Less headwind or more tailwind: undershoot\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"MORE HEADWIND ON FINAL: OVERSHOOT\", \"subline\": \"AIRSPEED AND LIFT RISE, THE AIRCRAFT GOES ABOVE THE GLIDE PATH\", \"blocks\": [{\"label\": \"Why\", \"value\": \"Inertia keeps the groundspeed; the extra headwind adds airspeed\"}, {\"label\": \"Opposite\", \"value\": \"Less headwind or more tailwind: undershoot\"}, {\"label\": \"Correct\", \"value\": \"Reduce power smoothly; be ready for the headwind to die away\"}, {\"label\": \"Danger\", \"value\": \"A headwind that dies near the ground: sink and undershoot\"}, {\"label\": \"Expect it\", \"value\": \"Near thunderstorms, fronts, low-level inversions, hills\"}]}"
+  },
+  {
+   "id": 2265,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"42 USG AT SG 0.72 WEIGHS ABOUT 114 KG\", \"subline\": \"LITRES × SG = KILOGRAMS\", \"blocks\": [{\"label\": \"Litres\", \"value\": \"42 × 3.785 = 159 L\"}, {\"label\": \"Mass\", \"value\": \"159 × 0.72 = 114.5 kg\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"42 USG AT SG 0.72 WEIGHS ABOUT 114 KG\", \"subline\": \"LITRES × SG = KILOGRAMS\", \"blocks\": [{\"label\": \"Litres\", \"value\": \"42 × 3.785 = 159 L\"}, {\"label\": \"Mass\", \"value\": \"159 × 0.72 = 114.5 kg\"}, {\"label\": \"In pounds\", \"value\": \"114.5 × 2.2 ≈ 252 lb\"}, {\"label\": \"Typical SG\", \"value\": \"Avgas about 0.72, Jet A-1 about 0.80\"}, {\"label\": \"Gallons\", \"value\": \"1 USG = 3.785 L; 1 imperial gallon = 4.546 L\"}], \"formula\": \"kg = litres × SG\"}"
+  },
+  {
+   "id": 2267,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA 1,125 M\", \"subline\": \"RUNWAY − DISPLACEMENT; THE STOPWAY IS NOT INCLUDED\", \"blocks\": [{\"label\": \"Working\", \"value\": \"1,150 − 25 = 1,125 m\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"LDA 1,125 M\", \"subline\": \"RUNWAY − DISPLACEMENT; THE STOPWAY IS NOT INCLUDED\", \"blocks\": [{\"label\": \"Working\", \"value\": \"1,150 − 25 = 1,125 m\"}, {\"label\": \"TORA\", \"value\": \"The full runway: 1,150 m\"}, {\"label\": \"ASDA\", \"value\": \"TORA + stopway: 1,180 m\"}, {\"label\": \"TODA\", \"value\": \"TORA + clearway (none given here)\"}, {\"label\": \"Exam trap\", \"value\": \"The stopway counts only towards ASDA\"}], \"formula\": \"LDA = runway length − displaced threshold\"}"
+  },
+  {
+   "id": 2290,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"STALL SPEED 57 KIAS\", \"subline\": \"FIGURE 1-21: HALFWAY BETWEEN 2,400 AND 2,200 LB\", \"blocks\": [{\"label\": \"Flaps 40°, 60° bank\", \"value\": \"2,400 lb: 60 KIAS; 2,200 lb: 54 KIAS\"}, {\"label\": \"Working\", \"value\": \"(60 + 54) ÷ 2 = 57 KIAS\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"STALL SPEED 57 KIAS\", \"subline\": \"FIGURE 1-21: HALFWAY BETWEEN 2,400 AND 2,200 LB\", \"blocks\": [{\"label\": \"Flaps 40°, 60° bank\", \"value\": \"2,400 lb: 60 KIAS; 2,200 lb: 54 KIAS\"}, {\"label\": \"Working\", \"value\": \"(60 + 54) ÷ 2 = 57 KIAS\"}, {\"label\": \"Bank\", \"value\": \"60° = 2 G: stall speed × √2 = × 1.41\"}, {\"label\": \"Flap and weight\", \"value\": \"More flap or less weight: a lower stall speed\"}, {\"label\": \"Table conditions\", \"value\": \"Power off\"}]}"
+  },
+  {
+   "id": 2291,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"77 KIAS WITH FLAPS 40° IS 78 KCAS\", \"subline\": \"INTERPOLATE FIGURE 1-19\", \"blocks\": [{\"label\": \"Flaps 40° row\", \"value\": \"70 KIAS → 71 KCAS; 80 → 81\"}, {\"label\": \"Working\", \"value\": \"71 + 0.7 × 10 = 78 KCAS\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"77 KIAS WITH FLAPS 40° IS 78 KCAS\", \"subline\": \"INTERPOLATE FIGURE 1-19\", \"blocks\": [{\"label\": \"Flaps 40° row\", \"value\": \"70 KIAS → 71 KCAS; 80 → 81\"}, {\"label\": \"Working\", \"value\": \"71 + 0.7 × 10 = 78 KCAS\"}, {\"label\": \"IAS to CAS\", \"value\": \"Corrects the instrument and position errors\"}, {\"label\": \"Here\", \"value\": \"CAS is about 1 kt above IAS\"}, {\"label\": \"Next step\", \"value\": \"CAS corrected for altitude and temperature gives TAS\"}], \"formula\": \"CAS = lower + fraction of the way × difference\"}"
+  },
+  {
+   "id": 2300,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"AQUAPLANING IS MORE LIKELY AT HIGH GROUNDSPEED\", \"subline\": \"THE TYRE CANNOT PUSH THE WATER AWAY IN TIME\", \"blocks\": [{\"label\": \"Also\", \"value\": \"Standing water, low tyre pressure, worn tread\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"AQUAPLANING IS MORE LIKELY AT HIGH GROUNDSPEED\", \"subline\": \"THE TYRE CANNOT PUSH THE WATER AWAY IN TIME\", \"blocks\": [{\"label\": \"Also\", \"value\": \"Standing water, low tyre pressure, worn tread\"}, {\"label\": \"Example\", \"value\": \"Tyre at 36 psi: 9 × √36 = 54 kt\"}, {\"label\": \"Types\", \"value\": \"Dynamic (standing water), viscous (thin film), reverted rubber (locked wheel)\"}, {\"label\": \"Signs\", \"value\": \"Braking and steering stop working\"}, {\"label\": \"Action\", \"value\": \"Firm touchdown, gentle braking as speed falls\"}], \"formula\": \"Aquaplaning speed ≈ 9 × √(tyre pressure, psi) kt\"}"
+  },
+  {
+   "id": 2320,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL 1,500 FT\", \"subline\": \"FIGURE 1-22, THEN THE TAILWIND NOTE\", \"blocks\": [{\"label\": \"3,500 ft, +20°C\", \"value\": \"(1,190 + 1,310) ÷ 2 = 1,250 ft\"}, {\"label\": \"4 kt tailwind\", \"value\": \"+20%: 1,250 × 1.2 = 1,500 ft\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"GROUND ROLL 1,500 FT\", \"subline\": \"FIGURE 1-22, THEN THE TAILWIND NOTE\", \"blocks\": [{\"label\": \"3,500 ft, +20°C\", \"value\": \"(1,190 + 1,310) ÷ 2 = 1,250 ft\"}, {\"label\": \"4 kt tailwind\", \"value\": \"+20%: 1,250 × 1.2 = 1,500 ft\"}, {\"label\": \"Tailwind note\", \"value\": \"Add 10% for each 2 kt\"}, {\"label\": \"Ground roll\", \"value\": \"Brake release to lift-off (not to 50 ft)\"}, {\"label\": \"Lesson\", \"value\": \"Even a light tailwind costs a lot of runway: take off into wind\"}], \"formula\": \"Ground roll × (1 + 0.10 for each 2 kt of tailwind)\"}"
+  },
+  {
+   "id": 2332,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOTAL FUEL 19.4 USG\", \"subline\": \"TAXI AND CLIMB + TRIP + RESERVE\", \"blocks\": [{\"label\": \"Trip\", \"value\": \"107 ÷ 92 = 1.163 h × 7.2 = 8.4 USG\"}, {\"label\": \"Total\", \"value\": \"3 + 8.4 + 8 = 19.4 USG\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOTAL FUEL 19.4 USG\", \"subline\": \"TAXI AND CLIMB + TRIP + RESERVE\", \"blocks\": [{\"label\": \"Time\", \"value\": \"107 ÷ 92 = 1.163 h (69.8 min)\"}, {\"label\": \"Trip\", \"value\": \"1.163 × 7.2 = 8.4 USG\"}, {\"label\": \"Taxi, take-off, climb\", \"value\": \"3 USG\"}, {\"label\": \"Reserve\", \"value\": \"8 USG\"}, {\"label\": \"Total\", \"value\": \"3 + 8.4 + 8 = 19.4 USG\"}], \"formula\": \"Total fuel = taxi and climb + trip + reserve\"}"
+  },
+  {
+   "id": 2337,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS 121 KT\", \"subline\": \"FIGURE 1-23 AT 2,600 RPM, HALFWAY BETWEEN ROWS\", \"blocks\": [{\"label\": \"6,000 ft / 8,000 ft\", \"value\": \"123 / 119 KTAS\"}, {\"label\": \"7,000 ft\", \"value\": \"(123 + 119) ÷ 2 = 121 KTAS\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"TAS 121 KT\", \"subline\": \"FIGURE 1-23 AT 2,600 RPM, HALFWAY BETWEEN ROWS\", \"blocks\": [{\"label\": \"6,000 ft / 8,000 ft\", \"value\": \"123 / 119 KTAS\"}, {\"label\": \"7,000 ft\", \"value\": \"(123 + 119) ÷ 2 = 121 KTAS\"}, {\"label\": \"Same row\", \"value\": \"Also gives % power and fuel flow\"}, {\"label\": \"Trend\", \"value\": \"At 2,600 RPM the TAS falls with height: less power\"}], \"formula\": \"Midway value = (lower + upper) ÷ 2\"}"
+  },
+  {
+   "id": 2342,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"VX: BEST ANGLE OF CLIMB\", \"subline\": \"MOST HEIGHT FOR THE DISTANCE: CLEARS OBSTACLES\", \"blocks\": [{\"label\": \"VY\", \"value\": \"Best rate: most height per minute\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"VX: BEST ANGLE OF CLIMB\", \"subline\": \"MOST HEIGHT FOR THE DISTANCE: CLEARS OBSTACLES\", \"blocks\": [{\"label\": \"VY\", \"value\": \"Best rate: most height per minute\"}, {\"label\": \"Which is slower\", \"value\": \"VX is lower than VY\"}, {\"label\": \"Use VX\", \"value\": \"Short field, obstacle after the runway\"}, {\"label\": \"Use VY\", \"value\": \"Normal climb to cruising level\"}, {\"label\": \"With height\", \"value\": \"VX rises and VY falls; they meet at the absolute ceiling\"}]}"
+  },
+  {
+   "id": 2355,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOMENT = WEIGHT × ARM\", \"subline\": \"THE TURNING EFFECT ABOUT THE DATUM\", \"blocks\": [{\"label\": \"Moment\", \"value\": \"Weight × arm; CG = total moment ÷ total weight\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"MOMENT = WEIGHT × ARM\", \"subline\": \"THE TURNING EFFECT ABOUT THE DATUM\", \"blocks\": [{\"label\": \"Arm\", \"value\": \"Distance from the datum: aft positive, forward negative\"}, {\"label\": \"Datum\", \"value\": \"The manufacturer's reference point, such as the firewall\"}, {\"label\": \"Example\", \"value\": \"100 lb at 40 in = 4,000 lb-in\"}, {\"label\": \"CG\", \"value\": \"Total moment ÷ total weight\"}, {\"label\": \"Exam trap\", \"value\": \"Multiply, never divide, to get a moment\"}], \"formula\": \"CG = total moment ÷ total weight\"}"
+  },
+  {
+   "id": 2363,
+   "subject": "flight-planning",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOUCH DOWN BEYOND THE HEAVY AIRCRAFT'S TOUCHDOWN POINT\", \"subline\": \"ITS WAKE ENDS WHERE IT TOUCHED DOWN\", \"blocks\": [{\"label\": \"On the approach\", \"value\": \"Stay above its flight path\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"TOUCH DOWN BEYOND THE HEAVY AIRCRAFT'S TOUCHDOWN POINT\", \"subline\": \"ITS WAKE ENDS WHERE IT TOUCHED DOWN\", \"blocks\": [{\"label\": \"On the approach\", \"value\": \"Stay above its flight path\"}, {\"label\": \"Landing after it took off\", \"value\": \"Touch down before its rotation point\"}, {\"label\": \"Taking off after it\", \"value\": \"Lift off before its rotation point and climb above its path\"}, {\"label\": \"Vortices\", \"value\": \"Sink about 300–500 ft/min and level off 500–900 ft below its path\"}, {\"label\": \"Light crosswind\", \"value\": \"About 5 kt can hold a vortex over the runway\"}]}"
+  },
+  {
+   "id": 303,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"FA = SOUTH AFRICA IN ICAO LOCATION INDICATORS\", \"subline\": \"EVERY SOUTH AFRICAN INDICATOR STARTS WITH FA\", \"blocks\": [{\"label\": \"Aerodromes\", \"value\": \"FAOR O.R. Tambo · FACT Cape Town · FALE King Shaka\"}, {\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"FA = SOUTH AFRICA IN ICAO LOCATION INDICATORS\", \"subline\": \"EVERY SOUTH AFRICAN INDICATOR STARTS WITH FA\", \"blocks\": [{\"label\": \"Aerodromes\", \"value\": \"FAOR O.R. Tambo · FACT Cape Town · FALE King Shaka\"}, {\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}, {\"label\": \"Format\", \"value\": \"Four letters: FA + two for the place\"}, {\"label\": \"Neighbours\", \"value\": \"FY Namibia · FB Botswana · FQ Mozambique\"}, {\"label\": \"Exam trap\", \"value\": \"Egypt is HE; South American codes start with S\"}]}"
+  },
+  {
+   "id": 304,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THESE REGIONS ARE FLIGHT INFORMATION REGIONS (FIRs)\", \"subline\": \"FLIGHT INFORMATION AND ALERTING SERVICES ARE PROVIDED IN EACH\", \"blocks\": [{\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THESE REGIONS ARE FLIGHT INFORMATION REGIONS (FIRs)\", \"subline\": \"FLIGHT INFORMATION AND ALERTING SERVICES ARE PROVIDED IN EACH\", \"blocks\": [{\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}, {\"label\": \"Centres\", \"value\": \"Flight Information Centres at Johannesburg and Cape Town\"}, {\"label\": \"Sectors\", \"value\": \"Each FIR is split into sectors (FAJA North, South-West, East)\"}, {\"label\": \"Why\", \"value\": \"Each centre gets a manageable workload\"}, {\"label\": \"Exam trap\", \"value\": \"UIR: upper region · UTA: upper control area · IFR: a set of flight rules\"}]}"
+  },
+  {
+   "id": 307,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CTA IS NORMALLY ESTABLISHED ABOVE ONE OR MORE TMAs\", \"subline\": \"THE HIGHER LAYER OF CONTROLLED AIRSPACE\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"A CTA IS NORMALLY ESTABLISHED ABOVE ONE OR MORE TMAs\", \"subline\": \"THE HIGHER LAYER OF CONTROLLED AIRSPACE\", \"blocks\": [{\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}, {\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"SA CTA base\", \"value\": \"About FL105 to FL145\"}, {\"label\": \"SA CTA top\", \"value\": \"Usually FL195 or FL200\"}, {\"label\": \"The stack\", \"value\": \"CTR from the surface → TMA → CTA, each layer higher\"}]}"
+  },
+  {
+   "id": 308,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"TMA: CONTROLLED AIRSPACE AROUND A BUSY AIRPORT\", \"subline\": \"WHERE SEVERAL ROUTES MEET NEAR ONE OR MORE MAJOR AERODROMES\", \"blocks\": [{\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"TMA: CONTROLLED AIRSPACE AROUND A BUSY AIRPORT\", \"subline\": \"WHERE SEVERAL ROUTES MEET NEAR ONE OR MORE MAJOR AERODROMES\", \"blocks\": [{\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}, {\"label\": \"Service\", \"value\": \"Approach control, often with radar\"}, {\"label\": \"Class\", \"value\": \"All South African TMAs are Class C\"}, {\"label\": \"Shape\", \"value\": \"Sectors with different bases (TMA A, B …): an upside-down wedding cake\"}]}"
+  },
+  {
+   "id": 314,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"SURFACE TO A SPECIFIED UPPER LIMIT: A CONTROL ZONE (CTR)\", \"subline\": \"CONTROLLED AIRSPACE AROUND AN AERODROME\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"SURFACE TO A SPECIFIED UPPER LIMIT: A CONTROL ZONE (CTR)\", \"subline\": \"CONTROLLED AIRSPACE AROUND AN AERODROME\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}, {\"label\": \"Inside a CTR\", \"value\": \"One or more ATZs\"}, {\"label\": \"Purpose\", \"value\": \"Protects IFR traffic arriving and departing\"}, {\"label\": \"Exam trap\", \"value\": \"Only the CTR starts at the surface; a CTA starts higher up\"}]}"
+  },
+  {
+   "id": 315,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"ATZ = AERODROME TRAFFIC ZONE\", \"subline\": \"AIRSPACE AROUND AN AERODROME TO PROTECT AERODROME TRAFFIC\", \"blocks\": [{\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"ATZ = AERODROME TRAFFIC ZONE\", \"subline\": \"AIRSPACE AROUND AN AERODROME TO PROTECT AERODROME TRAFFIC\", \"blocks\": [{\"label\": \"CTR\", \"value\": \"Controlled from the surface up, around an aerodrome\"}, {\"label\": \"Protects\", \"value\": \"Take-offs, landings and the circuit\"}, {\"label\": \"Height\", \"value\": \"From the ground to at least 700 ft AGL, often 1,000–1,500 ft\"}, {\"label\": \"Class\", \"value\": \"C, D or G, depending on the aerodrome\"}, {\"label\": \"Class G ATZ\", \"value\": \"Served by AFIS, not by air traffic control\"}]}"
+  },
+  {
+   "id": 316,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONTROL ZONES ARE ESTABLISHED AROUND AERODROMES\", \"subline\": \"FROM THE SURFACE UP TO A SPECIFIED LIMIT\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CONTROL ZONES ARE ESTABLISHED AROUND AERODROMES\", \"subline\": \"FROM THE SURFACE UP TO A SPECIFIED LIMIT\", \"blocks\": [{\"label\": \"TMA\", \"value\": \"Controlled airspace around busy airports, above the CTRs\"}, {\"label\": \"CTA\", \"value\": \"Controlled airspace higher up, above one or more TMAs\"}, {\"label\": \"Purpose\", \"value\": \"Protects IFR traffic near the larger airfields\"}, {\"label\": \"Inside\", \"value\": \"One or more ATZs (Class C or D)\"}, {\"label\": \"Exam trap\", \"value\": \"Above the TMAs is the CTA, not a CTR\"}]}"
+  },
+  {
+   "id": 416,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SEMI-CIRCULAR RULE APPLIES AT AND ABOVE 1500 FT AGL\", \"subline\": \"CRUISING LEVEL IS CHOSEN BY MAGNETIC TRACK\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"VFR: odd thousands + 500 ft (FL035, FL055, FL075 …)\"}, {\"label\": \"180°–359°\", \"value\": \"VFR: even thousands + 500 ft (FL045, FL065, FL085 …)\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE SEMI-CIRCULAR RULE APPLIES AT AND ABOVE 1500 FT AGL\", \"subline\": \"CRUISING LEVEL IS CHOSEN BY MAGNETIC TRACK\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"VFR: odd thousands + 500 ft (FL035, FL055, FL075 …)\"}, {\"label\": \"180°–359°\", \"value\": \"VFR: even thousands + 500 ft (FL045, FL065, FL085 …)\"}, {\"label\": \"Where\", \"value\": \"Cruising in uncontrolled airspace\"}, {\"label\": \"IFR\", \"value\": \"Whole thousands: odd 000°–179°, even 180°–359°\"}, {\"label\": \"Based on\", \"value\": \"Magnetic track, not heading\"}]}"
+  },
+  {
+   "id": 419,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRACK 090° MAGNETIC, VFR: FL075 IS CORRECT\", \"subline\": \"000°–179° TAKES ODD THOUSANDS PLUS 500 FT\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"VFR: odd thousands + 500 ft (FL035, FL055, FL075 …)\"}, {\"label\": \"180°–359°\", \"value\": \"VFR: even thousands + 500 ft (FL045, FL065, FL085 …)\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRACK 090° MAGNETIC, VFR: FL075 IS CORRECT\", \"subline\": \"000°–179° TAKES ODD THOUSANDS PLUS 500 FT\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"VFR: odd thousands + 500 ft (FL035, FL055, FL075 …)\"}, {\"label\": \"180°–359°\", \"value\": \"VFR: even thousands + 500 ft (FL045, FL065, FL085 …)\"}, {\"label\": \"FL075\", \"value\": \"7,500 ft on 1013.25 hPa, not 7,500 ft above the ground\"}, {\"label\": \"Based on\", \"value\": \"Magnetic track, not compass heading\"}, {\"label\": \"Applies\", \"value\": \"At and above 1,500 ft AGL\"}]}"
+  },
+  {
+   "id": 438,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"QNE (1013.25 hPa) SET: THE ALTIMETER SHOWS PRESSURE ALTITUDE\", \"subline\": \"READ AS A FLIGHT LEVEL\", \"blocks\": [{\"label\": \"QNH\", \"value\": \"Altitude above mean sea level\"}, {\"label\": \"QFE\", \"value\": \"Height above the aerodrome\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"QNE (1013.25 hPa) SET: THE ALTIMETER SHOWS PRESSURE ALTITUDE\", \"subline\": \"READ AS A FLIGHT LEVEL\", \"blocks\": [{\"label\": \"QNH\", \"value\": \"Altitude above mean sea level\"}, {\"label\": \"QFE\", \"value\": \"Height above the aerodrome\"}, {\"label\": \"Example\", \"value\": \"Pressure altitude 7,500 ft = FL075\"}, {\"label\": \"Why\", \"value\": \"All cruising traffic on one setting, so separation holds\"}, {\"label\": \"Exam trap\", \"value\": \"Not altitude, height or elevation: pressure altitude\"}]}"
+  },
+  {
+   "id": 441,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"QFE SET: THE ALTIMETER SHOWS HEIGHT ABOVE THE AERODROME\", \"subline\": \"IT READS ZERO ON THE RUNWAY\", \"blocks\": [{\"label\": \"QNH\", \"value\": \"Altitude above mean sea level\"}, {\"label\": \"1013.25 hPa (QNE)\", \"value\": \"Pressure altitude: flight levels\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"QFE SET: THE ALTIMETER SHOWS HEIGHT ABOVE THE AERODROME\", \"subline\": \"IT READS ZERO ON THE RUNWAY\", \"blocks\": [{\"label\": \"QNH\", \"value\": \"Altitude above mean sea level\"}, {\"label\": \"1013.25 hPa (QNE)\", \"value\": \"Pressure altitude: flight levels\"}, {\"label\": \"On the runway\", \"value\": \"QFE reads zero; QNH reads the aerodrome elevation\"}, {\"label\": \"Used for\", \"value\": \"Circuits and local flying\"}, {\"label\": \"Rule of thumb\", \"value\": \"1 hPa ≈ 30 ft\"}], \"formula\": \"QFE ≈ QNH − elevation (ft) ÷ 30\"}"
+  },
+  {
+   "id": 448,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TRANSITION LEVEL IS ALWAYS ABOVE THE TRANSITION ALTITUDE\", \"subline\": \"THE GAP BETWEEN THEM IS THE TRANSITION LAYER\", \"blocks\": [{\"label\": \"Climbing\", \"value\": \"QNH → 1013.25 hPa at the transition altitude\"}, {\"label\": \"Descending\", \"value\": \"1013.25 hPa → QNH at the transition level\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE TRANSITION LEVEL IS ALWAYS ABOVE THE TRANSITION ALTITUDE\", \"subline\": \"THE GAP BETWEEN THEM IS THE TRANSITION LAYER\", \"blocks\": [{\"label\": \"Climbing\", \"value\": \"QNH → 1013.25 hPa at the transition altitude\"}, {\"label\": \"Descending\", \"value\": \"1013.25 hPa → QNH at the transition level\"}, {\"label\": \"Transition altitude\", \"value\": \"The highest altitude flown on QNH\"}, {\"label\": \"Transition level\", \"value\": \"The lowest flight level above it\"}, {\"label\": \"Transition layer\", \"value\": \"The buffer between them: no cruising in it\"}]}"
+  },
+  {
+   "id": 451,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLIMBING THROUGH THE TRANSITION ALTITUDE: SET 1013.25 hPa\", \"subline\": \"FROM ALTITUDES ON QNH TO FLIGHT LEVELS\", \"blocks\": [{\"label\": \"Descending\", \"value\": \"1013.25 hPa → QNH at the transition level\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CLIMBING THROUGH THE TRANSITION ALTITUDE: SET 1013.25 hPa\", \"subline\": \"FROM ALTITUDES ON QNH TO FLIGHT LEVELS\", \"blocks\": [{\"label\": \"Descending\", \"value\": \"1013.25 hPa → QNH at the transition level\"}, {\"label\": \"Below it\", \"value\": \"QNH: altitude above sea level, for terrain clearance\"}, {\"label\": \"Above it\", \"value\": \"Flight levels, the same reference as other cruising traffic\"}, {\"label\": \"Remember\", \"value\": \"Change at the first one you meet: the altitude going up, the level coming down\"}]}"
+  },
+  {
+   "id": 506,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway — follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"BACKTRACK = TAXI ON THE RUNWAY AGAINST THE DIRECTION IN USE\", \"subline\": \"USED WHEN THERE IS NO PARALLEL TAXIWAY TO REACH THE THRESHOLD\", \"blocks\": [{\"label\": \"WHERE\", \"value\": \"On the active runway — follow the clearance exactly\"}, {\"label\": \"THEN\", \"value\": \"Turn around at the end and line up, or vacate, as cleared\"}, {\"label\": \"Read back\", \"value\": \"Runway instructions are always read back in full\"}, {\"label\": \"Be quick\", \"value\": \"Nobody else can use the runway while you are on it\"}, {\"label\": \"Exam trap\", \"value\": \"Not reversing the route, not an ILS back course\"}]}"
+  },
+  {
+   "id": 570,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"WHITE STRIPS LAID ON THE GROUND FOR A SEARCH AIRCRAFT TO READ\", \"blocks\": [{\"label\": \"X\", \"value\": \"Require medical assistance\"}, {\"label\": \"N / Y\", \"value\": \"No (negative) / Yes (affirmative)\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"V = REQUIRE ASSISTANCE\", \"subline\": \"WHITE STRIPS LAID ON THE GROUND FOR A SEARCH AIRCRAFT TO READ\", \"blocks\": [{\"label\": \"X\", \"value\": \"Require medical assistance\"}, {\"label\": \"N / Y\", \"value\": \"No (negative) / Yes (affirmative)\"}, {\"label\": \"Arrow\", \"value\": \"Proceeding in this direction\"}, {\"label\": \"Size\", \"value\": \"Each symbol at least 2.5 m long, in a colour that contrasts with the ground\"}, {\"label\": \"Remember\", \"value\": \"X looks like a medical cross\"}]}"
+  },
+  {
+   "id": 576,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE DUMBBELL: USE ONLY THE RUNWAYS AND TAXIWAYS\", \"subline\": \"NO MOVEMENT ON THE GRASS\", \"blocks\": [{\"label\": \"Dumbbell with black bars\", \"value\": \"Land and take off on runways only; taxi anywhere\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE DUMBBELL: USE ONLY THE RUNWAYS AND TAXIWAYS\", \"subline\": \"NO MOVEMENT ON THE GRASS\", \"blocks\": [{\"label\": \"Dumbbell with black bars\", \"value\": \"Land and take off on runways only; taxi anywhere\"}, {\"label\": \"Double white cross\", \"value\": \"Gliding in progress\"}, {\"label\": \"Red square, yellow cross\", \"value\": \"Landing prohibited\"}, {\"label\": \"Red square, one yellow diagonal\", \"value\": \"Take special care when landing\"}, {\"label\": \"Where\", \"value\": \"The signal area, near the tower or windsock\"}]}"
+  },
+  {
+   "id": 578,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE CROSS AT THE THRESHOLD: THE RUNWAY IS UNSAFE TO USE\", \"subline\": \"IT IS CLOSED: NO LANDING, TAKE-OFF OR TAXIING\", \"blocks\": [{\"label\": \"Where\", \"value\": \"A cross at each end of the closed runway or section\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE CROSS AT THE THRESHOLD: THE RUNWAY IS UNSAFE TO USE\", \"subline\": \"IT IS CLOSED: NO LANDING, TAKE-OFF OR TAXIING\", \"blocks\": [{\"label\": \"Where\", \"value\": \"A cross at each end of the closed runway or section\"}, {\"label\": \"Colour\", \"value\": \"White or yellow\"}, {\"label\": \"At night\", \"value\": \"Red lights mark the unserviceable area\"}, {\"label\": \"Typical causes\", \"value\": \"Waterlogging, soft ground, works\"}, {\"label\": \"Exam trap\", \"value\": \"A double white cross in the signal area means gliding, not closed\"}]}"
+  },
+  {
+   "id": 610,
+   "subject": "radio-telephony",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"FIR = FLIGHT INFORMATION REGION\", \"subline\": \"AIRSPACE WITH A FLIGHT INFORMATION AND ALERTING SERVICE\", \"blocks\": [{\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"FIR = FLIGHT INFORMATION REGION\", \"subline\": \"AIRSPACE WITH A FLIGHT INFORMATION AND ALERTING SERVICE\", \"blocks\": [{\"label\": \"SA FIRs\", \"value\": \"Johannesburg (FAJA), Cape Town (FACA) and Johannesburg Oceanic (FAJO)\"}, {\"label\": \"Extent\", \"value\": \"From the surface to FL650; sectors capped at FL460\"}, {\"label\": \"Services\", \"value\": \"Flight information and alerting, from a Flight Information Centre\"}, {\"label\": \"Centres\", \"value\": \"Johannesburg and Cape Town\"}, {\"label\": \"Exam trap\", \"value\": \"Not a route or a report: a region\"}]}"
+  },
+  {
+   "id": 1552,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"A LIGHTED OBSTACLE 847 FT ABOVE GROUND LEVEL\", \"subline\": \"THE FIGURE IN BRACKETS IS THE HEIGHT ABOVE GROUND\", \"blocks\": [{\"label\": \"Chart legend\", \"value\": \"Every symbol is explained in the legend on the chart\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"A LIGHTED OBSTACLE 847 FT ABOVE GROUND LEVEL\", \"subline\": \"THE FIGURE IN BRACKETS IS THE HEIGHT ABOVE GROUND\", \"blocks\": [{\"label\": \"Chart legend\", \"value\": \"Every symbol is explained in the legend on the chart\"}, {\"label\": \"Two figures\", \"value\": \"Top of the obstacle above sea level; in brackets, its height above the ground\"}, {\"label\": \"Lighted\", \"value\": \"Rays drawn round the symbol\"}, {\"label\": \"Planning\", \"value\": \"Use the above-sea-level figure for your altitude\"}, {\"label\": \"Exam trap\", \"value\": \"Read the bracketed figure exactly: 847, not a rounded value\"}]}"
+  },
+  {
+   "id": 1574,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"ORTHOMORPHIC: MERIDIANS AND PARALLELS CUT AT 90°\", \"subline\": \"ANGLES ARE TRUE (CONFORMAL)\", \"blocks\": [{\"label\": \"Not\", \"value\": \"Constant scale or true areas\"}, {\"label\": \"Lambert chart\", \"value\": \"Cone cutting the Earth at two standard parallels\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"ORTHOMORPHIC: MERIDIANS AND PARALLELS CUT AT 90°\", \"subline\": \"ANGLES ARE TRUE (CONFORMAL)\", \"blocks\": [{\"label\": \"Not\", \"value\": \"Constant scale or true areas\"}, {\"label\": \"Lambert chart\", \"value\": \"Cone cutting the Earth at two standard parallels\"}, {\"label\": \"Means\", \"value\": \"Small shapes look right and bearings measure true\"}, {\"label\": \"Both orthomorphic\", \"value\": \"Lambert conformal and Mercator\"}, {\"label\": \"Exam trap\", \"value\": \"Orthomorphic ≠ equal area ≠ constant scale\"}]}"
+  },
+  {
+   "id": 1604,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"ACCELERATING ON 090°: APPARENT TURN TO THE SOUTH\", \"subline\": \"SOUTHERN HEMISPHERE ACCELERATION ERROR\", \"blocks\": [{\"label\": \"Southern Hemisphere\", \"value\": \"Accelerate: apparent turn south. Slow down: apparent turn north\"}, {\"label\": \"Largest\", \"value\": \"On east and west headings\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"ACCELERATING ON 090°: APPARENT TURN TO THE SOUTH\", \"subline\": \"SOUTHERN HEMISPHERE ACCELERATION ERROR\", \"blocks\": [{\"label\": \"Southern Hemisphere\", \"value\": \"Accelerate: apparent turn south. Slow down: apparent turn north\"}, {\"label\": \"Largest\", \"value\": \"On east and west headings\"}, {\"label\": \"None\", \"value\": \"On north and south headings\"}, {\"label\": \"Northern Hemisphere\", \"value\": \"The opposite: ANDS, accelerate north, decelerate south\"}, {\"label\": \"Cause\", \"value\": \"The magnet's dip: its weight lags when the speed changes\"}]}"
+  },
+  {
+   "id": 1608,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION USUALLY VARIES ON EVERY HEADING\", \"subline\": \"THE AIRCRAFT'S OWN MAGNETIC FIELDS TURN WITH IT\", \"blocks\": [{\"label\": \"Cause\", \"value\": \"Engine, electrics, radios and steel parts in the aircraft\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION USUALLY VARIES ON EVERY HEADING\", \"subline\": \"THE AIRCRAFT'S OWN MAGNETIC FIELDS TURN WITH IT\", \"blocks\": [{\"label\": \"Cause\", \"value\": \"Engine, electrics, radios and steel parts in the aircraft\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}, {\"label\": \"Nil deviation\", \"value\": \"On some headings the aircraft's field lines up fore-and-aft\"}, {\"label\": \"Also changes\", \"value\": \"When equipment is added, moved or switched on\"}, {\"label\": \"Exam trap\", \"value\": \"Not one value for every heading, not the same in every aircraft of a type\"}]}"
+  },
+  {
+   "id": 1609,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"140 KM IS ABOUT 76 NM\", \"subline\": \"DIVIDE KILOMETRES BY 1.852\", \"blocks\": [{\"label\": \"Working\", \"value\": \"140 ÷ 1.852 ≈ 75.6 nm\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"140 KM IS ABOUT 76 NM\", \"subline\": \"DIVIDE KILOMETRES BY 1.852\", \"blocks\": [{\"label\": \"Working\", \"value\": \"140 ÷ 1.852 ≈ 75.6 nm\"}, {\"label\": \"Rough check\", \"value\": \"km × 0.54: 140 × 0.54 ≈ 76\"}, {\"label\": \"Exam trap\", \"value\": \"140 ÷ 1.609 = 87 is statute miles, not nautical\"}, {\"label\": \"Why 1.852\", \"value\": \"1 nm = 1′ of latitude: 10,000 km ÷ 5,400′\"}, {\"label\": \"In feet\", \"value\": \"1 nm ≈ 6,076 ft\"}], \"formula\": \"nm = km ÷ 1.852\"}"
+  },
+  {
+   "id": 1628,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"EAST DEVIATION: COMPASS NORTH LIES EAST OF MAGNETIC NORTH\", \"subline\": \"DEVIATION EAST, COMPASS LEAST\", \"blocks\": [{\"label\": \"Compass heading\", \"value\": \"Magnetic heading − east deviation\"}, {\"label\": \"Rule\", \"value\": \"Deviation west, compass best (add); deviation east, compass least (subtract)\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"EAST DEVIATION: COMPASS NORTH LIES EAST OF MAGNETIC NORTH\", \"subline\": \"DEVIATION EAST, COMPASS LEAST\", \"blocks\": [{\"label\": \"Compass heading\", \"value\": \"Magnetic heading − east deviation\"}, {\"label\": \"Rule\", \"value\": \"Deviation west, compass best (add); deviation east, compass least (subtract)\"}, {\"label\": \"Example\", \"value\": \"Magnetic 090°, deviation 3°E: steer 087° on the compass\"}, {\"label\": \"Source\", \"value\": \"That aircraft's compass deviation card\"}], \"formula\": \"Compass = magnetic − east deviation (+ west)\"}"
+  },
+  {
+   "id": 1730,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"VOR/DME GIVES BEARING (VOR) AND DISTANCE (DME)\", \"subline\": \"ONE STATION GIVES A COMPLETE FIX\", \"blocks\": [{\"label\": \"VOR\", \"value\": \"Radial: magnetic bearing from the station\"}, {\"label\": \"DME\", \"value\": \"Slant range in nm\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"VOR/DME GIVES BEARING (VOR) AND DISTANCE (DME)\", \"subline\": \"ONE STATION GIVES A COMPLETE FIX\", \"blocks\": [{\"label\": \"VOR\", \"value\": \"Radial: magnetic bearing from the station\"}, {\"label\": \"DME\", \"value\": \"Slant range in nm\"}, {\"label\": \"Fix\", \"value\": \"Radial + distance from one station = your position\"}, {\"label\": \"VOR band\", \"value\": \"VHF, 108–117.95 MHz: line of sight\"}, {\"label\": \"Range\", \"value\": \"About 1.23 × √(height in ft) nm\"}]}"
+  },
+  {
+   "id": 1741,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"DME MEASURES THE TIME FOR PULSES TO GO TO THE STATION AND BACK\", \"subline\": \"TIME GIVES SLANT RANGE\", \"blocks\": [{\"label\": \"Reads\", \"value\": \"Slant range, not ground distance\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"DME MEASURES THE TIME FOR PULSES TO GO TO THE STATION AND BACK\", \"subline\": \"TIME GIVES SLANT RANGE\", \"blocks\": [{\"label\": \"Reads\", \"value\": \"Slant range, not ground distance\"}, {\"label\": \"How\", \"value\": \"The aircraft sends pulse pairs; the station replies after a fixed 50 µs delay\"}, {\"label\": \"Band\", \"value\": \"UHF, 962–1,213 MHz\"}, {\"label\": \"Overhead\", \"value\": \"At 6,000 ft it still reads about 1 nm\"}, {\"label\": \"DME groundspeed\", \"value\": \"Only right when flying straight to or from the station\"}]}"
+  },
+  {
+   "id": 1765,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"AWAY FROM THE EQUATOR, 1° OF LONGITUDE GETS SHORTER TOWARDS THE POLES\", \"subline\": \"MERIDIANS CONVERGE\", \"blocks\": [{\"label\": \"Equator\", \"value\": \"1° ≈ 60 nm\"}, {\"label\": \"Poles\", \"value\": \"Zero\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"AWAY FROM THE EQUATOR, 1° OF LONGITUDE GETS SHORTER TOWARDS THE POLES\", \"subline\": \"MERIDIANS CONVERGE\", \"blocks\": [{\"label\": \"Equator\", \"value\": \"1° ≈ 60 nm\"}, {\"label\": \"Poles\", \"value\": \"Zero\"}, {\"label\": \"Example\", \"value\": \"At 60°S: 60 × cos 60° = 30 nm\"}, {\"label\": \"Latitude\", \"value\": \"1° of latitude is always 60 nm\"}, {\"label\": \"Exam trap\", \"value\": \"Only at the equator does 1° of longitude equal 1° of latitude\"}], \"formula\": \"1° of longitude = 60 × cos(latitude) nm\"}"
+  },
+  {
+   "id": 1772,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"SUNRISE 0540: OFFICIAL DAY STARTS AT 0525\", \"subline\": \"15 MIN BEFORE SUNRISE\", \"blocks\": [{\"label\": \"Working\", \"value\": \"0540 − 15 min = 0525\"}, {\"label\": \"Official day\", \"value\": \"Sunrise − 15 min to sunset + 15 min\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"SUNRISE 0540: OFFICIAL DAY STARTS AT 0525\", \"subline\": \"15 MIN BEFORE SUNRISE\", \"blocks\": [{\"label\": \"Working\", \"value\": \"0540 − 15 min = 0525\"}, {\"label\": \"Official day\", \"value\": \"Sunrise − 15 min to sunset + 15 min\"}, {\"label\": \"Official night\", \"value\": \"Sunset + 15 min to sunrise − 15 min\"}, {\"label\": \"South Africa\", \"value\": \"SAST = UTC + 2 h\"}, {\"label\": \"Exam trap\", \"value\": \"0540 is sunrise itself; 0555 adds instead of subtracting\"}], \"formula\": \"Official day begins = sunrise − 15 min\"}"
+  },
+  {
+   "id": 1785,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH\", \"subline\": \"CAUSED BY MAGNETIC FIELDS IN THE AIRCRAFT\", \"blocks\": [{\"label\": \"Variation\", \"value\": \"True north ↔ magnetic north\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"DEVIATION IS THE ANGLE BETWEEN COMPASS NORTH AND MAGNETIC NORTH\", \"subline\": \"CAUSED BY MAGNETIC FIELDS IN THE AIRCRAFT\", \"blocks\": [{\"label\": \"Variation\", \"value\": \"True north ↔ magnetic north\"}, {\"label\": \"Deviation card\", \"value\": \"A compass swing records the correction for each heading\"}, {\"label\": \"Order\", \"value\": \"True → (variation) → magnetic → (deviation) → compass\"}, {\"label\": \"Rule\", \"value\": \"West is best (add), east is least (subtract)\"}, {\"label\": \"Exam trap\", \"value\": \"True ↔ magnetic is variation; track ↔ heading is drift\"}]}"
+  },
+  {
+   "id": 1804,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"CARDINAL DIRECTIONS: 360°, 090°, 180°, 270°\", \"subline\": \"NORTH, EAST, SOUTH, WEST\", \"blocks\": [{\"label\": \"North\", \"value\": \"360° (also written 000°)\"}, {\"label\": \"Quadrantal\", \"value\": \"045°, 135°, 225°, 315°\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CARDINAL DIRECTIONS: 360°, 090°, 180°, 270°\", \"subline\": \"NORTH, EAST, SOUTH, WEST\", \"blocks\": [{\"label\": \"North\", \"value\": \"360° (also written 000°)\"}, {\"label\": \"Quadrantal\", \"value\": \"045°, 135°, 225°, 315°\"}, {\"label\": \"Written\", \"value\": \"Always three figures: 090°, not 90°\"}, {\"label\": \"Runways\", \"value\": \"Magnetic direction ÷ 10: 09 and 27\"}, {\"label\": \"Exam trap\", \"value\": \"The 45° points are quadrantal, not cardinal\"}]}"
+  },
+  {
+   "id": 1841,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE OTHER TWO ARE HEADING/TAS AND TRACK/GROUNDSPEED\", \"subline\": \"HDG/TAS + W/V = TR/GS\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Motion through the air\"}, {\"label\": \"TR/GS\", \"value\": \"Motion over the ground\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"THE OTHER TWO ARE HEADING/TAS AND TRACK/GROUNDSPEED\", \"subline\": \"HDG/TAS + W/V = TR/GS\", \"blocks\": [{\"label\": \"HDG/TAS\", \"value\": \"Motion through the air\"}, {\"label\": \"TR/GS\", \"value\": \"Motion over the ground\"}, {\"label\": \"W/V\", \"value\": \"Joins the end of HDG/TAS to the end of TR/GS\"}, {\"label\": \"Drift\", \"value\": \"The angle between heading and track\"}, {\"label\": \"Exam trap\", \"value\": \"Never pair heading with groundspeed, or track with TAS\"}]}"
+  },
+  {
+   "id": 1882,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIFT 8° LEFT\", \"subline\": \"TRACK LESS THAN HEADING: LEFT DRIFT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"046° − 038° = 8°\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"DRIFT 8° LEFT\", \"subline\": \"TRACK LESS THAN HEADING: LEFT DRIFT\", \"blocks\": [{\"label\": \"Working\", \"value\": \"046° − 038° = 8°\"}, {\"label\": \"Drift\", \"value\": \"Right drift: track right of heading. Left drift: track left of heading\"}, {\"label\": \"Wind\", \"value\": \"Left drift means the wind blows from the right\"}, {\"label\": \"To hold the track\", \"value\": \"Head into wind: steer right of the track\"}, {\"label\": \"Exam trap\", \"value\": \"4° halves the difference; drift is the whole 8°\"}], \"formula\": \"Drift = heading − track (track smaller: left)\"}"
+  },
+  {
+   "id": 1913,
+   "subject": "navigation",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"TURN 7° RIGHT TO FLY PARALLEL\", \"subline\": \"TRACK ERROR ONLY\", \"blocks\": [{\"label\": \"Working\", \"value\": \"4 × 60 ÷ 35 ≈ 7°; left of track, so turn right\"}, {\"label\": \"1 in 60\", \"value\": \"Angle = distance off × 60 ÷ distance\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"TURN 7° RIGHT TO FLY PARALLEL\", \"subline\": \"TRACK ERROR ONLY\", \"blocks\": [{\"label\": \"Working\", \"value\": \"4 × 60 ÷ 35 ≈ 7°; left of track, so turn right\"}, {\"label\": \"1 in 60\", \"value\": \"Angle = distance off × 60 ÷ distance\"}, {\"label\": \"Still to go\", \"value\": \"88 − 35 = 53 nm\"}, {\"label\": \"To reach F instead\", \"value\": \"Add 4 × 60 ÷ 53 ≈ 4.5°: about 11° right (a trap answer)\"}, {\"label\": \"Meaning\", \"value\": \"1° off track puts you 1 nm off after 60 nm\"}], \"formula\": \"Track error (°) = distance off × 60 ÷ distance flown\"}"
+  },
+  {
+   "id": 1048,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"ATZ: CONTROLLED AIRSPACE WITH AERODROME CONTROL IN OPERATION\", \"subline\": \"AIRSPACE OF DEFINED SIZE AROUND AN AERODROME\", \"blocks\": [{\"label\": \"Class G ATZ\", \"value\": \"Uncontrolled, with an information service only\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"ATZ: CONTROLLED AIRSPACE WITH AERODROME CONTROL IN OPERATION\", \"subline\": \"AIRSPACE OF DEFINED SIZE AROUND AN AERODROME\", \"blocks\": [{\"label\": \"Class G ATZ\", \"value\": \"Uncontrolled, with an information service only\"}, {\"label\": \"Classes\", \"value\": \"An ATZ can be Class C, D or G\"}, {\"label\": \"Class C or D\", \"value\": \"Controlled: the tower gives clearances\"}, {\"label\": \"Protects\", \"value\": \"Take-offs, landings and the circuit\"}, {\"label\": \"Exam trap\", \"value\": \"Not every ATZ is controlled, and none is a prohibited area\"}]}"
+  },
+  {
+   "id": 1073,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"SPECIAL VFR: ONLY IN A CONTROL ZONE (CTR)\", \"subline\": \"AND ONLY WITH ATC APPROVAL\", \"blocks\": [{\"label\": \"Minimum\", \"value\": \"600 ft cloud base and 1,500 m visibility\"}, {\"label\": \"Not in\", \"value\": \"An ATZ\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"SPECIAL VFR: ONLY IN A CONTROL ZONE (CTR)\", \"subline\": \"AND ONLY WITH ATC APPROVAL\", \"blocks\": [{\"label\": \"Minimum\", \"value\": \"600 ft cloud base and 1,500 m visibility\"}, {\"label\": \"Not in\", \"value\": \"An ATZ\"}, {\"label\": \"When\", \"value\": \"The CTR is below VFR minima but you want to fly VFR\"}, {\"label\": \"Stay\", \"value\": \"Clear of cloud and in sight of the surface\"}, {\"label\": \"Exam trap\", \"value\": \"Not in an FIR, a prohibited area or on an advisory route\"}]}"
+  },
+  {
+   "id": 1085,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"CRUISING LEVEL BY MAGNETIC TRACK\", \"subline\": \"THE SEMI-CIRCULAR RULE\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"Odd thousands; VFR adds 500 ft\"}, {\"label\": \"180°–359°\", \"value\": \"Even thousands; VFR adds 500 ft\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CRUISING LEVEL BY MAGNETIC TRACK\", \"subline\": \"THE SEMI-CIRCULAR RULE\", \"blocks\": [{\"label\": \"000°–179°\", \"value\": \"Odd thousands; VFR adds 500 ft\"}, {\"label\": \"180°–359°\", \"value\": \"Even thousands; VFR adds 500 ft\"}, {\"label\": \"Applies\", \"value\": \"Cruising at or above 1,500 ft AGL\"}, {\"label\": \"Example\", \"value\": \"Track 090°M, VFR: FL055 or FL075\"}, {\"label\": \"Exam trap\", \"value\": \"Not true heading, compass heading or airspeed\"}]}"
+  },
+  {
+   "id": 1086,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO FLIGHT CREW DUTIES WITHIN 24 HOURS OF SCUBA DIVING\", \"subline\": \"DISSOLVED NITROGEN CAN FORM BUBBLES AT LOWER CABIN PRESSURE\", \"blocks\": [{\"label\": \"RISK\", \"value\": \"Decompression sickness ('the bends') at altitude\"}, {\"label\": \"RULE\", \"value\": \"Wait at least 24 hours after diving before acting as crew\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"NO FLIGHT CREW DUTIES WITHIN 24 HOURS OF SCUBA DIVING\", \"subline\": \"DISSOLVED NITROGEN CAN FORM BUBBLES AT LOWER CABIN PRESSURE\", \"blocks\": [{\"label\": \"RISK\", \"value\": \"Decompression sickness ('the bends') at altitude\"}, {\"label\": \"RULE\", \"value\": \"Wait at least 24 hours after diving before acting as crew\"}, {\"label\": \"Pressure\", \"value\": \"Every 10 m of water adds one atmosphere\"}, {\"label\": \"Even pressurised\", \"value\": \"The cabin is still below sea-level pressure\"}, {\"label\": \"Symptoms\", \"value\": \"Joint pain, chest pain, tingling, itching\"}]}"
+  },
+  {
+   "id": 1098,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"A LETTER A: AGRICULTURAL FLIGHTS IN OPERATION\", \"subline\": \"EXPECT CROP-SPRAYING AIRCRAFT FLYING LOW\", \"blocks\": [{\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"A LETTER A: AGRICULTURAL FLIGHTS IN OPERATION\", \"subline\": \"EXPECT CROP-SPRAYING AIRCRAFT FLYING LOW\", \"blocks\": [{\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}, {\"label\": \"The A\", \"value\": \"Large and black, in the signal area\"}, {\"label\": \"Expect\", \"value\": \"Aircraft working low over the surrounding fields\"}, {\"label\": \"Action\", \"value\": \"A sharp lookout when joining or overflying\"}, {\"label\": \"Exam trap\", \"value\": \"Gliders are the double cross, not the A\"}]}"
+  },
+  {
+   "id": 1100,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"RED SQUARE, YELLOW CROSS: LANDINGS PROHIBITED\", \"subline\": \"DISPLAYED IN THE SIGNAL AREA\", \"blocks\": [{\"label\": \"One yellow diagonal stripe\", \"value\": \"Take special care when landing\"}, {\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"RED SQUARE, YELLOW CROSS: LANDINGS PROHIBITED\", \"subline\": \"DISPLAYED IN THE SIGNAL AREA\", \"blocks\": [{\"label\": \"One yellow diagonal stripe\", \"value\": \"Take special care when landing\"}, {\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}, {\"label\": \"Runway closed\", \"value\": \"Shown by crosses at each end of the runway, not in the signal area\"}, {\"label\": \"Where\", \"value\": \"The signal area, visible from the air\"}, {\"label\": \"Exam trap\", \"value\": \"Full cross: no landing. Single stripe: land with care\"}]}"
+  },
+  {
+   "id": 1102,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE DUMBBELL: RUNWAYS AND TAXIWAYS ONLY\", \"subline\": \"FOR LANDING, TAKE-OFF AND TAXIING\", \"blocks\": [{\"label\": \"Dumbbell with black bars\", \"value\": \"Land and take off on runways; taxi anywhere\"}, {\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"WHITE DUMBBELL: RUNWAYS AND TAXIWAYS ONLY\", \"subline\": \"FOR LANDING, TAKE-OFF AND TAXIING\", \"blocks\": [{\"label\": \"Dumbbell with black bars\", \"value\": \"Land and take off on runways; taxi anywhere\"}, {\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}, {\"label\": \"Why\", \"value\": \"The grass may be soft or waterlogged\"}, {\"label\": \"Where\", \"value\": \"The signal area, visible from the air\"}, {\"label\": \"Exam trap\", \"value\": \"Black bars allow taxiing on the grass; a plain dumbbell doesn't\"}]}"
+  },
+  {
+   "id": 1103,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"CROSSES MARK AN UNSERVICEABLE RUNWAY OR TAXIWAY\", \"subline\": \"A WHITE OR YELLOW CROSS AT EACH END MEANS: DO NOT USE\", \"blocks\": [{\"label\": \"Meaning\", \"value\": \"No landing, take-off or taxiing on the marked surface\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"CROSSES MARK AN UNSERVICEABLE RUNWAY OR TAXIWAY\", \"subline\": \"A WHITE OR YELLOW CROSS AT EACH END MEANS: DO NOT USE\", \"blocks\": [{\"label\": \"Meaning\", \"value\": \"No landing, take-off or taxiing on the marked surface\"}, {\"label\": \"Colour\", \"value\": \"White or yellow\"}, {\"label\": \"At night\", \"value\": \"Red lights mark the area; the lights between them are off\"}, {\"label\": \"Typical causes\", \"value\": \"Waterlogging, ground undermined by moles, works\"}, {\"label\": \"Exam trap\", \"value\": \"A red square with one yellow stripe means 'take care', not 'closed'\"}]}"
+  },
+  {
+   "id": 1104,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"DOUBLE WHITE CROSS: GLIDER FLIGHTS IN OPERATION\", \"subline\": \"EXPECT GLIDERS AND TOW-PLANES\", \"blocks\": [{\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"DOUBLE WHITE CROSS: GLIDER FLIGHTS IN OPERATION\", \"subline\": \"EXPECT GLIDERS AND TOW-PLANES\", \"blocks\": [{\"label\": \"Signal area\", \"value\": \"Red square, yellow cross: no landing · Dumbbell: runways and taxiways only · Double cross: gliders · A: agricultural flights\"}, {\"label\": \"Expect\", \"value\": \"Gliders and tow-planes in the circuit, and winch launches\"}, {\"label\": \"Right of way\", \"value\": \"Powered aircraft give way to gliders\"}, {\"label\": \"Gliders\", \"value\": \"Can't go around: give them room\"}, {\"label\": \"Exam trap\", \"value\": \"The A is agricultural flights; the red square is no landing\"}]}"
+  },
+  {
+   "id": 1379,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"AT THE TRANSITION ALTITUDE IN THE CLIMB: SET 1013 HPA\", \"subline\": \"FROM ALTITUDE ON QNH TO FLIGHT LEVELS\", \"blocks\": [{\"label\": \"In the descent\", \"value\": \"Set QNH at the transition level\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"AT THE TRANSITION ALTITUDE IN THE CLIMB: SET 1013 HPA\", \"subline\": \"FROM ALTITUDE ON QNH TO FLIGHT LEVELS\", \"blocks\": [{\"label\": \"In the descent\", \"value\": \"Set QNH at the transition level\"}, {\"label\": \"Below it\", \"value\": \"QNH: altitude above sea level\"}, {\"label\": \"Transition level\", \"value\": \"The lowest flight level above the transition altitude\"}, {\"label\": \"Remember\", \"value\": \"Climbing, change at the altitude; descending, at the level\"}, {\"label\": \"Exam trap\", \"value\": \"The destination QNH is set in the descent, not here\"}]}"
+  },
+  {
+   "id": 1396,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRANSITION LEVEL: THE LOWEST FLIGHT LEVEL ABOVE THE TRANSITION ALTITUDE\", \"subline\": \"BELOW IT YOU FLY ON QNH, ABOVE IT ON 1013 HPA\", \"blocks\": [{\"label\": \"Transition layer\", \"value\": \"Between the transition altitude and the transition level\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"TRANSITION LEVEL: THE LOWEST FLIGHT LEVEL ABOVE THE TRANSITION ALTITUDE\", \"subline\": \"BELOW IT YOU FLY ON QNH, ABOVE IT ON 1013 HPA\", \"blocks\": [{\"label\": \"Transition layer\", \"value\": \"Between the transition altitude and the transition level\"}, {\"label\": \"Climbing\", \"value\": \"Set 1013 hPa at the transition altitude\"}, {\"label\": \"Descending\", \"value\": \"Set QNH at the transition level\"}, {\"label\": \"It moves\", \"value\": \"Changes with the QNH: a low QNH raises it\"}, {\"label\": \"Exam trap\", \"value\": \"Not always FL180, and nothing to do with the circuit\"}]}"
+  },
+  {
+   "id": 1403,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOVE FL100: 8 KM, 1.5 KM AND 1000 FT\", \"subline\": \"VISIBILITY, THEN DISTANCE FROM CLOUD\", \"blocks\": [{\"label\": \"Below FL100\", \"value\": \"5 km visibility, same distance from cloud\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"ABOVE FL100: 8 KM, 1.5 KM AND 1000 FT\", \"subline\": \"VISIBILITY, THEN DISTANCE FROM CLOUD\", \"blocks\": [{\"label\": \"Below FL100\", \"value\": \"5 km visibility, same distance from cloud\"}, {\"label\": \"From cloud\", \"value\": \"1.5 km horizontally, 1,000 ft vertically\"}, {\"label\": \"Why more\", \"value\": \"Higher speeds up there: less time to see and avoid\"}, {\"label\": \"Day or night\", \"value\": \"The same minima\"}, {\"label\": \"Exam trap\", \"value\": \"5 km is the figure below FL100\"}]}"
+  },
+  {
+   "id": 1412,
+   "subject": "air-law",
+   "before": "\n{\"kicker\":\"KEY FACT\",\"headline\":\"A SLICING MOTION ACROSS THE THROAT MEANS: CUT ENGINE(S)\",\"blocks\":[{\"label\":\"GESTURE\",\"value\":\"One arm raised; the other drawn from the shoulder across the throat\"},{\"label\":\"MEANING\",\"value\":\"Shut down the engine(s) indicated\"}]}\n",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"A SLICING MOTION ACROSS THE THROAT MEANS: CUT ENGINE(S)\", \"subline\": \"MARSHALLING SIGNAL\", \"blocks\": [{\"label\": \"GESTURE\", \"value\": \"One arm raised; the other drawn from the shoulder across the throat\"}, {\"label\": \"MEANING\", \"value\": \"Shut down the engine(s) indicated\"}, {\"label\": \"Stop\", \"value\": \"Arms crossed above the head\"}, {\"label\": \"Chocks inserted\", \"value\": \"Arms extended, palms facing in, moved inwards\"}, {\"label\": \"Brakes\", \"value\": \"Fist clenched: brakes on · Hand opened: brakes off\"}]}"
+  },
+  {
+   "id": 1444,
+   "subject": "air-law",
+   "before": "{\"kicker\": \"KEY FACT\", \"headline\": \"ROTATING BEACON, NAVIGATION LIGHTS, LANDING LIGHTS\", \"subline\": \"ALL THREE ARE NEEDED TO FLY AT NIGHT\", \"blocks\": [{\"label\": \"Navigation lights\", \"value\": \"Red left, green right, white tail\"}]}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"ROTATING BEACON, NAVIGATION LIGHTS, LANDING LIGHTS\", \"subline\": \"ALL THREE ARE NEEDED TO FLY AT NIGHT\", \"blocks\": [{\"label\": \"Navigation lights\", \"value\": \"Red left, green right, white tail\"}, {\"label\": \"Arcs\", \"value\": \"Red and green 110° each; white 140° to the rear\"}, {\"label\": \"Beacon\", \"value\": \"Anti-collision: makes the aircraft easy to see\"}, {\"label\": \"Landing light\", \"value\": \"For the approach and landing\"}, {\"label\": \"Reading them\", \"value\": \"See red on your right: it is crossing from the right, give way\"}]}"
+  },
+  {
+   "id": -3,
+   "subject": "principles-of-flight",
+   "before": "{\"kicker\":\"KEY RELATIONSHIP\",\"headline\":\"AT 60° BANK, LOAD FACTOR = 2.0 G\",\"subline\":\"LOAD FACTOR = 1 / cos(BANK ANGLE) - IT DEPENDS ONLY ON BANK ANGLE IN A LEVEL TURN\",\"blocks\":[{\"label\":\"60° level turn\",\"value\":\"Load factor = 1 / cos 60° = 2.0 G - the wings support twice the aircraft's gross weight\"},{\"label\":\"What drives it\",\"value\":\"In a level, coordinated turn, the extra load on the wings is a function of bank angle alone, not airspeed or aircraft type\"}],\"formula\":\"LOAD FACTOR = 1 / cos(BANK ANGLE)\"}",
+   "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"AT 60° BANK, LOAD FACTOR = 2.0 G\", \"subline\": \"LOAD FACTOR = 1 / cos(BANK ANGLE) - IT DEPENDS ONLY ON BANK ANGLE IN A LEVEL TURN\", \"blocks\": [{\"label\": \"60° level turn\", \"value\": \"Load factor = 1 / cos 60° = 2.0 G - the wings support twice the aircraft's gross weight\"}, {\"label\": \"What drives it\", \"value\": \"In a level, coordinated turn, the extra load on the wings is a function of bank angle alone, not airspeed or aircraft type\"}, {\"label\": \"Other banks\", \"value\": \"30° ≈ 1.15 G · 45° ≈ 1.41 G · 75° ≈ 3.9 G\"}, {\"label\": \"Stall speed\", \"value\": \"Rises with √n: at 60°, × 1.41 (+41%)\"}, {\"label\": \"Limit\", \"value\": \"Normal category aeroplanes: +3.8 G\"}], \"formula\": \"LOAD FACTOR = 1 / cos(BANK ANGLE)\"}"
+  },
+  {
+   "id": 1138,
+   "subject": "principles-of-flight",
+   "before": "{\"kicker\": \"KEY DEFINITION\", \"headline\": \"POINT WHERE TOTAL WEIGHT ACTS\", \"subline\": \"THE AIRCRAFT BALANCES EXACTLY AS IF SUSPENDED FROM THIS POINT\", \"blocks\": [{\"label\": \"Center of gravity (CG)\", \"value\": \"The single point through which the aircraft's total weight acts\"}, {\"label\": \"Why it matters\", \"value\": \"CG position relative to the wing's lift determines longitudinal stability\"}]}",
+   "after": "{\"kicker\": \"KEY DEFINITION\", \"headline\": \"POINT WHERE TOTAL WEIGHT ACTS\", \"subline\": \"THE AIRCRAFT BALANCES EXACTLY AS IF SUSPENDED FROM THIS POINT\", \"blocks\": [{\"label\": \"Center of gravity (CG)\", \"value\": \"The single point through which the aircraft's total weight acts\"}, {\"label\": \"Why it matters\", \"value\": \"CG position relative to the wing's lift determines longitudinal stability\"}, {\"label\": \"Forward CG\", \"value\": \"More stable, heavier elevator, higher stall speed\"}, {\"label\": \"Aft CG\", \"value\": \"Less stable, light elevator, spin recovery harder\"}, {\"label\": \"Exam trap\", \"value\": \"Lift acts through the centre of pressure; the datum is only the measuring point\"}]}"
+  },
+  {
+   "id": 1345,
+   "subject": "principles-of-flight",
+   "before": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"MOIST AIR IS LESS DENSE THAN DRY AIR\", \"subline\": \"WATER VAPOUR IS LIGHTER THAN THE AIR IT DISPLACES, SO LIFT AND PERFORMANCE FALL\", \"blocks\": [{\"label\": \"Humid air\", \"value\": \"Less dense than dry air at the same temperature and pressure\"}, {\"label\": \"Effect on performance\", \"value\": \"Less lift for a given airspeed, longer take-off run, reduced rate of climb\"}]}",
+   "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"MOIST AIR IS LESS DENSE THAN DRY AIR\", \"subline\": \"WATER VAPOUR IS LIGHTER THAN THE AIR IT DISPLACES, SO LIFT AND PERFORMANCE FALL\", \"blocks\": [{\"label\": \"Humid air\", \"value\": \"Less dense than dry air at the same temperature and pressure\"}, {\"label\": \"Effect on performance\", \"value\": \"Less lift for a given airspeed, longer take-off run, reduced rate of climb\"}, {\"label\": \"Why lighter\", \"value\": \"Water vapour (18) weighs less than nitrogen (28) and oxygen (32)\"}, {\"label\": \"Worst case\", \"value\": \"Hot, high and humid: the highest density altitude\"}, {\"label\": \"Exam trap\", \"value\": \"Humid air feels heavy, but it is less dense\"}]}"
+  },
+  {
+   "id": 2025,
+   "subject": "principles-of-flight",
+   "before": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"TURN NEEDLE SHOWS ROTATION DIRECTION\", \"subline\": \"IT DEFLECTS TOWARD THE DIRECTION OF ROTATION AND STAYS RELIABLE THROUGHOUT THE SPIN\", \"blocks\": [{\"label\": \"Turn needle\", \"value\": \"Deflects fully toward the spin direction (L or R) throughout autorotation\"}, {\"label\": \"Why it's reliable\", \"value\": \"Rate-based — unaffected by the extreme attitude that can tumble the attitude indicator\"}]}",
+   "after": "{\"kicker\": \"KEY RELATIONSHIP\", \"headline\": \"TURN NEEDLE SHOWS ROTATION DIRECTION\", \"subline\": \"IT DEFLECTS TOWARD THE DIRECTION OF ROTATION AND STAYS RELIABLE THROUGHOUT THE SPIN\", \"blocks\": [{\"label\": \"Turn needle\", \"value\": \"Deflects fully toward the spin direction (L or R) throughout autorotation\"}, {\"label\": \"Why it's reliable\", \"value\": \"Rate-based — unaffected by the extreme attitude that can tumble the attitude indicator\"}, {\"label\": \"Slip ball\", \"value\": \"Unreliable in a spin: don't use it for the direction\"}, {\"label\": \"Recovery\", \"value\": \"Power idle, ailerons neutral, full rudder against the needle, then stick forward\"}, {\"label\": \"Exam trap\", \"value\": \"The attitude indicator and DI may topple\"}]}"
+  },
+  {
+   "id": 721,
+   "subject": "meteorology",
+   "before": "{\"blocks\": [{\"label\": \"These clouds\", \"value\": \"Extensive layers with possible continuous rain\"}], \"kicker\": \"KEY FACT\", \"subline\": \"READ THE MIDDLE-CLOUD SYMBOL ON THE STATION MODEL\", \"headline\": \"STATION 4: THICK ALTOSTRATUS OR NIMBOSTRATUS\"}",
+   "after": "{\"kicker\": \"KEY FACT\", \"headline\": \"STATION 4: THICK ALTOSTRATUS OR NIMBOSTRATUS\", \"subline\": \"READ THE MIDDLE-CLOUD SYMBOL ON THE STATION MODEL\", \"blocks\": [{\"label\": \"These clouds\", \"value\": \"Extensive layers with possible continuous rain\"}, {\"label\": \"Altostratus\", \"value\": \"Grey sheet: the sun shows as if through ground glass\"}, {\"label\": \"Nimbostratus\", \"value\": \"Dark and thick: continuous rain or snow, low visibility\"}, {\"label\": \"Found with\", \"value\": \"Warm fronts: widespread, gentle ascent\"}, {\"label\": \"Exam trap\", \"value\": \"Altocumulus castellanus has its own symbol: turrets, instability\"}]}"
+  }
+ ]
+}

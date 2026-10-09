@@ -30,6 +30,15 @@ type AttemptRow = {
   user_id: string
   subject: string
   completed_at: string
+  score_percentage: number
+  correct_answers: number
+  total_questions: number
+}
+
+type SessionRow = {
+  user_id: string
+  session_count: number
+  last_active_at: string | null
 }
 
 type PaymentRow = {
@@ -69,7 +78,7 @@ export async function GET(request: Request) {
   if ("response" in auth) return auth.response
 
   try {
-    const [authUsers, profiles, access, attempts, payments, admins] =
+    const [authUsers, profiles, access, attempts, payments, admins, sessions] =
       await Promise.all([
         listAllAuthUsers(),
         supabaseAdmin
@@ -82,7 +91,7 @@ export async function GET(request: Request) {
           .select("user_id, subject, access_status, expires_at"),
         supabaseAdmin
           .from("ExamAttempts")
-          .select("user_id, subject, completed_at")
+          .select("user_id, subject, completed_at, score_percentage, correct_answers, total_questions")
           .order("completed_at", { ascending: false })
           .limit(10000),
         supabaseAdmin
@@ -93,11 +102,20 @@ export async function GET(request: Request) {
           .order("created_at", { ascending: false })
           .limit(1000),
         supabaseAdmin.from("Admins").select("user_id"),
+        supabaseAdmin.rpc("admin_session_activity"),
       ])
 
     for (const result of [profiles, access, attempts, payments, admins]) {
       if (result.error) throw new Error(result.error.message)
     }
+
+    // Session activity is a nice-to-have: if the function is missing, the
+    // rest of the overview still loads and the page shows sessions as unknown.
+    if (sessions.error) console.error("Could not read session activity", sessions.error)
+    const sessionsAvailable = !sessions.error
+    const sessionByUser = new Map(
+      ((sessions.data ?? []) as SessionRow[]).map((row) => [row.user_id, row])
+    )
 
     const adminIds = new Set((admins.data ?? []).map((row) => row.user_id as string))
     const profileById = new Map(
@@ -131,6 +149,22 @@ export async function GET(request: Request) {
         const profile = profileById.get(authUser.id)
         const userAttempts = attemptsByUser.get(authUser.id) ?? []
         const userPayments = paymentsByUser.get(authUser.id) ?? []
+        const session = sessionByUser.get(authUser.id)
+        const trialEndsAt = profile?.trial_ends_at ?? null
+        // A checkout that was started but never paid: its row is still
+        // "initialized" and the same product wasn't bought afterwards either
+        // (a second, completed attempt makes the first one irrelevant).
+        const fulfilled = userPayments.filter((row) => row.status === "fulfilled")
+        const unpaidCheckouts = userPayments.filter(
+          (row) =>
+            row.status === "initialized" &&
+            !fulfilled.some(
+              (paid) =>
+                paid.product_code === row.product_code &&
+                paid.subject === row.subject &&
+                Date.parse(paid.created_at) >= Date.parse(row.created_at)
+            )
+        )
 
         return {
           id: authUser.id,
@@ -155,7 +189,28 @@ export async function GET(request: Request) {
           attemptCount: userAttempts.length,
           lastAttemptAt: userAttempts[0]?.completed_at ?? null,
           subjectsTried: [...new Set(userAttempts.map((row) => row.subject))].sort(),
-          fulfilledPayments: userPayments.filter((row) => row.status === "fulfilled").length,
+          // Mocks finished before the trial ended, oldest first.
+          trialMocks: trialEndsAt
+            ? userAttempts
+                .filter((row) => Date.parse(row.completed_at) <= Date.parse(trialEndsAt))
+                .map((row) => ({
+                  subject: row.subject,
+                  scorePercentage: row.score_percentage,
+                  correctAnswers: row.correct_answers,
+                  totalQuestions: row.total_questions,
+                  completedAt: row.completed_at,
+                }))
+                .reverse()
+            : [],
+          hasSession: sessionsAvailable ? Boolean(session) : null,
+          lastActiveAt: session?.last_active_at ?? null,
+          unpaidCheckouts: unpaidCheckouts.map((row) => ({
+            productCode: row.product_code,
+            subject: row.subject,
+            amountCents: row.amount,
+            startedAt: row.created_at,
+          })),
+          fulfilledPayments: fulfilled.length,
         }
       })
       .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
@@ -210,20 +265,24 @@ export async function GET(request: Request) {
     }
 
     const emailById = new Map(users.map((user) => [user.id, user.email]))
-    const recentPayments = paymentRows.slice(0, 50).map((row) => ({
-      reference: row.reference,
-      email: emailById.get(row.user_id) ?? null,
-      isTestOrAdmin: !studentIds.has(row.user_id),
-      productCode: row.product_code,
-      subject: row.subject,
-      amountCents: row.amount,
-      currency: row.currency,
-      status: row.status,
-      paidAt: row.paid_at,
-      createdAt: row.created_at,
-    }))
+    // Checkout attempts that never got paid are listed per account instead.
+    const recentPayments = paymentRows
+      .filter((row) => row.status !== "initialized")
+      .slice(0, 50)
+      .map((row) => ({
+        reference: row.reference,
+        email: emailById.get(row.user_id) ?? null,
+        isTestOrAdmin: !studentIds.has(row.user_id),
+        productCode: row.product_code,
+        subject: row.subject,
+        amountCents: row.amount,
+        currency: row.currency,
+        status: row.status,
+        paidAt: row.paid_at,
+        createdAt: row.created_at,
+      }))
 
-    return NextResponse.json({ summary, funnel, series, users, recentPayments })
+    return NextResponse.json({ summary, funnel, series, users, recentPayments, sessionsAvailable })
   } catch (error) {
     return NextResponse.json(
       {

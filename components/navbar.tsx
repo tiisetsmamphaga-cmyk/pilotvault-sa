@@ -356,16 +356,36 @@ export function Navbar() {
               )}
             </div>
 
-            <button
-              type="button"
-              onClick={() => setIsOpen((open) => !open)}
-              className="justify-self-end rounded-lg p-2 text-white transition hover:bg-white/10 xl:hidden"
-              aria-label="Toggle navigation menu"
-              aria-expanded={isOpen}
-              aria-controls="pilotvault-mobile-menu"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            {/* Below xl the full buttons live in the menu, so keep the one
+                action people look for (Log in / Dashboard) in the bar itself. */}
+            <div className="flex items-center justify-self-end gap-1.5 xl:hidden">
+              {signedIn ? (
+                <Link
+                  href="/dashboard"
+                  className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-lg bg-white px-3 text-sm font-semibold text-[#1f4e79] transition hover:bg-[#f1f5f9]"
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => openAuth("login")}
+                  className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-lg border border-white/35 px-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Log in
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={() => setIsOpen((open) => !open)}
+                className="rounded-lg p-2 text-white transition hover:bg-white/10"
+                aria-label="Toggle navigation menu"
+                aria-expanded={isOpen}
+                aria-controls="pilotvault-mobile-menu"
+              >
+                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
 
           {isOpen && (

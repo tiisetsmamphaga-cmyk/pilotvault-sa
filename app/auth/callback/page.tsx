@@ -5,7 +5,8 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Radar } from "lucide-react"
 
-import { VaultLoadingScreen } from "@/components/vault-loading-screen"
+import { PageSkeleton } from "@/components/page-skeleton"
+import { claimDeviceSession } from "@/src/lib/device-session"
 import { supabase } from "@/src/lib/supabase"
 
 export default function AuthCallbackPage() {
@@ -61,6 +62,8 @@ export default function AuthCallbackPage() {
           if (profileCreateError) throw profileCreateError
         }
 
+        await claimDeviceSession()
+
         if (!cancelled) router.replace("/dashboard")
       } catch (error) {
         if (!cancelled) {
@@ -81,7 +84,7 @@ export default function AuthCallbackPage() {
   }, [router])
 
   if (!errorMessage) {
-    return <VaultLoadingScreen message="Opening your PilotVault..." />
+    return <PageSkeleton variant="dashboard" />
   }
 
   return (
